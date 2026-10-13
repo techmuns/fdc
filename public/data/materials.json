@@ -1,0 +1,4616 @@
+[
+  {
+    "key": "dextrose",
+    "displayName": "Dextrose",
+    "plainName": "Dextrose (corn-based sugar, a raw material)",
+    "category": "Raw material",
+    "color": "#00973D",
+    "singleCommodity": true,
+    "units": [
+      "KG"
+    ],
+    "primaryUnit": "KG",
+    "totalNetSpend": 378992790.5,
+    "totalNetQty": 5588387,
+    "vwap": 67.808,
+    "receiptCount": 361,
+    "reversalCount": 15,
+    "reversalRatePct": 4.16,
+    "skuCount": 1,
+    "vendorCount": 4,
+    "plantCount": 7,
+    "unitTotals": [
+      {
+        "unit": "KG",
+        "netSpend": 378992790.5,
+        "netQty": 5588387,
+        "vwap": 67.808,
+        "receiptCount": 361,
+        "reversalCount": 15
+      }
+    ],
+    "monthly": [
+      {
+        "month": "2025-04",
+        "qty": 644200,
+        "spend": 42725650,
+        "avgPrice": 66.324
+      },
+      {
+        "month": "2025-05",
+        "qty": 603275,
+        "spend": 40669650,
+        "avgPrice": 67.415
+      },
+      {
+        "month": "2025-06",
+        "qty": 748271,
+        "spend": 51052099,
+        "avgPrice": 68.227
+      },
+      {
+        "month": "2025-07",
+        "qty": 509575,
+        "spend": 35163175,
+        "avgPrice": 68.909
+      },
+      {
+        "month": "2025-08",
+        "qty": 655800,
+        "spend": 44421037.5,
+        "avgPrice": 67.672
+      },
+      {
+        "month": "2025-09",
+        "qty": 412360,
+        "spend": 28223090,
+        "avgPrice": 68.475
+      },
+      {
+        "month": "2025-10",
+        "qty": 264056,
+        "spend": 18095064,
+        "avgPrice": 68.527
+      },
+      {
+        "month": "2025-11",
+        "qty": 285000,
+        "spend": 19034000,
+        "avgPrice": 66.753
+      },
+      {
+        "month": "2025-12",
+        "qty": 297800,
+        "spend": 20163825,
+        "avgPrice": 67.685
+      },
+      {
+        "month": "2026-01",
+        "qty": 334000,
+        "spend": 22521000,
+        "avgPrice": 67.352
+      },
+      {
+        "month": "2026-02",
+        "qty": 368400,
+        "spend": 24983350,
+        "avgPrice": 67.816
+      },
+      {
+        "month": "2026-03",
+        "qty": 465650,
+        "spend": 31940850,
+        "avgPrice": 68.64
+      }
+    ],
+    "monthlySpendAll": [
+      {
+        "month": "2025-04",
+        "spend": 42725650
+      },
+      {
+        "month": "2025-05",
+        "spend": 40669650
+      },
+      {
+        "month": "2025-06",
+        "spend": 51052099
+      },
+      {
+        "month": "2025-07",
+        "spend": 35163175
+      },
+      {
+        "month": "2025-08",
+        "spend": 44421037.5
+      },
+      {
+        "month": "2025-09",
+        "spend": 28223090
+      },
+      {
+        "month": "2025-10",
+        "spend": 18095064
+      },
+      {
+        "month": "2025-11",
+        "spend": 19034000
+      },
+      {
+        "month": "2025-12",
+        "spend": 20163825
+      },
+      {
+        "month": "2026-01",
+        "spend": 22521000
+      },
+      {
+        "month": "2026-02",
+        "spend": 24983350
+      },
+      {
+        "month": "2026-03",
+        "spend": 31940850
+      }
+    ],
+    "skus": [
+      {
+        "desc": "Dextrose Anhydrous IP",
+        "unit": "KG",
+        "qty": 5588387,
+        "spend": 378992790.5,
+        "recQty": 5774062,
+        "avgPrice": 67.808,
+        "minPrice": 64,
+        "maxPrice": 77,
+        "vendorCount": 4
+      }
+    ],
+    "topSkuMonthly": [
+      {
+        "desc": "Dextrose Anhydrous IP",
+        "unit": "KG",
+        "spend": 378992790.5,
+        "avgPrice": 67.808,
+        "minPrice": 64,
+        "maxPrice": 77,
+        "vendorCount": 4,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 644200,
+            "spend": 42725650,
+            "avgPrice": 66.324
+          },
+          {
+            "month": "2025-05",
+            "qty": 603275,
+            "spend": 40669650,
+            "avgPrice": 67.415
+          },
+          {
+            "month": "2025-06",
+            "qty": 748271,
+            "spend": 51052099,
+            "avgPrice": 68.227
+          },
+          {
+            "month": "2025-07",
+            "qty": 509575,
+            "spend": 35163175,
+            "avgPrice": 68.909
+          },
+          {
+            "month": "2025-08",
+            "qty": 655800,
+            "spend": 44421037.5,
+            "avgPrice": 67.672
+          },
+          {
+            "month": "2025-09",
+            "qty": 412360,
+            "spend": 28223090,
+            "avgPrice": 68.475
+          },
+          {
+            "month": "2025-10",
+            "qty": 264056,
+            "spend": 18095064,
+            "avgPrice": 68.527
+          },
+          {
+            "month": "2025-11",
+            "qty": 285000,
+            "spend": 19034000,
+            "avgPrice": 66.753
+          },
+          {
+            "month": "2025-12",
+            "qty": 297800,
+            "spend": 20163825,
+            "avgPrice": 67.685
+          },
+          {
+            "month": "2026-01",
+            "qty": 334000,
+            "spend": 22521000,
+            "avgPrice": 67.352
+          },
+          {
+            "month": "2026-02",
+            "qty": 368400,
+            "spend": 24983350,
+            "avgPrice": 67.816
+          },
+          {
+            "month": "2026-03",
+            "qty": 465650,
+            "spend": 31940850,
+            "avgPrice": 68.64
+          }
+        ]
+      }
+    ],
+    "vendors": [
+      {
+        "vendorKey": "gujarat-ambuja-exports",
+        "vendor": "GUJARAT AMBUJA EXPORTS LIMITED",
+        "color": "#2E7CE4",
+        "unit": "KG",
+        "qty": 3099612,
+        "spend": 212123478,
+        "avgPrice": 68.452,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "sayaji-industries",
+        "vendor": "Sayaji Industries Limited",
+        "color": "#EFAE0E",
+        "unit": "KG",
+        "qty": 2259775,
+        "spend": 150284312.5,
+        "avgPrice": 66.483,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "sukhjit-corn-products",
+        "vendor": "SUKHJIT CORN PRODUCTS",
+        "color": "#2C82C9",
+        "unit": "KG",
+        "qty": 150000,
+        "spend": 10620000,
+        "avgPrice": 70.8,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "universal-starch-chem-allied",
+        "vendor": "Universal Starch Chem Allied Ltd",
+        "color": "#3498DB",
+        "unit": "KG",
+        "qty": 79000,
+        "spend": 5965000,
+        "avgPrice": 75.506,
+        "multiUnit": false
+      }
+    ],
+    "plants": [
+      {
+        "plant": "1003",
+        "plantName": "FDC Limited,SINNAR",
+        "unit": "KG",
+        "qty": 2599202,
+        "spend": 175633113,
+        "avgPrice": 67.564
+      },
+      {
+        "plant": "1006",
+        "plantName": "FDC LIMITED, GOA-II",
+        "unit": "KG",
+        "qty": 1932000,
+        "spend": 131938725,
+        "avgPrice": 68.3
+      },
+      {
+        "plant": "1109",
+        "plantName": "FDC Limited,WH-Waluj",
+        "unit": "KG",
+        "qty": 352825,
+        "spend": 24007737.5,
+        "avgPrice": 68.044
+      },
+      {
+        "plant": "1000",
+        "plantName": "FDC Limited,Jogeshwari,Corp",
+        "unit": "KG",
+        "qty": 328860,
+        "spend": 22183840,
+        "avgPrice": 67.355
+      },
+      {
+        "plant": "1044",
+        "plantName": "FDC Limited (SPPL)",
+        "unit": "KG",
+        "qty": 184900,
+        "spend": 12370850,
+        "avgPrice": 67.112
+      },
+      {
+        "plant": "1047",
+        "plantName": "FDC Limited (NVP)",
+        "unit": "KG",
+        "qty": 117000,
+        "spend": 7902000,
+        "avgPrice": 67.538
+      },
+      {
+        "plant": "1008",
+        "plantName": "FDC Limited-Waluj",
+        "unit": "KG",
+        "qty": 73600,
+        "spend": 4956525,
+        "avgPrice": 67.344
+      }
+    ]
+  },
+  {
+    "key": "packaging",
+    "displayName": "Rigid plastic packaging",
+    "plainName": "Bottles, caps, preforms & measuring cups",
+    "category": "Packaging",
+    "color": "#2E7CE4",
+    "singleCommodity": false,
+    "units": [
+      "NOS"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 167551013.82,
+    "totalNetQty": 90605943,
+    "vwap": 1.84,
+    "receiptCount": 738,
+    "reversalCount": 28,
+    "reversalRatePct": 3.79,
+    "skuCount": 64,
+    "vendorCount": 16,
+    "plantCount": 9,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 167551013.82,
+        "netQty": 90605943,
+        "vwap": 1.84,
+        "receiptCount": 738,
+        "reversalCount": 28
+      }
+    ],
+    "monthly": [
+      {
+        "month": "2025-04",
+        "qty": 8689357,
+        "spend": 14909261.09,
+        "avgPrice": 1.678
+      },
+      {
+        "month": "2025-05",
+        "qty": 12763760,
+        "spend": 17296854.75,
+        "avgPrice": 1.417
+      },
+      {
+        "month": "2025-06",
+        "qty": 10678619,
+        "spend": 19978583.36,
+        "avgPrice": 1.835
+      },
+      {
+        "month": "2025-07",
+        "qty": 10795990,
+        "spend": 15546312.86,
+        "avgPrice": 1.355
+      },
+      {
+        "month": "2025-08",
+        "qty": 8738131,
+        "spend": 20813062.78,
+        "avgPrice": 2.382
+      },
+      {
+        "month": "2025-09",
+        "qty": 8196259,
+        "spend": 18529637.68,
+        "avgPrice": 2.261
+      },
+      {
+        "month": "2025-10",
+        "qty": 1108694,
+        "spend": 2226660.72,
+        "avgPrice": 2.008
+      },
+      {
+        "month": "2025-11",
+        "qty": 4903440,
+        "spend": 6368065.51,
+        "avgPrice": 1.361
+      },
+      {
+        "month": "2025-12",
+        "qty": 4268242,
+        "spend": 6331644,
+        "avgPrice": 1.483
+      },
+      {
+        "month": "2026-01",
+        "qty": 4176383,
+        "spend": 5989364.8,
+        "avgPrice": 1.434
+      },
+      {
+        "month": "2026-02",
+        "qty": 8140270,
+        "spend": 20115389.24,
+        "avgPrice": 2.437
+      },
+      {
+        "month": "2026-03",
+        "qty": 8146798,
+        "spend": 19446177.03,
+        "avgPrice": 2.426
+      }
+    ],
+    "monthlySpendAll": [
+      {
+        "month": "2025-04",
+        "spend": 14909261.09
+      },
+      {
+        "month": "2025-05",
+        "spend": 17296854.75
+      },
+      {
+        "month": "2025-06",
+        "spend": 19978583.36
+      },
+      {
+        "month": "2025-07",
+        "spend": 15546312.86
+      },
+      {
+        "month": "2025-08",
+        "spend": 20813062.78
+      },
+      {
+        "month": "2025-09",
+        "spend": 18529637.68
+      },
+      {
+        "month": "2025-10",
+        "spend": 2226660.72
+      },
+      {
+        "month": "2025-11",
+        "spend": 6368065.51
+      },
+      {
+        "month": "2025-12",
+        "spend": 6331644
+      },
+      {
+        "month": "2026-01",
+        "spend": 5989364.8
+      },
+      {
+        "month": "2026-02",
+        "spend": 20115389.24
+      },
+      {
+        "month": "2026-03",
+        "spend": 19446177.03
+      }
+    ],
+    "skus": [
+      {
+        "desc": "PET PREFORM CLEAR 38MM NECK-400ML BOTTLE",
+        "unit": "NOS",
+        "qty": 11186224,
+        "spend": 49432470.24,
+        "recQty": 11186224,
+        "avgPrice": 4.419,
+        "minPrice": 3.97,
+        "maxPrice": 4.68,
+        "vendorCount": 1
+      },
+      {
+        "desc": "HDPE BOT WHITE 30ML WITH RING MARK",
+        "unit": "NOS",
+        "qty": 12163000,
+        "spend": 18709540,
+        "recQty": 12463000,
+        "avgPrice": 1.538,
+        "minPrice": 1.38,
+        "maxPrice": 2.18,
+        "vendorCount": 3
+      },
+      {
+        "desc": "PP CAP PLAS 28MM INDUCTUCTION WAD",
+        "unit": "NOS",
+        "qty": 11912000,
+        "spend": 11342440,
+        "recQty": 12677000,
+        "avgPrice": 0.954,
+        "minPrice": 0.81,
+        "maxPrice": 1.28,
+        "vendorCount": 3
+      },
+      {
+        "desc": "PET BOT AMBER BRUT 250ML/28MM NECK 26G",
+        "unit": "NOS",
+        "qty": 1852836,
+        "spend": 9844221.6,
+        "recQty": 2059812,
+        "avgPrice": 5.306,
+        "minPrice": 4.95,
+        "maxPrice": 6.635,
+        "vendorCount": 2
+      },
+      {
+        "desc": "LDPE BOTTLE 5ML WHITE OPAQUE",
+        "unit": "NOS",
+        "qty": 5326000,
+        "spend": 8965240,
+        "recQty": 5326000,
+        "avgPrice": 1.683,
+        "minPrice": 1.62,
+        "maxPrice": 1.7,
+        "vendorCount": 2
+      },
+      {
+        "desc": "PET BOT AMBER 250ML/28MM WITH SHR SL 01",
+        "unit": "NOS",
+        "qty": 921024,
+        "spend": 7737357.6,
+        "recQty": 921024,
+        "avgPrice": 8.401,
+        "minPrice": 7.62,
+        "maxPrice": 9.62,
+        "vendorCount": 2
+      },
+      {
+        "desc": "A.G. BOT 30ML 25MM NECK USP-III",
+        "unit": "NOS",
+        "qty": 2154180,
+        "spend": 6425637.96,
+        "recQty": 2154180,
+        "avgPrice": 2.983,
+        "minPrice": 2.974,
+        "maxPrice": 3.42,
+        "vendorCount": 1
+      },
+      {
+        "desc": "NOVELIA NOZZLE CAP PF10V2.4-20060589 WHT",
+        "unit": "NOS",
+        "qty": 80400,
+        "spend": 5915832,
+        "recQty": 80400,
+        "avgPrice": 73.58,
+        "minPrice": 73.58,
+        "maxPrice": 73.58,
+        "vendorCount": 1
+      },
+      {
+        "desc": "PET PREFORM CLEAR 38MM NECK-500ML BOTTLE",
+        "unit": "NOS",
+        "qty": 1268864,
+        "spend": 5483344.96,
+        "recQty": 1444768,
+        "avgPrice": 4.392,
+        "minPrice": 3.99,
+        "maxPrice": 5.04,
+        "vendorCount": 1
+      },
+      {
+        "desc": "MESU. CUP 30MM TRANS.PP 2.5/5/10ML",
+        "unit": "NOS",
+        "qty": 13165000,
+        "spend": 5349550,
+        "recQty": 13490000,
+        "avgPrice": 0.406,
+        "minPrice": 0.35,
+        "maxPrice": 0.65,
+        "vendorCount": 3
+      },
+      {
+        "desc": "A.G. BOT 15mL 22mm NECK USP-III",
+        "unit": "NOS",
+        "qty": 1482492,
+        "spend": 3842619.26,
+        "recQty": 1482492,
+        "avgPrice": 2.592,
+        "minPrice": 2.592,
+        "maxPrice": 2.592,
+        "vendorCount": 1
+      },
+      {
+        "desc": "HDPE BOT SIMYL MCT OIL 100 mL",
+        "unit": "NOS",
+        "qty": 802750,
+        "spend": 3291275,
+        "recQty": 837750,
+        "avgPrice": 4.1,
+        "minPrice": 4.1,
+        "maxPrice": 4.1,
+        "vendorCount": 2
+      },
+      {
+        "desc": "HDPE CAP 20MM SPIKED",
+        "unit": "NOS",
+        "qty": 5192000,
+        "spend": 2718400,
+        "recQty": 5684000,
+        "avgPrice": 0.524,
+        "minPrice": 0.5,
+        "maxPrice": 0.53,
+        "vendorCount": 1
+      },
+      {
+        "desc": "HDPE BOT WHITE 10ML WITH RING MARK",
+        "unit": "NOS",
+        "qty": 1611900,
+        "spend": 2208303,
+        "recQty": 1761900,
+        "avgPrice": 1.37,
+        "minPrice": 1.37,
+        "maxPrice": 1.37,
+        "vendorCount": 1
+      },
+      {
+        "desc": "PET BOT AMB 100ML/25MM SHRK SLV SLMDL DX",
+        "unit": "NOS",
+        "qty": 492030,
+        "spend": 2160011.7,
+        "recQty": 526680,
+        "avgPrice": 4.39,
+        "minPrice": 4.39,
+        "maxPrice": 4.39,
+        "vendorCount": 1
+      },
+      {
+        "desc": "HDPE BOT 30ML WTH CAP XLSR603 CUP MARS",
+        "unit": "NOS",
+        "qty": 600000,
+        "spend": 1654500,
+        "recQty": 750000,
+        "avgPrice": 2.72,
+        "minPrice": 2.57,
+        "maxPrice": 3.32,
+        "vendorCount": 1
+      },
+      {
+        "desc": "PP CAP 28MM WF (PT 414) PEEL UP WAD",
+        "unit": "NOS",
+        "qty": 1135000,
+        "spend": 1463950,
+        "recQty": 1135000,
+        "avgPrice": 1.29,
+        "minPrice": 1.27,
+        "maxPrice": 1.45,
+        "vendorCount": 1
+      },
+      {
+        "desc": "PP CAP PLAS 25MM INDUCT. WAD",
+        "unit": "NOS",
+        "qty": 1598200,
+        "spend": 1390434,
+        "recQty": 1748200,
+        "avgPrice": 0.87,
+        "minPrice": 0.87,
+        "maxPrice": 0.87,
+        "vendorCount": 1
+      },
+      {
+        "desc": "PP FLIP TOP CAP 100 mL",
+        "unit": "NOS",
+        "qty": 809448,
+        "spend": 1376061.6,
+        "recQty": 844448,
+        "avgPrice": 1.7,
+        "minPrice": 1.7,
+        "maxPrice": 1.7,
+        "vendorCount": 2
+      },
+      {
+        "desc": "PET BOT AMB 100ML/25MM SHRK SLV SLMDL LS",
+        "unit": "NOS",
+        "qty": 310650,
+        "spend": 1363753.5,
+        "recQty": 310650,
+        "avgPrice": 4.39,
+        "minPrice": 4.39,
+        "maxPrice": 4.39,
+        "vendorCount": 1
+      },
+      {
+        "desc": "HDPE BOT WHITE 60ML WITH RING MARK",
+        "unit": "NOS",
+        "qty": 578400,
+        "spend": 1283150,
+        "recQty": 578400,
+        "avgPrice": 2.218,
+        "minPrice": 2.2,
+        "maxPrice": 2.25,
+        "vendorCount": 2
+      },
+      {
+        "desc": "PET BOT AMBER 100ML/25MM NECK 12.5G",
+        "unit": "NOS",
+        "qty": 540900,
+        "spend": 1040127,
+        "recQty": 540900,
+        "avgPrice": 1.923,
+        "minPrice": 1.87,
+        "maxPrice": 2.18,
+        "vendorCount": 2
+      },
+      {
+        "desc": "LDPE BLOCK NOZZLE TRANSLUCENT",
+        "unit": "NOS",
+        "qty": 5192000,
+        "spend": 1027280,
+        "recQty": 5684000,
+        "avgPrice": 0.198,
+        "minPrice": 0.19,
+        "maxPrice": 0.2,
+        "vendorCount": 1
+      },
+      {
+        "desc": "PET BOT AMBER 100ML/25MM WITH SHR SL01",
+        "unit": "NOS",
+        "qty": 228145,
+        "spend": 1001556.55,
+        "recQty": 289745,
+        "avgPrice": 4.39,
+        "minPrice": 4.39,
+        "maxPrice": 4.39,
+        "vendorCount": 2
+      },
+      {
+        "desc": "HDPE BOT WHITE 50ML WITH RING MARK",
+        "unit": "NOS",
+        "qty": 415000,
+        "spend": 954500,
+        "recQty": 415000,
+        "avgPrice": 2.3,
+        "minPrice": 2.3,
+        "maxPrice": 2.3,
+        "vendorCount": 1
+      },
+      {
+        "desc": "HDPE BOT 120 CC (MW) TRIVENI (DB 63)",
+        "unit": "NOS",
+        "qty": 128800,
+        "spend": 948400,
+        "recQty": 128800,
+        "avgPrice": 7.363,
+        "minPrice": 7.25,
+        "maxPrice": 7.493,
+        "vendorCount": 1
+      },
+      {
+        "desc": "PET BOT AMB 60ML/25MM SHRK SLV ZO 50 LS",
+        "unit": "NOS",
+        "qty": 161218,
+        "spend": 925391.32,
+        "recQty": 161218,
+        "avgPrice": 5.74,
+        "minPrice": 5.74,
+        "maxPrice": 5.74,
+        "vendorCount": 1
+      },
+      {
+        "desc": "PET BOT AMBER BRUT 100ML/25MM NECK 13G",
+        "unit": "NOS",
+        "qty": 270270,
+        "spend": 689188.5,
+        "recQty": 270270,
+        "avgPrice": 2.55,
+        "minPrice": 2.55,
+        "maxPrice": 2.55,
+        "vendorCount": 1
+      },
+      {
+        "desc": "MESU. CUP 25MM TRANS.PP 2.5/5/10ML RING",
+        "unit": "NOS",
+        "qty": 1815500,
+        "spend": 653580,
+        "recQty": 1815500,
+        "avgPrice": 0.36,
+        "minPrice": 0.36,
+        "maxPrice": 0.36,
+        "vendorCount": 1
+      },
+      {
+        "desc": "NOVELIA BOTL 11mL WHT BP-10002652 NEMERA",
+        "unit": "NOS",
+        "qty": 79200,
+        "spend": 611424,
+        "recQty": 79200,
+        "avgPrice": 7.72,
+        "minPrice": 7.72,
+        "maxPrice": 7.72,
+        "vendorCount": 1
+      },
+      {
+        "desc": "SCREW CAP 38mm/400 (DC02)(HS 123-20 PW)",
+        "unit": "NOS",
+        "qty": 228800,
+        "spend": 610350,
+        "recQty": 228800,
+        "avgPrice": 2.668,
+        "minPrice": 2.65,
+        "maxPrice": 4.2,
+        "vendorCount": 1
+      },
+      {
+        "desc": "MESU. CUP 28MM TRANS 1.25/2.5/5/7.5/10ML",
+        "unit": "NOS",
+        "qty": 1155000,
+        "spend": 548625.02,
+        "recQty": 1155000,
+        "avgPrice": 0.475,
+        "minPrice": 0.475,
+        "maxPrice": 0.475,
+        "vendorCount": 1
+      },
+      {
+        "desc": "HDPE BOT 75 CC (MW) TRIVENI (DB 79)",
+        "unit": "NOS",
+        "qty": 78600,
+        "spend": 511330,
+        "recQty": 78600,
+        "avgPrice": 6.505,
+        "minPrice": 6.3,
+        "maxPrice": 6.817,
+        "vendorCount": 1
+      },
+      {
+        "desc": "MESU. CUP 2.5/5/10ML",
+        "unit": "NOS",
+        "qty": 749000,
+        "spend": 486850,
+        "recQty": 749000,
+        "avgPrice": 0.65,
+        "minPrice": 0.65,
+        "maxPrice": 0.65,
+        "vendorCount": 1
+      },
+      {
+        "desc": "HDPE BOT WHITE 30ML WTH CAP CUP MARS",
+        "unit": "NOS",
+        "qty": 150000,
+        "spend": 466500,
+        "recQty": 300000,
+        "avgPrice": 3.11,
+        "minPrice": 3.11,
+        "maxPrice": 3.11,
+        "vendorCount": 1
+      },
+      {
+        "desc": "PET BOT AMB 60ML/25MM SHRK SLV SLMDL DX",
+        "unit": "NOS",
+        "qty": 128289,
+        "spend": 460557.51,
+        "recQty": 174181,
+        "avgPrice": 3.59,
+        "minPrice": 3.59,
+        "maxPrice": 3.59,
+        "vendorCount": 1
+      },
+      {
+        "desc": "PET BOT AMB 30ML/25M SHRK SLV ZO 50 PS",
+        "unit": "NOS",
+        "qty": 57792,
+        "spend": 375648,
+        "recQty": 57792,
+        "avgPrice": 6.5,
+        "minPrice": 6.5,
+        "maxPrice": 6.5,
+        "vendorCount": 1
+      },
+      {
+        "desc": "PET BOT AMBER 60ML/25MM WITH SHR SLEEVE",
+        "unit": "NOS",
+        "qty": 104412,
+        "spend": 374839.08,
+        "recQty": 104412,
+        "avgPrice": 3.59,
+        "minPrice": 3.59,
+        "maxPrice": 3.59,
+        "vendorCount": 1
+      },
+      {
+        "desc": "R DESIGN CAP BERRY PLASTIC HDPE CAP",
+        "unit": "NOS",
+        "qty": 594600,
+        "spend": 327030,
+        "recQty": 594600,
+        "avgPrice": 0.55,
+        "minPrice": 0.55,
+        "maxPrice": 0.55,
+        "vendorCount": 1
+      },
+      {
+        "desc": "A.G. BOT 100ML 25MM NECK USP-III",
+        "unit": "NOS",
+        "qty": 87000,
+        "spend": 321378,
+        "recQty": 87000,
+        "avgPrice": 3.694,
+        "minPrice": 3.694,
+        "maxPrice": 3.694,
+        "vendorCount": 1
+      },
+      {
+        "desc": "10 ML I DESIGN LDPE BOTTLE",
+        "unit": "NOS",
+        "qty": 150100,
+        "spend": 292695,
+        "recQty": 150100,
+        "avgPrice": 1.95,
+        "minPrice": 1.95,
+        "maxPrice": 1.95,
+        "vendorCount": 1
+      },
+      {
+        "desc": "SR SL CLEAR 25 MIC PVC 45X35mm",
+        "unit": "NOS",
+        "qty": 984783,
+        "spend": 291434.98,
+        "recQty": 984783,
+        "avgPrice": 0.296,
+        "minPrice": 0.26,
+        "maxPrice": 0.3,
+        "vendorCount": 1
+      },
+      {
+        "desc": "B-30ML FLAT WHITE (L)-NS LS",
+        "unit": "NOS",
+        "qty": 150000,
+        "spend": 286500,
+        "recQty": 150000,
+        "avgPrice": 1.91,
+        "minPrice": 1.91,
+        "maxPrice": 1.91,
+        "vendorCount": 1
+      },
+      {
+        "desc": "MESU. CUP 22MM TRANS.PP 2.5/5ML MARK",
+        "unit": "NOS",
+        "qty": 672500,
+        "spend": 188300,
+        "recQty": 672500,
+        "avgPrice": 0.28,
+        "minPrice": 0.28,
+        "maxPrice": 0.28,
+        "vendorCount": 1
+      },
+      {
+        "desc": "VIAL 10 mL LDPE WHITE OPQ R DESIGN-BPREX",
+        "unit": "NOS",
+        "qty": 65100,
+        "spend": 166656,
+        "recQty": 65100,
+        "avgPrice": 2.56,
+        "minPrice": 2.56,
+        "maxPrice": 2.56,
+        "vendorCount": 1
+      },
+      {
+        "desc": "HDPE BOTTLE 40CC/33MM SP400 NECK M (HW)",
+        "unit": "NOS",
+        "qty": 45000,
+        "spend": 163100,
+        "recQty": 45000,
+        "avgPrice": 3.624,
+        "minPrice": 3.624,
+        "maxPrice": 3.624,
+        "vendorCount": 1
+      },
+      {
+        "desc": "CRC 33MM SAF IIIA HS123 Liner-Tekni-Plex",
+        "unit": "NOS",
+        "qty": 50400,
+        "spend": 159186,
+        "recQty": 50400,
+        "avgPrice": 3.158,
+        "minPrice": 3.14,
+        "maxPrice": 3.312,
+        "vendorCount": 1
+      },
+      {
+        "desc": "A.G.BOT125mL28mmNECKUSP-IIIPGJ-B-F3:5451",
+        "unit": "NOS",
+        "qty": 34056,
+        "spend": 156657.6,
+        "recQty": 34056,
+        "avgPrice": 4.6,
+        "minPrice": 4.6,
+        "maxPrice": 4.6,
+        "vendorCount": 1
+      },
+      {
+        "desc": "HDPE BOT 200 CC (MW) TRIVENI (DB 74)",
+        "unit": "NOS",
+        "qty": 12500,
+        "spend": 147030,
+        "recQty": 12500,
+        "avgPrice": 11.762,
+        "minPrice": 9.9,
+        "maxPrice": 14.392,
+        "vendorCount": 1
+      },
+      {
+        "desc": "PET BOT AMBER 60ML/25MM NECK 10.18G",
+        "unit": "NOS",
+        "qty": 69000,
+        "spend": 144240,
+        "recQty": 69000,
+        "avgPrice": 2.09,
+        "minPrice": 1.78,
+        "maxPrice": 2.2,
+        "vendorCount": 1
+      },
+      {
+        "desc": "C-TAMPSAFE NS WHITE (H)-NS LS",
+        "unit": "NOS",
+        "qty": 150000,
+        "spend": 144000,
+        "recQty": 150000,
+        "avgPrice": 0.96,
+        "minPrice": 0.96,
+        "maxPrice": 0.96,
+        "vendorCount": 1
+      },
+      {
+        "desc": "200ML PET AMBER ROUND BOTTLE",
+        "unit": "NOS",
+        "qty": 25088,
+        "spend": 141054.24,
+        "recQty": 50176,
+        "avgPrice": 5.627,
+        "minPrice": 5.622,
+        "maxPrice": 5.631,
+        "vendorCount": 1
+      },
+      {
+        "desc": "25 MM CR CAP WITH EPE WAD",
+        "unit": "NOS",
+        "qty": 46000,
+        "spend": 121900,
+        "recQty": 46000,
+        "avgPrice": 2.65,
+        "minPrice": 2.65,
+        "maxPrice": 2.65,
+        "vendorCount": 1
+      },
+      {
+        "desc": "I DESIGN HDPE CAP",
+        "unit": "NOS",
+        "qty": 150200,
+        "spend": 121662,
+        "recQty": 150200,
+        "avgPrice": 0.81,
+        "minPrice": 0.81,
+        "maxPrice": 0.81,
+        "vendorCount": 1
+      },
+      {
+        "desc": "R DESIGN LDPE NOZZLE BERRY PLASTIC",
+        "unit": "NOS",
+        "qty": 593600,
+        "spend": 118720,
+        "recQty": 593600,
+        "avgPrice": 0.2,
+        "minPrice": 0.2,
+        "maxPrice": 0.2,
+        "vendorCount": 1
+      },
+      {
+        "desc": "VIAL 5 mL LDPE WHITE OPQ R DESIGN-BPREX",
+        "unit": "NOS",
+        "qty": 60700,
+        "spend": 112902,
+        "recQty": 60700,
+        "avgPrice": 1.86,
+        "minPrice": 1.86,
+        "maxPrice": 1.86,
+        "vendorCount": 1
+      },
+      {
+        "desc": "HDPE BOT SIMYL MCT OIL 30 mL",
+        "unit": "NOS",
+        "qty": 50996,
+        "spend": 112191.2,
+        "recQty": 50996,
+        "avgPrice": 2.2,
+        "minPrice": 2.2,
+        "maxPrice": 2.2,
+        "vendorCount": 1
+      },
+      {
+        "desc": "N-OPEN NS DTUBEASSY WHITE-NS LS",
+        "unit": "NOS",
+        "qty": 150000,
+        "spend": 108000,
+        "recQty": 150000,
+        "avgPrice": 0.72,
+        "minPrice": 0.72,
+        "maxPrice": 0.72,
+        "vendorCount": 1
+      },
+      {
+        "desc": "HDPE BOTTLE 150CC/38MM SP400 NECK M (HW)",
+        "unit": "NOS",
+        "qty": 9900,
+        "spend": 77889,
+        "recQty": 9900,
+        "avgPrice": 7.868,
+        "minPrice": 7.81,
+        "maxPrice": 8.76,
+        "vendorCount": 1
+      },
+      {
+        "desc": "I DESIGN LDPE NOZZLE",
+        "unit": "NOS",
+        "qty": 150100,
+        "spend": 70547,
+        "recQty": 150100,
+        "avgPrice": 0.47,
+        "minPrice": 0.47,
+        "maxPrice": 0.47,
+        "vendorCount": 1
+      },
+      {
+        "desc": "PP FLIP TOP CAP 30 mL",
+        "unit": "NOS",
+        "qty": 50996,
+        "spend": 45896.4,
+        "recQty": 50996,
+        "avgPrice": 0.9,
+        "minPrice": 0.9,
+        "maxPrice": 0.9,
+        "vendorCount": 1
+      },
+      {
+        "desc": "MESU.CUP 15ML TRANS. PP FOR CRC CAP",
+        "unit": "NOS",
+        "qty": 44000,
+        "spend": 38280,
+        "recQty": 44000,
+        "avgPrice": 0.87,
+        "minPrice": 0.87,
+        "maxPrice": 0.87,
+        "vendorCount": 1
+      },
+      {
+        "desc": "25MM ROPP CAP FDC LOGO PTD EPE LINER",
+        "unit": "NOS",
+        "qty": 36500,
+        "spend": 24825,
+        "recQty": 51500,
+        "avgPrice": 0.654,
+        "minPrice": 0.59,
+        "maxPrice": 0.743,
+        "vendorCount": 1
+      },
+      {
+        "desc": "MESU. CUP 25MM TRANS.PP 5/10/15ML MARK",
+        "unit": "NOS",
+        "qty": 47500,
+        "spend": 24700,
+        "recQty": 47500,
+        "avgPrice": 0.52,
+        "minPrice": 0.52,
+        "maxPrice": 0.52,
+        "vendorCount": 1
+      }
+    ],
+    "topSkuMonthly": [
+      {
+        "desc": "PET PREFORM CLEAR 38MM NECK-400ML BOTTLE",
+        "unit": "NOS",
+        "spend": 49432470.24,
+        "avgPrice": 4.419,
+        "minPrice": 3.97,
+        "maxPrice": 4.68,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 989184,
+            "spend": 4629381.28,
+            "avgPrice": 4.68
+          },
+          {
+            "month": "2025-05",
+            "qty": 494592,
+            "spend": 2314690.56,
+            "avgPrice": 4.68
+          },
+          {
+            "month": "2025-06",
+            "qty": 1483776,
+            "spend": 6944071.68,
+            "avgPrice": 4.68
+          },
+          {
+            "month": "2025-07",
+            "qty": 989184,
+            "spend": 4629381.12,
+            "avgPrice": 4.68
+          },
+          {
+            "month": "2025-08",
+            "qty": 1978368,
+            "spend": 9258762.24,
+            "avgPrice": 4.68
+          },
+          {
+            "month": "2025-09",
+            "qty": 2094656,
+            "spend": 9110561.28,
+            "avgPrice": 4.349
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 1940592,
+            "spend": 7718610.24,
+            "avgPrice": 3.977
+          },
+          {
+            "month": "2026-03",
+            "qty": 1215872,
+            "spend": 4827011.84,
+            "avgPrice": 3.97
+          }
+        ]
+      },
+      {
+        "desc": "HDPE BOT WHITE 30ML WITH RING MARK",
+        "unit": "NOS",
+        "spend": 18709540,
+        "avgPrice": 1.538,
+        "minPrice": 1.38,
+        "maxPrice": 2.18,
+        "vendorCount": 3,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 1370000,
+            "spend": 1959900,
+            "avgPrice": 1.426
+          },
+          {
+            "month": "2025-05",
+            "qty": 1830000,
+            "spend": 2712600,
+            "avgPrice": 1.482
+          },
+          {
+            "month": "2025-06",
+            "qty": 1625000,
+            "spend": 2427500,
+            "avgPrice": 1.494
+          },
+          {
+            "month": "2025-07",
+            "qty": 1450000,
+            "spend": 2225500,
+            "avgPrice": 1.535
+          },
+          {
+            "month": "2025-08",
+            "qty": 1460000,
+            "spend": 2199200,
+            "avgPrice": 1.506
+          },
+          {
+            "month": "2025-09",
+            "qty": 300000,
+            "spend": 495000,
+            "avgPrice": 1.65
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 870000,
+            "spend": 1257900,
+            "avgPrice": 1.476
+          },
+          {
+            "month": "2025-12",
+            "qty": 440000,
+            "spend": 693800,
+            "avgPrice": 1.577
+          },
+          {
+            "month": "2026-01",
+            "qty": 865000,
+            "spend": 1291300,
+            "avgPrice": 1.493
+          },
+          {
+            "month": "2026-02",
+            "qty": 795000,
+            "spend": 1197900,
+            "avgPrice": 1.507
+          },
+          {
+            "month": "2026-03",
+            "qty": 1158000,
+            "spend": 2248940,
+            "avgPrice": 1.942
+          }
+        ]
+      },
+      {
+        "desc": "PP CAP PLAS 28MM INDUCTUCTION WAD",
+        "unit": "NOS",
+        "spend": 11342440,
+        "avgPrice": 0.954,
+        "minPrice": 0.81,
+        "maxPrice": 1.28,
+        "vendorCount": 3,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 1400000,
+            "spend": 1320000,
+            "avgPrice": 0.93
+          },
+          {
+            "month": "2025-05",
+            "qty": 1830000,
+            "spend": 1681200,
+            "avgPrice": 0.919
+          },
+          {
+            "month": "2025-06",
+            "qty": 1535000,
+            "spend": 1408900,
+            "avgPrice": 0.93
+          },
+          {
+            "month": "2025-07",
+            "qty": 1281000,
+            "spend": 1192740,
+            "avgPrice": 0.931
+          },
+          {
+            "month": "2025-08",
+            "qty": 1260000,
+            "spend": 1157400,
+            "avgPrice": 0.919
+          },
+          {
+            "month": "2025-09",
+            "qty": 544000,
+            "spend": 507800,
+            "avgPrice": 0.933
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 870000,
+            "spend": 800800,
+            "avgPrice": 0.915
+          },
+          {
+            "month": "2025-12",
+            "qty": 375000,
+            "spend": 348000,
+            "avgPrice": 0.928
+          },
+          {
+            "month": "2026-01",
+            "qty": 855000,
+            "spend": 812700,
+            "avgPrice": 0.951
+          },
+          {
+            "month": "2026-02",
+            "qty": 754000,
+            "spend": 742160,
+            "avgPrice": 0.984
+          },
+          {
+            "month": "2026-03",
+            "qty": 1208000,
+            "spend": 1370740,
+            "avgPrice": 1.151
+          }
+        ]
+      },
+      {
+        "desc": "PET BOT AMBER BRUT 250ML/28MM NECK 26G",
+        "unit": "NOS",
+        "spend": 9844221.6,
+        "avgPrice": 5.306,
+        "minPrice": 4.95,
+        "maxPrice": 6.635,
+        "vendorCount": 2,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 245244,
+            "spend": 1234612.8,
+            "avgPrice": 5.034
+          },
+          {
+            "month": "2025-05",
+            "qty": 548904,
+            "spend": 3030976.8,
+            "avgPrice": 5.447
+          },
+          {
+            "month": "2025-06",
+            "qty": 324324,
+            "spend": 1686484.8,
+            "avgPrice": 5.2
+          },
+          {
+            "month": "2025-07",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-08",
+            "qty": 47616,
+            "spend": 240883.2,
+            "avgPrice": 5.059
+          },
+          {
+            "month": "2025-09",
+            "qty": 115104,
+            "spend": 575272.8,
+            "avgPrice": 4.998
+          },
+          {
+            "month": "2025-10",
+            "qty": 85680,
+            "spend": 424116,
+            "avgPrice": 4.95
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 81000,
+            "spend": 421200,
+            "avgPrice": 5.2
+          },
+          {
+            "month": "2026-01",
+            "qty": 47304,
+            "spend": 245980.8,
+            "avgPrice": 5.2
+          },
+          {
+            "month": "2026-02",
+            "qty": 180432,
+            "spend": 893138.4,
+            "avgPrice": 4.95
+          },
+          {
+            "month": "2026-03",
+            "qty": 177228,
+            "spend": 1091556,
+            "avgPrice": 6.159
+          }
+        ]
+      },
+      {
+        "desc": "LDPE BOTTLE 5ML WHITE OPAQUE",
+        "unit": "NOS",
+        "spend": 8965240,
+        "avgPrice": 1.683,
+        "minPrice": 1.62,
+        "maxPrice": 1.7,
+        "vendorCount": 2,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 510000,
+            "spend": 826200,
+            "avgPrice": 1.62
+          },
+          {
+            "month": "2025-05",
+            "qty": 1090000,
+            "spend": 1804840,
+            "avgPrice": 1.656
+          },
+          {
+            "month": "2025-06",
+            "qty": 500000,
+            "spend": 850000,
+            "avgPrice": 1.7
+          },
+          {
+            "month": "2025-07",
+            "qty": 992000,
+            "spend": 1686400,
+            "avgPrice": 1.7
+          },
+          {
+            "month": "2025-08",
+            "qty": 500000,
+            "spend": 850000,
+            "avgPrice": 1.7
+          },
+          {
+            "month": "2025-09",
+            "qty": 1000000,
+            "spend": 1700000,
+            "avgPrice": 1.7
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 300000,
+            "spend": 510000,
+            "avgPrice": 1.7
+          },
+          {
+            "month": "2025-12",
+            "qty": 300000,
+            "spend": 510000,
+            "avgPrice": 1.7
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 134000,
+            "spend": 227800,
+            "avgPrice": 1.7
+          }
+        ]
+      },
+      {
+        "desc": "PET BOT AMBER 250ML/28MM WITH SHR SL 01",
+        "unit": "NOS",
+        "spend": 7737357.6,
+        "avgPrice": 8.401,
+        "minPrice": 7.62,
+        "maxPrice": 9.62,
+        "vendorCount": 2,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 148716,
+            "spend": 1227003.12,
+            "avgPrice": 8.251
+          },
+          {
+            "month": "2025-05",
+            "qty": 56448,
+            "spend": 453720.96,
+            "avgPrice": 8.038
+          },
+          {
+            "month": "2025-06",
+            "qty": 166626,
+            "spend": 1364670.72,
+            "avgPrice": 8.19
+          },
+          {
+            "month": "2025-07",
+            "qty": 46080,
+            "spend": 387072,
+            "avgPrice": 8.4
+          },
+          {
+            "month": "2025-08",
+            "qty": 65880,
+            "spend": 553392,
+            "avgPrice": 8.4
+          },
+          {
+            "month": "2025-09",
+            "qty": 163710,
+            "spend": 1375164,
+            "avgPrice": 8.4
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 84762,
+            "spend": 712000.8,
+            "avgPrice": 8.4
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 65790,
+            "spend": 552636,
+            "avgPrice": 8.4
+          },
+          {
+            "month": "2026-03",
+            "qty": 123012,
+            "spend": 1111698,
+            "avgPrice": 9.037
+          }
+        ]
+      },
+      {
+        "desc": "A.G. BOT 30ML 25MM NECK USP-III",
+        "unit": "NOS",
+        "spend": 6425637.96,
+        "avgPrice": 2.983,
+        "minPrice": 2.974,
+        "maxPrice": 3.42,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 115500,
+            "spend": 343497,
+            "avgPrice": 2.974
+          },
+          {
+            "month": "2025-05",
+            "qty": 413280,
+            "spend": 1229094.72,
+            "avgPrice": 2.974
+          },
+          {
+            "month": "2025-06",
+            "qty": 302190,
+            "spend": 898713.06,
+            "avgPrice": 2.974
+          },
+          {
+            "month": "2025-07",
+            "qty": 265650,
+            "spend": 790043.1,
+            "avgPrice": 2.974
+          },
+          {
+            "month": "2025-08",
+            "qty": 295260,
+            "spend": 878103.24,
+            "avgPrice": 2.974
+          },
+          {
+            "month": "2025-09",
+            "qty": 124950,
+            "spend": 371601.3,
+            "avgPrice": 2.974
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 278880,
+            "spend": 829389.12,
+            "avgPrice": 2.974
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 315630,
+            "spend": 938683.62,
+            "avgPrice": 2.974
+          },
+          {
+            "month": "2026-03",
+            "qty": 42840,
+            "spend": 146512.8,
+            "avgPrice": 3.42
+          }
+        ]
+      },
+      {
+        "desc": "NOVELIA NOZZLE CAP PF10V2.4-20060589 WHT",
+        "unit": "NOS",
+        "spend": 5915832,
+        "avgPrice": 73.58,
+        "minPrice": 73.58,
+        "maxPrice": 73.58,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-07",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-08",
+            "qty": 40800,
+            "spend": 3002064,
+            "avgPrice": 73.58
+          },
+          {
+            "month": "2025-09",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 19200,
+            "spend": 1412736,
+            "avgPrice": 73.58
+          },
+          {
+            "month": "2026-03",
+            "qty": 20400,
+            "spend": 1501032,
+            "avgPrice": 73.58
+          }
+        ]
+      },
+      {
+        "desc": "PET PREFORM CLEAR 38MM NECK-500ML BOTTLE",
+        "unit": "NOS",
+        "spend": 5483344.96,
+        "avgPrice": 4.392,
+        "minPrice": 3.99,
+        "maxPrice": 5.04,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-07",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 283360,
+            "spend": 1130606.4,
+            "avgPrice": 3.99
+          },
+          {
+            "month": "2026-01",
+            "qty": 22080,
+            "spend": 92137.6,
+            "avgPrice": 4.173
+          },
+          {
+            "month": "2026-02",
+            "qty": 566720,
+            "spend": 2261212.8,
+            "avgPrice": 3.99
+          },
+          {
+            "month": "2026-03",
+            "qty": 396704,
+            "spend": 1999388.16,
+            "avgPrice": 4.997
+          }
+        ]
+      },
+      {
+        "desc": "MESU. CUP 30MM TRANS.PP 2.5/5/10ML",
+        "unit": "NOS",
+        "spend": 5349550,
+        "avgPrice": 0.406,
+        "minPrice": 0.35,
+        "maxPrice": 0.65,
+        "vendorCount": 3,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 1400000,
+            "spend": 565000,
+            "avgPrice": 0.401
+          },
+          {
+            "month": "2025-05",
+            "qty": 1880000,
+            "spend": 730400,
+            "avgPrice": 0.389
+          },
+          {
+            "month": "2025-06",
+            "qty": 1685000,
+            "spend": 654050,
+            "avgPrice": 0.392
+          },
+          {
+            "month": "2025-07",
+            "qty": 1750000,
+            "spend": 685000,
+            "avgPrice": 0.391
+          },
+          {
+            "month": "2025-08",
+            "qty": 1360000,
+            "spend": 521800,
+            "avgPrice": 0.384
+          },
+          {
+            "month": "2025-09",
+            "qty": 464000,
+            "spend": 166400,
+            "avgPrice": 0.359
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 1010000,
+            "spend": 400100,
+            "avgPrice": 0.396
+          },
+          {
+            "month": "2025-12",
+            "qty": 480000,
+            "spend": 182400,
+            "avgPrice": 0.38
+          },
+          {
+            "month": "2026-01",
+            "qty": 945000,
+            "spend": 372850,
+            "avgPrice": 0.395
+          },
+          {
+            "month": "2026-02",
+            "qty": 905000,
+            "spend": 365150,
+            "avgPrice": 0.403
+          },
+          {
+            "month": "2026-03",
+            "qty": 1286000,
+            "spend": 706400,
+            "avgPrice": 0.549
+          }
+        ]
+      },
+      {
+        "desc": "A.G. BOT 15mL 22mm NECK USP-III",
+        "unit": "NOS",
+        "spend": 3842619.26,
+        "avgPrice": 2.592,
+        "minPrice": 2.592,
+        "maxPrice": 2.592,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 249876,
+            "spend": 647678.59,
+            "avgPrice": 2.592
+          },
+          {
+            "month": "2025-05",
+            "qty": 115236,
+            "spend": 298691.71,
+            "avgPrice": 2.592
+          },
+          {
+            "month": "2025-06",
+            "qty": 353892,
+            "spend": 917288.06,
+            "avgPrice": 2.592
+          },
+          {
+            "month": "2025-07",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 250800,
+            "spend": 650073.6,
+            "avgPrice": 2.592
+          },
+          {
+            "month": "2025-10",
+            "qty": 43164,
+            "spend": 111881.09,
+            "avgPrice": 2.592
+          },
+          {
+            "month": "2025-11",
+            "qty": 188496,
+            "spend": 488581.63,
+            "avgPrice": 2.592
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 95964,
+            "spend": 248738.69,
+            "avgPrice": 2.592
+          },
+          {
+            "month": "2026-03",
+            "qty": 185064,
+            "spend": 479685.89,
+            "avgPrice": 2.592
+          }
+        ]
+      },
+      {
+        "desc": "HDPE BOT SIMYL MCT OIL 100 mL",
+        "unit": "NOS",
+        "spend": 3291275,
+        "avgPrice": 4.1,
+        "minPrice": 4.1,
+        "maxPrice": 4.1,
+        "vendorCount": 2,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 39500,
+            "spend": 161950,
+            "avgPrice": 4.1
+          },
+          {
+            "month": "2025-05",
+            "qty": 81350,
+            "spend": 333535,
+            "avgPrice": 4.1
+          },
+          {
+            "month": "2025-06",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-07",
+            "qty": 135500,
+            "spend": 555550,
+            "avgPrice": 4.1
+          },
+          {
+            "month": "2025-08",
+            "qty": 92300,
+            "spend": 378430,
+            "avgPrice": 4.1
+          },
+          {
+            "month": "2025-09",
+            "qty": 123600,
+            "spend": 506760,
+            "avgPrice": 4.1
+          },
+          {
+            "month": "2025-10",
+            "qty": 38700,
+            "spend": 158670,
+            "avgPrice": 4.1
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 72200,
+            "spend": 296020,
+            "avgPrice": 4.1
+          },
+          {
+            "month": "2026-01",
+            "qty": 74500,
+            "spend": 305450,
+            "avgPrice": 4.1
+          },
+          {
+            "month": "2026-02",
+            "qty": 98300,
+            "spend": 403030,
+            "avgPrice": 4.1
+          },
+          {
+            "month": "2026-03",
+            "qty": 46800,
+            "spend": 191880,
+            "avgPrice": 4.1
+          }
+        ]
+      }
+    ],
+    "vendors": [
+      {
+        "vendorKey": "chemco-plastic-industries",
+        "vendor": "Chemco Plastic Industries Pvt. Ltd",
+        "color": "#1ABC9C",
+        "unit": "NOS",
+        "qty": 12455088,
+        "spend": 54915815.2,
+        "avgPrice": 4.416,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "cincorp-international",
+        "vendor": "Cincorp International Ltd.",
+        "color": "#B8860B",
+        "unit": "NOS",
+        "qty": 18312000,
+        "spend": 19488230,
+        "avgPrice": 1.06,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "pik-plastics",
+        "vendor": "PIK PLASTICS",
+        "color": "#6C3483",
+        "unit": "NOS",
+        "qty": 3465842,
+        "spend": 19167682.76,
+        "avgPrice": 5.475,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "premier-plastic",
+        "vendor": "Premier Plastic",
+        "color": "#148F77",
+        "unit": "NOS",
+        "qty": 13256400,
+        "spend": 12932900,
+        "avgPrice": 0.981,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "mars-plastics",
+        "vendor": "Mars Plastics",
+        "color": "#27AE60",
+        "unit": "NOS",
+        "qty": 11760100,
+        "spend": 12401737,
+        "avgPrice": 1.091,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "berry-global-india",
+        "vendor": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+        "color": "#9B59B6",
+        "unit": "NOS",
+        "qty": 4816000,
+        "spend": 8139040,
+        "avgPrice": 1.69,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "empire-industries-virum-glass",
+        "vendor": "Empire Industries Ltd - Virum Glass",
+        "color": "#117A65",
+        "unit": "NOS",
+        "qty": 2241180,
+        "spend": 6747015.96,
+        "avgPrice": 3.01,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "kilitch-healthcare-india",
+        "vendor": "KILITCH HEALTHCARE INDIA LIMITED",
+        "color": "#7D6608",
+        "unit": "NOS",
+        "qty": 159600,
+        "spend": 6527256,
+        "avgPrice": 40.898,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "bprex-pharma-packaging-india-p",
+        "vendor": "Bprex Pharma Packaging India (P) Limited",
+        "color": "#1E8449",
+        "unit": "NOS",
+        "qty": 13108400,
+        "spend": 6320592,
+        "avgPrice": 0.474,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "suraj-blow-plast",
+        "vendor": "Suraj Blow Plast PVt. Ltd.",
+        "color": "#5B8C2A",
+        "unit": "NOS",
+        "qty": 1439484,
+        "spend": 5816755.8,
+        "avgPrice": 4.192,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "rachana-plastics",
+        "vendor": "Rachana Plastics",
+        "color": "#935116",
+        "unit": "NOS",
+        "qty": 5348400,
+        "spend": 4437045.02,
+        "avgPrice": 0.856,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "pgp-glass",
+        "vendor": "PGP Glass Private Limited",
+        "color": "#0E7C7B",
+        "unit": "NOS",
+        "qty": 1516548,
+        "spend": 3999276.86,
+        "avgPrice": 2.637,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "abhinav-speciality-foods-llp",
+        "vendor": "ABHINAV SPECIALITY FOODS LLP",
+        "color": "#A04000",
+        "unit": "NOS",
+        "qty": 1880073,
+        "spend": 2742049.18,
+        "avgPrice": 1.458,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "triveni-polymers",
+        "vendor": "Triveni Polymers Pvt. Ltd.",
+        "color": "#16A085",
+        "unit": "NOS",
+        "qty": 554000,
+        "spend": 2617285,
+        "avgPrice": 4.724,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "tpac-packaging-india",
+        "vendor": "TPAC Packaging India Pvt Ltd.",
+        "color": "#1A5276",
+        "unit": "NOS",
+        "qty": 231240,
+        "spend": 1132453.8,
+        "avgPrice": 4.897,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "scorpion-containers",
+        "vendor": "SCORPION CONTAINERS PRIVATE LIMITED",
+        "color": "#7D3C98",
+        "unit": "NOS",
+        "qty": 61588,
+        "spend": 165879.24,
+        "avgPrice": 3.108,
+        "multiUnit": false
+      }
+    ],
+    "plants": [
+      {
+        "plant": "1000",
+        "plantName": "FDC Limited,Jogeshwari,Corp",
+        "unit": "NOS",
+        "qty": 16736308,
+        "spend": 64661311.6,
+        "avgPrice": 3.796
+      },
+      {
+        "plant": "1001",
+        "plantName": "FDC Limited,Baddi",
+        "unit": "NOS",
+        "qty": 39565956,
+        "spend": 42307553.6,
+        "avgPrice": 1.068
+      },
+      {
+        "plant": "1008",
+        "plantName": "FDC Limited-Waluj",
+        "unit": "NOS",
+        "qty": 9608290,
+        "spend": 24966124.58,
+        "avgPrice": 2.621
+      },
+      {
+        "plant": "1003",
+        "plantName": "FDC Limited,SINNAR",
+        "unit": "NOS",
+        "qty": 19393041,
+        "spend": 19109200.02,
+        "avgPrice": 0.968
+      },
+      {
+        "plant": "1109",
+        "plantName": "FDC Limited,WH-Waluj",
+        "unit": "NOS",
+        "qty": 1309798,
+        "spend": 7207528.28,
+        "avgPrice": 5.503
+      },
+      {
+        "plant": "1062",
+        "plantName": "FDC Limited (PDPL)",
+        "unit": "NOS",
+        "qty": 2471650,
+        "spend": 6595109.74,
+        "avgPrice": 2.868
+      },
+      {
+        "plant": "1039",
+        "plantName": "FDC Limited (INCL)",
+        "unit": "NOS",
+        "qty": 1050000,
+        "spend": 2457000,
+        "avgPrice": 2.209
+      },
+      {
+        "plant": "1083",
+        "plantName": "FDC Limited (VLL)",
+        "unit": "NOS",
+        "qty": 470300,
+        "spend": 241930,
+        "avgPrice": 0.514
+      },
+      {
+        "plant": "1009",
+        "plantName": "FDC Limited,Jogeshwari,R&D",
+        "unit": "NOS",
+        "qty": 600,
+        "spend": 5256,
+        "avgPrice": 8.76
+      }
+    ]
+  },
+  {
+    "key": "laminates",
+    "displayName": "Laminates",
+    "plainName": "Sachet film (by weight) & ready-to-drink pouches (by piece)",
+    "category": "Packaging",
+    "color": "#EFAE0E",
+    "singleCommodity": false,
+    "units": [
+      "KG",
+      "NOS"
+    ],
+    "primaryUnit": "KG",
+    "totalNetSpend": 425714897.43,
+    "totalNetQty": 1916025.89,
+    "vwap": 115.164,
+    "receiptCount": 510,
+    "reversalCount": 15,
+    "reversalRatePct": 2.94,
+    "skuCount": 80,
+    "vendorCount": 7,
+    "plantCount": 6,
+    "unitTotals": [
+      {
+        "unit": "KG",
+        "netSpend": 372407109.7,
+        "netQty": 1916025.89,
+        "vwap": 115.164,
+        "receiptCount": 475,
+        "reversalCount": 10
+      },
+      {
+        "unit": "NOS",
+        "netSpend": 53307787.73,
+        "netQty": 28212705,
+        "vwap": 1.889,
+        "receiptCount": 35,
+        "reversalCount": 5
+      }
+    ],
+    "monthly": [
+      {
+        "month": "2025-04",
+        "qty": 104513.59,
+        "spend": 30758234.01,
+        "avgPrice": 294.083
+      },
+      {
+        "month": "2025-05",
+        "qty": 124535.92,
+        "spend": 37072217.05,
+        "avgPrice": 297.67
+      },
+      {
+        "month": "2025-06",
+        "qty": 140701.64,
+        "spend": 41623811.16,
+        "avgPrice": 295.827
+      },
+      {
+        "month": "2025-07",
+        "qty": 212460.49,
+        "spend": 63581160.61,
+        "avgPrice": 299.261
+      },
+      {
+        "month": "2025-08",
+        "qty": 167126.47,
+        "spend": 49702625.71,
+        "avgPrice": 297.395
+      },
+      {
+        "month": "2025-09",
+        "qty": 73538.55,
+        "spend": 22373813.75,
+        "avgPrice": 304.246
+      },
+      {
+        "month": "2025-10",
+        "qty": 81945.51,
+        "spend": 24496963.65,
+        "avgPrice": 298.942
+      },
+      {
+        "month": "2025-11",
+        "qty": 79243.47,
+        "spend": 24074978.05,
+        "avgPrice": 303.779
+      },
+      {
+        "month": "2025-12",
+        "qty": 723751.89,
+        "spend": 15486678.69,
+        "avgPrice": 21.398
+      },
+      {
+        "month": "2026-01",
+        "qty": 40717.64,
+        "spend": 12379005.3,
+        "avgPrice": 304.021
+      },
+      {
+        "month": "2026-02",
+        "qty": 61036.5,
+        "spend": 18621926.65,
+        "avgPrice": 15.049
+      },
+      {
+        "month": "2026-03",
+        "qty": 106454.22,
+        "spend": 32235695.07,
+        "avgPrice": 302.773
+      }
+    ],
+    "monthlySpendAll": [
+      {
+        "month": "2025-04",
+        "spend": 40407780.91
+      },
+      {
+        "month": "2025-05",
+        "spend": 43340928.56
+      },
+      {
+        "month": "2025-06",
+        "spend": 44032994.55
+      },
+      {
+        "month": "2025-07",
+        "spend": 66746174.36
+      },
+      {
+        "month": "2025-08",
+        "spend": 50973441.19
+      },
+      {
+        "month": "2025-09",
+        "spend": 29326585.51
+      },
+      {
+        "month": "2025-10",
+        "spend": 24496963.65
+      },
+      {
+        "month": "2025-11",
+        "spend": 35334714.82
+      },
+      {
+        "month": "2025-12",
+        "spend": 16125968.1
+      },
+      {
+        "month": "2026-01",
+        "spend": 15966138.8
+      },
+      {
+        "month": "2026-02",
+        "spend": 18621926.65
+      },
+      {
+        "month": "2026-03",
+        "spend": 40341280.33
+      }
+    ],
+    "skus": [
+      {
+        "desc": "LM ELECTRAL MD 21.80g LS 07",
+        "unit": "KG",
+        "qty": 501664.21,
+        "spend": 146999966.05,
+        "recQty": 501664.21,
+        "avgPrice": 293.025,
+        "minPrice": 290,
+        "maxPrice": 295,
+        "vendorCount": 3
+      },
+      {
+        "desc": "LM ELECTRAL UD 4.4G (AMBIKA) SP LS 01",
+        "unit": "KG",
+        "qty": 204324.26,
+        "spend": 60060790.5,
+        "recQty": 204324.26,
+        "avgPrice": 293.948,
+        "minPrice": 290,
+        "maxPrice": 295,
+        "vendorCount": 2
+      },
+      {
+        "desc": "LM ELECTRAL ORANGE UD 4.4 gm LS 05",
+        "unit": "KG",
+        "qty": 93061.4,
+        "spend": 27316630.1,
+        "recQty": 93696.21,
+        "avgPrice": 293.543,
+        "minPrice": 290,
+        "maxPrice": 308.39,
+        "vendorCount": 2
+      },
+      {
+        "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
+        "unit": "NOS",
+        "qty": 12197180,
+        "spend": 23178112.72,
+        "recQty": 13124970,
+        "avgPrice": 1.901,
+        "minPrice": 1.865,
+        "maxPrice": 1.92,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL MD 21.80g LS 08",
+        "unit": "KG",
+        "qty": 65255.6,
+        "spend": 19784817.16,
+        "recQty": 65255.6,
+        "avgPrice": 303.19,
+        "minPrice": 290,
+        "maxPrice": 336,
+        "vendorCount": 3
+      },
+      {
+        "desc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
+        "unit": "NOS",
+        "qty": 6917130,
+        "spend": 13008913.95,
+        "recQty": 6917130,
+        "avgPrice": 1.881,
+        "minPrice": 1.866,
+        "maxPrice": 1.895,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL UD 4.4g LS 05",
+        "unit": "KG",
+        "qty": 34040.27,
+        "spend": 9973601.65,
+        "recQty": 34040.27,
+        "avgPrice": 292.994,
+        "minPrice": 290,
+        "maxPrice": 295,
+        "vendorCount": 3
+      },
+      {
+        "desc": "LM ELECTRAL UD 4.4g SP LS 01",
+        "unit": "KG",
+        "qty": 29867.98,
+        "spend": 8661714.2,
+        "recQty": 35381.93,
+        "avgPrice": 290,
+        "minPrice": 290,
+        "maxPrice": 290,
+        "vendorCount": 2
+      },
+      {
+        "desc": "LM ELECTRAL ORANGE MD 21.8 g LS 03",
+        "unit": "KG",
+        "qty": 29021.34,
+        "spend": 8526703.21,
+        "recQty": 29622.54,
+        "avgPrice": 293.832,
+        "minPrice": 290,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL 21.8GM ES ET/MU 01",
+        "unit": "KG",
+        "qty": 21250.54,
+        "spend": 6800172.8,
+        "recQty": 21250.54,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ORS BP 20.5GM ES ET EPSS Tender 01",
+        "unit": "KG",
+        "qty": 18078.82,
+        "spend": 5785222.4,
+        "recQty": 18078.82,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL APPLE RTD 200 mL LS 10",
+        "unit": "NOS",
+        "qty": 3009390,
+        "spend": 5649022.1,
+        "recQty": 3009390,
+        "avgPrice": 1.877,
+        "minPrice": 1.866,
+        "maxPrice": 1.887,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL UD 4.4g ADC LS 4 TRACK 02",
+        "unit": "KG",
+        "qty": 17554.85,
+        "spend": 5166078.12,
+        "recQty": 17554.85,
+        "avgPrice": 294.282,
+        "minPrice": 290,
+        "maxPrice": 296,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL 4.4G ORANGE (AMBIKA)NV LS 01",
+        "unit": "KG",
+        "qty": 16849.3,
+        "spend": 4970543.5,
+        "recQty": 16849.3,
+        "avgPrice": 295,
+        "minPrice": 295,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL FORTE 30g ES MM S1 07",
+        "unit": "KG",
+        "qty": 14603.17,
+        "spend": 4673014.4,
+        "recQty": 14603.17,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ENERZAL ORANGE 75 g LS S2 01",
+        "unit": "KG",
+        "qty": 14622.48,
+        "spend": 4313631.6,
+        "recQty": 14622.48,
+        "avgPrice": 295,
+        "minPrice": 295,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL MANGO RTD 200 mL LS 10",
+        "unit": "NOS",
+        "qty": 1993120,
+        "spend": 3760165.77,
+        "recQty": 1993120,
+        "avgPrice": 1.887,
+        "minPrice": 1.866,
+        "maxPrice": 1.897,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL LIME FLAVOUR UD 4.4 gm LS 01",
+        "unit": "KG",
+        "qty": 10554.47,
+        "spend": 3482975.1,
+        "recQty": 10554.47,
+        "avgPrice": 330,
+        "minPrice": 330,
+        "maxPrice": 330,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ENERZAL ORANGE 100 g LS S2 08",
+        "unit": "KG",
+        "qty": 11451.81,
+        "spend": 3378283.95,
+        "recQty": 11451.81,
+        "avgPrice": 295,
+        "minPrice": 295,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL MANGO FLAVOUR UD 4.4GM LS 01",
+        "unit": "KG",
+        "qty": 9908.45,
+        "spend": 3269788.5,
+        "recQty": 9908.45,
+        "avgPrice": 330,
+        "minPrice": 330,
+        "maxPrice": 330,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ENERZAL ZERO ORANGE 5G S2 05",
+        "unit": "KG",
+        "qty": 8461.12,
+        "spend": 3215225.6,
+        "recQty": 8461.12,
+        "avgPrice": 380,
+        "minPrice": 380,
+        "maxPrice": 380,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM R5 RTD-ORANGE 200mL PMFP 03",
+        "unit": "NOS",
+        "qty": 1681485,
+        "spend": 3172217.53,
+        "recQty": 1681485,
+        "avgPrice": 1.887,
+        "minPrice": 1.887,
+        "maxPrice": 1.887,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL LYCHEE UD 4.4 GM LS 01",
+        "unit": "KG",
+        "qty": 8188.86,
+        "spend": 2702323.8,
+        "recQty": 8188.86,
+        "avgPrice": 330,
+        "minPrice": 330,
+        "maxPrice": 330,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL PINEAPPLE UD 4.4 gm LS 01",
+        "unit": "KG",
+        "qty": 7380.18,
+        "spend": 2435459.4,
+        "recQty": 7380.18,
+        "avgPrice": 330,
+        "minPrice": 330,
+        "maxPrice": 330,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL BLACKCURRANT 21.8GM LS 01",
+        "unit": "KG",
+        "qty": 7135.05,
+        "spend": 2354566.5,
+        "recQty": 7135.05,
+        "avgPrice": 330,
+        "minPrice": 330,
+        "maxPrice": 330,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL PINEAPPLE 21.8G LS 01",
+        "unit": "KG",
+        "qty": 6998.01,
+        "spend": 2309343.3,
+        "recQty": 6998.01,
+        "avgPrice": 330,
+        "minPrice": 330,
+        "maxPrice": 330,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL LIME FLAVOUR 21.8 gm LS 01",
+        "unit": "KG",
+        "qty": 6997.71,
+        "spend": 2309244.3,
+        "recQty": 6997.71,
+        "avgPrice": 330,
+        "minPrice": 330,
+        "maxPrice": 330,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL LYCHEE 21.8G LS 01",
+        "unit": "KG",
+        "qty": 6898.93,
+        "spend": 2276646.9,
+        "recQty": 6898.93,
+        "avgPrice": 330,
+        "minPrice": 330,
+        "maxPrice": 330,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL 4.4G ES NZ 01",
+        "unit": "KG",
+        "qty": 7105.36,
+        "spend": 2273715.2,
+        "recQty": 7105.36,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL BLACKCURRANT UD 4.4GM LS 01",
+        "unit": "KG",
+        "qty": 6823.23,
+        "spend": 2251665.9,
+        "recQty": 6823.23,
+        "avgPrice": 330,
+        "minPrice": 330,
+        "maxPrice": 330,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL MANGO FLAVOUR 21.8GM LS 01",
+        "unit": "KG",
+        "qty": 6728.89,
+        "spend": 2220533.7,
+        "recQty": 6728.89,
+        "avgPrice": 330,
+        "minPrice": 330,
+        "maxPrice": 330,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL UD 4.4G (AMBIKA) NV LS 01",
+        "unit": "KG",
+        "qty": 6582.72,
+        "spend": 1941902.4,
+        "recQty": 6582.72,
+        "avgPrice": 295,
+        "minPrice": 295,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM GRIPOUT HOT DRINK 6G 190MM ES UA 06",
+        "unit": "KG",
+        "qty": 5686.38,
+        "spend": 1819641.6,
+        "recQty": 5686.38,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ORS BP 20.5GM ES MF S1 03",
+        "unit": "KG",
+        "qty": 5574.5,
+        "spend": 1783840,
+        "recQty": 5574.5,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ORS POWDER 28.4GM ES CL 06",
+        "unit": "KG",
+        "qty": 4827.96,
+        "spend": 1544947.2,
+        "recQty": 4827.96,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL ORANGE RTD 200 mL LP 06",
+        "unit": "NOS",
+        "qty": 798520,
+        "spend": 1493915.83,
+        "recQty": 798520,
+        "avgPrice": 1.871,
+        "minPrice": 1.866,
+        "maxPrice": 1.878,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM RESOMAL 42G ES Unicef 02",
+        "unit": "KG",
+        "qty": 4508.99,
+        "spend": 1442876.8,
+        "recQty": 4508.99,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL 21.8G ES TZ 01",
+        "unit": "KG",
+        "qty": 4426.39,
+        "spend": 1416444.8,
+        "recQty": 4426.39,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ORS BP 21.8GM ES MM 02",
+        "unit": "KG",
+        "qty": 4224.32,
+        "spend": 1351782.4,
+        "recQty": 4224.32,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL APPLE RTD 200 mL LP 07",
+        "unit": "NOS",
+        "qty": 665855,
+        "spend": 1246230.03,
+        "recQty": 665855,
+        "avgPrice": 1.872,
+        "minPrice": 1.866,
+        "maxPrice": 1.878,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ORS BP 20.5GM ES MF W1 02",
+        "unit": "KG",
+        "qty": 3709.07,
+        "spend": 1186902.4,
+        "recQty": 3709.07,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL ORANGE MD 21.8 g LS 04",
+        "unit": "KG",
+        "qty": 3875.25,
+        "spend": 1143198.75,
+        "recQty": 3875.25,
+        "avgPrice": 295,
+        "minPrice": 295,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ORS POWDER 6.7GM ES COSTA RICA 01",
+        "unit": "KG",
+        "qty": 3274.54,
+        "spend": 1047852.8,
+        "recQty": 3274.54,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL Z PLUS UD 4.38g LS 01",
+        "unit": "KG",
+        "qty": 2814.87,
+        "spend": 818640.61,
+        "recQty": 2814.87,
+        "avgPrice": 290.827,
+        "minPrice": 290,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL 21.8 GM ES UG 01",
+        "unit": "KG",
+        "qty": 2546.67,
+        "spend": 814934.4,
+        "recQty": 2546.67,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL APPLE RTD 200ML LS AYK",
+        "unit": "KG",
+        "qty": 338570,
+        "spend": 696668.1,
+        "recQty": 1015710,
+        "avgPrice": 2.058,
+        "minPrice": 2.058,
+        "maxPrice": 2.058,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL ORANGE RTD 200 mL AP LS 01",
+        "unit": "NOS",
+        "qty": 342690,
+        "spend": 639289.41,
+        "recQty": 1028070,
+        "avgPrice": 1.866,
+        "minPrice": 1.866,
+        "maxPrice": 1.866,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL MANGO RTD 200 mL LP 07",
+        "unit": "NOS",
+        "qty": 338570,
+        "spend": 635852.66,
+        "recQty": 338570,
+        "avgPrice": 1.878,
+        "minPrice": 1.878,
+        "maxPrice": 1.878,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL MANGO RTD 200ML LS AYK",
+        "unit": "KG",
+        "qty": 337790,
+        "spend": 630148.44,
+        "recQty": 1013370,
+        "avgPrice": 1.866,
+        "minPrice": 1.866,
+        "maxPrice": 1.866,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL 21.8GM ES BW 01",
+        "unit": "KG",
+        "qty": 1823.6,
+        "spend": 621513.5,
+        "recQty": 1823.6,
+        "avgPrice": 340.817,
+        "minPrice": 320,
+        "maxPrice": 550,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL FORTE 6g ES MM S1 04",
+        "unit": "KG",
+        "qty": 1939.04,
+        "spend": 620492.8,
+        "recQty": 1939.04,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL 21.8g ES MM S1 04",
+        "unit": "KG",
+        "qty": 1892.38,
+        "spend": 605561.6,
+        "recQty": 1892.38,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL 21.8G ES OM 02",
+        "unit": "KG",
+        "qty": 1673.35,
+        "spend": 535472,
+        "recQty": 1673.35,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "T-LAM ENERZAL RTD-APPL 200mL FC PM/SD 02",
+        "unit": "NOS",
+        "qty": 268765,
+        "spend": 524067.73,
+        "recQty": 884910,
+        "avgPrice": 1.91,
+        "minPrice": 1.892,
+        "maxPrice": 1.95,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL 21.8GM ES ET/MU  S1 02",
+        "unit": "KG",
+        "qty": 1526.74,
+        "spend": 488556.8,
+        "recQty": 1526.74,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL FORTE 6.0GM ES MY W1 02",
+        "unit": "KG",
+        "qty": 1373.68,
+        "spend": 439577.6,
+        "recQty": 1373.68,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ENERZAL LIME 75 G LS S2 00",
+        "unit": "KG",
+        "qty": 1270.98,
+        "spend": 372307.3,
+        "recQty": 1270.98,
+        "avgPrice": 292.929,
+        "minPrice": 290,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAMINATE ORS POWDER 6.7GM ES CHILE 06",
+        "unit": "KG",
+        "qty": 1107.34,
+        "spend": 354348.8,
+        "recQty": 1107.34,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ENERZAL ORANGE 15 g LS S2 07",
+        "unit": "KG",
+        "qty": 904.26,
+        "spend": 266756.7,
+        "recQty": 1344.17,
+        "avgPrice": 295,
+        "minPrice": 295,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM LEMLEM 21.8GM ES ET S1 01",
+        "unit": "KG",
+        "qty": 823.48,
+        "spend": 263513.6,
+        "recQty": 823.48,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAMINATE",
+        "unit": "KG",
+        "qty": 545.45,
+        "spend": 259040.8,
+        "recQty": 545.45,
+        "avgPrice": 474.912,
+        "minPrice": 250,
+        "maxPrice": 1067.361,
+        "vendorCount": 4
+      },
+      {
+        "desc": "LM RESOMAL 84GM ES MF 02",
+        "unit": "KG",
+        "qty": 732.53,
+        "spend": 234409.6,
+        "recQty": 732.53,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM RESOMAL 42g ES IA 01",
+        "unit": "KG",
+        "qty": 675.49,
+        "spend": 216156.8,
+        "recQty": 675.49,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ENERZAL LIME 100 g LS S2 08",
+        "unit": "KG",
+        "qty": 679.85,
+        "spend": 200555.76,
+        "recQty": 679.85,
+        "avgPrice": 295,
+        "minPrice": 295,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "M ORASEL ORANGE 21.8GM ES KH (CAM) 08",
+        "unit": "KG",
+        "qty": 585.87,
+        "spend": 187478.4,
+        "recQty": 585.87,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ENERZAL ZERO ORANGE 5 g S2 03",
+        "unit": "KG",
+        "qty": 625.13,
+        "spend": 181287.7,
+        "recQty": 625.13,
+        "avgPrice": 290,
+        "minPrice": 290,
+        "maxPrice": 290,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ORS POWDER 28.4GM ES CL 07",
+        "unit": "KG",
+        "qty": 538.08,
+        "spend": 172185.6,
+        "recQty": 538.08,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL 21.8G ES AE 01",
+        "unit": "KG",
+        "qty": 507.66,
+        "spend": 162451.2,
+        "recQty": 507.66,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM SIMYL MCT POWDER  4.87GM LP S2 02",
+        "unit": "KG",
+        "qty": 549.29,
+        "spend": 162040.55,
+        "recQty": 1098.58,
+        "avgPrice": 295,
+        "minPrice": 295,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM MUM-MUM 1  4.5 GM LP S2 02",
+        "unit": "KG",
+        "qty": 549.06,
+        "spend": 161972.7,
+        "recQty": 549.06,
+        "avgPrice": 295,
+        "minPrice": 295,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ZEFRICH HP 16.5 G FS 03",
+        "unit": "KG",
+        "qty": 537.63,
+        "spend": 158600.85,
+        "recQty": 537.63,
+        "avgPrice": 295,
+        "minPrice": 295,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ENERZAL ORANGE 7.5GM ES MY 03",
+        "unit": "KG",
+        "qty": 446.06,
+        "spend": 142739.2,
+        "recQty": 446.06,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ZEFRICH MM 17.5 G PS S2 10",
+        "unit": "KG",
+        "qty": 413.93,
+        "spend": 122109.35,
+        "recQty": 413.93,
+        "avgPrice": 295,
+        "minPrice": 295,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM OMAX 21.8G ES TN 03",
+        "unit": "KG",
+        "qty": 253.43,
+        "spend": 81097.6,
+        "recQty": 253.43,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL 21.8g ES ZW 02",
+        "unit": "KG",
+        "qty": 182.48,
+        "spend": 58393.6,
+        "recQty": 182.48,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ZEFRICH CHOC 17.5 G PS S2 10",
+        "unit": "KG",
+        "qty": 177.97,
+        "spend": 52501.15,
+        "recQty": 177.97,
+        "avgPrice": 295,
+        "minPrice": 295,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ELECTRAL FORTE 6.0GM ES MY W1 01",
+        "unit": "KG",
+        "qty": 155.55,
+        "spend": 43554,
+        "recQty": 155.55,
+        "avgPrice": 280,
+        "minPrice": 280,
+        "maxPrice": 280,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ZEFRICH MM 17.5g PS S2 09",
+        "unit": "KG",
+        "qty": 105.81,
+        "spend": 31213.95,
+        "recQty": 105.81,
+        "avgPrice": 295,
+        "minPrice": 295,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM ZEFRICH CHOC 17.5g PS S2 09",
+        "unit": "KG",
+        "qty": 104.03,
+        "spend": 30688.85,
+        "recQty": 104.03,
+        "avgPrice": 295,
+        "minPrice": 295,
+        "maxPrice": 295,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LM OMAX 21.8G ES TN 02",
+        "unit": "KG",
+        "qty": 87.79,
+        "spend": 28092.8,
+        "recQty": 175.58,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1
+      }
+    ],
+    "topSkuMonthly": [
+      {
+        "desc": "LM ELECTRAL MD 21.80g LS 07",
+        "unit": "KG",
+        "spend": 146999966.05,
+        "avgPrice": 293.025,
+        "minPrice": 290,
+        "maxPrice": 295,
+        "vendorCount": 3,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 62149.55,
+            "spend": 18094174.4,
+            "avgPrice": 291.139
+          },
+          {
+            "month": "2025-05",
+            "qty": 67645.36,
+            "spend": 19886291.8,
+            "avgPrice": 293.979
+          },
+          {
+            "month": "2025-06",
+            "qty": 65546.62,
+            "spend": 19145569.6,
+            "avgPrice": 292.091
+          },
+          {
+            "month": "2025-07",
+            "qty": 82379.67,
+            "spend": 24086387.5,
+            "avgPrice": 292.383
+          },
+          {
+            "month": "2025-08",
+            "qty": 59908.84,
+            "spend": 17550914.9,
+            "avgPrice": 292.96
+          },
+          {
+            "month": "2025-09",
+            "qty": 32080.82,
+            "spend": 9381294.9,
+            "avgPrice": 292.427
+          },
+          {
+            "month": "2025-10",
+            "qty": 23495.56,
+            "spend": 6931190.2,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-11",
+            "qty": 32018.97,
+            "spend": 9397628.5,
+            "avgPrice": 293.502
+          },
+          {
+            "month": "2025-12",
+            "qty": 37177.77,
+            "spend": 10944504.5,
+            "avgPrice": 294.383
+          },
+          {
+            "month": "2026-01",
+            "qty": 22404.76,
+            "spend": 6609404.2,
+            "avgPrice": 295
+          },
+          {
+            "month": "2026-02",
+            "qty": 16856.29,
+            "spend": 4972605.55,
+            "avgPrice": 295
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      },
+      {
+        "desc": "LM ELECTRAL UD 4.4G (AMBIKA) SP LS 01",
+        "unit": "KG",
+        "spend": 60060790.5,
+        "avgPrice": 293.948,
+        "minPrice": 290,
+        "maxPrice": 295,
+        "vendorCount": 2,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 13627.7,
+            "spend": 3974685.35,
+            "avgPrice": 291.662
+          },
+          {
+            "month": "2025-05",
+            "qty": 29535.22,
+            "spend": 8622301.3,
+            "avgPrice": 291.933
+          },
+          {
+            "month": "2025-06",
+            "qty": 16412.84,
+            "spend": 4816105.2,
+            "avgPrice": 293.435
+          },
+          {
+            "month": "2025-07",
+            "qty": 30613.58,
+            "spend": 8977897.25,
+            "avgPrice": 293.265
+          },
+          {
+            "month": "2025-08",
+            "qty": 52624.43,
+            "spend": 15524206.85,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-09",
+            "qty": 3976.31,
+            "spend": 1173011.45,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-10",
+            "qty": 26335.93,
+            "spend": 7769099.35,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 16208.82,
+            "spend": 4781601.9,
+            "avgPrice": 295
+          },
+          {
+            "month": "2026-03",
+            "qty": 14989.43,
+            "spend": 4421881.85,
+            "avgPrice": 295
+          }
+        ]
+      },
+      {
+        "desc": "LM ELECTRAL ORANGE UD 4.4 gm LS 05",
+        "unit": "KG",
+        "spend": 27316630.1,
+        "avgPrice": 293.543,
+        "minPrice": 290,
+        "maxPrice": 308.39,
+        "vendorCount": 2,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 5459.51,
+            "spend": 1583257.9,
+            "avgPrice": 290
+          },
+          {
+            "month": "2025-05",
+            "qty": 5079.57,
+            "spend": 1498473.15,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-06",
+            "qty": 13461.52,
+            "spend": 3932478.15,
+            "avgPrice": 292.257
+          },
+          {
+            "month": "2025-07",
+            "qty": 17503.17,
+            "spend": 5118657.35,
+            "avgPrice": 292.442
+          },
+          {
+            "month": "2025-08",
+            "qty": 12212.57,
+            "spend": 3602708.15,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-09",
+            "qty": 3643.92,
+            "spend": 1074956.4,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-10",
+            "qty": 9628.01,
+            "spend": 2840262.95,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-11",
+            "qty": 9763.99,
+            "spend": 2880377.05,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 6106.24,
+            "spend": 1801340.8,
+            "avgPrice": 295
+          },
+          {
+            "month": "2026-02",
+            "qty": 3523.8,
+            "spend": 1039521,
+            "avgPrice": 295
+          },
+          {
+            "month": "2026-03",
+            "qty": 6679.1,
+            "spend": 1944597.2,
+            "avgPrice": 291.147
+          }
+        ]
+      },
+      {
+        "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
+        "unit": "NOS",
+        "spend": 23178112.72,
+        "avgPrice": 1.901,
+        "minPrice": 1.865,
+        "maxPrice": 1.92,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 3720715,
+            "spend": 7088676.48,
+            "avgPrice": 1.905
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-07",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 672585,
+            "spend": 1277396.03,
+            "avgPrice": 1.899
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 1653130,
+            "spend": 3119321.45,
+            "avgPrice": 1.887
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 1903900,
+            "spend": 3587133.5,
+            "avgPrice": 1.884
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 4246850,
+            "spend": 8105585.26,
+            "avgPrice": 1.908
+          }
+        ]
+      },
+      {
+        "desc": "LM ELECTRAL MD 21.80g LS 08",
+        "unit": "KG",
+        "spend": 19784817.16,
+        "avgPrice": 303.19,
+        "minPrice": 290,
+        "maxPrice": 336,
+        "vendorCount": 3,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-07",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 6096.78,
+            "spend": 1798550.1,
+            "avgPrice": 295
+          },
+          {
+            "month": "2026-03",
+            "qty": 59158.82,
+            "spend": 17986267.06,
+            "avgPrice": 304.034
+          }
+        ]
+      },
+      {
+        "desc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
+        "unit": "NOS",
+        "spend": 13008913.95,
+        "avgPrice": 1.881,
+        "minPrice": 1.866,
+        "maxPrice": 1.895,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 1648615,
+            "spend": 3096493.98,
+            "avgPrice": 1.878
+          },
+          {
+            "month": "2025-06",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-07",
+            "qty": 357000,
+            "spend": 665984.77,
+            "avgPrice": 1.866
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 3019765,
+            "spend": 5675375.73,
+            "avgPrice": 1.879
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 1891750,
+            "spend": 3571059.47,
+            "avgPrice": 1.888
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      },
+      {
+        "desc": "LM ELECTRAL UD 4.4g LS 05",
+        "unit": "KG",
+        "spend": 9973601.65,
+        "avgPrice": 292.994,
+        "minPrice": 290,
+        "maxPrice": 295,
+        "vendorCount": 3,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 500.7,
+            "spend": 145203,
+            "avgPrice": 290
+          },
+          {
+            "month": "2025-07",
+            "qty": 18877.11,
+            "spend": 5502972.95,
+            "avgPrice": 291.516
+          },
+          {
+            "month": "2025-08",
+            "qty": 4746.81,
+            "spend": 1400308.95,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-09",
+            "qty": 791.62,
+            "spend": 233527.9,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 4624.78,
+            "spend": 1364310.1,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-12",
+            "qty": 1215.27,
+            "spend": 358504.65,
+            "avgPrice": 295
+          },
+          {
+            "month": "2026-01",
+            "qty": 3283.98,
+            "spend": 968774.1,
+            "avgPrice": 295
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      },
+      {
+        "desc": "LM ELECTRAL UD 4.4g SP LS 01",
+        "unit": "KG",
+        "spend": 8661714.2,
+        "avgPrice": 290,
+        "minPrice": 290,
+        "maxPrice": 290,
+        "vendorCount": 2,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 5194.52,
+            "spend": 1506410.8,
+            "avgPrice": 290
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 5116.02,
+            "spend": 1483645.8,
+            "avgPrice": 290
+          },
+          {
+            "month": "2025-07",
+            "qty": 4576.67,
+            "spend": 1327234.3,
+            "avgPrice": 290
+          },
+          {
+            "month": "2025-08",
+            "qty": 2435.58,
+            "spend": 706318.2,
+            "avgPrice": 290
+          },
+          {
+            "month": "2025-09",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-10",
+            "qty": 4522.6,
+            "spend": 1311554,
+            "avgPrice": 290
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 5350.29,
+            "spend": 1551584.1,
+            "avgPrice": 290
+          },
+          {
+            "month": "2026-03",
+            "qty": 2672.3,
+            "spend": 774967,
+            "avgPrice": 290
+          }
+        ]
+      },
+      {
+        "desc": "LM ELECTRAL ORANGE MD 21.8 g LS 03",
+        "unit": "KG",
+        "spend": 8526703.21,
+        "avgPrice": 293.832,
+        "minPrice": 290,
+        "maxPrice": 295,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 4886.73,
+            "spend": 1417151.7,
+            "avgPrice": 290
+          },
+          {
+            "month": "2025-05",
+            "qty": 5977.27,
+            "spend": 1753136.2,
+            "avgPrice": 293.456
+          },
+          {
+            "month": "2025-06",
+            "qty": 1340.83,
+            "spend": 395544.85,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-07",
+            "qty": 2945.3,
+            "spend": 868863.5,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-08",
+            "qty": 4078.78,
+            "spend": 1203240.11,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-09",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-10",
+            "qty": 6488.24,
+            "spend": 1914030.8,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 3304.19,
+            "spend": 974736.05,
+            "avgPrice": 295
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      },
+      {
+        "desc": "LM ELECTRAL 21.8GM ES ET/MU 01",
+        "unit": "KG",
+        "spend": 6800172.8,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-07",
+            "qty": 6800.55,
+            "spend": 2176176,
+            "avgPrice": 320
+          },
+          {
+            "month": "2025-08",
+            "qty": 8537.48,
+            "spend": 2731993.6,
+            "avgPrice": 320
+          },
+          {
+            "month": "2025-09",
+            "qty": 5912.51,
+            "spend": 1892003.2,
+            "avgPrice": 320
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      },
+      {
+        "desc": "LM ORS BP 20.5GM ES ET EPSS Tender 01",
+        "unit": "KG",
+        "spend": 5785222.4,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-07",
+            "qty": 7073.64,
+            "spend": 2263564.8,
+            "avgPrice": 320
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 11005.18,
+            "spend": 3521657.6,
+            "avgPrice": 320
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      },
+      {
+        "desc": "LAM ELECTRAL APPLE RTD 200 mL LS 10",
+        "unit": "NOS",
+        "spend": 5649022.1,
+        "avgPrice": 1.877,
+        "minPrice": 1.866,
+        "maxPrice": 1.887,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 669975,
+            "spend": 1249840.74,
+            "avgPrice": 1.866
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-07",
+            "qty": 668005,
+            "spend": 1246165.7,
+            "avgPrice": 1.866
+          },
+          {
+            "month": "2025-08",
+            "qty": 673715,
+            "spend": 1270815.48,
+            "avgPrice": 1.886
+          },
+          {
+            "month": "2025-09",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 997695,
+            "spend": 1882200.18,
+            "avgPrice": 1.887
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      }
+    ],
+    "vendors": [
+      {
+        "vendorKey": "geep-industries-india",
+        "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+        "color": "#00973D",
+        "unit": "KG",
+        "qty": 937985.39,
+        "spend": 283131033.16,
+        "avgPrice": 301.767,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "shrinath-roto-pack",
+        "vendor": "Shrinath Roto Pack Pvt Ltd",
+        "color": "#8E44AD",
+        "unit": "KG",
+        "qty": 223168.64,
+        "spend": 64718905.6,
+        "avgPrice": 290,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "tetrapak-india",
+        "vendor": "Tetrapak India Private limited.",
+        "color": "#00612D",
+        "unit": "NOS",
+        "qty": 28212705,
+        "spend": 54634604.27,
+        "avgPrice": 1.889,
+        "multiUnit": true
+      },
+      {
+        "vendorKey": "gls-films-industries-p",
+        "vendor": "GLS FILMS INDUSTRIES P. LTD.",
+        "color": "#2471A3",
+        "unit": "KG",
+        "qty": 78240.48,
+        "spend": 23080941.6,
+        "avgPrice": 295,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "huhtamaki-india",
+        "vendor": "HUHTAMAKI INDIA LIMITED",
+        "color": "#C9A227",
+        "unit": "KG",
+        "qty": 72,
+        "spend": 76850,
+        "avgPrice": 1067.361,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "uflex",
+        "vendor": "UFLEX LIMITED",
+        "color": "#6E2C00",
+        "unit": "KG",
+        "qty": 168.28,
+        "spend": 64787.8,
+        "avgPrice": 385,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "silk-polypack",
+        "vendor": "Silk Polypack",
+        "color": "#145A32",
+        "unit": "KG",
+        "qty": 31.1,
+        "spend": 7775,
+        "avgPrice": 250,
+        "multiUnit": false
+      }
+    ],
+    "plants": [
+      {
+        "plant": "1003",
+        "plantName": "FDC Limited,SINNAR",
+        "unit": "KG",
+        "qty": 509703.87,
+        "spend": 154480077.5,
+        "avgPrice": 303.053
+      },
+      {
+        "plant": "1006",
+        "plantName": "FDC LIMITED, GOA-II",
+        "unit": "KG",
+        "qty": 300536.61,
+        "spend": 88915157.53,
+        "avgPrice": 295.862
+      },
+      {
+        "plant": "1000",
+        "plantName": "FDC Limited,Jogeshwari,Corp",
+        "unit": "KG",
+        "qty": 857190.42,
+        "spend": 54357707.66,
+        "avgPrice": 26.456
+      },
+      {
+        "plant": "1008",
+        "plantName": "FDC Limited-Waluj",
+        "unit": "KG",
+        "qty": 109193.07,
+        "spend": 33737434.01,
+        "avgPrice": 308.97
+      },
+      {
+        "plant": "1044",
+        "plantName": "FDC Limited (SPPL)",
+        "unit": "KG",
+        "qty": 70916.67,
+        "spend": 20857691.7,
+        "avgPrice": 294.115
+      },
+      {
+        "plant": "1047",
+        "plantName": "FDC Limited (NVP)",
+        "unit": "KG",
+        "qty": 68485.25,
+        "spend": 20059041.3,
+        "avgPrice": 292.915
+      }
+    ]
+  }
+]

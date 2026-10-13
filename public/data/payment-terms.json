@@ -1,0 +1,491 @@
+{
+  "totalSpend": 972258701.75,
+  "weightedAvgTermDays": 29.1,
+  "cashFreed15Total": 39955837.06,
+  "cashFreed30Total": 79911674.12,
+  "worstBySpend": [
+    {
+      "vendorKey": "tetrapak-india",
+      "vendor": "Tetrapak India Private limited.",
+      "color": "#00612D",
+      "termCategory": "immediate",
+      "termDays": 0,
+      "termRank": 0,
+      "termText": "Immediate",
+      "worstTerms": true,
+      "totalSpend": 54634604.27,
+      "materials": [
+        "Laminates"
+      ],
+      "cashFreed15": 2245257.71,
+      "cashFreed30": 4490515.42
+    },
+    {
+      "vendorKey": "sukhjit-corn-products",
+      "vendor": "SUKHJIT CORN PRODUCTS",
+      "color": "#2C82C9",
+      "termCategory": "advance",
+      "termDays": null,
+      "termRank": -1,
+      "termText": "Advance 100%(with tax)Against Proforma Invoice",
+      "worstTerms": true,
+      "totalSpend": 10620000,
+      "materials": [
+        "Dextrose"
+      ],
+      "cashFreed15": 436438.36,
+      "cashFreed30": 872876.71
+    }
+  ],
+  "byCategory": [
+    {
+      "category": "net",
+      "count": 25,
+      "spend": 907004097.48
+    },
+    {
+      "category": "immediate",
+      "count": 1,
+      "spend": 54634604.27
+    },
+    {
+      "category": "advance",
+      "count": 1,
+      "spend": 10620000
+    }
+  ],
+  "vendors": [
+    {
+      "vendorKey": "geep-industries-india",
+      "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+      "color": "#00973D",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 283131033.16,
+      "materials": [
+        "Laminates"
+      ],
+      "cashFreed15": 11635521.91,
+      "cashFreed30": 23271043.82
+    },
+    {
+      "vendorKey": "gujarat-ambuja-exports",
+      "vendor": "GUJARAT AMBUJA EXPORTS LIMITED",
+      "color": "#2E7CE4",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 212123478,
+      "materials": [
+        "Dextrose"
+      ],
+      "cashFreed15": 8717403.21,
+      "cashFreed30": 17434806.41
+    },
+    {
+      "vendorKey": "sayaji-industries",
+      "vendor": "Sayaji Industries Limited",
+      "color": "#EFAE0E",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 150284312.5,
+      "materials": [
+        "Dextrose"
+      ],
+      "cashFreed15": 6176067.64,
+      "cashFreed30": 12352135.27
+    },
+    {
+      "vendorKey": "shrinath-roto-pack",
+      "vendor": "Shrinath Roto Pack Pvt Ltd",
+      "color": "#8E44AD",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 64718905.6,
+      "materials": [
+        "Laminates"
+      ],
+      "cashFreed15": 2659681.05,
+      "cashFreed30": 5319362.1
+    },
+    {
+      "vendorKey": "chemco-plastic-industries",
+      "vendor": "Chemco Plastic Industries Pvt. Ltd",
+      "color": "#1ABC9C",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 54915815.2,
+      "materials": [
+        "Rigid plastic packaging"
+      ],
+      "cashFreed15": 2256814.32,
+      "cashFreed30": 4513628.65
+    },
+    {
+      "vendorKey": "tetrapak-india",
+      "vendor": "Tetrapak India Private limited.",
+      "color": "#00612D",
+      "termCategory": "immediate",
+      "termDays": 0,
+      "termRank": 0,
+      "termText": "Immediate",
+      "worstTerms": true,
+      "totalSpend": 54634604.27,
+      "materials": [
+        "Laminates"
+      ],
+      "cashFreed15": 2245257.71,
+      "cashFreed30": 4490515.42
+    },
+    {
+      "vendorKey": "gls-films-industries-p",
+      "vendor": "GLS FILMS INDUSTRIES P. LTD.",
+      "color": "#2471A3",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 23080941.6,
+      "materials": [
+        "Laminates"
+      ],
+      "cashFreed15": 948531.85,
+      "cashFreed30": 1897063.69
+    },
+    {
+      "vendorKey": "cincorp-international",
+      "vendor": "Cincorp International Ltd.",
+      "color": "#B8860B",
+      "termCategory": "net",
+      "termDays": 45,
+      "termRank": 45,
+      "termText": "45 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 19488230,
+      "materials": [
+        "Rigid plastic packaging"
+      ],
+      "cashFreed15": 800886.16,
+      "cashFreed30": 1601772.33
+    },
+    {
+      "vendorKey": "pik-plastics",
+      "vendor": "PIK PLASTICS",
+      "color": "#6C3483",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 19167682.76,
+      "materials": [
+        "Rigid plastic packaging"
+      ],
+      "cashFreed15": 787712.99,
+      "cashFreed30": 1575425.98
+    },
+    {
+      "vendorKey": "premier-plastic",
+      "vendor": "Premier Plastic",
+      "color": "#148F77",
+      "termCategory": "net",
+      "termDays": 45,
+      "termRank": 45,
+      "termText": "45 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 12932900,
+      "materials": [
+        "Rigid plastic packaging"
+      ],
+      "cashFreed15": 531489.04,
+      "cashFreed30": 1062978.08
+    },
+    {
+      "vendorKey": "mars-plastics",
+      "vendor": "Mars Plastics",
+      "color": "#27AE60",
+      "termCategory": "net",
+      "termDays": 45,
+      "termRank": 45,
+      "termText": "45 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 12401737,
+      "materials": [
+        "Rigid plastic packaging"
+      ],
+      "cashFreed15": 509660.42,
+      "cashFreed30": 1019320.85
+    },
+    {
+      "vendorKey": "sukhjit-corn-products",
+      "vendor": "SUKHJIT CORN PRODUCTS",
+      "color": "#2C82C9",
+      "termCategory": "advance",
+      "termDays": null,
+      "termRank": -1,
+      "termText": "Advance 100%(with tax)Against Proforma Invoice",
+      "worstTerms": true,
+      "totalSpend": 10620000,
+      "materials": [
+        "Dextrose"
+      ],
+      "cashFreed15": 436438.36,
+      "cashFreed30": 872876.71
+    },
+    {
+      "vendorKey": "berry-global-india",
+      "vendor": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+      "color": "#9B59B6",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 8139040,
+      "materials": [
+        "Rigid plastic packaging"
+      ],
+      "cashFreed15": 334481.1,
+      "cashFreed30": 668962.19
+    },
+    {
+      "vendorKey": "empire-industries-virum-glass",
+      "vendor": "Empire Industries Ltd - Virum Glass",
+      "color": "#117A65",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 6747015.96,
+      "materials": [
+        "Rigid plastic packaging"
+      ],
+      "cashFreed15": 277274.63,
+      "cashFreed30": 554549.26
+    },
+    {
+      "vendorKey": "kilitch-healthcare-india",
+      "vendor": "KILITCH HEALTHCARE INDIA LIMITED",
+      "color": "#7D6608",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 6527256,
+      "materials": [
+        "Rigid plastic packaging"
+      ],
+      "cashFreed15": 268243.4,
+      "cashFreed30": 536486.79
+    },
+    {
+      "vendorKey": "bprex-pharma-packaging-india-p",
+      "vendor": "Bprex Pharma Packaging India (P) Limited",
+      "color": "#1E8449",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 6320592,
+      "materials": [
+        "Rigid plastic packaging"
+      ],
+      "cashFreed15": 259750.36,
+      "cashFreed30": 519500.71
+    },
+    {
+      "vendorKey": "universal-starch-chem-allied",
+      "vendor": "Universal Starch Chem Allied Ltd",
+      "color": "#3498DB",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 5965000,
+      "materials": [
+        "Dextrose"
+      ],
+      "cashFreed15": 245136.99,
+      "cashFreed30": 490273.97
+    },
+    {
+      "vendorKey": "suraj-blow-plast",
+      "vendor": "Suraj Blow Plast PVt. Ltd.",
+      "color": "#5B8C2A",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 5816755.8,
+      "materials": [
+        "Rigid plastic packaging"
+      ],
+      "cashFreed15": 239044.76,
+      "cashFreed30": 478089.52
+    },
+    {
+      "vendorKey": "rachana-plastics",
+      "vendor": "Rachana Plastics",
+      "color": "#935116",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 4437045.02,
+      "materials": [
+        "Rigid plastic packaging"
+      ],
+      "cashFreed15": 182344.32,
+      "cashFreed30": 364688.63
+    },
+    {
+      "vendorKey": "pgp-glass",
+      "vendor": "PGP Glass Private Limited",
+      "color": "#0E7C7B",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 3999276.86,
+      "materials": [
+        "Rigid plastic packaging"
+      ],
+      "cashFreed15": 164353.84,
+      "cashFreed30": 328707.69
+    },
+    {
+      "vendorKey": "abhinav-speciality-foods-llp",
+      "vendor": "ABHINAV SPECIALITY FOODS LLP",
+      "color": "#A04000",
+      "termCategory": "net",
+      "termDays": 45,
+      "termRank": 45,
+      "termText": "45 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 2742049.18,
+      "materials": [
+        "Rigid plastic packaging"
+      ],
+      "cashFreed15": 112686.95,
+      "cashFreed30": 225373.91
+    },
+    {
+      "vendorKey": "triveni-polymers",
+      "vendor": "Triveni Polymers Pvt. Ltd.",
+      "color": "#16A085",
+      "termCategory": "net",
+      "termDays": 45,
+      "termRank": 45,
+      "termText": "45 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 2617285,
+      "materials": [
+        "Rigid plastic packaging"
+      ],
+      "cashFreed15": 107559.66,
+      "cashFreed30": 215119.32
+    },
+    {
+      "vendorKey": "tpac-packaging-india",
+      "vendor": "TPAC Packaging India Pvt Ltd.",
+      "color": "#1A5276",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 1132453.8,
+      "materials": [
+        "Rigid plastic packaging"
+      ],
+      "cashFreed15": 46539.2,
+      "cashFreed30": 93078.39
+    },
+    {
+      "vendorKey": "scorpion-containers",
+      "vendor": "SCORPION CONTAINERS PRIVATE LIMITED",
+      "color": "#7D3C98",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 165879.24,
+      "materials": [
+        "Rigid plastic packaging"
+      ],
+      "cashFreed15": 6816.96,
+      "cashFreed30": 13633.91
+    },
+    {
+      "vendorKey": "huhtamaki-india",
+      "vendor": "HUHTAMAKI INDIA LIMITED",
+      "color": "#C9A227",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 76850,
+      "materials": [
+        "Laminates"
+      ],
+      "cashFreed15": 3158.22,
+      "cashFreed30": 6316.44
+    },
+    {
+      "vendorKey": "uflex",
+      "vendor": "UFLEX LIMITED",
+      "color": "#6E2C00",
+      "termCategory": "net",
+      "termDays": 60,
+      "termRank": 60,
+      "termText": "60 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 64787.8,
+      "materials": [
+        "Laminates"
+      ],
+      "cashFreed15": 2662.51,
+      "cashFreed30": 5325.02
+    },
+    {
+      "vendorKey": "silk-polypack",
+      "vendor": "Silk Polypack",
+      "color": "#145A32",
+      "termCategory": "net",
+      "termDays": 30,
+      "termRank": 30,
+      "termText": "30 Days After Receipt",
+      "worstTerms": false,
+      "totalSpend": 7775,
+      "materials": [
+        "Laminates"
+      ],
+      "cashFreed15": 319.52,
+      "cashFreed30": 639.04
+    }
+  ]
+}
