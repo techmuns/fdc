@@ -291,9 +291,42 @@ export interface FinMetrics {
   pe: number | null; evEbitda: number | null; dividendYield: number | null; currentPrice: number | null;
   yearlyChange: number | null; employees: number | null; roce: number | null; roe: number | null;
   receivableDays?: number | null; payableDays?: number | null; cashConversionCycle?: number | null;
-  creditRating?: string | null;
+  creditRating?: string | null; currentRatio?: number | null;
   pat?: number | null; netWorth?: number | null; interestCoverage?: number | null;
   flags?: { legalCases: number | null; gstDelays: number | null; epfDelays: number | null; charges: number | null };
+}
+
+// ---- Phase 2.2: Probe42 (MCA filings) rich profile ----
+export interface ProbeYear {
+  fy: string | null; year: string; nature: string;
+  revenue: number | null; ebitda: number | null; pat: number | null; interest: number | null; depreciation: number | null;
+  netMargin: number | null; ebitdaMargin: number | null; grossMargin: number | null;
+  roe: number | null; roce: number | null; debtToEquity: number | null; interestCoverage: number | null; currentRatio: number | null;
+  receivableDays: number | null; payableDays: number | null; inventoryDays: number | null; ccc: number | null; revenueGrowth: number | null;
+  tradeReceivables: number | null; tradePayables: number | null; inventories: number | null; cash: number | null;
+  shareCapital: number | null; reservesAndSurplus: number | null; longTermBorrowings: number | null; shortTermBorrowings: number | null;
+  totalAssets: number | null; netWorth: number | null; totalDebt: number | null;
+  cfOperating: number | null; cfInvesting: number | null; cfFinancing: number | null;
+}
+export interface ProbePeer {
+  year: string; peers: number | null; bizIndustry: string | null; bizSegment: string | null;
+  netMargin: number | null; ebitdaMargin: number | null; roce: number | null; roe: number | null;
+  receivableDays: number | null; payableDays: number | null; ccc: number | null;
+  debtToEquity: number | null; interestCoverage: number | null; currentRatio: number | null;
+}
+export interface ProbeScore { overall: number | null; growth: number | null; profitability: number | null; liquidity: number | null; solvency: number | null; efficiency: number | null; }
+export interface ProbeRating { agency: string | null; grade: string | null; ratingRaw: string | null; outlook: string | null; date: string | null; loanType: string | null; withdrawn: boolean; }
+export interface ProbeFlag { label: string; tone: 'risk' | 'watch' | 'ok'; value?: string; }
+export interface ProbeCharges { count: number; sumAmount: number | null; topLenders: { name: string; amount: number }[]; }
+export interface ProbeLegal { total: number; against: number; severe: number; pending: number; financialDisputes: number; msmeDelays: number; }
+export interface ProbeProfile {
+  vendorKey: string; cin: string | null; legalName: string | null; status: string | null;
+  incorporationDate: string | null; registeredAddress: string | null; website: string | null; lastFilingDate: string | null;
+  latestFy: string | null; latestYear: string; nature: string; lossMaking: boolean;
+  metrics: ProbeYear; series: ProbeYear[]; peer: ProbePeer | null; probeScore: ProbeScore | null; creditRatingProbe: ProbeRating | null;
+  keyIndicators: { revenueBand: string | null; profitBand: string | null; employeeBand: string | null };
+  flags: ProbeFlag[]; charges: ProbeCharges; legal: ProbeLegal; directors: { name: string; designation: string | null; din: string | null }[];
+  promoterPct: number | null; source: { sourceName: string; sourceUrl: string; date: string | null };
 }
 export interface HealthScore {
   value: number; grade: string;
@@ -314,6 +347,10 @@ export interface VendorFin {
   // Phase 2.1 — rating-doc fields (private vendors)
   ratingGrade?: string | null; ratingLabel?: string | null; ratingOutlook?: string | null;
   asOfFy?: string | null; ratingDate?: string | null; issuerNotCooperating?: boolean;
+  // Phase 2.2 — Probe42 (MCA filings) is the primary private source when present
+  primarySource?: 'listed' | 'probe' | 'rating-doc' | 'none';
+  probe?: ProbeProfile | null;
+  fallbackSource?: { sourceName: string; sourceUrl: string; date: string | null; ratingLabel?: string | null } | null;
 }
 export interface VendorFinancials {
   generatedAt: string;

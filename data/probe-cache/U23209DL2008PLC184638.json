@@ -1,0 +1,4243 @@
+{
+ "metadata": {
+  "api_version": "1.3",
+  "last_updated": "2026-04-25",
+  "identifier_changed": false
+ },
+ "data": {
+  "company": {
+   "cin": "U23209DL2008PLC184638",
+   "legal_name": "CINCORP INTERNATIONAL LIMITED",
+   "efiling_status": "Active",
+   "incorporation_date": "2008-11-04",
+   "paid_up_capital": 4950000,
+   "sum_of_charges": 26500000,
+   "authorized_capital": 50000000,
+   "active_compliance": "ACTIVE compliant",
+   "cirp_status": null,
+   "lei": {
+    "number": null,
+    "status": null,
+    "registration_date": null,
+    "last_updated_date": null,
+    "next_renewal_date": null
+   },
+   "registered_address": {
+    "full_address": "C-521 Defence Colony,New delhi , Defence Colony (South Delhi), New Delhi, South Delhi, Delhi - 110024",
+    "address_line1": "C-521 Defence Colony,",
+    "address_line2": "New delhi , Defence Colony (South Delhi)",
+    "city": "New Delhi",
+    "pincode": "110024",
+    "state": "Delhi"
+   },
+   "business_address": {
+    "address_line1": "C-521,",
+    "address_line2": "Defence Colony",
+    "city": "New Delhi",
+    "pincode": 110024,
+    "state": "DELHI"
+   },
+   "pan": null,
+   "website": "https://kunstocom.com/",
+   "classification": "Public Limited Indian Non-Government Company",
+   "category": "Company limited by shares",
+   "sub_category": "Non-government company",
+   "class": "Public",
+   "status": "Unlisted",
+   "next_cin": null,
+   "last_agm_date": "2026-09-15",
+   "last_filing_date": "2026-03-31",
+   "email": "sangeetak@amity.edu"
+  },
+  "description": {
+   "desc_thousand_char": "Cincorp International Limited (CIL) is engaged in designing, developing, and producing primary plastic packaging for pharmaceutical, FMCG, and industrial markets. It specializes in the production of HDPE, LDPE, PP and PS containers/bottles using injection blow moulding (IBM) machines. Its facility is located in Noida, NCR. The company exports its products to various countries like the USA, the EU, and more. CIL serves more than 50 customers across India, including FDC Limited, Ind Swift Limited, Cosmas Pharmacls, Bajaj Pharmaceuticals, BACFO Pharmaceuticals, Krauter Healthcare, and Surya Herbal Limited, among others. CIL was incorporated in 2008 and has its registered office located in Delhi."
+  },
+  "name_history": [],
+  "authorized_signatories": [
+   {
+    "pan": null,
+    "din": "00241128",
+    "name": "ARUN KUMAR CHAUHAN",
+    "designation": "Director",
+    "din_status": "Approved",
+    "gender": "Male",
+    "date_of_birth": null,
+    "age": null,
+    "date_of_appointment": "2008-11-04",
+    "date_of_appointment_for_current_designation": "2008-11-04",
+    "date_of_cessation": null,
+    "nationality": "India",
+    "dsc_status": null,
+    "dsc_expiry_date": null,
+    "father_name": null,
+    "address": null,
+    "association_history": [
+     {
+      "event": null,
+      "designation_after_event": "Director",
+      "event_date": "2008-11-04",
+      "filing_date": null
+     }
+    ]
+   },
+   {
+    "pan": null,
+    "din": "00241095",
+    "name": "ANAND CHAUHAN",
+    "designation": "Director",
+    "din_status": "Approved",
+    "gender": "Male",
+    "date_of_birth": null,
+    "age": null,
+    "date_of_appointment": "2008-11-04",
+    "date_of_appointment_for_current_designation": "2008-11-04",
+    "date_of_cessation": "2010-04-05",
+    "nationality": "India",
+    "dsc_status": null,
+    "dsc_expiry_date": null,
+    "father_name": null,
+    "address": null,
+    "association_history": [
+     {
+      "event": null,
+      "designation_after_event": "Director",
+      "event_date": "2008-11-04",
+      "filing_date": null
+     }
+    ]
+   },
+   {
+    "pan": null,
+    "din": "02288404",
+    "name": "ABHISHEK CHAUHAN",
+    "designation": "Additional Director",
+    "din_status": "Deactivated due to non-filing of DIR-3 KYC",
+    "gender": "Male",
+    "date_of_birth": null,
+    "age": null,
+    "date_of_appointment": "2010-01-01",
+    "date_of_appointment_for_current_designation": "2010-01-01",
+    "date_of_cessation": "2014-11-03",
+    "nationality": "India",
+    "dsc_status": null,
+    "dsc_expiry_date": null,
+    "father_name": null,
+    "address": null,
+    "association_history": [
+     {
+      "event": null,
+      "designation_after_event": "Additional Director",
+      "event_date": "2010-01-01",
+      "filing_date": null
+     }
+    ]
+   },
+   {
+    "pan": null,
+    "din": "01447201",
+    "name": "AKHIL CHAUHAN",
+    "designation": "Director",
+    "din_status": "Approved",
+    "gender": "Male",
+    "date_of_birth": null,
+    "age": null,
+    "date_of_appointment": "2008-11-04",
+    "date_of_appointment_for_current_designation": "2008-11-04",
+    "date_of_cessation": null,
+    "nationality": "India",
+    "dsc_status": null,
+    "dsc_expiry_date": null,
+    "father_name": null,
+    "address": null,
+    "association_history": [
+     {
+      "event": null,
+      "designation_after_event": "Director",
+      "event_date": "2008-11-04",
+      "filing_date": null
+     }
+    ]
+   },
+   {
+    "pan": null,
+    "din": "05356488",
+    "name": "ACHAL KUMAR CHAUHAN",
+    "designation": "Director",
+    "din_status": "Approved",
+    "gender": "Male",
+    "date_of_birth": null,
+    "age": null,
+    "date_of_appointment": "2014-11-03",
+    "date_of_appointment_for_current_designation": "2025-09-30",
+    "date_of_cessation": null,
+    "nationality": "India",
+    "dsc_status": null,
+    "dsc_expiry_date": null,
+    "father_name": null,
+    "address": null,
+    "association_history": [
+     {
+      "event": null,
+      "designation_after_event": "Director",
+      "event_date": "2025-09-30",
+      "filing_date": null
+     },
+     {
+      "event": null,
+      "designation_after_event": "Additional Director",
+      "event_date": "2014-11-03",
+      "filing_date": null
+     }
+    ]
+   }
+  ],
+  "director_network": [
+   {
+    "name": "ANAND CHAUHAN",
+    "pan": null,
+    "din": "00241095",
+    "network": {
+     "companies": [
+      {
+       "cin": "U32101DL1986PLC024197",
+       "legal_name": "TECHNICOM CHEMIE (INDIA) LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1986-05-13",
+       "paid_up_capital": 10000000,
+       "sum_of_charges": 0,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "1986-05-13",
+       "date_of_appointment_for_current_designation": "1986-05-13",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U74899DL1979PTC009567",
+       "legal_name": "TEGRO (INDIA) PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1979-04-24",
+       "paid_up_capital": 2500000,
+       "sum_of_charges": 0,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "1979-04-24",
+       "date_of_appointment_for_current_designation": "1979-04-24",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U74899DL1986PTC026022",
+       "legal_name": "STRATEGA FINANCE COMPANY PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1986-11-07",
+       "paid_up_capital": 3500000,
+       "sum_of_charges": 0,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "1986-11-07",
+       "date_of_appointment_for_current_designation": "1986-11-07",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U74899DL1986PTC025761",
+       "legal_name": "AMITY TV NETWORK PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1986-10-17",
+       "paid_up_capital": 6000000,
+       "sum_of_charges": 0,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "1986-10-17",
+       "date_of_appointment_for_current_designation": "1986-10-17",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U74899DL1988PTC033847",
+       "legal_name": "PHARMAPLAN INDIA PRIVATE LIMITED",
+       "company_status": "UNDER PROCESS OF STRIKING OFF",
+       "incorporation_date": "1988-11-10",
+       "paid_up_capital": 100000,
+       "sum_of_charges": 0,
+       "city": "NEW DELHI",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "1988-11-10",
+       "date_of_appointment_for_current_designation": "1988-11-10",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U74899DL1988PTC033883",
+       "legal_name": "AKC DATA SYSTEMS (INDIA) PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1988-11-15",
+       "paid_up_capital": 10000000,
+       "sum_of_charges": 720000,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "1988-11-15",
+       "date_of_appointment_for_current_designation": "1988-11-15",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U23209DL2008PLC184638",
+       "legal_name": "CINCORP INTERNATIONAL LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2008-11-04",
+       "paid_up_capital": 4950000,
+       "sum_of_charges": 26500000,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2008-11-04",
+       "date_of_appointment_for_current_designation": "2008-11-04",
+       "date_of_cessation": "2010-04-05"
+      },
+      {
+       "cin": "U24119DL1988PLC031899",
+       "legal_name": "CHABRO CHEMIE INDIA LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1988-05-31",
+       "paid_up_capital": 500700,
+       "sum_of_charges": 0,
+       "city": "NEW DELHI",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "1988-05-31",
+       "date_of_appointment_for_current_designation": "1988-05-31",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U74140DL1998PLC097728",
+       "legal_name": "CRYSTAL AND DRISCOL CONSULTING LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1998-12-31",
+       "paid_up_capital": 500000,
+       "sum_of_charges": 0,
+       "city": "NEW DELHI",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "1998-12-31",
+       "date_of_appointment_for_current_designation": "1998-12-31",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U74899DL1995PTC070806",
+       "legal_name": "FIRST GRADE FORCE PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1995-07-14",
+       "paid_up_capital": 5000000,
+       "sum_of_charges": 0,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "1995-07-14",
+       "date_of_appointment_for_current_designation": "1995-07-14",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U64201DL1979PLC009596",
+       "legal_name": "KUNSTOCOM (INDIA) LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1979-05-02",
+       "paid_up_capital": 59932970,
+       "sum_of_charges": 355286600,
+       "city": "NEW DELHI",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Managing Director",
+       "date_of_appointment": "1979-05-02",
+       "date_of_appointment_for_current_designation": "1979-05-02",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U36939DL1976PLC375272",
+       "legal_name": "KUNSTOPLAST(INDIA) LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1976-05-14",
+       "paid_up_capital": 8500000,
+       "sum_of_charges": 10000000,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "1976-05-14",
+       "date_of_appointment_for_current_designation": "1976-05-14",
+       "date_of_cessation": null
+      }
+     ],
+     "llps": [],
+     "proprietorship": []
+    }
+   },
+   {
+    "name": "ARUN KUMAR CHAUHAN",
+    "pan": null,
+    "din": "00241128",
+    "network": {
+     "companies": [
+      {
+       "cin": "U32101DL1986PLC024197",
+       "legal_name": "TECHNICOM CHEMIE (INDIA) LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1986-05-13",
+       "paid_up_capital": 10000000,
+       "sum_of_charges": 0,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "1986-06-01",
+       "date_of_appointment_for_current_designation": "1986-06-01",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U74899DL1994PLC062272",
+       "legal_name": "BACFO PHARMACEUTICALS (INDIA ) LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1994-10-20",
+       "paid_up_capital": 32095040,
+       "sum_of_charges": 267669000,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Managing Director",
+       "date_of_appointment": "1994-10-21",
+       "date_of_appointment_for_current_designation": "1994-10-21",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U65100DL2008PTC184076",
+       "legal_name": "BACFO & KRAUTER HOLDINGS PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2008-10-08",
+       "paid_up_capital": 17000000,
+       "sum_of_charges": 329788000,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2008-10-08",
+       "date_of_appointment_for_current_designation": "2008-10-08",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U23209DL2008PLC184638",
+       "legal_name": "CINCORP INTERNATIONAL LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2008-11-04",
+       "paid_up_capital": 4950000,
+       "sum_of_charges": 26500000,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2008-11-04",
+       "date_of_appointment_for_current_designation": "2008-11-04",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U74110DL1996PTC077913",
+       "legal_name": "CROBOLS-CROSS BORDER LEGAL SYSTEMS (INDIA) PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1996-04-08",
+       "paid_up_capital": 5000000,
+       "sum_of_charges": 0,
+       "city": "NEW DELHI",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2005-10-05",
+       "date_of_appointment_for_current_designation": "2005-10-05",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U74899DL1995PTC070806",
+       "legal_name": "FIRST GRADE FORCE PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1995-07-14",
+       "paid_up_capital": 5000000,
+       "sum_of_charges": 0,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2008-03-24",
+       "date_of_appointment_for_current_designation": "2008-09-29",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U67110DL2011PLC212268",
+       "legal_name": "I FINANCE COMPANY LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2011-01-06",
+       "paid_up_capital": 500000,
+       "sum_of_charges": 0,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2011-01-06",
+       "date_of_appointment_for_current_designation": "2011-01-06",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U85100DL2012PTC232429",
+       "legal_name": "ATHARV CARE INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2012-03-05",
+       "paid_up_capital": 100000,
+       "sum_of_charges": 0,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2012-03-05",
+       "date_of_appointment_for_current_designation": "2012-03-05",
+       "date_of_cessation": null
+      }
+     ],
+     "llps": [],
+     "proprietorship": []
+    }
+   },
+   {
+    "name": "AKHIL CHAUHAN",
+    "pan": null,
+    "din": "01447201",
+    "network": {
+     "companies": [
+      {
+       "cin": "U74899DL1994PLC062272",
+       "legal_name": "BACFO PHARMACEUTICALS (INDIA ) LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1994-10-20",
+       "paid_up_capital": 32095040,
+       "sum_of_charges": 267669000,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2006-12-28",
+       "date_of_appointment_for_current_designation": "2006-12-28",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U67110DL2011PLC212268",
+       "legal_name": "I FINANCE COMPANY LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2011-01-06",
+       "paid_up_capital": 500000,
+       "sum_of_charges": 0,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2011-01-06",
+       "date_of_appointment_for_current_designation": "2011-01-06",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U85100DL2012PTC232429",
+       "legal_name": "ATHARV CARE INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2012-03-05",
+       "paid_up_capital": 100000,
+       "sum_of_charges": 0,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2012-03-05",
+       "date_of_appointment_for_current_designation": "2012-03-05",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U74120DL2013PTC252692",
+       "legal_name": "THINKLITE INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2013-05-24",
+       "paid_up_capital": 500000,
+       "sum_of_charges": 0,
+       "city": "DELHI",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2013-05-24",
+       "date_of_appointment_for_current_designation": "2013-05-24",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U23209DL2008PLC184638",
+       "legal_name": "CINCORP INTERNATIONAL LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2008-11-04",
+       "paid_up_capital": 4950000,
+       "sum_of_charges": 26500000,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2008-11-04",
+       "date_of_appointment_for_current_designation": "2008-11-04",
+       "date_of_cessation": null
+      }
+     ],
+     "llps": [],
+     "proprietorship": []
+    }
+   },
+   {
+    "name": "ABHISHEK CHAUHAN",
+    "pan": null,
+    "din": "02288404",
+    "network": {
+     "companies": [
+      {
+       "cin": "U74899DL1994PLC062272",
+       "legal_name": "BACFO PHARMACEUTICALS (INDIA ) LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1994-10-20",
+       "paid_up_capital": 32095040,
+       "sum_of_charges": 267669000,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Additional Director",
+       "date_of_appointment": "2010-01-01",
+       "date_of_appointment_for_current_designation": "2010-01-01",
+       "date_of_cessation": "2014-11-03"
+      },
+      {
+       "cin": "U23209DL2008PLC184638",
+       "legal_name": "CINCORP INTERNATIONAL LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2008-11-04",
+       "paid_up_capital": 4950000,
+       "sum_of_charges": 26500000,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Additional Director",
+       "date_of_appointment": "2010-01-01",
+       "date_of_appointment_for_current_designation": "2010-01-01",
+       "date_of_cessation": "2014-11-03"
+      },
+      {
+       "cin": "U67110DL2011PLC212268",
+       "legal_name": "I FINANCE COMPANY LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2011-01-06",
+       "paid_up_capital": 500000,
+       "sum_of_charges": 0,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2011-01-06",
+       "date_of_appointment_for_current_designation": "2011-01-06",
+       "date_of_cessation": "2014-11-03"
+      },
+      {
+       "cin": "U85100DL2012PTC232429",
+       "legal_name": "ATHARV CARE INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2012-03-05",
+       "paid_up_capital": 100000,
+       "sum_of_charges": 0,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2012-03-05",
+       "date_of_appointment_for_current_designation": "2012-03-05",
+       "date_of_cessation": "2014-11-03"
+      },
+      {
+       "cin": "U74120DL2013PTC252692",
+       "legal_name": "THINKLITE INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2013-05-24",
+       "paid_up_capital": 500000,
+       "sum_of_charges": 0,
+       "city": "DELHI",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2013-05-24",
+       "date_of_appointment_for_current_designation": "2013-05-24",
+       "date_of_cessation": "2014-11-03"
+      }
+     ],
+     "llps": [],
+     "proprietorship": []
+    }
+   },
+   {
+    "name": "ACHAL KUMAR CHAUHAN",
+    "pan": null,
+    "din": "05356488",
+    "network": {
+     "companies": [
+      {
+       "cin": "U85100DL2012PTC232429",
+       "legal_name": "ATHARV CARE INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2012-03-05",
+       "paid_up_capital": 100000,
+       "sum_of_charges": 0,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2021-03-05",
+       "date_of_appointment_for_current_designation": "2021-03-05",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U74120DL2013PTC252692",
+       "legal_name": "THINKLITE INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2013-05-24",
+       "paid_up_capital": 500000,
+       "sum_of_charges": 0,
+       "city": "DELHI",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2013-05-24",
+       "date_of_appointment_for_current_designation": "2013-05-24",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U74899DL1994PLC062272",
+       "legal_name": "BACFO PHARMACEUTICALS (INDIA ) LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1994-10-20",
+       "paid_up_capital": 32095040,
+       "sum_of_charges": 267669000,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2013-03-07",
+       "date_of_appointment_for_current_designation": "2025-09-30",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U67110DL2011PLC212268",
+       "legal_name": "I FINANCE COMPANY LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2011-01-06",
+       "paid_up_capital": 500000,
+       "sum_of_charges": 0,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2014-11-03",
+       "date_of_appointment_for_current_designation": "2025-09-30",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U23209DL2008PLC184638",
+       "legal_name": "CINCORP INTERNATIONAL LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2008-11-04",
+       "paid_up_capital": 4950000,
+       "sum_of_charges": 26500000,
+       "city": "New Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2014-11-03",
+       "date_of_appointment_for_current_designation": "2025-09-30",
+       "date_of_cessation": null
+      }
+     ],
+     "llps": [],
+     "proprietorship": []
+    }
+   }
+  ],
+  "contact_details": {
+   "email": [
+    {
+     "emailId": "info@cincorp.co.in",
+     "status": null
+    },
+    {
+     "emailId": "sangeetak@amity.edu",
+     "status": null
+    }
+   ],
+   "phone": [
+    {
+     "phoneNumber": "01124339900",
+     "status": null
+    },
+    {
+     "phoneNumber": "01141888000",
+     "status": null
+    }
+   ]
+  },
+  "open_charges": [
+   {
+    "id": 100486609,
+    "date": "2025-07-25",
+    "holder_name": "AXIS BANK LIMITED",
+    "amount": 26500000,
+    "type": "Modification"
+   }
+  ],
+  "open_charges_latest_event": [
+   {
+    "id": 100486609,
+    "date": "2025-07-25",
+    "holder_name": "AXIS BANK LIMITED",
+    "amount": 26500000,
+    "type": "Modification",
+    "property_type": "Immovable property or any interest therein - Others Others (PG OF INDIVIDUALS & CORPORATE GUARANTEE)",
+    "number_of_chargeholder": 1,
+    "instrument_description": "1) Extension Memorandum of Entry dated 25/07/2025 (2) Declaration Cum Confirmation Deed dated 24/07/2025 (3) Sanction Letter No.81628035 dated 05/07/2025 (4) Board Resolution of CINCORP INTERNATIONAL LIMITED dated 10/07/2025 (5) Board Resolution of BACFO & KRAUTER HOLDINGS PRIVATE LIMITED dated 10/07/2025",
+    "filing_date": "2025-08-11",
+    "rate_of_interest": "8%",
+    "terms_of_payment": "12 MTHS OD: On Demand, 72 MTHS Term Loan: 1 st Installment of Rs.152,762/- Next 71 Installments of Rs.152,778/-",
+    "property_particulars": "Corporate Guarantee and Property Owner BACFO & KRAUTER HOLDINGS PRIVATE LIMITED for facilities sanctioned to CINCORP INTERNATIONAL LIMITED Extension of Collateral Security: All that piece and parcel of land of Plot No. C-46 of area adms. 8100 sq mtrs situated in Industrial Area at Block C Phase-II Noida Expressway Distt Gautam Buddha Nagar,Uttar Pradesh-UP -201301 together with all the buildings and structure thereon, fixture and fittings and all plant and machinery attached to the earth or permanently fastened to anything attached to the earth both present and future...",
+    "extent_and_operation": "The Charge will operate as first and exclusive charge in favor of Axis Bank Limited till due repayment of loan, interest and any charges due on it.",
+    "other_terms": "Corporate Guarantee and property Owner BACFO AND KRAUTER HOLDINGS PRIVATE LIMITED",
+    "modification_particulars": "By present Modification SBB SECURED TERM LOAN: RS. 110 LAKHS SBB SECURED OVERDRAFT FACILITY: RS. 100 LAKHS (Enhancement from Rs.65 Lakhs to Rs.100 Lakhs) SBB SECURED TERM L: RS 55 LAKHS (Existing) TOTAL RS. 265 LAKHS Exisiting facilities are secured by Collateral Security : All that piece and parcel of land of Plot No. C- 46 of area adms. 8100 sq mtrs situated in Industrial Area at Block C Phase-II Noida Expressway Distt Gautam Buddha Nagar,Uttar Pradesh-UP -201301, India.",
+    "joint_holding": "NO",
+    "consortium_holding": "NO"
+   }
+  ],
+  "charge_sequence": [
+   {
+    "charge_id": 100486609,
+    "status": "Creation",
+    "date": "2021-08-28",
+    "amount": 12000000,
+    "holder_name": "AXIS BANK LIMITED",
+    "number_of_holder": 1,
+    "property_type": "Immovable property or any interest there in",
+    "filing_date": "2021-10-06",
+    "property_particulars": "Collateral Security:\rPROPERTY IN NAME OF BACFO AND KRAUTER HOLDINGS PRIVATE LIMITED\rAll that piece and parcel of land of Plot no: C-46 of area adms. 8100 sq mtrs situated in Industrial Area at PHASE 2, NOIDA, GAUTAM BUDDHA NAGAR, UTTAR PRADESH, 201301 INDIA together with all the buildings and structure thereon, fixture and fittings and all plant and machinery attached to the earth or permanently fastened to anything attached to the earth both present and future"
+   },
+   {
+    "charge_id": 100094362,
+    "status": "Satisfaction",
+    "date": "2021-09-01",
+    "amount": 10125000,
+    "holder_name": "ORIENTAL BANK OF COMMERCE",
+    "number_of_holder": null,
+    "property_type": null,
+    "filing_date": "2021-09-07",
+    "property_particulars": null
+   },
+   {
+    "charge_id": 100094362,
+    "status": "Creation",
+    "date": "2017-02-01",
+    "amount": 10125000,
+    "holder_name": "ORIENTAL BANK OF COMMERCE",
+    "number_of_holder": 1,
+    "property_type": "Movable property (not being pledge),Floating charge,Others (Personal Guarantee of the director)",
+    "filing_date": "2017-05-03",
+    "property_particulars": "Primary-\r1. Hypothecation of entire present & future plant & machinery and other fixed assets of the firm excluding land & building\r\rCollateral-\r1. Personal Guarantee of Director Sh Akhil Chauhan"
+   },
+   {
+    "charge_id": 10538649,
+    "status": "Satisfaction",
+    "date": "2021-09-01",
+    "amount": 2500000,
+    "holder_name": "ORIENTAL BANK OF COMMERCE",
+    "number_of_holder": null,
+    "property_type": null,
+    "filing_date": "2021-09-08",
+    "property_particulars": null
+   },
+   {
+    "charge_id": 10538649,
+    "status": "Creation",
+    "date": "2014-12-04",
+    "amount": 2500000,
+    "holder_name": "ORIENTAL BANK OF COMMERCE",
+    "number_of_holder": 1,
+    "property_type": "Movable property (not being pledge),Others (Plant and Machine)",
+    "filing_date": "2014-12-29",
+    "property_particulars": "-Hypothecation of Plant and Machinery purchased or to be purchased out of bank finance total costing of Rs.33.33 Lacs,-The Term Loan of Rs.25.00 Lacs shall also be secured by fixed/ block/ current assets of the company. including trade receivables etc."
+   },
+   {
+    "charge_id": 10370564,
+    "status": "Satisfaction",
+    "date": "2021-09-01",
+    "amount": 10000000,
+    "holder_name": "ORIENTAL BANK OF COMMERCE",
+    "number_of_holder": null,
+    "property_type": null,
+    "filing_date": "2021-09-08",
+    "property_particulars": null
+   },
+   {
+    "charge_id": 10370564,
+    "status": "Modification",
+    "date": "2017-02-01",
+    "amount": 10000000,
+    "holder_name": "ORIENTAL BANK OF COMMERCE",
+    "number_of_holder": 1,
+    "property_type": "Book debts,Movable property (not being pledge),Floating charge,Others (Personal Guarantee of the director)",
+    "filing_date": "2017-05-03",
+    "property_particulars": "Primary-\r1. Hypothecation of stocks of raw materials, stock in process, finished goods, stores & spares and receivables\r\rCollateral-\r1. Personal Guarantee of Director Sh Akhil Chauhan"
+   },
+   {
+    "charge_id": 10370564,
+    "status": "Modification",
+    "date": "2014-12-04",
+    "amount": 7000000,
+    "holder_name": "ORIENTAL BANK OF COMMERCE",
+    "number_of_holder": 1,
+    "property_type": "Movable property (not being pledge),Others (Plant and Machine)",
+    "filing_date": "2014-12-29",
+    "property_particulars": "-Hypothecation of Stocks of Raw Materials, stock-in process, finished goods, stores and spares and recivables. However th DP shall be allowed for the debtor period upto 180 days only.,-Hypothecation of Plant and Machinery present and future."
+   },
+   {
+    "charge_id": 10370564,
+    "status": "Creation",
+    "date": "2012-07-20",
+    "amount": 5000000,
+    "holder_name": "ORIENTAL BANK OF COMMERCE",
+    "number_of_holder": 1,
+    "property_type": "Book debts,Movable property (not being pledge),Floating charge,Others (Hypo. of stocks,book debts & plant & machinery)",
+    "filing_date": "2012-08-19",
+    "property_particulars": "Hypo. of stocks.,Hypo. of Book Debts,Hypo of Plant & Machinery ( Present & Future)"
+   }
+  ],
+  "financials": [
+   {
+    "year": "2026-03-31",
+    "nature": "STANDALONE",
+    "stated_on": "2026-03-31",
+    "filing_type": "E_FORM",
+    "start_date": "2025-04-01",
+    "filing_standard": "Schedule III",
+    "ratios": {
+     "revenue_growth": -11.77,
+     "gross_profit_margin": 41.27,
+     "net_margin": 5.97,
+     "ebitda_margin": 14.08,
+     "return_on_equity": 14.23,
+     "return_on_capital_employed": 11.52,
+     "debt_ratio": 0.44,
+     "debt_by_equity": 1.13,
+     "interest_coverage_ratio": 4.77,
+     "current_ratio": 1.41,
+     "quick_ratio": 0.98,
+     "inventory_by_sales_days": 51.74,
+     "debtors_by_sales_days": 88.03,
+     "payables_by_sales_days": 38.9,
+     "cash_conversion_cycle": 100.87,
+     "sales_by_net_fixed_assets": 1.66
+    },
+    "bs": {
+     "assets": {
+      "tangible_assets": 24752297,
+      "producing_properties": null,
+      "intangible_assets": 0,
+      "preproducing_properties": null,
+      "tangible_assets_capital_work_in_progress": 0,
+      "intangible_assets_under_development": 0,
+      "noncurrent_investments": 0,
+      "deferred_tax_assets_net": 0,
+      "foreign_curr_monetary_item_trans_diff_asset_account": null,
+      "long_term_loans_and_advances": 0,
+      "other_noncurrent_assets": 0,
+      "current_investments": 0,
+      "inventories": 5823853,
+      "trade_receivables": 9908283,
+      "cash_and_bank_balances": 3272724,
+      "short_term_loans_and_advances": 140000,
+      "other_current_assets": 176279,
+      "given_assets_total": 44073436
+     },
+     "liabilities": {
+      "share_capital": 4950000,
+      "reserves_and_surplus": 12285050,
+      "money_received_against_share_warrants": 0,
+      "share_application_money_pending_allotment": 0,
+      "deferred_government_grants": null,
+      "minority_interest": null,
+      "long_term_borrowings": 12099401,
+      "deferred_tax_liabilities_net": 1011431,
+      "foreign_curr_monetary_item_trans_diff_liability_account": null,
+      "other_long_term_liabilities": 0,
+      "long_term_provisions": 0,
+      "short_term_borrowings": 7439651,
+      "trade_payables": 4378246,
+      "other_current_liabilities": 418559,
+      "short_term_provisions": 1491098,
+      "given_liabilities_total": 44073436
+     },
+     "subTotals": {
+      "total_equity": 17235050,
+      "total_non_current_liabilities": 13110832,
+      "total_current_liabilities": 13727554,
+      "net_fixed_assets": 24752297,
+      "total_current_assets": 19321139,
+      "capital_wip": 0,
+      "total_debt": 19539052,
+      "total_other_non_current_assets": 0
+     },
+     "metadata": {
+      "doc_id": "350/U23209DL2008PLC184638/mca/AnnualReturnsEform/adf5e3182843ea57dc6adaa675ce12f0v1.pdf",
+      "xml_to_pdf_converted_doc_id": null
+     },
+     "notes": {
+      "gross_fixed_assets": 42018630,
+      "trade_receivable_exceeding_six_months": null
+     }
+    },
+    "pnl": {
+     "lineItems": {
+      "net_revenue": 41084942,
+      "total_cost_of_materials_consumed": 26117379,
+      "total_purchases_of_stock_in_trade": 0,
+      "total_changes_in_inventories_or_finished_goods": -1989197,
+      "total_employee_benefit_expense": 7253175,
+      "total_other_expenses": 3920042,
+      "operating_profit": 5783543,
+      "other_income": 795372,
+      "depreciation": 2344167,
+      "profit_before_interest_and_tax": 4234748,
+      "interest": 887986,
+      "profit_before_tax_and_exceptional_items_before_tax": 3346762,
+      "exceptional_items_before_tax": 0,
+      "profit_before_tax": 3346762,
+      "income_tax": 893579,
+      "profit_for_period_from_continuing_operations": 2453183,
+      "profit_from_discontinuing_operation_after_tax": 0,
+      "minority_interest_and_profit_from_associates_and_joint_ventures": null,
+      "profit_after_tax": 2453183
+     },
+     "subTotals": {
+      "total_operating_cost": 35301399
+     },
+     "revenue_breakup": {
+      "sale_of_goods_manufactured_domestic": 41084942,
+      "sale_of_goods_traded_domestic": 0,
+      "sale_or_supply_of_services_domestic": 0,
+      "sale_of_goods_manufactured_export": 0,
+      "sale_of_goods_traded_export": 0,
+      "sale_or_supply_of_services_export": 0
+     },
+     "depreciation_breakup": {
+      "depreciation_and_amortization": 2344167
+     },
+     "metadata": {
+      "docId": "350/U23209DL2008PLC184638/mca/AnnualReturnsEform/adf5e3182843ea57dc6adaa675ce12f0v1.pdf",
+      "xml_to_pdf_converted_doc_id": null
+     }
+    },
+    "cash_flow": null,
+    "pnl_key_schedule": {
+     "managerial_remuneration": 900000,
+     "payment_to_auditors": 12500,
+     "insurance_expenses": 44769,
+     "power_and_fuel": 1108000
+    },
+    "auditor": {
+     "auditor_name": "MITTAL ALOK KUMAR",
+     "auditor_firm_name": "ALOK MITTAL & ASSOCIATES",
+     "pan": null,
+     "membership_number": "071205",
+     "firm_registration_number": "005717N",
+     "address": "G6 Ground Floor SAKET NEW DELHI Delhi India 110017"
+    },
+    "auditor_comments": {
+     "report_has_adverse_remarks": false,
+     "disclosures_auditor_report": [],
+     "disclosures_director_report": []
+    },
+    "auditor_additional": null
+   },
+   {
+    "year": "2025-03-31",
+    "nature": "STANDALONE",
+    "stated_on": "2026-03-31",
+    "filing_type": "E_FORM",
+    "start_date": "2024-04-01",
+    "filing_standard": "Schedule III",
+    "ratios": {
+     "revenue_growth": 5.78,
+     "gross_profit_margin": 35.96,
+     "net_margin": 6.29,
+     "ebitda_margin": 11.91,
+     "return_on_equity": 20.1,
+     "return_on_capital_employed": 19.07,
+     "debt_ratio": 0.29,
+     "debt_by_equity": 0.59,
+     "interest_coverage_ratio": 10.01,
+     "current_ratio": 1.28,
+     "quick_ratio": 0.9,
+     "inventory_by_sales_days": 29.75,
+     "debtors_by_sales_days": 64.2,
+     "payables_by_sales_days": 29.24,
+     "cash_conversion_cycle": 64.71,
+     "sales_by_net_fixed_assets": 2.73
+    },
+    "bs": {
+     "assets": {
+      "tangible_assets": 17079911,
+      "producing_properties": null,
+      "intangible_assets": 0,
+      "preproducing_properties": null,
+      "tangible_assets_capital_work_in_progress": 0,
+      "intangible_assets_under_development": 0,
+      "noncurrent_investments": 0,
+      "deferred_tax_assets_net": 0,
+      "foreign_curr_monetary_item_trans_diff_asset_account": null,
+      "long_term_loans_and_advances": 0,
+      "other_noncurrent_assets": 0,
+      "current_investments": 0,
+      "inventories": 3795170,
+      "trade_receivables": 8190361,
+      "cash_and_bank_balances": 159158,
+      "short_term_loans_and_advances": 162000,
+      "other_current_assets": 538125,
+      "given_assets_total": 29924725
+     },
+     "liabilities": {
+      "share_capital": 4950000,
+      "reserves_and_surplus": 9623435,
+      "money_received_against_share_warrants": 0,
+      "share_application_money_pending_allotment": 0,
+      "deferred_government_grants": null,
+      "minority_interest": null,
+      "long_term_borrowings": 4460467,
+      "deferred_tax_liabilities_net": 852137,
+      "foreign_curr_monetary_item_trans_diff_liability_account": null,
+      "other_long_term_liabilities": 0,
+      "long_term_provisions": 0,
+      "short_term_borrowings": 4134528,
+      "trade_payables": 3729901,
+      "other_current_liabilities": 561058,
+      "short_term_provisions": 1613199,
+      "given_liabilities_total": 29924725
+     },
+     "subTotals": {
+      "total_equity": 14573435,
+      "total_non_current_liabilities": 5312604,
+      "total_current_liabilities": 10038686,
+      "net_fixed_assets": 17079911,
+      "total_current_assets": 12844814,
+      "capital_wip": 0,
+      "total_debt": 8594995,
+      "total_other_non_current_assets": 0
+     },
+     "metadata": {
+      "doc_id": "350/U23209DL2008PLC184638/mca/AnnualReturnsEform/adf5e3182843ea57dc6adaa675ce12f0v1.pdf",
+      "xml_to_pdf_converted_doc_id": null
+     },
+     "notes": {
+      "gross_fixed_assets": 32002074,
+      "trade_receivable_exceeding_six_months": null
+     }
+    },
+    "pnl": {
+     "lineItems": {
+      "net_revenue": 46566312,
+      "total_cost_of_materials_consumed": 29622774,
+      "total_purchases_of_stock_in_trade": 0,
+      "total_changes_in_inventories_or_finished_goods": 196743,
+      "total_employee_benefit_expense": 6641773,
+      "total_other_expenses": 4559544,
+      "operating_profit": 5545478,
+      "other_income": 732764,
+      "depreciation": 1860377,
+      "profit_before_interest_and_tax": 4417865,
+      "interest": 441320,
+      "profit_before_tax_and_exceptional_items_before_tax": 3976545,
+      "exceptional_items_before_tax": 0,
+      "profit_before_tax": 3976545,
+      "income_tax": 1047457,
+      "profit_for_period_from_continuing_operations": 2929088,
+      "profit_from_discontinuing_operation_after_tax": 0,
+      "minority_interest_and_profit_from_associates_and_joint_ventures": null,
+      "profit_after_tax": 2929088
+     },
+     "subTotals": {
+      "total_operating_cost": 41020834
+     },
+     "revenue_breakup": {
+      "sale_of_goods_manufactured_domestic": 46566312,
+      "sale_of_goods_traded_domestic": 0,
+      "sale_or_supply_of_services_domestic": 0,
+      "sale_of_goods_manufactured_export": 0,
+      "sale_of_goods_traded_export": 0,
+      "sale_or_supply_of_services_export": 0
+     },
+     "depreciation_breakup": {
+      "depreciation_and_amortization": 1860377
+     },
+     "metadata": {
+      "docId": "350/U23209DL2008PLC184638/mca/AnnualReturnsEform/adf5e3182843ea57dc6adaa675ce12f0v1.pdf",
+      "xml_to_pdf_converted_doc_id": null
+     }
+    },
+    "cash_flow": null,
+    "pnl_key_schedule": {
+     "managerial_remuneration": 900000,
+     "payment_to_auditors": 12100,
+     "insurance_expenses": 66866,
+     "power_and_fuel": 2520338
+    },
+    "auditor": {
+     "auditor_name": "MITTAL ALOK KUMAR",
+     "auditor_firm_name": "ALOK MITTAL & ASSOCIATES",
+     "pan": null,
+     "membership_number": "071205",
+     "firm_registration_number": "005717N",
+     "address": "G6 Ground Floor SAKET NEW DELHI Delhi India 110017"
+    },
+    "auditor_comments": {
+     "report_has_adverse_remarks": false,
+     "disclosures_auditor_report": [],
+     "disclosures_director_report": []
+    },
+    "auditor_additional": null
+   },
+   {
+    "year": "2024-03-31",
+    "nature": "STANDALONE",
+    "stated_on": "2025-03-31",
+    "filing_type": "E_FORM",
+    "start_date": "2023-04-01",
+    "filing_standard": "Schedule III",
+    "ratios": {
+     "revenue_growth": 11.43,
+     "gross_profit_margin": 36.52,
+     "net_margin": 6.2,
+     "ebitda_margin": 9.61,
+     "return_on_equity": 23.43,
+     "return_on_capital_employed": 15.16,
+     "debt_ratio": 0.41,
+     "debt_by_equity": 1.03,
+     "interest_coverage_ratio": 9.12,
+     "current_ratio": 1.26,
+     "quick_ratio": 0.87,
+     "inventory_by_sales_days": 35.83,
+     "debtors_by_sales_days": 50.22,
+     "payables_by_sales_days": 25.81,
+     "cash_conversion_cycle": 60.24,
+     "sales_by_net_fixed_assets": 2.89
+    },
+    "bs": {
+     "assets": {
+      "tangible_assets": 15226904,
+      "producing_properties": null,
+      "intangible_assets": 0,
+      "preproducing_properties": null,
+      "tangible_assets_capital_work_in_progress": 0,
+      "intangible_assets_under_development": 0,
+      "noncurrent_investments": 0,
+      "deferred_tax_assets_net": 0,
+      "foreign_curr_monetary_item_trans_diff_asset_account": null,
+      "long_term_loans_and_advances": 0,
+      "other_noncurrent_assets": 0,
+      "current_investments": 0,
+      "inventories": 4321729,
+      "trade_receivables": 6056864,
+      "cash_and_bank_balances": 2369537,
+      "short_term_loans_and_advances": 162000,
+      "other_current_assets": 1161810,
+      "given_assets_total": 29298844
+     },
+     "liabilities": {
+      "share_capital": 4950000,
+      "reserves_and_surplus": 6694348,
+      "money_received_against_share_warrants": 0,
+      "share_application_money_pending_allotment": 0,
+      "deferred_government_grants": null,
+      "minority_interest": null,
+      "long_term_borrowings": 5652047,
+      "deferred_tax_liabilities_net": 802799,
+      "foreign_curr_monetary_item_trans_diff_liability_account": null,
+      "other_long_term_liabilities": 0,
+      "long_term_provisions": 0,
+      "short_term_borrowings": 6311844,
+      "trade_payables": 3112826,
+      "other_current_liabilities": 748640,
+      "short_term_provisions": 1026340,
+      "given_liabilities_total": 29298844
+     },
+     "subTotals": {
+      "total_equity": 11644348,
+      "total_non_current_liabilities": 6454846,
+      "total_current_liabilities": 11199650,
+      "net_fixed_assets": 15226904,
+      "total_current_assets": 14071940,
+      "capital_wip": 0,
+      "total_debt": 11963891,
+      "total_other_non_current_assets": 0
+     },
+     "metadata": {
+      "doc_id": "350/U23209DL2008PLC184638/mca/AnnualReturnsEform/73cc1c7e88f7fe284cf706f44794b9dav1.pdf",
+      "xml_to_pdf_converted_doc_id": null
+     },
+     "notes": {
+      "gross_fixed_assets": 28288691,
+      "trade_receivable_exceeding_six_months": 0
+     }
+    },
+    "pnl": {
+     "lineItems": {
+      "net_revenue": 44022842,
+      "total_cost_of_materials_consumed": 28014699,
+      "total_purchases_of_stock_in_trade": 0,
+      "total_changes_in_inventories_or_finished_goods": -69035,
+      "total_employee_benefit_expense": 6388915,
+      "total_other_expenses": 5457107,
+      "operating_profit": 4231156,
+      "other_income": 794563,
+      "depreciation": 1446787,
+      "profit_before_interest_and_tax": 3578932,
+      "interest": 392302,
+      "profit_before_tax_and_exceptional_items_before_tax": 3186630,
+      "exceptional_items_before_tax": 0,
+      "profit_before_tax": 3186630,
+      "income_tax": 457853,
+      "profit_for_period_from_continuing_operations": 2728777,
+      "profit_from_discontinuing_operation_after_tax": 0,
+      "minority_interest_and_profit_from_associates_and_joint_ventures": null,
+      "profit_after_tax": 2728777
+     },
+     "subTotals": {
+      "total_operating_cost": 39791686
+     },
+     "revenue_breakup": {
+      "sale_of_goods_manufactured_domestic": 44022842,
+      "sale_of_goods_traded_domestic": 0,
+      "sale_or_supply_of_services_domestic": 0,
+      "sale_of_goods_manufactured_export": 0,
+      "sale_of_goods_traded_export": 0,
+      "sale_or_supply_of_services_export": 0
+     },
+     "depreciation_breakup": {
+      "depreciation_and_amortization": 1446787
+     },
+     "metadata": {
+      "docId": "350/U23209DL2008PLC184638/mca/AnnualReturnsEform/73cc1c7e88f7fe284cf706f44794b9dav1.pdf",
+      "xml_to_pdf_converted_doc_id": null
+     }
+    },
+    "cash_flow": null,
+    "pnl_key_schedule": {
+     "managerial_remuneration": 900000,
+     "payment_to_auditors": 11000,
+     "insurance_expenses": 67691,
+     "power_and_fuel": 2605434
+    },
+    "auditor": {
+     "auditor_name": "MITTAL ALOK KUMAR",
+     "auditor_firm_name": "ALOK MITTAL & ASSOCIATES",
+     "pan": null,
+     "membership_number": "071205",
+     "firm_registration_number": "005717N",
+     "address": "G6 Ground Floor SAKET NEW DELHI DL IN 110017"
+    },
+    "auditor_comments": {
+     "report_has_adverse_remarks": false,
+     "disclosures_auditor_report": [],
+     "disclosures_director_report": []
+    },
+    "auditor_additional": null
+   },
+   {
+    "year": "2023-03-31",
+    "nature": "STANDALONE",
+    "stated_on": "2024-03-31",
+    "filing_type": "E_FORM",
+    "start_date": "2022-04-01",
+    "filing_standard": "Schedule III",
+    "ratios": {
+     "revenue_growth": 8.11,
+     "gross_profit_margin": 34.2,
+     "net_margin": 5,
+     "ebitda_margin": 8.85,
+     "return_on_equity": 22.16,
+     "return_on_capital_employed": 14.83,
+     "debt_ratio": 0.39,
+     "debt_by_equity": 1.05,
+     "interest_coverage_ratio": 5.1,
+     "current_ratio": 2.83,
+     "quick_ratio": 2.14,
+     "inventory_by_sales_days": 36.77,
+     "debtors_by_sales_days": 58.34,
+     "payables_by_sales_days": 18.35,
+     "cash_conversion_cycle": 76.76,
+     "sales_by_net_fixed_assets": 5.29
+    },
+    "bs": {
+     "assets": {
+      "tangible_assets": 7466084,
+      "producing_properties": null,
+      "intangible_assets": 0,
+      "preproducing_properties": null,
+      "tangible_assets_capital_work_in_progress": 0,
+      "intangible_assets_under_development": 0,
+      "noncurrent_investments": 0,
+      "deferred_tax_assets_net": 0,
+      "foreign_curr_monetary_item_trans_diff_asset_account": null,
+      "long_term_loans_and_advances": 0,
+      "other_noncurrent_assets": 0,
+      "current_investments": 0,
+      "inventories": 3979501,
+      "trade_receivables": 6314134,
+      "cash_and_bank_balances": 5293074,
+      "short_term_loans_and_advances": 102000,
+      "other_current_assets": 625362,
+      "given_assets_total": 23780155
+     },
+     "liabilities": {
+      "share_capital": 4950000,
+      "reserves_and_surplus": 3965570,
+      "money_received_against_share_warrants": 0,
+      "share_application_money_pending_allotment": 0,
+      "deferred_government_grants": null,
+      "minority_interest": null,
+      "long_term_borrowings": 8264130,
+      "deferred_tax_liabilities_net": 842061,
+      "foreign_curr_monetary_item_trans_diff_liability_account": null,
+      "other_long_term_liabilities": 0,
+      "long_term_provisions": 0,
+      "short_term_borrowings": 1099920,
+      "trade_payables": 1986036,
+      "other_current_liabilities": 1407705,
+      "short_term_provisions": 1264733,
+      "given_liabilities_total": 23780155
+     },
+     "subTotals": {
+      "total_equity": 8915570,
+      "total_non_current_liabilities": 9106191,
+      "total_current_liabilities": 5758394,
+      "net_fixed_assets": 7466084,
+      "total_current_assets": 16314071,
+      "capital_wip": 0,
+      "total_debt": 9364050,
+      "total_other_non_current_assets": 0
+     },
+     "metadata": {
+      "doc_id": null,
+      "xml_to_pdf_converted_doc_id": null
+     },
+     "notes": {
+      "gross_fixed_assets": 19080140,
+      "trade_receivable_exceeding_six_months": 17973
+     }
+    },
+    "pnl": {
+     "lineItems": {
+      "net_revenue": 39506958,
+      "total_cost_of_materials_consumed": 26510956,
+      "total_purchases_of_stock_in_trade": 0,
+      "total_changes_in_inventories_or_finished_goods": -516252,
+      "total_employee_benefit_expense": 5934452,
+      "total_other_expenses": 4082472,
+      "operating_profit": 3495330,
+      "other_income": 439672,
+      "depreciation": 1224263,
+      "profit_before_interest_and_tax": 2710739,
+      "interest": 531876,
+      "profit_before_tax_and_exceptional_items_before_tax": 2178863,
+      "exceptional_items_before_tax": 0,
+      "profit_before_tax": 2178863,
+      "income_tax": 203423,
+      "profit_for_period_from_continuing_operations": 1975440,
+      "profit_from_discontinuing_operation_after_tax": 0,
+      "minority_interest_and_profit_from_associates_and_joint_ventures": null,
+      "profit_after_tax": 1975440
+     },
+     "subTotals": {
+      "total_operating_cost": 36011628
+     },
+     "revenue_breakup": {
+      "sale_of_goods_manufactured_domestic": 39506958,
+      "sale_of_goods_traded_domestic": 0,
+      "sale_or_supply_of_services_domestic": 0,
+      "sale_of_goods_manufactured_export": 0,
+      "sale_of_goods_traded_export": 0,
+      "sale_or_supply_of_services_export": 0
+     },
+     "depreciation_breakup": {
+      "depreciation_and_amortization": 1224263
+     },
+     "metadata": {
+      "docId": null,
+      "xml_to_pdf_converted_doc_id": null
+     }
+    },
+    "cash_flow": null,
+    "pnl_key_schedule": {
+     "managerial_remuneration": 1158000,
+     "payment_to_auditors": 10000,
+     "insurance_expenses": 67421,
+     "power_and_fuel": 2315340
+    },
+    "auditor": {
+     "auditor_name": "MITTAL ALOK KUMAR",
+     "auditor_firm_name": "ALOK MITTAL & ASSOCIATES",
+     "pan": null,
+     "membership_number": "071205",
+     "firm_registration_number": "005717N",
+     "address": "X-13 HAUZ KHAS NEW DELHI DL IN 110016"
+    },
+    "auditor_comments": {
+     "report_has_adverse_remarks": false,
+     "disclosures_auditor_report": [],
+     "disclosures_director_report": []
+    },
+    "auditor_additional": null
+   },
+   {
+    "year": "2022-03-31",
+    "nature": "STANDALONE",
+    "stated_on": "2023-03-31",
+    "filing_type": "E_FORM",
+    "start_date": "2021-04-01",
+    "filing_standard": "Schedule III",
+    "ratios": {
+     "revenue_growth": 47.53,
+     "gross_profit_margin": 30.64,
+     "net_margin": 4.1,
+     "ebitda_margin": 6.72,
+     "return_on_equity": 21.59,
+     "return_on_capital_employed": 12.3,
+     "debt_ratio": 0.51,
+     "debt_by_equity": 1.56,
+     "interest_coverage_ratio": 5.19,
+     "current_ratio": 3.25,
+     "quick_ratio": 2.3,
+     "inventory_by_sales_days": 38.44,
+     "debtors_by_sales_days": 37.95,
+     "payables_by_sales_days": 12.04,
+     "cash_conversion_cycle": 64.35,
+     "sales_by_net_fixed_assets": 4.57
+    },
+    "bs": {
+     "assets": {
+      "tangible_assets": 7997539,
+      "producing_properties": null,
+      "intangible_assets": 0,
+      "preproducing_properties": null,
+      "tangible_assets_capital_work_in_progress": 0,
+      "intangible_assets_under_development": 0,
+      "noncurrent_investments": 0,
+      "deferred_tax_assets_net": 0,
+      "foreign_curr_monetary_item_trans_diff_asset_account": null,
+      "long_term_loans_and_advances": 0,
+      "other_noncurrent_assets": 0,
+      "current_investments": 0,
+      "inventories": 3848975,
+      "trade_receivables": 3800119,
+      "cash_and_bank_balances": 5106366,
+      "short_term_loans_and_advances": 102000,
+      "other_current_assets": 414136,
+      "given_assets_total": 21269135
+     },
+     "liabilities": {
+      "share_capital": 4950000,
+      "reserves_and_surplus": 1990130,
+      "money_received_against_share_warrants": 0,
+      "share_application_money_pending_allotment": 0,
+      "deferred_government_grants": null,
+      "minority_interest": null,
+      "long_term_borrowings": 9262487,
+      "deferred_tax_liabilities_net": 978540,
+      "foreign_curr_monetary_item_trans_diff_liability_account": null,
+      "other_long_term_liabilities": 0,
+      "long_term_provisions": 0,
+      "short_term_borrowings": 1543370,
+      "trade_payables": 1205497,
+      "other_current_liabilities": 736947,
+      "short_term_provisions": 602164,
+      "given_liabilities_total": 21269135
+     },
+     "subTotals": {
+      "total_equity": 6940130,
+      "total_non_current_liabilities": 10241027,
+      "total_current_liabilities": 4087978,
+      "net_fixed_assets": 7997539,
+      "total_current_assets": 13271596,
+      "capital_wip": 0,
+      "total_debt": 10805857,
+      "total_other_non_current_assets": 0
+     },
+     "metadata": {
+      "doc_id": null,
+      "xml_to_pdf_converted_doc_id": null
+     },
+     "notes": {
+      "gross_fixed_assets": 18387332,
+      "trade_receivable_exceeding_six_months": 38151
+     }
+    },
+    "pnl": {
+     "lineItems": {
+      "net_revenue": 36544817,
+      "total_cost_of_materials_consumed": 25229648,
+      "total_purchases_of_stock_in_trade": 0,
+      "total_changes_in_inventories_or_finished_goods": 119188,
+      "total_employee_benefit_expense": 3601337,
+      "total_other_expenses": 5138209,
+      "operating_profit": 2456435,
+      "other_income": 949023,
+      "depreciation": 1222224,
+      "profit_before_interest_and_tax": 2183234,
+      "interest": 420425,
+      "profit_before_tax_and_exceptional_items_before_tax": 1762809,
+      "exceptional_items_before_tax": 0,
+      "profit_before_tax": 1762809,
+      "income_tax": 264322,
+      "profit_for_period_from_continuing_operations": 1498487,
+      "profit_from_discontinuing_operation_after_tax": 0,
+      "minority_interest_and_profit_from_associates_and_joint_ventures": null,
+      "profit_after_tax": 1498487
+     },
+     "subTotals": {
+      "total_operating_cost": 34088382
+     },
+     "revenue_breakup": {
+      "sale_of_goods_manufactured_domestic": 36544817,
+      "sale_of_goods_traded_domestic": 0,
+      "sale_or_supply_of_services_domestic": 0,
+      "sale_of_goods_manufactured_export": 0,
+      "sale_of_goods_traded_export": 0,
+      "sale_or_supply_of_services_export": 0
+     },
+     "depreciation_breakup": {
+      "depreciation_and_amortization": 1222224
+     },
+     "metadata": {
+      "docId": null,
+      "xml_to_pdf_converted_doc_id": null
+     }
+    },
+    "cash_flow": null,
+    "pnl_key_schedule": {
+     "managerial_remuneration": 300000,
+     "payment_to_auditors": 8470,
+     "insurance_expenses": 37984,
+     "power_and_fuel": 2428217
+    },
+    "auditor": {
+     "auditor_name": "MITTAL ALOK KUMAR",
+     "auditor_firm_name": "ALOK MITTAL & ASSOCIATES",
+     "pan": null,
+     "membership_number": "071205",
+     "firm_registration_number": "005717N",
+     "address": "X-13 HAUZ KHAS NEW DELHI DL IN 110016"
+    },
+    "auditor_comments": {
+     "report_has_adverse_remarks": false,
+     "disclosures_auditor_report": [],
+     "disclosures_director_report": []
+    },
+    "auditor_additional": null
+   },
+   {
+    "year": "2021-03-31",
+    "nature": "STANDALONE",
+    "stated_on": "2022-03-31",
+    "filing_type": "E_FORM",
+    "start_date": "2020-04-01",
+    "filing_standard": "Schedule III",
+    "ratios": {
+     "revenue_growth": -5.32,
+     "gross_profit_margin": 41.43,
+     "net_margin": 5.13,
+     "ebitda_margin": 11.82,
+     "return_on_equity": 23.33,
+     "return_on_capital_employed": 14.32,
+     "debt_ratio": 0.47,
+     "debt_by_equity": 1.56,
+     "interest_coverage_ratio": 3.37,
+     "current_ratio": 2.18,
+     "quick_ratio": 1.48,
+     "inventory_by_sales_days": 45,
+     "debtors_by_sales_days": 54.14,
+     "payables_by_sales_days": 30.49,
+     "cash_conversion_cycle": 68.65,
+     "sales_by_net_fixed_assets": 2.85
+    },
+    "bs": {
+     "assets": {
+      "tangible_assets": 8698743,
+      "producing_properties": null,
+      "intangible_assets": 0,
+      "preproducing_properties": null,
+      "tangible_assets_capital_work_in_progress": 0,
+      "intangible_assets_under_development": 0,
+      "noncurrent_investments": 0,
+      "deferred_tax_assets_net": 0,
+      "foreign_curr_monetary_item_trans_diff_asset_account": null,
+      "long_term_loans_and_advances": 0,
+      "other_noncurrent_assets": 0,
+      "current_investments": 0,
+      "inventories": 3054122,
+      "trade_receivables": 3674079,
+      "cash_and_bank_balances": 2299949,
+      "short_term_loans_and_advances": 223068,
+      "other_current_assets": 277217,
+      "given_assets_total": 18227178
+     },
+     "liabilities": {
+      "share_capital": 4950000,
+      "reserves_and_surplus": 491643,
+      "money_received_against_share_warrants": 0,
+      "share_application_money_pending_allotment": 0,
+      "deferred_government_grants": null,
+      "minority_interest": null,
+      "long_term_borrowings": 7414953,
+      "deferred_tax_liabilities_net": 992447,
+      "foreign_curr_monetary_item_trans_diff_liability_account": null,
+      "other_long_term_liabilities": 0,
+      "long_term_provisions": 0,
+      "short_term_borrowings": 1075160,
+      "trade_payables": 2068845,
+      "other_current_liabilities": 769650,
+      "short_term_provisions": 464480,
+      "given_liabilities_total": 18227178
+     },
+     "subTotals": {
+      "total_equity": 5441643,
+      "total_non_current_liabilities": 8407400,
+      "total_current_liabilities": 4378135,
+      "net_fixed_assets": 8698743,
+      "total_current_assets": 9528435,
+      "capital_wip": 0,
+      "total_debt": 8490113,
+      "total_other_non_current_assets": 0
+     },
+     "metadata": {
+      "doc_id": null,
+      "xml_to_pdf_converted_doc_id": null
+     },
+     "notes": {
+      "gross_fixed_assets": 17867282,
+      "trade_receivable_exceeding_six_months": 0
+     }
+    },
+    "pnl": {
+     "lineItems": {
+      "net_revenue": 24770440,
+      "total_cost_of_materials_consumed": 15248498,
+      "total_purchases_of_stock_in_trade": 0,
+      "total_changes_in_inventories_or_finished_goods": -739953,
+      "total_employee_benefit_expense": 3094873,
+      "total_other_expenses": 4238865,
+      "operating_profit": 2928157,
+      "other_income": 262303,
+      "depreciation": 1194765,
+      "profit_before_interest_and_tax": 1995695,
+      "interest": 591942,
+      "profit_before_tax_and_exceptional_items_before_tax": 1403753,
+      "exceptional_items_before_tax": 0,
+      "profit_before_tax": 1403753,
+      "income_tax": 134098,
+      "profit_for_period_from_continuing_operations": 1269655,
+      "profit_from_discontinuing_operation_after_tax": 0,
+      "minority_interest_and_profit_from_associates_and_joint_ventures": null,
+      "profit_after_tax": 1269655
+     },
+     "subTotals": {
+      "total_operating_cost": 21842283
+     },
+     "revenue_breakup": {
+      "sale_of_goods_manufactured_domestic": 24770440,
+      "sale_of_goods_traded_domestic": 0,
+      "sale_or_supply_of_services_domestic": 0,
+      "sale_of_goods_manufactured_export": 0,
+      "sale_of_goods_traded_export": 0,
+      "sale_or_supply_of_services_export": 0
+     },
+     "depreciation_breakup": {
+      "depreciation_and_amortization": 1194765
+     },
+     "metadata": {
+      "docId": null,
+      "xml_to_pdf_converted_doc_id": null
+     }
+    },
+    "cash_flow": null,
+    "pnl_key_schedule": {
+     "managerial_remuneration": 300000,
+     "payment_to_auditors": 9086,
+     "insurance_expenses": 37362,
+     "power_and_fuel": 1726963
+    },
+    "auditor": {
+     "auditor_name": "MITTAL ALOK KUMAR",
+     "auditor_firm_name": "ALOK MITTAL & ASSOCIATES",
+     "pan": null,
+     "membership_number": "071205",
+     "firm_registration_number": "005717N",
+     "address": "X-13 HAUZ KHAS NEW DELHI DL IN 110016"
+    },
+    "auditor_comments": {
+     "report_has_adverse_remarks": false,
+     "disclosures_auditor_report": [],
+     "disclosures_director_report": []
+    },
+    "auditor_additional": null
+   },
+   {
+    "year": "2020-03-31",
+    "nature": "STANDALONE",
+    "stated_on": "2021-03-31",
+    "filing_type": "E_FORM",
+    "start_date": "2019-04-01",
+    "filing_standard": "Schedule III",
+    "ratios": {
+     "revenue_growth": 15.73,
+     "gross_profit_margin": 40.12,
+     "net_margin": 2.47,
+     "ebitda_margin": 8.61,
+     "return_on_equity": 52.78,
+     "return_on_capital_employed": 8.05,
+     "debt_ratio": 0.76,
+     "debt_by_equity": 12.52,
+     "interest_coverage_ratio": 2.18,
+     "current_ratio": 1.56,
+     "quick_ratio": 1.25,
+     "inventory_by_sales_days": 28.81,
+     "debtors_by_sales_days": 74.07,
+     "payables_by_sales_days": 23.87,
+     "cash_conversion_cycle": 79.01,
+     "sales_by_net_fixed_assets": 2.64
+    },
+    "bs": {
+     "assets": {
+      "tangible_assets": 9893508,
+      "producing_properties": null,
+      "intangible_assets": 0,
+      "preproducing_properties": null,
+      "tangible_assets_capital_work_in_progress": 0,
+      "intangible_assets_under_development": 0,
+      "noncurrent_investments": 0,
+      "deferred_tax_assets_net": 0,
+      "foreign_curr_monetary_item_trans_diff_asset_account": null,
+      "long_term_loans_and_advances": 0,
+      "other_noncurrent_assets": 0,
+      "current_investments": 0,
+      "inventories": 2064677,
+      "trade_receivables": 5309132,
+      "cash_and_bank_balances": 2529102,
+      "short_term_loans_and_advances": 0,
+      "other_current_assets": 325996,
+      "given_assets_total": 20122415
+     },
+     "liabilities": {
+      "share_capital": 2000000,
+      "reserves_and_surplus": -778012,
+      "money_received_against_share_warrants": 0,
+      "share_application_money_pending_allotment": 0,
+      "deferred_government_grants": null,
+      "minority_interest": null,
+      "long_term_borrowings": 11278914,
+      "deferred_tax_liabilities_net": 1079322,
+      "foreign_curr_monetary_item_trans_diff_liability_account": null,
+      "other_long_term_liabilities": 0,
+      "long_term_provisions": 0,
+      "short_term_borrowings": 4018138,
+      "trade_payables": 1710706,
+      "other_current_liabilities": 472572,
+      "short_term_provisions": 340775,
+      "given_liabilities_total": 20122415
+     },
+     "subTotals": {
+      "total_equity": 1221988,
+      "total_non_current_liabilities": 12358236,
+      "total_current_liabilities": 6542191,
+      "net_fixed_assets": 9893508,
+      "total_current_assets": 10228907,
+      "capital_wip": 0,
+      "total_debt": 15297052,
+      "total_other_non_current_assets": 0
+     },
+     "metadata": {
+      "doc_id": null,
+      "xml_to_pdf_converted_doc_id": null
+     },
+     "notes": {
+      "gross_fixed_assets": 17867282,
+      "trade_receivable_exceeding_six_months": 0
+     }
+    },
+    "pnl": {
+     "lineItems": {
+      "net_revenue": 26161267,
+      "total_cost_of_materials_consumed": 15672010,
+      "total_purchases_of_stock_in_trade": 0,
+      "total_changes_in_inventories_or_finished_goods": -6656,
+      "total_employee_benefit_expense": 2961566,
+      "total_other_expenses": 5282088,
+      "operating_profit": 2252259,
+      "other_income": 279240,
+      "depreciation": 1202341,
+      "profit_before_interest_and_tax": 1329158,
+      "interest": 610353,
+      "profit_before_tax_and_exceptional_items_before_tax": 718805,
+      "exceptional_items_before_tax": 0,
+      "profit_before_tax": 718805,
+      "income_tax": 73827,
+      "profit_for_period_from_continuing_operations": 644978,
+      "profit_from_discontinuing_operation_after_tax": 0,
+      "minority_interest_and_profit_from_associates_and_joint_ventures": null,
+      "profit_after_tax": 644978
+     },
+     "subTotals": {
+      "total_operating_cost": 23909008
+     },
+     "revenue_breakup": {
+      "sale_of_goods_manufactured_domestic": 26161267,
+      "sale_of_goods_traded_domestic": 0,
+      "sale_or_supply_of_services_domestic": 0,
+      "sale_of_goods_manufactured_export": 0,
+      "sale_of_goods_traded_export": 0,
+      "sale_or_supply_of_services_export": 0
+     },
+     "depreciation_breakup": {
+      "depreciation_and_amortization": 1202341
+     },
+     "metadata": {
+      "docId": null,
+      "xml_to_pdf_converted_doc_id": null
+     }
+    },
+    "cash_flow": null,
+    "pnl_key_schedule": {
+     "managerial_remuneration": 300000,
+     "payment_to_auditors": 8260,
+     "insurance_expenses": 37000,
+     "power_and_fuel": 2579152
+    },
+    "auditor": {
+     "auditor_name": "MITTAL ALOK KUMAR",
+     "auditor_firm_name": "ALOK MITTAL & ASSOCIATES",
+     "pan": null,
+     "membership_number": "071205",
+     "firm_registration_number": "005717N",
+     "address": "X-13 HAUZ KHAS NEW DELHI DL IN 110016"
+    },
+    "auditor_comments": {
+     "report_has_adverse_remarks": false,
+     "disclosures_auditor_report": [],
+     "disclosures_director_report": []
+    },
+    "auditor_additional": null
+   },
+   {
+    "year": "2019-03-31",
+    "nature": "STANDALONE",
+    "stated_on": "2020-03-31",
+    "filing_type": "E_FORM",
+    "start_date": "2018-04-01",
+    "filing_standard": "Schedule III",
+    "ratios": {
+     "revenue_growth": 20.47,
+     "gross_profit_margin": 33.7,
+     "net_margin": -1.3,
+     "ebitda_margin": 3.83,
+     "return_on_equity": -50.91,
+     "return_on_capital_employed": 3.61,
+     "debt_ratio": 0.79,
+     "debt_by_equity": 30.08,
+     "interest_coverage_ratio": 0.7,
+     "current_ratio": 1.32,
+     "quick_ratio": 1.07,
+     "inventory_by_sales_days": 33.58,
+     "debtors_by_sales_days": 105.39,
+     "payables_by_sales_days": 32.48,
+     "cash_conversion_cycle": 106.49,
+     "sales_by_net_fixed_assets": 2.07
+    },
+    "bs": {
+     "assets": {
+      "tangible_assets": 10944807,
+      "producing_properties": null,
+      "intangible_assets": 0,
+      "preproducing_properties": null,
+      "tangible_assets_capital_work_in_progress": 0,
+      "intangible_assets_under_development": 0,
+      "noncurrent_investments": 0,
+      "deferred_tax_assets_net": 0,
+      "foreign_curr_monetary_item_trans_diff_asset_account": null,
+      "long_term_loans_and_advances": 0,
+      "other_noncurrent_assets": 0,
+      "current_investments": 0,
+      "inventories": 2079604,
+      "trade_receivables": 6527268,
+      "cash_and_bank_balances": 2162295,
+      "short_term_loans_and_advances": 0,
+      "other_current_assets": 212834,
+      "given_assets_total": 21926808
+     },
+     "liabilities": {
+      "share_capital": 2000000,
+      "reserves_and_surplus": -1422990,
+      "money_received_against_share_warrants": 0,
+      "share_application_money_pending_allotment": 0,
+      "deferred_government_grants": null,
+      "minority_interest": null,
+      "long_term_borrowings": 11909047,
+      "deferred_tax_liabilities_net": 1128702,
+      "foreign_curr_monetary_item_trans_diff_liability_account": null,
+      "other_long_term_liabilities": 0,
+      "long_term_provisions": 0,
+      "short_term_borrowings": 5446171,
+      "trade_payables": 2011543,
+      "other_current_liabilities": 661057,
+      "short_term_provisions": 193278,
+      "given_liabilities_total": 21926808
+     },
+     "subTotals": {
+      "total_equity": 577010,
+      "total_non_current_liabilities": 13037749,
+      "total_current_liabilities": 8312049,
+      "net_fixed_assets": 10944807,
+      "total_current_assets": 10982001,
+      "capital_wip": 0,
+      "total_debt": 17355218,
+      "total_other_non_current_assets": 0
+     },
+     "metadata": {
+      "doc_id": null,
+      "xml_to_pdf_converted_doc_id": null
+     },
+     "notes": {
+      "gross_fixed_assets": 17716240,
+      "trade_receivable_exceeding_six_months": 1018829
+     }
+    },
+    "pnl": {
+     "lineItems": {
+      "net_revenue": 22605548,
+      "total_cost_of_materials_consumed": 15263906,
+      "total_purchases_of_stock_in_trade": 0,
+      "total_changes_in_inventories_or_finished_goods": -275854,
+      "total_employee_benefit_expense": 2664940,
+      "total_other_expenses": 4086034,
+      "operating_profit": 866522,
+      "other_income": 1026825,
+      "depreciation": 1245236,
+      "profit_before_interest_and_tax": 648111,
+      "interest": 926333,
+      "profit_before_tax_and_exceptional_items_before_tax": -278222,
+      "exceptional_items_before_tax": 0,
+      "profit_before_tax": -278222,
+      "income_tax": 15539,
+      "profit_for_period_from_continuing_operations": -293761,
+      "profit_from_discontinuing_operation_after_tax": 0,
+      "minority_interest_and_profit_from_associates_and_joint_ventures": null,
+      "profit_after_tax": -293761
+     },
+     "subTotals": {
+      "total_operating_cost": 21739026
+     },
+     "revenue_breakup": {
+      "sale_of_goods_manufactured_domestic": 22605548,
+      "sale_of_goods_traded_domestic": 0,
+      "sale_or_supply_of_services_domestic": 0,
+      "sale_of_goods_manufactured_export": 0,
+      "sale_of_goods_traded_export": 0,
+      "sale_or_supply_of_services_export": 0
+     },
+     "depreciation_breakup": {
+      "depreciation_and_amortization": 1245236
+     },
+     "metadata": {
+      "docId": null,
+      "xml_to_pdf_converted_doc_id": null
+     }
+    },
+    "cash_flow": null,
+    "pnl_key_schedule": {
+     "managerial_remuneration": 300000,
+     "payment_to_auditors": 7670,
+     "insurance_expenses": 32454,
+     "power_and_fuel": 2025067
+    },
+    "auditor": {
+     "auditor_name": "MITTAL ALOK KUMAR",
+     "auditor_firm_name": "ALOK MITTAL & ASSOCIATES",
+     "pan": null,
+     "membership_number": "071205",
+     "firm_registration_number": "005717N",
+     "address": "X-13 HAUZ KHAS NEW DELHI DL INDIA 110016"
+    },
+    "auditor_comments": {
+     "report_has_adverse_remarks": false,
+     "disclosures_auditor_report": [],
+     "disclosures_director_report": []
+    },
+    "auditor_additional": null
+   },
+   {
+    "year": "2018-03-31",
+    "nature": "STANDALONE",
+    "stated_on": "2019-03-31",
+    "filing_type": "E_FORM",
+    "start_date": "2017-03-31",
+    "filing_standard": "Schedule III",
+    "ratios": {
+     "revenue_growth": -50.01,
+     "gross_profit_margin": 37.17,
+     "net_margin": -9.82,
+     "ebitda_margin": 0.44,
+     "return_on_equity": -211.71,
+     "return_on_capital_employed": -7.15,
+     "debt_ratio": 0.76,
+     "debt_by_equity": 17.05,
+     "interest_coverage_ratio": -1.36,
+     "current_ratio": 0.85,
+     "quick_ratio": 0.64,
+     "inventory_by_sales_days": 33.52,
+     "debtors_by_sales_days": 90.06,
+     "payables_by_sales_days": 44.21,
+     "cash_conversion_cycle": 79.37,
+     "sales_by_net_fixed_assets": 1.48
+    },
+    "bs": {
+     "assets": {
+      "tangible_assets": 12690927,
+      "producing_properties": null,
+      "intangible_assets": 0,
+      "preproducing_properties": null,
+      "tangible_assets_capital_work_in_progress": 0,
+      "intangible_assets_under_development": 0,
+      "noncurrent_investments": 0,
+      "deferred_tax_assets_net": 0,
+      "foreign_curr_monetary_item_trans_diff_asset_account": null,
+      "long_term_loans_and_advances": 0,
+      "other_noncurrent_assets": 0,
+      "current_investments": 0,
+      "inventories": 1723406,
+      "trade_receivables": 4629734,
+      "cash_and_bank_balances": 468738,
+      "short_term_loans_and_advances": 0,
+      "other_current_assets": 132611,
+      "given_assets_total": 19645416
+     },
+     "liabilities": {
+      "share_capital": 2000000,
+      "reserves_and_surplus": -1129229,
+      "money_received_against_share_warrants": 0,
+      "share_application_money_pending_allotment": 0,
+      "deferred_government_grants": null,
+      "minority_interest": null,
+      "long_term_borrowings": 9524257,
+      "deferred_tax_liabilities_net": 1113163,
+      "foreign_curr_monetary_item_trans_diff_liability_account": null,
+      "other_long_term_liabilities": 0,
+      "long_term_provisions": 0,
+      "short_term_borrowings": 5319152,
+      "trade_payables": 2272976,
+      "other_current_liabilities": 367869,
+      "short_term_provisions": 177228,
+      "given_liabilities_total": 19645416
+     },
+     "subTotals": {
+      "total_equity": 870771,
+      "total_non_current_liabilities": 10637420,
+      "total_current_liabilities": 8137225,
+      "net_fixed_assets": 12690927,
+      "total_current_assets": 6954489,
+      "capital_wip": 0,
+      "total_debt": 14843409,
+      "total_other_non_current_assets": 0
+     },
+     "metadata": {
+      "doc_id": null,
+      "xml_to_pdf_converted_doc_id": null
+     },
+     "notes": {
+      "gross_fixed_assets": 18497395,
+      "trade_receivable_exceeding_six_months": 0
+     }
+    },
+    "pnl": {
+     "lineItems": {
+      "net_revenue": 18764178,
+      "total_cost_of_materials_consumed": 11453739,
+      "total_purchases_of_stock_in_trade": 0,
+      "total_changes_in_inventories_or_finished_goods": 335430,
+      "total_employee_benefit_expense": 2478310,
+      "total_other_expenses": 4414102,
+      "operating_profit": 82597,
+      "other_income": 2850,
+      "depreciation": 1209673,
+      "profit_before_interest_and_tax": -1124226,
+      "interest": 829395,
+      "profit_before_tax_and_exceptional_items_before_tax": -1953621,
+      "exceptional_items_before_tax": 0,
+      "profit_before_tax": -1953621,
+      "income_tax": -110085,
+      "profit_for_period_from_continuing_operations": -1843536,
+      "profit_from_discontinuing_operation_after_tax": 0,
+      "minority_interest_and_profit_from_associates_and_joint_ventures": null,
+      "profit_after_tax": -1843536
+     },
+     "subTotals": {
+      "total_operating_cost": 18681581
+     },
+     "revenue_breakup": {
+      "sale_of_goods_manufactured_domestic": 18764178,
+      "sale_of_goods_traded_domestic": 0,
+      "sale_or_supply_of_services_domestic": 0,
+      "sale_of_goods_manufactured_export": 0,
+      "sale_of_goods_traded_export": 0,
+      "sale_or_supply_of_services_export": 0
+     },
+     "depreciation_breakup": {
+      "depreciation_and_amortization": 1209673
+     },
+     "metadata": {
+      "docId": null,
+      "xml_to_pdf_converted_doc_id": null
+     }
+    },
+    "cash_flow": null,
+    "pnl_key_schedule": {
+     "managerial_remuneration": 300000,
+     "payment_to_auditors": 6490,
+     "insurance_expenses": 47816,
+     "power_and_fuel": 2243802
+    },
+    "auditor": {
+     "auditor_name": "MITTAL ALOK KUMAR",
+     "auditor_firm_name": "ALOK MITTAL & ASSOCIATES",
+     "pan": null,
+     "membership_number": "071205",
+     "firm_registration_number": "005717N",
+     "address": "X-13 HAUZ KHAS NEW DELHI DL INDIA 110016"
+    },
+    "auditor_comments": {
+     "report_has_adverse_remarks": false,
+     "disclosures_auditor_report": [],
+     "disclosures_director_report": []
+    },
+    "auditor_additional": null
+   },
+   {
+    "year": "2017-03-31",
+    "nature": "STANDALONE",
+    "stated_on": "2018-03-31",
+    "filing_type": "E_FORM",
+    "start_date": "2016-04-01",
+    "filing_standard": "Schedule III",
+    "ratios": {
+     "revenue_growth": -0.18,
+     "gross_profit_margin": 36.16,
+     "net_margin": 3.19,
+     "ebitda_margin": 8.65,
+     "return_on_equity": 47.17,
+     "return_on_capital_employed": 15.32,
+     "debt_ratio": 0.66,
+     "debt_by_equity": 5.3,
+     "interest_coverage_ratio": 2.65,
+     "current_ratio": 1.13,
+     "quick_ratio": 0.89,
+     "inventory_by_sales_days": 17.89,
+     "debtors_by_sales_days": 54.47,
+     "payables_by_sales_days": 16.58,
+     "cash_conversion_cycle": 55.78,
+     "sales_by_net_fixed_assets": 3.19
+    },
+    "bs": {
+     "assets": {
+      "tangible_assets": 11748523,
+      "producing_properties": null,
+      "intangible_assets": 0,
+      "preproducing_properties": null,
+      "tangible_assets_capital_work_in_progress": 0,
+      "intangible_assets_under_development": 0,
+      "noncurrent_investments": 0,
+      "deferred_tax_assets_net": 0,
+      "foreign_curr_monetary_item_trans_diff_asset_account": null,
+      "long_term_loans_and_advances": 0,
+      "other_noncurrent_assets": 0,
+      "current_investments": 0,
+      "inventories": 1839777,
+      "trade_receivables": 5601235,
+      "cash_and_bank_balances": 425643,
+      "short_term_loans_and_advances": 0,
+      "other_current_assets": 629929,
+      "given_assets_total": 20245107
+     },
+     "liabilities": {
+      "share_capital": 2000000,
+      "reserves_and_surplus": 535195,
+      "money_received_against_share_warrants": 0,
+      "share_application_money_pending_allotment": 0,
+      "deferred_government_grants": null,
+      "minority_interest": null,
+      "long_term_borrowings": 8973414,
+      "deferred_tax_liabilities_net": 1223248,
+      "foreign_curr_monetary_item_trans_diff_liability_account": null,
+      "other_long_term_liabilities": 0,
+      "long_term_provisions": 0,
+      "short_term_borrowings": 4472161,
+      "trade_payables": 1704710,
+      "other_current_liabilities": 882257,
+      "short_term_provisions": 454122,
+      "given_liabilities_total": 20245107
+     },
+     "subTotals": {
+      "total_equity": 2535195,
+      "total_non_current_liabilities": 10196662,
+      "total_current_liabilities": 7513250,
+      "net_fixed_assets": 11748523,
+      "total_current_assets": 8496584,
+      "capital_wip": 0,
+      "total_debt": 13445575,
+      "total_other_non_current_assets": 0
+     },
+     "metadata": {
+      "doc_id": null,
+      "xml_to_pdf_converted_doc_id": null
+     },
+     "notes": {
+      "gross_fixed_assets": 16345318,
+      "trade_receivable_exceeding_six_months": 0
+     }
+    },
+    "pnl": {
+     "lineItems": {
+      "net_revenue": 37535361,
+      "total_cost_of_materials_consumed": 24840177,
+      "total_purchases_of_stock_in_trade": 0,
+      "total_changes_in_inventories_or_finished_goods": -878184,
+      "total_employee_benefit_expense": 2284022,
+      "total_other_expenses": 8043831,
+      "operating_profit": 3245515,
+      "other_income": 259448,
+      "depreciation": 1056982,
+      "profit_before_interest_and_tax": 2447981,
+      "interest": 922969,
+      "profit_before_tax_and_exceptional_items_before_tax": 1525012,
+      "exceptional_items_before_tax": 0,
+      "profit_before_tax": 1525012,
+      "income_tax": 329119,
+      "profit_for_period_from_continuing_operations": 1195893,
+      "profit_from_discontinuing_operation_after_tax": 0,
+      "minority_interest_and_profit_from_associates_and_joint_ventures": null,
+      "profit_after_tax": 1195893
+     },
+     "subTotals": {
+      "total_operating_cost": 34289846
+     },
+     "revenue_breakup": {
+      "sale_of_goods_manufactured_domestic": 37535361,
+      "sale_of_goods_traded_domestic": 0,
+      "sale_or_supply_of_services_domestic": 0,
+      "sale_of_goods_manufactured_export": 0,
+      "sale_of_goods_traded_export": 0,
+      "sale_or_supply_of_services_export": 0
+     },
+     "depreciation_breakup": {
+      "depreciation_and_amortization": 1056982
+     },
+     "metadata": {
+      "docId": null,
+      "xml_to_pdf_converted_doc_id": null
+     }
+    },
+    "cash_flow": null,
+    "pnl_key_schedule": {
+     "managerial_remuneration": 300000,
+     "payment_to_auditors": 5750,
+     "insurance_expenses": 32289,
+     "power_and_fuel": 4155047
+    },
+    "auditor": {
+     "auditor_name": "MITTAL ALOK KUMAR",
+     "auditor_firm_name": "ALOK MITTAL & ASSOCIATES",
+     "pan": null,
+     "membership_number": "071205",
+     "firm_registration_number": "005717N",
+     "address": "X-13 HAUZKHAS NEW DELHI DL INDIA 110016"
+    },
+    "auditor_comments": {
+     "report_has_adverse_remarks": false,
+     "disclosures_auditor_report": [],
+     "disclosures_director_report": []
+    },
+    "auditor_additional": null
+   },
+   {
+    "year": "2016-03-31",
+    "nature": "STANDALONE",
+    "stated_on": "2017-03-31",
+    "filing_type": "E_FORM",
+    "start_date": "2015-04-01",
+    "filing_standard": "Schedule III",
+    "ratios": {
+     "revenue_growth": 29.52,
+     "gross_profit_margin": 32.36,
+     "net_margin": 2.78,
+     "ebitda_margin": 8.59,
+     "return_on_equity": 78.15,
+     "return_on_capital_employed": 15.71,
+     "debt_ratio": 0.65,
+     "debt_by_equity": 10.25,
+     "interest_coverage_ratio": 2.57,
+     "current_ratio": 0.98,
+     "quick_ratio": 0.8,
+     "inventory_by_sales_days": 16.53,
+     "debtors_by_sales_days": 66.43,
+     "payables_by_sales_days": 35.49,
+     "cash_conversion_cycle": 47.47,
+     "sales_by_net_fixed_assets": 3.16
+    },
+    "bs": {
+     "assets": {
+      "tangible_assets": 11883914,
+      "producing_properties": null,
+      "intangible_assets": 0,
+      "preproducing_properties": null,
+      "tangible_assets_capital_work_in_progress": 0,
+      "intangible_assets_under_development": 0,
+      "noncurrent_investments": 0,
+      "deferred_tax_assets_net": 0,
+      "foreign_curr_monetary_item_trans_diff_asset_account": null,
+      "long_term_loans_and_advances": 0,
+      "other_noncurrent_assets": 0,
+      "current_investments": 0,
+      "inventories": 1702655,
+      "trade_receivables": 6843561,
+      "cash_and_bank_balances": 93497,
+      "short_term_loans_and_advances": 0,
+      "other_current_assets": 581993,
+      "given_assets_total": 21105620
+     },
+     "liabilities": {
+      "share_capital": 2000000,
+      "reserves_and_surplus": -660697,
+      "money_received_against_share_warrants": 0,
+      "share_application_money_pending_allotment": 0,
+      "deferred_government_grants": null,
+      "minority_interest": null,
+      "long_term_borrowings": 9133263,
+      "deferred_tax_liabilities_net": 1190673,
+      "foreign_curr_monetary_item_trans_diff_liability_account": null,
+      "other_long_term_liabilities": 0,
+      "long_term_provisions": 0,
+      "short_term_borrowings": 4599001,
+      "trade_payables": 3655964,
+      "other_current_liabilities": 766586,
+      "short_term_provisions": 420830,
+      "given_liabilities_total": 21105620
+     },
+     "subTotals": {
+      "total_equity": 1339303,
+      "total_non_current_liabilities": 10323936,
+      "total_current_liabilities": 9442381,
+      "net_fixed_assets": 11883914,
+      "total_current_assets": 9221706,
+      "capital_wip": 0,
+      "total_debt": 13732264,
+      "total_other_non_current_assets": 0
+     },
+     "metadata": {
+      "doc_id": null,
+      "xml_to_pdf_converted_doc_id": null
+     },
+     "notes": {
+      "gross_fixed_assets": 15423726,
+      "trade_receivable_exceeding_six_months": 0
+     }
+    },
+    "pnl": {
+     "lineItems": {
+      "net_revenue": 37603577,
+      "total_cost_of_materials_consumed": 25114827,
+      "total_purchases_of_stock_in_trade": 0,
+      "total_changes_in_inventories_or_finished_goods": 320424,
+      "total_employee_benefit_expense": 1671970,
+      "total_other_expenses": 7264903,
+      "operating_profit": 3231453,
+      "other_income": 157279,
+      "depreciation": 1021158,
+      "profit_before_interest_and_tax": 2367574,
+      "interest": 919803,
+      "profit_before_tax_and_exceptional_items_before_tax": 1447771,
+      "exceptional_items_before_tax": 0,
+      "profit_before_tax": 1447771,
+      "income_tax": 401082,
+      "profit_for_period_from_continuing_operations": 1046689,
+      "profit_from_discontinuing_operation_after_tax": 0,
+      "minority_interest_and_profit_from_associates_and_joint_ventures": null,
+      "profit_after_tax": 1046689
+     },
+     "subTotals": {
+      "total_operating_cost": 34372124
+     },
+     "revenue_breakup": {
+      "sale_of_goods_manufactured_domestic": 37603577,
+      "sale_of_goods_traded_domestic": 0,
+      "sale_or_supply_of_services_domestic": 0,
+      "sale_of_goods_manufactured_export": 0,
+      "sale_of_goods_traded_export": 0,
+      "sale_or_supply_of_services_export": 0
+     },
+     "depreciation_breakup": {
+      "depreciation_and_amortization": 1021158
+     },
+     "metadata": {
+      "docId": null,
+      "xml_to_pdf_converted_doc_id": null
+     }
+    },
+    "cash_flow": null,
+    "pnl_key_schedule": {
+     "managerial_remuneration": 0,
+     "payment_to_auditors": 5750,
+     "insurance_expenses": 110273,
+     "power_and_fuel": 3722267
+    },
+    "auditor": {
+     "auditor_name": "MITTAL ALOK KUMAR",
+     "auditor_firm_name": "ALOK MITTAL & ASSOCIATES",
+     "pan": null,
+     "membership_number": "071205",
+     "firm_registration_number": "005717N",
+     "address": "X-13 HAUZ KHAS NEW DELHI DL INDIA 110016"
+    },
+    "auditor_comments": {
+     "report_has_adverse_remarks": false,
+     "disclosures_auditor_report": [],
+     "disclosures_director_report": []
+    },
+    "auditor_additional": null
+   },
+   {
+    "year": "2015-03-31",
+    "nature": "STANDALONE",
+    "stated_on": "2016-03-31",
+    "filing_type": "E_FORM",
+    "start_date": "2014-04-01",
+    "filing_standard": "Schedule III",
+    "ratios": {
+     "revenue_growth": 4.53,
+     "gross_profit_margin": 26.05,
+     "net_margin": -0.39,
+     "ebitda_margin": 5.66,
+     "return_on_equity": -38.76,
+     "return_on_capital_employed": 5.31,
+     "debt_ratio": 0.66,
+     "debt_by_equity": 47.93,
+     "interest_coverage_ratio": 1.07,
+     "current_ratio": 0.8,
+     "quick_ratio": 0.67,
+     "inventory_by_sales_days": 18.29,
+     "debtors_by_sales_days": 79.05,
+     "payables_by_sales_days": 60.14,
+     "cash_conversion_cycle": 37.2,
+     "sales_by_net_fixed_assets": 2.33
+    },
+    "bs": {
+     "assets": {
+      "tangible_assets": 12435974,
+      "producing_properties": null,
+      "intangible_assets": 0,
+      "preproducing_properties": null,
+      "tangible_assets_capital_work_in_progress": 0,
+      "intangible_assets_under_development": 0,
+      "noncurrent_investments": 0,
+      "deferred_tax_assets_net": 0,
+      "foreign_curr_monetary_item_trans_diff_asset_account": null,
+      "long_term_loans_and_advances": 0,
+      "other_noncurrent_assets": 0,
+      "current_investments": 0,
+      "inventories": 1454487,
+      "trade_receivables": 6288331,
+      "cash_and_bank_balances": 295922,
+      "short_term_loans_and_advances": 0,
+      "other_current_assets": 612441,
+      "given_assets_total": 21087155
+     },
+     "liabilities": {
+      "share_capital": 2000000,
+      "reserves_and_surplus": -1707468,
+      "money_received_against_share_warrants": 0,
+      "share_application_money_pending_allotment": 0,
+      "deferred_government_grants": null,
+      "minority_interest": null,
+      "long_term_borrowings": 8970655,
+      "deferred_tax_liabilities_net": 1068741,
+      "foreign_curr_monetary_item_trans_diff_liability_account": null,
+      "other_long_term_liabilities": 0,
+      "long_term_provisions": 0,
+      "short_term_borrowings": 5050105,
+      "trade_payables": 4783607,
+      "other_current_liabilities": 820497,
+      "short_term_provisions": 101018,
+      "given_liabilities_total": 21087155
+     },
+     "subTotals": {
+      "total_equity": 292532,
+      "total_non_current_liabilities": 10039396,
+      "total_current_liabilities": 10755227,
+      "net_fixed_assets": 12435974,
+      "total_current_assets": 8651181,
+      "capital_wip": 0,
+      "total_debt": 14020760,
+      "total_other_non_current_assets": 0
+     },
+     "metadata": {
+      "doc_id": null,
+      "xml_to_pdf_converted_doc_id": null
+     },
+     "notes": {
+      "gross_fixed_assets": 14954628,
+      "trade_receivable_exceeding_six_months": 0
+     }
+    },
+    "pnl": {
+     "lineItems": {
+      "net_revenue": 29033875,
+      "total_cost_of_materials_consumed": 21846274,
+      "total_purchases_of_stock_in_trade": 0,
+      "total_changes_in_inventories_or_finished_goods": -375018,
+      "total_employee_benefit_expense": 1605462,
+      "total_other_expenses": 4313874,
+      "operating_profit": 1643283,
+      "other_income": 0,
+      "depreciation": 883153,
+      "profit_before_interest_and_tax": 760130,
+      "interest": 713509,
+      "profit_before_tax_and_exceptional_items_before_tax": 46621,
+      "exceptional_items_before_tax": 0,
+      "profit_before_tax": 46621,
+      "income_tax": 160020,
+      "profit_for_period_from_continuing_operations": -113399,
+      "profit_from_discontinuing_operation_after_tax": 0,
+      "minority_interest_and_profit_from_associates_and_joint_ventures": null,
+      "profit_after_tax": -113399
+     },
+     "subTotals": {
+      "total_operating_cost": 27390592
+     },
+     "revenue_breakup": {
+      "sale_of_goods_manufactured_domestic": 29033875,
+      "sale_of_goods_traded_domestic": 0,
+      "sale_or_supply_of_services_domestic": 0,
+      "sale_of_goods_manufactured_export": 0,
+      "sale_of_goods_traded_export": 0,
+      "sale_or_supply_of_services_export": 0
+     },
+     "depreciation_breakup": {
+      "depreciation_and_amortization": 883153
+     },
+     "metadata": {
+      "docId": null,
+      "xml_to_pdf_converted_doc_id": null
+     }
+    },
+    "cash_flow": null,
+    "pnl_key_schedule": {
+     "managerial_remuneration": 0,
+     "payment_to_auditors": 5700,
+     "insurance_expenses": 46336,
+     "power_and_fuel": 1546102
+    },
+    "auditor": {
+     "auditor_name": "MITTAL ALOK KUMAR",
+     "auditor_firm_name": "ALOK MITTAL & ASSOCIATES",
+     "pan": null,
+     "membership_number": "071205",
+     "firm_registration_number": "005717N",
+     "address": "X-13 HAUZ KHAS NEW DELHI DL IN 110016"
+    },
+    "auditor_comments": {
+     "report_has_adverse_remarks": false,
+     "disclosures_auditor_report": [],
+     "disclosures_director_report": []
+    },
+    "auditor_additional": null
+   },
+   {
+    "year": "2014-03-31",
+    "nature": "STANDALONE",
+    "stated_on": "2015-03-31",
+    "filing_type": "E_FORM",
+    "start_date": "2013-04-01",
+    "filing_standard": "Schedule III",
+    "ratios": {
+     "revenue_growth": 42.68,
+     "gross_profit_margin": 20.07,
+     "net_margin": -0.63,
+     "ebitda_margin": 4.79,
+     "return_on_equity": null,
+     "return_on_capital_employed": 6.3,
+     "debt_ratio": 0.66,
+     "debt_by_equity": null,
+     "interest_coverage_ratio": 1.1,
+     "current_ratio": 0.79,
+     "quick_ratio": 0.6,
+     "inventory_by_sales_days": 30.21,
+     "debtors_by_sales_days": 79.49,
+     "payables_by_sales_days": 84.61,
+     "cash_conversion_cycle": 25.09,
+     "sales_by_net_fixed_assets": 2.58
+    },
+    "bs": {
+     "assets": {
+      "tangible_assets": 10772603,
+      "producing_properties": null,
+      "intangible_assets": 0,
+      "preproducing_properties": null,
+      "tangible_assets_capital_work_in_progress": 0,
+      "intangible_assets_under_development": 0,
+      "noncurrent_investments": 0,
+      "deferred_tax_assets_net": 0,
+      "foreign_curr_monetary_item_trans_diff_asset_account": null,
+      "long_term_loans_and_advances": 0,
+      "other_noncurrent_assets": 0,
+      "current_investments": 0,
+      "inventories": 2299138,
+      "trade_receivables": 6048641,
+      "cash_and_bank_balances": 557111,
+      "short_term_loans_and_advances": 54798,
+      "other_current_assets": 718468,
+      "given_assets_total": 20450759
+     },
+     "liabilities": {
+      "share_capital": 500000,
+      "reserves_and_surplus": -1594069,
+      "money_received_against_share_warrants": 0,
+      "share_application_money_pending_allotment": 0,
+      "deferred_government_grants": null,
+      "minority_interest": null,
+      "long_term_borrowings": 8332767,
+      "deferred_tax_liabilities_net": 917980,
+      "foreign_curr_monetary_item_trans_diff_liability_account": null,
+      "other_long_term_liabilities": 0,
+      "long_term_provisions": 0,
+      "short_term_borrowings": 5194871,
+      "trade_payables": 6438819,
+      "other_current_liabilities": 555631,
+      "short_term_provisions": 104760,
+      "given_liabilities_total": 20450759
+     },
+     "subTotals": {
+      "total_equity": -1094069,
+      "total_non_current_liabilities": 9250747,
+      "total_current_liabilities": 12294081,
+      "net_fixed_assets": 10772603,
+      "total_current_assets": 9678156,
+      "capital_wip": 0,
+      "total_debt": 13527638,
+      "total_other_non_current_assets": 0
+     },
+     "metadata": {
+      "doc_id": null,
+      "xml_to_pdf_converted_doc_id": null
+     },
+     "notes": {
+      "gross_fixed_assets": null,
+      "trade_receivable_exceeding_six_months": null
+     }
+    },
+    "pnl": {
+     "lineItems": {
+      "net_revenue": 27775093,
+      "total_cost_of_materials_consumed": 21972079,
+      "total_purchases_of_stock_in_trade": 0,
+      "total_changes_in_inventories_or_finished_goods": 227707,
+      "total_employee_benefit_expense": 1922315,
+      "total_other_expenses": 2322555,
+      "operating_profit": 1330437,
+      "other_income": 0,
+      "depreciation": 547399,
+      "profit_before_interest_and_tax": 783038,
+      "interest": 708909,
+      "profit_before_tax_and_exceptional_items_before_tax": 74129,
+      "exceptional_items_before_tax": 0,
+      "profit_before_tax": 74129,
+      "income_tax": 249045,
+      "profit_for_period_from_continuing_operations": -174916,
+      "profit_from_discontinuing_operation_after_tax": 0,
+      "minority_interest_and_profit_from_associates_and_joint_ventures": null,
+      "profit_after_tax": -174916
+     },
+     "subTotals": {
+      "total_operating_cost": 26444656
+     },
+     "revenue_breakup": {
+      "sale_of_goods_manufactured_domestic": 27775093,
+      "sale_of_goods_traded_domestic": 0,
+      "sale_or_supply_of_services_domestic": 0,
+      "sale_of_goods_manufactured_export": 0,
+      "sale_of_goods_traded_export": 0,
+      "sale_or_supply_of_services_export": 0
+     },
+     "depreciation_breakup": {
+      "depreciation_and_amortization": 547399
+     },
+     "metadata": {
+      "docId": null,
+      "xml_to_pdf_converted_doc_id": null
+     }
+    },
+    "cash_flow": null,
+    "pnl_key_schedule": {
+     "managerial_remuneration": 0,
+     "payment_to_auditors": 5618,
+     "insurance_expenses": 16359,
+     "power_and_fuel": 0
+    },
+    "auditor": null,
+    "auditor_comments": null,
+    "auditor_additional": null
+   }
+  ],
+  "nbfc_financials": [],
+  "financial_parameters": [
+   {
+    "year": "2026",
+    "nature": "STANDALONE",
+    "earning_fc": 0,
+    "expenditure_fc": 0,
+    "transaction_related_parties_as_18": 4404510,
+    "employee_benefit_expense": 7253175,
+    "number_of_employees": null,
+    "prescribed_csr_expenditure": null,
+    "total_amount_csr_spent_for_financial_year": null,
+    "gross_fixed_assets": 42018630,
+    "trade_receivable_exceeding_six_months": null,
+    "proposed_dividend": "No"
+   },
+   {
+    "year": "2025",
+    "nature": "STANDALONE",
+    "earning_fc": 0,
+    "expenditure_fc": 0,
+    "transaction_related_parties_as_18": 9999310,
+    "employee_benefit_expense": 6641773,
+    "number_of_employees": null,
+    "prescribed_csr_expenditure": null,
+    "total_amount_csr_spent_for_financial_year": null,
+    "gross_fixed_assets": 32002074,
+    "trade_receivable_exceeding_six_months": null,
+    "proposed_dividend": "No"
+   },
+   {
+    "year": "2024",
+    "nature": "STANDALONE",
+    "earning_fc": 0,
+    "expenditure_fc": 0,
+    "transaction_related_parties_as_18": 0,
+    "employee_benefit_expense": 6388915,
+    "number_of_employees": null,
+    "prescribed_csr_expenditure": 0,
+    "total_amount_csr_spent_for_financial_year": 0,
+    "gross_fixed_assets": 28288691,
+    "trade_receivable_exceeding_six_months": 0,
+    "proposed_dividend": "No"
+   },
+   {
+    "year": "2023",
+    "nature": "STANDALONE",
+    "earning_fc": 0,
+    "expenditure_fc": 0,
+    "transaction_related_parties_as_18": 0,
+    "employee_benefit_expense": 5934452,
+    "number_of_employees": null,
+    "prescribed_csr_expenditure": null,
+    "total_amount_csr_spent_for_financial_year": 0,
+    "gross_fixed_assets": 19080140,
+    "trade_receivable_exceeding_six_months": 17973,
+    "proposed_dividend": "No"
+   },
+   {
+    "year": "2022",
+    "nature": "STANDALONE",
+    "earning_fc": 0,
+    "expenditure_fc": 0,
+    "transaction_related_parties_as_18": 0,
+    "employee_benefit_expense": 3601337,
+    "number_of_employees": null,
+    "prescribed_csr_expenditure": null,
+    "total_amount_csr_spent_for_financial_year": 0,
+    "gross_fixed_assets": 18387332,
+    "trade_receivable_exceeding_six_months": 38151,
+    "proposed_dividend": "No"
+   },
+   {
+    "year": "2021",
+    "nature": "STANDALONE",
+    "earning_fc": 0,
+    "expenditure_fc": 0,
+    "transaction_related_parties_as_18": 0,
+    "employee_benefit_expense": 3094873,
+    "number_of_employees": null,
+    "prescribed_csr_expenditure": null,
+    "total_amount_csr_spent_for_financial_year": 0,
+    "gross_fixed_assets": 17867282,
+    "trade_receivable_exceeding_six_months": 0,
+    "proposed_dividend": "No"
+   },
+   {
+    "year": "2020",
+    "nature": "STANDALONE",
+    "earning_fc": 0,
+    "expenditure_fc": 0,
+    "transaction_related_parties_as_18": 0,
+    "employee_benefit_expense": 2961566,
+    "number_of_employees": null,
+    "prescribed_csr_expenditure": null,
+    "total_amount_csr_spent_for_financial_year": 0,
+    "gross_fixed_assets": 17867282,
+    "trade_receivable_exceeding_six_months": 0,
+    "proposed_dividend": "No"
+   },
+   {
+    "year": "2019",
+    "nature": "STANDALONE",
+    "earning_fc": 0,
+    "expenditure_fc": 0,
+    "transaction_related_parties_as_18": 0,
+    "employee_benefit_expense": 2664940,
+    "number_of_employees": null,
+    "prescribed_csr_expenditure": null,
+    "total_amount_csr_spent_for_financial_year": 0,
+    "gross_fixed_assets": 17716240,
+    "trade_receivable_exceeding_six_months": 1018829,
+    "proposed_dividend": "No"
+   },
+   {
+    "year": "2018",
+    "nature": "STANDALONE",
+    "earning_fc": 0,
+    "expenditure_fc": 0,
+    "transaction_related_parties_as_18": 0,
+    "employee_benefit_expense": 2478310,
+    "number_of_employees": null,
+    "prescribed_csr_expenditure": null,
+    "total_amount_csr_spent_for_financial_year": 0,
+    "gross_fixed_assets": 18497395,
+    "trade_receivable_exceeding_six_months": 0,
+    "proposed_dividend": "No"
+   },
+   {
+    "year": "2017",
+    "nature": "STANDALONE",
+    "earning_fc": 0,
+    "expenditure_fc": 0,
+    "transaction_related_parties_as_18": 0,
+    "employee_benefit_expense": 2284022,
+    "number_of_employees": null,
+    "prescribed_csr_expenditure": null,
+    "total_amount_csr_spent_for_financial_year": 0,
+    "gross_fixed_assets": 16345318,
+    "trade_receivable_exceeding_six_months": 0,
+    "proposed_dividend": "No"
+   },
+   {
+    "year": "2016",
+    "nature": "STANDALONE",
+    "earning_fc": 0,
+    "expenditure_fc": 0,
+    "transaction_related_parties_as_18": 0,
+    "employee_benefit_expense": 1671970,
+    "number_of_employees": null,
+    "prescribed_csr_expenditure": null,
+    "total_amount_csr_spent_for_financial_year": 0,
+    "gross_fixed_assets": 15423726,
+    "trade_receivable_exceeding_six_months": 0,
+    "proposed_dividend": "No"
+   },
+   {
+    "year": "2015",
+    "nature": "STANDALONE",
+    "earning_fc": 0,
+    "expenditure_fc": 0,
+    "transaction_related_parties_as_18": 0,
+    "employee_benefit_expense": 1605462,
+    "number_of_employees": null,
+    "prescribed_csr_expenditure": 0,
+    "total_amount_csr_spent_for_financial_year": 0,
+    "gross_fixed_assets": 14954628,
+    "trade_receivable_exceeding_six_months": 0,
+    "proposed_dividend": "No"
+   },
+   {
+    "year": "2014",
+    "nature": "STANDALONE",
+    "earning_fc": null,
+    "expenditure_fc": null,
+    "transaction_related_parties_as_18": null,
+    "employee_benefit_expense": null,
+    "number_of_employees": null,
+    "prescribed_csr_expenditure": null,
+    "total_amount_csr_spent_for_financial_year": null,
+    "gross_fixed_assets": null,
+    "trade_receivable_exceeding_six_months": null,
+    "proposed_dividend": "No"
+   }
+  ],
+  "industry_segments": [
+   {
+    "industry": "Packaging",
+    "segments": [
+     "Bottles and Caps"
+    ]
+   }
+  ],
+  "principal_business_activities": [
+   {
+    "year": "2025",
+    "main_activity_group_code": "C",
+    "main_activity_group_description": "Manufacturing",
+    "business_activity_code": "32",
+    "business_activity_description": "Other manufacturing",
+    "percentage_of_turnover": 100
+   }
+  ],
+  "related_party_transactions": [
+   {
+    "financial_year": "2025-03-31",
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": []
+   },
+   {
+    "financial_year": "2024-03-31",
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": []
+   },
+   {
+    "financial_year": "2023-03-31",
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": []
+   },
+   {
+    "financial_year": "2022-03-31",
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": []
+   },
+   {
+    "financial_year": "2021-03-31",
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": []
+   },
+   {
+    "financial_year": "2020-03-31",
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": []
+   },
+   {
+    "financial_year": "2019-03-31",
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": []
+   },
+   {
+    "financial_year": "2018-03-31",
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": []
+   },
+   {
+    "financial_year": "2017-03-31",
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": []
+   },
+   {
+    "financial_year": "2016-03-31",
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": []
+   },
+   {
+    "financial_year": "2015-03-31",
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": []
+   }
+  ],
+  "establishments_registered_with_epfo": [],
+  "shareholdings": [
+   {
+    "shareholders": "promoter",
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "category": "equity",
+    "indian_held_no_of_shares": 495000,
+    "indian_held_percentage_of_shares": 100,
+    "nri_held_no_of_shares": 0,
+    "nri_held_percentage_of_shares": 0,
+    "foreign_held_other_than_nri_no_of_shares": 0,
+    "foreign_held_other_than_nri_percentage_of_shares": 0,
+    "central_government_held_no_of_shares": 0,
+    "central_government_held_percentage_of_shares": 0,
+    "state_government_held_no_of_shares": 0,
+    "state_government_held_percentage_of_shares": 0,
+    "government_company_held_no_shares": 0,
+    "government_company_held_percentage_of_shares": 0,
+    "insurance_company_held_no_of_shares": 0,
+    "insurance_company_held_percentage_of_shares": 0,
+    "bank_held_no_of_shares": 0,
+    "bank_held_percentage_of_shares": 0,
+    "financial_institutions_held_no_of_shares": 0,
+    "financial_institutions_held_percentage_of_shares": 0,
+    "financial_institutions_investors_held_no_of_shares": 0,
+    "financial_institutions_investors_held_percentage_of_shares": 0,
+    "mutual_funds_held_no_of_shares": 0,
+    "mutual_funds_held_percentage_of_shares": 0,
+    "venture_capital_held_no_of_shares": 0,
+    "venture_capital_held_percentage_of_shares": 0,
+    "body_corporate_held_no_of_shares": 0,
+    "body_corporate_held_percentage_of_shares": 0,
+    "others_held_no_of_shares": null,
+    "others_held_percentage_of_shares": null,
+    "total_no_of_shares": 495000,
+    "total_percentage_of_shares": 100
+   },
+   {
+    "shareholders": "promoter",
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "category": "preference",
+    "indian_held_no_of_shares": 0,
+    "indian_held_percentage_of_shares": 0,
+    "nri_held_no_of_shares": 0,
+    "nri_held_percentage_of_shares": 0,
+    "foreign_held_other_than_nri_no_of_shares": 0,
+    "foreign_held_other_than_nri_percentage_of_shares": 0,
+    "central_government_held_no_of_shares": 0,
+    "central_government_held_percentage_of_shares": 0,
+    "state_government_held_no_of_shares": 0,
+    "state_government_held_percentage_of_shares": 0,
+    "government_company_held_no_shares": 0,
+    "government_company_held_percentage_of_shares": 0,
+    "insurance_company_held_no_of_shares": 0,
+    "insurance_company_held_percentage_of_shares": 0,
+    "bank_held_no_of_shares": 0,
+    "bank_held_percentage_of_shares": 0,
+    "financial_institutions_held_no_of_shares": 0,
+    "financial_institutions_held_percentage_of_shares": 0,
+    "financial_institutions_investors_held_no_of_shares": 0,
+    "financial_institutions_investors_held_percentage_of_shares": 0,
+    "mutual_funds_held_no_of_shares": 0,
+    "mutual_funds_held_percentage_of_shares": 0,
+    "venture_capital_held_no_of_shares": 0,
+    "venture_capital_held_percentage_of_shares": 0,
+    "body_corporate_held_no_of_shares": 0,
+    "body_corporate_held_percentage_of_shares": 0,
+    "others_held_no_of_shares": null,
+    "others_held_percentage_of_shares": null,
+    "total_no_of_shares": 0,
+    "total_percentage_of_shares": 0
+   },
+   {
+    "shareholders": "public",
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "category": "equity",
+    "indian_held_no_of_shares": 0,
+    "indian_held_percentage_of_shares": 0,
+    "nri_held_no_of_shares": 0,
+    "nri_held_percentage_of_shares": 0,
+    "foreign_held_other_than_nri_no_of_shares": 0,
+    "foreign_held_other_than_nri_percentage_of_shares": 0,
+    "central_government_held_no_of_shares": 0,
+    "central_government_held_percentage_of_shares": 0,
+    "state_government_held_no_of_shares": 0,
+    "state_government_held_percentage_of_shares": 0,
+    "government_company_held_no_shares": 0,
+    "government_company_held_percentage_of_shares": 0,
+    "insurance_company_held_no_of_shares": 0,
+    "insurance_company_held_percentage_of_shares": 0,
+    "bank_held_no_of_shares": 0,
+    "bank_held_percentage_of_shares": 0,
+    "financial_institutions_held_no_of_shares": 0,
+    "financial_institutions_held_percentage_of_shares": 0,
+    "financial_institutions_investors_held_no_of_shares": 0,
+    "financial_institutions_investors_held_percentage_of_shares": 0,
+    "mutual_funds_held_no_of_shares": 0,
+    "mutual_funds_held_percentage_of_shares": 0,
+    "venture_capital_held_no_of_shares": 0,
+    "venture_capital_held_percentage_of_shares": 0,
+    "body_corporate_held_no_of_shares": 0,
+    "body_corporate_held_percentage_of_shares": 0,
+    "others_held_no_of_shares": null,
+    "others_held_percentage_of_shares": null,
+    "total_no_of_shares": 0,
+    "total_percentage_of_shares": 0
+   },
+   {
+    "shareholders": "public",
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "category": "preference",
+    "indian_held_no_of_shares": 0,
+    "indian_held_percentage_of_shares": 0,
+    "nri_held_no_of_shares": 0,
+    "nri_held_percentage_of_shares": 0,
+    "foreign_held_other_than_nri_no_of_shares": 0,
+    "foreign_held_other_than_nri_percentage_of_shares": 0,
+    "central_government_held_no_of_shares": 0,
+    "central_government_held_percentage_of_shares": 0,
+    "state_government_held_no_of_shares": 0,
+    "state_government_held_percentage_of_shares": 0,
+    "government_company_held_no_shares": 0,
+    "government_company_held_percentage_of_shares": 0,
+    "insurance_company_held_no_of_shares": 0,
+    "insurance_company_held_percentage_of_shares": 0,
+    "bank_held_no_of_shares": 0,
+    "bank_held_percentage_of_shares": 0,
+    "financial_institutions_held_no_of_shares": 0,
+    "financial_institutions_held_percentage_of_shares": 0,
+    "financial_institutions_investors_held_no_of_shares": 0,
+    "financial_institutions_investors_held_percentage_of_shares": 0,
+    "mutual_funds_held_no_of_shares": 0,
+    "mutual_funds_held_percentage_of_shares": 0,
+    "venture_capital_held_no_of_shares": 0,
+    "venture_capital_held_percentage_of_shares": 0,
+    "body_corporate_held_no_of_shares": 0,
+    "body_corporate_held_percentage_of_shares": 0,
+    "others_held_no_of_shares": null,
+    "others_held_percentage_of_shares": null,
+    "total_no_of_shares": 0,
+    "total_percentage_of_shares": 0
+   }
+  ],
+  "shareholdings_more_than_five_percent": [
+   {
+    "company": [],
+    "llp": [],
+    "individual": [
+     {
+      "name": "ACHAL KUMAR CHAUHAN",
+      "shareholding_percentage": 28.28,
+      "no_of_shares": 140000,
+      "din": "05356488"
+     },
+     {
+      "name": "AKHIL CHAUHAN",
+      "shareholding_percentage": 38.38,
+      "no_of_shares": 190000,
+      "din": "01447201"
+     },
+     {
+      "name": "ARUN KUMAR CHAUHAN",
+      "shareholding_percentage": 16.16,
+      "no_of_shares": 80000,
+      "din": "00241128"
+     }
+    ],
+    "others": [],
+    "financial_year": "2025-03-31"
+   },
+   {
+    "company": [],
+    "llp": [],
+    "individual": [
+     {
+      "name": "ACHAL KUMARCHAUHAN",
+      "shareholding_percentage": 28.28,
+      "no_of_shares": 140000,
+      "din": "05356488"
+     },
+     {
+      "name": "AKHIL CHAUHAN",
+      "shareholding_percentage": 38.38,
+      "no_of_shares": 190000,
+      "din": "01447201"
+     },
+     {
+      "name": "ARUN KUMARCHAUHAN",
+      "shareholding_percentage": 16.16,
+      "no_of_shares": 80000,
+      "din": "00241128"
+     },
+     {
+      "name": "RENU CHAUHAN",
+      "shareholding_percentage": 14.75,
+      "no_of_shares": 73000,
+      "din": null
+     }
+    ],
+    "others": [],
+    "financial_year": "2024-03-31"
+   },
+   {
+    "company": [],
+    "llp": [],
+    "individual": [
+     {
+      "name": "ACHAL KUMAR CHAUHAN",
+      "shareholding_percentage": 28.28,
+      "no_of_shares": 140000,
+      "din": "05356488"
+     },
+     {
+      "name": "AKHIL CHAUHAN",
+      "shareholding_percentage": 38.38,
+      "no_of_shares": 190000,
+      "din": "01447201"
+     },
+     {
+      "name": "ARUN CHAUHAN",
+      "shareholding_percentage": 16.16,
+      "no_of_shares": 80000,
+      "din": "00241128"
+     },
+     {
+      "name": "RENU CHAUHAN",
+      "shareholding_percentage": 14.75,
+      "no_of_shares": 73000,
+      "din": null
+     }
+    ],
+    "others": [],
+    "financial_year": "2023-03-31"
+   }
+  ],
+  "shareholdings_summary": [
+   {
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "total_equity_shares": 495000,
+    "total_preference_shares": 0,
+    "promoter": 7,
+    "public": null,
+    "total": 7,
+    "metadata": {
+     "doc_id": "350/U23209DL2008PLC184638/mca/AnnualReturnsEform/2d5618ecf6bc1278de734998d29f9b1fv1.pdf",
+     "xml_to_pdf_converted_doc_id": null
+    }
+   }
+  ],
+  "director_shareholdings": [
+   {
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "din_pan": "00241128",
+    "full_name": "ARUN KUMAR CHAUHAN",
+    "designation": "Director",
+    "date_of_cessation": null,
+    "no_of_shares": 80000,
+    "percentage_holding": 16.16
+   },
+   {
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "din_pan": "05356488",
+    "full_name": "ACHAL KUMAR CHAUHAN",
+    "designation": "Additional Director",
+    "date_of_cessation": null,
+    "no_of_shares": 140000,
+    "percentage_holding": 28.28
+   },
+   {
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "din_pan": "01447201",
+    "full_name": "AKHIL CHAUHAN",
+    "designation": "Director",
+    "date_of_cessation": null,
+    "no_of_shares": 190000,
+    "percentage_holding": 38.38
+   }
+  ],
+  "bifr_history": [],
+  "cdr_history": [],
+  "defaulter_list": [],
+  "legal_history": [],
+  "credit_ratings": [],
+  "credit_rating_rationale": [],
+  "unaccepted_rating": null,
+  "holding_entities": null,
+  "subsidiary_entities": null,
+  "associate_entities": null,
+  "joint_ventures": null,
+  "securities_allotment": [
+   {
+    "allotment_type": "Cash",
+    "allotment_date": "2020-09-19",
+    "instrument": "Equity Shares Without Differential Rights",
+    "total_amount_raised": 2950000,
+    "number_of_securities_allotted": 295000,
+    "nominal_amount_per_security": 10,
+    "premium_amount_per_security": 0
+   },
+   {
+    "allotment_type": "Cash",
+    "allotment_date": "2015-03-31",
+    "instrument": "Equity Shares Without Differential Rights",
+    "total_amount_raised": 1500000,
+    "number_of_securities_allotted": 150000,
+    "nominal_amount_per_security": 10,
+    "premium_amount_per_security": 0
+   }
+  ],
+  "peer_comparison": [
+   {
+    "bizIndustry": "Packaging",
+    "bizSegment": "Bottles and Caps",
+    "refYear": "2025",
+    "peers": [
+     {
+      "cin": "U25209MH1993PTC071487",
+      "legalName": "DIVISH PACKAGING PVT LTD",
+      "revenue": 47767402,
+      "city": "PUNE"
+     },
+     {
+      "cin": "U74999MP2017PTC043199",
+      "legalName": "INDORE PACK PRIVATE LIMITED",
+      "revenue": 47496001,
+      "city": "DHAR"
+     },
+     {
+      "cin": "U23209DL2008PLC184638",
+      "legalName": "CINCORP INTERNATIONAL LIMITED",
+      "revenue": 46566312,
+      "city": "New Delhi"
+     },
+     {
+      "cin": "U36999WB2018PTC224824",
+      "legalName": "SKYPET AND POLYMERS PRIVATE LIMITED",
+      "revenue": 46546305.63,
+      "city": "KOLKATA"
+     },
+     {
+      "cin": "U25209MH1995PTC088965",
+      "legalName": "ANJALI POLYPLAST PRIVATE LIMITED",
+      "revenue": 46121633,
+      "city": "MUMBAI"
+     }
+    ],
+    "benchMarks": [
+     {
+      "year": "2026",
+      "no_of_peers_in_sample": 2,
+      "revenue": 4.11,
+      "revenue_growth": -11.77,
+      "net_margin": 5.97,
+      "ebitda_margin": 14.08,
+      "return_on_equity": 14.23,
+      "sales_by_net_fixed_assets": 1.66,
+      "inventory_holding_period": 51.74,
+      "debtor_days_outstanding": 88.03,
+      "trade_payable_days": 38.9,
+      "cash_conversion_cycle": 100.87,
+      "debt_by_equity": 1.13,
+      "gross_profit_margin": 41.27,
+      "return_on_capital_employed": 11.52,
+      "interest_coverage_ratio": 4.77,
+      "debt_ratio": 0.44,
+      "current_ratio": 1.41,
+      "quick_ratio": 0.98,
+      "median_revenue": 4.56,
+      "median_revenue_growth": -9.125,
+      "median_net_margin": 14.969999999999999,
+      "median_ebitda_margin": 23.47,
+      "median_return_on_equity": 14.195,
+      "median_sales_by_net_fixed_assets": 2.42,
+      "median_inventory_holding_period": 47.85,
+      "median_debtor_days_outstanding": 82.795,
+      "median_trade_payable_days": 23.384999999999998,
+      "median_cash_conversion_cycle": 107.26,
+      "median_debt_by_equity": 0.565,
+      "median_gross_profit_margin": 49.205,
+      "median_return_on_capital_employed": 15.26,
+      "median_interest_coverage_ratio": 426.885,
+      "median_debt_ratio": 0.22,
+      "median_current_ratio": 11.075,
+      "median_quick_ratio": 9.53
+     },
+     {
+      "year": "2025",
+      "no_of_peers_in_sample": 30,
+      "revenue": 4.66,
+      "revenue_growth": 5.78,
+      "net_margin": 6.29,
+      "ebitda_margin": 11.91,
+      "return_on_equity": 20.1,
+      "sales_by_net_fixed_assets": 2.73,
+      "inventory_holding_period": 29.75,
+      "debtor_days_outstanding": 64.2,
+      "trade_payable_days": 29.24,
+      "cash_conversion_cycle": 64.71000000000001,
+      "debt_by_equity": 0.59,
+      "gross_profit_margin": 35.96,
+      "return_on_capital_employed": 19.07,
+      "interest_coverage_ratio": 10.01,
+      "debt_ratio": 0.29,
+      "current_ratio": 1.28,
+      "quick_ratio": 0.9,
+      "median_revenue": 4.7,
+      "median_revenue_growth": 8.03,
+      "median_net_margin": 1.835,
+      "median_ebitda_margin": 5.09,
+      "median_return_on_equity": 17.23,
+      "median_sales_by_net_fixed_assets": 5.44,
+      "median_inventory_holding_period": 33.6,
+      "median_debtor_days_outstanding": 60.34,
+      "median_trade_payable_days": 46.245000000000005,
+      "median_cash_conversion_cycle": 61.050000000000004,
+      "median_debt_by_equity": 1.225,
+      "median_gross_profit_margin": 27.16,
+      "median_return_on_capital_employed": 12.455,
+      "median_interest_coverage_ratio": 2.44,
+      "median_debt_ratio": 0.375,
+      "median_current_ratio": 1.205,
+      "median_quick_ratio": 0.895
+     },
+     {
+      "year": "2024",
+      "no_of_peers_in_sample": 29,
+      "revenue": 4.4,
+      "revenue_growth": 11.43,
+      "net_margin": 6.2,
+      "ebitda_margin": 9.61,
+      "return_on_equity": 23.43,
+      "sales_by_net_fixed_assets": 2.89,
+      "inventory_holding_period": 35.83,
+      "debtor_days_outstanding": 50.22,
+      "trade_payable_days": 25.81,
+      "cash_conversion_cycle": 60.239999999999995,
+      "debt_by_equity": 1.03,
+      "gross_profit_margin": 36.52,
+      "return_on_capital_employed": 15.16,
+      "interest_coverage_ratio": 9.12,
+      "debt_ratio": 0.41,
+      "current_ratio": 1.26,
+      "quick_ratio": 0.87,
+      "median_revenue": 4.19,
+      "median_revenue_growth": 5.07,
+      "median_net_margin": 1.62,
+      "median_ebitda_margin": 4.4,
+      "median_return_on_equity": 10.504999999999999,
+      "median_sales_by_net_fixed_assets": 4.92,
+      "median_inventory_holding_period": 37.51,
+      "median_debtor_days_outstanding": 52.72,
+      "median_trade_payable_days": 36.91,
+      "median_cash_conversion_cycle": 69.33,
+      "median_debt_by_equity": 1.595,
+      "median_gross_profit_margin": 30.65,
+      "median_return_on_capital_employed": 12.02,
+      "median_interest_coverage_ratio": 2.395,
+      "median_debt_ratio": 0.37,
+      "median_current_ratio": 1.15,
+      "median_quick_ratio": 0.87
+     },
+     {
+      "year": "2023",
+      "no_of_peers_in_sample": 25,
+      "revenue": 3.95,
+      "revenue_growth": 8.11,
+      "net_margin": 5,
+      "ebitda_margin": 8.85,
+      "return_on_equity": 22.16,
+      "sales_by_net_fixed_assets": 5.29,
+      "inventory_holding_period": 36.77,
+      "debtor_days_outstanding": 58.34,
+      "trade_payable_days": 18.35,
+      "cash_conversion_cycle": 76.76000000000002,
+      "debt_by_equity": 1.05,
+      "gross_profit_margin": 34.2,
+      "return_on_capital_employed": 14.83,
+      "interest_coverage_ratio": 5.1,
+      "debt_ratio": 0.39,
+      "current_ratio": 2.83,
+      "quick_ratio": 2.14,
+      "median_revenue": 4.3,
+      "median_revenue_growth": 21.595,
+      "median_net_margin": 1.49,
+      "median_ebitda_margin": 4.53,
+      "median_return_on_equity": 16,
+      "median_sales_by_net_fixed_assets": 6.665,
+      "median_inventory_holding_period": 36.77,
+      "median_debtor_days_outstanding": 53.73,
+      "median_trade_payable_days": 33.33,
+      "median_cash_conversion_cycle": 70.03000000000002,
+      "median_debt_by_equity": 2.41,
+      "median_gross_profit_margin": 27.93,
+      "median_return_on_capital_employed": 9.85,
+      "median_interest_coverage_ratio": 1.94,
+      "median_debt_ratio": 0.39,
+      "median_current_ratio": 1.33,
+      "median_quick_ratio": 0.99
+     }
+    ]
+   }
+  ],
+  "gst_details": [
+   {
+    "gstin": "07AADCC5578M2Z4",
+    "status": "Cancelled",
+    "company_name": "CINCORP INTERNATIONAL LIMITED",
+    "trade_name": "CINCORP INTERNATIONAL LIMITED",
+    "state": "Delhi",
+    "state_jurisdiction": "Ward 98",
+    "centre_jurisdiction": "RANGE - 166",
+    "date_of_registration": "2018-02-17",
+    "taxpayer_type": "Regular",
+    "nature_of_business_activities": "Export | Import | Office / Sale Office | Recipient of Goods or Services | Supplier of Services",
+    "filing_timeliness": null,
+    "filings": [
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2019-09-09",
+      "filing_due_date": null,
+      "financial_year": "2019-2020",
+      "tax_period": "August",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2019-09-09",
+      "filing_due_date": null,
+      "financial_year": "2019-2020",
+      "tax_period": "August",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2019-08-09",
+      "filing_due_date": null,
+      "financial_year": "2019-2020",
+      "tax_period": "July",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2019-08-09",
+      "filing_due_date": null,
+      "financial_year": "2019-2020",
+      "tax_period": "July",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2019-07-10",
+      "filing_due_date": null,
+      "financial_year": "2019-2020",
+      "tax_period": "June",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2019-07-10",
+      "filing_due_date": null,
+      "financial_year": "2019-2020",
+      "tax_period": "June",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR9",
+      "date_of_filing": "2019-07-10",
+      "filing_due_date": null,
+      "financial_year": "2017-2018",
+      "tax_period": "Annual",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2019-06-17",
+      "filing_due_date": null,
+      "financial_year": "2019-2020",
+      "tax_period": "May",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2019-06-17",
+      "filing_due_date": null,
+      "financial_year": "2019-2020",
+      "tax_period": "May",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2019-05-09",
+      "filing_due_date": null,
+      "financial_year": "2019-2020",
+      "tax_period": "April",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2019-05-09",
+      "filing_due_date": null,
+      "financial_year": "2019-2020",
+      "tax_period": "April",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2019-04-12",
+      "filing_due_date": null,
+      "financial_year": "2018-2019",
+      "tax_period": "March",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2019-04-10",
+      "filing_due_date": null,
+      "financial_year": "2018-2019",
+      "tax_period": "March",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2019-03-05",
+      "filing_due_date": null,
+      "financial_year": "2018-2019",
+      "tax_period": "February",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2019-02-19",
+      "filing_due_date": null,
+      "financial_year": "2018-2019",
+      "tax_period": "January",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2019-01-17",
+      "filing_due_date": null,
+      "financial_year": "2018-2019",
+      "tax_period": "December",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2019-01-12",
+      "filing_due_date": null,
+      "financial_year": "2018-2019",
+      "tax_period": "December",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2018-12-10",
+      "filing_due_date": null,
+      "financial_year": "2018-2019",
+      "tax_period": "November",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2018-11-19",
+      "filing_due_date": null,
+      "financial_year": "2018-2019",
+      "tax_period": "September",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2018-11-19",
+      "filing_due_date": null,
+      "financial_year": "2018-2019",
+      "tax_period": "October",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2018-11-19",
+      "filing_due_date": null,
+      "financial_year": "2018-2019",
+      "tax_period": "September",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2018-11-05",
+      "filing_due_date": null,
+      "financial_year": "2018-2019",
+      "tax_period": "June",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2018-11-05",
+      "filing_due_date": null,
+      "financial_year": "2018-2019",
+      "tax_period": "August",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2018-08-09",
+      "filing_due_date": null,
+      "financial_year": "2018-2019",
+      "tax_period": "July",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2018-07-09",
+      "filing_due_date": null,
+      "financial_year": "2018-2019",
+      "tax_period": "June",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2018-06-16",
+      "filing_due_date": null,
+      "financial_year": "2018-2019",
+      "tax_period": "May",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2018-05-10",
+      "filing_due_date": null,
+      "financial_year": "2017-2018",
+      "tax_period": "March",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2018-05-10",
+      "filing_due_date": null,
+      "financial_year": "2018-2019",
+      "tax_period": "April",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2018-04-19",
+      "filing_due_date": null,
+      "financial_year": "2017-2018",
+      "tax_period": "March",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2018-04-18",
+      "filing_due_date": null,
+      "financial_year": "2017-2018",
+      "tax_period": "February",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     }
+    ]
+   },
+   {
+    "gstin": "07AADCC5578M1Z5",
+    "status": "Cancelled",
+    "company_name": "CINCORP INTERNATIONAL LTD.",
+    "trade_name": "CINCORP INTERNATIONAL LTD.",
+    "state": "Delhi",
+    "state_jurisdiction": null,
+    "centre_jurisdiction": null,
+    "date_of_registration": "2017-07-01",
+    "taxpayer_type": "Regular",
+    "nature_of_business_activities": null,
+    "filing_timeliness": null,
+    "filings": []
+   },
+   {
+    "gstin": "09AADCC5578M1Z1",
+    "status": "Active",
+    "company_name": "CINCORP INTERNATIONAL LIMITED",
+    "trade_name": "M/S CINCORP INTERNATIONAL  LTD",
+    "state": "Uttar Pradesh",
+    "state_jurisdiction": "GautamBuddha Nagar Sector-13",
+    "centre_jurisdiction": "RANGE - 23",
+    "date_of_registration": "2017-07-01",
+    "taxpayer_type": "Regular",
+    "nature_of_business_activities": "Factory / Manufacturing",
+    "filing_timeliness": "Filed on Time",
+    "filings": [
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2026-04-13",
+      "filing_due_date": "2026-04-13",
+      "financial_year": "2025-2026",
+      "tax_period": "March",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2026-01-22",
+      "filing_due_date": "2026-01-24",
+      "financial_year": "2025-2026",
+      "tax_period": "December",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2026-01-13",
+      "filing_due_date": "2026-01-13",
+      "financial_year": "2025-2026",
+      "tax_period": "December",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2025-10-17",
+      "filing_due_date": "2025-10-25",
+      "financial_year": "2025-2026",
+      "tax_period": "September",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-10-11",
+      "filing_due_date": "2025-10-13",
+      "financial_year": "2025-2026",
+      "tax_period": "September",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2025-07-23",
+      "filing_due_date": "2025-07-24",
+      "financial_year": "2025-2026",
+      "tax_period": "June",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-07-11",
+      "filing_due_date": "2025-07-13",
+      "financial_year": "2025-2026",
+      "tax_period": "June",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2025-04-24",
+      "filing_due_date": "2025-04-24",
+      "financial_year": "2024-2025",
+      "tax_period": "March",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-04-12",
+      "filing_due_date": "2025-04-13",
+      "financial_year": "2024-2025",
+      "tax_period": "March",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2025-01-24",
+      "filing_due_date": "2025-01-26",
+      "financial_year": "2024-2025",
+      "tax_period": "December",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-01-13",
+      "filing_due_date": "2025-01-15",
+      "financial_year": "2024-2025",
+      "tax_period": "December",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2024-10-23",
+      "filing_due_date": "2024-10-24",
+      "financial_year": "2024-2025",
+      "tax_period": "September",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2024-10-11",
+      "filing_due_date": "2024-10-13",
+      "financial_year": "2024-2025",
+      "tax_period": "September",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2024-07-24",
+      "filing_due_date": "2024-07-24",
+      "financial_year": "2024-2025",
+      "tax_period": "June",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2024-07-13",
+      "filing_due_date": "2024-07-13",
+      "financial_year": "2024-2025",
+      "tax_period": "June",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2026-03-13",
+      "filing_due_date": null,
+      "financial_year": "2025-2026",
+      "tax_period": "February",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2026-02-12",
+      "filing_due_date": null,
+      "financial_year": "2025-2026",
+      "tax_period": "January",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR9",
+      "date_of_filing": "2025-12-27",
+      "filing_due_date": null,
+      "financial_year": "2024-2025",
+      "tax_period": "Annual",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-12-12",
+      "filing_due_date": null,
+      "financial_year": "2025-2026",
+      "tax_period": "November",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-11-13",
+      "filing_due_date": null,
+      "financial_year": "2025-2026",
+      "tax_period": "October",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-09-13",
+      "filing_due_date": null,
+      "financial_year": "2025-2026",
+      "tax_period": "August",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-08-12",
+      "filing_due_date": null,
+      "financial_year": "2025-2026",
+      "tax_period": "July",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-06-13",
+      "filing_due_date": null,
+      "financial_year": "2025-2026",
+      "tax_period": "May",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-05-03",
+      "filing_due_date": null,
+      "financial_year": "2025-2026",
+      "tax_period": "April",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-03-12",
+      "filing_due_date": null,
+      "financial_year": "2024-2025",
+      "tax_period": "February",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-02-12",
+      "filing_due_date": null,
+      "financial_year": "2024-2025",
+      "tax_period": "January",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2024-12-13",
+      "filing_due_date": null,
+      "financial_year": "2024-2025",
+      "tax_period": "November",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2024-11-13",
+      "filing_due_date": null,
+      "financial_year": "2024-2025",
+      "tax_period": "October",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2024-09-12",
+      "filing_due_date": null,
+      "financial_year": "2024-2025",
+      "tax_period": "August",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2024-08-13",
+      "filing_due_date": null,
+      "financial_year": "2024-2025",
+      "tax_period": "July",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2024-06-08",
+      "filing_due_date": null,
+      "financial_year": "2024-2025",
+      "tax_period": "May",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2024-05-13",
+      "filing_due_date": null,
+      "financial_year": "2024-2025",
+      "tax_period": "April",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     }
+    ]
+   }
+  ],
+  "struckoff248_details": {
+   "struck_off_status": "As per our records, this corporate name was never removed under section 248(5) by ROC",
+   "restored_status": null
+  },
+  "msme_supplier_payment_delays": [],
+  "legal_cases_of_financial_disputes": [],
+  "probe_financial_score": [],
+  "key_indicators": {
+   "revenue": "Less than 5 cr.",
+   "profit": "Between 0.1 and 1 cr.",
+   "employee_count": "-",
+   "pending_cases_filed_against_this_corporate": false,
+   "bureau_defaults": false,
+   "gst_filing_delay": false,
+   "epf_payment_delay": null,
+   "severe_pending_cases_filed_against_this_corporate": false,
+   "credit_rating": null
+  },
+  "filing_dates": {
+   "aoc_4": {
+    "financial_year": "2026-03-31",
+    "filing_date": "2026-09-28"
+   },
+   "mgt_7": {
+    "financial_year": "2025-03-31",
+    "filing_date": "2025-12-23"
+   }
+  }
+ }
+}

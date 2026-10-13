@@ -7,7 +7,7 @@
 const money = (n) => (n == null ? '—' : Math.abs(n) >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : Math.abs(n) >= 1e5 ? `₹${(n / 1e5).toFixed(2)} L` : `₹${Math.round(n)}`);
 const pct = (n, d = 1) => (n == null ? '—' : `${n.toFixed(d)}%`);
 
-export function buildLevers({ vendor, financials, singleSourceShare, priceExcess, bestGapNote, ratingGrade, ratingLabel, inc }) {
+export function buildLevers({ vendor, financials, singleSourceShare, priceExcess, bestGapNote, ratingGrade, ratingLabel, inc, probe }) {
   const L = [];
   const m = financials?.metrics || null;
   const add = (type, title, detail, evidence) => L.push({ type, title, detail, evidence: evidence.filter((e) => e.value !== '—') });
@@ -28,6 +28,31 @@ export function buildLevers({ vendor, financials, singleSourceShare, priceExcess
     else add('watch', `Credit rating: ${ratingLabel}`,
       `Mid-tier credit rating — factor into how much volume we route here.`,
       [{ label: 'Rating', value: ratingLabel }]);
+  }
+
+  // 0b) Probe42 peer-relative + health signals (MCA filings vs peer medians).
+  if (probe) {
+    const peer = probe.peer;
+    if (probe.lossMaking) add('risk', `Loss-making in ${probe.latestFy}`,
+      `They posted a net loss in ${probe.latestFy} (PAT ${money(m?.pat)}). A deep price cut could tip supply continuity — lead with faster payment or committed volume, and keep a second source warm.`,
+      [{ label: 'PAT', value: money(m?.pat) }, { label: 'Net margin', value: m?.netMargin != null ? pct(m.netMargin) : '—' }]);
+    if (peer?.netMargin != null && m?.netMargin != null) {
+      if (m.netMargin >= peer.netMargin + 1.5) add('opportunity', `Out-earns its peers — ${pct(m.netMargin)} net margin vs ${pct(peer.netMargin)} median`,
+        `They run a fatter margin than the ${peer.bizSegment || 'peer'} median (${peer.peers || '—'} peers). There's headroom in the price they charge us.`,
+        [{ label: 'Their margin', value: pct(m.netMargin) }, { label: 'Peer median', value: pct(peer.netMargin) }]);
+      else if (m.netMargin <= peer.netMargin - 1.5) add('watch', `Below-peer margin — ${pct(m.netMargin)} vs ${pct(peer.netMargin)} median`,
+        `They earn less than peers, so price cuts bite harder here. Win on payment terms, volume or logistics rather than headline price.`,
+        [{ label: 'Their margin', value: pct(m.netMargin) }, { label: 'Peer median', value: pct(peer.netMargin) }]);
+    }
+    if (peer?.payableDays != null && m?.payableDays != null && m.payableDays >= peer.payableDays + 10) add('opportunity', `They pay suppliers slower than peers — ${Math.round(m.payableDays)}d vs ${Math.round(peer.payableDays)}d`,
+      `They already stretch their own payables past the peer median, so asking them to extend our credit is only fair.`,
+      [{ label: 'Their payable days', value: `${Math.round(m.payableDays)}d` }, { label: 'Peer median', value: `${Math.round(peer.payableDays)}d` }]);
+    if (peer?.ccc != null && m?.cashConversionCycle != null && m.cashConversionCycle >= peer.ccc + 15) add('opportunity', `Cash tied up longer than peers — ${Math.round(m.cashConversionCycle)}d cycle vs ${Math.round(peer.ccc)}d`,
+      `Their cash-conversion cycle runs above the peer median, so they value speed. Offer faster payment in exchange for a price cut.`,
+      [{ label: 'Cash cycle', value: `${Math.round(m.cashConversionCycle)}d` }, { label: 'Peer median', value: `${Math.round(peer.ccc)}d` }]);
+    if (probe.probeScore?.overall != null && probe.probeScore.overall <= 2) add('risk', `Weak Probe42 financial score (${probe.probeScore.overall}/10)`,
+      `Probe42's composite financial score is low — a supply-continuity watch. Don't over-concentrate volume here; qualify an alternate.`,
+      [{ label: 'Probe score', value: `${probe.probeScore.overall}/10` }]);
   }
 
   // 1) Our wallet share of their revenue — the core leverage number.
@@ -64,11 +89,11 @@ export function buildLevers({ vendor, financials, singleSourceShare, priceExcess
     `A geared balance sheet is a supply-continuity watch — but it also means they value cash. Offer faster payment for a discount.`,
     [{ label: 'Debt / equity', value: `${(m.debtToEquity / 100).toFixed(2)}x` }, { label: 'Total debt', value: money(m.totalDebt) }]);
 
-  // 5) Probe42-only working-capital levers.
-  if (m?.payableDays != null && m.payableDays >= 60) add('opportunity', `They take ${Math.round(m.payableDays)} days to pay their own suppliers`,
+  // 5) Working-capital levers (absolute) — only when we have no peer-relative view.
+  if (!probe?.peer && m?.payableDays != null && m.payableDays >= 60) add('opportunity', `They take ${Math.round(m.payableDays)} days to pay their own suppliers`,
     `They stretch their suppliers to ${Math.round(m.payableDays)} days — asking them to give us longer credit is only fair.`,
     [{ label: 'Their payable days', value: `${Math.round(m.payableDays)}d` }]);
-  if (m?.cashConversionCycle != null && m.cashConversionCycle >= 60) add('opportunity', `Long cash-conversion cycle (${Math.round(m.cashConversionCycle)}d)`,
+  if (!probe?.peer && m?.cashConversionCycle != null && m.cashConversionCycle >= 60) add('opportunity', `Long cash-conversion cycle (${Math.round(m.cashConversionCycle)}d)`,
     `Cash is tied up in their cycle for ${Math.round(m.cashConversionCycle)} days. Offer faster payment in exchange for a price cut — a cheap win for both.`,
     [{ label: 'Cash cycle', value: `${Math.round(m.cashConversionCycle)}d` }]);
 

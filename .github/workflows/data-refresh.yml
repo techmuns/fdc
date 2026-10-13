@@ -45,7 +45,10 @@ jobs:
           DATA_GOV_IN_API_KEY: ${{ secrets.DATA_GOV_IN_API_KEY }}
         run: npm run market
 
-      - name: Refresh vendor & alternative financials (listed = free; private = Probe42 cache)
+      - name: Extract Probe42 private financials from the committed cache (0 credits)
+        run: npm run probe
+
+      - name: Refresh vendor & alternative financials (listed = Munshot; private = Probe42 → rating-doc fallback)
         run: npm run financials
 
       - name: Commit refreshed data if changed
