@@ -1,0 +1,266 @@
+{
+  "generatedAt": "2026-10-13T09:48:45.695Z",
+  "source": "Credit-rating-agency rationale documents (CRISIL / ICRA / CARE / Acuité / Infomerics) — free plain fetch, no API key, no Firecrawl.",
+  "counts": {
+    "rated": 5,
+    "unrated": 15,
+    "total": 20
+  },
+  "vendors": {
+    "geep-industries-india": {
+      "vendorKey": "geep-industries-india",
+      "cin": "U74110MH2002PTC137887",
+      "financialsAvailable": true,
+      "source": {
+        "sourceName": "CRISIL rating rationale",
+        "sourceUrl": "https://www.crisilratings.com/mnt/winshare/Ratings/RatingList/RatingDocs/GeepIndustriesIndiaPrivateLimited_February%2028,%202023_RR_310177.html",
+        "agency": "CRISIL",
+        "date": "2023-02-28"
+      },
+      "ratingGrade": "BB+",
+      "ratingOutlook": "Stable",
+      "ratingLabel": "CRISIL BB+ / Stable",
+      "asOfFy": "FY22",
+      "ratingDate": "2023-02-28",
+      "flags": {
+        "issuerNotCooperating": true,
+        "note": null
+      },
+      "metrics": {
+        "revenue": 3277200000.0000005,
+        "ebitda": null,
+        "pat": null,
+        "netMargin": 1.5,
+        "ebitdaMargin": null,
+        "debtToEquity": null,
+        "interestCoverage": 7.5,
+        "netWorth": null,
+        "totalDebt": null,
+        "roce": null,
+        "revenueGrowth": null
+      }
+    },
+    "shrinath-roto-pack": {
+      "vendorKey": "shrinath-roto-pack",
+      "cin": "U25209TG2006PTC050109",
+      "financialsAvailable": true,
+      "source": {
+        "sourceName": "CARE rating rationale",
+        "sourceUrl": "https://www.careratings.com/upload/CompanyFiles/PR/202410151004_SHRINATH_ROTO_PACK_PRIVATE_LIMITED.pdf",
+        "agency": "CARE",
+        "date": "2024-10-15"
+      },
+      "ratingGrade": "BBB+",
+      "ratingOutlook": "Stable",
+      "ratingLabel": "CARE BBB+ / Stable",
+      "asOfFy": "FY24",
+      "ratingDate": "2024-10-15",
+      "flags": {
+        "issuerNotCooperating": false,
+        "note": null
+      },
+      "metrics": {
+        "revenue": 10193800000,
+        "ebitda": 949900000,
+        "pat": 266900000,
+        "netMargin": 2.62,
+        "ebitdaMargin": 9.32,
+        "debtToEquity": 198,
+        "interestCoverage": 2.59,
+        "netWorth": null,
+        "totalDebt": null,
+        "roce": null,
+        "revenueGrowth": null
+      }
+    },
+    "chemco-plastic-industries": {
+      "vendorKey": "chemco-plastic-industries",
+      "cin": "U25209MH1996PTC096963",
+      "financialsAvailable": true,
+      "source": {
+        "sourceName": "CRISIL rating rationale",
+        "sourceUrl": "https://www.crisilratings.com/mnt/winshare/Ratings/RatingList/RatingDocs/ChemcoPlasticIndustriesPrivateLimited_September%2001_%202025_RR_371140.html",
+        "agency": "CRISIL",
+        "date": "2025-09-01"
+      },
+      "ratingGrade": "A+",
+      "ratingOutlook": "Stable",
+      "ratingLabel": "CRISIL A+ / Stable",
+      "asOfFy": "FY24",
+      "ratingDate": "2025-09-01",
+      "flags": {
+        "issuerNotCooperating": false,
+        "note": null
+      },
+      "metrics": {
+        "revenue": 9390000000,
+        "ebitda": null,
+        "pat": 619000000,
+        "netMargin": 6.59,
+        "ebitdaMargin": null,
+        "debtToEquity": 90,
+        "interestCoverage": 4,
+        "netWorth": null,
+        "totalDebt": null,
+        "roce": null,
+        "revenueGrowth": null
+      }
+    },
+    "gls-films-industries-p": {
+      "vendorKey": "gls-films-industries-p",
+      "cin": "U74950HR2003PTC127247",
+      "financialsAvailable": true,
+      "source": {
+        "sourceName": "Infomerics rating rationale",
+        "sourceUrl": "https://www.infomerics.com/admin/uploads/Pr-GLS-Films-4june25.pdf",
+        "agency": "Infomerics",
+        "date": "2025-06-04"
+      },
+      "ratingGrade": "BBB-",
+      "ratingOutlook": "Stable",
+      "ratingLabel": "IVR BBB- / Stable",
+      "asOfFy": "FY24",
+      "ratingDate": "2025-06-04",
+      "flags": {
+        "issuerNotCooperating": false,
+        "note": "Most recent cooperating rationale; CARE moved an earlier rating to Issuer-Not-Cooperating (Sep 2024)."
+      },
+      "metrics": {
+        "revenue": 6136100000,
+        "ebitda": 234000000,
+        "pat": 81100000,
+        "netMargin": 1.32,
+        "ebitdaMargin": 3.81,
+        "debtToEquity": 206,
+        "interestCoverage": 1.1,
+        "netWorth": 1117000000,
+        "totalDebt": 2305400000,
+        "roce": null,
+        "revenueGrowth": null
+      }
+    },
+    "tpac-packaging-india": {
+      "vendorKey": "tpac-packaging-india",
+      "cin": "U74999MH2017PTC301190",
+      "financialsAvailable": true,
+      "source": {
+        "sourceName": "ICRA rating rationale",
+        "sourceUrl": "https://www.icra.in/Rating/GetRationalReportFilePdf?Id=141963",
+        "agency": "ICRA",
+        "date": "2026-03-27"
+      },
+      "ratingGrade": "A",
+      "ratingOutlook": "Stable",
+      "ratingLabel": "[ICRA] A / Stable",
+      "asOfFy": null,
+      "ratingDate": "2026-03-27",
+      "flags": {
+        "issuerNotCooperating": false,
+        "note": null
+      },
+      "metrics": {
+        "revenue": null,
+        "ebitda": null,
+        "pat": null,
+        "netMargin": null,
+        "ebitdaMargin": null,
+        "debtToEquity": null,
+        "interestCoverage": null,
+        "netWorth": null,
+        "totalDebt": null,
+        "roce": null,
+        "revenueGrowth": null
+      }
+    },
+    "tetrapak-india": {
+      "vendorKey": "tetrapak-india",
+      "financialsAvailable": false,
+      "reason": "unrated private company — financials not publicly filed free",
+      "source": null
+    },
+    "berry-global-india": {
+      "vendorKey": "berry-global-india",
+      "financialsAvailable": false,
+      "reason": "unrated private company — financials not publicly filed free",
+      "source": null
+    },
+    "bprex-pharma-packaging-india-p": {
+      "vendorKey": "bprex-pharma-packaging-india-p",
+      "financialsAvailable": false,
+      "reason": "unrated private company — financials not publicly filed free",
+      "source": null
+    },
+    "cincorp-international": {
+      "vendorKey": "cincorp-international",
+      "financialsAvailable": false,
+      "reason": "unrated private company — financials not publicly filed free",
+      "source": null
+    },
+    "pik-plastics": {
+      "vendorKey": "pik-plastics",
+      "financialsAvailable": false,
+      "reason": "unrated private company — financials not publicly filed free",
+      "source": null
+    },
+    "premier-plastic": {
+      "vendorKey": "premier-plastic",
+      "financialsAvailable": false,
+      "reason": "unrated private company — financials not publicly filed free",
+      "source": null
+    },
+    "mars-plastics": {
+      "vendorKey": "mars-plastics",
+      "financialsAvailable": false,
+      "reason": "unrated private company — financials not publicly filed free",
+      "source": null
+    },
+    "rachana-plastics": {
+      "vendorKey": "rachana-plastics",
+      "financialsAvailable": false,
+      "reason": "unrated private company — financials not publicly filed free",
+      "source": null
+    },
+    "suraj-blow-plast": {
+      "vendorKey": "suraj-blow-plast",
+      "financialsAvailable": false,
+      "reason": "unrated private company — financials not publicly filed free",
+      "source": null
+    },
+    "scorpion-containers": {
+      "vendorKey": "scorpion-containers",
+      "financialsAvailable": false,
+      "reason": "unrated private company — financials not publicly filed free",
+      "source": null
+    },
+    "silk-polypack": {
+      "vendorKey": "silk-polypack",
+      "financialsAvailable": false,
+      "reason": "unrated private company — financials not publicly filed free",
+      "source": null
+    },
+    "abhinav-speciality-foods-llp": {
+      "vendorKey": "abhinav-speciality-foods-llp",
+      "financialsAvailable": false,
+      "reason": "unrated private company — financials not publicly filed free",
+      "source": null
+    },
+    "kilitch-healthcare-india": {
+      "vendorKey": "kilitch-healthcare-india",
+      "financialsAvailable": false,
+      "reason": "unrated private company — financials not publicly filed free",
+      "source": null
+    },
+    "triveni-polymers": {
+      "vendorKey": "triveni-polymers",
+      "financialsAvailable": false,
+      "reason": "unrated private company — financials not publicly filed free",
+      "source": null
+    },
+    "pgp-glass": {
+      "vendorKey": "pgp-glass",
+      "financialsAvailable": false,
+      "reason": "unrated private company — financials not publicly filed free",
+      "source": null
+    }
+  }
+}

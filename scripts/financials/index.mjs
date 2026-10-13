@@ -7,7 +7,7 @@
  * - Alternatives benchmarked the same way (listed now, private gated).
  * Writes public/data/vendor-financials.json and public/data/alternatives.json.
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fetchListed, fetchMetrics, LISTED_VENDORS } from './munshot.mjs';
@@ -21,21 +21,53 @@ const read = (f) => JSON.parse(readFileSync(path.join(DATA, f), 'utf8'));
 const clamp = (x, lo = 0, hi = 100) => Math.max(lo, Math.min(hi, x));
 const r2 = (n) => (n == null ? null : Math.round(n * 100) / 100);
 
-/** Transparent, computed financial-health score from the real metrics shown. */
-function computeHealth(m) {
-  if (!m) return null;
+// Credit-rating grade → 0-100 (a strong, independent health signal).
+const RATING_SCORE = {
+  AAA: 97, 'AA+': 93, AA: 90, 'AA-': 87, 'A+': 82, A: 78, 'A-': 74,
+  'BBB+': 68, BBB: 63, 'BBB-': 58, 'BB+': 50, BB: 45, 'BB-': 40,
+  'B+': 33, B: 28, 'B-': 23, C: 12, D: 3,
+};
+
+/** Transparent, computed financial-health score from the real metrics + credit rating shown. */
+function computeHealth(m, ratingGrade) {
   const comps = [];
   const push = (label, raw, score, weight) => { if (raw != null && isFinite(score)) comps.push({ label, raw: r2(raw), score: Math.round(clamp(score)), weight }); };
-  push('Net margin', m.netMargin, (m.netMargin / 15) * 100, 0.3);
-  push('EBITDA margin', m.ebitdaMargin, (m.ebitdaMargin / 20) * 100, 0.15);
-  push('Revenue growth', m.revenueGrowth, ((m.revenueGrowth + 10) / 35) * 100, 0.2);
-  push('Low leverage', m.debtToEquity, 100 - m.debtToEquity / 2, 0.2); // D/E is % here
-  push('Return on capital', m.roce, (m.roce / 25) * 100, 0.15); // Probe42 only
+  if (ratingGrade && RATING_SCORE[ratingGrade] != null) comps.push({ label: `Credit rating (${ratingGrade})`, raw: ratingGrade, score: RATING_SCORE[ratingGrade], weight: 0.45 });
+  if (m) {
+    push('Net margin', m.netMargin, (m.netMargin / 15) * 100, 0.3);
+    push('EBITDA margin', m.ebitdaMargin, (m.ebitdaMargin / 20) * 100, 0.15);
+    push('Revenue growth', m.revenueGrowth, ((m.revenueGrowth + 10) / 35) * 100, 0.2);
+    push('Low leverage', m.debtToEquity, 100 - m.debtToEquity / 2, 0.2);
+    push('Interest cover', m.interestCoverage, (m.interestCoverage / 5) * 100, 0.15);
+    push('Return on capital', m.roce, (m.roce / 25) * 100, 0.15);
+  }
   if (!comps.length) return null;
   const wsum = comps.reduce((s, c) => s + c.weight, 0);
   const value = Math.round(comps.reduce((s, c) => s + c.score * c.weight, 0) / wsum);
   const grade = value >= 75 ? 'A' : value >= 60 ? 'B' : value >= 45 ? 'C' : 'D';
-  return { value, grade, components: comps, note: 'Computed by FDC from the real metrics shown — an analytical score, not a reported figure.' };
+  return { value, grade, components: comps, note: 'Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure.' };
+}
+
+/** Convert a rating-financials.json entry → the vendor-record shape used here. */
+function fromRatingDoc(rf) {
+  if (!rf?.financialsAvailable) return null;
+  const m = rf.metrics || {};
+  return {
+    type: 'private', status: 'ok',
+    companyName: rf.cin ? null : null,
+    source: { sourceName: rf.source.sourceName, sourceUrl: rf.source.sourceUrl, date: rf.source.date },
+    ratingGrade: rf.ratingGrade, ratingLabel: rf.ratingLabel, ratingOutlook: rf.ratingOutlook,
+    asOfFy: rf.asOfFy, ratingDate: rf.ratingDate, issuerNotCooperating: !!rf.flags?.issuerNotCooperating,
+    note: rf.flags?.note || null,
+    metrics: {
+      revenue: m.revenue ?? null, ebitda: m.ebitda ?? null, marketCap: null, totalDebt: m.totalDebt ?? null,
+      ebitdaMargin: m.ebitdaMargin ?? null, netMargin: m.netMargin ?? null, grossMargin: null, operatingMargin: null,
+      debtToEquity: m.debtToEquity ?? null, revenueGrowth: m.revenueGrowth ?? null, earningsGrowth: null,
+      pe: null, evEbitda: null, dividendYield: null, currentPrice: null, yearlyChange: null, employees: null,
+      roce: m.roce ?? null, roe: null, pat: m.pat ?? null, netWorth: m.netWorth ?? null, interestCoverage: m.interestCoverage ?? null,
+      creditRating: rf.ratingLabel,
+    },
+  };
 }
 
 async function main() {
@@ -66,52 +98,60 @@ async function main() {
   console.log('\n▶ Vendor financials\n  Fetching listed vendors (Munshot, free)…');
   const listed = await fetchListed();
   listed.log.forEach((l) => console.log('   ', l));
-  const privateCache = readAllCached(PRIVATE_CINS);
+  // Private financials — ACTIVE source: free credit-rating docs. Probe42 cache is
+  // read too but stays dormant (empty without a key); it wins if ever populated.
+  const ratingFin = existsSync(path.join(DATA, 'rating-financials.json')) ? JSON.parse(readFileSync(path.join(DATA, 'rating-financials.json'), 'utf8')).vendors || {} : {};
+  const probeCache = readAllCached(PRIVATE_CINS);
 
   // assemble per-vendor records
   const out = {};
   for (const v of vendors) {
     const isListed = !!LISTED_VENDORS[v.key];
-    const fin = isListed ? (listed.data[v.key] ? { ...listed.data[v.key], type: 'listed', status: 'ok' } : { type: 'listed', status: 'pending', metrics: null, note: 'ticker unresolved' })
-      : privateCache[v.key]
-        ? { ...privateCache[v.key], type: 'private' }
-        : { type: 'private', status: 'pending', metrics: null, source: { sourceName: 'Probe42', sourceUrl: 'https://probe42.in' }, note: 'Add Probe42 key + VPN, run enrich --live.' };
+    let fin;
+    if (isListed) {
+      fin = listed.data[v.key] ? { ...listed.data[v.key], type: 'listed', status: 'ok' } : { type: 'listed', status: 'pending', metrics: null, note: 'ticker unresolved' };
+    } else if (probeCache[v.key]?.status === 'ok') {
+      fin = { ...probeCache[v.key], type: 'private' }; // Probe42 (dormant) wins if populated
+    } else {
+      const rd = fromRatingDoc(ratingFin[v.key]);
+      if (rd) fin = rd;
+      else fin = { type: 'private', status: ratingFin[v.key]?.financialsAvailable === false ? 'unrated' : 'pending',
+        metrics: null, source: ratingFin[v.key]?.source || null,
+        note: ratingFin[v.key]?.reason || 'No public rating found — financials not filed free.' };
+    }
 
-    const health = computeHealth(fin.metrics);
+    const health = computeHealth(fin.metrics, fin.ratingGrade);
     const levers = buildLevers({
       vendor: v,
       financials: fin.status === 'ok' ? fin : null,
       singleSourceShare: singleSource[v.key],
       priceExcess: excess[v.key],
+      ratingGrade: fin.ratingGrade,
+      ratingLabel: fin.ratingLabel,
+      inc: fin.issuerNotCooperating,
       bestGapNote: null,
     });
     out[v.key] = {
-      vendorKey: v.key,
-      name: v.name,
-      type: fin.type,
-      status: fin.status,
-      companyName: fin.companyName || null,
-      symbol: fin.symbol || null,
-      exchange: fin.exchange || null,
+      vendorKey: v.key, name: v.name, type: fin.type, status: fin.status,
+      companyName: fin.companyName || null, symbol: fin.symbol || null, exchange: fin.exchange || null,
       cin: fin.cin || PRIVATE_CINS[v.key]?.cin || null,
-      materialsSupplied: v.materialsSupplied,
-      fdcSpend: v.totalNetSpend,
-      metrics: fin.metrics || null,
-      healthScore: health,
-      source: fin.source || null,
-      note: fin.note || null,
+      materialsSupplied: v.materialsSupplied, fdcSpend: v.totalNetSpend,
+      metrics: fin.metrics || null, healthScore: health,
+      source: fin.source || null, note: fin.note || null,
+      ratingGrade: fin.ratingGrade || null, ratingLabel: fin.ratingLabel || null, ratingOutlook: fin.ratingOutlook || null,
+      asOfFy: fin.asOfFy || null, ratingDate: fin.ratingDate || null, issuerNotCooperating: !!fin.issuerNotCooperating,
       levers,
     };
   }
 
   const listedCount = Object.values(out).filter((o) => o.status === 'ok' && o.type === 'listed').length;
   const privateOk = Object.values(out).filter((o) => o.status === 'ok' && o.type === 'private').length;
-  const privatePending = Object.values(out).filter((o) => o.status === 'pending' && o.type === 'private').length;
+  const privatePending = Object.values(out).filter((o) => o.status !== 'ok' && o.type === 'private').length;
 
   writeFileSync(path.join(DATA, 'vendor-financials.json'), JSON.stringify({
     generatedAt: new Date().toISOString(),
-    sources: { listed: 'Munshot market-data API (free)', private: 'Probe42 (gated on key + VPN)' },
-    manifest: { listedResolved: listedCount, privateCached: privateOk, privatePending, total: vendors.length },
+    sources: { listed: 'Munshot market-data API (free)', private: 'Credit-rating-agency rationale docs (free); Probe42 dormant behind its secret' },
+    manifest: { listedResolved: listedCount, privateRated: privateOk, privateUnrated: privatePending, total: vendors.length },
     vendors: out,
   }, null, 2));
 

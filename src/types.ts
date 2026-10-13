@@ -292,6 +292,7 @@ export interface FinMetrics {
   yearlyChange: number | null; employees: number | null; roce: number | null; roe: number | null;
   receivableDays?: number | null; payableDays?: number | null; cashConversionCycle?: number | null;
   creditRating?: string | null;
+  pat?: number | null; netWorth?: number | null; interestCoverage?: number | null;
   flags?: { legalCases: number | null; gstDelays: number | null; epfDelays: number | null; charges: number | null };
 }
 export interface HealthScore {
@@ -306,15 +307,18 @@ export interface Lever {
   evidence: { label: string; value: string }[];
 }
 export interface VendorFin {
-  vendorKey: string; name: string; type: 'listed' | 'private'; status: 'ok' | 'pending' | 'cin-unresolved';
+  vendorKey: string; name: string; type: 'listed' | 'private'; status: 'ok' | 'pending' | 'cin-unresolved' | 'unrated';
   companyName: string | null; symbol: string | null; exchange: string | null; cin: string | null;
   materialsSupplied: string[]; fdcSpend: number; metrics: FinMetrics | null; healthScore: HealthScore | null;
   source: { sourceName: string; sourceUrl: string; date: string | null } | null; note: string | null; levers: Lever[];
+  // Phase 2.1 — rating-doc fields (private vendors)
+  ratingGrade?: string | null; ratingLabel?: string | null; ratingOutlook?: string | null;
+  asOfFy?: string | null; ratingDate?: string | null; issuerNotCooperating?: boolean;
 }
 export interface VendorFinancials {
   generatedAt: string;
   sources: { listed: string; private: string };
-  manifest: { listedResolved: number; privateCached: number; privatePending: number; total: number };
+  manifest: { listedResolved: number; privateRated: number; privateUnrated: number; total: number };
   vendors: Record<string, VendorFin>;
 }
 

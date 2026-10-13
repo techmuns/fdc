@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-13T08:37:42.431Z",
+  "generatedAt": "2026-10-13T09:51:04.231Z",
   "sources": {
     "listed": "Munshot market-data API (free)",
-    "private": "Probe42 (gated on key + VPN)"
+    "private": "Credit-rating-agency rationale docs (free); Probe42 dormant behind its secret"
   },
   "manifest": {
     "listedResolved": 6,
-    "privateCached": 0,
-    "privatePending": 11,
+    "privateRated": 5,
+    "privateUnrated": 15,
     "total": 27
   },
   "vendors": {
@@ -15,8 +15,8 @@
       "vendorKey": "geep-industries-india",
       "name": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
       "type": "private",
-      "status": "pending",
-      "companyName": "GEEP Industries (India) Pvt Ltd",
+      "status": "ok",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": "U74110MH2002PTC137887",
@@ -24,15 +24,110 @@
         "Laminates"
       ],
       "fdcSpend": 283131033.16,
-      "metrics": null,
-      "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
+      "metrics": {
+        "revenue": 3277200000.0000005,
+        "ebitda": null,
+        "marketCap": null,
+        "totalDebt": null,
+        "ebitdaMargin": null,
+        "netMargin": 1.5,
+        "grossMargin": null,
+        "operatingMargin": null,
+        "debtToEquity": null,
+        "revenueGrowth": null,
+        "earningsGrowth": null,
+        "pe": null,
+        "evEbitda": null,
+        "dividendYield": null,
+        "currentPrice": null,
+        "yearlyChange": null,
+        "employees": null,
+        "roce": null,
+        "roe": null,
+        "pat": null,
+        "netWorth": null,
+        "interestCoverage": 7.5,
+        "creditRating": "CRISIL BB+ / Stable"
       },
-      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "healthScore": {
+        "value": 45,
+        "grade": "C",
+        "components": [
+          {
+            "label": "Credit rating (BB+)",
+            "raw": "BB+",
+            "score": 50,
+            "weight": 0.45
+          },
+          {
+            "label": "Net margin",
+            "raw": 1.5,
+            "score": 10,
+            "weight": 0.3
+          },
+          {
+            "label": "Interest cover",
+            "raw": 7.5,
+            "score": 100,
+            "weight": 0.15
+          }
+        ],
+        "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
+      },
+      "source": {
+        "sourceName": "CRISIL rating rationale",
+        "sourceUrl": "https://www.crisilratings.com/mnt/winshare/Ratings/RatingList/RatingDocs/GeepIndustriesIndiaPrivateLimited_February%2028,%202023_RR_310177.html",
+        "date": "2023-02-28"
+      },
+      "note": null,
+      "ratingGrade": "BB+",
+      "ratingLabel": "CRISIL BB+ / Stable",
+      "ratingOutlook": "Stable",
+      "asOfFy": "FY22",
+      "ratingDate": "2023-02-28",
+      "issuerNotCooperating": true,
       "levers": [
+        {
+          "type": "risk",
+          "title": "CRISIL BB+ / Stable — but not cooperating with the rating agency",
+          "detail": "The latest rating is on an \"Issuer Not Cooperating\" basis, so the numbers are stale/best-available. Treat their financial health as uncertain and keep a second source warm.",
+          "evidence": [
+            {
+              "label": "Rating",
+              "value": "CRISIL BB+ / Stable"
+            }
+          ]
+        },
+        {
+          "type": "opportunity",
+          "title": "We're a meaningful customer — 8.64% of their revenue",
+          "detail": "Our ₹28.31 Cr/yr is a real slice of their ₹327.72 Cr revenue. That volume is leverage — ask for a price or terms concession to keep it.",
+          "evidence": [
+            {
+              "label": "Our spend",
+              "value": "₹28.31 Cr"
+            },
+            {
+              "label": "Their revenue",
+              "value": "₹327.72 Cr"
+            },
+            {
+              "label": "Share",
+              "value": "8.64%"
+            }
+          ]
+        },
+        {
+          "type": "watch",
+          "title": "Thin 1.5% margin — press terms, not price",
+          "detail": "Margins are slim, so deep price cuts risk their stability (and our supply). Win on payment terms, volume or logistics instead.",
+          "evidence": [
+            {
+              "label": "Net margin",
+              "value": "1.5%"
+            }
+          ]
+        },
         {
           "type": "risk",
           "title": "Single-source: 67% of Laminates runs through them",
@@ -77,7 +172,7 @@
       "metrics": {
         "revenue": 60315901952,
         "ebitda": 6083474944,
-        "marketCap": 79749062656,
+        "marketCap": 79294988288,
         "totalDebt": 4409999872,
         "ebitdaMargin": 10.09,
         "netMargin": 6.9,
@@ -86,10 +181,10 @@
         "debtToEquity": 13.38,
         "revenueGrowth": 23.5,
         "earningsGrowth": 171.1,
-        "pe": 19.58,
+        "pe": 19.47,
         "evEbitda": 11.9,
         "dividendYield": 18,
-        "currentPrice": 173.87,
+        "currentPrice": 172.88,
         "yearlyChange": 60.63,
         "employees": 2245,
         "roce": null,
@@ -124,7 +219,7 @@
             "weight": 0.2
           }
         ],
-        "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
       },
       "source": {
         "sourceName": "Munshot market-data API",
@@ -132,6 +227,12 @@
         "date": "2026-10-13"
       },
       "note": null,
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": [
         {
           "type": "opportunity",
@@ -235,7 +336,7 @@
             "weight": 0.2
           }
         ],
-        "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
       },
       "source": {
         "sourceName": "Munshot market-data API",
@@ -243,6 +344,12 @@
         "date": "2026-10-13"
       },
       "note": null,
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": [
         {
           "type": "opportunity",
@@ -295,8 +402,8 @@
       "vendorKey": "shrinath-roto-pack",
       "name": "Shrinath Roto Pack Pvt Ltd",
       "type": "private",
-      "status": "pending",
-      "companyName": "Shrinath Rotopack Pvt Ltd",
+      "status": "ok",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": "U25209TG2006PTC050109",
@@ -304,22 +411,122 @@
         "Laminates"
       ],
       "fdcSpend": 64718905.6,
-      "metrics": null,
-      "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
+      "metrics": {
+        "revenue": 10193800000,
+        "ebitda": 949900000,
+        "marketCap": null,
+        "totalDebt": null,
+        "ebitdaMargin": 9.32,
+        "netMargin": 2.62,
+        "grossMargin": null,
+        "operatingMargin": null,
+        "debtToEquity": 198,
+        "revenueGrowth": null,
+        "earningsGrowth": null,
+        "pe": null,
+        "evEbitda": null,
+        "dividendYield": null,
+        "currentPrice": null,
+        "yearlyChange": null,
+        "employees": null,
+        "roce": null,
+        "roe": null,
+        "pat": 266900000,
+        "netWorth": null,
+        "interestCoverage": 2.59,
+        "creditRating": "CARE BBB+ / Stable"
       },
-      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
-      "levers": []
+      "healthScore": {
+        "value": 41,
+        "grade": "D",
+        "components": [
+          {
+            "label": "Credit rating (BBB+)",
+            "raw": "BBB+",
+            "score": 68,
+            "weight": 0.45
+          },
+          {
+            "label": "Net margin",
+            "raw": 2.62,
+            "score": 17,
+            "weight": 0.3
+          },
+          {
+            "label": "EBITDA margin",
+            "raw": 9.32,
+            "score": 47,
+            "weight": 0.15
+          },
+          {
+            "label": "Low leverage",
+            "raw": 198,
+            "score": 1,
+            "weight": 0.2
+          },
+          {
+            "label": "Interest cover",
+            "raw": 2.59,
+            "score": 52,
+            "weight": 0.15
+          }
+        ],
+        "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
+      },
+      "source": {
+        "sourceName": "CARE rating rationale",
+        "sourceUrl": "https://www.careratings.com/upload/CompanyFiles/PR/202410151004_SHRINATH_ROTO_PACK_PRIVATE_LIMITED.pdf",
+        "date": "2024-10-15"
+      },
+      "note": null,
+      "ratingGrade": "BBB+",
+      "ratingLabel": "CARE BBB+ / Stable",
+      "ratingOutlook": "Stable",
+      "asOfFy": "FY24",
+      "ratingDate": "2024-10-15",
+      "issuerNotCooperating": false,
+      "levers": [
+        {
+          "type": "watch",
+          "title": "Credit rating: CARE BBB+ / Stable",
+          "detail": "Mid-tier credit rating — factor into how much volume we route here.",
+          "evidence": [
+            {
+              "label": "Rating",
+              "value": "CARE BBB+ / Stable"
+            }
+          ]
+        },
+        {
+          "type": "watch",
+          "title": "Thin 2.6% margin — press terms, not price",
+          "detail": "Margins are slim, so deep price cuts risk their stability (and our supply). Win on payment terms, volume or logistics instead.",
+          "evidence": [
+            {
+              "label": "Net margin",
+              "value": "2.6%"
+            }
+          ]
+        },
+        {
+          "type": "risk",
+          "title": "Carrying debt (D/E 1.98x) — watch continuity, offer cash",
+          "detail": "A geared balance sheet is a supply-continuity watch — but it also means they value cash. Offer faster payment for a discount.",
+          "evidence": [
+            {
+              "label": "Debt / equity",
+              "value": "1.98x"
+            }
+          ]
+        }
+      ]
     },
     "chemco-plastic-industries": {
       "vendorKey": "chemco-plastic-industries",
       "name": "Chemco Plastic Industries Pvt. Ltd",
       "type": "private",
-      "status": "pending",
-      "companyName": "Chemco Plastic Industries Pvt Ltd",
+      "status": "ok",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": "U25209MH1996PTC096963",
@@ -327,22 +534,94 @@
         "Rigid plastic packaging"
       ],
       "fdcSpend": 54915815.2,
-      "metrics": null,
-      "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
+      "metrics": {
+        "revenue": 9390000000,
+        "ebitda": null,
+        "marketCap": null,
+        "totalDebt": null,
+        "ebitdaMargin": null,
+        "netMargin": 6.59,
+        "grossMargin": null,
+        "operatingMargin": null,
+        "debtToEquity": 90,
+        "revenueGrowth": null,
+        "earningsGrowth": null,
+        "pe": null,
+        "evEbitda": null,
+        "dividendYield": null,
+        "currentPrice": null,
+        "yearlyChange": null,
+        "employees": null,
+        "roce": null,
+        "roe": null,
+        "pat": 619000000,
+        "netWorth": null,
+        "interestCoverage": 4,
+        "creditRating": "CRISIL A+ / Stable"
       },
-      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
-      "levers": []
+      "healthScore": {
+        "value": 66,
+        "grade": "B",
+        "components": [
+          {
+            "label": "Credit rating (A+)",
+            "raw": "A+",
+            "score": 82,
+            "weight": 0.45
+          },
+          {
+            "label": "Net margin",
+            "raw": 6.59,
+            "score": 44,
+            "weight": 0.3
+          },
+          {
+            "label": "Low leverage",
+            "raw": 90,
+            "score": 55,
+            "weight": 0.2
+          },
+          {
+            "label": "Interest cover",
+            "raw": 4,
+            "score": 80,
+            "weight": 0.15
+          }
+        ],
+        "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
+      },
+      "source": {
+        "sourceName": "CRISIL rating rationale",
+        "sourceUrl": "https://www.crisilratings.com/mnt/winshare/Ratings/RatingList/RatingDocs/ChemcoPlasticIndustriesPrivateLimited_September%2001_%202025_RR_371140.html",
+        "date": "2025-09-01"
+      },
+      "note": null,
+      "ratingGrade": "A+",
+      "ratingLabel": "CRISIL A+ / Stable",
+      "ratingOutlook": "Stable",
+      "asOfFy": "FY24",
+      "ratingDate": "2025-09-01",
+      "issuerNotCooperating": false,
+      "levers": [
+        {
+          "type": "watch",
+          "title": "Solid credit rating (CRISIL A+ / Stable)",
+          "detail": "An investment-grade rating means low continuity risk — we can push harder on price/terms without worrying they'll wobble.",
+          "evidence": [
+            {
+              "label": "Rating",
+              "value": "CRISIL A+ / Stable"
+            }
+          ]
+        }
+      ]
     },
     "tetrapak-india": {
       "vendorKey": "tetrapak-india",
       "name": "Tetrapak India Private limited.",
       "type": "private",
-      "status": "pending",
-      "companyName": "Tetra Pak India Pvt Ltd",
+      "status": "unrated",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": "U21014PN1987PTC012926",
@@ -352,12 +631,14 @@
       "fdcSpend": 54634604.27,
       "metrics": null,
       "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
-      },
-      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "source": null,
+      "note": "unrated private company — financials not publicly filed free",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": [
         {
           "type": "opportunity",
@@ -391,8 +672,8 @@
       "vendorKey": "gls-films-industries-p",
       "name": "GLS FILMS INDUSTRIES P. LTD.",
       "type": "private",
-      "status": "pending",
-      "companyName": "GLS Films Industries Pvt Ltd",
+      "status": "ok",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": "U74950HR2003PTC127247",
@@ -400,15 +681,118 @@
         "Laminates"
       ],
       "fdcSpend": 23080941.6,
-      "metrics": null,
-      "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
+      "metrics": {
+        "revenue": 6136100000,
+        "ebitda": 234000000,
+        "marketCap": null,
+        "totalDebt": 2305400000,
+        "ebitdaMargin": 3.81,
+        "netMargin": 1.32,
+        "grossMargin": null,
+        "operatingMargin": null,
+        "debtToEquity": 206,
+        "revenueGrowth": null,
+        "earningsGrowth": null,
+        "pe": null,
+        "evEbitda": null,
+        "dividendYield": null,
+        "currentPrice": null,
+        "yearlyChange": null,
+        "employees": null,
+        "roce": null,
+        "roe": null,
+        "pat": 81100000,
+        "netWorth": 1117000000,
+        "interestCoverage": 1.1,
+        "creditRating": "IVR BBB- / Stable"
       },
-      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "healthScore": {
+        "value": 28,
+        "grade": "D",
+        "components": [
+          {
+            "label": "Credit rating (BBB-)",
+            "raw": "BBB-",
+            "score": 58,
+            "weight": 0.45
+          },
+          {
+            "label": "Net margin",
+            "raw": 1.32,
+            "score": 9,
+            "weight": 0.3
+          },
+          {
+            "label": "EBITDA margin",
+            "raw": 3.81,
+            "score": 19,
+            "weight": 0.15
+          },
+          {
+            "label": "Low leverage",
+            "raw": 206,
+            "score": 0,
+            "weight": 0.2
+          },
+          {
+            "label": "Interest cover",
+            "raw": 1.1,
+            "score": 22,
+            "weight": 0.15
+          }
+        ],
+        "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
+      },
+      "source": {
+        "sourceName": "Infomerics rating rationale",
+        "sourceUrl": "https://www.infomerics.com/admin/uploads/Pr-GLS-Films-4june25.pdf",
+        "date": "2025-06-04"
+      },
+      "note": "Most recent cooperating rationale; CARE moved an earlier rating to Issuer-Not-Cooperating (Sep 2024).",
+      "ratingGrade": "BBB-",
+      "ratingLabel": "IVR BBB- / Stable",
+      "ratingOutlook": "Stable",
+      "asOfFy": "FY24",
+      "ratingDate": "2025-06-04",
+      "issuerNotCooperating": false,
       "levers": [
+        {
+          "type": "watch",
+          "title": "Credit rating: IVR BBB- / Stable",
+          "detail": "Mid-tier credit rating — factor into how much volume we route here.",
+          "evidence": [
+            {
+              "label": "Rating",
+              "value": "IVR BBB- / Stable"
+            }
+          ]
+        },
+        {
+          "type": "watch",
+          "title": "Thin 1.3% margin — press terms, not price",
+          "detail": "Margins are slim, so deep price cuts risk their stability (and our supply). Win on payment terms, volume or logistics instead.",
+          "evidence": [
+            {
+              "label": "Net margin",
+              "value": "1.3%"
+            }
+          ]
+        },
+        {
+          "type": "risk",
+          "title": "Carrying debt (D/E 2.06x) — watch continuity, offer cash",
+          "detail": "A geared balance sheet is a supply-continuity watch — but it also means they value cash. Offer faster payment for a discount.",
+          "evidence": [
+            {
+              "label": "Debt / equity",
+              "value": "2.06x"
+            },
+            {
+              "label": "Total debt",
+              "value": "₹230.54 Cr"
+            }
+          ]
+        },
         {
           "type": "opportunity",
           "title": "Paying ₹3.91 L/yr above our cheapest supplier",
@@ -426,8 +810,8 @@
       "vendorKey": "cincorp-international",
       "name": "Cincorp International Ltd.",
       "type": "private",
-      "status": "pending",
-      "companyName": "Cincorp International",
+      "status": "unrated",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": "U23209DL2008PLC184638",
@@ -437,12 +821,14 @@
       "fdcSpend": 19488230,
       "metrics": null,
       "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
-      },
-      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "source": null,
+      "note": "unrated private company — financials not publicly filed free",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": [
         {
           "type": "opportunity",
@@ -461,8 +847,8 @@
       "vendorKey": "pik-plastics",
       "name": "PIK PLASTICS",
       "type": "private",
-      "status": "cin-unresolved",
-      "companyName": "PIK Plastics",
+      "status": "unrated",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": null,
@@ -472,12 +858,14 @@
       "fdcSpend": 19167682.76,
       "metrics": null,
       "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
-      },
-      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "source": null,
+      "note": "unrated private company — financials not publicly filed free",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": [
         {
           "type": "opportunity",
@@ -496,8 +884,8 @@
       "vendorKey": "premier-plastic",
       "name": "Premier Plastic",
       "type": "private",
-      "status": "cin-unresolved",
-      "companyName": "Premier Plastic",
+      "status": "unrated",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": null,
@@ -507,12 +895,14 @@
       "fdcSpend": 12932900,
       "metrics": null,
       "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
-      },
-      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "source": null,
+      "note": "unrated private company — financials not publicly filed free",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": [
         {
           "type": "opportunity",
@@ -531,8 +921,8 @@
       "vendorKey": "mars-plastics",
       "name": "Mars Plastics",
       "type": "private",
-      "status": "cin-unresolved",
-      "companyName": "Mars Plastics",
+      "status": "unrated",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": null,
@@ -542,12 +932,14 @@
       "fdcSpend": 12401737,
       "metrics": null,
       "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
-      },
-      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "source": null,
+      "note": "unrated private company — financials not publicly filed free",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": []
     },
     "sukhjit-corn-products": {
@@ -566,7 +958,7 @@
       "metrics": {
         "revenue": 14589500416,
         "ebitda": 938726016,
-        "marketCap": 4648169984,
+        "marketCap": 4624112128,
         "totalDebt": 3454099968,
         "ebitdaMargin": 6.43,
         "netMargin": 2.34,
@@ -575,10 +967,10 @@
         "debtToEquity": 60.88,
         "revenueGrowth": 7.2,
         "earningsGrowth": 143.1,
-        "pe": 13.46,
+        "pe": 13.39,
         "evEbitda": 7.52,
         "dividendYield": 69,
-        "currentPrice": 148.77,
+        "currentPrice": 148,
         "yearlyChange": -12.19,
         "employees": 1210,
         "roce": null,
@@ -613,7 +1005,7 @@
             "weight": 0.2
           }
         ],
-        "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
       },
       "source": {
         "sourceName": "Munshot market-data API",
@@ -621,6 +1013,12 @@
         "date": "2026-10-13"
       },
       "note": "Listed group entity: Sukhjit Starch & Chemicals Ltd",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": [
         {
           "type": "watch",
@@ -680,8 +1078,8 @@
       "vendorKey": "berry-global-india",
       "name": "BERRY GLOBAL INDIA PRIVATE LIMITED",
       "type": "private",
-      "status": "pending",
-      "companyName": "Berry Global India Pvt Ltd",
+      "status": "unrated",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": "U25200KA2021FTC152314",
@@ -691,12 +1089,14 @@
       "fdcSpend": 8139040,
       "metrics": null,
       "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
-      },
-      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "source": null,
+      "note": "unrated private company — financials not publicly filed free",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": [
         {
           "type": "opportunity",
@@ -728,14 +1128,20 @@
       "healthScore": null,
       "source": null,
       "note": "ticker unresolved",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": []
     },
     "kilitch-healthcare-india": {
       "vendorKey": "kilitch-healthcare-india",
       "name": "KILITCH HEALTHCARE INDIA LIMITED",
       "type": "private",
-      "status": "cin-unresolved",
-      "companyName": "Kilitch Healthcare India Ltd (loan-license)",
+      "status": "unrated",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": null,
@@ -745,20 +1151,22 @@
       "fdcSpend": 6527256,
       "metrics": null,
       "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
-      },
-      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "source": null,
+      "note": "unrated private company — financials not publicly filed free",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": []
     },
     "bprex-pharma-packaging-india-p": {
       "vendorKey": "bprex-pharma-packaging-india-p",
       "name": "Bprex Pharma Packaging India (P) Limited",
       "type": "private",
-      "status": "pending",
-      "companyName": "Berry Global India (formerly Bprex)",
+      "status": "unrated",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": "U25200KA2021FTC152314",
@@ -768,12 +1176,14 @@
       "fdcSpend": 6320592,
       "metrics": null,
       "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
-      },
-      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "source": null,
+      "note": "unrated private company — financials not publicly filed free",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": []
     },
     "universal-starch-chem-allied": {
@@ -839,7 +1249,7 @@
             "weight": 0.2
           }
         ],
-        "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
       },
       "source": {
         "sourceName": "Munshot market-data API",
@@ -847,6 +1257,12 @@
         "date": "2026-10-13"
       },
       "note": "Thinly traded",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": [
         {
           "type": "watch",
@@ -891,8 +1307,8 @@
       "vendorKey": "suraj-blow-plast",
       "name": "Suraj Blow Plast PVt. Ltd.",
       "type": "private",
-      "status": "cin-unresolved",
-      "companyName": "Suraj Blow Plast Pvt Ltd",
+      "status": "unrated",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": null,
@@ -902,20 +1318,22 @@
       "fdcSpend": 5816755.8,
       "metrics": null,
       "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
-      },
-      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "source": null,
+      "note": "unrated private company — financials not publicly filed free",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": []
     },
     "rachana-plastics": {
       "vendorKey": "rachana-plastics",
       "name": "Rachana Plastics",
       "type": "private",
-      "status": "cin-unresolved",
-      "companyName": "Rachana Plastics",
+      "status": "unrated",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": null,
@@ -925,20 +1343,22 @@
       "fdcSpend": 4437045.02,
       "metrics": null,
       "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
-      },
-      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "source": null,
+      "note": "unrated private company — financials not publicly filed free",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": []
     },
     "pgp-glass": {
       "vendorKey": "pgp-glass",
       "name": "PGP Glass Private Limited",
       "type": "private",
-      "status": "pending",
-      "companyName": "PGP Glass Pvt Ltd",
+      "status": "unrated",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": "U74999MH2020PTC349649",
@@ -948,20 +1368,22 @@
       "fdcSpend": 3999276.86,
       "metrics": null,
       "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
-      },
-      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "source": null,
+      "note": "unrated private company — financials not publicly filed free",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": []
     },
     "abhinav-speciality-foods-llp": {
       "vendorKey": "abhinav-speciality-foods-llp",
       "name": "ABHINAV SPECIALITY FOODS LLP",
       "type": "private",
-      "status": "cin-unresolved",
-      "companyName": "Abhinav Speciality Foods LLP",
+      "status": "unrated",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": null,
@@ -971,20 +1393,22 @@
       "fdcSpend": 2742049.18,
       "metrics": null,
       "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
-      },
-      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "source": null,
+      "note": "unrated private company — financials not publicly filed free",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": []
     },
     "triveni-polymers": {
       "vendorKey": "triveni-polymers",
       "name": "Triveni Polymers Pvt. Ltd.",
       "type": "private",
-      "status": "pending",
-      "companyName": "Triveni Polymers Pvt Ltd (Gerresheimer India)",
+      "status": "unrated",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": "U74899DL1994PTC060426",
@@ -994,20 +1418,22 @@
       "fdcSpend": 2617285,
       "metrics": null,
       "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
-      },
-      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "source": null,
+      "note": "unrated private company — financials not publicly filed free",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": []
     },
     "tpac-packaging-india": {
       "vendorKey": "tpac-packaging-india",
       "name": "TPAC Packaging India Pvt Ltd.",
       "type": "private",
-      "status": "pending",
-      "companyName": "TPAC Packaging India Pvt Ltd",
+      "status": "ok",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": "U74999MH2017PTC301190",
@@ -1015,22 +1441,76 @@
         "Rigid plastic packaging"
       ],
       "fdcSpend": 1132453.8,
-      "metrics": null,
-      "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
+      "metrics": {
+        "revenue": null,
+        "ebitda": null,
+        "marketCap": null,
+        "totalDebt": null,
+        "ebitdaMargin": null,
+        "netMargin": null,
+        "grossMargin": null,
+        "operatingMargin": null,
+        "debtToEquity": null,
+        "revenueGrowth": null,
+        "earningsGrowth": null,
+        "pe": null,
+        "evEbitda": null,
+        "dividendYield": null,
+        "currentPrice": null,
+        "yearlyChange": null,
+        "employees": null,
+        "roce": null,
+        "roe": null,
+        "pat": null,
+        "netWorth": null,
+        "interestCoverage": null,
+        "creditRating": "[ICRA] A / Stable"
       },
-      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
-      "levers": []
+      "healthScore": {
+        "value": 78,
+        "grade": "A",
+        "components": [
+          {
+            "label": "Credit rating (A)",
+            "raw": "A",
+            "score": 78,
+            "weight": 0.45
+          }
+        ],
+        "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
+      },
+      "source": {
+        "sourceName": "ICRA rating rationale",
+        "sourceUrl": "https://www.icra.in/Rating/GetRationalReportFilePdf?Id=141963",
+        "date": "2026-03-27"
+      },
+      "note": null,
+      "ratingGrade": "A",
+      "ratingLabel": "[ICRA] A / Stable",
+      "ratingOutlook": "Stable",
+      "asOfFy": null,
+      "ratingDate": "2026-03-27",
+      "issuerNotCooperating": false,
+      "levers": [
+        {
+          "type": "watch",
+          "title": "Solid credit rating ([ICRA] A / Stable)",
+          "detail": "An investment-grade rating means low continuity risk — we can push harder on price/terms without worrying they'll wobble.",
+          "evidence": [
+            {
+              "label": "Rating",
+              "value": "[ICRA] A / Stable"
+            }
+          ]
+        }
+      ]
     },
     "scorpion-containers": {
       "vendorKey": "scorpion-containers",
       "name": "SCORPION CONTAINERS PRIVATE LIMITED",
       "type": "private",
-      "status": "cin-unresolved",
-      "companyName": "Scorpion Containers Pvt Ltd",
+      "status": "unrated",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": null,
@@ -1040,12 +1520,14 @@
       "fdcSpend": 165879.24,
       "metrics": null,
       "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
-      },
-      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "source": null,
+      "note": "unrated private company — financials not publicly filed free",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": [
         {
           "type": "watch",
@@ -1076,7 +1558,7 @@
       "metrics": {
         "revenue": 26116399104,
         "ebitda": 2173799936,
-        "marketCap": 17114025984,
+        "marketCap": 17505984512,
         "totalDebt": 1445600000,
         "ebitdaMargin": 8.32,
         "netMargin": 5.22,
@@ -1085,10 +1567,10 @@
         "debtToEquity": 10.72,
         "revenueGrowth": 22.5,
         "earningsGrowth": 75.5,
-        "pe": 12.72,
+        "pe": 13.02,
         "evEbitda": 6.78,
         "dividendYield": 88,
-        "currentPrice": 226.61,
+        "currentPrice": 231.8,
         "yearlyChange": -2.41,
         "employees": 2500,
         "roce": null,
@@ -1123,7 +1605,7 @@
             "weight": 0.2
           }
         ],
-        "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
       },
       "source": {
         "sourceName": "Munshot market-data API",
@@ -1131,6 +1613,12 @@
         "date": "2026-10-13"
       },
       "note": null,
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": [
         {
           "type": "watch",
@@ -1176,7 +1664,7 @@
       "metrics": {
         "revenue": 164920033280,
         "ebitda": 22030196736,
-        "marketCap": 44760289280,
+        "marketCap": 45529341952,
         "totalDebt": 101523062784,
         "ebitdaMargin": 13.36,
         "netMargin": 4.14,
@@ -1185,10 +1673,10 @@
         "debtToEquity": 124.99,
         "revenueGrowth": 35.5,
         "earningsGrowth": 630,
-        "pe": 6.69,
+        "pe": 6.8,
         "evEbitda": 6.22,
         "dividendYield": 47,
-        "currentPrice": 619.85,
+        "currentPrice": 630.5,
         "yearlyChange": 14.31,
         "employees": 7772,
         "roce": null,
@@ -1223,7 +1711,7 @@
             "weight": 0.2
           }
         ],
-        "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
       },
       "source": {
         "sourceName": "Munshot market-data API",
@@ -1231,6 +1719,12 @@
         "date": "2026-10-13"
       },
       "note": null,
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": [
         {
           "type": "watch",
@@ -1279,8 +1773,8 @@
       "vendorKey": "silk-polypack",
       "name": "Silk Polypack",
       "type": "private",
-      "status": "cin-unresolved",
-      "companyName": "Silk Polypack",
+      "status": "unrated",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
       "cin": null,
@@ -1290,12 +1784,14 @@
       "fdcSpend": 7775,
       "metrics": null,
       "healthScore": null,
-      "source": {
-        "sourceName": "Probe42",
-        "sourceUrl": "https://probe42.in",
-        "date": null
-      },
-      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "source": null,
+      "note": "unrated private company — financials not publicly filed free",
+      "ratingGrade": null,
+      "ratingLabel": null,
+      "ratingOutlook": null,
+      "asOfFy": null,
+      "ratingDate": null,
+      "issuerNotCooperating": false,
       "levers": []
     }
   }
