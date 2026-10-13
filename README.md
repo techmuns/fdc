@@ -94,32 +94,24 @@ publishes the refresh automatically.
 
 ---
 
-## Deploy to Cloudflare Pages (configure once → automatic forever)
+## Deploy — Cloudflare Pages (already connected)
 
-The site is a plain static build (`npm run build` → `dist/`), with
-`public/_redirects` handling SPA routing. Pick **one** of these — both mean you
-set it up once and every future `git push` deploys itself.
+This repository is **connected to Cloudflare Pages via the GitHub integration**,
+so deployment is already automatic — set up once, then hands-off forever:
 
-### Option A — Cloudflare Pages Git integration (simplest, recommended)
+- Every pull request gets a **preview deployment** (the *Cloudflare Pages* check
+  on the PR links straight to it).
+- Merging to **`main`** publishes to **production**.
 
-1. In the Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git**.
-2. Pick this repository.
-3. Build settings:
-   - **Build command:** `npm run build`
-   - **Build output directory:** `dist`
-4. Save. Done — every push to `main` now builds and deploys on Cloudflare.
+No manual deploys and no GitHub secrets to manage. The site is a plain static
+build with `public/_redirects` handling SPA routing. Cloudflare build settings:
 
-### Option B — GitHub Actions (in-repo automation)
+- **Build command:** `npm run build` — or `npm run normalize && npm run build`
+  to regenerate the clean data as part of the build
+- **Build output directory:** `dist`
 
-`.github/workflows/deploy.yml` already builds and deploys on every push to `main`.
-Add these two repository secrets once (**Settings → Secrets and variables →
-Actions**) and it runs automatically from then on:
-
-- `CLOUDFLARE_API_TOKEN` — a token with the *Cloudflare Pages: Edit* permission
-- `CLOUDFLARE_ACCOUNT_ID` — your Cloudflare account id
-
-Until those secrets exist, the workflow still validates the build but skips the
-deploy step (so there's no failing check before you configure it).
+To refresh the data, follow **[Refresh the data](#refresh-the-data)** above, then
+push — Cloudflare redeploys automatically.
 
 ---
 
@@ -140,7 +132,6 @@ src/
     Header.tsx, ComingSoon.tsx
   tabs/       Overview, PriceBenchmark, PaymentTermsTab, Vendors
   types.ts    TypeScript types mirroring the clean JSON
-.github/workflows/deploy.yml
 ```
 
 ---
