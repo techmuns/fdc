@@ -7,8 +7,9 @@
   "scripts": {
     "normalize": "node scripts/normalize.mjs",
     "market": "node scripts/market/index.mjs",
+    "ratings": "node scripts/ratings/index.mjs",
     "financials": "node scripts/financials/index.mjs",
-    "data": "npm run normalize && npm run market && npm run financials",
+    "data": "npm run normalize && npm run market && npm run ratings && npm run financials",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview"

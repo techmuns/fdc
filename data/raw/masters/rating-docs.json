@@ -1,0 +1,15 @@
+{
+  "_comment": "Credit-rating-agency rationale docs per PRIVATE vendor — the FREE source for private financials (no API key, no Firecrawl). Discovered via web search; CI only RE-FETCHES these stored URLs (agency on-site search is WAF-blocked, so re-discovery is manual/periodic). Vendors with no doc are honestly 'unrated'. CRISIL = HTML (needs browser UA), others = PDF. ICRA uses ?Id= (capital I).",
+  "discoveredAt": "2026-10-13",
+  "docs": [
+    { "vendorKey": "geep-industries-india", "cin": "U74110MH2002PTC137887", "agency": "CRISIL", "docUrl": "https://www.crisilratings.com/mnt/winshare/Ratings/RatingList/RatingDocs/GeepIndustriesIndiaPrivateLimited_February%2028,%202023_RR_310177.html", "docType": "html", "ratingDate": "2023-02-28" },
+    { "vendorKey": "shrinath-roto-pack", "cin": "U25209TG2006PTC050109", "agency": "CARE", "docUrl": "https://www.careratings.com/upload/CompanyFiles/PR/202410151004_SHRINATH_ROTO_PACK_PRIVATE_LIMITED.pdf", "docType": "pdf", "ratingDate": "2024-10-15" },
+    { "vendorKey": "chemco-plastic-industries", "cin": "U25209MH1996PTC096963", "agency": "CRISIL", "docUrl": "https://www.crisilratings.com/mnt/winshare/Ratings/RatingList/RatingDocs/ChemcoPlasticIndustriesPrivateLimited_September%2001_%202025_RR_371140.html", "docType": "html", "ratingDate": "2025-09-01" },
+    { "vendorKey": "gls-films-industries-p", "cin": "U74950HR2003PTC127247", "agency": "Infomerics", "docUrl": "https://www.infomerics.com/admin/uploads/Pr-GLS-Films-4june25.pdf", "docType": "pdf", "ratingDate": "2025-06-04", "note": "Most recent cooperating rationale; CARE moved an earlier rating to Issuer-Not-Cooperating (Sep 2024)." },
+    { "vendorKey": "tpac-packaging-india", "cin": "U74999MH2017PTC301190", "agency": "ICRA", "docUrl": "https://www.icra.in/Rating/GetRationalReportFilePdf?Id=141963", "docType": "pdf", "ratingDate": "2026-03-27" }
+  ],
+  "unrated": {
+    "_note": "Searched across CRISIL/ICRA/CARE/Acuité/Infomerics — no rated bank facilities found under the vendor's own legal name (MNC subsidiaries & small private firms are often unrated). Shown honestly as 'financials not public'.",
+    "vendorKeys": ["tetrapak-india", "berry-global-india", "bprex-pharma-packaging-india-p", "cincorp-international", "pik-plastics", "premier-plastic", "mars-plastics", "rachana-plastics", "suraj-blow-plast", "scorpion-containers", "silk-polypack", "abhinav-speciality-foods-llp", "kilitch-healthcare-india", "triveni-polymers", "pgp-glass"]
+  }
+}

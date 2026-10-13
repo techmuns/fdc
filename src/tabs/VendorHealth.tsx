@@ -39,7 +39,7 @@ export default function VendorHealth({ data }: { data: AppData }) {
   }
 
   const m = fins.manifest;
-  const listedSpend = rows.filter((r) => r.fin?.status === 'ok').reduce((s, r) => s + r.vendor.totalNetSpend, 0);
+  const okSpend = rows.filter((r) => r.fin?.status === 'ok').reduce((s, r) => s + r.vendor.totalNetSpend, 0);
   const totalSpend = rows.reduce((s, r) => s + r.vendor.totalNetSpend, 0);
 
   const columns: Column<Row>[] = [
@@ -50,8 +50,9 @@ export default function VendorHealth({ data }: { data: AppData }) {
           <span className="h-2.5 w-2.5 shrink-0 rounded-sm" style={{ background: r.vendor.color }} />
           <span className="min-w-0">
             <span className="block truncate font-semibold text-fdc-ink" title={r.vendor.name}>{vendorShort(r.vendor.name)}</span>
-            <span className="flex items-center gap-1 pt-0.5">
+            <span className="flex flex-wrap items-center gap-1 pt-0.5">
               {r.fin?.type === 'listed' ? <Pill color="#2E7CE4"><BadgeCheck size={10} /> Listed</Pill> : <Pill color="#8E44AD"><Lock size={10} /> Private</Pill>}
+              {r.fin?.ratingGrade && <Pill color={gradeColor(r.fin.ratingGrade)}>{r.fin.ratingGrade}</Pill>}
             </span>
           </span>
         </div>
@@ -93,8 +94,9 @@ export default function VendorHealth({ data }: { data: AppData }) {
         <div>
           <h2 className="text-[15px] font-bold text-fdc-ink">Vendor Health</h2>
           <p className="text-[12.5px] text-fdc-grey">
-            Real financials for <span className="font-semibold text-fdc-slate">{m.listedResolved} listed</span> suppliers ({pct((listedSpend / totalSpend) * 100, 0)} of spend) ·{' '}
-            <span className="font-semibold text-fdc-slate">{m.privatePending} private</span> awaiting Probe42 · a price win should never come from a supplier about to wobble.
+            Real financials for <span className="font-semibold text-fdc-slate">{m.listedResolved} listed</span> +{' '}
+            <span className="font-semibold text-fdc-slate">{m.privateRated} rated-private</span> suppliers ({pct((okSpend / totalSpend) * 100, 0)} of spend) ·{' '}
+            {m.privateUnrated} unrated · listed via Munshot, private via free credit-rating docs — a price win should never come from a supplier about to wobble.
           </p>
         </div>
       </div>
@@ -119,9 +121,17 @@ export default function VendorHealth({ data }: { data: AppData }) {
 
 function fin(r: Row, render: (m: NonNullable<VendorFin['metrics']>) => React.ReactNode) {
   if (r.fin?.status === 'ok' && r.fin.metrics) return render(r.fin.metrics);
-  return <span className="text-[11px] text-fdc-grey">pending</span>;
+  return <span className="text-[11px] text-fdc-grey">{r.fin?.status === 'unrated' ? 'not public' : 'pending'}</span>;
 }
 const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
+// rating grade → colour (investment-grade green → speculative red)
+function gradeColor(g: string): string {
+  if (/^(AAA|AA|A)/.test(g)) return '#00973D';
+  if (/^BBB/.test(g)) return '#00A65B';
+  if (/^BB/.test(g)) return '#EFAE0E';
+  if (/^B/.test(g)) return '#F36D06';
+  return '#D91701';
+}
 
 function HealthPanel({ row }: { row: Row }) {
   const { vendor: v, fin } = row;
@@ -136,8 +146,15 @@ function HealthPanel({ row }: { row: Row }) {
           <h3 className="text-[15px] font-extrabold leading-tight text-fdc-ink">{vendorShort(v.name)}</h3>
           <div className="mt-1 flex flex-wrap items-center gap-1">
             {fin?.type === 'listed' ? <Badge color="#2E7CE4"><BadgeCheck size={11} /> Listed{fin.symbol ? ` · ${fin.symbol}` : ''}</Badge> : <Badge color="#8E44AD"><Lock size={11} /> Private</Badge>}
+            {fin?.ratingLabel && <Badge color={gradeColor(fin.ratingGrade || '')} soft={false}>{fin.ratingLabel}</Badge>}
+            {fin?.issuerNotCooperating && <Badge color="#D91701"><AlertTriangle size={10} /> Not cooperating</Badge>}
             {v.materialsSupplied.map((mm, i) => <Badge key={i} color="#707070">{mm}</Badge>)}
           </div>
+          {(fin?.asOfFy || fin?.ratingDate) && (
+            <div className="mt-1 text-[10.5px] text-fdc-grey">
+              {fin?.asOfFy ? `Financials as of ${fin.asOfFy}` : ''}{fin?.asOfFy && fin?.ratingDate ? ' · ' : ''}{fin?.ratingDate ? `rated ${fin.ratingDate}` : ''}
+            </div>
+          )}
         </div>
       </div>
 
@@ -171,22 +188,22 @@ function HealthPanel({ row }: { row: Row }) {
       ) : (
         <div className="rounded-2xl border border-dashed border-fdc-light bg-fdc-offwhite/60 p-4 text-center">
           <Lock size={20} className="mx-auto mb-1.5 text-fdc-grey" />
-          <div className="text-[13px] font-bold text-fdc-slate">Financials pending</div>
+          <div className="text-[13px] font-bold text-fdc-slate">{fin?.status === 'unrated' ? 'Not publicly rated' : 'Financials pending'}</div>
           <p className="mx-auto mt-1 max-w-xs text-[11.5px] leading-snug text-fdc-grey">
-            {fin?.note || 'Private company — add a Probe42 key + VPN and run the enrich step to pull real financials.'}
+            {fin?.note || 'No public credit rating found under this company’s legal name — private, unlisted companies aren’t required to file financials freely.'}
             {fin?.cin && <> <span className="font-mono text-[10px]">({fin.cin})</span></>}
           </p>
         </div>
       )}
 
-      {/* key metrics */}
+      {/* key metrics (hide empty ones for rating-doc vendors) */}
       {met && (
         <div className="mt-3 grid grid-cols-2 gap-2">
           <Metric label="Revenue" value={money(met.revenue)} />
-          <Metric label="EBITDA margin" value={met.ebitdaMargin != null ? pct(met.ebitdaMargin) : '—'} />
+          <Metric label={met.ebitdaMargin != null ? 'EBITDA margin' : 'Interest cover'} value={met.ebitdaMargin != null ? pct(met.ebitdaMargin) : met.interestCoverage != null ? `${met.interestCoverage}x` : '—'} />
           <Metric label="Net margin" value={met.netMargin != null ? pct(met.netMargin) : '—'} />
           <Metric label="Debt / equity" value={met.debtToEquity != null ? `${(met.debtToEquity / 100).toFixed(2)}x` : '—'} />
-          <Metric label="Market cap" value={money(met.marketCap)} />
+          <Metric label={fin?.type === 'listed' ? 'Market cap' : 'Net worth'} value={fin?.type === 'listed' ? money(met.marketCap) : money(met.netWorth ?? null)} />
           <Metric label="Rev growth" value={met.revenueGrowth != null ? pct(met.revenueGrowth) : '—'} />
         </div>
       )}
@@ -211,9 +228,15 @@ function HealthPanel({ row }: { row: Row }) {
       )}
 
       {fin?.source && (
-        <p className="mt-3 flex items-center gap-1 text-[10.5px] text-fdc-grey">
-          <ExternalLink size={10} /> Financials: {fin.source.sourceName}{fin.source.date ? ` · ${fin.source.date}` : ''}
-        </p>
+        fin.source.sourceUrl ? (
+          <a href={fin.source.sourceUrl} target="_blank" rel="noreferrer" className="mt-3 flex items-center gap-1 text-[10.5px] text-fdc-grey hover:text-fdc-blue">
+            <ExternalLink size={10} /> Source: {fin.source.sourceName}{fin.source.date ? ` · ${fin.source.date}` : ''}
+          </a>
+        ) : (
+          <p className="mt-3 flex items-center gap-1 text-[10.5px] text-fdc-grey">
+            <ExternalLink size={10} /> Source: {fin.source.sourceName}{fin.source.date ? ` · ${fin.source.date}` : ''}
+          </p>
+        )
       )}
     </Card>
   );

@@ -7,10 +7,28 @@
 const money = (n) => (n == null ? '—' : Math.abs(n) >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : Math.abs(n) >= 1e5 ? `₹${(n / 1e5).toFixed(2)} L` : `₹${Math.round(n)}`);
 const pct = (n, d = 1) => (n == null ? '—' : `${n.toFixed(d)}%`);
 
-export function buildLevers({ vendor, financials, singleSourceShare, priceExcess, bestGapNote }) {
+export function buildLevers({ vendor, financials, singleSourceShare, priceExcess, bestGapNote, ratingGrade, ratingLabel, inc }) {
   const L = [];
   const m = financials?.metrics || null;
   const add = (type, title, detail, evidence) => L.push({ type, title, detail, evidence: evidence.filter((e) => e.value !== '—') });
+
+  // 0) Credit rating — a strong independent signal of supply-continuity risk.
+  if (ratingGrade) {
+    const strong = /^(AAA|AA|A)/.test(ratingGrade);
+    const weak = /^(B|C|D)/.test(ratingGrade) && !/^BB?B/.test(ratingGrade);
+    if (inc) add('risk', `${ratingLabel} — but not cooperating with the rating agency`,
+      `The latest rating is on an "Issuer Not Cooperating" basis, so the numbers are stale/best-available. Treat their financial health as uncertain and keep a second source warm.`,
+      [{ label: 'Rating', value: ratingLabel }]);
+    else if (weak) add('risk', `Sub-investment-grade rating (${ratingLabel})`,
+      `A speculative-grade credit rating is a supply-continuity watch. Don't over-concentrate volume here; qualify an alternate.`,
+      [{ label: 'Rating', value: ratingLabel }]);
+    else if (strong) add('watch', `Solid credit rating (${ratingLabel})`,
+      `An investment-grade rating means low continuity risk — we can push harder on price/terms without worrying they'll wobble.`,
+      [{ label: 'Rating', value: ratingLabel }]);
+    else add('watch', `Credit rating: ${ratingLabel}`,
+      `Mid-tier credit rating — factor into how much volume we route here.`,
+      [{ label: 'Rating', value: ratingLabel }]);
+  }
 
   // 1) Our wallet share of their revenue — the core leverage number.
   if (m?.revenue && vendor.totalNetSpend) {
@@ -73,11 +91,6 @@ export function buildLevers({ vendor, financials, singleSourceShare, priceExcess
   if (vendor.reversalRatePct >= 10) add('watch', `High goods-receipt reversal rate (${pct(vendor.reversalRatePct, 0)})`,
     `${pct(vendor.reversalRatePct, 0)} of their receipts were later reversed — raise quality/paperwork before it costs more.`,
     [{ label: 'Return rate', value: pct(vendor.reversalRatePct, 0) }]);
-
-  // 10) Credit rating (Probe42).
-  if (m?.creditRating) add('watch', `Credit rating: ${m.creditRating}`,
-    `External credit view — factor into how much we depend on them.`,
-    [{ label: 'Rating', value: m.creditRating }]);
 
   return L;
 }

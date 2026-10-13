@@ -1,0 +1,54 @@
+name: Refresh private-vendor financials (credit-rating docs)
+
+# FREE private-vendor financials from credit-rating-agency rationale docs.
+# ZERO API keys, ZERO Firecrawl, ZERO credits — just a plain fetch of the stored
+# doc URLs (data/raw/masters/rating-docs.json) + parse, then rebuild the merged
+# vendor financials and commit. Cloudflare Pages auto-redeploys.
+#
+# Re-discovery of NEW doc URLs (agency on-site search is WAF-blocked) is manual;
+# this job only re-fetches the URLs already stored.
+
+on:
+  schedule:
+    - cron: '43 2 1 * *' # monthly, 1st at ~02:43 UTC (rating actions are infrequent)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ratings-refresh
+  cancel-in-progress: false
+
+jobs:
+  ratings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install poppler (pdftotext) for PDF rationales
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
+      - run: npm ci
+
+      - name: Fetch + parse rating-rationale docs (free, no keys)
+        run: npm run ratings
+
+      - name: Rebuild merged vendor financials
+        run: npm run financials
+
+      - name: Commit refreshed financials if changed
+        run: |
+          git config user.name  "fdc-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/data/rating-financials.json public/data/vendor-financials.json public/data/alternatives.json
+          if git diff --cached --quiet; then
+            echo "No rating changes."
+          else
+            git commit -m "chore(data): monthly credit-rating financials refresh [skip ci]"
+            git push
+          fi

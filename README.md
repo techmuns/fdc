@@ -10,7 +10,10 @@ financial feeds. Nothing is estimated, sampled, or fabricated.
 > Payment Terms, Vendors). **Phase 2** adds the *intelligence layer*: live
 > market-price benchmarks, real vendor financials & negotiation levers
 > (Vendor Health), and benchmarked alternate suppliers (Alternatives).
-> Negotiation Briefs (AI) remain scaffolded for Phase 3.
+> **Phase 2.1** makes the *private*-vendor financials real & free: they now
+> come from **credit-rating-agency rationale documents** (CRISIL / ICRA /
+> CARE / Acuité / Infomerics) — a plain fetch, **zero API keys, zero
+> Firecrawl**. Negotiation Briefs (AI) remain scaffolded for Phase 3.
 
 ---
 
@@ -22,7 +25,7 @@ financial feeds. Nothing is estimated, sampled, or fabricated.
 | **💰 Price & Benchmark** | FDC price trend, price gap by supplier, inter-plant differences, item price table — **plus a Market-benchmark view**: our price vs real customs / producer / seller-ask lines and raw-material input trends, each source-stamped. |
 | **⏳ Payment Terms** | Where spend sits on payment terms, the cash freed by better terms (+15 / +30 day toggle), and the weakest terms by spend. |
 | **🏭 Vendors** | Sortable, colour-coded table of every supplier → click for a full profile (materials, price position, monthly trend, listed-company flag). |
-| **❤️ Vendor Health** | Real financials (revenue, margins, leverage, growth) for listed suppliers, a computed health score, and plain-English **negotiation levers** from the numbers. Private suppliers show "pending" until Probe42 is configured. |
+| **❤️ Vendor Health** | Real financials (revenue, margins, leverage, growth) for listed suppliers *and* for rated private suppliers (via their credit-rating rationale), a computed health score with the **credit-rating grade** folded in, a rating badge (grade / outlook / as-of FY / source), and plain-English **negotiation levers** from the numbers. Unrated private suppliers show an honest "financials not public" state — never fabricated. |
 | **🔁 Alternatives** | Benchmarked backup suppliers per material with a financial health check and fit note; second-source candidates highlighted for single-source-risk materials. |
 | **📝 Negotiation Briefs** | Scaffolded for Phase 3 (AI drafting on top of the levers built in Phase 2). |
 
@@ -99,21 +102,54 @@ benchmark*).
 - **Listed** vendors & alternates → real financials now, **free** via the Munshot
   market-data API (revenue, EBITDA/net/operating margins, debt/equity, growth,
   market cap). A transparent **health score** (A–D) is computed from these.
-- **Private** vendors → **Probe42** (`scripts/probe/`), gated on
-  `PROBE42_API_KEY_PROD` + VPN. Credit-disciplined: a free `--status` survey, a
-  budgeted `--live` fetch behind a hard VPN guard, and a committed
-  `data/probe-cache/` so a credit is spent **at most once** per company. Until
-  configured, private vendors show a clear "pending" state — never fake numbers.
+- **Private** vendors → real financials now, **free** from **credit-rating-agency
+  rationale documents** (see Phase 2.1 below). **Probe42** (`scripts/probe/`) is
+  kept in the codebase but **dormant** behind `PROBE42_API_KEY_PROD` + VPN; if a
+  key is ever added, its cached payloads win over the rating-doc figures.
 - **Negotiation levers** (`scripts/levers.mjs`) turn real financials + real
-  procurement facts (our wallet-share of their revenue, margins, leverage,
-  single-source risk, weak terms, overpayment, returns) into plain-English,
-  evidence-backed opportunity / risk / watch levers.
+  procurement facts (the credit rating itself, our wallet-share of their revenue,
+  margins, leverage, single-source risk, weak terms, overpayment, returns) into
+  plain-English, evidence-backed opportunity / risk / watch levers.
 
 ```bash
 npm run market       # market-price feeds → public/data/market/
-npm run financials   # vendor + alternative financials → public/data/
-npm run data         # normalize + market + financials, all in one
+npm run ratings      # private-vendor financials from rating docs → public/data/rating-financials.json
+npm run financials   # merge listed + private → public/data/vendor-financials.json, alternatives.json
+npm run data         # normalize + market + ratings + financials, all in one
 ```
+
+### Phase 2.1 — private-vendor financials from credit-rating docs (free, 0 keys, 0 Firecrawl)
+
+Private suppliers don't file financials publicly, but the **rated** ones have a
+credit-rating **rationale** published by the agency — and those PDFs/pages carry a
+"Brief Financials" / "Key Financial Indicators" block with real, audited numbers
+plus the rating grade itself. `npm run ratings` (`scripts/ratings/`) does a **plain
+fetch** of the stored rationale URLs and parses them — **no API key, no Firecrawl,
+no credits**:
+
+| Agency | Doc format | Fetch note |
+|---|---|---|
+| **CRISIL** | HTML | needs a browser `User-Agent` (else 406) |
+| **CARE** | PDF | `pdftotext -layout`; financials read from the *Brief Financials* block |
+| **ICRA** | PDF | URL uses `?Id=` (capital **I**) + `User-Agent` |
+| **Infomerics** | PDF | follow redirects (`-L`) |
+| **Acuité** | PDF | `pdftotext -layout` |
+
+The seed list of rated-vendor doc URLs (plus the explicit list of unrated vendor
+keys) lives in **`data/raw/masters/rating-docs.json`** — tracked and editable; add
+a vendor's rationale URL there and it's picked up on the next run. Values quoted in
+**₹ crore** are converted to absolute INR (× 10⁷, to match the listed-vendor scale),
+gearing "× times" to the D/E-% convention, and a sanity pass drops implausible
+figures. The **rating grade is the dominant component** of the private-vendor health
+score. Rated and unrated vendors alike store `{sourceName, sourceUrl, date}`; an
+**"Issuer Not Cooperating"** rating is detected and flagged (it makes the numbers
+stale/best-available). The merge (`npm run financials`) is **resilient** — a flaky
+fetch keeps the last-good entry rather than blanking a vendor.
+
+> Re-discovering *new* rationale URLs is manual (the agencies' on-site search is
+> WAF-blocked), but re-fetching the stored URLs — which is what matters when an
+> agency republishes with fresh financials — is fully automated (see the monthly
+> workflow below).
 
 ### Probe42 (private financials) — run on demand
 
@@ -183,19 +219,22 @@ push — Cloudflare redeploys automatically.
 
 ```
 data/raw/                 real SAP exports + vendor master
-  masters/alt-vendors.json  seed of alternate suppliers (tracked, editable)
-data/probe-cache/         committed Probe42 payloads (pay a credit once)
+  masters/alt-vendors.json   seed of alternate suppliers (tracked, editable)
+  masters/rating-docs.json   seed of rated-vendor rationale URLs + unrated keys (tracked, editable)
+data/probe-cache/         committed Probe42 payloads (pay a credit once; dormant)
 scripts/
   normalize.mjs           SAP → public/data/*.json
   lib/        http.mjs (curl-based), fred.mjs
   market/     config · comtrade · fred-inputs · plastemart · wpi · marketplace · index
-  financials/ munshot.mjs · index.mjs   (listed financials + orchestrator)
-  probe/      client · extract · enrich · cins   (Probe42, gated)
+  ratings/    fetch.mjs (plain HTML/PDF, 0 keys) · parse.mjs (per-agency) · index.mjs
+  financials/ munshot.mjs · index.mjs   (listed financials + merge orchestrator)
+  probe/      client · extract · enrich · cins   (Probe42, dormant behind its secret)
   levers.mjs  negotiation-lever engine
 public/
   fdc-logo.png · _redirects
   data/*.json             Phase-1 clean data
   data/market/*.json      market prices + manifest
+  data/rating-financials.json   private-vendor financials from rating docs
   data/vendor-financials.json · data/alternatives.json
 src/
   lib/        format · brand · data (loader) · chartMath
@@ -205,8 +244,9 @@ src/
   tabs/       Overview · PriceBenchmark · PaymentTermsTab · Vendors · VendorHealth · Alternatives
   types.ts
 .github/workflows/
-  data-refresh.yml        daily: refresh market + financials, commit JSON
-  probe42-refresh.yml      manual: VPN-gated Probe42 fetch (paid, budgeted)
+  data-refresh.yml         daily: refresh market + financials, commit JSON
+  ratings-refresh.yml      monthly: re-fetch rating docs (free, 0 keys), commit JSON
+  probe42-refresh.yml      manual: VPN-gated Probe42 fetch (paid, budgeted; dormant)
   probe42-vpn-check.yml    manual: print exit IP before/after VPN (0 credits)
 ```
 
