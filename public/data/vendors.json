@@ -1,0 +1,3196 @@
+[
+  {
+    "key": "geep-industries-india",
+    "name": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 24669110.56,
+        "qty": 83570.89
+      },
+      {
+        "month": "2025-05",
+        "spend": 26808281.05,
+        "qty": 89521.55
+      },
+      {
+        "month": "2025-06",
+        "spend": 29406952.16,
+        "qty": 98574.54
+      },
+      {
+        "month": "2025-07",
+        "spend": 40505413.01,
+        "qty": 133064.12
+      },
+      {
+        "month": "2025-08",
+        "spend": 41100433.71,
+        "qty": 137577.85
+      },
+      {
+        "month": "2025-09",
+        "spend": 15952404.3,
+        "qty": 51491.24
+      },
+      {
+        "month": "2025-10",
+        "spend": 20310223.35,
+        "qty": 67753.17
+      },
+      {
+        "month": "2025-11",
+        "spend": 21292854.35,
+        "qty": 69649.94
+      },
+      {
+        "month": "2025-12",
+        "spend": 12716996.7,
+        "qty": 42639.81
+      },
+      {
+        "month": "2026-01",
+        "spend": 9117859.95,
+        "qty": 29662.91
+      },
+      {
+        "month": "2026-02",
+        "spend": 17070342.55,
+        "qty": 55686.21
+      },
+      {
+        "month": "2026-03",
+        "spend": 24180161.47,
+        "qty": 78793.16
+      }
+    ],
+    "underlyingCodes": [
+      "1001630"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Laminates"
+    ],
+    "materialKeys": [
+      "laminates"
+    ],
+    "primaryUnit": "KG",
+    "totalNetSpend": 283131033.16,
+    "totalNetQty": 937985.39,
+    "blendedAvgPrice": 301.767,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "KG",
+        "netSpend": 283131033.16,
+        "netQty": 937985.39,
+        "vwap": 301.767,
+        "receiptCount": 414,
+        "reversalCount": 6
+      }
+    ],
+    "receiptCount": 414,
+    "reversalCount": 6,
+    "reversalRatePct": 1.45,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "laminates",
+        "material": "Laminates",
+        "unit": "KG",
+        "netSpend": 283131033.16,
+        "netQty": 937985.39,
+        "avgPrice": 301.767,
+        "receiptCount": 414,
+        "reversalCount": 6
+      }
+    ],
+    "color": "#00973D"
+  },
+  {
+    "key": "gujarat-ambuja-exports",
+    "name": "GUJARAT AMBUJA EXPORTS LIMITED",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 21129900,
+        "qty": 319700
+      },
+      {
+        "month": "2025-05",
+        "spend": 19096375,
+        "qty": 284125
+      },
+      {
+        "month": "2025-06",
+        "spend": 37652849,
+        "qty": 548771
+      },
+      {
+        "month": "2025-07",
+        "spend": 29157675,
+        "qty": 422575
+      },
+      {
+        "month": "2025-08",
+        "spend": 24443250,
+        "qty": 354250
+      },
+      {
+        "month": "2025-09",
+        "spend": 21280590,
+        "qty": 309860
+      },
+      {
+        "month": "2025-10",
+        "spend": 9608664,
+        "qty": 139256
+      },
+      {
+        "month": "2025-11",
+        "spend": 3450000,
+        "qty": 50000
+      },
+      {
+        "month": "2025-12",
+        "spend": 8964825,
+        "qty": 129925
+      },
+      {
+        "month": "2026-01",
+        "spend": 10626000,
+        "qty": 154000
+      },
+      {
+        "month": "2026-02",
+        "spend": 12040500,
+        "qty": 174500
+      },
+      {
+        "month": "2026-03",
+        "spend": 14672850,
+        "qty": 212650
+      }
+    ],
+    "underlyingCodes": [
+      "1002002",
+      "1003710"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Dextrose"
+    ],
+    "materialKeys": [
+      "dextrose"
+    ],
+    "primaryUnit": "KG",
+    "totalNetSpend": 212123478,
+    "totalNetQty": 3099612,
+    "blendedAvgPrice": 68.452,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "KG",
+        "netSpend": 212123478,
+        "netQty": 3099612,
+        "vwap": 68.452,
+        "receiptCount": 176,
+        "reversalCount": 8
+      }
+    ],
+    "receiptCount": 176,
+    "reversalCount": 8,
+    "reversalRatePct": 4.55,
+    "isListed": true,
+    "listing": {
+      "exchange": "NSE/BSE",
+      "ticker": "GAEL"
+    },
+    "perMaterial": [
+      {
+        "materialKey": "dextrose",
+        "material": "Dextrose",
+        "unit": "KG",
+        "netSpend": 212123478,
+        "netQty": 3099612,
+        "avgPrice": 68.452,
+        "receiptCount": 176,
+        "reversalCount": 8
+      }
+    ],
+    "color": "#2E7CE4"
+  },
+  {
+    "key": "sayaji-industries",
+    "name": "Sayaji Industries Limited",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 21595750,
+        "qty": 324500
+      },
+      {
+        "month": "2025-05",
+        "spend": 18648275,
+        "qty": 280150
+      },
+      {
+        "month": "2025-06",
+        "spend": 11859250,
+        "qty": 179500
+      },
+      {
+        "month": "2025-07",
+        "spend": 4505500,
+        "qty": 67000
+      },
+      {
+        "month": "2025-08",
+        "spend": 19977787.5,
+        "qty": 301550
+      },
+      {
+        "month": "2025-09",
+        "spend": 4797500,
+        "qty": 72500
+      },
+      {
+        "month": "2025-10",
+        "spend": 8486400,
+        "qty": 124800
+      },
+      {
+        "month": "2025-11",
+        "spend": 15584000,
+        "qty": 235000
+      },
+      {
+        "month": "2025-12",
+        "spend": 11199000,
+        "qty": 167875
+      },
+      {
+        "month": "2026-01",
+        "spend": 11895000,
+        "qty": 180000
+      },
+      {
+        "month": "2026-02",
+        "spend": 10902850,
+        "qty": 163900
+      },
+      {
+        "month": "2026-03",
+        "spend": 10833000,
+        "qty": 163000
+      }
+    ],
+    "underlyingCodes": [
+      "1002979"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Dextrose"
+    ],
+    "materialKeys": [
+      "dextrose"
+    ],
+    "primaryUnit": "KG",
+    "totalNetSpend": 150284312.5,
+    "totalNetQty": 2259775,
+    "blendedAvgPrice": 66.483,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "KG",
+        "netSpend": 150284312.5,
+        "netQty": 2259775,
+        "vwap": 66.483,
+        "receiptCount": 162,
+        "reversalCount": 7
+      }
+    ],
+    "receiptCount": 162,
+    "reversalCount": 7,
+    "reversalRatePct": 4.32,
+    "isListed": true,
+    "listing": {
+      "exchange": "BSE",
+      "ticker": "507692"
+    },
+    "perMaterial": [
+      {
+        "materialKey": "dextrose",
+        "material": "Dextrose",
+        "unit": "KG",
+        "netSpend": 150284312.5,
+        "netQty": 2259775,
+        "avgPrice": 66.483,
+        "receiptCount": 162,
+        "reversalCount": 7
+      }
+    ],
+    "color": "#EFAE0E"
+  },
+  {
+    "key": "shrinath-roto-pack",
+    "name": "Shrinath Roto Pack Pvt Ltd",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 5160436.9,
+        "qty": 17794.61
+      },
+      {
+        "month": "2025-05",
+        "spend": 3787582.7,
+        "qty": 13060.63
+      },
+      {
+        "month": "2025-06",
+        "spend": 12216859,
+        "qty": 42127.1
+      },
+      {
+        "month": "2025-07",
+        "spend": 20078529.9,
+        "qty": 69236.31
+      },
+      {
+        "month": "2025-08",
+        "spend": 6649752.2,
+        "qty": 22930.18
+      },
+      {
+        "month": "2025-09",
+        "spend": 4787726,
+        "qty": 16509.4
+      },
+      {
+        "month": "2025-10",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-11",
+        "spend": 2782123.7,
+        "qty": 9593.53
+      },
+      {
+        "month": "2025-12",
+        "spend": 1330383.7,
+        "qty": 4587.53
+      },
+      {
+        "month": "2026-01",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-02",
+        "spend": 1551584.1,
+        "qty": 5350.29
+      },
+      {
+        "month": "2026-03",
+        "spend": 6373927.4,
+        "qty": 21979.06
+      }
+    ],
+    "underlyingCodes": [
+      "1001291"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Laminates"
+    ],
+    "materialKeys": [
+      "laminates"
+    ],
+    "primaryUnit": "KG",
+    "totalNetSpend": 64718905.6,
+    "totalNetQty": 223168.64,
+    "blendedAvgPrice": 290,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "KG",
+        "netSpend": 64718905.6,
+        "netQty": 223168.64,
+        "vwap": 290,
+        "receiptCount": 34,
+        "reversalCount": 0
+      }
+    ],
+    "receiptCount": 34,
+    "reversalCount": 0,
+    "reversalRatePct": 0,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "laminates",
+        "material": "Laminates",
+        "unit": "KG",
+        "netSpend": 64718905.6,
+        "netQty": 223168.64,
+        "avgPrice": 290,
+        "receiptCount": 34,
+        "reversalCount": 0
+      }
+    ],
+    "color": "#8E44AD"
+  },
+  {
+    "key": "chemco-plastic-industries",
+    "name": "Chemco Plastic Industries Pvt. Ltd",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 4629381.28,
+        "qty": 989184
+      },
+      {
+        "month": "2025-05",
+        "spend": 2314690.56,
+        "qty": 494592
+      },
+      {
+        "month": "2025-06",
+        "spend": 6944071.68,
+        "qty": 1483776
+      },
+      {
+        "month": "2025-07",
+        "spend": 4629381.12,
+        "qty": 989184
+      },
+      {
+        "month": "2025-08",
+        "spend": 9258762.24,
+        "qty": 1978368
+      },
+      {
+        "month": "2025-09",
+        "spend": 9110561.28,
+        "qty": 2094656
+      },
+      {
+        "month": "2025-10",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-11",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-12",
+        "spend": 1130606.4,
+        "qty": 283360
+      },
+      {
+        "month": "2026-01",
+        "spend": 92137.6,
+        "qty": 22080
+      },
+      {
+        "month": "2026-02",
+        "spend": 9979823.04,
+        "qty": 2507312
+      },
+      {
+        "month": "2026-03",
+        "spend": 6826400,
+        "qty": 1612576
+      }
+    ],
+    "underlyingCodes": [
+      "1002620"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Rigid plastic packaging"
+    ],
+    "materialKeys": [
+      "packaging"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 54915815.2,
+    "totalNetQty": 12455088,
+    "blendedAvgPrice": 4.416,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 54915815.2,
+        "netQty": 12455088,
+        "vwap": 4.416,
+        "receiptCount": 32,
+        "reversalCount": 1
+      }
+    ],
+    "receiptCount": 32,
+    "reversalCount": 1,
+    "reversalRatePct": 3.13,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "packaging",
+        "material": "Rigid plastic packaging",
+        "unit": "NOS",
+        "netSpend": 54915815.2,
+        "netQty": 12455088,
+        "avgPrice": 4.416,
+        "receiptCount": 32,
+        "reversalCount": 1
+      }
+    ],
+    "color": "#1ABC9C"
+  },
+  {
+    "key": "tetrapak-india",
+    "name": "Tetrapak India Private limited.",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 9649546.9,
+        "qty": 5082210
+      },
+      {
+        "month": "2025-05",
+        "spend": 6268711.51,
+        "qty": 3330100
+      },
+      {
+        "month": "2025-06",
+        "spend": 2409183.39,
+        "qty": 1272525
+      },
+      {
+        "month": "2025-07",
+        "spend": 3165013.75,
+        "qty": 1685345
+      },
+      {
+        "month": "2025-08",
+        "spend": 1270815.48,
+        "qty": 673715
+      },
+      {
+        "month": "2025-09",
+        "spend": 6952771.76,
+        "qty": 3692350
+      },
+      {
+        "month": "2025-10",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-11",
+        "spend": 11259736.77,
+        "qty": 5983020
+      },
+      {
+        "month": "2025-12",
+        "spend": 1966105.95,
+        "qty": 1019050
+      },
+      {
+        "month": "2026-01",
+        "spend": 3587133.5,
+        "qty": 1903900
+      },
+      {
+        "month": "2026-02",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-03",
+        "spend": 8105585.26,
+        "qty": 4246850
+      }
+    ],
+    "underlyingCodes": [
+      "1001097"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "0001",
+    "termCategory": "immediate",
+    "termDays": 0,
+    "termRank": 0,
+    "termText": "Immediate",
+    "worstTerms": true,
+    "materialsSupplied": [
+      "Laminates"
+    ],
+    "materialKeys": [
+      "laminates"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 54634604.27,
+    "totalNetQty": 28212705,
+    "blendedAvgPrice": 1.889,
+    "multiUnit": true,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 53307787.73,
+        "netQty": 28212705,
+        "vwap": 1.889,
+        "receiptCount": 35,
+        "reversalCount": 5
+      },
+      {
+        "unit": "KG",
+        "netSpend": 1326816.54,
+        "netQty": 676360,
+        "vwap": 1.962,
+        "receiptCount": 6,
+        "reversalCount": 4
+      }
+    ],
+    "receiptCount": 41,
+    "reversalCount": 9,
+    "reversalRatePct": 21.95,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "laminates",
+        "material": "Laminates",
+        "unit": "NOS",
+        "netSpend": 53307787.73,
+        "netQty": 28212705,
+        "avgPrice": 1.889,
+        "receiptCount": 35,
+        "reversalCount": 5
+      },
+      {
+        "materialKey": "laminates",
+        "material": "Laminates",
+        "unit": "KG",
+        "netSpend": 1326816.54,
+        "netQty": 676360,
+        "avgPrice": 1.962,
+        "receiptCount": 6,
+        "reversalCount": 4
+      }
+    ],
+    "color": "#00612D"
+  },
+  {
+    "key": "gls-films-industries-p",
+    "name": "GLS FILMS INDUSTRIES P. LTD.",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 928686.55,
+        "qty": 3148.09
+      },
+      {
+        "month": "2025-05",
+        "spend": 6476353.3,
+        "qty": 21953.74
+      },
+      {
+        "month": "2025-06",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-07",
+        "spend": 2997217.7,
+        "qty": 10160.06
+      },
+      {
+        "month": "2025-08",
+        "spend": 1952439.8,
+        "qty": 6618.44
+      },
+      {
+        "month": "2025-09",
+        "spend": 1633683.45,
+        "qty": 5537.91
+      },
+      {
+        "month": "2025-10",
+        "spend": 4186740.3,
+        "qty": 14192.34
+      },
+      {
+        "month": "2025-11",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-12",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-01",
+        "spend": 3261145.35,
+        "qty": 11054.73
+      },
+      {
+        "month": "2026-02",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-03",
+        "spend": 1644675.15,
+        "qty": 5575.17
+      }
+    ],
+    "underlyingCodes": [
+      "1001972"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Laminates"
+    ],
+    "materialKeys": [
+      "laminates"
+    ],
+    "primaryUnit": "KG",
+    "totalNetSpend": 23080941.6,
+    "totalNetQty": 78240.48,
+    "blendedAvgPrice": 295,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "KG",
+        "netSpend": 23080941.6,
+        "netQty": 78240.48,
+        "vwap": 295,
+        "receiptCount": 17,
+        "reversalCount": 0
+      }
+    ],
+    "receiptCount": 17,
+    "reversalCount": 0,
+    "reversalRatePct": 0,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "laminates",
+        "material": "Laminates",
+        "unit": "KG",
+        "netSpend": 23080941.6,
+        "netQty": 78240.48,
+        "avgPrice": 295,
+        "receiptCount": 17,
+        "reversalCount": 0
+      }
+    ],
+    "color": "#2471A3"
+  },
+  {
+    "key": "cincorp-international",
+    "name": "Cincorp International Ltd.",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 2383900,
+        "qty": 2355000
+      },
+      {
+        "month": "2025-05",
+        "spend": 2281400,
+        "qty": 2225000
+      },
+      {
+        "month": "2025-06",
+        "spend": 1965200,
+        "qty": 1890000
+      },
+      {
+        "month": "2025-07",
+        "spend": 2043740,
+        "qty": 2066000
+      },
+      {
+        "month": "2025-08",
+        "spend": 1538850,
+        "qty": 1515000
+      },
+      {
+        "month": "2025-09",
+        "spend": 442700,
+        "qty": 310000
+      },
+      {
+        "month": "2025-10",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-11",
+        "spend": 1131300,
+        "qty": 1210000
+      },
+      {
+        "month": "2025-12",
+        "spend": 481200,
+        "qty": 495000
+      },
+      {
+        "month": "2026-01",
+        "spend": 1416150,
+        "qty": 1410000
+      },
+      {
+        "month": "2026-02",
+        "spend": 1801710,
+        "qty": 1784000
+      },
+      {
+        "month": "2026-03",
+        "spend": 4002080,
+        "qty": 3052000
+      }
+    ],
+    "underlyingCodes": [
+      "1000007"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P043",
+    "termCategory": "net",
+    "termDays": 45,
+    "termRank": 45,
+    "termText": "45 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Rigid plastic packaging"
+    ],
+    "materialKeys": [
+      "packaging"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 19488230,
+    "totalNetQty": 18312000,
+    "blendedAvgPrice": 1.06,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 19488230,
+        "netQty": 18312000,
+        "vwap": 1.06,
+        "receiptCount": 118,
+        "reversalCount": 3
+      }
+    ],
+    "receiptCount": 118,
+    "reversalCount": 3,
+    "reversalRatePct": 2.54,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "packaging",
+        "material": "Rigid plastic packaging",
+        "unit": "NOS",
+        "netSpend": 19488230,
+        "netQty": 18312000,
+        "avgPrice": 1.06,
+        "receiptCount": 118,
+        "reversalCount": 3
+      }
+    ],
+    "color": "#B8860B"
+  },
+  {
+    "key": "pik-plastics",
+    "name": "PIK PLASTICS",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 1943962.81,
+        "qty": 350299
+      },
+      {
+        "month": "2025-05",
+        "spend": 1167177.6,
+        "qty": 205848
+      },
+      {
+        "month": "2025-06",
+        "spend": 3741640.49,
+        "qty": 669640
+      },
+      {
+        "month": "2025-07",
+        "spend": 941423.64,
+        "qty": 172356
+      },
+      {
+        "month": "2025-08",
+        "spend": 936196.7,
+        "qty": 161831
+      },
+      {
+        "month": "2025-09",
+        "spend": 1933890.2,
+        "qty": 309362
+      },
+      {
+        "month": "2025-10",
+        "spend": 919986.88,
+        "qty": 204422
+      },
+      {
+        "month": "2025-11",
+        "spend": 1270596.76,
+        "qty": 300964
+      },
+      {
+        "month": "2025-12",
+        "spend": 1863345.6,
+        "qty": 332082
+      },
+      {
+        "month": "2026-01",
+        "spend": 1076127,
+        "qty": 218316
+      },
+      {
+        "month": "2026-02",
+        "spend": 1045009.98,
+        "qty": 211992
+      },
+      {
+        "month": "2026-03",
+        "spend": 2328325.1,
+        "qty": 328730
+      }
+    ],
+    "underlyingCodes": [
+      "1003248",
+      "1003376"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Rigid plastic packaging"
+    ],
+    "materialKeys": [
+      "packaging"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 19167682.76,
+    "totalNetQty": 3465842,
+    "blendedAvgPrice": 5.475,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 19167682.76,
+        "netQty": 3465842,
+        "vwap": 5.475,
+        "receiptCount": 80,
+        "reversalCount": 3
+      }
+    ],
+    "receiptCount": 80,
+    "reversalCount": 3,
+    "reversalRatePct": 3.75,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "packaging",
+        "material": "Rigid plastic packaging",
+        "unit": "NOS",
+        "netSpend": 19167682.76,
+        "netQty": 3465842,
+        "avgPrice": 5.475,
+        "receiptCount": 80,
+        "reversalCount": 3
+      }
+    ],
+    "color": "#6C3483"
+  },
+  {
+    "key": "premier-plastic",
+    "name": "Premier Plastic",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 435000,
+        "qty": 450000
+      },
+      {
+        "month": "2025-05",
+        "spend": 1740000,
+        "qty": 1800000
+      },
+      {
+        "month": "2025-06",
+        "spend": 1740000,
+        "qty": 1800000
+      },
+      {
+        "month": "2025-07",
+        "spend": 2175000,
+        "qty": 2250000
+      },
+      {
+        "month": "2025-08",
+        "spend": 1740000,
+        "qty": 1800000
+      },
+      {
+        "month": "2025-09",
+        "spend": 1267425,
+        "qty": 1241300
+      },
+      {
+        "month": "2025-10",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-11",
+        "spend": 781725,
+        "qty": 740100
+      },
+      {
+        "month": "2025-12",
+        "spend": 870000,
+        "qty": 900000
+      },
+      {
+        "month": "2026-01",
+        "spend": 878750,
+        "qty": 925000
+      },
+      {
+        "month": "2026-02",
+        "spend": 870000,
+        "qty": 900000
+      },
+      {
+        "month": "2026-03",
+        "spend": 435000,
+        "qty": 450000
+      }
+    ],
+    "underlyingCodes": [
+      "1001733"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P043",
+    "termCategory": "net",
+    "termDays": 45,
+    "termRank": 45,
+    "termText": "45 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Rigid plastic packaging"
+    ],
+    "materialKeys": [
+      "packaging"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 12932900,
+    "totalNetQty": 13256400,
+    "blendedAvgPrice": 0.981,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 12932900,
+        "netQty": 13256400,
+        "vwap": 0.981,
+        "receiptCount": 94,
+        "reversalCount": 3
+      }
+    ],
+    "receiptCount": 94,
+    "reversalCount": 3,
+    "reversalRatePct": 3.19,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "packaging",
+        "material": "Rigid plastic packaging",
+        "unit": "NOS",
+        "netSpend": 12932900,
+        "netQty": 13256400,
+        "avgPrice": 0.981,
+        "receiptCount": 94,
+        "reversalCount": 3
+      }
+    ],
+    "color": "#148F77"
+  },
+  {
+    "key": "mars-plastics",
+    "name": "Mars Plastics",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 1872400,
+        "qty": 2020000
+      },
+      {
+        "month": "2025-05",
+        "spend": 1925595,
+        "qty": 2143500
+      },
+      {
+        "month": "2025-06",
+        "spend": 1864710,
+        "qty": 1983000
+      },
+      {
+        "month": "2025-07",
+        "spend": 833952,
+        "qty": 849600
+      },
+      {
+        "month": "2025-08",
+        "spend": 771000,
+        "qty": 900000
+      },
+      {
+        "month": "2025-09",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-10",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-11",
+        "spend": 771000,
+        "qty": 900000
+      },
+      {
+        "month": "2025-12",
+        "spend": 453672,
+        "qty": 405600
+      },
+      {
+        "month": "2026-01",
+        "spend": 852000,
+        "qty": 600000
+      },
+      {
+        "month": "2026-02",
+        "spend": 1421496,
+        "qty": 880800
+      },
+      {
+        "month": "2026-03",
+        "spend": 1635912,
+        "qty": 1077600
+      }
+    ],
+    "underlyingCodes": [
+      "1000100"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P043",
+    "termCategory": "net",
+    "termDays": 45,
+    "termRank": 45,
+    "termText": "45 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Rigid plastic packaging"
+    ],
+    "materialKeys": [
+      "packaging"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 12401737,
+    "totalNetQty": 11760100,
+    "blendedAvgPrice": 1.091,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 12401737,
+        "netQty": 11760100,
+        "vwap": 1.091,
+        "receiptCount": 89,
+        "reversalCount": 7
+      }
+    ],
+    "receiptCount": 89,
+    "reversalCount": 7,
+    "reversalRatePct": 7.87,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "packaging",
+        "material": "Rigid plastic packaging",
+        "unit": "NOS",
+        "netSpend": 12401737,
+        "netQty": 11760100,
+        "avgPrice": 1.091,
+        "receiptCount": 89,
+        "reversalCount": 7
+      }
+    ],
+    "color": "#27AE60"
+  },
+  {
+    "key": "sukhjit-corn-products",
+    "name": "SUKHJIT CORN PRODUCTS",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-05",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-06",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-07",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-08",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-09",
+        "spend": 2145000,
+        "qty": 30000
+      },
+      {
+        "month": "2025-10",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-11",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-12",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-01",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-02",
+        "spend": 2040000,
+        "qty": 30000
+      },
+      {
+        "month": "2026-03",
+        "spend": 6435000,
+        "qty": 90000
+      }
+    ],
+    "underlyingCodes": [
+      "1003776"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P001",
+    "termCategory": "advance",
+    "termDays": null,
+    "termRank": -1,
+    "termText": "Advance 100%(with tax)Against Proforma Invoice",
+    "worstTerms": true,
+    "materialsSupplied": [
+      "Dextrose"
+    ],
+    "materialKeys": [
+      "dextrose"
+    ],
+    "primaryUnit": "KG",
+    "totalNetSpend": 10620000,
+    "totalNetQty": 150000,
+    "blendedAvgPrice": 70.8,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "KG",
+        "netSpend": 10620000,
+        "netQty": 150000,
+        "vwap": 70.8,
+        "receiptCount": 15,
+        "reversalCount": 0
+      }
+    ],
+    "receiptCount": 15,
+    "reversalCount": 0,
+    "reversalRatePct": 0,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "dextrose",
+        "material": "Dextrose",
+        "unit": "KG",
+        "netSpend": 10620000,
+        "netQty": 150000,
+        "avgPrice": 70.8,
+        "receiptCount": 15,
+        "reversalCount": 0
+      }
+    ],
+    "color": "#2C82C9"
+  },
+  {
+    "key": "berry-global-india",
+    "name": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-05",
+        "spend": 1804840,
+        "qty": 1090000
+      },
+      {
+        "month": "2025-06",
+        "spend": 850000,
+        "qty": 500000
+      },
+      {
+        "month": "2025-07",
+        "spend": 1686400,
+        "qty": 992000
+      },
+      {
+        "month": "2025-08",
+        "spend": 850000,
+        "qty": 500000
+      },
+      {
+        "month": "2025-09",
+        "spend": 1700000,
+        "qty": 1000000
+      },
+      {
+        "month": "2025-10",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-11",
+        "spend": 510000,
+        "qty": 300000
+      },
+      {
+        "month": "2025-12",
+        "spend": 510000,
+        "qty": 300000
+      },
+      {
+        "month": "2026-01",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-02",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-03",
+        "spend": 227800,
+        "qty": 134000
+      }
+    ],
+    "underlyingCodes": [
+      "1003493"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Rigid plastic packaging"
+    ],
+    "materialKeys": [
+      "packaging"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 8139040,
+    "totalNetQty": 4816000,
+    "blendedAvgPrice": 1.69,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 8139040,
+        "netQty": 4816000,
+        "vwap": 1.69,
+        "receiptCount": 25,
+        "reversalCount": 0
+      }
+    ],
+    "receiptCount": 25,
+    "reversalCount": 0,
+    "reversalRatePct": 0,
+    "isListed": true,
+    "listing": {
+      "exchange": "NYSE (parent)",
+      "ticker": "BERY"
+    },
+    "perMaterial": [
+      {
+        "materialKey": "packaging",
+        "material": "Rigid plastic packaging",
+        "unit": "NOS",
+        "netSpend": 8139040,
+        "netQty": 4816000,
+        "avgPrice": 1.69,
+        "receiptCount": 25,
+        "reversalCount": 0
+      }
+    ],
+    "color": "#9B59B6"
+  },
+  {
+    "key": "empire-industries-virum-glass",
+    "name": "Empire Industries Ltd - Virum Glass",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 343497,
+        "qty": 115500
+      },
+      {
+        "month": "2025-05",
+        "spend": 1229094.72,
+        "qty": 413280
+      },
+      {
+        "month": "2025-06",
+        "spend": 898713.06,
+        "qty": 302190
+      },
+      {
+        "month": "2025-07",
+        "spend": 790043.1,
+        "qty": 265650
+      },
+      {
+        "month": "2025-08",
+        "spend": 878103.24,
+        "qty": 295260
+      },
+      {
+        "month": "2025-09",
+        "spend": 371601.3,
+        "qty": 124950
+      },
+      {
+        "month": "2025-10",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-11",
+        "spend": 929127.12,
+        "qty": 305880
+      },
+      {
+        "month": "2025-12",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-01",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-02",
+        "spend": 938683.62,
+        "qty": 315630
+      },
+      {
+        "month": "2026-03",
+        "spend": 368152.8,
+        "qty": 102840
+      }
+    ],
+    "underlyingCodes": [
+      "1000102"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Rigid plastic packaging"
+    ],
+    "materialKeys": [
+      "packaging"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 6747015.96,
+    "totalNetQty": 2241180,
+    "blendedAvgPrice": 3.01,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 6747015.96,
+        "netQty": 2241180,
+        "vwap": 3.01,
+        "receiptCount": 24,
+        "reversalCount": 0
+      }
+    ],
+    "receiptCount": 24,
+    "reversalCount": 0,
+    "reversalRatePct": 0,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "packaging",
+        "material": "Rigid plastic packaging",
+        "unit": "NOS",
+        "netSpend": 6747015.96,
+        "netQty": 2241180,
+        "avgPrice": 3.01,
+        "receiptCount": 24,
+        "reversalCount": 0
+      }
+    ],
+    "color": "#117A65"
+  },
+  {
+    "key": "kilitch-healthcare-india",
+    "name": "KILITCH HEALTHCARE INDIA LIMITED",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-05",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-06",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-07",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-08",
+        "spend": 3310864,
+        "qty": 80800
+      },
+      {
+        "month": "2025-09",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-10",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-11",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-12",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-01",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-02",
+        "spend": 1560960,
+        "qty": 38400
+      },
+      {
+        "month": "2026-03",
+        "spend": 1655432,
+        "qty": 40400
+      }
+    ],
+    "underlyingCodes": [
+      "VN08"
+    ],
+    "accGrp": "ZLLM",
+    "accGrpLabel": "Loan-license",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Rigid plastic packaging"
+    ],
+    "materialKeys": [
+      "packaging"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 6527256,
+    "totalNetQty": 159600,
+    "blendedAvgPrice": 40.898,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 6527256,
+        "netQty": 159600,
+        "vwap": 40.898,
+        "receiptCount": 8,
+        "reversalCount": 0
+      }
+    ],
+    "receiptCount": 8,
+    "reversalCount": 0,
+    "reversalRatePct": 0,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "packaging",
+        "material": "Rigid plastic packaging",
+        "unit": "NOS",
+        "netSpend": 6527256,
+        "netQty": 159600,
+        "avgPrice": 40.898,
+        "receiptCount": 8,
+        "reversalCount": 0
+      }
+    ],
+    "color": "#7D6608"
+  },
+  {
+    "key": "bprex-pharma-packaging-india-p",
+    "name": "Bprex Pharma Packaging India (P) Limited",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 1178100,
+        "qty": 1530000
+      },
+      {
+        "month": "2025-05",
+        "spend": 771620,
+        "qty": 2180000
+      },
+      {
+        "month": "2025-06",
+        "spend": 403316,
+        "qty": 1020600
+      },
+      {
+        "month": "2025-07",
+        "spend": 869591,
+        "qty": 2167300
+      },
+      {
+        "month": "2025-08",
+        "spend": 365000,
+        "qty": 1000000
+      },
+      {
+        "month": "2025-09",
+        "spend": 730000,
+        "qty": 2000000
+      },
+      {
+        "month": "2025-10",
+        "spend": 134970,
+        "qty": 359500
+      },
+      {
+        "month": "2025-11",
+        "spend": 219000,
+        "qty": 600000
+      },
+      {
+        "month": "2025-12",
+        "spend": 219000,
+        "qty": 600000
+      },
+      {
+        "month": "2026-01",
+        "spend": 241930,
+        "qty": 470300
+      },
+      {
+        "month": "2026-02",
+        "spend": 538500,
+        "qty": 450000
+      },
+      {
+        "month": "2026-03",
+        "spend": 649565,
+        "qty": 730700
+      }
+    ],
+    "underlyingCodes": [
+      "1000060"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Rigid plastic packaging"
+    ],
+    "materialKeys": [
+      "packaging"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 6320592,
+    "totalNetQty": 13108400,
+    "blendedAvgPrice": 0.474,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 6320592,
+        "netQty": 13108400,
+        "vwap": 0.474,
+        "receiptCount": 67,
+        "reversalCount": 3
+      }
+    ],
+    "receiptCount": 67,
+    "reversalCount": 3,
+    "reversalRatePct": 4.48,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "packaging",
+        "material": "Rigid plastic packaging",
+        "unit": "NOS",
+        "netSpend": 6320592,
+        "netQty": 13108400,
+        "avgPrice": 0.474,
+        "receiptCount": 67,
+        "reversalCount": 3
+      }
+    ],
+    "color": "#1E8449"
+  },
+  {
+    "key": "universal-starch-chem-allied",
+    "name": "Universal Starch Chem Allied Ltd",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-05",
+        "spend": 2925000,
+        "qty": 39000
+      },
+      {
+        "month": "2025-06",
+        "spend": 1540000,
+        "qty": 20000
+      },
+      {
+        "month": "2025-07",
+        "spend": 1500000,
+        "qty": 20000
+      },
+      {
+        "month": "2025-08",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-09",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-10",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-11",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-12",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-01",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-02",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-03",
+        "spend": 0,
+        "qty": 0
+      }
+    ],
+    "underlyingCodes": [
+      "1000656"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Dextrose"
+    ],
+    "materialKeys": [
+      "dextrose"
+    ],
+    "primaryUnit": "KG",
+    "totalNetSpend": 5965000,
+    "totalNetQty": 79000,
+    "blendedAvgPrice": 75.506,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "KG",
+        "netSpend": 5965000,
+        "netQty": 79000,
+        "vwap": 75.506,
+        "receiptCount": 8,
+        "reversalCount": 0
+      }
+    ],
+    "receiptCount": 8,
+    "reversalCount": 0,
+    "reversalRatePct": 0,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "dextrose",
+        "material": "Dextrose",
+        "unit": "KG",
+        "netSpend": 5965000,
+        "netQty": 79000,
+        "avgPrice": 75.506,
+        "receiptCount": 8,
+        "reversalCount": 0
+      }
+    ],
+    "color": "#3498DB"
+  },
+  {
+    "key": "suraj-blow-plast",
+    "name": "Suraj Blow Plast PVt. Ltd.",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 905968.8,
+        "qty": 216624
+      },
+      {
+        "month": "2025-05",
+        "spend": 2485270.2,
+        "qty": 569796
+      },
+      {
+        "month": "2025-06",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-07",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-08",
+        "spend": 133056,
+        "qty": 26880
+      },
+      {
+        "month": "2025-09",
+        "spend": 602358.9,
+        "qty": 168822
+      },
+      {
+        "month": "2025-10",
+        "spend": 424116,
+        "qty": 85680
+      },
+      {
+        "month": "2025-11",
+        "spend": 131835,
+        "qty": 70500
+      },
+      {
+        "month": "2025-12",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-01",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-02",
+        "spend": 931005.9,
+        "qty": 200682
+      },
+      {
+        "month": "2026-03",
+        "spend": 203145,
+        "qty": 100500
+      }
+    ],
+    "underlyingCodes": [
+      "1001339"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Rigid plastic packaging"
+    ],
+    "materialKeys": [
+      "packaging"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 5816755.8,
+    "totalNetQty": 1439484,
+    "blendedAvgPrice": 4.192,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 5816755.8,
+        "netQty": 1439484,
+        "vwap": 4.192,
+        "receiptCount": 36,
+        "reversalCount": 2
+      }
+    ],
+    "receiptCount": 36,
+    "reversalCount": 2,
+    "reversalRatePct": 5.56,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "packaging",
+        "material": "Rigid plastic packaging",
+        "unit": "NOS",
+        "netSpend": 5816755.8,
+        "netQty": 1439484,
+        "avgPrice": 4.192,
+        "receiptCount": 36,
+        "reversalCount": 2
+      }
+    ],
+    "color": "#5B8C2A"
+  },
+  {
+    "key": "rachana-plastics",
+    "name": "Rachana Plastics",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 308500.01,
+        "qty": 279000
+      },
+      {
+        "month": "2025-05",
+        "spend": 751130,
+        "qty": 1279900
+      },
+      {
+        "month": "2025-06",
+        "spend": 240450,
+        "qty": 615000
+      },
+      {
+        "month": "2025-07",
+        "spend": 694400,
+        "qty": 530000
+      },
+      {
+        "month": "2025-08",
+        "spend": 363440,
+        "qty": 304000
+      },
+      {
+        "month": "2025-09",
+        "spend": 498250,
+        "qty": 432000
+      },
+      {
+        "month": "2025-10",
+        "spend": 38720,
+        "qty": 22000
+      },
+      {
+        "month": "2025-11",
+        "spend": 134900,
+        "qty": 287500
+      },
+      {
+        "month": "2025-12",
+        "spend": 419500,
+        "qty": 715000
+      },
+      {
+        "month": "2026-01",
+        "spend": 527100,
+        "qty": 349000
+      },
+      {
+        "month": "2026-02",
+        "spend": 323135.01,
+        "qty": 393000
+      },
+      {
+        "month": "2026-03",
+        "spend": 137520,
+        "qty": 142000
+      }
+    ],
+    "underlyingCodes": [
+      "1000068"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Rigid plastic packaging"
+    ],
+    "materialKeys": [
+      "packaging"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 4437045.02,
+    "totalNetQty": 5348400,
+    "blendedAvgPrice": 0.856,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 4437045.02,
+        "netQty": 5348400,
+        "vwap": 0.856,
+        "receiptCount": 85,
+        "reversalCount": 4
+      }
+    ],
+    "receiptCount": 85,
+    "reversalCount": 4,
+    "reversalRatePct": 4.71,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "packaging",
+        "material": "Rigid plastic packaging",
+        "unit": "NOS",
+        "netSpend": 4437045.02,
+        "netQty": 5348400,
+        "avgPrice": 0.856,
+        "receiptCount": 85,
+        "reversalCount": 4
+      }
+    ],
+    "color": "#935116"
+  },
+  {
+    "key": "pgp-glass",
+    "name": "PGP Glass Private Limited",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 647678.59,
+        "qty": 249876
+      },
+      {
+        "month": "2025-05",
+        "spend": 298691.71,
+        "qty": 115236
+      },
+      {
+        "month": "2025-06",
+        "spend": 917288.06,
+        "qty": 353892
+      },
+      {
+        "month": "2025-07",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-08",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-09",
+        "spend": 709731,
+        "qty": 263769
+      },
+      {
+        "month": "2025-10",
+        "spend": 111881.09,
+        "qty": 43164
+      },
+      {
+        "month": "2025-11",
+        "spend": 488581.63,
+        "qty": 188496
+      },
+      {
+        "month": "2025-12",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-01",
+        "spend": 97000.2,
+        "qty": 21087
+      },
+      {
+        "month": "2026-02",
+        "spend": 248738.69,
+        "qty": 95964
+      },
+      {
+        "month": "2026-03",
+        "spend": 479685.89,
+        "qty": 185064
+      }
+    ],
+    "underlyingCodes": [
+      "1002906"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Rigid plastic packaging"
+    ],
+    "materialKeys": [
+      "packaging"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 3999276.86,
+    "totalNetQty": 1516548,
+    "blendedAvgPrice": 2.637,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 3999276.86,
+        "netQty": 1516548,
+        "vwap": 2.637,
+        "receiptCount": 13,
+        "reversalCount": 0
+      }
+    ],
+    "receiptCount": 13,
+    "reversalCount": 0,
+    "reversalRatePct": 0,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "packaging",
+        "material": "Rigid plastic packaging",
+        "unit": "NOS",
+        "netSpend": 3999276.86,
+        "netQty": 1516548,
+        "avgPrice": 2.637,
+        "receiptCount": 13,
+        "reversalCount": 0
+      }
+    ],
+    "color": "#0E7C7B"
+  },
+  {
+    "key": "abhinav-speciality-foods-llp",
+    "name": "ABHINAV SPECIALITY FOODS LLP",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 25999.48,
+        "qty": 99998
+      },
+      {
+        "month": "2025-05",
+        "spend": 327640,
+        "qty": 220400
+      },
+      {
+        "month": "2025-06",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-07",
+        "spend": 376550,
+        "qty": 331500
+      },
+      {
+        "month": "2025-08",
+        "spend": 254017.6,
+        "qty": 94292
+      },
+      {
+        "month": "2025-09",
+        "spend": 236160,
+        "qty": 57600
+      },
+      {
+        "month": "2025-10",
+        "spend": 392165.1,
+        "qty": 359693
+      },
+      {
+        "month": "2025-11",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-12",
+        "spend": 384320,
+        "qty": 237200
+      },
+      {
+        "month": "2026-01",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-02",
+        "spend": 413917,
+        "qty": 350590
+      },
+      {
+        "month": "2026-03",
+        "spend": 331280,
+        "qty": 128800
+      }
+    ],
+    "underlyingCodes": [
+      "1002262"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P043",
+    "termCategory": "net",
+    "termDays": 45,
+    "termRank": 45,
+    "termText": "45 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Rigid plastic packaging"
+    ],
+    "materialKeys": [
+      "packaging"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 2742049.18,
+    "totalNetQty": 1880073,
+    "blendedAvgPrice": 1.458,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 2742049.18,
+        "netQty": 1880073,
+        "vwap": 1.458,
+        "receiptCount": 29,
+        "reversalCount": 0
+      }
+    ],
+    "receiptCount": 29,
+    "reversalCount": 0,
+    "reversalRatePct": 0,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "packaging",
+        "material": "Rigid plastic packaging",
+        "unit": "NOS",
+        "netSpend": 2742049.18,
+        "netQty": 1880073,
+        "avgPrice": 1.458,
+        "receiptCount": 29,
+        "reversalCount": 0
+      }
+    ],
+    "color": "#A04000"
+  },
+  {
+    "key": "triveni-polymers",
+    "name": "Triveni Polymers Pvt. Ltd.",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 17886,
+        "qty": 5400
+      },
+      {
+        "month": "2025-05",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-06",
+        "spend": 5256,
+        "qty": 600
+      },
+      {
+        "month": "2025-07",
+        "spend": 304400,
+        "qty": 90000
+      },
+      {
+        "month": "2025-08",
+        "spend": 413773,
+        "qty": 81700
+      },
+      {
+        "month": "2025-09",
+        "spend": 926960,
+        "qty": 193800
+      },
+      {
+        "month": "2025-10",
+        "spend": 98430,
+        "qty": 10000
+      },
+      {
+        "month": "2025-11",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-12",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-01",
+        "spend": 808170,
+        "qty": 160600
+      },
+      {
+        "month": "2026-02",
+        "spend": 42410,
+        "qty": 11900
+      },
+      {
+        "month": "2026-03",
+        "spend": 0,
+        "qty": 0
+      }
+    ],
+    "underlyingCodes": [
+      "1000037"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P043",
+    "termCategory": "net",
+    "termDays": 45,
+    "termRank": 45,
+    "termText": "45 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Rigid plastic packaging"
+    ],
+    "materialKeys": [
+      "packaging"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 2617285,
+    "totalNetQty": 554000,
+    "blendedAvgPrice": 4.724,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 2617285,
+        "netQty": 554000,
+        "vwap": 4.724,
+        "receiptCount": 27,
+        "reversalCount": 0
+      }
+    ],
+    "receiptCount": 27,
+    "reversalCount": 0,
+    "reversalRatePct": 0,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "packaging",
+        "material": "Rigid plastic packaging",
+        "unit": "NOS",
+        "netSpend": 2617285,
+        "netQty": 554000,
+        "avgPrice": 4.724,
+        "receiptCount": 27,
+        "reversalCount": 0
+      }
+    ],
+    "color": "#16A085"
+  },
+  {
+    "key": "tpac-packaging-india",
+    "name": "TPAC Packaging India Pvt Ltd.",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 216987.12,
+        "qty": 28476
+      },
+      {
+        "month": "2025-05",
+        "spend": 199704.96,
+        "qty": 26208
+      },
+      {
+        "month": "2025-06",
+        "spend": 407938.07,
+        "qty": 59921
+      },
+      {
+        "month": "2025-07",
+        "spend": 201432,
+        "qty": 92400
+      },
+      {
+        "month": "2025-08",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-09",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-10",
+        "spend": 106391.65,
+        "qty": 24235
+      },
+      {
+        "month": "2025-11",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-12",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-01",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-02",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-03",
+        "spend": 0,
+        "qty": 0
+      }
+    ],
+    "underlyingCodes": [
+      "1002269"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Rigid plastic packaging"
+    ],
+    "materialKeys": [
+      "packaging"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 1132453.8,
+    "totalNetQty": 231240,
+    "blendedAvgPrice": 4.897,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 1132453.8,
+        "netQty": 231240,
+        "vwap": 4.897,
+        "receiptCount": 6,
+        "reversalCount": 0
+      }
+    ],
+    "receiptCount": 6,
+    "reversalCount": 0,
+    "reversalRatePct": 0,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "packaging",
+        "material": "Rigid plastic packaging",
+        "unit": "NOS",
+        "netSpend": 1132453.8,
+        "netQty": 231240,
+        "avgPrice": 4.897,
+        "receiptCount": 6,
+        "reversalCount": 0
+      }
+    ],
+    "color": "#1A5276"
+  },
+  {
+    "key": "scorpion-containers",
+    "name": "SCORPION CONTAINERS PRIVATE LIMITED",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-05",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-06",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-07",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-08",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-09",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-10",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-11",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-12",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-01",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-02",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-03",
+        "spend": 165879.24,
+        "qty": 61588
+      }
+    ],
+    "underlyingCodes": [
+      "1003615"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Rigid plastic packaging"
+    ],
+    "materialKeys": [
+      "packaging"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 165879.24,
+    "totalNetQty": 61588,
+    "blendedAvgPrice": 3.108,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 165879.24,
+        "netQty": 61588,
+        "vwap": 3.108,
+        "receiptCount": 5,
+        "reversalCount": 2
+      }
+    ],
+    "receiptCount": 5,
+    "reversalCount": 2,
+    "reversalRatePct": 40,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "packaging",
+        "material": "Rigid plastic packaging",
+        "unit": "NOS",
+        "netSpend": 165879.24,
+        "netQty": 61588,
+        "avgPrice": 3.108,
+        "receiptCount": 5,
+        "reversalCount": 2
+      }
+    ],
+    "color": "#7D3C98"
+  },
+  {
+    "key": "huhtamaki-india",
+    "name": "HUHTAMAKI INDIA LIMITED",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-05",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-06",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-07",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-08",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-09",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-10",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-11",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-12",
+        "spend": 76850,
+        "qty": 72
+      },
+      {
+        "month": "2026-01",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-02",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-03",
+        "spend": 0,
+        "qty": 0
+      }
+    ],
+    "underlyingCodes": [
+      "1003823"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Laminates"
+    ],
+    "materialKeys": [
+      "laminates"
+    ],
+    "primaryUnit": "KG",
+    "totalNetSpend": 76850,
+    "totalNetQty": 72,
+    "blendedAvgPrice": 1067.361,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "KG",
+        "netSpend": 76850,
+        "netQty": 72,
+        "vwap": 1067.361,
+        "receiptCount": 1,
+        "reversalCount": 0
+      }
+    ],
+    "receiptCount": 1,
+    "reversalCount": 0,
+    "reversalRatePct": 0,
+    "isListed": true,
+    "listing": {
+      "exchange": "NSE/BSE",
+      "ticker": "HUHTAMAKI"
+    },
+    "perMaterial": [
+      {
+        "materialKey": "laminates",
+        "material": "Laminates",
+        "unit": "KG",
+        "netSpend": 76850,
+        "netQty": 72,
+        "avgPrice": 1067.361,
+        "receiptCount": 1,
+        "reversalCount": 0
+      }
+    ],
+    "color": "#C9A227"
+  },
+  {
+    "key": "uflex",
+    "name": "UFLEX LIMITED",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-05",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-06",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-07",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-08",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-09",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-10",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-11",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-12",
+        "spend": 35631.75,
+        "qty": 92.55
+      },
+      {
+        "month": "2026-01",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-02",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-03",
+        "spend": 29156.05,
+        "qty": 75.73
+      }
+    ],
+    "underlyingCodes": [
+      "1001363"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P044",
+    "termCategory": "net",
+    "termDays": 60,
+    "termRank": 60,
+    "termText": "60 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Laminates"
+    ],
+    "materialKeys": [
+      "laminates"
+    ],
+    "primaryUnit": "KG",
+    "totalNetSpend": 64787.8,
+    "totalNetQty": 168.28,
+    "blendedAvgPrice": 385,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "KG",
+        "netSpend": 64787.8,
+        "netQty": 168.28,
+        "vwap": 385,
+        "receiptCount": 2,
+        "reversalCount": 0
+      }
+    ],
+    "receiptCount": 2,
+    "reversalCount": 0,
+    "reversalRatePct": 0,
+    "isListed": true,
+    "listing": {
+      "exchange": "NSE/BSE",
+      "ticker": "UFLEX"
+    },
+    "perMaterial": [
+      {
+        "materialKey": "laminates",
+        "material": "Laminates",
+        "unit": "KG",
+        "netSpend": 64787.8,
+        "netQty": 168.28,
+        "avgPrice": 385,
+        "receiptCount": 2,
+        "reversalCount": 0
+      }
+    ],
+    "color": "#6E2C00"
+  },
+  {
+    "key": "silk-polypack",
+    "name": "Silk Polypack",
+    "monthly": [
+      {
+        "month": "2025-04",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-05",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-06",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-07",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-08",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-09",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-10",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-11",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2025-12",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-01",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-02",
+        "spend": 0,
+        "qty": 0
+      },
+      {
+        "month": "2026-03",
+        "spend": 7775,
+        "qty": 31.1
+      }
+    ],
+    "underlyingCodes": [
+      "1000032"
+    ],
+    "accGrp": "ZDOM",
+    "accGrpLabel": "Domestic",
+    "country": "India",
+    "pmtTermCode": "P042",
+    "termCategory": "net",
+    "termDays": 30,
+    "termRank": 30,
+    "termText": "30 Days After Receipt",
+    "worstTerms": false,
+    "materialsSupplied": [
+      "Laminates"
+    ],
+    "materialKeys": [
+      "laminates"
+    ],
+    "primaryUnit": "KG",
+    "totalNetSpend": 7775,
+    "totalNetQty": 31.1,
+    "blendedAvgPrice": 250,
+    "multiUnit": false,
+    "unitTotals": [
+      {
+        "unit": "KG",
+        "netSpend": 7775,
+        "netQty": 31.1,
+        "vwap": 250,
+        "receiptCount": 1,
+        "reversalCount": 0
+      }
+    ],
+    "receiptCount": 1,
+    "reversalCount": 0,
+    "reversalRatePct": 0,
+    "isListed": false,
+    "listing": null,
+    "perMaterial": [
+      {
+        "materialKey": "laminates",
+        "material": "Laminates",
+        "unit": "KG",
+        "netSpend": 7775,
+        "netQty": 31.1,
+        "avgPrice": 250,
+        "receiptCount": 1,
+        "reversalCount": 0
+      }
+    ],
+    "color": "#145A32"
+  }
+]

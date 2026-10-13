@@ -1,0 +1,101 @@
+{
+  "app": "FDC Procurement Intelligence Cockpit",
+  "phase": "Phase 1 — Foundation",
+  "generatedAt": "2026-10-13T06:48:54.768Z",
+  "currency": "INR",
+  "dateRange": {
+    "from": "2025-04-01",
+    "to": "2026-03-31"
+  },
+  "vendorMasterFile": "Vendor_paymentterms.XLSX",
+  "vendorMasterRows": 29,
+  "canonicalVendorCount": 27,
+  "sources": [
+    {
+      "file": "Dextrose_25_26.XLSX",
+      "sheet": "Sheet1",
+      "material": "dextrose",
+      "materialName": "Dextrose",
+      "rows": 376,
+      "droppedTotalRows": 1,
+      "embeddedTotalValue": 378992790.5,
+      "netSpend": 378992790.5,
+      "matchesEmbeddedTotal": true,
+      "dateRange": {
+        "from": "2025-04-01",
+        "to": "2026-03-30"
+      }
+    },
+    {
+      "file": "Laminates.XLSX",
+      "sheet": "Sheet2",
+      "material": "laminates",
+      "materialName": "Laminates",
+      "rows": 525,
+      "droppedTotalRows": 1,
+      "embeddedTotalValue": 425714897.43,
+      "netSpend": 425714897.43,
+      "matchesEmbeddedTotal": true,
+      "dateRange": {
+        "from": "2025-04-01",
+        "to": "2026-03-31"
+      }
+    },
+    {
+      "file": "PET_25_26.XLSX",
+      "sheet": "Sheet1",
+      "material": "packaging",
+      "materialName": "Rigid plastic packaging",
+      "rows": 766,
+      "droppedTotalRows": 1,
+      "embeddedTotalValue": 167551013.82,
+      "netSpend": 167551013.82,
+      "matchesEmbeddedTotal": true,
+      "dateRange": {
+        "from": "2025-04-01",
+        "to": "2026-03-29"
+      }
+    }
+  ],
+  "totals": {
+    "netSpend": 972258701.75,
+    "byMaterial": {
+      "dextrose": 378992790.5,
+      "packaging": 167551013.82,
+      "laminates": 425714897.43
+    }
+  },
+  "materialMeta": [
+    {
+      "key": "dextrose",
+      "displayName": "Dextrose",
+      "plainName": "Dextrose (corn-based sugar, a raw material)",
+      "category": "Raw material",
+      "color": "#00973D"
+    },
+    {
+      "key": "packaging",
+      "displayName": "Rigid plastic packaging",
+      "plainName": "Bottles, caps, preforms & measuring cups",
+      "category": "Packaging",
+      "color": "#2E7CE4"
+    },
+    {
+      "key": "laminates",
+      "displayName": "Laminates",
+      "plainName": "Sachet film (by weight) & ready-to-drink pouches (by piece)",
+      "category": "Packaging",
+      "color": "#EFAE0E"
+    }
+  ],
+  "notes": [
+    "Only real data: every figure is computed from the four SAP exports in data/raw/.",
+    "Grand-total rows (blank Posting Date) were dropped from each transaction file.",
+    "Spend & quantity totals sum SIGNED values, so 102 reversals subtract (returns).",
+    "Unit prices use only 101 goods receipts with qty > 0; units are never mixed.",
+    "Laminates mixes KG (film) and NOS (ready-to-drink pouches) — kept strictly separate.",
+    "Vendor codes merged to one canonical vendor by normalized name (e.g. Gujarat Ambuja 1002002+1003710, PIK Plastics 1003376+1003248).",
+    "Dextrose description variants unified to one product (ANHYDROUS DEXTROSE IP (EXMPT) = DEXTROSE ANHYDROUS IP (FO)).",
+    "Listed-company flags are PUBLIC classifications (not from FDC files), kept only as a hook for the upcoming vendor-financials phase; no financials are shown."
+  ]
+}

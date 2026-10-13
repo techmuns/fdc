@@ -1,0 +1,3746 @@
+{
+  "byMaterial": {
+    "dextrose": {
+      "materialKey": "dextrose",
+      "displayName": "Dextrose",
+      "level": "material",
+      "unit": "KG",
+      "singleCommodity": true,
+      "bestPrice": 66.483,
+      "bestVendorKey": "sayaji-industries",
+      "bestVendor": "Sayaji Industries Limited",
+      "worstPrice": 75.506,
+      "vendorCount": 4,
+      "vendors": [
+        {
+          "vendorKey": "sayaji-industries",
+          "vendor": "Sayaji Industries Limited",
+          "color": "#EFAE0E",
+          "avgPrice": 66.483,
+          "recQty": 2349775,
+          "spend": 156219312.5,
+          "gapVsBest": 0,
+          "gapPct": 0,
+          "excessSpend": 0
+        },
+        {
+          "vendorKey": "gujarat-ambuja-exports",
+          "vendor": "GUJARAT AMBUJA EXPORTS LIMITED",
+          "color": "#2E7CE4",
+          "avgPrice": 68.452,
+          "recQty": 3195287,
+          "spend": 218725053,
+          "gapVsBest": 1.969,
+          "gapPct": 2.96,
+          "excessSpend": 6291520.1
+        },
+        {
+          "vendorKey": "sukhjit-corn-products",
+          "vendor": "SUKHJIT CORN PRODUCTS",
+          "color": "#2C82C9",
+          "avgPrice": 70.8,
+          "recQty": 150000,
+          "spend": 10620000,
+          "gapVsBest": 4.317,
+          "gapPct": 6.49,
+          "excessSpend": 647550
+        },
+        {
+          "vendorKey": "universal-starch-chem-allied",
+          "vendor": "Universal Starch Chem Allied Ltd",
+          "color": "#3498DB",
+          "avgPrice": 75.506,
+          "recQty": 79000,
+          "spend": 5965000,
+          "gapVsBest": 9.023,
+          "gapPct": 13.57,
+          "excessSpend": 712817
+        }
+      ],
+      "potentialSaving": 7651887.1,
+      "headlineSaving": 7651887.1,
+      "skuComparable": 1,
+      "skuTotal": 1,
+      "skus": [
+        {
+          "desc": "Dextrose Anhydrous IP",
+          "unit": "KG",
+          "bestPrice": 66.483,
+          "bestVendorKey": "sayaji-industries",
+          "bestVendor": "Sayaji Industries Limited",
+          "worstPrice": 75.506,
+          "vendorCount": 4,
+          "vendors": [
+            {
+              "vendorKey": "sayaji-industries",
+              "vendor": "Sayaji Industries Limited",
+              "color": "#EFAE0E",
+              "avgPrice": 66.483,
+              "recQty": 2349775,
+              "spend": 156219312.5,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "gujarat-ambuja-exports",
+              "vendor": "GUJARAT AMBUJA EXPORTS LIMITED",
+              "color": "#2E7CE4",
+              "avgPrice": 68.452,
+              "recQty": 3195287,
+              "spend": 218725053,
+              "gapVsBest": 1.969,
+              "gapPct": 2.96,
+              "excessSpend": 6291520.1
+            },
+            {
+              "vendorKey": "sukhjit-corn-products",
+              "vendor": "SUKHJIT CORN PRODUCTS",
+              "color": "#2C82C9",
+              "avgPrice": 70.8,
+              "recQty": 150000,
+              "spend": 10620000,
+              "gapVsBest": 4.317,
+              "gapPct": 6.49,
+              "excessSpend": 647550
+            },
+            {
+              "vendorKey": "universal-starch-chem-allied",
+              "vendor": "Universal Starch Chem Allied Ltd",
+              "color": "#3498DB",
+              "avgPrice": 75.506,
+              "recQty": 79000,
+              "spend": 5965000,
+              "gapVsBest": 9.023,
+              "gapPct": 13.57,
+              "excessSpend": 712817
+            }
+          ],
+          "potentialSaving": 7651887.1
+        }
+      ]
+    },
+    "packaging": {
+      "materialKey": "packaging",
+      "displayName": "Rigid plastic packaging",
+      "level": "sku",
+      "unit": "NOS",
+      "singleCommodity": false,
+      "headlineSaving": 5773605.93,
+      "skuComparable": 11,
+      "skuTotal": 64,
+      "skus": [
+        {
+          "desc": "HDPE BOT WHITE 30ML WITH RING MARK",
+          "unit": "NOS",
+          "bestPrice": 1.38,
+          "bestVendorKey": "mars-plastics",
+          "bestVendor": "Mars Plastics",
+          "worstPrice": 1.65,
+          "vendorCount": 3,
+          "vendors": [
+            {
+              "vendorKey": "mars-plastics",
+              "vendor": "Mars Plastics",
+              "color": "#27AE60",
+              "avgPrice": 1.38,
+              "recQty": 2750000,
+              "spend": 3795000,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "cincorp-international",
+              "vendor": "Cincorp International Ltd.",
+              "color": "#B8860B",
+              "avgPrice": 1.527,
+              "recQty": 5363000,
+              "spend": 8191540,
+              "gapVsBest": 0.147,
+              "gapPct": 10.65,
+              "excessSpend": 788361
+            },
+            {
+              "vendorKey": "premier-plastic",
+              "vendor": "Premier Plastic",
+              "color": "#148F77",
+              "avgPrice": 1.65,
+              "recQty": 4350000,
+              "spend": 7177500,
+              "gapVsBest": 0.27,
+              "gapPct": 19.57,
+              "excessSpend": 1174500
+            }
+          ],
+          "potentialSaving": 1962861
+        },
+        {
+          "desc": "PP CAP PLAS 28MM INDUCTUCTION WAD",
+          "unit": "NOS",
+          "bestPrice": 0.81,
+          "bestVendorKey": "mars-plastics",
+          "bestVendor": "Mars Plastics",
+          "worstPrice": 1.079,
+          "vendorCount": 3,
+          "vendors": [
+            {
+              "vendorKey": "mars-plastics",
+              "vendor": "Mars Plastics",
+              "color": "#27AE60",
+              "avgPrice": 0.81,
+              "recQty": 2750000,
+              "spend": 2227500,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "premier-plastic",
+              "vendor": "Premier Plastic",
+              "color": "#148F77",
+              "avgPrice": 0.9,
+              "recQty": 4704000,
+              "spend": 4233600,
+              "gapVsBest": 0.09,
+              "gapPct": 11.11,
+              "excessSpend": 423360
+            },
+            {
+              "vendorKey": "cincorp-international",
+              "vendor": "Cincorp International Ltd.",
+              "color": "#B8860B",
+              "avgPrice": 1.079,
+              "recQty": 5223000,
+              "spend": 5637840,
+              "gapVsBest": 0.269,
+              "gapPct": 33.21,
+              "excessSpend": 1404987
+            }
+          ],
+          "potentialSaving": 1828347
+        },
+        {
+          "desc": "MESU. CUP 30MM TRANS.PP 2.5/5/10ML",
+          "unit": "NOS",
+          "bestPrice": 0.35,
+          "bestVendorKey": "premier-plastic",
+          "bestVendor": "Premier Plastic",
+          "worstPrice": 0.457,
+          "vendorCount": 3,
+          "vendors": [
+            {
+              "vendorKey": "premier-plastic",
+              "vendor": "Premier Plastic",
+              "color": "#148F77",
+              "avgPrice": 0.35,
+              "recQty": 4429000,
+              "spend": 1550150,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "mars-plastics",
+              "vendor": "Mars Plastics",
+              "color": "#27AE60",
+              "avgPrice": 0.38,
+              "recQty": 2750000,
+              "spend": 1045000,
+              "gapVsBest": 0.03,
+              "gapPct": 8.57,
+              "excessSpend": 82500
+            },
+            {
+              "vendorKey": "cincorp-international",
+              "vendor": "Cincorp International Ltd.",
+              "color": "#B8860B",
+              "avgPrice": 0.457,
+              "recQty": 6311000,
+              "spend": 2886650,
+              "gapVsBest": 0.107,
+              "gapPct": 30.57,
+              "excessSpend": 675277
+            }
+          ],
+          "potentialSaving": 757777
+        },
+        {
+          "desc": "PET BOT AMBER 250ML/28MM WITH SHR SL 01",
+          "unit": "NOS",
+          "bestPrice": 7.62,
+          "bestVendorKey": "tpac-packaging-india",
+          "bestVendor": "TPAC Packaging India Pvt Ltd.",
+          "worstPrice": 8.495,
+          "vendorCount": 2,
+          "vendors": [
+            {
+              "vendorKey": "tpac-packaging-india",
+              "vendor": "TPAC Packaging India Pvt Ltd.",
+              "color": "#1A5276",
+              "avgPrice": 7.62,
+              "recQty": 99540,
+              "spend": 758494.8,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "pik-plastics",
+              "vendor": "PIK PLASTICS",
+              "color": "#6C3483",
+              "avgPrice": 8.495,
+              "recQty": 821484,
+              "spend": 6978862.8,
+              "gapVsBest": 0.875,
+              "gapPct": 11.48,
+              "excessSpend": 718798.5
+            }
+          ],
+          "potentialSaving": 718798.5
+        },
+        {
+          "desc": "LDPE BOTTLE 5ML WHITE OPAQUE",
+          "unit": "NOS",
+          "bestPrice": 1.62,
+          "bestVendorKey": "bprex-pharma-packaging-india-p",
+          "bestVendor": "Bprex Pharma Packaging India (P) Limited",
+          "worstPrice": 1.69,
+          "vendorCount": 2,
+          "vendors": [
+            {
+              "vendorKey": "bprex-pharma-packaging-india-p",
+              "vendor": "Bprex Pharma Packaging India (P) Limited",
+              "color": "#1E8449",
+              "avgPrice": 1.62,
+              "recQty": 510000,
+              "spend": 826200,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "berry-global-india",
+              "vendor": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+              "color": "#9B59B6",
+              "avgPrice": 1.69,
+              "recQty": 4816000,
+              "spend": 8139040,
+              "gapVsBest": 0.07,
+              "gapPct": 4.32,
+              "excessSpend": 337120
+            }
+          ],
+          "potentialSaving": 337120
+        },
+        {
+          "desc": "PET BOT AMBER BRUT 250ML/28MM NECK 26G",
+          "unit": "NOS",
+          "bestPrice": 5.244,
+          "bestVendorKey": "suraj-blow-plast",
+          "bestVendor": "Suraj Blow Plast PVt. Ltd.",
+          "worstPrice": 5.383,
+          "vendorCount": 2,
+          "vendors": [
+            {
+              "vendorKey": "suraj-blow-plast",
+              "vendor": "Suraj Blow Plast PVt. Ltd.",
+              "color": "#5B8C2A",
+              "avgPrice": 5.244,
+              "recQty": 1128960,
+              "spend": 5919825.15,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "pik-plastics",
+              "vendor": "PIK PLASTICS",
+              "color": "#6C3483",
+              "avgPrice": 5.383,
+              "recQty": 930852,
+              "spend": 5010400.8,
+              "gapVsBest": 0.139,
+              "gapPct": 2.65,
+              "excessSpend": 129388.43
+            }
+          ],
+          "potentialSaving": 129388.43
+        },
+        {
+          "desc": "PET BOT AMBER 100ML/25MM NECK 12.5G",
+          "unit": "NOS",
+          "bestPrice": 1.87,
+          "bestVendorKey": "suraj-blow-plast",
+          "bestVendor": "Suraj Blow Plast PVt. Ltd.",
+          "worstPrice": 2.18,
+          "vendorCount": 2,
+          "vendors": [
+            {
+              "vendorKey": "suraj-blow-plast",
+              "vendor": "Suraj Blow Plast PVt. Ltd.",
+              "color": "#5B8C2A",
+              "avgPrice": 1.87,
+              "recQty": 448500,
+              "spend": 838695,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "tpac-packaging-india",
+              "vendor": "TPAC Packaging India Pvt Ltd.",
+              "color": "#1A5276",
+              "avgPrice": 2.18,
+              "recQty": 92400,
+              "spend": 201432,
+              "gapVsBest": 0.31,
+              "gapPct": 16.58,
+              "excessSpend": 28644
+            }
+          ],
+          "potentialSaving": 28644
+        },
+        {
+          "desc": "HDPE BOT WHITE 60ML WITH RING MARK",
+          "unit": "NOS",
+          "bestPrice": 2.2,
+          "bestVendorKey": "cincorp-international",
+          "bestVendor": "Cincorp International Ltd.",
+          "worstPrice": 2.25,
+          "vendorCount": 2,
+          "vendors": [
+            {
+              "vendorKey": "cincorp-international",
+              "vendor": "Cincorp International Ltd.",
+              "color": "#B8860B",
+              "avgPrice": 2.2,
+              "recQty": 365000,
+              "spend": 803000,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "premier-plastic",
+              "vendor": "Premier Plastic",
+              "color": "#148F77",
+              "avgPrice": 2.25,
+              "recQty": 213400,
+              "spend": 480150,
+              "gapVsBest": 0.05,
+              "gapPct": 2.27,
+              "excessSpend": 10670
+            }
+          ],
+          "potentialSaving": 10670
+        },
+        {
+          "desc": "HDPE BOT SIMYL MCT OIL 100 mL",
+          "unit": "NOS",
+          "bestPrice": 4.1,
+          "bestVendorKey": "rachana-plastics",
+          "bestVendor": "Rachana Plastics",
+          "worstPrice": 4.1,
+          "vendorCount": 2,
+          "vendors": [
+            {
+              "vendorKey": "rachana-plastics",
+              "vendor": "Rachana Plastics",
+              "color": "#935116",
+              "avgPrice": 4.1,
+              "recQty": 444450,
+              "spend": 1822245,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "abhinav-speciality-foods-llp",
+              "vendor": "ABHINAV SPECIALITY FOODS LLP",
+              "color": "#A04000",
+              "avgPrice": 4.1,
+              "recQty": 393300,
+              "spend": 1612530,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "PP FLIP TOP CAP 100 mL",
+          "unit": "NOS",
+          "bestPrice": 1.7,
+          "bestVendorKey": "rachana-plastics",
+          "bestVendor": "Rachana Plastics",
+          "worstPrice": 1.7,
+          "vendorCount": 2,
+          "vendors": [
+            {
+              "vendorKey": "rachana-plastics",
+              "vendor": "Rachana Plastics",
+              "color": "#935116",
+              "avgPrice": 1.7,
+              "recQty": 444450,
+              "spend": 755565,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "abhinav-speciality-foods-llp",
+              "vendor": "ABHINAV SPECIALITY FOODS LLP",
+              "color": "#A04000",
+              "avgPrice": 1.7,
+              "recQty": 399998,
+              "spend": 679996.6,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "PET BOT AMBER 100ML/25MM WITH SHR SL01",
+          "unit": "NOS",
+          "bestPrice": 4.39,
+          "bestVendorKey": "pik-plastics",
+          "bestVendor": "PIK PLASTICS",
+          "worstPrice": 4.39,
+          "vendorCount": 2,
+          "vendors": [
+            {
+              "vendorKey": "pik-plastics",
+              "vendor": "PIK PLASTICS",
+              "color": "#6C3483",
+              "avgPrice": 4.39,
+              "recQty": 250445,
+              "spend": 1099453.55,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "tpac-packaging-india",
+              "vendor": "TPAC Packaging India Pvt Ltd.",
+              "color": "#1A5276",
+              "avgPrice": 4.39,
+              "recQty": 39300,
+              "spend": 172527,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "PET PREFORM CLEAR 38MM NECK-400ML BOTTLE",
+          "unit": "NOS",
+          "bestPrice": 4.419,
+          "bestVendorKey": "chemco-plastic-industries",
+          "bestVendor": "Chemco Plastic Industries Pvt. Ltd",
+          "worstPrice": 4.419,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "chemco-plastic-industries",
+              "vendor": "Chemco Plastic Industries Pvt. Ltd",
+              "color": "#1ABC9C",
+              "avgPrice": 4.419,
+              "recQty": 11186224,
+              "spend": 49432470.24,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "VIAL 5 mL LDPE WHITE OPQ R DESIGN-BPREX",
+          "unit": "NOS",
+          "bestPrice": 1.86,
+          "bestVendorKey": "bprex-pharma-packaging-india-p",
+          "bestVendor": "Bprex Pharma Packaging India (P) Limited",
+          "worstPrice": 1.86,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "bprex-pharma-packaging-india-p",
+              "vendor": "Bprex Pharma Packaging India (P) Limited",
+              "color": "#1E8449",
+              "avgPrice": 1.86,
+              "recQty": 60700,
+              "spend": 112902,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "R DESIGN CAP BERRY PLASTIC HDPE CAP",
+          "unit": "NOS",
+          "bestPrice": 0.55,
+          "bestVendorKey": "bprex-pharma-packaging-india-p",
+          "bestVendor": "Bprex Pharma Packaging India (P) Limited",
+          "worstPrice": 0.55,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "bprex-pharma-packaging-india-p",
+              "vendor": "Bprex Pharma Packaging India (P) Limited",
+              "color": "#1E8449",
+              "avgPrice": 0.55,
+              "recQty": 594600,
+              "spend": 327030,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "R DESIGN LDPE NOZZLE BERRY PLASTIC",
+          "unit": "NOS",
+          "bestPrice": 0.2,
+          "bestVendorKey": "bprex-pharma-packaging-india-p",
+          "bestVendor": "Bprex Pharma Packaging India (P) Limited",
+          "worstPrice": 0.2,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "bprex-pharma-packaging-india-p",
+              "vendor": "Bprex Pharma Packaging India (P) Limited",
+              "color": "#1E8449",
+              "avgPrice": 0.2,
+              "recQty": 593600,
+              "spend": 118720,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "VIAL 10 mL LDPE WHITE OPQ R DESIGN-BPREX",
+          "unit": "NOS",
+          "bestPrice": 2.56,
+          "bestVendorKey": "bprex-pharma-packaging-india-p",
+          "bestVendor": "Bprex Pharma Packaging India (P) Limited",
+          "worstPrice": 2.56,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "bprex-pharma-packaging-india-p",
+              "vendor": "Bprex Pharma Packaging India (P) Limited",
+              "color": "#1E8449",
+              "avgPrice": 2.56,
+              "recQty": 65100,
+              "spend": 166656,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "NOVELIA NOZZLE CAP PF10V2.4-20060589 WHT",
+          "unit": "NOS",
+          "bestPrice": 73.58,
+          "bestVendorKey": "kilitch-healthcare-india",
+          "bestVendor": "KILITCH HEALTHCARE INDIA LIMITED",
+          "worstPrice": 73.58,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "kilitch-healthcare-india",
+              "vendor": "KILITCH HEALTHCARE INDIA LIMITED",
+              "color": "#7D6608",
+              "avgPrice": 73.58,
+              "recQty": 80400,
+              "spend": 5915832,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "NOVELIA BOTL 11mL WHT BP-10002652 NEMERA",
+          "unit": "NOS",
+          "bestPrice": 7.72,
+          "bestVendorKey": "kilitch-healthcare-india",
+          "bestVendor": "KILITCH HEALTHCARE INDIA LIMITED",
+          "worstPrice": 7.72,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "kilitch-healthcare-india",
+              "vendor": "KILITCH HEALTHCARE INDIA LIMITED",
+              "color": "#7D6608",
+              "avgPrice": 7.72,
+              "recQty": 79200,
+              "spend": 611424,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "PET PREFORM CLEAR 38MM NECK-500ML BOTTLE",
+          "unit": "NOS",
+          "bestPrice": 4.392,
+          "bestVendorKey": "chemco-plastic-industries",
+          "bestVendor": "Chemco Plastic Industries Pvt. Ltd",
+          "worstPrice": 4.392,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "chemco-plastic-industries",
+              "vendor": "Chemco Plastic Industries Pvt. Ltd",
+              "color": "#1ABC9C",
+              "avgPrice": 4.392,
+              "recQty": 1444768,
+              "spend": 6345080.44,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "CRC 33MM SAF IIIA HS123 Liner-Tekni-Plex",
+          "unit": "NOS",
+          "bestPrice": 3.158,
+          "bestVendorKey": "triveni-polymers",
+          "bestVendor": "Triveni Polymers Pvt. Ltd.",
+          "worstPrice": 3.158,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "triveni-polymers",
+              "vendor": "Triveni Polymers Pvt. Ltd.",
+              "color": "#16A085",
+              "avgPrice": 3.158,
+              "recQty": 50400,
+              "spend": 159186,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "HDPE BOT WHITE 50ML WITH RING MARK",
+          "unit": "NOS",
+          "bestPrice": 2.3,
+          "bestVendorKey": "cincorp-international",
+          "bestVendor": "Cincorp International Ltd.",
+          "worstPrice": 2.3,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "cincorp-international",
+              "vendor": "Cincorp International Ltd.",
+              "color": "#B8860B",
+              "avgPrice": 2.3,
+              "recQty": 415000,
+              "spend": 954500,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "HDPE BOT WHITE 10ML WITH RING MARK",
+          "unit": "NOS",
+          "bestPrice": 1.37,
+          "bestVendorKey": "mars-plastics",
+          "bestVendor": "Mars Plastics",
+          "worstPrice": 1.37,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "mars-plastics",
+              "vendor": "Mars Plastics",
+              "color": "#27AE60",
+              "avgPrice": 1.37,
+              "recQty": 1761900,
+              "spend": 2413803,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "PP CAP PLAS 25MM INDUCT. WAD",
+          "unit": "NOS",
+          "bestPrice": 0.87,
+          "bestVendorKey": "mars-plastics",
+          "bestVendor": "Mars Plastics",
+          "worstPrice": 0.87,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "mars-plastics",
+              "vendor": "Mars Plastics",
+              "color": "#27AE60",
+              "avgPrice": 0.87,
+              "recQty": 1748200,
+              "spend": 1520934,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "PP CAP 28MM WF (PT 414) PEEL UP WAD",
+          "unit": "NOS",
+          "bestPrice": 1.29,
+          "bestVendorKey": "cincorp-international",
+          "bestVendor": "Cincorp International Ltd.",
+          "worstPrice": 1.29,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "cincorp-international",
+              "vendor": "Cincorp International Ltd.",
+              "color": "#B8860B",
+              "avgPrice": 1.29,
+              "recQty": 1135000,
+              "spend": 1463950,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "HDPE BOTTLE 40CC/33MM SP400 NECK M (HW)",
+          "unit": "NOS",
+          "bestPrice": 3.624,
+          "bestVendorKey": "triveni-polymers",
+          "bestVendor": "Triveni Polymers Pvt. Ltd.",
+          "worstPrice": 3.624,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "triveni-polymers",
+              "vendor": "Triveni Polymers Pvt. Ltd.",
+              "color": "#16A085",
+              "avgPrice": 3.624,
+              "recQty": 45000,
+              "spend": 163100,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "SCREW CAP 38mm/400 (DC02)(HS 123-20 PW)",
+          "unit": "NOS",
+          "bestPrice": 2.668,
+          "bestVendorKey": "triveni-polymers",
+          "bestVendor": "Triveni Polymers Pvt. Ltd.",
+          "worstPrice": 2.668,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "triveni-polymers",
+              "vendor": "Triveni Polymers Pvt. Ltd.",
+              "color": "#16A085",
+              "avgPrice": 2.668,
+              "recQty": 228800,
+              "spend": 610350,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "HDPE BOT 200 CC (MW) TRIVENI (DB 74)",
+          "unit": "NOS",
+          "bestPrice": 11.762,
+          "bestVendorKey": "triveni-polymers",
+          "bestVendor": "Triveni Polymers Pvt. Ltd.",
+          "worstPrice": 11.762,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "triveni-polymers",
+              "vendor": "Triveni Polymers Pvt. Ltd.",
+              "color": "#16A085",
+              "avgPrice": 11.762,
+              "recQty": 12500,
+              "spend": 147030,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "HDPE BOT 120 CC (MW) TRIVENI (DB 63)",
+          "unit": "NOS",
+          "bestPrice": 7.363,
+          "bestVendorKey": "triveni-polymers",
+          "bestVendor": "Triveni Polymers Pvt. Ltd.",
+          "worstPrice": 7.363,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "triveni-polymers",
+              "vendor": "Triveni Polymers Pvt. Ltd.",
+              "color": "#16A085",
+              "avgPrice": 7.363,
+              "recQty": 128800,
+              "spend": 948400,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "HDPE BOT 75 CC (MW) TRIVENI (DB 79)",
+          "unit": "NOS",
+          "bestPrice": 6.505,
+          "bestVendorKey": "triveni-polymers",
+          "bestVendor": "Triveni Polymers Pvt. Ltd.",
+          "worstPrice": 6.505,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "triveni-polymers",
+              "vendor": "Triveni Polymers Pvt. Ltd.",
+              "color": "#16A085",
+              "avgPrice": 6.505,
+              "recQty": 78600,
+              "spend": 511330,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "HDPE BOTTLE 150CC/38MM SP400 NECK M (HW)",
+          "unit": "NOS",
+          "bestPrice": 7.868,
+          "bestVendorKey": "triveni-polymers",
+          "bestVendor": "Triveni Polymers Pvt. Ltd.",
+          "worstPrice": 7.868,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "triveni-polymers",
+              "vendor": "Triveni Polymers Pvt. Ltd.",
+              "color": "#16A085",
+              "avgPrice": 7.868,
+              "recQty": 9900,
+              "spend": 77889,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "A.G.BOT125mL28mmNECKUSP-IIIPGJ-B-F3:5451",
+          "unit": "NOS",
+          "bestPrice": 4.6,
+          "bestVendorKey": "pgp-glass",
+          "bestVendor": "PGP Glass Private Limited",
+          "worstPrice": 4.6,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "pgp-glass",
+              "vendor": "PGP Glass Private Limited",
+              "color": "#0E7C7B",
+              "avgPrice": 4.6,
+              "recQty": 34056,
+              "spend": 156657.6,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "HDPE CAP 20MM SPIKED",
+          "unit": "NOS",
+          "bestPrice": 0.524,
+          "bestVendorKey": "bprex-pharma-packaging-india-p",
+          "bestVendor": "Bprex Pharma Packaging India (P) Limited",
+          "worstPrice": 0.524,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "bprex-pharma-packaging-india-p",
+              "vendor": "Bprex Pharma Packaging India (P) Limited",
+              "color": "#1E8449",
+              "avgPrice": 0.524,
+              "recQty": 5684000,
+              "spend": 2979160,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LDPE BLOCK NOZZLE TRANSLUCENT",
+          "unit": "NOS",
+          "bestPrice": 0.198,
+          "bestVendorKey": "bprex-pharma-packaging-india-p",
+          "bestVendor": "Bprex Pharma Packaging India (P) Limited",
+          "worstPrice": 0.198,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "bprex-pharma-packaging-india-p",
+              "vendor": "Bprex Pharma Packaging India (P) Limited",
+              "color": "#1E8449",
+              "avgPrice": 0.198,
+              "recQty": 5684000,
+              "spend": 1125680,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "SR SL CLEAR 25 MIC PVC 45X35mm",
+          "unit": "NOS",
+          "bestPrice": 0.296,
+          "bestVendorKey": "abhinav-speciality-foods-llp",
+          "bestVendor": "ABHINAV SPECIALITY FOODS LLP",
+          "worstPrice": 0.296,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "abhinav-speciality-foods-llp",
+              "vendor": "ABHINAV SPECIALITY FOODS LLP",
+              "color": "#A04000",
+              "avgPrice": 0.296,
+              "recQty": 984783,
+              "spend": 291434.98,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "HDPE BOT SIMYL MCT OIL 30 mL",
+          "unit": "NOS",
+          "bestPrice": 2.2,
+          "bestVendorKey": "abhinav-speciality-foods-llp",
+          "bestVendor": "ABHINAV SPECIALITY FOODS LLP",
+          "worstPrice": 2.2,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "abhinav-speciality-foods-llp",
+              "vendor": "ABHINAV SPECIALITY FOODS LLP",
+              "color": "#A04000",
+              "avgPrice": 2.2,
+              "recQty": 50996,
+              "spend": 112191.2,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "PP FLIP TOP CAP 30 mL",
+          "unit": "NOS",
+          "bestPrice": 0.9,
+          "bestVendorKey": "abhinav-speciality-foods-llp",
+          "bestVendor": "ABHINAV SPECIALITY FOODS LLP",
+          "worstPrice": 0.9,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "abhinav-speciality-foods-llp",
+              "vendor": "ABHINAV SPECIALITY FOODS LLP",
+              "color": "#A04000",
+              "avgPrice": 0.9,
+              "recQty": 50996,
+              "spend": 45896.4,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "B-30ML FLAT WHITE (L)-NS LS",
+          "unit": "NOS",
+          "bestPrice": 1.91,
+          "bestVendorKey": "bprex-pharma-packaging-india-p",
+          "bestVendor": "Bprex Pharma Packaging India (P) Limited",
+          "worstPrice": 1.91,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "bprex-pharma-packaging-india-p",
+              "vendor": "Bprex Pharma Packaging India (P) Limited",
+              "color": "#1E8449",
+              "avgPrice": 1.91,
+              "recQty": 150000,
+              "spend": 286500,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "N-OPEN NS DTUBEASSY WHITE-NS LS",
+          "unit": "NOS",
+          "bestPrice": 0.72,
+          "bestVendorKey": "bprex-pharma-packaging-india-p",
+          "bestVendor": "Bprex Pharma Packaging India (P) Limited",
+          "worstPrice": 0.72,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "bprex-pharma-packaging-india-p",
+              "vendor": "Bprex Pharma Packaging India (P) Limited",
+              "color": "#1E8449",
+              "avgPrice": 0.72,
+              "recQty": 150000,
+              "spend": 108000,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "C-TAMPSAFE NS WHITE (H)-NS LS",
+          "unit": "NOS",
+          "bestPrice": 0.96,
+          "bestVendorKey": "bprex-pharma-packaging-india-p",
+          "bestVendor": "Bprex Pharma Packaging India (P) Limited",
+          "worstPrice": 0.96,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "bprex-pharma-packaging-india-p",
+              "vendor": "Bprex Pharma Packaging India (P) Limited",
+              "color": "#1E8449",
+              "avgPrice": 0.96,
+              "recQty": 150000,
+              "spend": 144000,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "200ML PET AMBER ROUND BOTTLE",
+          "unit": "NOS",
+          "bestPrice": 5.627,
+          "bestVendorKey": "scorpion-containers",
+          "bestVendor": "SCORPION CONTAINERS PRIVATE LIMITED",
+          "worstPrice": 5.627,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "scorpion-containers",
+              "vendor": "SCORPION CONTAINERS PRIVATE LIMITED",
+              "color": "#7D3C98",
+              "avgPrice": 5.627,
+              "recQty": 50176,
+              "spend": 282319.75,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "25MM ROPP CAP FDC LOGO PTD EPE LINER",
+          "unit": "NOS",
+          "bestPrice": 0.654,
+          "bestVendorKey": "scorpion-containers",
+          "bestVendor": "SCORPION CONTAINERS PRIVATE LIMITED",
+          "worstPrice": 0.654,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "scorpion-containers",
+              "vendor": "SCORPION CONTAINERS PRIVATE LIMITED",
+              "color": "#7D3C98",
+              "avgPrice": 0.654,
+              "recQty": 51500,
+              "spend": 33675,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "10 ML I DESIGN LDPE BOTTLE",
+          "unit": "NOS",
+          "bestPrice": 1.95,
+          "bestVendorKey": "bprex-pharma-packaging-india-p",
+          "bestVendor": "Bprex Pharma Packaging India (P) Limited",
+          "worstPrice": 1.95,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "bprex-pharma-packaging-india-p",
+              "vendor": "Bprex Pharma Packaging India (P) Limited",
+              "color": "#1E8449",
+              "avgPrice": 1.95,
+              "recQty": 150100,
+              "spend": 292695,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "I DESIGN LDPE NOZZLE",
+          "unit": "NOS",
+          "bestPrice": 0.47,
+          "bestVendorKey": "bprex-pharma-packaging-india-p",
+          "bestVendor": "Bprex Pharma Packaging India (P) Limited",
+          "worstPrice": 0.47,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "bprex-pharma-packaging-india-p",
+              "vendor": "Bprex Pharma Packaging India (P) Limited",
+              "color": "#1E8449",
+              "avgPrice": 0.47,
+              "recQty": 150100,
+              "spend": 70547,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "I DESIGN HDPE CAP",
+          "unit": "NOS",
+          "bestPrice": 0.81,
+          "bestVendorKey": "bprex-pharma-packaging-india-p",
+          "bestVendor": "Bprex Pharma Packaging India (P) Limited",
+          "worstPrice": 0.81,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "bprex-pharma-packaging-india-p",
+              "vendor": "Bprex Pharma Packaging India (P) Limited",
+              "color": "#1E8449",
+              "avgPrice": 0.81,
+              "recQty": 150200,
+              "spend": 121662,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "PET BOT AMBER BRUT 100ML/25MM NECK 13G",
+          "unit": "NOS",
+          "bestPrice": 2.55,
+          "bestVendorKey": "pik-plastics",
+          "bestVendor": "PIK PLASTICS",
+          "worstPrice": 2.55,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "pik-plastics",
+              "vendor": "PIK PLASTICS",
+              "color": "#6C3483",
+              "avgPrice": 2.55,
+              "recQty": 270270,
+              "spend": 689188.5,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "PET BOT AMB 30ML/25M SHRK SLV ZO 50 PS",
+          "unit": "NOS",
+          "bestPrice": 6.5,
+          "bestVendorKey": "pik-plastics",
+          "bestVendor": "PIK PLASTICS",
+          "worstPrice": 6.5,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "pik-plastics",
+              "vendor": "PIK PLASTICS",
+              "color": "#6C3483",
+              "avgPrice": 6.5,
+              "recQty": 57792,
+              "spend": 375648,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "A.G. BOT 30ML 25MM NECK USP-III",
+          "unit": "NOS",
+          "bestPrice": 2.983,
+          "bestVendorKey": "empire-industries-virum-glass",
+          "bestVendor": "Empire Industries Ltd - Virum Glass",
+          "worstPrice": 2.983,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "empire-industries-virum-glass",
+              "vendor": "Empire Industries Ltd - Virum Glass",
+              "color": "#117A65",
+              "avgPrice": 2.983,
+              "recQty": 2154180,
+              "spend": 6425637.96,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "MESU. CUP 22MM TRANS.PP 2.5/5ML MARK",
+          "unit": "NOS",
+          "bestPrice": 0.28,
+          "bestVendorKey": "rachana-plastics",
+          "bestVendor": "Rachana Plastics",
+          "worstPrice": 0.28,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "rachana-plastics",
+              "vendor": "Rachana Plastics",
+              "color": "#935116",
+              "avgPrice": 0.28,
+              "recQty": 672500,
+              "spend": 188300,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "MESU. CUP 28MM TRANS 1.25/2.5/5/7.5/10ML",
+          "unit": "NOS",
+          "bestPrice": 0.475,
+          "bestVendorKey": "rachana-plastics",
+          "bestVendor": "Rachana Plastics",
+          "worstPrice": 0.475,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "rachana-plastics",
+              "vendor": "Rachana Plastics",
+              "color": "#935116",
+              "avgPrice": 0.475,
+              "recQty": 1155000,
+              "spend": 548625.02,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "A.G. BOT 15mL 22mm NECK USP-III",
+          "unit": "NOS",
+          "bestPrice": 2.592,
+          "bestVendorKey": "pgp-glass",
+          "bestVendor": "PGP Glass Private Limited",
+          "worstPrice": 2.592,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "pgp-glass",
+              "vendor": "PGP Glass Private Limited",
+              "color": "#0E7C7B",
+              "avgPrice": 2.592,
+              "recQty": 1482492,
+              "spend": 3842619.26,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "MESU. CUP 2.5/5/10ML",
+          "unit": "NOS",
+          "bestPrice": 0.65,
+          "bestVendorKey": "rachana-plastics",
+          "bestVendor": "Rachana Plastics",
+          "worstPrice": 0.65,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "rachana-plastics",
+              "vendor": "Rachana Plastics",
+              "color": "#935116",
+              "avgPrice": 0.65,
+              "recQty": 749000,
+              "spend": 486850,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "MESU. CUP 25MM TRANS.PP 2.5/5/10ML RING",
+          "unit": "NOS",
+          "bestPrice": 0.36,
+          "bestVendorKey": "rachana-plastics",
+          "bestVendor": "Rachana Plastics",
+          "worstPrice": 0.36,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "rachana-plastics",
+              "vendor": "Rachana Plastics",
+              "color": "#935116",
+              "avgPrice": 0.36,
+              "recQty": 1815500,
+              "spend": 653580,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "25 MM CR CAP WITH EPE WAD",
+          "unit": "NOS",
+          "bestPrice": 2.65,
+          "bestVendorKey": "rachana-plastics",
+          "bestVendor": "Rachana Plastics",
+          "worstPrice": 2.65,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "rachana-plastics",
+              "vendor": "Rachana Plastics",
+              "color": "#935116",
+              "avgPrice": 2.65,
+              "recQty": 46000,
+              "spend": 121900,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "MESU.CUP 15ML TRANS. PP FOR CRC CAP",
+          "unit": "NOS",
+          "bestPrice": 0.87,
+          "bestVendorKey": "rachana-plastics",
+          "bestVendor": "Rachana Plastics",
+          "worstPrice": 0.87,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "rachana-plastics",
+              "vendor": "Rachana Plastics",
+              "color": "#935116",
+              "avgPrice": 0.87,
+              "recQty": 44000,
+              "spend": 38280,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "PET BOT AMB 100ML/25MM SHRK SLV SLMDL DX",
+          "unit": "NOS",
+          "bestPrice": 4.39,
+          "bestVendorKey": "pik-plastics",
+          "bestVendor": "PIK PLASTICS",
+          "worstPrice": 4.39,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "pik-plastics",
+              "vendor": "PIK PLASTICS",
+              "color": "#6C3483",
+              "avgPrice": 4.39,
+              "recQty": 526680,
+              "spend": 2312125.2,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "PET BOT AMB 60ML/25MM SHRK SLV SLMDL DX",
+          "unit": "NOS",
+          "bestPrice": 3.59,
+          "bestVendorKey": "pik-plastics",
+          "bestVendor": "PIK PLASTICS",
+          "worstPrice": 3.59,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "pik-plastics",
+              "vendor": "PIK PLASTICS",
+              "color": "#6C3483",
+              "avgPrice": 3.59,
+              "recQty": 174181,
+              "spend": 625309.79,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "PET BOT AMB 60ML/25MM SHRK SLV ZO 50 LS",
+          "unit": "NOS",
+          "bestPrice": 5.74,
+          "bestVendorKey": "pik-plastics",
+          "bestVendor": "PIK PLASTICS",
+          "worstPrice": 5.74,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "pik-plastics",
+              "vendor": "PIK PLASTICS",
+              "color": "#6C3483",
+              "avgPrice": 5.74,
+              "recQty": 161218,
+              "spend": 925391.32,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "PET BOT AMB 100ML/25MM SHRK SLV SLMDL LS",
+          "unit": "NOS",
+          "bestPrice": 4.39,
+          "bestVendorKey": "pik-plastics",
+          "bestVendor": "PIK PLASTICS",
+          "worstPrice": 4.39,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "pik-plastics",
+              "vendor": "PIK PLASTICS",
+              "color": "#6C3483",
+              "avgPrice": 4.39,
+              "recQty": 310650,
+              "spend": 1363753.5,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "PET BOT AMBER 60ML/25MM WITH SHR SLEEVE",
+          "unit": "NOS",
+          "bestPrice": 3.59,
+          "bestVendorKey": "pik-plastics",
+          "bestVendor": "PIK PLASTICS",
+          "worstPrice": 3.59,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "pik-plastics",
+              "vendor": "PIK PLASTICS",
+              "color": "#6C3483",
+              "avgPrice": 3.59,
+              "recQty": 104412,
+              "spend": 374839.08,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "MESU. CUP 25MM TRANS.PP 5/10/15ML MARK",
+          "unit": "NOS",
+          "bestPrice": 0.52,
+          "bestVendorKey": "rachana-plastics",
+          "bestVendor": "Rachana Plastics",
+          "worstPrice": 0.52,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "rachana-plastics",
+              "vendor": "Rachana Plastics",
+              "color": "#935116",
+              "avgPrice": 0.52,
+              "recQty": 47500,
+              "spend": 24700,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "A.G. BOT 100ML 25MM NECK USP-III",
+          "unit": "NOS",
+          "bestPrice": 3.694,
+          "bestVendorKey": "empire-industries-virum-glass",
+          "bestVendor": "Empire Industries Ltd - Virum Glass",
+          "worstPrice": 3.694,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "empire-industries-virum-glass",
+              "vendor": "Empire Industries Ltd - Virum Glass",
+              "color": "#117A65",
+              "avgPrice": 3.694,
+              "recQty": 87000,
+              "spend": 321378,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "PET BOT AMBER 60ML/25MM NECK 10.18G",
+          "unit": "NOS",
+          "bestPrice": 2.09,
+          "bestVendorKey": "suraj-blow-plast",
+          "bestVendor": "Suraj Blow Plast PVt. Ltd.",
+          "worstPrice": 2.09,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "suraj-blow-plast",
+              "vendor": "Suraj Blow Plast PVt. Ltd.",
+              "color": "#5B8C2A",
+              "avgPrice": 2.09,
+              "recQty": 69000,
+              "spend": 144240,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "HDPE BOT WHITE 30ML WTH CAP CUP MARS",
+          "unit": "NOS",
+          "bestPrice": 3.11,
+          "bestVendorKey": "mars-plastics",
+          "bestVendor": "Mars Plastics",
+          "worstPrice": 3.11,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "mars-plastics",
+              "vendor": "Mars Plastics",
+              "color": "#27AE60",
+              "avgPrice": 3.11,
+              "recQty": 300000,
+              "spend": 933000,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "HDPE BOT 30ML WTH CAP XLSR603 CUP MARS",
+          "unit": "NOS",
+          "bestPrice": 2.72,
+          "bestVendorKey": "mars-plastics",
+          "bestVendor": "Mars Plastics",
+          "worstPrice": 2.72,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "mars-plastics",
+              "vendor": "Mars Plastics",
+              "color": "#27AE60",
+              "avgPrice": 2.72,
+              "recQty": 750000,
+              "spend": 2040000,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        }
+      ]
+    },
+    "laminates": {
+      "materialKey": "laminates",
+      "displayName": "Laminates",
+      "level": "sku",
+      "unit": "KG",
+      "singleCommodity": false,
+      "headlineSaving": 3741286.82,
+      "skuComparable": 7,
+      "skuTotal": 80,
+      "skus": [
+        {
+          "desc": "LM ELECTRAL MD 21.80g LS 07",
+          "unit": "KG",
+          "bestPrice": 290,
+          "bestVendorKey": "shrinath-roto-pack",
+          "bestVendor": "Shrinath Roto Pack Pvt Ltd",
+          "worstPrice": 295,
+          "vendorCount": 3,
+          "vendors": [
+            {
+              "vendorKey": "shrinath-roto-pack",
+              "vendor": "Shrinath Roto Pack Pvt Ltd",
+              "color": "#8E44AD",
+              "avgPrice": 290,
+              "recQty": 141355.07,
+              "spend": 40992970.3,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 294.031,
+              "recQty": 293366.04,
+              "spend": 86258781.25,
+              "gapVsBest": 4.031,
+              "gapPct": 1.39,
+              "excessSpend": 1182558.51
+            },
+            {
+              "vendorKey": "gls-films-industries-p",
+              "vendor": "GLS FILMS INDUSTRIES P. LTD.",
+              "color": "#2471A3",
+              "avgPrice": 295,
+              "recQty": 66943.1,
+              "spend": 19748214.5,
+              "gapVsBest": 5,
+              "gapPct": 1.72,
+              "excessSpend": 334715.5
+            }
+          ],
+          "potentialSaving": 1517274.01
+        },
+        {
+          "desc": "LM ELECTRAL MD 21.80g LS 08",
+          "unit": "KG",
+          "bestPrice": 290,
+          "bestVendorKey": "shrinath-roto-pack",
+          "bestVendor": "Shrinath Roto Pack Pvt Ltd",
+          "worstPrice": 308.295,
+          "vendorCount": 3,
+          "vendors": [
+            {
+              "vendorKey": "shrinath-roto-pack",
+              "vendor": "Shrinath Roto Pack Pvt Ltd",
+              "color": "#8E44AD",
+              "avgPrice": 290,
+              "recQty": 14159.3,
+              "spend": 4106197,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "gls-films-industries-p",
+              "vendor": "GLS FILMS INDUSTRIES P. LTD.",
+              "color": "#2471A3",
+              "avgPrice": 295,
+              "recQty": 5575.17,
+              "spend": 1644675.15,
+              "gapVsBest": 5,
+              "gapPct": 1.72,
+              "excessSpend": 27875.85
+            },
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 308.295,
+              "recQty": 45521.13,
+              "spend": 14033945.01,
+              "gapVsBest": 18.295,
+              "gapPct": 6.31,
+              "excessSpend": 832809.07
+            }
+          ],
+          "potentialSaving": 860684.92
+        },
+        {
+          "desc": "LM ELECTRAL UD 4.4G (AMBIKA) SP LS 01",
+          "unit": "KG",
+          "bestPrice": 290,
+          "bestVendorKey": "shrinath-roto-pack",
+          "bestVendor": "Shrinath Roto Pack Pvt Ltd",
+          "worstPrice": 294.575,
+          "vendorCount": 2,
+          "vendors": [
+            {
+              "vendorKey": "shrinath-roto-pack",
+              "vendor": "Shrinath Roto Pack Pvt Ltd",
+              "color": "#8E44AD",
+              "avgPrice": 290,
+              "recQty": 27984.97,
+              "spend": 8115641.3,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 294.575,
+              "recQty": 176339.29,
+              "spend": 51945149.2,
+              "gapVsBest": 4.575,
+              "gapPct": 1.58,
+              "excessSpend": 806752.25
+            }
+          ],
+          "potentialSaving": 806752.25
+        },
+        {
+          "desc": "LM ELECTRAL ORANGE UD 4.4 gm LS 05",
+          "unit": "KG",
+          "bestPrice": 290,
+          "bestVendorKey": "shrinath-roto-pack",
+          "bestVendor": "Shrinath Roto Pack Pvt Ltd",
+          "worstPrice": 294.374,
+          "vendorCount": 2,
+          "vendors": [
+            {
+              "vendorKey": "shrinath-roto-pack",
+              "vendor": "Shrinath Roto Pack Pvt Ltd",
+              "color": "#8E44AD",
+              "avgPrice": 290,
+              "recQty": 17798.8,
+              "spend": 5161652,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 294.374,
+              "recQty": 75897.41,
+              "spend": 22342247.05,
+              "gapVsBest": 4.374,
+              "gapPct": 1.51,
+              "excessSpend": 331975.27
+            }
+          ],
+          "potentialSaving": 331975.27
+        },
+        {
+          "desc": "LAMINATE",
+          "unit": "KG",
+          "bestPrice": 250,
+          "bestVendorKey": "silk-polypack",
+          "bestVendor": "Silk Polypack",
+          "worstPrice": 1067.361,
+          "vendorCount": 4,
+          "vendors": [
+            {
+              "vendorKey": "silk-polypack",
+              "vendor": "Silk Polypack",
+              "color": "#145A32",
+              "avgPrice": 250,
+              "recQty": 31.1,
+              "spend": 7775,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "uflex",
+              "vendor": "UFLEX LIMITED",
+              "color": "#6E2C00",
+              "avgPrice": 385,
+              "recQty": 168.28,
+              "spend": 64787.8,
+              "gapVsBest": 135,
+              "gapPct": 54,
+              "excessSpend": 22717.8
+            },
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 400,
+              "recQty": 274.07,
+              "spend": 109628,
+              "gapVsBest": 150,
+              "gapPct": 60,
+              "excessSpend": 41110.5
+            },
+            {
+              "vendorKey": "huhtamaki-india",
+              "vendor": "HUHTAMAKI INDIA LIMITED",
+              "color": "#C9A227",
+              "avgPrice": 1067.361,
+              "recQty": 72,
+              "spend": 76850,
+              "gapVsBest": 817.361,
+              "gapPct": 326.94,
+              "excessSpend": 58849.99
+            }
+          ],
+          "potentialSaving": 122678.29
+        },
+        {
+          "desc": "LM ELECTRAL UD 4.4g LS 05",
+          "unit": "KG",
+          "bestPrice": 290,
+          "bestVendorKey": "shrinath-roto-pack",
+          "bestVendor": "Shrinath Roto Pack Pvt Ltd",
+          "worstPrice": 295,
+          "vendorCount": 3,
+          "vendors": [
+            {
+              "vendorKey": "shrinath-roto-pack",
+              "vendor": "Shrinath Roto Pack Pvt Ltd",
+              "color": "#8E44AD",
+              "avgPrice": 290,
+              "recQty": 8731.89,
+              "spend": 2532248.1,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 293.743,
+              "recQty": 19586.17,
+              "spend": 5753301.6,
+              "gapVsBest": 3.743,
+              "gapPct": 1.29,
+              "excessSpend": 73311.03
+            },
+            {
+              "vendorKey": "gls-films-industries-p",
+              "vendor": "GLS FILMS INDUSTRIES P. LTD.",
+              "color": "#2471A3",
+              "avgPrice": 295,
+              "recQty": 5722.21,
+              "spend": 1688051.95,
+              "gapVsBest": 5,
+              "gapPct": 1.72,
+              "excessSpend": 28611.05
+            }
+          ],
+          "potentialSaving": 101922.08
+        },
+        {
+          "desc": "LM ELECTRAL UD 4.4g SP LS 01",
+          "unit": "KG",
+          "bestPrice": 290,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 290,
+          "vendorCount": 2,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 290,
+              "recQty": 22243.32,
+              "spend": 6450562.8,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            },
+            {
+              "vendorKey": "shrinath-roto-pack",
+              "vendor": "Shrinath Roto Pack Pvt Ltd",
+              "color": "#8E44AD",
+              "avgPrice": 290,
+              "recQty": 13138.61,
+              "spend": 3810196.9,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL ORANGE MD 21.8 g LS 03",
+          "unit": "KG",
+          "bestPrice": 293.832,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 293.832,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 293.832,
+              "recQty": 29622.54,
+              "spend": 8704057.21,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL LIME FLAVOUR UD 4.4 gm LS 01",
+          "unit": "KG",
+          "bestPrice": 330,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 330,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 330,
+              "recQty": 10554.47,
+              "spend": 3482975.1,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL MANGO FLAVOUR UD 4.4GM LS 01",
+          "unit": "KG",
+          "bestPrice": 330,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 330,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 330,
+              "recQty": 9908.45,
+              "spend": 3269788.5,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL PINEAPPLE UD 4.4 gm LS 01",
+          "unit": "KG",
+          "bestPrice": 330,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 330,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 330,
+              "recQty": 7380.18,
+              "spend": 2435459.4,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL BLACKCURRANT UD 4.4GM LS 01",
+          "unit": "KG",
+          "bestPrice": 330,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 330,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 330,
+              "recQty": 6823.23,
+              "spend": 2251665.9,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL UD 4.4g ADC LS 4 TRACK 02",
+          "unit": "KG",
+          "bestPrice": 294.282,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 294.282,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 294.282,
+              "recQty": 17554.85,
+              "spend": 5166078.12,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ENERZAL LIME 75 G LS S2 00",
+          "unit": "KG",
+          "bestPrice": 292.929,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 292.929,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 292.929,
+              "recQty": 1270.98,
+              "spend": 372307.3,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LAM ELECTRAL APPLE RTD 200 mL LS 10",
+          "unit": "NOS",
+          "bestPrice": 1.877,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "worstPrice": 1.877,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "avgPrice": 1.877,
+              "recQty": 3009390,
+              "spend": 5649022.1,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LAM ELECTRAL MANGO RTD 200 mL LS 10",
+          "unit": "NOS",
+          "bestPrice": 1.887,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "worstPrice": 1.887,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "avgPrice": 1.887,
+              "recQty": 1993120,
+              "spend": 3760165.77,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
+          "unit": "NOS",
+          "bestPrice": 1.901,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "worstPrice": 1.901,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "avgPrice": 1.901,
+              "recQty": 13124970,
+              "spend": 24944620.07,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL 21.8g ES MM S1 04",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 1892.38,
+              "spend": 605561.6,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL FORTE 6g ES MM S1 04",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 1939.04,
+              "spend": 620492.8,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL LYCHEE UD 4.4 GM LS 01",
+          "unit": "KG",
+          "bestPrice": 330,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 330,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 330,
+              "recQty": 8188.86,
+              "spend": 2702323.8,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL Z PLUS UD 4.38g LS 01",
+          "unit": "KG",
+          "bestPrice": 290.827,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 290.827,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 290.827,
+              "recQty": 2814.87,
+              "spend": 818640.61,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LAM R5 RTD-ORANGE 200mL PMFP 03",
+          "unit": "NOS",
+          "bestPrice": 1.887,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "worstPrice": 1.887,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "avgPrice": 1.887,
+              "recQty": 1681485,
+              "spend": 3172217.53,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
+          "unit": "NOS",
+          "bestPrice": 1.881,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "worstPrice": 1.881,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "avgPrice": 1.881,
+              "recQty": 6917130,
+              "spend": 13008913.95,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL 4.4G ORANGE (AMBIKA)NV LS 01",
+          "unit": "KG",
+          "bestPrice": 295,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 295,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 295,
+              "recQty": 16849.3,
+              "spend": 4970543.5,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL UD 4.4G (AMBIKA) NV LS 01",
+          "unit": "KG",
+          "bestPrice": 295,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 295,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 295,
+              "recQty": 6582.72,
+              "spend": 1941902.4,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL FORTE 30g ES MM S1 07",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 14603.17,
+              "spend": 4673014.4,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ORS POWDER 28.4GM ES CL 06",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 4827.96,
+              "spend": 1544947.2,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LAM ELECTRAL APPLE RTD 200 mL LP 07",
+          "unit": "NOS",
+          "bestPrice": 1.872,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "worstPrice": 1.872,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "avgPrice": 1.872,
+              "recQty": 665855,
+              "spend": 1246230.03,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LAM ELECTRAL MANGO RTD 200 mL LP 07",
+          "unit": "NOS",
+          "bestPrice": 1.878,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "worstPrice": 1.878,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "avgPrice": 1.878,
+              "recQty": 338570,
+              "spend": 635852.66,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LAM ELECTRAL ORANGE RTD 200 mL LP 06",
+          "unit": "NOS",
+          "bestPrice": 1.871,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "worstPrice": 1.871,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "avgPrice": 1.871,
+              "recQty": 798520,
+              "spend": 1493915.83,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "T-LAM ENERZAL RTD-APPL 200mL FC PM/SD 02",
+          "unit": "NOS",
+          "bestPrice": 1.91,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "worstPrice": 1.91,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "avgPrice": 1.91,
+              "recQty": 884910,
+              "spend": 1689843.16,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ENERZAL ORANGE 100 g LS S2 08",
+          "unit": "KG",
+          "bestPrice": 295,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 295,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 295,
+              "recQty": 11451.81,
+              "spend": 3378283.95,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ENERZAL LIME 100 g LS S2 08",
+          "unit": "KG",
+          "bestPrice": 295,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 295,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 295,
+              "recQty": 679.85,
+              "spend": 200555.76,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL 21.8G ES TZ 01",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 4426.39,
+              "spend": 1416444.8,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL 4.4G ES NZ 01",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 7105.36,
+              "spend": 2273715.2,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM RESOMAL 42G ES Unicef 02",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 4508.99,
+              "spend": 1442876.8,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LAMINATE ORS POWDER 6.7GM ES CHILE 06",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 1107.34,
+              "spend": 354348.8,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ORS BP 20.5GM ES ET EPSS Tender 01",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 18078.82,
+              "spend": 5785222.4,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL 21.8 GM ES UG 01",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 2546.67,
+              "spend": 814934.4,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL 21.8GM ES ET/MU  S1 02",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 1526.74,
+              "spend": 488556.8,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL 21.8GM ES BW 01",
+          "unit": "KG",
+          "bestPrice": 340.817,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 340.817,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 340.817,
+              "recQty": 1823.6,
+              "spend": 621513.5,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ORS BP 20.5GM ES MF W1 02",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 3709.07,
+              "spend": 1186902.4,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL 21.8GM ES ET/MU 01",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 21250.54,
+              "spend": 6800172.8,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ORS POWDER 6.7GM ES COSTA RICA 01",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 3274.54,
+              "spend": 1047852.8,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ENERZAL ZERO ORANGE 5 g S2 03",
+          "unit": "KG",
+          "bestPrice": 290,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 290,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 290,
+              "recQty": 625.13,
+              "spend": 181287.7,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ORS BP 20.5GM ES MF S1 03",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 5574.5,
+              "spend": 1783840,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM RESOMAL 84GM ES MF 02",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 732.53,
+              "spend": 234409.6,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM GRIPOUT HOT DRINK 6G 190MM ES UA 06",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 5686.38,
+              "spend": 1819641.6,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ENERZAL ORANGE 15 g LS S2 07",
+          "unit": "KG",
+          "bestPrice": 295,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 295,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 295,
+              "recQty": 1344.17,
+              "spend": 396530.15,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL 21.8G ES AE 01",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 507.66,
+              "spend": 162451.2,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ZEFRICH MM 17.5g PS S2 09",
+          "unit": "KG",
+          "bestPrice": 295,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 295,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 295,
+              "recQty": 105.81,
+              "spend": 31213.95,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ZEFRICH CHOC 17.5g PS S2 09",
+          "unit": "KG",
+          "bestPrice": 295,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 295,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 295,
+              "recQty": 104.03,
+              "spend": 30688.85,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL 21.8G ES OM 02",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 1673.35,
+              "spend": 535472,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM LEMLEM 21.8GM ES ET S1 01",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 823.48,
+              "spend": 263513.6,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL FORTE 6.0GM ES MY W1 01",
+          "unit": "KG",
+          "bestPrice": 280,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 280,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 280,
+              "recQty": 155.55,
+              "spend": 43554,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM RESOMAL 42g ES IA 01",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 675.49,
+              "spend": 216156.8,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL MANGO FLAVOUR 21.8GM LS 01",
+          "unit": "KG",
+          "bestPrice": 330,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 330,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 330,
+              "recQty": 6728.89,
+              "spend": 2220533.7,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL LIME FLAVOUR 21.8 gm LS 01",
+          "unit": "KG",
+          "bestPrice": 330,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 330,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 330,
+              "recQty": 6997.71,
+              "spend": 2309244.3,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL BLACKCURRANT 21.8GM LS 01",
+          "unit": "KG",
+          "bestPrice": 330,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 330,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 330,
+              "recQty": 7135.05,
+              "spend": 2354566.5,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL PINEAPPLE 21.8G LS 01",
+          "unit": "KG",
+          "bestPrice": 330,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 330,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 330,
+              "recQty": 6998.01,
+              "spend": 2309343.3,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL LYCHEE 21.8G LS 01",
+          "unit": "KG",
+          "bestPrice": 330,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 330,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 330,
+              "recQty": 6898.93,
+              "spend": 2276646.9,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ENERZAL ORANGE 75 g LS S2 01",
+          "unit": "KG",
+          "bestPrice": 295,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 295,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 295,
+              "recQty": 14622.48,
+              "spend": 4313631.6,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM OMAX 21.8G ES TN 02",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 175.58,
+              "spend": 56185.6,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LAM ELECTRAL ORANGE RTD 200 mL AP LS 01",
+          "unit": "NOS",
+          "bestPrice": 1.866,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "worstPrice": 1.866,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "avgPrice": 1.866,
+              "recQty": 1028070,
+              "spend": 1917868.23,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LAM ELECTRAL APPLE RTD 200ML LS AYK",
+          "unit": "KG",
+          "bestPrice": 2.058,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "worstPrice": 2.058,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "avgPrice": 2.058,
+              "recQty": 1015710,
+              "spend": 2090004.3,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LAM ELECTRAL MANGO RTD 200ML LS AYK",
+          "unit": "KG",
+          "bestPrice": 1.866,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "worstPrice": 1.866,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "avgPrice": 1.866,
+              "recQty": 1013370,
+              "spend": 1890445.32,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL FORTE 6.0GM ES MY W1 02",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 1373.68,
+              "spend": 439577.6,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "M ORASEL ORANGE 21.8GM ES KH (CAM) 08",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 585.87,
+              "spend": 187478.4,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ORS BP 21.8GM ES MM 02",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 4224.32,
+              "spend": 1351782.4,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM OMAX 21.8G ES TN 03",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 253.43,
+              "spend": 81097.6,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ENERZAL ORANGE 7.5GM ES MY 03",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 446.06,
+              "spend": 142739.2,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ENERZAL ZERO ORANGE 5G S2 05",
+          "unit": "KG",
+          "bestPrice": 380,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 380,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 380,
+              "recQty": 8461.12,
+              "spend": 3215225.6,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ZEFRICH MM 17.5 G PS S2 10",
+          "unit": "KG",
+          "bestPrice": 295,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 295,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 295,
+              "recQty": 413.93,
+              "spend": 122109.35,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL 21.8g ES ZW 02",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 182.48,
+              "spend": 58393.6,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ZEFRICH CHOC 17.5 G PS S2 10",
+          "unit": "KG",
+          "bestPrice": 295,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 295,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 295,
+              "recQty": 177.97,
+              "spend": 52501.15,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ELECTRAL ORANGE MD 21.8 g LS 04",
+          "unit": "KG",
+          "bestPrice": 295,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 295,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 295,
+              "recQty": 3875.25,
+              "spend": 1143198.75,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM MUM-MUM 1  4.5 GM LP S2 02",
+          "unit": "KG",
+          "bestPrice": 295,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 295,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 295,
+              "recQty": 549.06,
+              "spend": 161972.7,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM SIMYL MCT POWDER  4.87GM LP S2 02",
+          "unit": "KG",
+          "bestPrice": 295,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 295,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 295,
+              "recQty": 1098.58,
+              "spend": 324081.1,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ZEFRICH HP 16.5 G FS 03",
+          "unit": "KG",
+          "bestPrice": 295,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 295,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 295,
+              "recQty": 537.63,
+              "spend": 158600.85,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        },
+        {
+          "desc": "LM ORS POWDER 28.4GM ES CL 07",
+          "unit": "KG",
+          "bestPrice": 320,
+          "bestVendorKey": "geep-industries-india",
+          "bestVendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+          "worstPrice": 320,
+          "vendorCount": 1,
+          "vendors": [
+            {
+              "vendorKey": "geep-industries-india",
+              "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+              "color": "#00973D",
+              "avgPrice": 320,
+              "recQty": 538.08,
+              "spend": 172185.6,
+              "gapVsBest": 0,
+              "gapPct": 0,
+              "excessSpend": 0
+            }
+          ],
+          "potentialSaving": 0
+        }
+      ]
+    }
+  }
+}

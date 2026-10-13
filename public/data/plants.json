@@ -1,0 +1,301 @@
+{
+  "byMaterial": {
+    "dextrose": {
+      "materialKey": "dextrose",
+      "displayName": "Dextrose",
+      "unit": "KG",
+      "likeForLike": true,
+      "plantCount": 7,
+      "cheapestPlant": {
+        "plant": "1044",
+        "plantName": "FDC Limited (SPPL)",
+        "unit": "KG",
+        "qty": 184900,
+        "spend": 12370850,
+        "avgPrice": 67.112,
+        "receiptCount": 14
+      },
+      "dearestPlant": {
+        "plant": "1006",
+        "plantName": "FDC LIMITED, GOA-II",
+        "unit": "KG",
+        "qty": 1932000,
+        "spend": 131938725,
+        "avgPrice": 68.3,
+        "receiptCount": 107
+      },
+      "spread": {
+        "min": 67.112,
+        "max": 68.3,
+        "diff": 1.188,
+        "diffPct": 1.77
+      },
+      "plants": [
+        {
+          "plant": "1044",
+          "plantName": "FDC Limited (SPPL)",
+          "unit": "KG",
+          "qty": 184900,
+          "spend": 12370850,
+          "avgPrice": 67.112,
+          "receiptCount": 14
+        },
+        {
+          "plant": "1008",
+          "plantName": "FDC Limited-Waluj",
+          "unit": "KG",
+          "qty": 73600,
+          "spend": 4956525,
+          "avgPrice": 67.344,
+          "receiptCount": 6
+        },
+        {
+          "plant": "1000",
+          "plantName": "FDC Limited,Jogeshwari,Corp",
+          "unit": "KG",
+          "qty": 328860,
+          "spend": 22183840,
+          "avgPrice": 67.355,
+          "receiptCount": 27
+        },
+        {
+          "plant": "1047",
+          "plantName": "FDC Limited (NVP)",
+          "unit": "KG",
+          "qty": 117000,
+          "spend": 7902000,
+          "avgPrice": 67.538,
+          "receiptCount": 9
+        },
+        {
+          "plant": "1003",
+          "plantName": "FDC Limited,SINNAR",
+          "unit": "KG",
+          "qty": 2599202,
+          "spend": 175633113,
+          "avgPrice": 67.564,
+          "receiptCount": 182
+        },
+        {
+          "plant": "1109",
+          "plantName": "FDC Limited,WH-Waluj",
+          "unit": "KG",
+          "qty": 352825,
+          "spend": 24007737.5,
+          "avgPrice": 68.044,
+          "receiptCount": 16
+        },
+        {
+          "plant": "1006",
+          "plantName": "FDC LIMITED, GOA-II",
+          "unit": "KG",
+          "qty": 1932000,
+          "spend": 131938725,
+          "avgPrice": 68.3,
+          "receiptCount": 107
+        }
+      ]
+    },
+    "packaging": {
+      "materialKey": "packaging",
+      "displayName": "Rigid plastic packaging",
+      "unit": "NOS",
+      "likeForLike": false,
+      "plantCount": 9,
+      "cheapestPlant": {
+        "plant": "1083",
+        "plantName": "FDC Limited (VLL)",
+        "unit": "NOS",
+        "qty": 470300,
+        "spend": 241930,
+        "avgPrice": 0.514,
+        "receiptCount": 3
+      },
+      "dearestPlant": {
+        "plant": "1009",
+        "plantName": "FDC Limited,Jogeshwari,R&D",
+        "unit": "NOS",
+        "qty": 600,
+        "spend": 5256,
+        "avgPrice": 8.76,
+        "receiptCount": 1
+      },
+      "spread": {
+        "min": 0.514,
+        "max": 8.76,
+        "diff": 8.246,
+        "diffPct": 1604.28
+      },
+      "plants": [
+        {
+          "plant": "1083",
+          "plantName": "FDC Limited (VLL)",
+          "unit": "NOS",
+          "qty": 470300,
+          "spend": 241930,
+          "avgPrice": 0.514,
+          "receiptCount": 3
+        },
+        {
+          "plant": "1003",
+          "plantName": "FDC Limited,SINNAR",
+          "unit": "NOS",
+          "qty": 19393041,
+          "spend": 19109200.02,
+          "avgPrice": 0.968,
+          "receiptCount": 150
+        },
+        {
+          "plant": "1001",
+          "plantName": "FDC Limited,Baddi",
+          "unit": "NOS",
+          "qty": 39565956,
+          "spend": 42307553.6,
+          "avgPrice": 1.068,
+          "receiptCount": 291
+        },
+        {
+          "plant": "1039",
+          "plantName": "FDC Limited (INCL)",
+          "unit": "NOS",
+          "qty": 1050000,
+          "spend": 2457000,
+          "avgPrice": 2.209,
+          "receiptCount": 11
+        },
+        {
+          "plant": "1008",
+          "plantName": "FDC Limited-Waluj",
+          "unit": "NOS",
+          "qty": 9608290,
+          "spend": 24966124.58,
+          "avgPrice": 2.621,
+          "receiptCount": 151
+        },
+        {
+          "plant": "1062",
+          "plantName": "FDC Limited (PDPL)",
+          "unit": "NOS",
+          "qty": 2471650,
+          "spend": 6595109.74,
+          "avgPrice": 2.868,
+          "receiptCount": 25
+        },
+        {
+          "plant": "1000",
+          "plantName": "FDC Limited,Jogeshwari,Corp",
+          "unit": "NOS",
+          "qty": 16736308,
+          "spend": 64661311.6,
+          "avgPrice": 3.796,
+          "receiptCount": 78
+        },
+        {
+          "plant": "1109",
+          "plantName": "FDC Limited,WH-Waluj",
+          "unit": "NOS",
+          "qty": 1309798,
+          "spend": 7207528.28,
+          "avgPrice": 5.503,
+          "receiptCount": 28
+        },
+        {
+          "plant": "1009",
+          "plantName": "FDC Limited,Jogeshwari,R&D",
+          "unit": "NOS",
+          "qty": 600,
+          "spend": 5256,
+          "avgPrice": 8.76,
+          "receiptCount": 1
+        }
+      ]
+    },
+    "laminates": {
+      "materialKey": "laminates",
+      "displayName": "Laminates",
+      "unit": "KG",
+      "likeForLike": false,
+      "plantCount": 6,
+      "cheapestPlant": {
+        "plant": "1000",
+        "plantName": "FDC Limited,Jogeshwari,Corp",
+        "unit": "KG",
+        "qty": 857190.42,
+        "spend": 54357707.66,
+        "avgPrice": 26.456,
+        "receiptCount": 57
+      },
+      "dearestPlant": {
+        "plant": "1008",
+        "plantName": "FDC Limited-Waluj",
+        "unit": "KG",
+        "qty": 109193.07,
+        "spend": 33737434.01,
+        "avgPrice": 308.97,
+        "receiptCount": 70
+      },
+      "spread": {
+        "min": 26.456,
+        "max": 308.97,
+        "diff": 282.514,
+        "diffPct": 1067.86
+      },
+      "plants": [
+        {
+          "plant": "1000",
+          "plantName": "FDC Limited,Jogeshwari,Corp",
+          "unit": "KG",
+          "qty": 857190.42,
+          "spend": 54357707.66,
+          "avgPrice": 26.456,
+          "receiptCount": 57
+        },
+        {
+          "plant": "1047",
+          "plantName": "FDC Limited (NVP)",
+          "unit": "KG",
+          "qty": 68485.25,
+          "spend": 20059041.3,
+          "avgPrice": 292.915,
+          "receiptCount": 26
+        },
+        {
+          "plant": "1044",
+          "plantName": "FDC Limited (SPPL)",
+          "unit": "KG",
+          "qty": 70916.67,
+          "spend": 20857691.7,
+          "avgPrice": 294.115,
+          "receiptCount": 16
+        },
+        {
+          "plant": "1006",
+          "plantName": "FDC LIMITED, GOA-II",
+          "unit": "KG",
+          "qty": 300536.61,
+          "spend": 88915157.53,
+          "avgPrice": 295.862,
+          "receiptCount": 64
+        },
+        {
+          "plant": "1003",
+          "plantName": "FDC Limited,SINNAR",
+          "unit": "KG",
+          "qty": 509703.87,
+          "spend": 154480077.5,
+          "avgPrice": 303.053,
+          "receiptCount": 242
+        },
+        {
+          "plant": "1008",
+          "plantName": "FDC Limited-Waluj",
+          "unit": "KG",
+          "qty": 109193.07,
+          "spend": 33737434.01,
+          "avgPrice": 308.97,
+          "receiptCount": 70
+        }
+      ]
+    }
+  }
+}
