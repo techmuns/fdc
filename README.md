@@ -290,6 +290,15 @@ so deployment is already automatic — set up once, then hands-off forever:
   on the PR links straight to it).
 - Merging to **`main`** publishes to **production**.
 
+> ⚠️ **Gotcha — don't put a CI-skip token in commit messages or PR titles.**
+> Cloudflare Pages honors the build-skip tokens (`[skip ci]`, `[ci skip]`,
+> `[CF-Pages-Skip]`, case-insensitive) in commit messages and **will not deploy**
+> that commit. A PR title becomes part of the merge commit message, so a title
+> containing the literal token silently blocks the production deploy too. The
+> automated-refresh workflows deliberately omit it (they aren't push-triggered,
+> so there's no loop to prevent). Keep these tokens out of commit messages and
+> PR titles — mentioning them in prose like this is fine.
+
 No manual deploys and no GitHub secrets to manage. The site is a plain static
 build with `public/_redirects` handling SPA routing. Cloudflare build settings:
 
