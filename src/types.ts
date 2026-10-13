@@ -307,6 +307,10 @@ export interface ProbeYear {
   shareCapital: number | null; reservesAndSurplus: number | null; longTermBorrowings: number | null; shortTermBorrowings: number | null;
   totalAssets: number | null; netWorth: number | null; totalDebt: number | null;
   cfOperating: number | null; cfInvesting: number | null; cfFinancing: number | null;
+  // Phase 4 — extra P&L / balance-sheet line items (for analytics + composition charts)
+  ebit?: number | null; incomeTax?: number | null; otherIncome?: number | null;
+  currentAssets?: number | null; currentLiabilities?: number | null;
+  netFixedAssets?: number | null; grossFixedAssets?: number | null;
 }
 export interface ProbePeer {
   year: string; peers: number | null; bizIndustry: string | null; bizSegment: string | null;
@@ -319,14 +323,54 @@ export interface ProbeRating { agency: string | null; grade: string | null; rati
 export interface ProbeFlag { label: string; tone: 'risk' | 'watch' | 'ok'; value?: string; }
 export interface ProbeCharges { count: number; sumAmount: number | null; topLenders: { name: string; amount: number }[]; }
 export interface ProbeLegal { total: number; against: number; severe: number; pending: number; financialDisputes: number; msmeDelays: number; }
+// ---- Phase 4 — full-depth Probe42 signals ----
+export interface ProbeBorrowing {
+  effectiveRatePct: number | null;   // interest expense ÷ total debt, from the filed statements
+  chargeRate: { minPct: number; maxPct: number; medianPct: number; count: number } | null;  // from MCA charge filings
+  lenders: { name: string | null; amount: number | null; ratePct: number | null; date: string | null; type: string | null }[];
+  note: string | null;
+}
+export interface ProbeRevenueMix {
+  available: boolean; fy: string | null;
+  manufacturedPct: number | null; tradedPct: number | null; servicesPct: number | null;
+  exportPct: number | null; domesticPct: number | null; forexEarningsPct: number | null;
+  activity: string | null; note: string | null;
+}
+export interface ProbeAnalytics {
+  dupont: { netMarginPct: number | null; assetTurnover: number | null; equityMultiplier: number | null; roePct: number | null } | null;
+  piotroski: { score: number | null; outOf: number; signals: { label: string; pass: boolean | null }[]; note: string } | null;
+  altman: { z: number | null; zone: 'safe' | 'grey' | 'distress' | null; model: string; components: { x1: number | null; x2: number | null; x3: number | null; x4: number | null; x5: number | null } } | null;
+  fcf: { value: number | null; capex: number | null; deltaWC: number | null; fy: string | null; method: string } | null;
+  accruals: { ratioPct: number | null; quality: 'high' | 'moderate' | 'low' | null; note: string } | null;
+  operatingLeverage: { dol: number | null; fy: string | null; note: string } | null;
+}
+export interface ProbeLegalItem { category: string | null; court: string | null; status: string | null; severity: string | null; date: string | null; against: boolean; }
+export interface ProbeGroupEntity { name: string | null; cin: string | null; relation: 'holding' | 'subsidiary' | 'associate' | 'joint-venture'; }
+export interface ProbeFundraise { date: string | null; instrument: string | null; amountRaised: number | null; securities: number | null; type: string | null; }
+export interface ProbeHeadcount { latest: number | null; establishments: number; paymentTimeliness: string | null; band: string | null; }
+export interface ProbeOwnership { promoterPct: number | null; directorsHoldingPct: number | null; topHolderPct: number | null; topHolderType: string | null; fy: string | null; }
 export interface ProbeProfile {
   vendorKey: string; cin: string | null; legalName: string | null; status: string | null;
   incorporationDate: string | null; registeredAddress: string | null; website: string | null; lastFilingDate: string | null;
   latestFy: string | null; latestYear: string; nature: string; lossMaking: boolean;
   metrics: ProbeYear; series: ProbeYear[]; peer: ProbePeer | null; probeScore: ProbeScore | null; creditRatingProbe: ProbeRating | null;
   keyIndicators: { revenueBand: string | null; profitBand: string | null; employeeBand: string | null };
-  flags: ProbeFlag[]; charges: ProbeCharges; legal: ProbeLegal; directors: { name: string; designation: string | null; din: string | null }[];
+  flags: ProbeFlag[]; charges: ProbeCharges; legal: ProbeLegal; directors: { name: string; designation: string | null; din: string | null; boards?: number | null }[];
   promoterPct: number | null; source: { sourceName: string; sourceUrl: string; date: string | null };
+  // Phase 4 — full-depth signals (all optional; absent → render an honest "not available")
+  borrowing?: ProbeBorrowing | null;
+  revenueMix?: ProbeRevenueMix | null;
+  analytics?: ProbeAnalytics | null;
+  ratingHistory?: ProbeRating[];
+  issuerNotCooperating?: boolean;
+  legalItems?: ProbeLegalItem[];
+  financialDisputeItems?: ProbeLegalItem[];
+  group?: ProbeGroupEntity[];
+  relatedParty?: { fy: string | null; counterparties: number; note: string } | null;
+  fundraising?: ProbeFundraise[];
+  headcount?: ProbeHeadcount | null;
+  ownership?: ProbeOwnership | null;
+  industry?: string | null;
 }
 export interface HealthScore {
   value: number; grade: string;
@@ -365,6 +409,12 @@ export interface AltVendor {
   status: 'ok' | 'pending' | 'cin-unresolved'; fitNote: string; secondSourceFor: string | null;
   companyName: string | null; symbol: string | null; metrics: FinMetrics | null; healthScore: HealthScore | null;
   source: { sourceName: string; sourceUrl: string }; note: string | null;
+  // Phase 4 — private alternates now carry their full Probe42 profile (matched by CIN)
+  key?: string;
+  primarySource?: 'listed' | 'probe' | 'none';
+  probe?: ProbeProfile | null;
+  ratingLabel?: string | null; ratingGrade?: string | null; asOfFy?: string | null; issuerNotCooperating?: boolean;
+  levers?: Lever[];
 }
 export interface Alternatives {
   generatedAt: string;

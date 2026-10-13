@@ -17,6 +17,9 @@ export const PRIVATE_CINS = {
   'cincorp-international': { cin: 'U23209DL2008PLC184638', name: 'Cincorp International', verify: true, caveat: 'may be a trader, not a manufacturer' },
   // Bprex is now Berry Global India — reuse Berry's CIN (one fetch, cache by CIN).
   'bprex-pharma-packaging-india-p': { cin: 'U25200KA2021FTC152314', name: 'Berry Global India (formerly Bprex)', alias: 'berry-global-india' },
+  // Phase 4 — incumbent now resolved (report cached; file named by the pre-change CIN,
+  // U99999…; the report's own company.cin is the current U21001… after an MCA change).
+  'kilitch-healthcare-india': { cin: 'U99999MH1998PLC134973', name: 'Kilitch Healthcare India Ltd (loan-license)' },
   // Unresolved CINs — resolve via GSTIN→PAN or MCA before any paid call.
   'pik-plastics': { cin: null, name: 'PIK Plastics' },
   'premier-plastic': { cin: null, name: 'Premier Plastic' },
@@ -26,5 +29,10 @@ export const PRIVATE_CINS = {
   'scorpion-containers': { cin: null, name: 'Scorpion Containers Pvt Ltd' },
   'silk-polypack': { cin: null, name: 'Silk Polypack' },
   'abhinav-speciality-foods-llp': { cin: null, name: 'Abhinav Speciality Foods LLP' },
-  'kilitch-healthcare-india': { cin: null, name: 'Kilitch Healthcare India Ltd (loan-license)' },
+  // Phase 4 — ALTERNATE suppliers (not Phase-1 vendors): cached Probe42 reports so the
+  // Alternatives tab can show their real financials. Matched back to alt-vendors.json by CIN.
+  'roquette-india': { cin: 'U15326MH2010PTC310407', name: 'Roquette India Pvt Ltd', alt: true },
+  'constantia-parikh-packaging': { cin: 'U25209GJ1999PTC036763', name: 'Constantia Parikh Packaging Pvt Ltd', alt: true },
+  'paharpur-3p-positive-packaging': { cin: 'U45400WB2014PTC200219', name: 'Paharpur 3P (Positive Packaging)', alt: true },
+  'manjushree-technopack': { cin: 'U67120HR1987PLC138149', name: 'Manjushree Technopack Ltd (now Alternicq)', alt: true },
 };
