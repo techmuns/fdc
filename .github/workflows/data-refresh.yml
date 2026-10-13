@@ -1,0 +1,61 @@
+name: Refresh market & financial data
+
+# Scheduled, hands-off data refresh. Runs the FREE feeds every day (they need no
+# secrets) and the credentialed ones automatically whenever their secret exists.
+# Commits any changed JSON to public/data/ → Cloudflare Pages auto-redeploys.
+#
+# OPTIONAL secrets (free feeds run without them):
+#   COMTRADE_KEY           higher-rate UN Comtrade (preview works without it)
+#   MOSPI_TOKEN            enables the WPI index line (esankhyiki.mospi.gov.in)
+#   FIRECRAWL_API_KEY      enables IndiaMART/TradeIndia seller-ask prices
+#   DATA_GOV_IN_API_KEY    enables Agmarknet mandi maize input
+# Probe42 private financials are handled by a separate, VPN-gated workflow.
+
+on:
+  schedule:
+    - cron: '27 1 * * *' # daily ~01:27 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch market prices (free feeds + any configured secrets)
+        env:
+          COMTRADE_KEY: ${{ secrets.COMTRADE_KEY }}
+          MOSPI_TOKEN: ${{ secrets.MOSPI_TOKEN }}
+          ESANKHYIKI_TOKEN: ${{ secrets.ESANKHYIKI_TOKEN }}
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          DATA_GOV_IN_API_KEY: ${{ secrets.DATA_GOV_IN_API_KEY }}
+        run: npm run market
+
+      - name: Refresh vendor & alternative financials (listed = free; private = Probe42 cache)
+        run: npm run financials
+
+      - name: Commit refreshed data if changed
+        run: |
+          git config user.name  "fdc-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/data
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "chore(data): scheduled market & financials refresh [skip ci]"
+            git push
+          fi

@@ -1,0 +1,30 @@
+{
+  "_comment": "Seed of credible ALTERNATE suppliers per material. Listed ones are benchmarked live via Munshot; private ones via Probe42 (gated). 'verify' CINs must be confirmed on MCA before any paid call. secondSourceFor flags candidates to de-risk a single-source material.",
+  "dextrose": [
+    { "name": "Gulshan Polyols Ltd", "type": "listed", "ticker": "GULPOLY", "expect": "gulshan", "role": "producer", "fitNote": "Listed starch & polyol maker; established dextrose/sorbitol supplier — a drop-in alternate to Gujarat Ambuja/Sayaji.", "secondSourceFor": "dextrose" },
+    { "name": "Sanstar Ltd", "type": "listed", "ticker": "SANSTAR", "expect": "sanstar", "role": "producer", "fitNote": "Recently-listed maize-derivatives specialist (starch, dextrose) — growing capacity.", "secondSourceFor": "dextrose" },
+    { "name": "Roquette India Pvt Ltd", "type": "private", "cin": "U15326MH2010PTC310407", "verify": true, "role": "producer", "fitNote": "Indian arm of global starch major Roquette — pharma-grade dextrose/excipients; premium, very reliable." },
+    { "name": "Ingredion India Pvt Ltd", "type": "private", "cin": "U51101MH2010PTC208697", "role": "producer", "fitNote": "Global ingredients major; pharma & food dextrose; strong quality systems." },
+    { "name": "Angel Starch & Food Pvt Ltd", "type": "private", "cin": "U15320TZ2010PTC015946", "role": "producer", "fitNote": "South-India maize starch/dextrose maker; regional logistics advantage." },
+    { "name": "Bluecraft Agro Pvt Ltd", "type": "private", "cin": "U01100HR2016PTC108842", "role": "producer", "fitNote": "North-India starch derivatives; newer entrant." }
+  ],
+  "packaging": [
+    { "name": "Mold-Tek Packaging Ltd", "type": "listed", "ticker": "MOLDTKPAC", "expect": "mold.?tek", "role": "rigid-packaging", "fitNote": "Listed rigid-plastic leader (pails, containers, pharma); strong, profitable — a robust alternate for bottles/closures.", "secondSourceFor": "packaging" },
+    { "name": "Hitech Corporation Ltd", "type": "listed", "ticker": "HITECHCORP", "expect": "hitech", "role": "rigid-packaging", "fitNote": "Listed moulded & blow-moulded packaging; broad capability across bottles/caps." },
+    { "name": "Pearl Polymers Ltd", "type": "listed", "ticker": "PEARLPOLY", "expect": "pearl", "role": "rigid-packaging", "fitNote": "Listed PET bottle/jar specialist (Pearlpet) — direct fit for PET bottles." },
+    { "name": "Manjushree Technopack Ltd", "type": "private", "cin": null, "role": "rigid-packaging", "fitNote": "India's largest rigid-plastic packaging converter — pharma bottles, caps, preforms. Top second-source candidate.", "secondSourceFor": "packaging" },
+    { "name": "Pravesha Industries Pvt Ltd", "type": "private", "cin": "U29219TG1993PTC016451", "verify": true, "role": "rigid-packaging", "fitNote": "Pharma packaging converter; bottles & closures." }
+  ],
+  "laminates": [
+    { "name": "Huhtamaki India Ltd", "type": "listed", "ticker": "HUHTAMAKI", "expect": "huhtamaki", "role": "converter", "fitNote": "Listed flexible-packaging converter (already a tiny FDC supplier) — a proven, scalable second source for laminate sachets.", "secondSourceFor": "laminates" },
+    { "name": "UFLEX Ltd", "type": "listed", "ticker": "UFLEX", "expect": "uflex", "role": "converter+film", "fitNote": "Listed flexibles giant — both film substrate AND conversion; can second-source GEEP at scale.", "secondSourceFor": "laminates" },
+    { "name": "Ester Industries Ltd", "type": "listed", "ticker": "ESTER", "expect": "ester", "role": "film-maker", "fitNote": "Listed BOPET film maker — substrate supply, not finished laminate; use for film cost benchmarking." },
+    { "name": "Cosmo First Ltd", "type": "listed", "ticker": "COSMOFIRST", "expect": "cosmo", "role": "film-maker", "fitNote": "Listed BOPP/specialty film maker — substrate, not conversion." },
+    { "name": "Polyplex Corporation Ltd", "type": "listed", "ticker": "POLYPLEX", "expect": "polyplex", "role": "film-maker", "fitNote": "Listed PET film major — substrate benchmark." },
+    { "name": "Jindal Poly Films Ltd", "type": "listed", "ticker": "JINDALPOLY", "expect": "jindal", "role": "film-maker", "fitNote": "Listed BOPET/BOPP film major — substrate benchmark." },
+    { "name": "Constantia Parikh Packaging Pvt Ltd", "type": "private", "cin": "U25209GJ1999PTC036763", "role": "converter", "fitNote": "Global Constantia group's India converter — pharma blister/sachet laminates; strong second-source for GEEP.", "secondSourceFor": "laminates" },
+    { "name": "Amcor Flexibles India Pvt Ltd", "type": "private", "cin": "U27203MH2006FTC166397", "role": "converter", "fitNote": "Global Amcor's India arm — high-end pharma laminates; premium but very reliable.", "secondSourceFor": "laminates" },
+    { "name": "Paharpur 3P (Positive Packaging)", "type": "private", "cin": "U45400WB2014PTC200219", "verify": true, "role": "converter", "fitNote": "Large Indian flexible-packaging converter — sachet & pouch laminates." },
+    { "name": "SB Packagings Ltd", "type": "private", "cin": "U25202GJ1989PTC153102", "verify": true, "role": "converter", "fitNote": "Flexible laminate converter; sachets & pouches." }
+  ]
+}

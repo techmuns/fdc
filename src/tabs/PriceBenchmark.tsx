@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { LineChart, Wallet, Building2, Table2, TrendingUp, TrendingDown, Minus, Trophy } from 'lucide-react';
 import type { AppData, MaterialKey, SkuGap } from '../types';
 import { Card, CardHeader, Badge, Pill } from '../components/ui/Card';
-import { Dropdown, type Option } from '../components/ui/Controls';
+import { Dropdown, Segmented, type Option } from '../components/ui/Controls';
+import { MarketBenchmark } from '../components/MarketBenchmark';
 import { LineArea } from '../components/charts/LineArea';
 import { HBars, type HBarDatum } from '../components/charts/Bars';
 import { Table, type Column } from '../components/ui/Table';
@@ -23,6 +24,13 @@ export default function PriceBenchmark({ data }: { data: AppData }) {
     setSkuDesc(mat.topSkuMonthly[0]?.desc ?? '');
   }, [matKey, mat.topSkuMonthly]);
   const sku = mat.topSkuMonthly.find((s) => s.desc === skuDesc) ?? mat.topSkuMonthly[0];
+
+  const [view, setView] = useState<'fdc' | 'market'>('fdc');
+  const hasMarket = !!data.market && (data.market.materials[matKey]?.lines.length ?? 0) > 0;
+  // FDC's comparable ₹/kg reference for the market ladder (packaging is per-piece → null)
+  const kgSkus = mat.skus.filter((s) => s.unit === 'KG');
+  const fdcComparable = mat.primaryUnit === 'KG' ? (isCommodity ? mat.vwap : kgSkus[0]?.avgPrice ?? null) : null;
+  const fdcLabel = isCommodity ? 'Our volume-weighted price' : kgSkus[0] ? `Top film item: ${kgSkus[0].desc}` : 'FDC price';
 
   // SKU gap lookup (desc+unit) from price-gaps
   const skuGapByKey = useMemo(() => {
@@ -126,12 +134,27 @@ export default function PriceBenchmark({ data }: { data: AppData }) {
         {!isCommodity && sku && (
           <Dropdown label="Item to trend & benchmark" value={skuDesc} options={skuOptions} onChange={setSkuDesc} width={320} />
         )}
-        <div className="ml-auto hidden items-center gap-2 text-[12px] text-fdc-grey sm:flex">
-          <span className="inline-flex items-center gap-1"><span className="h-2.5 w-2.5 rounded-sm bg-fdc-green" /> cheapest we pay</span>
-          <span className="inline-flex items-center gap-1"><span className="h-2.5 w-2.5 rounded-sm bg-fdc-red" /> most above best</span>
-        </div>
+        {hasMarket && (
+          <Segmented<'fdc' | 'market'>
+            value={view}
+            onChange={setView}
+            options={[{ value: 'fdc', label: 'Our prices' }, { value: 'market', label: 'Market benchmark' }]}
+          />
+        )}
+        {view === 'fdc' && (
+          <div className="ml-auto hidden items-center gap-2 text-[12px] text-fdc-grey sm:flex">
+            <span className="inline-flex items-center gap-1"><span className="h-2.5 w-2.5 rounded-sm bg-fdc-green" /> cheapest we pay</span>
+            <span className="inline-flex items-center gap-1"><span className="h-2.5 w-2.5 rounded-sm bg-fdc-red" /> most above best</span>
+          </div>
+        )}
       </div>
 
+      {view === 'market' && hasMarket && data.market && (
+        <MarketBenchmark material={matKey} fdcPrice={fdcComparable} fdcLabel={fdcLabel} marketData={data.market} />
+      )}
+
+      {view === 'fdc' && (
+      <>
       {/* row A: trend + facts */}
       <div className="grid gap-4 lg:grid-cols-3">
         <Card className="lg:col-span-2">
@@ -239,6 +262,8 @@ export default function PriceBenchmark({ data }: { data: AppData }) {
             }}
           />
         </Card>
+      )}
+      </>
       )}
     </div>
   );

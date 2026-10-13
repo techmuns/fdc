@@ -247,6 +247,90 @@ export interface Meta {
   notes: string[];
 }
 
+// ---- Phase 2: market prices ----
+export interface MarketPoint {
+  date: string;
+  value: number;
+  usdPerKg?: number;
+  usdInr?: number;
+  fxYear?: string;
+  min?: number;
+  max?: number;
+  listings?: number;
+}
+export type MarketKind = 'customs' | 'producer' | 'ask' | 'wpi' | 'input';
+export interface MarketSeries {
+  material: MaterialKey;
+  key: string;
+  kind: MarketKind;
+  label: string;
+  grade: string;
+  hsCode?: string;
+  flow?: string;
+  unit: string;
+  currency: string | null;
+  points: MarketPoint[];
+  latest: MarketPoint;
+  sourceName: string;
+  sourceUrl: string;
+  fxNote?: string;
+}
+export interface MarketData {
+  generatedAt: string;
+  fx: { value: number | null; date: string | null; annual: Record<string, number>; sourceName: string; sourceUrl: string };
+  materials: Record<MaterialKey, { grading: { tier: string; note: string }; lines: MarketSeries[] }>;
+  manifest: { feed: string; status: string; seriesCount: number; reason: string | null }[];
+  notes: string[];
+}
+
+// ---- Phase 2: vendor financials ----
+export interface FinMetrics {
+  revenue: number | null; ebitda: number | null; marketCap: number | null; totalDebt: number | null;
+  ebitdaMargin: number | null; netMargin: number | null; grossMargin: number | null; operatingMargin: number | null;
+  debtToEquity: number | null; revenueGrowth: number | null; earningsGrowth: number | null;
+  pe: number | null; evEbitda: number | null; dividendYield: number | null; currentPrice: number | null;
+  yearlyChange: number | null; employees: number | null; roce: number | null; roe: number | null;
+  receivableDays?: number | null; payableDays?: number | null; cashConversionCycle?: number | null;
+  creditRating?: string | null;
+  flags?: { legalCases: number | null; gstDelays: number | null; epfDelays: number | null; charges: number | null };
+}
+export interface HealthScore {
+  value: number; grade: string;
+  components: { label: string; raw: number | null; score: number; weight: number }[];
+  note: string;
+}
+export interface Lever {
+  type: 'opportunity' | 'risk' | 'watch';
+  title: string;
+  detail: string;
+  evidence: { label: string; value: string }[];
+}
+export interface VendorFin {
+  vendorKey: string; name: string; type: 'listed' | 'private'; status: 'ok' | 'pending' | 'cin-unresolved';
+  companyName: string | null; symbol: string | null; exchange: string | null; cin: string | null;
+  materialsSupplied: string[]; fdcSpend: number; metrics: FinMetrics | null; healthScore: HealthScore | null;
+  source: { sourceName: string; sourceUrl: string; date: string | null } | null; note: string | null; levers: Lever[];
+}
+export interface VendorFinancials {
+  generatedAt: string;
+  sources: { listed: string; private: string };
+  manifest: { listedResolved: number; privateCached: number; privatePending: number; total: number };
+  vendors: Record<string, VendorFin>;
+}
+
+// ---- Phase 2: alternatives ----
+export interface AltVendor {
+  name: string; type: 'listed' | 'private'; role: string; ticker: string | null; cin: string | null;
+  status: 'ok' | 'pending' | 'cin-unresolved'; fitNote: string; secondSourceFor: string | null;
+  companyName: string | null; symbol: string | null; metrics: FinMetrics | null; healthScore: HealthScore | null;
+  source: { sourceName: string; sourceUrl: string }; note: string | null;
+}
+export interface Alternatives {
+  generatedAt: string;
+  byMaterial: Record<MaterialKey, AltVendor[]>;
+  note: string;
+}
+
 export interface AppData {
   meta: Meta;
   materials: Material[];
@@ -254,4 +338,7 @@ export interface AppData {
   priceGaps: PriceGaps;
   plants: Plants;
   paymentTerms: PaymentTerms;
+  market: MarketData | null;
+  financials: VendorFinancials | null;
+  alternatives: Alternatives | null;
 }

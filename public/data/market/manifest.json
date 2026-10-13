@@ -1,0 +1,44 @@
+{
+  "generatedAt": "2026-10-13T08:37:15.172Z",
+  "fx": {
+    "value": 96.31,
+    "date": "2026-10-02"
+  },
+  "manifest": [
+    {
+      "feed": "comtrade",
+      "status": "ok",
+      "seriesCount": 9,
+      "reason": null,
+      "gated": false
+    },
+    {
+      "feed": "inputs",
+      "status": "ok",
+      "seriesCount": 4,
+      "reason": null,
+      "gated": false
+    },
+    {
+      "feed": "plastemart",
+      "status": "skipped",
+      "seriesCount": 0,
+      "reason": "no clean absolute price levels in current news text",
+      "gated": false
+    },
+    {
+      "feed": "wpi",
+      "status": "skipped",
+      "seriesCount": 0,
+      "reason": "no MOSPI_TOKEN — self-signup at esankhyiki.mospi.gov.in and add the token as a secret to enable the WPI index line",
+      "gated": true
+    },
+    {
+      "feed": "marketplace",
+      "status": "skipped",
+      "seriesCount": 0,
+      "reason": "no FIRECRAWL_API_KEY — add it as a secret to enable IndiaMART/TradeIndia seller-ask prices",
+      "gated": true
+    }
+  ]
+}

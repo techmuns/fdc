@@ -1,0 +1,541 @@
+{
+  "generatedAt": "2026-10-13",
+  "feed": "comtrade",
+  "status": "ok",
+  "series": [
+    {
+      "material": "dextrose",
+      "key": "customs-dextrose",
+      "kind": "customs",
+      "label": "Dextrose — India export unit value",
+      "grade": "Glucose/dextrose, customs export unit value (HS 1702.30)",
+      "hsCode": "170230",
+      "flow": "X",
+      "unit": "₹/kg",
+      "currency": "INR",
+      "points": [
+        {
+          "date": "2019-12-31",
+          "value": 33.8,
+          "usdPerKg": 0.48,
+          "usdInr": 70.378,
+          "fxYear": "2019"
+        },
+        {
+          "date": "2020-12-31",
+          "value": 33.1,
+          "usdPerKg": 0.446,
+          "usdInr": 74.143,
+          "fxYear": "2020"
+        },
+        {
+          "date": "2021-12-31",
+          "value": 33.86,
+          "usdPerKg": 0.458,
+          "usdInr": 73.935,
+          "fxYear": "2021"
+        },
+        {
+          "date": "2022-12-31",
+          "value": 43.89,
+          "usdPerKg": 0.559,
+          "usdInr": 78.579,
+          "fxYear": "2022"
+        },
+        {
+          "date": "2023-12-31",
+          "value": 42.69,
+          "usdPerKg": 0.517,
+          "usdInr": 82.571,
+          "fxYear": "2023"
+        },
+        {
+          "date": "2024-12-31",
+          "value": 42.95,
+          "usdPerKg": 0.513,
+          "usdInr": 83.657,
+          "fxYear": "2024"
+        }
+      ],
+      "latest": {
+        "value": 42.95,
+        "date": "2024-12-31",
+        "usdPerKg": 0.513
+      },
+      "sourceName": "UN Comtrade (public preview)",
+      "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=170230&Flows=X",
+      "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+    },
+    {
+      "material": "packaging",
+      "key": "resin-hdpe",
+      "kind": "customs",
+      "label": "HDPE resin — import unit value",
+      "grade": "HDPE polymer in primary form (HS 3901.20)",
+      "hsCode": "390120",
+      "flow": "M",
+      "unit": "₹/kg",
+      "currency": "INR",
+      "points": [
+        {
+          "date": "2019-12-31",
+          "value": 77.54,
+          "usdPerKg": 1.102,
+          "usdInr": 70.378,
+          "fxYear": "2019"
+        },
+        {
+          "date": "2020-12-31",
+          "value": 69.78,
+          "usdPerKg": 0.941,
+          "usdInr": 74.143,
+          "fxYear": "2020"
+        },
+        {
+          "date": "2021-12-31",
+          "value": 90.6,
+          "usdPerKg": 1.225,
+          "usdInr": 73.935,
+          "fxYear": "2021"
+        },
+        {
+          "date": "2022-12-31",
+          "value": 101.12,
+          "usdPerKg": 1.287,
+          "usdInr": 78.579,
+          "fxYear": "2022"
+        },
+        {
+          "date": "2023-12-31",
+          "value": 87.61,
+          "usdPerKg": 1.061,
+          "usdInr": 82.571,
+          "fxYear": "2023"
+        }
+      ],
+      "latest": {
+        "value": 87.61,
+        "date": "2023-12-31",
+        "usdPerKg": 1.061
+      },
+      "sourceName": "UN Comtrade (public preview)",
+      "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=390120&Flows=M",
+      "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+    },
+    {
+      "material": "packaging",
+      "key": "resin-pp",
+      "kind": "customs",
+      "label": "PP resin — import unit value",
+      "grade": "Polypropylene in primary form (HS 3902.10)",
+      "hsCode": "390210",
+      "flow": "M",
+      "unit": "₹/kg",
+      "currency": "INR",
+      "points": [
+        {
+          "date": "2019-12-31",
+          "value": 82.41,
+          "usdPerKg": 1.171,
+          "usdInr": 70.378,
+          "fxYear": "2019"
+        },
+        {
+          "date": "2022-12-31",
+          "value": 102.41,
+          "usdPerKg": 1.303,
+          "usdInr": 78.579,
+          "fxYear": "2022"
+        },
+        {
+          "date": "2023-12-31",
+          "value": 85.58,
+          "usdPerKg": 1.036,
+          "usdInr": 82.571,
+          "fxYear": "2023"
+        },
+        {
+          "date": "2024-12-31",
+          "value": 87.63,
+          "usdPerKg": 1.047,
+          "usdInr": 83.657,
+          "fxYear": "2024"
+        }
+      ],
+      "latest": {
+        "value": 87.63,
+        "date": "2024-12-31",
+        "usdPerKg": 1.047
+      },
+      "sourceName": "UN Comtrade (public preview)",
+      "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=390210&Flows=M",
+      "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+    },
+    {
+      "material": "packaging",
+      "key": "resin-pet",
+      "kind": "customs",
+      "label": "PET resin — import unit value",
+      "grade": "PET polymer in primary form (HS 3907.6x)",
+      "hsCode": "390769",
+      "flow": "M",
+      "unit": "₹/kg",
+      "currency": "INR",
+      "points": [
+        {
+          "date": "2019-12-31",
+          "value": 62.68,
+          "usdPerKg": 0.891,
+          "usdInr": 70.378,
+          "fxYear": "2019"
+        },
+        {
+          "date": "2020-12-31",
+          "value": 58.14,
+          "usdPerKg": 0.784,
+          "usdInr": 74.143,
+          "fxYear": "2020"
+        },
+        {
+          "date": "2021-12-31",
+          "value": 61.81,
+          "usdPerKg": 0.836,
+          "usdInr": 73.935,
+          "fxYear": "2021"
+        },
+        {
+          "date": "2022-12-31",
+          "value": 78.57,
+          "usdPerKg": 1,
+          "usdInr": 78.579,
+          "fxYear": "2022"
+        },
+        {
+          "date": "2023-12-31",
+          "value": 73.92,
+          "usdPerKg": 0.895,
+          "usdInr": 82.571,
+          "fxYear": "2023"
+        },
+        {
+          "date": "2024-12-31",
+          "value": 71.06,
+          "usdPerKg": 0.849,
+          "usdInr": 83.657,
+          "fxYear": "2024"
+        }
+      ],
+      "latest": {
+        "value": 71.06,
+        "date": "2024-12-31",
+        "usdPerKg": 0.849
+      },
+      "sourceName": "UN Comtrade (public preview)",
+      "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=390769&Flows=M",
+      "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+    },
+    {
+      "material": "packaging",
+      "key": "caps",
+      "kind": "customs",
+      "label": "Caps & closures — import unit value",
+      "grade": "Stoppers/caps/closures of plastics (HS 3923.50)",
+      "hsCode": "392350",
+      "flow": "M",
+      "unit": "₹/kg",
+      "currency": "INR",
+      "points": [
+        {
+          "date": "2019-12-31",
+          "value": 632.54,
+          "usdPerKg": 8.988,
+          "usdInr": 70.378,
+          "fxYear": "2019"
+        },
+        {
+          "date": "2020-12-31",
+          "value": 680.88,
+          "usdPerKg": 9.183,
+          "usdInr": 74.143,
+          "fxYear": "2020"
+        },
+        {
+          "date": "2021-12-31",
+          "value": 268.48,
+          "usdPerKg": 3.631,
+          "usdInr": 73.935,
+          "fxYear": "2021"
+        },
+        {
+          "date": "2022-12-31",
+          "value": 783.12,
+          "usdPerKg": 9.966,
+          "usdInr": 78.579,
+          "fxYear": "2022"
+        },
+        {
+          "date": "2023-12-31",
+          "value": 897.25,
+          "usdPerKg": 10.866,
+          "usdInr": 82.571,
+          "fxYear": "2023"
+        },
+        {
+          "date": "2024-12-31",
+          "value": 941.3,
+          "usdPerKg": 11.252,
+          "usdInr": 83.657,
+          "fxYear": "2024"
+        }
+      ],
+      "latest": {
+        "value": 941.3,
+        "date": "2024-12-31",
+        "usdPerKg": 11.252
+      },
+      "sourceName": "UN Comtrade (public preview)",
+      "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=392350&Flows=M",
+      "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+    },
+    {
+      "material": "laminates",
+      "key": "film-bopet",
+      "kind": "customs",
+      "label": "BOPET film — import unit value",
+      "grade": "Polyester (PET) film (HS 3920.62)",
+      "hsCode": "392062",
+      "flow": "M",
+      "unit": "₹/kg",
+      "currency": "INR",
+      "points": [
+        {
+          "date": "2019-12-31",
+          "value": 158.17,
+          "usdPerKg": 2.247,
+          "usdInr": 70.378,
+          "fxYear": "2019"
+        },
+        {
+          "date": "2020-12-31",
+          "value": 144.69,
+          "usdPerKg": 1.952,
+          "usdInr": 74.143,
+          "fxYear": "2020"
+        },
+        {
+          "date": "2021-12-31",
+          "value": 177.02,
+          "usdPerKg": 2.394,
+          "usdInr": 73.935,
+          "fxYear": "2021"
+        },
+        {
+          "date": "2022-12-31",
+          "value": 198.78,
+          "usdPerKg": 2.53,
+          "usdInr": 78.579,
+          "fxYear": "2022"
+        },
+        {
+          "date": "2024-12-31",
+          "value": 171.6,
+          "usdPerKg": 2.051,
+          "usdInr": 83.657,
+          "fxYear": "2024"
+        }
+      ],
+      "latest": {
+        "value": 171.6,
+        "date": "2024-12-31",
+        "usdPerKg": 2.051
+      },
+      "sourceName": "UN Comtrade (public preview)",
+      "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=392062&Flows=M",
+      "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+    },
+    {
+      "material": "laminates",
+      "key": "film-bopp",
+      "kind": "customs",
+      "label": "BOPP film — import unit value",
+      "grade": "Propylene polymer film (HS 3920.20)",
+      "hsCode": "392020",
+      "flow": "M",
+      "unit": "₹/kg",
+      "currency": "INR",
+      "points": [
+        {
+          "date": "2019-12-31",
+          "value": 195.74,
+          "usdPerKg": 2.781,
+          "usdInr": 70.378,
+          "fxYear": "2019"
+        },
+        {
+          "date": "2020-12-31",
+          "value": 128.7,
+          "usdPerKg": 1.736,
+          "usdInr": 74.143,
+          "fxYear": "2020"
+        },
+        {
+          "date": "2021-12-31",
+          "value": 106.74,
+          "usdPerKg": 1.444,
+          "usdInr": 73.935,
+          "fxYear": "2021"
+        },
+        {
+          "date": "2022-12-31",
+          "value": 138.21,
+          "usdPerKg": 1.759,
+          "usdInr": 78.579,
+          "fxYear": "2022"
+        }
+      ],
+      "latest": {
+        "value": 138.21,
+        "date": "2022-12-31",
+        "usdPerKg": 1.759
+      },
+      "sourceName": "UN Comtrade (public preview)",
+      "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=392020&Flows=M",
+      "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+    },
+    {
+      "material": "laminates",
+      "key": "foil-plain",
+      "kind": "customs",
+      "label": "Aluminium foil (plain) — import unit value",
+      "grade": "Aluminium foil, not backed, ≤0.2mm (HS 7607.11)",
+      "hsCode": "760711",
+      "flow": "M",
+      "unit": "₹/kg",
+      "currency": "INR",
+      "points": [
+        {
+          "date": "2019-12-31",
+          "value": 207.21,
+          "usdPerKg": 2.944,
+          "usdInr": 70.378,
+          "fxYear": "2019"
+        },
+        {
+          "date": "2020-12-31",
+          "value": 204.17,
+          "usdPerKg": 2.754,
+          "usdInr": 74.143,
+          "fxYear": "2020"
+        },
+        {
+          "date": "2021-12-31",
+          "value": 264.95,
+          "usdPerKg": 3.583,
+          "usdInr": 73.935,
+          "fxYear": "2021"
+        },
+        {
+          "date": "2022-12-31",
+          "value": 356,
+          "usdPerKg": 4.53,
+          "usdInr": 78.579,
+          "fxYear": "2022"
+        },
+        {
+          "date": "2023-12-31",
+          "value": 295.23,
+          "usdPerKg": 3.576,
+          "usdInr": 82.571,
+          "fxYear": "2023"
+        },
+        {
+          "date": "2024-12-31",
+          "value": 284.77,
+          "usdPerKg": 3.404,
+          "usdInr": 83.657,
+          "fxYear": "2024"
+        }
+      ],
+      "latest": {
+        "value": 284.77,
+        "date": "2024-12-31",
+        "usdPerKg": 3.404
+      },
+      "sourceName": "UN Comtrade (public preview)",
+      "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=760711&Flows=M",
+      "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+    },
+    {
+      "material": "laminates",
+      "key": "foil-backed",
+      "kind": "customs",
+      "label": "Aluminium foil (backed) — import unit value",
+      "grade": "Aluminium foil, backed (HS 7607.20)",
+      "hsCode": "760720",
+      "flow": "M",
+      "unit": "₹/kg",
+      "currency": "INR",
+      "points": [
+        {
+          "date": "2019-12-31",
+          "value": 304.54,
+          "usdPerKg": 4.327,
+          "usdInr": 70.378,
+          "fxYear": "2019"
+        },
+        {
+          "date": "2020-12-31",
+          "value": 324.37,
+          "usdPerKg": 4.375,
+          "usdInr": 74.143,
+          "fxYear": "2020"
+        },
+        {
+          "date": "2021-12-31",
+          "value": 350.53,
+          "usdPerKg": 4.741,
+          "usdInr": 73.935,
+          "fxYear": "2021"
+        },
+        {
+          "date": "2022-12-31",
+          "value": 457.29,
+          "usdPerKg": 5.82,
+          "usdInr": 78.579,
+          "fxYear": "2022"
+        },
+        {
+          "date": "2024-12-31",
+          "value": 439.19,
+          "usdPerKg": 5.25,
+          "usdInr": 83.657,
+          "fxYear": "2024"
+        }
+      ],
+      "latest": {
+        "value": 439.19,
+        "date": "2024-12-31",
+        "usdPerKg": 5.25
+      },
+      "sourceName": "UN Comtrade (public preview)",
+      "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=760720&Flows=M",
+      "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+    }
+  ],
+  "meta": {
+    "reporter": 699,
+    "authenticated": false,
+    "resolved": [
+      "customs-dextrose=HS170230(6y)",
+      "resin-hdpe=HS390120(5y)",
+      "resin-pp=HS390210(4y)",
+      "resin-pet=HS390769(6y)",
+      "caps=HS392350(6y)",
+      "film-bopet=HS392062(5y)",
+      "film-bopp=HS392020(4y)",
+      "foil-plain=HS760711(6y)",
+      "foil-backed=HS760720(5y)"
+    ],
+    "unresolved": []
+  }
+}
