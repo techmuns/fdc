@@ -372,6 +372,31 @@ export interface Alternatives {
   note: string;
 }
 
+// ---- Phase 3: AI negotiation briefs (Claude via AWS Bedrock) ----
+export interface BriefEvidence { point: string; figure: string; }
+export interface BriefAlternate { name: string; why: string; }
+export interface Brief {
+  vendorKey: string; vendor: string; type: 'listed' | 'private';
+  material: string | null; materials: string[]; fdcSpend: number; priorityScore: number;
+  headline: string;
+  priceAsk: { summary: string; target: string; basis: string };
+  paymentTermAsk: { summary: string; cashImpact: string };
+  financialLeverage: string;
+  evidence: BriefEvidence[];
+  alternates: BriefAlternate[];
+  risks: string[];
+  suggestedOpeningLine: string;
+  approvalNote: string;
+  generatedBy: string; generatedAt: string;
+  sources: { label: string; url: string | null }[];
+}
+export interface Briefs {
+  generatedAt: string; provider: string; region: string;
+  status: 'ok' | 'no-key' | 'partial' | 'error';
+  modelsConfigured: string[]; note: string | null; count: number;
+  briefs: Brief[];
+}
+
 export interface AppData {
   meta: Meta;
   materials: Material[];
@@ -382,4 +407,5 @@ export interface AppData {
   market: MarketData | null;
   financials: VendorFinancials | null;
   alternatives: Alternatives | null;
+  briefs: Briefs | null;
 }

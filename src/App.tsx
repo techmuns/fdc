@@ -13,13 +13,13 @@ import {
 import { useAppData } from './lib/data';
 import { Header } from './components/Header';
 import { Tabs, type TabDef } from './components/ui/Tabs';
-import { ComingSoon } from './components/ComingSoon';
 import Overview from './tabs/Overview';
 import PriceBenchmark from './tabs/PriceBenchmark';
 import PaymentTermsTab from './tabs/PaymentTermsTab';
 import Vendors from './tabs/Vendors';
 import VendorHealth from './tabs/VendorHealth';
 import Alternatives from './tabs/Alternatives';
+import NegotiationBriefs from './tabs/NegotiationBriefs';
 import { dateLabel } from './lib/format';
 
 type TabKey =
@@ -38,7 +38,7 @@ const TABS: TabDef<TabKey>[] = [
   { key: 'vendors', label: 'Vendors', icon: Factory },
   { key: 'health', label: 'Vendor Health', icon: HeartPulse },
   { key: 'alternatives', label: 'Alternatives', icon: Repeat2 },
-  { key: 'briefs', label: 'Negotiation Briefs', icon: FileText, soon: true },
+  { key: 'briefs', label: 'Negotiation Briefs', icon: FileText },
 ];
 
 export default function App() {
@@ -66,18 +66,7 @@ export default function App() {
               {tab === 'vendors' && <Vendors data={state.data} />}
               {tab === 'health' && <VendorHealth data={state.data} />}
               {tab === 'alternatives' && <Alternatives data={state.data} />}
-              {tab === 'briefs' && (
-                <ComingSoon
-                  icon={FileText}
-                  title="Negotiation Briefs"
-                  blurb="One-click, AI-written negotiation packs per vendor — the asks, the leverage, and the numbers to quote in the room."
-                  features={[
-                    { heading: 'Target price', detail: 'The best-price-matched ask, grounded in what we already pay others.' },
-                    { heading: 'Leverage points', detail: 'Volume, payment terms and single-source risk turned into bargaining chips.' },
-                    { heading: 'Ready to send', detail: 'A shareable brief the buyer takes straight into the negotiation.' },
-                  ]}
-                />
-              )}
+              {tab === 'briefs' && <NegotiationBriefs data={state.data} />}
             </>
           )}
         </main>

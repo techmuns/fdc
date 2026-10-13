@@ -1,0 +1,10 @@
+{
+  "generatedAt": "2026-10-13T17:34:25.878Z",
+  "provider": "AWS Bedrock (Converse API)",
+  "region": "us-east-1",
+  "status": "no-key",
+  "modelsConfigured": [],
+  "note": "No briefs yet — BEDROCK_API_KEY is not set. Add the Bedrock key (and model IDs) and re-run to generate.",
+  "count": 0,
+  "briefs": []
+}

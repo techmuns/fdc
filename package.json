@@ -10,6 +10,7 @@
     "ratings": "node scripts/ratings/index.mjs",
     "probe": "node scripts/probe-extract.mjs",
     "financials": "node scripts/financials/index.mjs",
+    "briefs": "node scripts/briefs/generate.mjs",
     "data": "npm run normalize && npm run market && npm run ratings && npm run probe && npm run financials",
     "dev": "vite",
     "build": "tsc -b && vite build",

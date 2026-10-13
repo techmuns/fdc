@@ -15,8 +15,10 @@ financial feeds. Nothing is estimated, sampled, or fabricated.
 > Infomerics). **Phase 2.2** promotes **Probe42** (comprehensive MCA-filing
 > reports) to the *primary* private-vendor source — multi-year financials,
 > ratios, peer-median benchmarks, risk/legal flags and promoter detail — with the
-> credit-rating docs kept as a fallback & cross-check. Negotiation Briefs (AI)
-> remain scaffolded for Phase 3.
+> credit-rating docs kept as a fallback & cross-check. **Phase 3** adds the
+> **Negotiation Briefs** tab: Claude (on AWS Bedrock) writes a plain-English,
+> evidence-backed negotiation brief per vendor — grounded only in the real data
+> above, never an invented number — gated on the Bedrock secret.
 
 ---
 
@@ -30,7 +32,7 @@ financial feeds. Nothing is estimated, sampled, or fabricated.
 | **🏭 Vendors** | Sortable, colour-coded table of every supplier → click for a full profile (materials, price position, monthly trend, listed-company flag). |
 | **❤️ Vendor Health** | Real financials for listed suppliers (Munshot) *and* private suppliers (**Probe42** MCA filings — multi-year revenue/margin/RoCE trend, working-capital days **vs peer median**, credit-rating badge + Probe financial score, risk/compliance chips), a computed health score, and evidence-backed **negotiation levers**. Suppliers with no Probe42 report and no public rating show an honest "financials not public" state — never fabricated. |
 | **🔁 Alternatives** | Benchmarked backup suppliers per material with a financial health check and fit note; second-source candidates highlighted for single-source-risk materials. |
-| **📝 Negotiation Briefs** | Scaffolded for Phase 3 (AI drafting on top of the levers built in Phase 2). |
+| **📝 Negotiation Briefs** | A buyer-ready, AI-written brief per vendor — the headline ask, the price & payment-terms moves, the evidence (every figure copied from real data), their financial position in plain words, credible alternates, watch-outs, and a suggested opening line. Written by **Claude on AWS Bedrock**; ranked by opportunity; print/export-friendly. Shows an honest "add Bedrock key" state until configured — never fabricated. |
 
 Built as a **static SPA** (React + TypeScript + Vite + Tailwind) with a
 **dependency-free SVG chart kit** (no chart library). Deploys to **Cloudflare Pages**.
@@ -121,8 +123,46 @@ npm run market       # market-price feeds → public/data/market/
 npm run ratings      # credit-rating-doc financials (fallback/cross-check) → public/data/rating-financials.json
 npm run probe        # Probe42 MCA-filing financials (primary private) → public/data/probe-financials.json
 npm run financials   # merge listed + private → public/data/vendor-financials.json, alternatives.json
+npm run briefs       # AI negotiation briefs (Claude via Bedrock) → public/data/briefs.json  (needs BEDROCK_API_KEY)
 npm run data         # normalize + market + ratings + probe + financials, all in one
 ```
+
+### Phase 3 — AI Negotiation Briefs (Claude via AWS Bedrock)
+
+Once the real data is in place, `npm run briefs` (`scripts/briefs/`) asks Claude to
+turn it into a **buyer-ready negotiation brief** per vendor. Everything above the
+model is deterministic assembly; the model only does the writing — under a strict
+instruction to **use only the numbers provided and never invent a figure**.
+
+- **`scripts/briefs/bedrock.mjs`** — a tiny Bedrock **Converse** client: single
+  `Authorization: Bearer $BEDROCK_API_KEY` key, **no AWS SDK, no SigV4**. Reads
+  `AWS_REGION` and `BEDROCK_MODEL_IDS` (a comma-separated fallback chain of
+  inference-profile IDs) from env; tries each model in order, falls through on a
+  400/403/404 ("can't use this model"), retries the same on 429/5xx, and stamps
+  which model actually answered.
+- **`scripts/briefs/generate.mjs`** — for each vendor with real financials it
+  assembles **only** repo data (our price vs the best price we pay + the market
+  line + the gap & potential saving; the payment-term gap & cash freed; the
+  financials + pre-computed levers — margin vs peer median, payable/receivable days,
+  cash-conversion, RoCE, credit rating, loss-making & legal/charge flags; and the
+  available alternates), sends it to Claude, and validates the returned JSON
+  (`headline, priceAsk, evidence[], paymentTermAsk, financialLeverage, alternates[],
+  risks[], suggestedOpeningLine`), re-asking once if malformed. Each brief is
+  **cached on a hash of its inputs** (`data/briefs-cache/`, committed), so unchanged
+  data never re-calls Bedrock.
+- **Pharma rule:** every brief carries a fixed governance line — any change of
+  vendor, spec or source must be jointly approved by **Procurement, QA and R&D**;
+  the AI recommends and explains, it does not decide.
+- **Honest by default:** with no `BEDROCK_API_KEY` the tab shows an "add Bedrock
+  key to generate" state and `briefs.json` carries `status: "no-key"` — **no brief
+  is ever fabricated.** The `.github/workflows/briefs-refresh.yml` action (manual, and
+  after the data refresh) generates them when the secret exists and commits
+  `briefs.json`; Cloudflare redeploys.
+
+**To switch it on**, add (Settings → Secrets and variables → Actions):
+`BEDROCK_API_KEY` (**secret**), and the **variables** `AWS_REGION` (e.g.
+`us-east-1`) and `BEDROCK_MODEL_IDS` (a current Sonnet inference profile first,
+then fallbacks, matching the Claude models enabled in your Bedrock console).
 
 ### Phase 2.2 — Probe42 is the primary private-vendor source (MCA filings)
 
@@ -269,6 +309,7 @@ data/raw/                 real SAP exports + vendor master
   masters/alt-vendors.json   seed of alternate suppliers (tracked, editable)
   masters/rating-docs.json   seed of rated-vendor rationale URLs + unrated keys (tracked, editable)
 data/probe-cache/         committed Probe42 reports ({CIN}.json; pay a credit once, read free)
+data/briefs-cache/        committed per-vendor brief cache (hash of inputs → brief; skips Bedrock when unchanged)
 scripts/
   normalize.mjs           SAP → public/data/*.json
   probe-extract.mjs       Probe42 cache → public/data/probe-financials.json (0 credits, primary private)
@@ -277,6 +318,7 @@ scripts/
   ratings/    fetch.mjs (plain HTML/PDF, 0 keys) · parse.mjs (per-agency) · index.mjs  (fallback/cross-check)
   financials/ munshot.mjs · index.mjs   (listed financials + merge orchestrator)
   probe/      client · extract · enrich · cins   (Probe42 paid fetcher, gated behind its secret)
+  briefs/     bedrock.mjs (Converse, single bearer key) · generate.mjs  (AI negotiation briefs)
   levers.mjs  negotiation-lever engine
 public/
   fdc-logo.png · _redirects
@@ -285,16 +327,18 @@ public/
   data/probe-financials.json    private-vendor financials from Probe42 (primary)
   data/rating-financials.json   credit-rating-doc financials (fallback / cross-check)
   data/vendor-financials.json · data/alternatives.json
+  data/briefs.json              AI negotiation briefs (or an honest "no-key" state)
 src/
   lib/        format · brand · data (loader) · chartMath
   components/charts/  Bars · Columns · Donut · LineArea · StackedBar · Sparkline
   components/ui/      Card · Table · Tabs · Controls
   components/  Header · ComingSoon · MarketBenchmark
-  tabs/       Overview · PriceBenchmark · PaymentTermsTab · Vendors · VendorHealth · Alternatives
+  tabs/       Overview · PriceBenchmark · PaymentTermsTab · Vendors · VendorHealth · Alternatives · NegotiationBriefs
   types.ts
 .github/workflows/
   data-refresh.yml         daily: market + Probe42 extract + financials, commit JSON
   ratings-refresh.yml      monthly: re-fetch rating docs (free, 0 keys), commit JSON
+  briefs-refresh.yml       manual + after data-refresh: AI briefs via Bedrock (gated on the key), commit JSON
   probe42-refresh.yml      manual: VPN-gated Probe42 fetch (paid, budgeted)
   probe42-vpn-check.yml    manual: print exit IP before/after VPN (0 credits)
 ```

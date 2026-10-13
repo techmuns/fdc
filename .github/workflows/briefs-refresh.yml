@@ -1,0 +1,62 @@
+name: Negotiation briefs (Claude via AWS Bedrock)
+
+# Generates the AI negotiation briefs (public/data/briefs.json) from the real
+# data already in the repo. GATED on the Bedrock secret: with no BEDROCK_API_KEY
+# the generator writes an honest "no-key" state and nothing is faked. Per-vendor
+# caching (data/briefs-cache/) means Bedrock is only called when a vendor's inputs
+# actually changed, so re-runs are cheap. Cloudflare Pages auto-redeploys on commit.
+#
+# Secrets / variables the owner adds (Settings → Secrets and variables → Actions):
+#   BEDROCK_API_KEY     secret   — a Bedrock API key (Authorization: Bearer)
+#   AWS_REGION          variable — e.g. us-east-1
+#   BEDROCK_MODEL_IDS   variable — comma-separated inference-profile IDs, a current
+#                                  Sonnet profile first, then fallbacks, matching the
+#                                  Claude models enabled in your Bedrock console.
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['Refresh market & financial data'] # after the daily data refresh
+    types: [completed]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: briefs-refresh
+  cancel-in-progress: false
+
+jobs:
+  briefs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Generate negotiation briefs (skips cleanly if no Bedrock key)
+        env:
+          BEDROCK_API_KEY: ${{ secrets.BEDROCK_API_KEY }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
+          BEDROCK_MODEL_IDS: ${{ vars.BEDROCK_MODEL_IDS }}
+        run: |
+          if [ -z "$BEDROCK_API_KEY" ]; then
+            echo "BEDROCK_API_KEY not set — writing the honest no-key state (no briefs are faked)."
+          fi
+          npm run briefs
+
+      - name: Commit briefs if changed
+        run: |
+          git config user.name  "fdc-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/data/briefs.json data/briefs-cache
+          if git diff --cached --quiet; then
+            echo "No brief changes."
+          else
+            git commit -m "chore(briefs): refresh AI negotiation briefs [skip ci]"
+            git push
+          fi
