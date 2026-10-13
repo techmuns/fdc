@@ -11,7 +11,7 @@ import {
   MapPin,
 } from 'lucide-react';
 import type { AppData, Vendor, MaterialKey } from '../types';
-import { Card, Badge, Pill } from '../components/ui/Card';
+import { Card, PageHeader, Badge, Pill } from '../components/ui/Card';
 import { Dropdown, type Option } from '../components/ui/Controls';
 import { Table, type Column } from '../components/ui/Table';
 import { Columns } from '../components/charts/Columns';
@@ -93,13 +93,12 @@ export default function Vendors({ data }: { data: AppData }) {
 
   return (
     <div className="animate-fade-up">
-      <div className="mb-3 flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h2 className="text-[15px] font-bold text-fdc-ink">All suppliers</h2>
-          <p className="text-[12.5px] text-fdc-grey">{vendors.length} suppliers across 3 materials · click any row for the full picture</p>
-        </div>
-        <Dropdown label="Filter" value={filter} options={filterOptions} onChange={setFilter} width={220} />
-      </div>
+      <PageHeader
+        icon={Factory}
+        title="All suppliers"
+        subtitle={`${vendors.length} suppliers across 3 materials · click any row for the full picture`}
+        right={<Dropdown label="Filter" value={filter} options={filterOptions} onChange={setFilter} width={220} />}
+      />
 
       <div className="grid gap-4 lg:grid-cols-5">
         <div className="min-w-0 lg:col-span-3">
@@ -162,7 +161,7 @@ function VendorPanel({ vendor: v, data, onClose }: { vendor: Vendor; data: AppDa
             <Factory size={19} />
           </span>
           <div>
-            <h3 className="text-[15px] font-extrabold leading-tight text-fdc-ink">{cleanName(v.name)}</h3>
+            <h3 className="text-[16px] font-extrabold leading-tight text-fdc-ink">{cleanName(v.name)}</h3>
             <div className="mt-1 flex flex-wrap items-center gap-1">
               {v.isListed && <Badge color="#2E7CE4"><BadgeCheck size={11} /> Listed{v.listing?.ticker ? ` · ${v.listing.ticker}` : ''}</Badge>}
               <Badge color={v.accGrp === 'ZLLM' ? '#8E44AD' : '#707070'}>{v.accGrpLabel}</Badge>
@@ -229,7 +228,7 @@ function VendorPanel({ vendor: v, data, onClose }: { vendor: Vendor; data: AppDa
       {v.isListed && (
         <p className="mt-3 rounded-lg border border-fdc-blue/20 bg-fdc-blue/[0.05] px-3 py-2 text-[11px] leading-snug text-fdc-slate">
           <BadgeCheck size={12} className="mr-1 inline text-fdc-blue" />
-          Publicly listed{v.listing ? ` on ${v.listing.exchange}` : ''}. Financial-health scores arrive in the <span className="font-semibold">Vendor Health</span> phase.
+          Publicly listed{v.listing ? ` on ${v.listing.exchange}` : ''}. See real financials &amp; a health score in the <span className="font-semibold">Vendor Health</span> tab.
         </p>
       )}
     </Card>

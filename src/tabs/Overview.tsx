@@ -10,9 +10,11 @@ import {
   Target,
   PieChart,
   Layers,
+  LayoutDashboard,
 } from 'lucide-react';
-import type { AppData, MaterialKey } from '../types';
-import { Card, CardHeader, Badge, MiniStat } from '../components/ui/Card';
+import type { AppData, MaterialKey, Material } from '../types';
+import { Card, CardHeader, PageHeader, Badge, MiniStat } from '../components/ui/Card';
+import { Table, type Column } from '../components/ui/Table';
 import { Donut } from '../components/charts/Donut';
 import { HBars, type HBarDatum } from '../components/charts/Bars';
 import { StackedBar } from '../components/charts/StackedBar';
@@ -166,6 +168,12 @@ export default function Overview({ data, onNavigate }: { data: AppData; onNaviga
 
   return (
     <div className="animate-fade-up space-y-4">
+      <PageHeader
+        icon={LayoutDashboard}
+        title="Procurement at a glance"
+        subtitle="Spend, savings, cash freed and supply risk — every number read straight off FDC's real purchase data."
+      />
+
       {/* slim context strip (not a KPI wall) */}
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <MiniStat label="Annual spend" value={crore(meta.totals.netSpend)} sub={`${materials.length} materials · ${meta.canonicalVendorCount} suppliers`} color="#00973D" />
@@ -281,76 +289,59 @@ export default function Overview({ data, onNavigate }: { data: AppData; onNaviga
 
 function MoneyMapTable({ data, onNavigate }: { data: AppData; onNavigate?: (t: string) => void }) {
   const { materials, priceGaps, paymentTerms } = data;
-  const worstByMaterial = (matName: string) => {
-    const v = paymentTerms.worstBySpend.find((x) => x.materials.includes(matName));
-    return v;
-  };
+  const worstByMaterial = (matName: string) => paymentTerms.worstBySpend.find((x) => x.materials.includes(matName));
+  const share = (m: Material) => (m.vendors[0] ? m.vendors[0].spend / m.totalNetSpend : 0);
+
+  const columns: Column<Material>[] = [
+    {
+      key: 'material', header: 'Material', sortable: true, sortValue: (m) => m.displayName, width: 190,
+      render: (m) => (
+        <div className="flex items-center gap-2">
+          <span className="h-3 w-3 shrink-0 rounded-sm" style={{ background: MATERIAL_COLOR[m.key] }} />
+          <div className="min-w-0">
+            <div className="font-bold text-fdc-ink">{m.displayName}</div>
+            <div className="text-[11px] text-fdc-grey">{m.plainName}</div>
+          </div>
+        </div>
+      ),
+    },
+    { key: 'spend', header: 'Annual spend', align: 'right', sortable: true, sortValue: (m) => m.totalNetSpend, render: (m) => <span className="tnum whitespace-nowrap font-bold text-fdc-ink">{crore(m.totalNetSpend)}</span> },
+    {
+      key: 'top', header: 'Top supplier (share)', sortable: true, sortValue: (m) => share(m),
+      render: (m) => {
+        const top = m.vendors[0];
+        const s = share(m);
+        return (
+          <div className="flex items-center gap-1.5">
+            <span className="h-2 w-2 shrink-0 rounded-sm" style={{ background: top?.color }} />
+            <span className="font-semibold text-fdc-slate">{cleanName(top?.vendor ?? '—')}</span>
+            <span className="tnum rounded-full px-1.5 py-0.5 text-[10.5px] font-bold" style={{ background: s >= 0.5 ? '#FDECEA' : '#E6F3EC', color: s >= 0.5 ? '#D91701' : '#00973D' }}>
+              {pct(s * 100, 0)}
+            </span>
+          </div>
+        );
+      },
+    },
+    { key: 'count', header: 'Suppliers', align: 'right', sortable: true, sortValue: (m) => m.vendorCount, render: (m) => <span className="tnum font-semibold text-fdc-slate">{m.vendorCount}</span> },
+    { key: 'saving', header: 'Price-match saving', align: 'right', sortable: true, sortValue: (m) => priceGaps.byMaterial[m.key].headlineSaving, render: (m) => <span className="tnum font-bold text-fdc-orange">{money(priceGaps.byMaterial[m.key].headlineSaving)}</span> },
+    {
+      key: 'terms', header: 'Weakest terms',
+      render: (m) => {
+        const worst = worstByMaterial(m.displayName);
+        return worst ? (
+          <Badge color={worst.termCategory === 'advance' ? '#D91701' : '#F36D06'}>
+            {worst.termCategory === 'advance' ? '100% advance' : 'Immediate'} · {cleanName(worst.vendor)}
+          </Badge>
+        ) : (
+          <span className="text-[11.5px] text-fdc-grey">All on credit · {unitShort(m.primaryUnit)}</span>
+        );
+      },
+    },
+  ];
+
   return (
-    <div className="fdc-scroll overflow-x-auto">
-      <table className="w-full border-collapse text-[12.5px]">
-        <thead>
-          <tr className="bg-fdc-green-dark text-[11px] uppercase tracking-wide text-white">
-            <th className="px-4 py-2.5 text-left font-semibold">Material</th>
-            <th className="px-3 py-2.5 text-right font-semibold">Annual spend</th>
-            <th className="px-3 py-2.5 text-left font-semibold">Top supplier (share)</th>
-            <th className="px-3 py-2.5 text-right font-semibold">Suppliers</th>
-            <th className="px-3 py-2.5 text-right font-semibold">Price-match saving</th>
-            <th className="px-3 py-2.5 text-left font-semibold">Weakest terms</th>
-          </tr>
-        </thead>
-        <tbody>
-          {materials.map((m, i) => {
-            const g = priceGaps.byMaterial[m.key];
-            const top = m.vendors[0];
-            const share = top ? top.spend / m.totalNetSpend : 0;
-            const worst = worstByMaterial(m.displayName);
-            return (
-              <tr
-                key={m.key}
-                onClick={() => onNavigate?.('price')}
-                className="cursor-pointer transition-colors hover:bg-fdc-green/[0.06]"
-                style={{ background: i % 2 ? '#F5F5F5' : '#E7EEEA' }}
-              >
-                <td className="px-4 py-3">
-                  <div className="flex items-center gap-2">
-                    <span className="h-3 w-3 rounded-sm" style={{ background: MATERIAL_COLOR[m.key] }} />
-                    <div>
-                      <div className="font-bold text-fdc-ink">{m.displayName}</div>
-                      <div className="text-[11px] text-fdc-grey">{m.plainName}</div>
-                    </div>
-                  </div>
-                </td>
-                <td className="tnum px-3 py-3 text-right font-bold text-fdc-ink">{crore(m.totalNetSpend)}</td>
-                <td className="px-3 py-3">
-                  <div className="flex items-center gap-1.5">
-                    <span className="h-2 w-2 rounded-sm" style={{ background: top?.color }} />
-                    <span className="font-semibold text-fdc-slate">{cleanName(top?.vendor ?? '—')}</span>
-                    <span
-                      className="tnum rounded-full px-1.5 py-0.5 text-[10.5px] font-bold"
-                      style={{ background: share >= 0.5 ? '#FDECEA' : '#E6F3EC', color: share >= 0.5 ? '#D91701' : '#00973D' }}
-                    >
-                      {pct(share * 100, 0)}
-                    </span>
-                  </div>
-                </td>
-                <td className="tnum px-3 py-3 text-right font-semibold text-fdc-slate">{m.vendorCount}</td>
-                <td className="tnum px-3 py-3 text-right font-bold" style={{ color: '#F36D06' }}>
-                  {money(g.headlineSaving)}
-                </td>
-                <td className="px-3 py-3">
-                  {worst ? (
-                    <Badge color={worst.termCategory === 'advance' ? '#D91701' : '#F36D06'}>
-                      {worst.termCategory === 'advance' ? '100% advance' : 'Immediate'} · {cleanName(worst.vendor)}
-                    </Badge>
-                  ) : (
-                    <span className="text-[11.5px] text-fdc-grey">All on credit · {unitShort(m.primaryUnit)}</span>
-                  )}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+    <div className="px-2 pb-3">
+      <Table columns={columns} rows={materials} getKey={(m) => m.key} initialSort={{ key: 'spend', dir: 'desc' }} onRowClick={() => onNavigate?.('price')} stickyHeader={false} />
     </div>
   );
 }

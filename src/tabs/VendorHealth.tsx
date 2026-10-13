@@ -4,7 +4,7 @@ import {
   Lightbulb, AlertTriangle, Eye, ExternalLink, Scale, Gauge, Activity, Database,
 } from 'lucide-react';
 import type { AppData, Vendor, VendorFin, Lever, ProbeProfile, ProbeYear, ProbeFlag, ProbeScore } from '../types';
-import { Card, CardHeader, Badge, Pill } from '../components/ui/Card';
+import { Card, CardHeader, PageHeader, Badge, Pill } from '../components/ui/Card';
 import { Table, type Column } from '../components/ui/Table';
 import { Sparkline } from '../components/charts/Sparkline';
 import { money, pct, crore, vendorShort } from '../lib/format';
@@ -95,16 +95,17 @@ export default function VendorHealth({ data }: { data: AppData }) {
 
   return (
     <div className="animate-fade-up">
-      <div className="mb-3 flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h2 className="text-[15px] font-bold text-fdc-ink">Vendor Health</h2>
-          <p className="text-[12.5px] text-fdc-grey">
+      <PageHeader
+        icon={HeartPulse}
+        title="Vendor Health"
+        subtitle={
+          <>
             Real financials for <span className="font-semibold text-fdc-slate">{m.listedResolved} listed</span> +{' '}
             <span className="font-semibold text-fdc-slate">{m.privateRated} private</span> suppliers ({pct((okSpend / totalSpend) * 100, 0)} of spend) ·{' '}
             {m.privateUnrated} not public · listed via Munshot, <span className="font-semibold text-fdc-slate">{probeN} private via Probe42</span> (MCA filings; credit-rating docs cross-check) — a price win should never come from a supplier about to wobble.
-          </p>
-        </div>
-      </div>
+          </>
+        }
+      />
 
       <div className="grid gap-4 lg:grid-cols-5">
         <div className="min-w-0 lg:col-span-3">
@@ -151,7 +152,7 @@ function HealthPanel({ row }: { row: Row }) {
       <div className="mb-3 flex items-start gap-2.5">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl text-white" style={{ background: v.color }}><Factory size={19} /></span>
         <div className="min-w-0">
-          <h3 className="text-[15px] font-extrabold leading-tight text-fdc-ink">{vendorShort(v.name)}</h3>
+          <h3 className="text-[16px] font-extrabold leading-tight text-fdc-ink">{vendorShort(v.name)}</h3>
           <div className="mt-1 flex flex-wrap items-center gap-1">
             {fin?.type === 'listed' ? <Badge color="#2E7CE4"><BadgeCheck size={11} /> Listed{fin.symbol ? ` · ${fin.symbol}` : ''}</Badge>
               : isProbe ? <Badge color="#8E44AD"><Database size={11} /> Private · Probe42</Badge>

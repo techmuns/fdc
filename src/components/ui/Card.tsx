@@ -1,6 +1,33 @@
 import type { ReactNode } from 'react';
 import type { LucideIcon } from 'lucide-react';
 
+/** The one tab-level page header — a consistent opener for every tab:
+ *  title + subtitle on the left, optional controls on the right. */
+export function PageHeader({
+  icon: Icon,
+  title,
+  subtitle,
+  right,
+}: {
+  icon?: LucideIcon;
+  title: ReactNode;
+  subtitle?: ReactNode;
+  right?: ReactNode;
+}) {
+  return (
+    <div className="mb-4 flex flex-wrap items-end justify-between gap-x-4 gap-y-2.5">
+      <div className="min-w-0">
+        <h2 className="flex items-center gap-1.5 text-[16px] font-bold leading-tight text-fdc-ink">
+          {Icon && <Icon size={17} strokeWidth={2.3} className="shrink-0 text-fdc-green" />}
+          <span>{title}</span>
+        </h2>
+        {subtitle && <p className="mt-1 max-w-3xl text-[12.5px] leading-snug text-fdc-grey">{subtitle}</p>}
+      </div>
+      {right && <div className="flex w-full min-w-0 flex-wrap items-center gap-2 sm:w-auto">{right}</div>}
+    </div>
+  );
+}
+
 export function Card({
   children,
   className = '',
