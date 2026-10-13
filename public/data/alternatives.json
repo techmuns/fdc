@@ -1,0 +1,972 @@
+{
+  "generatedAt": "2026-10-13T08:37:54.281Z",
+  "byMaterial": {
+    "dextrose": [
+      {
+        "name": "Gulshan Polyols Ltd",
+        "type": "listed",
+        "role": "producer",
+        "ticker": "GULPOLY",
+        "cin": null,
+        "status": "ok",
+        "fitNote": "Listed starch & polyol maker; established dextrose/sorbitol supplier — a drop-in alternate to Gujarat Ambuja/Sayaji.",
+        "secondSourceFor": "dextrose",
+        "companyName": "Gulshan Polyols Limited",
+        "symbol": "GULPOLY.NS",
+        "metrics": {
+          "revenue": 23590617088,
+          "ebitda": 2800028672,
+          "marketCap": 9930071040,
+          "totalDebt": 3125575936,
+          "ebitdaMargin": 11.87,
+          "netMargin": 6.25,
+          "grossMargin": 36.05,
+          "operatingMargin": 11.63,
+          "debtToEquity": 43.5,
+          "revenueGrowth": 7.9,
+          "earningsGrowth": 306.6,
+          "pe": 6.87,
+          "evEbitda": 4.65,
+          "dividendYield": 92,
+          "currentPrice": 159.69,
+          "yearlyChange": 15.9,
+          "employees": 577,
+          "roce": null,
+          "roe": null
+        },
+        "healthScore": {
+          "value": 56,
+          "grade": "C",
+          "components": [
+            {
+              "label": "Net margin",
+              "raw": 6.25,
+              "score": 42,
+              "weight": 0.3
+            },
+            {
+              "label": "EBITDA margin",
+              "raw": 11.87,
+              "score": 59,
+              "weight": 0.15
+            },
+            {
+              "label": "Revenue growth",
+              "raw": 7.9,
+              "score": 51,
+              "weight": 0.2
+            },
+            {
+              "label": "Low leverage",
+              "raw": 43.5,
+              "score": 78,
+              "weight": 0.2
+            }
+          ],
+          "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        },
+        "source": {
+          "sourceName": "Munshot market-data API",
+          "sourceUrl": "https://fastapi.muns.io",
+          "date": "2026-10-13"
+        },
+        "note": null
+      },
+      {
+        "name": "Sanstar Ltd",
+        "type": "listed",
+        "role": "producer",
+        "ticker": "SANSTAR",
+        "cin": null,
+        "status": "ok",
+        "fitNote": "Recently-listed maize-derivatives specialist (starch, dextrose) — growing capacity.",
+        "secondSourceFor": "dextrose",
+        "companyName": "Sanstar Limited",
+        "symbol": "SANSTAR.NS",
+        "metrics": {
+          "revenue": 8211299840,
+          "ebitda": 506057504,
+          "marketCap": 19436048384,
+          "totalDebt": 199000000,
+          "ebitdaMargin": 6.16,
+          "netMargin": 5.36,
+          "grossMargin": 32.14,
+          "operatingMargin": 4.91,
+          "debtToEquity": 2.87,
+          "revenueGrowth": 22.1,
+          "earningsGrowth": 0,
+          "pe": 39.29,
+          "evEbitda": 33.26,
+          "dividendYield": 0,
+          "currentPrice": 97.05,
+          "yearlyChange": 11.21,
+          "employees": 203,
+          "roce": null,
+          "roe": null
+        },
+        "healthScore": {
+          "value": 63,
+          "grade": "B",
+          "components": [
+            {
+              "label": "Net margin",
+              "raw": 5.36,
+              "score": 36,
+              "weight": 0.3
+            },
+            {
+              "label": "EBITDA margin",
+              "raw": 6.16,
+              "score": 31,
+              "weight": 0.15
+            },
+            {
+              "label": "Revenue growth",
+              "raw": 22.1,
+              "score": 92,
+              "weight": 0.2
+            },
+            {
+              "label": "Low leverage",
+              "raw": 2.87,
+              "score": 99,
+              "weight": 0.2
+            }
+          ],
+          "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        },
+        "source": {
+          "sourceName": "Munshot market-data API",
+          "sourceUrl": "https://fastapi.muns.io",
+          "date": "2026-10-13"
+        },
+        "note": null
+      },
+      {
+        "name": "Roquette India Pvt Ltd",
+        "type": "private",
+        "role": "producer",
+        "ticker": null,
+        "cin": "U15326MH2010PTC310407",
+        "status": "pending",
+        "fitNote": "Indian arm of global starch major Roquette — pharma-grade dextrose/excipients; premium, very reliable.",
+        "secondSourceFor": null,
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
+        "source": {
+          "sourceName": "Probe42",
+          "sourceUrl": "https://probe42.in"
+        },
+        "note": "Financials via Probe42 (gated)."
+      },
+      {
+        "name": "Ingredion India Pvt Ltd",
+        "type": "private",
+        "role": "producer",
+        "ticker": null,
+        "cin": "U51101MH2010PTC208697",
+        "status": "pending",
+        "fitNote": "Global ingredients major; pharma & food dextrose; strong quality systems.",
+        "secondSourceFor": null,
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
+        "source": {
+          "sourceName": "Probe42",
+          "sourceUrl": "https://probe42.in"
+        },
+        "note": "Financials via Probe42 (gated)."
+      },
+      {
+        "name": "Angel Starch & Food Pvt Ltd",
+        "type": "private",
+        "role": "producer",
+        "ticker": null,
+        "cin": "U15320TZ2010PTC015946",
+        "status": "pending",
+        "fitNote": "South-India maize starch/dextrose maker; regional logistics advantage.",
+        "secondSourceFor": null,
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
+        "source": {
+          "sourceName": "Probe42",
+          "sourceUrl": "https://probe42.in"
+        },
+        "note": "Financials via Probe42 (gated)."
+      },
+      {
+        "name": "Bluecraft Agro Pvt Ltd",
+        "type": "private",
+        "role": "producer",
+        "ticker": null,
+        "cin": "U01100HR2016PTC108842",
+        "status": "pending",
+        "fitNote": "North-India starch derivatives; newer entrant.",
+        "secondSourceFor": null,
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
+        "source": {
+          "sourceName": "Probe42",
+          "sourceUrl": "https://probe42.in"
+        },
+        "note": "Financials via Probe42 (gated)."
+      }
+    ],
+    "packaging": [
+      {
+        "name": "Mold-Tek Packaging Ltd",
+        "type": "listed",
+        "role": "rigid-packaging",
+        "ticker": "MOLDTKPAC",
+        "cin": null,
+        "status": "ok",
+        "fitNote": "Listed rigid-plastic leader (pails, containers, pharma); strong, profitable — a robust alternate for bottles/closures.",
+        "secondSourceFor": "packaging",
+        "companyName": "Mold-Tek Packaging Limited",
+        "symbol": "MOLDTKPAC.NS",
+        "metrics": {
+          "revenue": 9465030656,
+          "ebitda": 1826751232,
+          "marketCap": 21804814336,
+          "totalDebt": 2197662976,
+          "ebitdaMargin": 19.3,
+          "netMargin": 8.04,
+          "grossMargin": 44.83,
+          "operatingMargin": 13.08,
+          "debtToEquity": 31.85,
+          "revenueGrowth": 24.9,
+          "earningsGrowth": 14.2,
+          "pe": 28.88,
+          "evEbitda": 13.16,
+          "dividendYield": 91,
+          "currentPrice": 328.1,
+          "yearlyChange": -10.15,
+          "employees": 972,
+          "roce": null,
+          "roe": null
+        },
+        "healthScore": {
+          "value": 79,
+          "grade": "A",
+          "components": [
+            {
+              "label": "Net margin",
+              "raw": 8.04,
+              "score": 54,
+              "weight": 0.3
+            },
+            {
+              "label": "EBITDA margin",
+              "raw": 19.3,
+              "score": 97,
+              "weight": 0.15
+            },
+            {
+              "label": "Revenue growth",
+              "raw": 24.9,
+              "score": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Low leverage",
+              "raw": 31.85,
+              "score": 84,
+              "weight": 0.2
+            }
+          ],
+          "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        },
+        "source": {
+          "sourceName": "Munshot market-data API",
+          "sourceUrl": "https://fastapi.muns.io",
+          "date": "2026-10-13"
+        },
+        "note": null
+      },
+      {
+        "name": "Hitech Corporation Ltd",
+        "type": "listed",
+        "role": "rigid-packaging",
+        "ticker": "HITECHCORP",
+        "cin": null,
+        "status": "ok",
+        "fitNote": "Listed moulded & blow-moulded packaging; broad capability across bottles/caps.",
+        "secondSourceFor": null,
+        "companyName": "Hitech Corporation Limited",
+        "symbol": "HITECHCORP.NS",
+        "metrics": {
+          "revenue": 7011659776,
+          "ebitda": 783537024,
+          "marketCap": 6410829824,
+          "totalDebt": 1373485952,
+          "ebitdaMargin": 11.18,
+          "netMargin": 2.5,
+          "grossMargin": 38.9,
+          "operatingMargin": 5.75,
+          "debtToEquity": 48.25,
+          "revenueGrowth": 36.8,
+          "earningsGrowth": 50,
+          "pe": 37.03,
+          "evEbitda": 9.44,
+          "dividendYield": 28,
+          "currentPrice": 373.25,
+          "yearlyChange": 89.49,
+          "employees": 633,
+          "roce": null,
+          "roe": null
+        },
+        "healthScore": {
+          "value": 57,
+          "grade": "C",
+          "components": [
+            {
+              "label": "Net margin",
+              "raw": 2.5,
+              "score": 17,
+              "weight": 0.3
+            },
+            {
+              "label": "EBITDA margin",
+              "raw": 11.18,
+              "score": 56,
+              "weight": 0.15
+            },
+            {
+              "label": "Revenue growth",
+              "raw": 36.8,
+              "score": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Low leverage",
+              "raw": 48.25,
+              "score": 76,
+              "weight": 0.2
+            }
+          ],
+          "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        },
+        "source": {
+          "sourceName": "Munshot market-data API",
+          "sourceUrl": "https://fastapi.muns.io",
+          "date": "2026-10-13"
+        },
+        "note": null
+      },
+      {
+        "name": "Pearl Polymers Ltd",
+        "type": "listed",
+        "role": "rigid-packaging",
+        "ticker": "PEARLPOLY",
+        "cin": null,
+        "status": "ok",
+        "fitNote": "Listed PET bottle/jar specialist (Pearlpet) — direct fit for PET bottles.",
+        "secondSourceFor": null,
+        "companyName": "Pearl Polymers Limited",
+        "symbol": "PEARLPOLY.NS",
+        "metrics": {
+          "revenue": 198256000,
+          "ebitda": -72575504,
+          "marketCap": 287708992,
+          "totalDebt": 0,
+          "ebitdaMargin": -36.61,
+          "netMargin": -26.8,
+          "grossMargin": 40.53,
+          "operatingMargin": -29.54,
+          "debtToEquity": 0,
+          "revenueGrowth": 2.5,
+          "earningsGrowth": -18.6,
+          "pe": 0,
+          "evEbitda": -0.65,
+          "dividendYield": 0,
+          "currentPrice": 17.09,
+          "yearlyChange": -42.6,
+          "employees": 66,
+          "roce": null,
+          "roe": null
+        },
+        "healthScore": {
+          "value": 32,
+          "grade": "D",
+          "components": [
+            {
+              "label": "Net margin",
+              "raw": -26.8,
+              "score": 0,
+              "weight": 0.3
+            },
+            {
+              "label": "EBITDA margin",
+              "raw": -36.61,
+              "score": 0,
+              "weight": 0.15
+            },
+            {
+              "label": "Revenue growth",
+              "raw": 2.5,
+              "score": 36,
+              "weight": 0.2
+            },
+            {
+              "label": "Low leverage",
+              "raw": 0,
+              "score": 100,
+              "weight": 0.2
+            }
+          ],
+          "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        },
+        "source": {
+          "sourceName": "Munshot market-data API",
+          "sourceUrl": "https://fastapi.muns.io",
+          "date": "2026-10-13"
+        },
+        "note": null
+      },
+      {
+        "name": "Manjushree Technopack Ltd",
+        "type": "private",
+        "role": "rigid-packaging",
+        "ticker": null,
+        "cin": null,
+        "status": "cin-unresolved",
+        "fitNote": "India's largest rigid-plastic packaging converter — pharma bottles, caps, preforms. Top second-source candidate.",
+        "secondSourceFor": "packaging",
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
+        "source": {
+          "sourceName": "Probe42",
+          "sourceUrl": "https://probe42.in"
+        },
+        "note": "CIN unresolved."
+      },
+      {
+        "name": "Pravesha Industries Pvt Ltd",
+        "type": "private",
+        "role": "rigid-packaging",
+        "ticker": null,
+        "cin": "U29219TG1993PTC016451",
+        "status": "pending",
+        "fitNote": "Pharma packaging converter; bottles & closures.",
+        "secondSourceFor": null,
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
+        "source": {
+          "sourceName": "Probe42",
+          "sourceUrl": "https://probe42.in"
+        },
+        "note": "Financials via Probe42 (gated)."
+      }
+    ],
+    "laminates": [
+      {
+        "name": "Huhtamaki India Ltd",
+        "type": "listed",
+        "role": "converter",
+        "ticker": "HUHTAMAKI",
+        "cin": null,
+        "status": "ok",
+        "fitNote": "Listed flexible-packaging converter (already a tiny FDC supplier) — a proven, scalable second source for laminate sachets.",
+        "secondSourceFor": "laminates",
+        "companyName": "Huhtamaki India Limited",
+        "symbol": "HUHTAMAKI.NS",
+        "metrics": {
+          "revenue": 26116399104,
+          "ebitda": 2173799936,
+          "marketCap": 17121579008,
+          "totalDebt": 1445600000,
+          "ebitdaMargin": 8.32,
+          "netMargin": 5.22,
+          "grossMargin": 32.7,
+          "operatingMargin": 8.11,
+          "debtToEquity": 10.72,
+          "revenueGrowth": 22.5,
+          "earningsGrowth": 75.5,
+          "pe": 12.73,
+          "evEbitda": 6.78,
+          "dividendYield": 88,
+          "currentPrice": 226.61,
+          "yearlyChange": -2.41,
+          "employees": 2500,
+          "roce": null,
+          "roe": null
+        },
+        "healthScore": {
+          "value": 64,
+          "grade": "B",
+          "components": [
+            {
+              "label": "Net margin",
+              "raw": 5.22,
+              "score": 35,
+              "weight": 0.3
+            },
+            {
+              "label": "EBITDA margin",
+              "raw": 8.32,
+              "score": 42,
+              "weight": 0.15
+            },
+            {
+              "label": "Revenue growth",
+              "raw": 22.5,
+              "score": 93,
+              "weight": 0.2
+            },
+            {
+              "label": "Low leverage",
+              "raw": 10.72,
+              "score": 95,
+              "weight": 0.2
+            }
+          ],
+          "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        },
+        "source": {
+          "sourceName": "Munshot market-data API",
+          "sourceUrl": "https://fastapi.muns.io",
+          "date": "2026-10-13"
+        },
+        "note": null
+      },
+      {
+        "name": "UFLEX Ltd",
+        "type": "listed",
+        "role": "converter+film",
+        "ticker": "UFLEX",
+        "cin": null,
+        "status": "ok",
+        "fitNote": "Listed flexibles giant — both film substrate AND conversion; can second-source GEEP at scale.",
+        "secondSourceFor": "laminates",
+        "companyName": "Uflex Limited",
+        "symbol": "UFLEX.NS",
+        "metrics": {
+          "revenue": 164920033280,
+          "ebitda": 22030196736,
+          "marketCap": 44760289280,
+          "totalDebt": 101523062784,
+          "ebitdaMargin": 13.36,
+          "netMargin": 4.14,
+          "grossMargin": 41.01,
+          "operatingMargin": 12.99,
+          "debtToEquity": 124.99,
+          "revenueGrowth": 35.5,
+          "earningsGrowth": 630,
+          "pe": 6.69,
+          "evEbitda": 6.22,
+          "dividendYield": 47,
+          "currentPrice": 619.85,
+          "yearlyChange": 14.31,
+          "employees": 7772,
+          "roce": null,
+          "roe": null
+        },
+        "healthScore": {
+          "value": 54,
+          "grade": "C",
+          "components": [
+            {
+              "label": "Net margin",
+              "raw": 4.14,
+              "score": 28,
+              "weight": 0.3
+            },
+            {
+              "label": "EBITDA margin",
+              "raw": 13.36,
+              "score": 67,
+              "weight": 0.15
+            },
+            {
+              "label": "Revenue growth",
+              "raw": 35.5,
+              "score": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Low leverage",
+              "raw": 124.99,
+              "score": 38,
+              "weight": 0.2
+            }
+          ],
+          "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        },
+        "source": {
+          "sourceName": "Munshot market-data API",
+          "sourceUrl": "https://fastapi.muns.io",
+          "date": "2026-10-13"
+        },
+        "note": null
+      },
+      {
+        "name": "Ester Industries Ltd",
+        "type": "listed",
+        "role": "film-maker",
+        "ticker": "ESTER",
+        "cin": null,
+        "status": "ok",
+        "fitNote": "Listed BOPET film maker — substrate supply, not finished laminate; use for film cost benchmarking.",
+        "secondSourceFor": null,
+        "companyName": "Ester Industries Limited",
+        "symbol": "ESTER.NS",
+        "metrics": {
+          "revenue": 14691475456,
+          "ebitda": 1229811200,
+          "marketCap": 9619131392,
+          "totalDebt": 7290094080,
+          "ebitdaMargin": 8.37,
+          "netMargin": -0.12,
+          "grossMargin": 35.48,
+          "operatingMargin": 7.24,
+          "debtToEquity": 93.14,
+          "revenueGrowth": 27.8,
+          "earningsGrowth": 0,
+          "pe": 0,
+          "evEbitda": 12.6,
+          "dividendYield": 27,
+          "currentPrice": 92.23,
+          "yearlyChange": -19.5,
+          "employees": 446,
+          "roce": null,
+          "roe": null
+        },
+        "healthScore": {
+          "value": 43,
+          "grade": "D",
+          "components": [
+            {
+              "label": "Net margin",
+              "raw": -0.12,
+              "score": 0,
+              "weight": 0.3
+            },
+            {
+              "label": "EBITDA margin",
+              "raw": 8.37,
+              "score": 42,
+              "weight": 0.15
+            },
+            {
+              "label": "Revenue growth",
+              "raw": 27.8,
+              "score": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Low leverage",
+              "raw": 93.14,
+              "score": 53,
+              "weight": 0.2
+            }
+          ],
+          "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        },
+        "source": {
+          "sourceName": "Munshot market-data API",
+          "sourceUrl": "https://fastapi.muns.io",
+          "date": "2026-10-13"
+        },
+        "note": null
+      },
+      {
+        "name": "Cosmo First Ltd",
+        "type": "listed",
+        "role": "film-maker",
+        "ticker": "COSMOFIRST",
+        "cin": null,
+        "status": "ok",
+        "fitNote": "Listed BOPP/specialty film maker — substrate, not conversion.",
+        "secondSourceFor": null,
+        "companyName": "Cosmo First Limited",
+        "symbol": "COSMOFIRST.NS",
+        "metrics": {
+          "revenue": 40042299392,
+          "ebitda": 4101224960,
+          "marketCap": 21593290752,
+          "totalDebt": 16803800064,
+          "ebitdaMargin": 10.24,
+          "netMargin": 4.17,
+          "grossMargin": 34.68,
+          "operatingMargin": 8.41,
+          "debtToEquity": 103.94,
+          "revenueGrowth": 45.7,
+          "earningsGrowth": 25.2,
+          "pe": 13.65,
+          "evEbitda": 8.5,
+          "dividendYield": 47,
+          "currentPrice": 831.85,
+          "yearlyChange": -9.7,
+          "employees": 1568,
+          "roce": null,
+          "roe": null
+        },
+        "healthScore": {
+          "value": 54,
+          "grade": "C",
+          "components": [
+            {
+              "label": "Net margin",
+              "raw": 4.17,
+              "score": 28,
+              "weight": 0.3
+            },
+            {
+              "label": "EBITDA margin",
+              "raw": 10.24,
+              "score": 51,
+              "weight": 0.15
+            },
+            {
+              "label": "Revenue growth",
+              "raw": 45.7,
+              "score": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Low leverage",
+              "raw": 103.94,
+              "score": 48,
+              "weight": 0.2
+            }
+          ],
+          "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        },
+        "source": {
+          "sourceName": "Munshot market-data API",
+          "sourceUrl": "https://fastapi.muns.io",
+          "date": "2026-10-13"
+        },
+        "note": null
+      },
+      {
+        "name": "Polyplex Corporation Ltd",
+        "type": "listed",
+        "role": "film-maker",
+        "ticker": "POLYPLEX",
+        "cin": null,
+        "status": "ok",
+        "fitNote": "Listed PET film major — substrate benchmark.",
+        "secondSourceFor": null,
+        "companyName": "Polyplex Corporation Limited",
+        "symbol": "POLYPLEX.NS",
+        "metrics": {
+          "revenue": 76008103936,
+          "ebitda": 5391079424,
+          "marketCap": 32783691776,
+          "totalDebt": 9353100288,
+          "ebitdaMargin": 7.09,
+          "netMargin": 2.04,
+          "grossMargin": 31.74,
+          "operatingMargin": 10.73,
+          "debtToEquity": 13.29,
+          "revenueGrowth": 29.6,
+          "earningsGrowth": 0,
+          "pe": 20.37,
+          "evEbitda": 10.8,
+          "dividendYield": 20,
+          "currentPrice": 1006,
+          "yearlyChange": 2.97,
+          "employees": 1022,
+          "roce": null,
+          "roe": null
+        },
+        "healthScore": {
+          "value": 57,
+          "grade": "C",
+          "components": [
+            {
+              "label": "Net margin",
+              "raw": 2.04,
+              "score": 14,
+              "weight": 0.3
+            },
+            {
+              "label": "EBITDA margin",
+              "raw": 7.09,
+              "score": 35,
+              "weight": 0.15
+            },
+            {
+              "label": "Revenue growth",
+              "raw": 29.6,
+              "score": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Low leverage",
+              "raw": 13.29,
+              "score": 93,
+              "weight": 0.2
+            }
+          ],
+          "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        },
+        "source": {
+          "sourceName": "Munshot market-data API",
+          "sourceUrl": "https://fastapi.muns.io",
+          "date": "2026-10-13"
+        },
+        "note": null
+      },
+      {
+        "name": "Jindal Poly Films Ltd",
+        "type": "listed",
+        "role": "film-maker",
+        "ticker": "JINDALPOLY",
+        "cin": null,
+        "status": "ok",
+        "fitNote": "Listed BOPET/BOPP film major — substrate benchmark.",
+        "secondSourceFor": null,
+        "companyName": "Jindal Poly Films Limited",
+        "symbol": "JINDALPOLY.NS",
+        "metrics": {
+          "revenue": 29018603520,
+          "ebitda": -4695441920,
+          "marketCap": 27894132736,
+          "totalDebt": 40037449728,
+          "ebitdaMargin": -16.18,
+          "netMargin": -36.53,
+          "grossMargin": 21.21,
+          "operatingMargin": -36.51,
+          "debtToEquity": 131.57,
+          "revenueGrowth": -52.5,
+          "earningsGrowth": 0,
+          "pe": 0,
+          "evEbitda": -8.78,
+          "dividendYield": 0,
+          "currentPrice": 637.05,
+          "yearlyChange": 14.23,
+          "employees": 346,
+          "roce": null,
+          "roe": null
+        },
+        "healthScore": {
+          "value": 8,
+          "grade": "D",
+          "components": [
+            {
+              "label": "Net margin",
+              "raw": -36.53,
+              "score": 0,
+              "weight": 0.3
+            },
+            {
+              "label": "EBITDA margin",
+              "raw": -16.18,
+              "score": 0,
+              "weight": 0.15
+            },
+            {
+              "label": "Revenue growth",
+              "raw": -52.5,
+              "score": 0,
+              "weight": 0.2
+            },
+            {
+              "label": "Low leverage",
+              "raw": 131.57,
+              "score": 34,
+              "weight": 0.2
+            }
+          ],
+          "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+        },
+        "source": {
+          "sourceName": "Munshot market-data API",
+          "sourceUrl": "https://fastapi.muns.io",
+          "date": "2026-10-13"
+        },
+        "note": null
+      },
+      {
+        "name": "Constantia Parikh Packaging Pvt Ltd",
+        "type": "private",
+        "role": "converter",
+        "ticker": null,
+        "cin": "U25209GJ1999PTC036763",
+        "status": "pending",
+        "fitNote": "Global Constantia group's India converter — pharma blister/sachet laminates; strong second-source for GEEP.",
+        "secondSourceFor": "laminates",
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
+        "source": {
+          "sourceName": "Probe42",
+          "sourceUrl": "https://probe42.in"
+        },
+        "note": "Financials via Probe42 (gated)."
+      },
+      {
+        "name": "Amcor Flexibles India Pvt Ltd",
+        "type": "private",
+        "role": "converter",
+        "ticker": null,
+        "cin": "U27203MH2006FTC166397",
+        "status": "pending",
+        "fitNote": "Global Amcor's India arm — high-end pharma laminates; premium but very reliable.",
+        "secondSourceFor": "laminates",
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
+        "source": {
+          "sourceName": "Probe42",
+          "sourceUrl": "https://probe42.in"
+        },
+        "note": "Financials via Probe42 (gated)."
+      },
+      {
+        "name": "Paharpur 3P (Positive Packaging)",
+        "type": "private",
+        "role": "converter",
+        "ticker": null,
+        "cin": "U45400WB2014PTC200219",
+        "status": "pending",
+        "fitNote": "Large Indian flexible-packaging converter — sachet & pouch laminates.",
+        "secondSourceFor": null,
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
+        "source": {
+          "sourceName": "Probe42",
+          "sourceUrl": "https://probe42.in"
+        },
+        "note": "Financials via Probe42 (gated)."
+      },
+      {
+        "name": "SB Packagings Ltd",
+        "type": "private",
+        "role": "converter",
+        "ticker": null,
+        "cin": "U25202GJ1989PTC153102",
+        "status": "pending",
+        "fitNote": "Flexible laminate converter; sachets & pouches.",
+        "secondSourceFor": null,
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
+        "source": {
+          "sourceName": "Probe42",
+          "sourceUrl": "https://probe42.in"
+        },
+        "note": "Financials via Probe42 (gated)."
+      }
+    ]
+  },
+  "note": "Alternate suppliers to de-risk single-source materials and benchmark price. Listed alternates benchmarked live (Munshot); private via Probe42 (gated)."
+}

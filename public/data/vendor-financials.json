@@ -1,0 +1,1302 @@
+{
+  "generatedAt": "2026-10-13T08:37:42.431Z",
+  "sources": {
+    "listed": "Munshot market-data API (free)",
+    "private": "Probe42 (gated on key + VPN)"
+  },
+  "manifest": {
+    "listedResolved": 6,
+    "privateCached": 0,
+    "privatePending": 11,
+    "total": 27
+  },
+  "vendors": {
+    "geep-industries-india": {
+      "vendorKey": "geep-industries-india",
+      "name": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+      "type": "private",
+      "status": "pending",
+      "companyName": "GEEP Industries (India) Pvt Ltd",
+      "symbol": null,
+      "exchange": null,
+      "cin": "U74110MH2002PTC137887",
+      "materialsSupplied": [
+        "Laminates"
+      ],
+      "fdcSpend": 283131033.16,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "levers": [
+        {
+          "type": "risk",
+          "title": "Single-source: 67% of Laminates runs through them",
+          "detail": "They're our dominant source for Laminates (₹28.31 Cr). Qualify a second supplier — it cuts risk and hands us negotiating leverage.",
+          "evidence": [
+            {
+              "label": "Share of material",
+              "value": "67%"
+            },
+            {
+              "label": "Spend",
+              "value": "₹28.31 Cr"
+            }
+          ]
+        },
+        {
+          "type": "opportunity",
+          "title": "Paying ₹32.69 L/yr above our cheapest supplier",
+          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "evidence": [
+            {
+              "label": "Excess vs best",
+              "value": "₹32.69 L"
+            }
+          ]
+        }
+      ]
+    },
+    "gujarat-ambuja-exports": {
+      "vendorKey": "gujarat-ambuja-exports",
+      "name": "GUJARAT AMBUJA EXPORTS LIMITED",
+      "type": "listed",
+      "status": "ok",
+      "companyName": "Gujarat Ambuja Exports Limited",
+      "symbol": "GAEL.NS",
+      "exchange": "NSI",
+      "cin": null,
+      "materialsSupplied": [
+        "Dextrose"
+      ],
+      "fdcSpend": 212123478,
+      "metrics": {
+        "revenue": 60315901952,
+        "ebitda": 6083474944,
+        "marketCap": 79749062656,
+        "totalDebt": 4409999872,
+        "ebitdaMargin": 10.09,
+        "netMargin": 6.9,
+        "grossMargin": 27.73,
+        "operatingMargin": 12.46,
+        "debtToEquity": 13.38,
+        "revenueGrowth": 23.5,
+        "earningsGrowth": 171.1,
+        "pe": 19.58,
+        "evEbitda": 11.9,
+        "dividendYield": 18,
+        "currentPrice": 173.87,
+        "yearlyChange": 60.63,
+        "employees": 2245,
+        "roce": null,
+        "roe": null
+      },
+      "healthScore": {
+        "value": 70,
+        "grade": "B",
+        "components": [
+          {
+            "label": "Net margin",
+            "raw": 6.9,
+            "score": 46,
+            "weight": 0.3
+          },
+          {
+            "label": "EBITDA margin",
+            "raw": 10.09,
+            "score": 50,
+            "weight": 0.15
+          },
+          {
+            "label": "Revenue growth",
+            "raw": 23.5,
+            "score": 96,
+            "weight": 0.2
+          },
+          {
+            "label": "Low leverage",
+            "raw": 13.38,
+            "score": 93,
+            "weight": 0.2
+          }
+        ],
+        "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+      },
+      "source": {
+        "sourceName": "Munshot market-data API",
+        "sourceUrl": "https://fastapi.muns.io",
+        "date": "2026-10-13"
+      },
+      "note": null,
+      "levers": [
+        {
+          "type": "opportunity",
+          "title": "Growing 23.5%/yr — trade volume for price",
+          "detail": "Fast top-line growth means they value new volume. Offer a committed higher volume in return for a lower unit price.",
+          "evidence": [
+            {
+              "label": "Revenue growth",
+              "value": "23.5%"
+            }
+          ]
+        },
+        {
+          "type": "risk",
+          "title": "Single-source: 56% of Dextrose runs through them",
+          "detail": "They're our dominant source for Dextrose (₹21.21 Cr). Qualify a second supplier — it cuts risk and hands us negotiating leverage.",
+          "evidence": [
+            {
+              "label": "Share of material",
+              "value": "56%"
+            },
+            {
+              "label": "Spend",
+              "value": "₹21.21 Cr"
+            }
+          ]
+        },
+        {
+          "type": "opportunity",
+          "title": "Paying ₹1.26 Cr/yr above our cheapest supplier",
+          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "evidence": [
+            {
+              "label": "Excess vs best",
+              "value": "₹1.26 Cr"
+            }
+          ]
+        }
+      ]
+    },
+    "sayaji-industries": {
+      "vendorKey": "sayaji-industries",
+      "name": "Sayaji Industries Limited",
+      "type": "listed",
+      "status": "ok",
+      "companyName": "Sayaji Industries Limited",
+      "symbol": "SAYAJIIND.NS",
+      "exchange": "NSI",
+      "cin": null,
+      "materialsSupplied": [
+        "Dextrose"
+      ],
+      "fdcSpend": 150284312.5,
+      "metrics": {
+        "revenue": 10878784512,
+        "ebitda": 532790016,
+        "marketCap": 2907200000,
+        "totalDebt": 2269750016,
+        "ebitdaMargin": 4.9,
+        "netMargin": 1.12,
+        "grossMargin": 28.63,
+        "operatingMargin": 4.28,
+        "debtToEquity": 236.51,
+        "revenueGrowth": 5.9,
+        "earningsGrowth": 0,
+        "pe": 3.93,
+        "evEbitda": 9.73,
+        "dividendYield": 0,
+        "currentPrice": 115,
+        "yearlyChange": 4.83,
+        "employees": 779,
+        "roce": null,
+        "roe": null
+      },
+      "healthScore": {
+        "value": 17,
+        "grade": "D",
+        "components": [
+          {
+            "label": "Net margin",
+            "raw": 1.12,
+            "score": 7,
+            "weight": 0.3
+          },
+          {
+            "label": "EBITDA margin",
+            "raw": 4.9,
+            "score": 25,
+            "weight": 0.15
+          },
+          {
+            "label": "Revenue growth",
+            "raw": 5.9,
+            "score": 45,
+            "weight": 0.2
+          },
+          {
+            "label": "Low leverage",
+            "raw": 236.51,
+            "score": 0,
+            "weight": 0.2
+          }
+        ],
+        "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+      },
+      "source": {
+        "sourceName": "Munshot market-data API",
+        "sourceUrl": "https://fastapi.muns.io",
+        "date": "2026-10-13"
+      },
+      "note": null,
+      "levers": [
+        {
+          "type": "opportunity",
+          "title": "We're a meaningful customer — 1.38% of their revenue",
+          "detail": "Our ₹15.03 Cr/yr is a real slice of their ₹1087.88 Cr revenue. That volume is leverage — ask for a price or terms concession to keep it.",
+          "evidence": [
+            {
+              "label": "Our spend",
+              "value": "₹15.03 Cr"
+            },
+            {
+              "label": "Their revenue",
+              "value": "₹1087.88 Cr"
+            },
+            {
+              "label": "Share",
+              "value": "1.38%"
+            }
+          ]
+        },
+        {
+          "type": "watch",
+          "title": "Thin 1.1% margin — press terms, not price",
+          "detail": "Margins are slim, so deep price cuts risk their stability (and our supply). Win on payment terms, volume or logistics instead.",
+          "evidence": [
+            {
+              "label": "Net margin",
+              "value": "1.1%"
+            }
+          ]
+        },
+        {
+          "type": "risk",
+          "title": "Carrying debt (D/E 2.37x) — watch continuity, offer cash",
+          "detail": "A geared balance sheet is a supply-continuity watch — but it also means they value cash. Offer faster payment for a discount.",
+          "evidence": [
+            {
+              "label": "Debt / equity",
+              "value": "2.37x"
+            },
+            {
+              "label": "Total debt",
+              "value": "₹226.98 Cr"
+            }
+          ]
+        }
+      ]
+    },
+    "shrinath-roto-pack": {
+      "vendorKey": "shrinath-roto-pack",
+      "name": "Shrinath Roto Pack Pvt Ltd",
+      "type": "private",
+      "status": "pending",
+      "companyName": "Shrinath Rotopack Pvt Ltd",
+      "symbol": null,
+      "exchange": null,
+      "cin": "U25209TG2006PTC050109",
+      "materialsSupplied": [
+        "Laminates"
+      ],
+      "fdcSpend": 64718905.6,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "levers": []
+    },
+    "chemco-plastic-industries": {
+      "vendorKey": "chemco-plastic-industries",
+      "name": "Chemco Plastic Industries Pvt. Ltd",
+      "type": "private",
+      "status": "pending",
+      "companyName": "Chemco Plastic Industries Pvt Ltd",
+      "symbol": null,
+      "exchange": null,
+      "cin": "U25209MH1996PTC096963",
+      "materialsSupplied": [
+        "Rigid plastic packaging"
+      ],
+      "fdcSpend": 54915815.2,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "levers": []
+    },
+    "tetrapak-india": {
+      "vendorKey": "tetrapak-india",
+      "name": "Tetrapak India Private limited.",
+      "type": "private",
+      "status": "pending",
+      "companyName": "Tetra Pak India Pvt Ltd",
+      "symbol": null,
+      "exchange": null,
+      "cin": "U21014PN1987PTC012926",
+      "materialsSupplied": [
+        "Laminates"
+      ],
+      "fdcSpend": 54634604.27,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "levers": [
+        {
+          "type": "opportunity",
+          "title": "We pay them on delivery",
+          "detail": "Moving to standard 30-day credit frees working capital (~₹44.91 L). Our strongest, simplest ask.",
+          "evidence": [
+            {
+              "label": "Current terms",
+              "value": "Immediate"
+            },
+            {
+              "label": "Cash if 30-day",
+              "value": "₹44.91 L"
+            }
+          ]
+        },
+        {
+          "type": "watch",
+          "title": "High goods-receipt reversal rate (22%)",
+          "detail": "22% of their receipts were later reversed — raise quality/paperwork before it costs more.",
+          "evidence": [
+            {
+              "label": "Return rate",
+              "value": "22%"
+            }
+          ]
+        }
+      ]
+    },
+    "gls-films-industries-p": {
+      "vendorKey": "gls-films-industries-p",
+      "name": "GLS FILMS INDUSTRIES P. LTD.",
+      "type": "private",
+      "status": "pending",
+      "companyName": "GLS Films Industries Pvt Ltd",
+      "symbol": null,
+      "exchange": null,
+      "cin": "U74950HR2003PTC127247",
+      "materialsSupplied": [
+        "Laminates"
+      ],
+      "fdcSpend": 23080941.6,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "levers": [
+        {
+          "type": "opportunity",
+          "title": "Paying ₹3.91 L/yr above our cheapest supplier",
+          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "evidence": [
+            {
+              "label": "Excess vs best",
+              "value": "₹3.91 L"
+            }
+          ]
+        }
+      ]
+    },
+    "cincorp-international": {
+      "vendorKey": "cincorp-international",
+      "name": "Cincorp International Ltd.",
+      "type": "private",
+      "status": "pending",
+      "companyName": "Cincorp International",
+      "symbol": null,
+      "exchange": null,
+      "cin": "U23209DL2008PLC184638",
+      "materialsSupplied": [
+        "Rigid plastic packaging"
+      ],
+      "fdcSpend": 19488230,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "levers": [
+        {
+          "type": "opportunity",
+          "title": "Paying ₹28.69 L/yr above our cheapest supplier",
+          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "evidence": [
+            {
+              "label": "Excess vs best",
+              "value": "₹28.69 L"
+            }
+          ]
+        }
+      ]
+    },
+    "pik-plastics": {
+      "vendorKey": "pik-plastics",
+      "name": "PIK PLASTICS",
+      "type": "private",
+      "status": "cin-unresolved",
+      "companyName": "PIK Plastics",
+      "symbol": null,
+      "exchange": null,
+      "cin": null,
+      "materialsSupplied": [
+        "Rigid plastic packaging"
+      ],
+      "fdcSpend": 19167682.76,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "levers": [
+        {
+          "type": "opportunity",
+          "title": "Paying ₹8.48 L/yr above our cheapest supplier",
+          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "evidence": [
+            {
+              "label": "Excess vs best",
+              "value": "₹8.48 L"
+            }
+          ]
+        }
+      ]
+    },
+    "premier-plastic": {
+      "vendorKey": "premier-plastic",
+      "name": "Premier Plastic",
+      "type": "private",
+      "status": "cin-unresolved",
+      "companyName": "Premier Plastic",
+      "symbol": null,
+      "exchange": null,
+      "cin": null,
+      "materialsSupplied": [
+        "Rigid plastic packaging"
+      ],
+      "fdcSpend": 12932900,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "levers": [
+        {
+          "type": "opportunity",
+          "title": "Paying ₹16.09 L/yr above our cheapest supplier",
+          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "evidence": [
+            {
+              "label": "Excess vs best",
+              "value": "₹16.09 L"
+            }
+          ]
+        }
+      ]
+    },
+    "mars-plastics": {
+      "vendorKey": "mars-plastics",
+      "name": "Mars Plastics",
+      "type": "private",
+      "status": "cin-unresolved",
+      "companyName": "Mars Plastics",
+      "symbol": null,
+      "exchange": null,
+      "cin": null,
+      "materialsSupplied": [
+        "Rigid plastic packaging"
+      ],
+      "fdcSpend": 12401737,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "levers": []
+    },
+    "sukhjit-corn-products": {
+      "vendorKey": "sukhjit-corn-products",
+      "name": "SUKHJIT CORN PRODUCTS",
+      "type": "listed",
+      "status": "ok",
+      "companyName": "The Sukhjit Starch & Chemicals Limited",
+      "symbol": "SUKHJITS.NS",
+      "exchange": "NSI",
+      "cin": null,
+      "materialsSupplied": [
+        "Dextrose"
+      ],
+      "fdcSpend": 10620000,
+      "metrics": {
+        "revenue": 14589500416,
+        "ebitda": 938726016,
+        "marketCap": 4648169984,
+        "totalDebt": 3454099968,
+        "ebitdaMargin": 6.43,
+        "netMargin": 2.34,
+        "grossMargin": 27.55,
+        "operatingMargin": 5.45,
+        "debtToEquity": 60.88,
+        "revenueGrowth": 7.2,
+        "earningsGrowth": 143.1,
+        "pe": 13.46,
+        "evEbitda": 7.52,
+        "dividendYield": 69,
+        "currentPrice": 148.77,
+        "yearlyChange": -12.19,
+        "employees": 1210,
+        "roce": null,
+        "roe": null
+      },
+      "healthScore": {
+        "value": 39,
+        "grade": "D",
+        "components": [
+          {
+            "label": "Net margin",
+            "raw": 2.34,
+            "score": 16,
+            "weight": 0.3
+          },
+          {
+            "label": "EBITDA margin",
+            "raw": 6.43,
+            "score": 32,
+            "weight": 0.15
+          },
+          {
+            "label": "Revenue growth",
+            "raw": 7.2,
+            "score": 49,
+            "weight": 0.2
+          },
+          {
+            "label": "Low leverage",
+            "raw": 60.88,
+            "score": 70,
+            "weight": 0.2
+          }
+        ],
+        "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+      },
+      "source": {
+        "sourceName": "Munshot market-data API",
+        "sourceUrl": "https://fastapi.muns.io",
+        "date": "2026-10-13"
+      },
+      "note": "Listed group entity: Sukhjit Starch & Chemicals Ltd",
+      "levers": [
+        {
+          "type": "watch",
+          "title": "We're a small customer — 0.07% of their revenue",
+          "detail": "At ₹1.06 Cr we're a rounding error against their ₹1458.95 Cr. Low standalone leverage — bundle volume, commit multi-year, or compete them against an alternate.",
+          "evidence": [
+            {
+              "label": "Our spend",
+              "value": "₹1.06 Cr"
+            },
+            {
+              "label": "Share",
+              "value": "0.07%"
+            }
+          ]
+        },
+        {
+          "type": "watch",
+          "title": "Thin 2.3% margin — press terms, not price",
+          "detail": "Margins are slim, so deep price cuts risk their stability (and our supply). Win on payment terms, volume or logistics instead.",
+          "evidence": [
+            {
+              "label": "Net margin",
+              "value": "2.3%"
+            }
+          ]
+        },
+        {
+          "type": "opportunity",
+          "title": "We pay them 100% in advance",
+          "detail": "Moving to standard 30-day credit frees working capital (~₹8.73 L). Our strongest, simplest ask.",
+          "evidence": [
+            {
+              "label": "Current terms",
+              "value": "100% advance"
+            },
+            {
+              "label": "Cash if 30-day",
+              "value": "₹8.73 L"
+            }
+          ]
+        },
+        {
+          "type": "opportunity",
+          "title": "Paying ₹12.95 L/yr above our cheapest supplier",
+          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "evidence": [
+            {
+              "label": "Excess vs best",
+              "value": "₹12.95 L"
+            }
+          ]
+        }
+      ]
+    },
+    "berry-global-india": {
+      "vendorKey": "berry-global-india",
+      "name": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+      "type": "private",
+      "status": "pending",
+      "companyName": "Berry Global India Pvt Ltd",
+      "symbol": null,
+      "exchange": null,
+      "cin": "U25200KA2021FTC152314",
+      "materialsSupplied": [
+        "Rigid plastic packaging"
+      ],
+      "fdcSpend": 8139040,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "levers": [
+        {
+          "type": "opportunity",
+          "title": "Paying ₹3.37 L/yr above our cheapest supplier",
+          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "evidence": [
+            {
+              "label": "Excess vs best",
+              "value": "₹3.37 L"
+            }
+          ]
+        }
+      ]
+    },
+    "empire-industries-virum-glass": {
+      "vendorKey": "empire-industries-virum-glass",
+      "name": "Empire Industries Ltd - Virum Glass",
+      "type": "listed",
+      "status": "pending",
+      "companyName": null,
+      "symbol": null,
+      "exchange": null,
+      "cin": null,
+      "materialsSupplied": [
+        "Rigid plastic packaging"
+      ],
+      "fdcSpend": 6747015.96,
+      "metrics": null,
+      "healthScore": null,
+      "source": null,
+      "note": "ticker unresolved",
+      "levers": []
+    },
+    "kilitch-healthcare-india": {
+      "vendorKey": "kilitch-healthcare-india",
+      "name": "KILITCH HEALTHCARE INDIA LIMITED",
+      "type": "private",
+      "status": "cin-unresolved",
+      "companyName": "Kilitch Healthcare India Ltd (loan-license)",
+      "symbol": null,
+      "exchange": null,
+      "cin": null,
+      "materialsSupplied": [
+        "Rigid plastic packaging"
+      ],
+      "fdcSpend": 6527256,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "levers": []
+    },
+    "bprex-pharma-packaging-india-p": {
+      "vendorKey": "bprex-pharma-packaging-india-p",
+      "name": "Bprex Pharma Packaging India (P) Limited",
+      "type": "private",
+      "status": "pending",
+      "companyName": "Berry Global India (formerly Bprex)",
+      "symbol": null,
+      "exchange": null,
+      "cin": "U25200KA2021FTC152314",
+      "materialsSupplied": [
+        "Rigid plastic packaging"
+      ],
+      "fdcSpend": 6320592,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "levers": []
+    },
+    "universal-starch-chem-allied": {
+      "vendorKey": "universal-starch-chem-allied",
+      "name": "Universal Starch Chem Allied Ltd",
+      "type": "listed",
+      "status": "ok",
+      "companyName": "Universal Starch-Chem Allied Limited",
+      "symbol": "UNIVSTAR.BO",
+      "exchange": "BSE",
+      "cin": null,
+      "materialsSupplied": [
+        "Dextrose"
+      ],
+      "fdcSpend": 5965000,
+      "metrics": {
+        "revenue": 5146226176,
+        "ebitda": 382657760,
+        "marketCap": 866880000,
+        "totalDebt": 602000000,
+        "ebitdaMargin": 7.44,
+        "netMargin": 3.67,
+        "grossMargin": 23.54,
+        "operatingMargin": 3.7,
+        "debtToEquity": 72.84,
+        "revenueGrowth": 21.4,
+        "earningsGrowth": 0,
+        "pe": 4.58,
+        "evEbitda": 3.72,
+        "dividendYield": 0,
+        "currentPrice": 206.4,
+        "yearlyChange": 41.92,
+        "employees": 376,
+        "roce": null,
+        "roe": null
+      },
+      "healthScore": {
+        "value": 51,
+        "grade": "C",
+        "components": [
+          {
+            "label": "Net margin",
+            "raw": 3.67,
+            "score": 24,
+            "weight": 0.3
+          },
+          {
+            "label": "EBITDA margin",
+            "raw": 7.44,
+            "score": 37,
+            "weight": 0.15
+          },
+          {
+            "label": "Revenue growth",
+            "raw": 21.4,
+            "score": 90,
+            "weight": 0.2
+          },
+          {
+            "label": "Low leverage",
+            "raw": 72.84,
+            "score": 64,
+            "weight": 0.2
+          }
+        ],
+        "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+      },
+      "source": {
+        "sourceName": "Munshot market-data API",
+        "sourceUrl": "https://fastapi.muns.io",
+        "date": "2026-10-13"
+      },
+      "note": "Thinly traded",
+      "levers": [
+        {
+          "type": "watch",
+          "title": "We're a small customer — 0.12% of their revenue",
+          "detail": "At ₹59.65 L we're a rounding error against their ₹514.62 Cr. Low standalone leverage — bundle volume, commit multi-year, or compete them against an alternate.",
+          "evidence": [
+            {
+              "label": "Our spend",
+              "value": "₹59.65 L"
+            },
+            {
+              "label": "Share",
+              "value": "0.12%"
+            }
+          ]
+        },
+        {
+          "type": "opportunity",
+          "title": "Growing 21.4%/yr — trade volume for price",
+          "detail": "Fast top-line growth means they value new volume. Offer a committed higher volume in return for a lower unit price.",
+          "evidence": [
+            {
+              "label": "Revenue growth",
+              "value": "21.4%"
+            }
+          ]
+        },
+        {
+          "type": "opportunity",
+          "title": "Paying ₹14.26 L/yr above our cheapest supplier",
+          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "evidence": [
+            {
+              "label": "Excess vs best",
+              "value": "₹14.26 L"
+            }
+          ]
+        }
+      ]
+    },
+    "suraj-blow-plast": {
+      "vendorKey": "suraj-blow-plast",
+      "name": "Suraj Blow Plast PVt. Ltd.",
+      "type": "private",
+      "status": "cin-unresolved",
+      "companyName": "Suraj Blow Plast Pvt Ltd",
+      "symbol": null,
+      "exchange": null,
+      "cin": null,
+      "materialsSupplied": [
+        "Rigid plastic packaging"
+      ],
+      "fdcSpend": 5816755.8,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "levers": []
+    },
+    "rachana-plastics": {
+      "vendorKey": "rachana-plastics",
+      "name": "Rachana Plastics",
+      "type": "private",
+      "status": "cin-unresolved",
+      "companyName": "Rachana Plastics",
+      "symbol": null,
+      "exchange": null,
+      "cin": null,
+      "materialsSupplied": [
+        "Rigid plastic packaging"
+      ],
+      "fdcSpend": 4437045.02,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "levers": []
+    },
+    "pgp-glass": {
+      "vendorKey": "pgp-glass",
+      "name": "PGP Glass Private Limited",
+      "type": "private",
+      "status": "pending",
+      "companyName": "PGP Glass Pvt Ltd",
+      "symbol": null,
+      "exchange": null,
+      "cin": "U74999MH2020PTC349649",
+      "materialsSupplied": [
+        "Rigid plastic packaging"
+      ],
+      "fdcSpend": 3999276.86,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "levers": []
+    },
+    "abhinav-speciality-foods-llp": {
+      "vendorKey": "abhinav-speciality-foods-llp",
+      "name": "ABHINAV SPECIALITY FOODS LLP",
+      "type": "private",
+      "status": "cin-unresolved",
+      "companyName": "Abhinav Speciality Foods LLP",
+      "symbol": null,
+      "exchange": null,
+      "cin": null,
+      "materialsSupplied": [
+        "Rigid plastic packaging"
+      ],
+      "fdcSpend": 2742049.18,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "levers": []
+    },
+    "triveni-polymers": {
+      "vendorKey": "triveni-polymers",
+      "name": "Triveni Polymers Pvt. Ltd.",
+      "type": "private",
+      "status": "pending",
+      "companyName": "Triveni Polymers Pvt Ltd (Gerresheimer India)",
+      "symbol": null,
+      "exchange": null,
+      "cin": "U74899DL1994PTC060426",
+      "materialsSupplied": [
+        "Rigid plastic packaging"
+      ],
+      "fdcSpend": 2617285,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "levers": []
+    },
+    "tpac-packaging-india": {
+      "vendorKey": "tpac-packaging-india",
+      "name": "TPAC Packaging India Pvt Ltd.",
+      "type": "private",
+      "status": "pending",
+      "companyName": "TPAC Packaging India Pvt Ltd",
+      "symbol": null,
+      "exchange": null,
+      "cin": "U74999MH2017PTC301190",
+      "materialsSupplied": [
+        "Rigid plastic packaging"
+      ],
+      "fdcSpend": 1132453.8,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "Add PROBE42_API_KEY_PROD + VPN and run enrich --live to fetch (1 credit).",
+      "levers": []
+    },
+    "scorpion-containers": {
+      "vendorKey": "scorpion-containers",
+      "name": "SCORPION CONTAINERS PRIVATE LIMITED",
+      "type": "private",
+      "status": "cin-unresolved",
+      "companyName": "Scorpion Containers Pvt Ltd",
+      "symbol": null,
+      "exchange": null,
+      "cin": null,
+      "materialsSupplied": [
+        "Rigid plastic packaging"
+      ],
+      "fdcSpend": 165879.24,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "levers": [
+        {
+          "type": "watch",
+          "title": "High goods-receipt reversal rate (40%)",
+          "detail": "40% of their receipts were later reversed — raise quality/paperwork before it costs more.",
+          "evidence": [
+            {
+              "label": "Return rate",
+              "value": "40%"
+            }
+          ]
+        }
+      ]
+    },
+    "huhtamaki-india": {
+      "vendorKey": "huhtamaki-india",
+      "name": "HUHTAMAKI INDIA LIMITED",
+      "type": "listed",
+      "status": "ok",
+      "companyName": "Huhtamaki India Limited",
+      "symbol": "HUHTAMAKI.NS",
+      "exchange": "NSI",
+      "cin": null,
+      "materialsSupplied": [
+        "Laminates"
+      ],
+      "fdcSpend": 76850,
+      "metrics": {
+        "revenue": 26116399104,
+        "ebitda": 2173799936,
+        "marketCap": 17114025984,
+        "totalDebt": 1445600000,
+        "ebitdaMargin": 8.32,
+        "netMargin": 5.22,
+        "grossMargin": 32.7,
+        "operatingMargin": 8.11,
+        "debtToEquity": 10.72,
+        "revenueGrowth": 22.5,
+        "earningsGrowth": 75.5,
+        "pe": 12.72,
+        "evEbitda": 6.78,
+        "dividendYield": 88,
+        "currentPrice": 226.61,
+        "yearlyChange": -2.41,
+        "employees": 2500,
+        "roce": null,
+        "roe": null
+      },
+      "healthScore": {
+        "value": 64,
+        "grade": "B",
+        "components": [
+          {
+            "label": "Net margin",
+            "raw": 5.22,
+            "score": 35,
+            "weight": 0.3
+          },
+          {
+            "label": "EBITDA margin",
+            "raw": 8.32,
+            "score": 42,
+            "weight": 0.15
+          },
+          {
+            "label": "Revenue growth",
+            "raw": 22.5,
+            "score": 93,
+            "weight": 0.2
+          },
+          {
+            "label": "Low leverage",
+            "raw": 10.72,
+            "score": 95,
+            "weight": 0.2
+          }
+        ],
+        "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+      },
+      "source": {
+        "sourceName": "Munshot market-data API",
+        "sourceUrl": "https://fastapi.muns.io",
+        "date": "2026-10-13"
+      },
+      "note": null,
+      "levers": [
+        {
+          "type": "watch",
+          "title": "We're a small customer — 0.00% of their revenue",
+          "detail": "At ₹76850 we're a rounding error against their ₹2611.64 Cr. Low standalone leverage — bundle volume, commit multi-year, or compete them against an alternate.",
+          "evidence": [
+            {
+              "label": "Our spend",
+              "value": "₹76850"
+            },
+            {
+              "label": "Share",
+              "value": "0.00%"
+            }
+          ]
+        },
+        {
+          "type": "opportunity",
+          "title": "Growing 22.5%/yr — trade volume for price",
+          "detail": "Fast top-line growth means they value new volume. Offer a committed higher volume in return for a lower unit price.",
+          "evidence": [
+            {
+              "label": "Revenue growth",
+              "value": "22.5%"
+            }
+          ]
+        }
+      ]
+    },
+    "uflex": {
+      "vendorKey": "uflex",
+      "name": "UFLEX LIMITED",
+      "type": "listed",
+      "status": "ok",
+      "companyName": "Uflex Limited",
+      "symbol": "UFLEX.NS",
+      "exchange": "NSI",
+      "cin": null,
+      "materialsSupplied": [
+        "Laminates"
+      ],
+      "fdcSpend": 64787.8,
+      "metrics": {
+        "revenue": 164920033280,
+        "ebitda": 22030196736,
+        "marketCap": 44760289280,
+        "totalDebt": 101523062784,
+        "ebitdaMargin": 13.36,
+        "netMargin": 4.14,
+        "grossMargin": 41.01,
+        "operatingMargin": 12.99,
+        "debtToEquity": 124.99,
+        "revenueGrowth": 35.5,
+        "earningsGrowth": 630,
+        "pe": 6.69,
+        "evEbitda": 6.22,
+        "dividendYield": 47,
+        "currentPrice": 619.85,
+        "yearlyChange": 14.31,
+        "employees": 7772,
+        "roce": null,
+        "roe": null
+      },
+      "healthScore": {
+        "value": 54,
+        "grade": "C",
+        "components": [
+          {
+            "label": "Net margin",
+            "raw": 4.14,
+            "score": 28,
+            "weight": 0.3
+          },
+          {
+            "label": "EBITDA margin",
+            "raw": 13.36,
+            "score": 67,
+            "weight": 0.15
+          },
+          {
+            "label": "Revenue growth",
+            "raw": 35.5,
+            "score": 100,
+            "weight": 0.2
+          },
+          {
+            "label": "Low leverage",
+            "raw": 124.99,
+            "score": 38,
+            "weight": 0.2
+          }
+        ],
+        "note": "Computed by FDC from the real metrics shown — an analytical score, not a reported figure."
+      },
+      "source": {
+        "sourceName": "Munshot market-data API",
+        "sourceUrl": "https://fastapi.muns.io",
+        "date": "2026-10-13"
+      },
+      "note": null,
+      "levers": [
+        {
+          "type": "watch",
+          "title": "We're a small customer — 0.00% of their revenue",
+          "detail": "At ₹64788 we're a rounding error against their ₹16492.00 Cr. Low standalone leverage — bundle volume, commit multi-year, or compete them against an alternate.",
+          "evidence": [
+            {
+              "label": "Our spend",
+              "value": "₹64788"
+            },
+            {
+              "label": "Share",
+              "value": "0.00%"
+            }
+          ]
+        },
+        {
+          "type": "opportunity",
+          "title": "Growing 35.5%/yr — trade volume for price",
+          "detail": "Fast top-line growth means they value new volume. Offer a committed higher volume in return for a lower unit price.",
+          "evidence": [
+            {
+              "label": "Revenue growth",
+              "value": "35.5%"
+            }
+          ]
+        },
+        {
+          "type": "risk",
+          "title": "Carrying debt (D/E 1.25x) — watch continuity, offer cash",
+          "detail": "A geared balance sheet is a supply-continuity watch — but it also means they value cash. Offer faster payment for a discount.",
+          "evidence": [
+            {
+              "label": "Debt / equity",
+              "value": "1.25x"
+            },
+            {
+              "label": "Total debt",
+              "value": "₹10152.31 Cr"
+            }
+          ]
+        }
+      ]
+    },
+    "silk-polypack": {
+      "vendorKey": "silk-polypack",
+      "name": "Silk Polypack",
+      "type": "private",
+      "status": "cin-unresolved",
+      "companyName": "Silk Polypack",
+      "symbol": null,
+      "exchange": null,
+      "cin": null,
+      "materialsSupplied": [
+        "Laminates"
+      ],
+      "fdcSpend": 7775,
+      "metrics": null,
+      "healthScore": null,
+      "source": {
+        "sourceName": "Probe42",
+        "sourceUrl": "https://probe42.in",
+        "date": null
+      },
+      "note": "CIN unresolved — resolve via GSTIN→PAN or MCA first.",
+      "levers": []
+    }
+  }
+}

@@ -1,0 +1,94 @@
+name: Probe42 private financials (VPN, paid)
+
+# Fetches private-vendor financials from Probe42 behind the VPN. Manual-only and
+# budget-capped. The script HARD-ABORTS before any call if the exit IP isn't the
+# expected tunnel IP. Cached companies are never re-fetched (no repeat spend).
+#
+# Required secrets: PROBE42_API_KEY_PROD, VPN_OVPN, VPN_USER, VPN_PASS,
+#                   VPN_EXPECTED_EXIT_IP  (optional: PROBE42_PATH_PREFIX)
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'status (free survey) or live (spend credits)'
+        type: choice
+        options: [status, live]
+        default: status
+      limit:
+        description: 'max credits to spend in live mode'
+        default: '20'
+
+permissions:
+  contents: write
+
+jobs:
+  probe42:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+
+      - name: Guard — require Probe42 key
+        env:
+          PROBE42_API_KEY_PROD: ${{ secrets.PROBE42_API_KEY_PROD }}
+        run: |
+          if [ -z "$PROBE42_API_KEY_PROD" ]; then echo "PROBE42_API_KEY_PROD not set — aborting."; exit 1; fi
+
+      - name: Install & connect VPN
+        env:
+          VPN_OVPN: ${{ secrets.VPN_OVPN }}
+          VPN_USER: ${{ secrets.VPN_USER }}
+          VPN_PASS: ${{ secrets.VPN_PASS }}
+        run: |
+          sudo apt-get update && sudo apt-get install -y openvpn
+          printf '%s\n' "$VPN_OVPN" > /tmp/vpn.ovpn
+          printf '%s\n%s\n' "$VPN_USER" "$VPN_PASS" > /tmp/vpn.auth
+          chmod 600 /tmp/vpn.auth
+          sed -i '/^auth-user-pass/d' /tmp/vpn.ovpn
+          echo 'auth-user-pass /tmp/vpn.auth' >> /tmp/vpn.ovpn
+          sudo openvpn --config /tmp/vpn.ovpn --daemon --log /tmp/vpn.log --writepid /tmp/vpn.pid
+          for i in $(seq 1 30); do ip a show tun0 >/dev/null 2>&1 && break; sleep 2; done
+          ip a show tun0 >/dev/null 2>&1 || { echo "tun0 did not come up"; sudo cat /tmp/vpn.log; exit 1; }
+
+      - name: Verify exit IP matches the allow-listed tunnel IP
+        env:
+          VPN_EXPECTED_EXIT_IP: ${{ secrets.VPN_EXPECTED_EXIT_IP }}
+        run: |
+          IP=$(curl -s --max-time 20 https://api.ipify.org)
+          echo "Exit IP: $IP (expected: $VPN_EXPECTED_EXIT_IP)"
+          if [ -z "$VPN_EXPECTED_EXIT_IP" ] || [ "$IP" != "$VPN_EXPECTED_EXIT_IP" ]; then
+            echo "Exit IP does not match — refusing to call Probe42."; exit 1
+          fi
+
+      - name: Run Probe42 enrichment
+        env:
+          PROBE42_API_KEY_PROD: ${{ secrets.PROBE42_API_KEY_PROD }}
+          PROBE42_PATH_PREFIX: ${{ secrets.PROBE42_PATH_PREFIX }}
+          VPN_EXPECTED_EXIT_IP: ${{ secrets.VPN_EXPECTED_EXIT_IP }}
+        run: |
+          if [ "${{ inputs.mode }}" = "live" ]; then
+            node scripts/probe/enrich.mjs --live --limit "${{ inputs.limit }}"
+          else
+            node scripts/probe/enrich.mjs --status
+          fi
+
+      - name: Disconnect VPN
+        if: always()
+        run: sudo kill "$(cat /tmp/vpn.pid 2>/dev/null)" 2>/dev/null || true
+
+      - name: Rebuild financials from cache & commit
+        if: ${{ inputs.mode == 'live' }}
+        run: |
+          npm run financials
+          git config user.name  "fdc-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/probe-cache public/data/vendor-financials.json public/data/alternatives.json
+          if git diff --cached --quiet; then
+            echo "No new Probe42 data."
+          else
+            git commit -m "chore(data): Probe42 private financials refresh [skip ci]"
+            git push
+          fi

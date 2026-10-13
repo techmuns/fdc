@@ -1,12 +1,16 @@
-# FDC Procurement Intelligence Cockpit — Phase 1
+# FDC Procurement Intelligence Cockpit
 
 A web dashboard for **FDC Limited's** procurement team. Across FDC's highest-spend
 bought-in materials, it shows — at a glance — **where we overpay, where payment
-terms are weak, and which vendors to negotiate with**. Every number is computed
-from FDC's own SAP purchase exports; nothing is estimated or sampled.
+terms are weak, and which vendors to negotiate with**. Every number is real and
+source-stamped: FDC's own SAP purchase exports plus live external price and
+financial feeds. Nothing is estimated, sampled, or fabricated.
 
-> **Phase 1 = the data foundation + the cockpit.** Later phases (Vendor Health,
-> Alternatives, Negotiation Briefs) are scaffolded as tabs and build on this.
+> **Phase 1** shipped the data foundation + the cockpit (Overview, Price,
+> Payment Terms, Vendors). **Phase 2** adds the *intelligence layer*: live
+> market-price benchmarks, real vendor financials & negotiation levers
+> (Vendor Health), and benchmarked alternate suppliers (Alternatives).
+> Negotiation Briefs (AI) remain scaffolded for Phase 3.
 
 ---
 
@@ -15,10 +19,12 @@ from FDC's own SAP purchase exports; nothing is estimated or sampled.
 | Tab | What it answers |
 |---|---|
 | **🏠 Overview** | One-glance picture: spend by material, biggest savings, single-source risk, and the top alerts to act on. |
-| **💰 Price & Benchmark** | Per-material (and per-item) price trend, price gap by supplier, inter-plant price differences, and a full item price table. |
+| **💰 Price & Benchmark** | FDC price trend, price gap by supplier, inter-plant differences, item price table — **plus a Market-benchmark view**: our price vs real customs / producer / seller-ask lines and raw-material input trends, each source-stamped. |
 | **⏳ Payment Terms** | Where spend sits on payment terms, the cash freed by better terms (+15 / +30 day toggle), and the weakest terms by spend. |
 | **🏭 Vendors** | Sortable, colour-coded table of every supplier → click for a full profile (materials, price position, monthly trend, listed-company flag). |
-| **Vendor Health · Alternatives · Negotiation Briefs** | Scaffolded "coming next phase" screens. |
+| **❤️ Vendor Health** | Real financials (revenue, margins, leverage, growth) for listed suppliers, a computed health score, and plain-English **negotiation levers** from the numbers. Private suppliers show "pending" until Probe42 is configured. |
+| **🔁 Alternatives** | Benchmarked backup suppliers per material with a financial health check and fit note; second-source candidates highlighted for single-source-risk materials. |
+| **📝 Negotiation Briefs** | Scaffolded for Phase 3 (AI drafting on top of the levers built in Phase 2). |
 
 Built as a **static SPA** (React + TypeScript + Vite + Tailwind) with a
 **dependency-free SVG chart kit** (no chart library). Deploys to **Cloudflare Pages**.
@@ -62,6 +68,64 @@ Output files: `meta.json`, `materials.json`, `vendors.json`, `price-gaps.json`,
 
 A built-in integrity check confirms the signed net of each file reproduces that
 file's own embedded total row.
+
+---
+
+## Phase 2 — the intelligence layer
+
+Two more pipelines add real external data. Both are built so the **free feeds run
+with no secrets**, and credentialed feeds **skip cleanly** (with a reason) until
+their secret is set. Every data point stores `{sourceName, sourceUrl, date}`.
+
+### Market prices — `npm run market` → `public/data/market/*.json`
+
+| Feed | Source | Secret | Gives |
+|---|---|---|---|
+| Customs unit values | **UN Comtrade** (reporter 699 = India, annual) | none (preview) / `COMTRADE_KEY` | ₹/kg for dextrose (export), resins, BOPET/BOPP film, aluminium foil, caps — converted at that year's average USD→INR |
+| USD→INR + inputs | **FRED** (`fredgraph.csv`) | none | real USD→INR (DEXINUS) and raw-material **input** lines: maize, crude (Brent), aluminium |
+| Producer prices | **Plastemart** scrape | none | PET/HDPE/PP producer list prices (best-effort) |
+| Govt WPI index | **MOSPI eSankhyiki** | `MOSPI_TOKEN` | WPI index line (2011-12 = 100) — shown as an index, never a ₹/kg |
+| Seller ask prices | **IndiaMART / TradeIndia** via **Firecrawl** | `FIRECRAWL_API_KEY` | marketplace ask ₹/kg per grade |
+| Mandi maize | **Agmarknet** (data.gov.in) | `DATA_GOV_IN_API_KEY` | Indian mandi maize input price |
+
+**Honesty rules baked in:** raw-material inputs (maize, crude, aluminium) are shown
+as clearly-labelled **INPUT** lines, never as the material's own price; WPI is an
+index, never a fabricated ₹/kg; and each material is graded (dextrose & packaging →
+*FDC price is the truth, market is corroboration*; laminates → *market is a strong
+benchmark*).
+
+### Vendor financials & levers — `npm run financials` → `public/data/vendor-financials.json`, `alternatives.json`
+
+- **Listed** vendors & alternates → real financials now, **free** via the Munshot
+  market-data API (revenue, EBITDA/net/operating margins, debt/equity, growth,
+  market cap). A transparent **health score** (A–D) is computed from these.
+- **Private** vendors → **Probe42** (`scripts/probe/`), gated on
+  `PROBE42_API_KEY_PROD` + VPN. Credit-disciplined: a free `--status` survey, a
+  budgeted `--live` fetch behind a hard VPN guard, and a committed
+  `data/probe-cache/` so a credit is spent **at most once** per company. Until
+  configured, private vendors show a clear "pending" state — never fake numbers.
+- **Negotiation levers** (`scripts/levers.mjs`) turn real financials + real
+  procurement facts (our wallet-share of their revenue, margins, leverage,
+  single-source risk, weak terms, overpayment, returns) into plain-English,
+  evidence-backed opportunity / risk / watch levers.
+
+```bash
+npm run market       # market-price feeds → public/data/market/
+npm run financials   # vendor + alternative financials → public/data/
+npm run data         # normalize + market + financials, all in one
+```
+
+### Probe42 (private financials) — run on demand
+
+```bash
+node scripts/probe/enrich.mjs --status          # free: survey data availability (0 credits)
+node scripts/probe/enrich.mjs --live --limit 20 # paid: fetch comprehensive (VPN required)
+```
+
+In CI, the **Probe42 private financials** GitHub Action connects the VPN, verifies
+the exit IP matches `VPN_EXPECTED_EXIT_IP` (hard-abort otherwise), runs the fetch,
+and commits the cache. A separate **Probe42 VPN check** workflow prints the
+before/after exit IP (0 credits) to help you capture that IP.
 
 ---
 
@@ -118,21 +182,37 @@ push — Cloudflare redeploys automatically.
 ## Project structure
 
 ```
-data/raw/                 real SAP exports (original names) + vendor master
-scripts/normalize.mjs     data pipeline → public/data/*.json
+data/raw/                 real SAP exports + vendor master
+  masters/alt-vendors.json  seed of alternate suppliers (tracked, editable)
+data/probe-cache/         committed Probe42 payloads (pay a credit once)
+scripts/
+  normalize.mjs           SAP → public/data/*.json
+  lib/        http.mjs (curl-based), fred.mjs
+  market/     config · comtrade · fred-inputs · plastemart · wpi · marketplace · index
+  financials/ munshot.mjs · index.mjs   (listed financials + orchestrator)
+  probe/      client · extract · enrich · cins   (Probe42, gated)
+  levers.mjs  negotiation-lever engine
 public/
-  fdc-logo.png            FDC logo
-  _redirects              SPA routing for Cloudflare Pages
-  data/*.json             generated clean data
+  fdc-logo.png · _redirects
+  data/*.json             Phase-1 clean data
+  data/market/*.json      market prices + manifest
+  data/vendor-financials.json · data/alternatives.json
 src/
-  lib/        format.ts, brand.ts, data.ts (loader), chartMath.ts
-  components/
-    charts/   dependency-free SVG kit: Bars, Columns, Donut, LineArea, StackedBar
-    ui/       Card, Table, Tabs, Controls (Dropdown/Segmented/Toggle)
-    Header.tsx, ComingSoon.tsx
-  tabs/       Overview, PriceBenchmark, PaymentTermsTab, Vendors
-  types.ts    TypeScript types mirroring the clean JSON
+  lib/        format · brand · data (loader) · chartMath
+  components/charts/  Bars · Columns · Donut · LineArea · StackedBar · Sparkline
+  components/ui/      Card · Table · Tabs · Controls
+  components/  Header · ComingSoon · MarketBenchmark
+  tabs/       Overview · PriceBenchmark · PaymentTermsTab · Vendors · VendorHealth · Alternatives
+  types.ts
+.github/workflows/
+  data-refresh.yml        daily: refresh market + financials, commit JSON
+  probe42-refresh.yml      manual: VPN-gated Probe42 fetch (paid, budgeted)
+  probe42-vpn-check.yml    manual: print exit IP before/after VPN (0 credits)
 ```
+
+Deployment stays automatic (Cloudflare Pages Git integration). The
+`data-refresh` workflow commits fresh data daily, which triggers a redeploy —
+so the market and financial numbers stay current with no manual steps.
 
 ---
 

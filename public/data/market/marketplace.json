@@ -1,0 +1,7 @@
+{
+  "generatedAt": "2026-10-13",
+  "feed": "marketplace",
+  "status": "skipped",
+  "series": [],
+  "reason": "no FIRECRAWL_API_KEY — add it as a secret to enable IndiaMART/TradeIndia seller-ask prices"
+}

@@ -1,0 +1,1259 @@
+{
+  "generatedAt": "2026-10-13T08:37:15.172Z",
+  "fx": {
+    "value": 96.31,
+    "date": "2026-10-02",
+    "annual": {
+      "2010": 45.651,
+      "2011": 46.578,
+      "2012": 53.374,
+      "2013": 58.515,
+      "2014": 60.995,
+      "2015": 64.107,
+      "2016": 67.157,
+      "2017": 65.066,
+      "2018": 68.373,
+      "2019": 70.378,
+      "2020": 74.143,
+      "2021": 73.935,
+      "2022": 78.579,
+      "2023": 82.571,
+      "2024": 83.657,
+      "2025": 87.147,
+      "2026": 93.985
+    },
+    "sourceName": "FRED — U.S./India FX (DEXINUS)",
+    "sourceUrl": "https://fred.stlouisfed.org/series/DEXINUS"
+  },
+  "materials": {
+    "dextrose": {
+      "grading": {
+        "tier": "primary-fdc",
+        "note": "Dextrose grade & contracts are specific to FDC — our paid price is the truth; customs & input lines are context only."
+      },
+      "lines": [
+        {
+          "material": "dextrose",
+          "key": "customs-dextrose",
+          "kind": "customs",
+          "label": "Dextrose — India export unit value",
+          "grade": "Glucose/dextrose, customs export unit value (HS 1702.30)",
+          "hsCode": "170230",
+          "flow": "X",
+          "unit": "₹/kg",
+          "currency": "INR",
+          "points": [
+            {
+              "date": "2019-12-31",
+              "value": 33.8,
+              "usdPerKg": 0.48,
+              "usdInr": 70.378,
+              "fxYear": "2019"
+            },
+            {
+              "date": "2020-12-31",
+              "value": 33.1,
+              "usdPerKg": 0.446,
+              "usdInr": 74.143,
+              "fxYear": "2020"
+            },
+            {
+              "date": "2021-12-31",
+              "value": 33.86,
+              "usdPerKg": 0.458,
+              "usdInr": 73.935,
+              "fxYear": "2021"
+            },
+            {
+              "date": "2022-12-31",
+              "value": 43.89,
+              "usdPerKg": 0.559,
+              "usdInr": 78.579,
+              "fxYear": "2022"
+            },
+            {
+              "date": "2023-12-31",
+              "value": 42.69,
+              "usdPerKg": 0.517,
+              "usdInr": 82.571,
+              "fxYear": "2023"
+            },
+            {
+              "date": "2024-12-31",
+              "value": 42.95,
+              "usdPerKg": 0.513,
+              "usdInr": 83.657,
+              "fxYear": "2024"
+            }
+          ],
+          "latest": {
+            "value": 42.95,
+            "date": "2024-12-31",
+            "usdPerKg": 0.513
+          },
+          "sourceName": "UN Comtrade (public preview)",
+          "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=170230&Flows=X",
+          "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+        },
+        {
+          "material": "dextrose",
+          "key": "input-maize",
+          "kind": "input",
+          "label": "Maize (global price)",
+          "grade": "The corn/maize dextrose is milled from — an INPUT, not dextrose itself.",
+          "unit": "USD/tonne",
+          "currency": "USD",
+          "points": [
+            {
+              "date": "2023-08-01",
+              "value": 207.68
+            },
+            {
+              "date": "2023-09-01",
+              "value": 223.85
+            },
+            {
+              "date": "2023-10-01",
+              "value": 221.9
+            },
+            {
+              "date": "2023-11-01",
+              "value": 209.04
+            },
+            {
+              "date": "2023-12-01",
+              "value": 207.4
+            },
+            {
+              "date": "2024-01-01",
+              "value": 198.76
+            },
+            {
+              "date": "2024-02-01",
+              "value": 188.95
+            },
+            {
+              "date": "2024-03-01",
+              "value": 190.23
+            },
+            {
+              "date": "2024-04-01",
+              "value": 190.9
+            },
+            {
+              "date": "2024-05-01",
+              "value": 201.02
+            },
+            {
+              "date": "2024-06-01",
+              "value": 191.24
+            },
+            {
+              "date": "2024-07-01",
+              "value": 177.77
+            },
+            {
+              "date": "2024-08-01",
+              "value": 169.3
+            },
+            {
+              "date": "2024-09-01",
+              "value": 183.66
+            },
+            {
+              "date": "2024-10-01",
+              "value": 189.59
+            },
+            {
+              "date": "2024-11-01",
+              "value": 201.31
+            },
+            {
+              "date": "2024-12-01",
+              "value": 202.83
+            },
+            {
+              "date": "2025-01-01",
+              "value": 214.36
+            },
+            {
+              "date": "2025-02-01",
+              "value": 221.25
+            },
+            {
+              "date": "2025-03-01",
+              "value": 207.75
+            },
+            {
+              "date": "2025-04-01",
+              "value": 215.57
+            },
+            {
+              "date": "2025-05-01",
+              "value": 204.81
+            },
+            {
+              "date": "2025-06-01",
+              "value": 195.72
+            },
+            {
+              "date": "2025-07-01",
+              "value": 192.45
+            },
+            {
+              "date": "2025-08-01",
+              "value": 183.02
+            },
+            {
+              "date": "2025-09-01",
+              "value": 196.15
+            },
+            {
+              "date": "2025-10-01",
+              "value": 198.02
+            },
+            {
+              "date": "2025-11-01",
+              "value": 201.66
+            },
+            {
+              "date": "2025-12-01",
+              "value": 205.32
+            },
+            {
+              "date": "2026-01-01",
+              "value": 203.9
+            },
+            {
+              "date": "2026-02-01",
+              "value": 210.64
+            },
+            {
+              "date": "2026-03-01",
+              "value": 213.3
+            },
+            {
+              "date": "2026-04-01",
+              "value": 214.52
+            },
+            {
+              "date": "2026-05-01",
+              "value": 215.62
+            },
+            {
+              "date": "2026-06-01",
+              "value": 195.78
+            },
+            {
+              "date": "2026-07-01",
+              "value": 213.19
+            }
+          ],
+          "latest": {
+            "value": 213.19,
+            "date": "2026-07-01"
+          },
+          "sourceName": "FRED (PMAIZMTUSDM)",
+          "sourceUrl": "https://fred.stlouisfed.org/series/PMAIZMTUSDM"
+        }
+      ]
+    },
+    "packaging": {
+      "grading": {
+        "tier": "primary-fdc",
+        "note": "Each packaging item is bespoke (mould, neck, decoration) — our paid price is the truth; resin & customs lines show the input trend."
+      },
+      "lines": [
+        {
+          "material": "packaging",
+          "key": "resin-hdpe",
+          "kind": "customs",
+          "label": "HDPE resin — import unit value",
+          "grade": "HDPE polymer in primary form (HS 3901.20)",
+          "hsCode": "390120",
+          "flow": "M",
+          "unit": "₹/kg",
+          "currency": "INR",
+          "points": [
+            {
+              "date": "2019-12-31",
+              "value": 77.54,
+              "usdPerKg": 1.102,
+              "usdInr": 70.378,
+              "fxYear": "2019"
+            },
+            {
+              "date": "2020-12-31",
+              "value": 69.78,
+              "usdPerKg": 0.941,
+              "usdInr": 74.143,
+              "fxYear": "2020"
+            },
+            {
+              "date": "2021-12-31",
+              "value": 90.6,
+              "usdPerKg": 1.225,
+              "usdInr": 73.935,
+              "fxYear": "2021"
+            },
+            {
+              "date": "2022-12-31",
+              "value": 101.12,
+              "usdPerKg": 1.287,
+              "usdInr": 78.579,
+              "fxYear": "2022"
+            },
+            {
+              "date": "2023-12-31",
+              "value": 87.61,
+              "usdPerKg": 1.061,
+              "usdInr": 82.571,
+              "fxYear": "2023"
+            }
+          ],
+          "latest": {
+            "value": 87.61,
+            "date": "2023-12-31",
+            "usdPerKg": 1.061
+          },
+          "sourceName": "UN Comtrade (public preview)",
+          "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=390120&Flows=M",
+          "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+        },
+        {
+          "material": "packaging",
+          "key": "resin-pp",
+          "kind": "customs",
+          "label": "PP resin — import unit value",
+          "grade": "Polypropylene in primary form (HS 3902.10)",
+          "hsCode": "390210",
+          "flow": "M",
+          "unit": "₹/kg",
+          "currency": "INR",
+          "points": [
+            {
+              "date": "2019-12-31",
+              "value": 82.41,
+              "usdPerKg": 1.171,
+              "usdInr": 70.378,
+              "fxYear": "2019"
+            },
+            {
+              "date": "2022-12-31",
+              "value": 102.41,
+              "usdPerKg": 1.303,
+              "usdInr": 78.579,
+              "fxYear": "2022"
+            },
+            {
+              "date": "2023-12-31",
+              "value": 85.58,
+              "usdPerKg": 1.036,
+              "usdInr": 82.571,
+              "fxYear": "2023"
+            },
+            {
+              "date": "2024-12-31",
+              "value": 87.63,
+              "usdPerKg": 1.047,
+              "usdInr": 83.657,
+              "fxYear": "2024"
+            }
+          ],
+          "latest": {
+            "value": 87.63,
+            "date": "2024-12-31",
+            "usdPerKg": 1.047
+          },
+          "sourceName": "UN Comtrade (public preview)",
+          "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=390210&Flows=M",
+          "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+        },
+        {
+          "material": "packaging",
+          "key": "resin-pet",
+          "kind": "customs",
+          "label": "PET resin — import unit value",
+          "grade": "PET polymer in primary form (HS 3907.6x)",
+          "hsCode": "390769",
+          "flow": "M",
+          "unit": "₹/kg",
+          "currency": "INR",
+          "points": [
+            {
+              "date": "2019-12-31",
+              "value": 62.68,
+              "usdPerKg": 0.891,
+              "usdInr": 70.378,
+              "fxYear": "2019"
+            },
+            {
+              "date": "2020-12-31",
+              "value": 58.14,
+              "usdPerKg": 0.784,
+              "usdInr": 74.143,
+              "fxYear": "2020"
+            },
+            {
+              "date": "2021-12-31",
+              "value": 61.81,
+              "usdPerKg": 0.836,
+              "usdInr": 73.935,
+              "fxYear": "2021"
+            },
+            {
+              "date": "2022-12-31",
+              "value": 78.57,
+              "usdPerKg": 1,
+              "usdInr": 78.579,
+              "fxYear": "2022"
+            },
+            {
+              "date": "2023-12-31",
+              "value": 73.92,
+              "usdPerKg": 0.895,
+              "usdInr": 82.571,
+              "fxYear": "2023"
+            },
+            {
+              "date": "2024-12-31",
+              "value": 71.06,
+              "usdPerKg": 0.849,
+              "usdInr": 83.657,
+              "fxYear": "2024"
+            }
+          ],
+          "latest": {
+            "value": 71.06,
+            "date": "2024-12-31",
+            "usdPerKg": 0.849
+          },
+          "sourceName": "UN Comtrade (public preview)",
+          "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=390769&Flows=M",
+          "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+        },
+        {
+          "material": "packaging",
+          "key": "caps",
+          "kind": "customs",
+          "label": "Caps & closures — import unit value",
+          "grade": "Stoppers/caps/closures of plastics (HS 3923.50)",
+          "hsCode": "392350",
+          "flow": "M",
+          "unit": "₹/kg",
+          "currency": "INR",
+          "points": [
+            {
+              "date": "2019-12-31",
+              "value": 632.54,
+              "usdPerKg": 8.988,
+              "usdInr": 70.378,
+              "fxYear": "2019"
+            },
+            {
+              "date": "2020-12-31",
+              "value": 680.88,
+              "usdPerKg": 9.183,
+              "usdInr": 74.143,
+              "fxYear": "2020"
+            },
+            {
+              "date": "2021-12-31",
+              "value": 268.48,
+              "usdPerKg": 3.631,
+              "usdInr": 73.935,
+              "fxYear": "2021"
+            },
+            {
+              "date": "2022-12-31",
+              "value": 783.12,
+              "usdPerKg": 9.966,
+              "usdInr": 78.579,
+              "fxYear": "2022"
+            },
+            {
+              "date": "2023-12-31",
+              "value": 897.25,
+              "usdPerKg": 10.866,
+              "usdInr": 82.571,
+              "fxYear": "2023"
+            },
+            {
+              "date": "2024-12-31",
+              "value": 941.3,
+              "usdPerKg": 11.252,
+              "usdInr": 83.657,
+              "fxYear": "2024"
+            }
+          ],
+          "latest": {
+            "value": 941.3,
+            "date": "2024-12-31",
+            "usdPerKg": 11.252
+          },
+          "sourceName": "UN Comtrade (public preview)",
+          "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=392350&Flows=M",
+          "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+        },
+        {
+          "material": "packaging",
+          "key": "input-crude",
+          "kind": "input",
+          "label": "Crude oil (Brent)",
+          "grade": "Upstream feedstock for plastics — an INPUT, not the plastic.",
+          "unit": "USD/barrel",
+          "currency": "USD",
+          "points": [
+            {
+              "date": "2023-08-01",
+              "value": 85.17
+            },
+            {
+              "date": "2023-09-01",
+              "value": 92.67
+            },
+            {
+              "date": "2023-10-01",
+              "value": 88.95
+            },
+            {
+              "date": "2023-11-01",
+              "value": 82.19
+            },
+            {
+              "date": "2023-12-01",
+              "value": 77.54
+            },
+            {
+              "date": "2024-01-01",
+              "value": 79.11
+            },
+            {
+              "date": "2024-02-01",
+              "value": 81.8
+            },
+            {
+              "date": "2024-03-01",
+              "value": 84.96
+            },
+            {
+              "date": "2024-04-01",
+              "value": 88.97
+            },
+            {
+              "date": "2024-05-01",
+              "value": 83.05
+            },
+            {
+              "date": "2024-06-01",
+              "value": 82.92
+            },
+            {
+              "date": "2024-07-01",
+              "value": 84.05
+            },
+            {
+              "date": "2024-08-01",
+              "value": 79.02
+            },
+            {
+              "date": "2024-09-01",
+              "value": 73.06
+            },
+            {
+              "date": "2024-10-01",
+              "value": 75.27
+            },
+            {
+              "date": "2024-11-01",
+              "value": 73.51
+            },
+            {
+              "date": "2024-12-01",
+              "value": 73.23
+            },
+            {
+              "date": "2025-01-01",
+              "value": 78.19
+            },
+            {
+              "date": "2025-02-01",
+              "value": 75.19
+            },
+            {
+              "date": "2025-03-01",
+              "value": 71.74
+            },
+            {
+              "date": "2025-04-01",
+              "value": 66.93
+            },
+            {
+              "date": "2025-05-01",
+              "value": 64.09
+            },
+            {
+              "date": "2025-06-01",
+              "value": 69.85
+            },
+            {
+              "date": "2025-07-01",
+              "value": 69.56
+            },
+            {
+              "date": "2025-08-01",
+              "value": 67.24
+            },
+            {
+              "date": "2025-09-01",
+              "value": 67.61
+            },
+            {
+              "date": "2025-10-01",
+              "value": 63.98
+            },
+            {
+              "date": "2025-11-01",
+              "value": 63.69
+            },
+            {
+              "date": "2025-12-01",
+              "value": 61.81
+            },
+            {
+              "date": "2026-01-01",
+              "value": 64.59
+            },
+            {
+              "date": "2026-02-01",
+              "value": 69.41
+            },
+            {
+              "date": "2026-03-01",
+              "value": 99.41
+            },
+            {
+              "date": "2026-04-01",
+              "value": 102.81
+            },
+            {
+              "date": "2026-05-01",
+              "value": 103.84
+            },
+            {
+              "date": "2026-06-01",
+              "value": 84.49
+            },
+            {
+              "date": "2026-07-01",
+              "value": 83.73
+            }
+          ],
+          "latest": {
+            "value": 83.73,
+            "date": "2026-07-01"
+          },
+          "sourceName": "FRED (POILBREUSDM)",
+          "sourceUrl": "https://fred.stlouisfed.org/series/POILBREUSDM"
+        }
+      ]
+    },
+    "laminates": {
+      "grading": {
+        "tier": "strong",
+        "note": "Laminate film tracks BOPET/BOPP/foil substrate closely — the market lines are a meaningful benchmark for negotiation."
+      },
+      "lines": [
+        {
+          "material": "laminates",
+          "key": "film-bopet",
+          "kind": "customs",
+          "label": "BOPET film — import unit value",
+          "grade": "Polyester (PET) film (HS 3920.62)",
+          "hsCode": "392062",
+          "flow": "M",
+          "unit": "₹/kg",
+          "currency": "INR",
+          "points": [
+            {
+              "date": "2019-12-31",
+              "value": 158.17,
+              "usdPerKg": 2.247,
+              "usdInr": 70.378,
+              "fxYear": "2019"
+            },
+            {
+              "date": "2020-12-31",
+              "value": 144.69,
+              "usdPerKg": 1.952,
+              "usdInr": 74.143,
+              "fxYear": "2020"
+            },
+            {
+              "date": "2021-12-31",
+              "value": 177.02,
+              "usdPerKg": 2.394,
+              "usdInr": 73.935,
+              "fxYear": "2021"
+            },
+            {
+              "date": "2022-12-31",
+              "value": 198.78,
+              "usdPerKg": 2.53,
+              "usdInr": 78.579,
+              "fxYear": "2022"
+            },
+            {
+              "date": "2024-12-31",
+              "value": 171.6,
+              "usdPerKg": 2.051,
+              "usdInr": 83.657,
+              "fxYear": "2024"
+            }
+          ],
+          "latest": {
+            "value": 171.6,
+            "date": "2024-12-31",
+            "usdPerKg": 2.051
+          },
+          "sourceName": "UN Comtrade (public preview)",
+          "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=392062&Flows=M",
+          "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+        },
+        {
+          "material": "laminates",
+          "key": "film-bopp",
+          "kind": "customs",
+          "label": "BOPP film — import unit value",
+          "grade": "Propylene polymer film (HS 3920.20)",
+          "hsCode": "392020",
+          "flow": "M",
+          "unit": "₹/kg",
+          "currency": "INR",
+          "points": [
+            {
+              "date": "2019-12-31",
+              "value": 195.74,
+              "usdPerKg": 2.781,
+              "usdInr": 70.378,
+              "fxYear": "2019"
+            },
+            {
+              "date": "2020-12-31",
+              "value": 128.7,
+              "usdPerKg": 1.736,
+              "usdInr": 74.143,
+              "fxYear": "2020"
+            },
+            {
+              "date": "2021-12-31",
+              "value": 106.74,
+              "usdPerKg": 1.444,
+              "usdInr": 73.935,
+              "fxYear": "2021"
+            },
+            {
+              "date": "2022-12-31",
+              "value": 138.21,
+              "usdPerKg": 1.759,
+              "usdInr": 78.579,
+              "fxYear": "2022"
+            }
+          ],
+          "latest": {
+            "value": 138.21,
+            "date": "2022-12-31",
+            "usdPerKg": 1.759
+          },
+          "sourceName": "UN Comtrade (public preview)",
+          "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=392020&Flows=M",
+          "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+        },
+        {
+          "material": "laminates",
+          "key": "foil-plain",
+          "kind": "customs",
+          "label": "Aluminium foil (plain) — import unit value",
+          "grade": "Aluminium foil, not backed, ≤0.2mm (HS 7607.11)",
+          "hsCode": "760711",
+          "flow": "M",
+          "unit": "₹/kg",
+          "currency": "INR",
+          "points": [
+            {
+              "date": "2019-12-31",
+              "value": 207.21,
+              "usdPerKg": 2.944,
+              "usdInr": 70.378,
+              "fxYear": "2019"
+            },
+            {
+              "date": "2020-12-31",
+              "value": 204.17,
+              "usdPerKg": 2.754,
+              "usdInr": 74.143,
+              "fxYear": "2020"
+            },
+            {
+              "date": "2021-12-31",
+              "value": 264.95,
+              "usdPerKg": 3.583,
+              "usdInr": 73.935,
+              "fxYear": "2021"
+            },
+            {
+              "date": "2022-12-31",
+              "value": 356,
+              "usdPerKg": 4.53,
+              "usdInr": 78.579,
+              "fxYear": "2022"
+            },
+            {
+              "date": "2023-12-31",
+              "value": 295.23,
+              "usdPerKg": 3.576,
+              "usdInr": 82.571,
+              "fxYear": "2023"
+            },
+            {
+              "date": "2024-12-31",
+              "value": 284.77,
+              "usdPerKg": 3.404,
+              "usdInr": 83.657,
+              "fxYear": "2024"
+            }
+          ],
+          "latest": {
+            "value": 284.77,
+            "date": "2024-12-31",
+            "usdPerKg": 3.404
+          },
+          "sourceName": "UN Comtrade (public preview)",
+          "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=760711&Flows=M",
+          "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+        },
+        {
+          "material": "laminates",
+          "key": "foil-backed",
+          "kind": "customs",
+          "label": "Aluminium foil (backed) — import unit value",
+          "grade": "Aluminium foil, backed (HS 7607.20)",
+          "hsCode": "760720",
+          "flow": "M",
+          "unit": "₹/kg",
+          "currency": "INR",
+          "points": [
+            {
+              "date": "2019-12-31",
+              "value": 304.54,
+              "usdPerKg": 4.327,
+              "usdInr": 70.378,
+              "fxYear": "2019"
+            },
+            {
+              "date": "2020-12-31",
+              "value": 324.37,
+              "usdPerKg": 4.375,
+              "usdInr": 74.143,
+              "fxYear": "2020"
+            },
+            {
+              "date": "2021-12-31",
+              "value": 350.53,
+              "usdPerKg": 4.741,
+              "usdInr": 73.935,
+              "fxYear": "2021"
+            },
+            {
+              "date": "2022-12-31",
+              "value": 457.29,
+              "usdPerKg": 5.82,
+              "usdInr": 78.579,
+              "fxYear": "2022"
+            },
+            {
+              "date": "2024-12-31",
+              "value": 439.19,
+              "usdPerKg": 5.25,
+              "usdInr": 83.657,
+              "fxYear": "2024"
+            }
+          ],
+          "latest": {
+            "value": 439.19,
+            "date": "2024-12-31",
+            "usdPerKg": 5.25
+          },
+          "sourceName": "UN Comtrade (public preview)",
+          "sourceUrl": "https://comtradeplus.un.org/TradeFlow?Reporters=699&Partners=0&Commodities=760720&Flows=M",
+          "fxNote": "Converted at that year's average USD→INR (FRED DEXINUS)."
+        },
+        {
+          "material": "laminates",
+          "key": "input-aluminium",
+          "kind": "input",
+          "label": "Aluminium (global price)",
+          "grade": "Metal that foil is rolled from — an INPUT, not foil.",
+          "unit": "USD/tonne",
+          "currency": "USD",
+          "points": [
+            {
+              "date": "2023-08-01",
+              "value": 2135.58
+            },
+            {
+              "date": "2023-09-01",
+              "value": 2184.67
+            },
+            {
+              "date": "2023-10-01",
+              "value": 2194.39
+            },
+            {
+              "date": "2023-11-01",
+              "value": 2202.26
+            },
+            {
+              "date": "2023-12-01",
+              "value": 2192.01
+            },
+            {
+              "date": "2024-01-01",
+              "value": 2201.57
+            },
+            {
+              "date": "2024-02-01",
+              "value": 2179.46
+            },
+            {
+              "date": "2024-03-01",
+              "value": 2229.44
+            },
+            {
+              "date": "2024-04-01",
+              "value": 2499.23
+            },
+            {
+              "date": "2024-05-01",
+              "value": 2566.32
+            },
+            {
+              "date": "2024-06-01",
+              "value": 2497.61
+            },
+            {
+              "date": "2024-07-01",
+              "value": 2349.13
+            },
+            {
+              "date": "2024-08-01",
+              "value": 2352.47
+            },
+            {
+              "date": "2024-09-01",
+              "value": 2457.48
+            },
+            {
+              "date": "2024-10-01",
+              "value": 2595.58
+            },
+            {
+              "date": "2024-11-01",
+              "value": 2582.19
+            },
+            {
+              "date": "2024-12-01",
+              "value": 2540.88
+            },
+            {
+              "date": "2025-01-01",
+              "value": 2571.37
+            },
+            {
+              "date": "2025-02-01",
+              "value": 2655.77
+            },
+            {
+              "date": "2025-03-01",
+              "value": 2651.6
+            },
+            {
+              "date": "2025-04-01",
+              "value": 2367.8
+            },
+            {
+              "date": "2025-05-01",
+              "value": 2447.34
+            },
+            {
+              "date": "2025-06-01",
+              "value": 2525.96
+            },
+            {
+              "date": "2025-07-01",
+              "value": 2606.37
+            },
+            {
+              "date": "2025-08-01",
+              "value": 2598.74
+            },
+            {
+              "date": "2025-09-01",
+              "value": 2654.48
+            },
+            {
+              "date": "2025-10-01",
+              "value": 2793.09
+            },
+            {
+              "date": "2025-11-01",
+              "value": 2819.06
+            },
+            {
+              "date": "2025-12-01",
+              "value": 2875.9
+            },
+            {
+              "date": "2026-01-01",
+              "value": 3133.98
+            },
+            {
+              "date": "2026-02-01",
+              "value": 3065.19
+            },
+            {
+              "date": "2026-03-01",
+              "value": 3372.95
+            },
+            {
+              "date": "2026-04-01",
+              "value": 3594.38
+            },
+            {
+              "date": "2026-05-01",
+              "value": 3658.22
+            },
+            {
+              "date": "2026-06-01",
+              "value": 3438.85
+            },
+            {
+              "date": "2026-07-01",
+              "value": 3158.27
+            }
+          ],
+          "latest": {
+            "value": 3158.27,
+            "date": "2026-07-01"
+          },
+          "sourceName": "FRED (PALUMUSDM)",
+          "sourceUrl": "https://fred.stlouisfed.org/series/PALUMUSDM"
+        },
+        {
+          "material": "laminates",
+          "key": "input-crude",
+          "kind": "input",
+          "label": "Crude oil (Brent)",
+          "grade": "Upstream feedstock for BOPET/BOPP film — an INPUT, not film.",
+          "unit": "USD/barrel",
+          "currency": "USD",
+          "points": [
+            {
+              "date": "2023-08-01",
+              "value": 85.17
+            },
+            {
+              "date": "2023-09-01",
+              "value": 92.67
+            },
+            {
+              "date": "2023-10-01",
+              "value": 88.95
+            },
+            {
+              "date": "2023-11-01",
+              "value": 82.19
+            },
+            {
+              "date": "2023-12-01",
+              "value": 77.54
+            },
+            {
+              "date": "2024-01-01",
+              "value": 79.11
+            },
+            {
+              "date": "2024-02-01",
+              "value": 81.8
+            },
+            {
+              "date": "2024-03-01",
+              "value": 84.96
+            },
+            {
+              "date": "2024-04-01",
+              "value": 88.97
+            },
+            {
+              "date": "2024-05-01",
+              "value": 83.05
+            },
+            {
+              "date": "2024-06-01",
+              "value": 82.92
+            },
+            {
+              "date": "2024-07-01",
+              "value": 84.05
+            },
+            {
+              "date": "2024-08-01",
+              "value": 79.02
+            },
+            {
+              "date": "2024-09-01",
+              "value": 73.06
+            },
+            {
+              "date": "2024-10-01",
+              "value": 75.27
+            },
+            {
+              "date": "2024-11-01",
+              "value": 73.51
+            },
+            {
+              "date": "2024-12-01",
+              "value": 73.23
+            },
+            {
+              "date": "2025-01-01",
+              "value": 78.19
+            },
+            {
+              "date": "2025-02-01",
+              "value": 75.19
+            },
+            {
+              "date": "2025-03-01",
+              "value": 71.74
+            },
+            {
+              "date": "2025-04-01",
+              "value": 66.93
+            },
+            {
+              "date": "2025-05-01",
+              "value": 64.09
+            },
+            {
+              "date": "2025-06-01",
+              "value": 69.85
+            },
+            {
+              "date": "2025-07-01",
+              "value": 69.56
+            },
+            {
+              "date": "2025-08-01",
+              "value": 67.24
+            },
+            {
+              "date": "2025-09-01",
+              "value": 67.61
+            },
+            {
+              "date": "2025-10-01",
+              "value": 63.98
+            },
+            {
+              "date": "2025-11-01",
+              "value": 63.69
+            },
+            {
+              "date": "2025-12-01",
+              "value": 61.81
+            },
+            {
+              "date": "2026-01-01",
+              "value": 64.59
+            },
+            {
+              "date": "2026-02-01",
+              "value": 69.41
+            },
+            {
+              "date": "2026-03-01",
+              "value": 99.41
+            },
+            {
+              "date": "2026-04-01",
+              "value": 102.81
+            },
+            {
+              "date": "2026-05-01",
+              "value": 103.84
+            },
+            {
+              "date": "2026-06-01",
+              "value": 84.49
+            },
+            {
+              "date": "2026-07-01",
+              "value": 83.73
+            }
+          ],
+          "latest": {
+            "value": 83.73,
+            "date": "2026-07-01"
+          },
+          "sourceName": "FRED (POILBREUSDM)",
+          "sourceUrl": "https://fred.stlouisfed.org/series/POILBREUSDM"
+        }
+      ]
+    }
+  },
+  "manifest": [
+    {
+      "feed": "comtrade",
+      "status": "ok",
+      "seriesCount": 9,
+      "reason": null,
+      "gated": false
+    },
+    {
+      "feed": "inputs",
+      "status": "ok",
+      "seriesCount": 4,
+      "reason": null,
+      "gated": false
+    },
+    {
+      "feed": "plastemart",
+      "status": "skipped",
+      "seriesCount": 0,
+      "reason": "no clean absolute price levels in current news text",
+      "gated": false
+    },
+    {
+      "feed": "wpi",
+      "status": "skipped",
+      "seriesCount": 0,
+      "reason": "no MOSPI_TOKEN — self-signup at esankhyiki.mospi.gov.in and add the token as a secret to enable the WPI index line",
+      "gated": true
+    },
+    {
+      "feed": "marketplace",
+      "status": "skipped",
+      "seriesCount": 0,
+      "reason": "no FIRECRAWL_API_KEY — add it as a secret to enable IndiaMART/TradeIndia seller-ask prices",
+      "gated": true
+    }
+  ],
+  "notes": [
+    "Customs lines are UN Comtrade unit values (trade value ÷ net weight), converted at that year's average USD→INR (FRED).",
+    "INPUT lines (maize, crude, aluminium) are raw-material prices shown as context — never the finished material's own price.",
+    "WPI is a government index (2011-12 = 100), shown as an index line, not a ₹/kg.",
+    "Every series carries its own sourceName + sourceUrl + dates."
+  ]
+}

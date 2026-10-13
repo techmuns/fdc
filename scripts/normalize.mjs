@@ -820,7 +820,7 @@ function main() {
 
   const meta = {
     app: 'FDC Procurement Intelligence Cockpit',
-    phase: 'Phase 1 — Foundation',
+    phase: 'Phase 2 — Intelligence',
     generatedAt: new Date().toISOString(),
     currency: 'INR',
     dateRange,

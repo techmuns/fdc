@@ -1,0 +1,47 @@
+name: Probe42 VPN check (0 credits)
+
+# Connects the OpenVPN tunnel and prints the exit IP before and after, so you can
+# confirm the tunnel works and grab VPN_EXPECTED_EXIT_IP. Spends NO Probe42 credits
+# and makes NO Probe42 calls.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  vpn-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exit IP BEFORE VPN
+        run: echo "Before VPN → $(curl -s --max-time 15 https://api.ipify.org)"
+
+      - name: Install OpenVPN
+        run: sudo apt-get update && sudo apt-get install -y openvpn
+
+      - name: Write VPN config
+        env:
+          VPN_OVPN: ${{ secrets.VPN_OVPN }}
+          VPN_USER: ${{ secrets.VPN_USER }}
+          VPN_PASS: ${{ secrets.VPN_PASS }}
+        run: |
+          if [ -z "$VPN_OVPN" ]; then echo "VPN_OVPN secret not set — nothing to check."; exit 1; fi
+          printf '%s\n' "$VPN_OVPN" > /tmp/vpn.ovpn
+          printf '%s\n%s\n' "$VPN_USER" "$VPN_PASS" > /tmp/vpn.auth
+          chmod 600 /tmp/vpn.auth
+          sed -i '/^auth-user-pass/d' /tmp/vpn.ovpn
+          echo 'auth-user-pass /tmp/vpn.auth' >> /tmp/vpn.ovpn
+
+      - name: Connect VPN
+        run: |
+          sudo openvpn --config /tmp/vpn.ovpn --daemon --log /tmp/vpn.log --writepid /tmp/vpn.pid
+          for i in $(seq 1 30); do ip a show tun0 >/dev/null 2>&1 && break; sleep 2; done
+          ip a show tun0 >/dev/null 2>&1 || { echo "tun0 did not come up"; sudo cat /tmp/vpn.log; exit 1; }
+
+      - name: Exit IP AFTER VPN
+        run: |
+          AFTER=$(curl -s --max-time 20 https://api.ipify.org)
+          echo "After VPN  → $AFTER"
+          echo "Set this as VPN_EXPECTED_EXIT_IP if it is the allow-listed Probe42 IP."
+
+      - name: Disconnect
+        if: always()
+        run: sudo kill "$(cat /tmp/vpn.pid 2>/dev/null)" 2>/dev/null || true

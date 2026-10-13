@@ -18,6 +18,8 @@ import Overview from './tabs/Overview';
 import PriceBenchmark from './tabs/PriceBenchmark';
 import PaymentTermsTab from './tabs/PaymentTermsTab';
 import Vendors from './tabs/Vendors';
+import VendorHealth from './tabs/VendorHealth';
+import Alternatives from './tabs/Alternatives';
 import { dateLabel } from './lib/format';
 
 type TabKey =
@@ -34,8 +36,8 @@ const TABS: TabDef<TabKey>[] = [
   { key: 'price', label: 'Price & Benchmark', icon: Wallet },
   { key: 'payment', label: 'Payment Terms', icon: Hourglass },
   { key: 'vendors', label: 'Vendors', icon: Factory },
-  { key: 'health', label: 'Vendor Health', icon: HeartPulse, soon: true },
-  { key: 'alternatives', label: 'Alternatives', icon: Repeat2, soon: true },
+  { key: 'health', label: 'Vendor Health', icon: HeartPulse },
+  { key: 'alternatives', label: 'Alternatives', icon: Repeat2 },
   { key: 'briefs', label: 'Negotiation Briefs', icon: FileText, soon: true },
 ];
 
@@ -62,30 +64,8 @@ export default function App() {
               {tab === 'price' && <PriceBenchmark data={state.data} />}
               {tab === 'payment' && <PaymentTermsTab data={state.data} />}
               {tab === 'vendors' && <Vendors data={state.data} />}
-              {tab === 'health' && (
-                <ComingSoon
-                  icon={HeartPulse}
-                  title="Vendor Health"
-                  blurb="Financial strength and supply-risk scores for every vendor — so a price win never comes from a supplier about to wobble."
-                  features={[
-                    { heading: 'Financials', detail: 'Revenue, margins & leverage for listed vendors (already flagged in the Vendors tab).' },
-                    { heading: 'Supply risk', detail: 'Single-source exposure, return rates and delivery reliability combined into one score.' },
-                    { heading: 'Watchlist', detail: 'Automatic alerts when a key supplier’s risk changes.' },
-                  ]}
-                />
-              )}
-              {tab === 'alternatives' && (
-                <ComingSoon
-                  icon={Repeat2}
-                  title="Alternatives"
-                  blurb="For every item we overpay on, a shortlist of credible alternate suppliers and what switching could save."
-                  features={[
-                    { heading: 'Live market price', detail: 'Benchmark each material against current market and index prices.' },
-                    { heading: 'Qualified alternates', detail: 'Approved and new vendors who can supply the same SKU.' },
-                    { heading: 'Switch impact', detail: 'Modelled saving and risk of moving volume to a cheaper source.' },
-                  ]}
-                />
-              )}
+              {tab === 'health' && <VendorHealth data={state.data} />}
+              {tab === 'alternatives' && <Alternatives data={state.data} />}
               {tab === 'briefs' && (
                 <ComingSoon
                   icon={FileText}
