@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Hourglass, AlertTriangle, Banknote, CalendarClock, Table2 } from 'lucide-react';
 import type { AppData, PtVendor } from '../types';
-import { Card, CardHeader, Badge } from '../components/ui/Card';
+import { Card, CardHeader, PageHeader, Badge } from '../components/ui/Card';
 import { Segmented, type Option } from '../components/ui/Controls';
 import { HBars, type HBarDatum } from '../components/charts/Bars';
 import { Table, type Column } from '../components/ui/Table';
@@ -78,26 +78,24 @@ export default function PaymentTermsTab({ data }: { data: AppData }) {
   return (
     <div className="animate-fade-up space-y-4">
       {/* header row with scenario toggle */}
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <h2 className="text-[15px] font-bold text-fdc-ink">Payment terms & working capital</h2>
-          <p className="text-[12.5px] text-fdc-grey">
-            Longer credit = cash stays with FDC longer. Weighted-average term today:{' '}
-            <span className="font-bold text-fdc-ink">{pt.weightedAvgTermDays} days</span>.
-          </p>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="text-[12px] font-medium text-fdc-grey">If we negotiated more credit:</span>
-          <Segmented<Scenario>
-            value={scenario}
-            onChange={setScenario}
-            options={[
-              { value: '15', label: '+15 days' },
-              { value: '30', label: '+30 days' },
-            ] as Option<Scenario>[]}
-          />
-        </div>
-      </div>
+      <PageHeader
+        icon={Hourglass}
+        title="Payment terms & working capital"
+        subtitle={<>Longer credit = cash stays with FDC longer. Weighted-average term today: <span className="font-bold text-fdc-ink">{pt.weightedAvgTermDays} days</span>.</>}
+        right={
+          <div className="flex items-center gap-2">
+            <span className="hidden text-[12px] font-medium text-fdc-grey sm:inline">If we negotiated more credit:</span>
+            <Segmented<Scenario>
+              value={scenario}
+              onChange={setScenario}
+              options={[
+                { value: '15', label: '+15 days' },
+                { value: '30', label: '+30 days' },
+              ] as Option<Scenario>[]}
+            />
+          </div>
+        }
+      />
 
       {/* row A */}
       <div className="grid gap-4 lg:grid-cols-5">

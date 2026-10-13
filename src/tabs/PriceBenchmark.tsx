@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { LineChart, Wallet, Building2, Table2, TrendingUp, TrendingDown, Minus, Trophy } from 'lucide-react';
 import type { AppData, MaterialKey, SkuGap } from '../types';
-import { Card, CardHeader, Badge, Pill } from '../components/ui/Card';
+import { Card, CardHeader, PageHeader, Badge, Pill } from '../components/ui/Card';
 import { Dropdown, Segmented, type Option } from '../components/ui/Controls';
 import { MarketBenchmark } from '../components/MarketBenchmark';
 import { LineArea } from '../components/charts/LineArea';
@@ -128,6 +128,11 @@ export default function PriceBenchmark({ data }: { data: AppData }) {
 
   return (
     <div className="animate-fade-up space-y-4">
+      <PageHeader
+        icon={Wallet}
+        title="Price & benchmark"
+        subtitle="What we pay per material and item, where suppliers and plants differ, and how our prices sit against real market references."
+      />
       {/* controls */}
       <div className="flex flex-wrap items-end gap-3">
         <Dropdown label="Material" value={matKey} options={materialOptions} onChange={setMatKey} width={240} />

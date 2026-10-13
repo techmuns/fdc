@@ -3,7 +3,7 @@ import {
   Repeat2, BadgeCheck, Lock, ShieldAlert, Star, Factory, Film, FlaskConical, ExternalLink, TrendingUp,
 } from 'lucide-react';
 import type { AppData, MaterialKey, AltVendor } from '../types';
-import { Card, CardHeader, Badge, Pill } from '../components/ui/Card';
+import { Card, CardHeader, PageHeader, Badge, Pill } from '../components/ui/Card';
 import { SubTabs } from '../components/ui/Tabs';
 import { MATERIAL_COLOR } from '../lib/brand';
 import { money, pct, vendorShort } from '../lib/format';
@@ -44,17 +44,18 @@ export default function Alternatives({ data }: { data: AppData }) {
 
   return (
     <div className="animate-fade-up space-y-4">
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h2 className="text-[15px] font-bold text-fdc-ink">Alternative suppliers</h2>
-          <p className="text-[12.5px] text-fdc-grey">Credible backups to de-risk single-source materials and keep incumbents honest on price.</p>
-        </div>
-        <SubTabs
-          tabs={data.materials.map((m) => ({ key: m.key, label: m.displayName, color: MATERIAL_COLOR[m.key] }))}
-          active={mat}
-          onChange={(k) => setMat(k as MaterialKey)}
-        />
-      </div>
+      <PageHeader
+        icon={Repeat2}
+        title="Alternative suppliers"
+        subtitle="Credible backups to de-risk single-source materials and keep incumbents honest on price."
+        right={
+          <SubTabs
+            tabs={data.materials.map((m) => ({ key: m.key, label: m.displayName, color: MATERIAL_COLOR[m.key] }))}
+            active={mat}
+            onChange={(k) => setMat(k as MaterialKey)}
+          />
+        }
+      />
 
       {/* incumbent risk banner */}
       <Card>
@@ -103,7 +104,7 @@ function AltCard({ alt, material }: { alt: AltVendor; material: MaterialKey }) {
         <div className="flex items-start gap-2">
           <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-fdc-offwhite text-fdc-slate"><RoleIcon size={16} /></span>
           <div className="min-w-0">
-            <h4 className="text-[13.5px] font-bold leading-tight text-fdc-ink">{vendorShort(alt.name)}</h4>
+            <h4 className="text-[13px] font-bold leading-tight text-fdc-ink">{vendorShort(alt.name)}</h4>
             <div className="mt-0.5 flex flex-wrap items-center gap-1">
               {alt.type === 'listed' ? <Pill color="#2E7CE4"><BadgeCheck size={10} /> Listed</Pill> : <Pill color="#8E44AD"><Lock size={10} /> Private</Pill>}
               <Pill color="#707070">{alt.role.replace(/-/g, ' ')}</Pill>
@@ -147,7 +148,7 @@ function Mini({ label, value, grow }: { label: string; value: string; grow?: num
   const color = grow == null ? '#161616' : grow > 1 ? '#00973D' : grow < -1 ? '#D91701' : '#161616';
   return (
     <div className="rounded-lg bg-fdc-offwhite px-2 py-1 text-center">
-      <div className="text-[9.5px] font-medium uppercase tracking-wide text-fdc-grey">{label}</div>
+      <div className="text-[10px] font-medium uppercase tracking-wide text-fdc-grey">{label}</div>
       <div className="tnum mt-0.5 inline-flex items-center gap-0.5 text-[12px] font-extrabold" style={{ color }}>
         {grow != null && grow > 1 && <TrendingUp size={10} />}{value}
       </div>
