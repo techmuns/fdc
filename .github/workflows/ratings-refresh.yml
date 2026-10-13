@@ -43,12 +43,15 @@ jobs:
 
       - name: Commit refreshed financials if changed
         run: |
+          # No [skip ci] in the message: Cloudflare Pages honors it and would skip the
+          # production deploy. This workflow isn't push-triggered (and GitHub suppresses
+          # GITHUB_TOKEN-push loops anyway), so there's no Actions loop to prevent.
           git config user.name  "fdc-data-bot"
           git config user.email "actions@users.noreply.github.com"
           git add public/data/rating-financials.json public/data/vendor-financials.json public/data/alternatives.json
           if git diff --cached --quiet; then
             echo "No rating changes."
           else
-            git commit -m "chore(data): monthly credit-rating financials refresh [skip ci]"
+            git commit -m "chore(data): monthly credit-rating financials refresh"
             git push
           fi
