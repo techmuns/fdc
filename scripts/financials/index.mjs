@@ -48,6 +48,46 @@ function computeHealth(m, ratingGrade) {
   return { value, grade, components: comps, note: 'Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure.' };
 }
 
+/** Richer health score for Probe42-covered private vendors — folds the credit
+ *  rating, profitability (incl. vs-peer-median), returns, leverage, interest
+ *  cover and the working-capital cycle. Loss-making tanks it via the margins. */
+function computeHealthProbe(pp, ratingGrade) {
+  const m = pp.metrics; const peer = pp.peer;
+  const comps = [];
+  const push = (label, raw, score, weight) => { if (raw != null && isFinite(score)) comps.push({ label, raw: r2(raw), score: Math.round(clamp(score)), weight }); };
+  if (ratingGrade && RATING_SCORE[ratingGrade] != null) comps.push({ label: `Credit rating (${ratingGrade})`, raw: ratingGrade, score: RATING_SCORE[ratingGrade], weight: 0.26 });
+  push('Net margin', m.netMargin, (m.netMargin / 12) * 100, 0.18);
+  if (peer?.netMargin != null && m.netMargin != null) push('Margin vs peers', m.netMargin - peer.netMargin, 50 + (m.netMargin - peer.netMargin) * 6, 0.12);
+  push('Return on capital', m.roce, (m.roce / 20) * 100, 0.16);
+  push('Low leverage', m.debtToEquity, 100 - m.debtToEquity / 2, 0.14);
+  push('Interest cover', m.interestCoverage, (m.interestCoverage / 5) * 100, 0.14);
+  if (peer?.ccc != null && m.ccc != null) push('Cash cycle vs peers', m.ccc, 50 + (peer.ccc - m.ccc) * 0.6, 0.10);
+  if (!comps.length) return null;
+  const wsum = comps.reduce((s, c) => s + c.weight, 0);
+  const value = Math.round(comps.reduce((s, c) => s + c.score * c.weight, 0) / wsum);
+  const grade = value >= 75 ? 'A' : value >= 60 ? 'B' : value >= 45 ? 'C' : 'D';
+  return { value, grade, components: comps, note: 'Computed by FDC from Probe42 (MCA-filed) financials vs peer medians + the credit rating — an analytical score, not a reported figure.' };
+}
+
+/** Convert a probe-financials.json profile → the vendor-record shape used here. */
+function fromProbe(pp) {
+  const m = pp.metrics;
+  return {
+    type: 'private', status: 'ok', primarySource: 'probe',
+    companyName: pp.legalName, cin: pp.cin, probe: pp,
+    source: pp.source,
+    metrics: {
+      revenue: m.revenue, ebitda: m.ebitda, marketCap: null, totalDebt: m.totalDebt,
+      ebitdaMargin: m.ebitdaMargin, netMargin: m.netMargin, grossMargin: m.grossMargin, operatingMargin: null,
+      debtToEquity: m.debtToEquity, revenueGrowth: m.revenueGrowth, earningsGrowth: null,
+      pe: null, evEbitda: null, dividendYield: null, currentPrice: null, yearlyChange: null, employees: null,
+      roce: m.roce, roe: m.roe, pat: m.pat, netWorth: m.netWorth, interestCoverage: m.interestCoverage,
+      currentRatio: m.currentRatio, receivableDays: m.receivableDays, payableDays: m.payableDays, cashConversionCycle: m.ccc,
+      creditRating: null,
+    },
+  };
+}
+
 /** Convert a rating-financials.json entry → the vendor-record shape used here. */
 function fromRatingDoc(rf) {
   if (!rf?.financialsAvailable) return null;
@@ -101,26 +141,42 @@ async function main() {
   // Private financials — ACTIVE source: free credit-rating docs. Probe42 cache is
   // read too but stays dormant (empty without a key); it wins if ever populated.
   const ratingFin = existsSync(path.join(DATA, 'rating-financials.json')) ? JSON.parse(readFileSync(path.join(DATA, 'rating-financials.json'), 'utf8')).vendors || {} : {};
-  const probeCache = readAllCached(PRIVATE_CINS);
+  const probeFin = existsSync(path.join(DATA, 'probe-financials.json')) ? JSON.parse(readFileSync(path.join(DATA, 'probe-financials.json'), 'utf8')).vendors || {} : {};
 
-  // assemble per-vendor records
+  // assemble per-vendor records — PRIVATE priority: Probe42 (MCA) → rating-doc → honest pending
   const out = {};
   for (const v of vendors) {
     const isListed = !!LISTED_VENDORS[v.key];
+    const pp = probeFin[v.key];
+    const rd = ratingFin[v.key];
     let fin;
     if (isListed) {
-      fin = listed.data[v.key] ? { ...listed.data[v.key], type: 'listed', status: 'ok' } : { type: 'listed', status: 'pending', metrics: null, note: 'ticker unresolved' };
-    } else if (probeCache[v.key]?.status === 'ok') {
-      fin = { ...probeCache[v.key], type: 'private' }; // Probe42 (dormant) wins if populated
+      fin = listed.data[v.key] ? { ...listed.data[v.key], type: 'listed', status: 'ok', primarySource: 'listed' } : { type: 'listed', status: 'pending', primarySource: 'none', metrics: null, note: 'ticker unresolved' };
+    } else if (pp) {
+      // PRIMARY: Probe42 (MCA filings). Credit-rating docs stay as a cross-check / fallback.
+      fin = fromProbe(pp);
+      if (rd?.financialsAvailable && rd.ratingGrade) { // published rationale → clean long-term grade + INC flag
+        fin.ratingGrade = rd.ratingGrade; fin.ratingLabel = rd.ratingLabel; fin.ratingOutlook = rd.ratingOutlook;
+        fin.ratingDate = rd.ratingDate; fin.issuerNotCooperating = !!rd.flags?.issuerNotCooperating;
+        fin.fallbackSource = rd.source ? { ...rd.source, ratingLabel: rd.ratingLabel } : null;
+      } else if (pp.creditRatingProbe?.grade) { // else Probe42's own headline long-term rating
+        const cr = pp.creditRatingProbe;
+        fin.ratingGrade = cr.grade; fin.ratingLabel = `${cr.agency} ${cr.grade}${cr.outlook ? ` / ${cr.outlook}` : ''}`;
+        fin.ratingOutlook = cr.outlook; fin.ratingDate = cr.date;
+      } else if (rd?.source) {
+        fin.fallbackSource = { ...rd.source, ratingLabel: rd.ratingLabel || null };
+      }
+      fin.asOfFy = pp.latestFy; // Probe42 latest filed FY
+    } else if (rd?.financialsAvailable) {
+      // FALLBACK: credit-rating doc (no Probe42 report for this vendor)
+      fin = fromRatingDoc(rd); fin.primarySource = 'rating-doc';
     } else {
-      const rd = fromRatingDoc(ratingFin[v.key]);
-      if (rd) fin = rd;
-      else fin = { type: 'private', status: ratingFin[v.key]?.financialsAvailable === false ? 'unrated' : 'pending',
-        metrics: null, source: ratingFin[v.key]?.source || null,
-        note: ratingFin[v.key]?.reason || 'No public rating found — financials not filed free.' };
+      fin = { type: 'private', status: rd?.financialsAvailable === false ? 'unrated' : 'pending', primarySource: 'none',
+        metrics: null, source: rd?.source || null,
+        note: rd?.reason || 'No Probe42 report and no public credit rating — private / proprietorship financials aren’t filed free.' };
     }
 
-    const health = computeHealth(fin.metrics, fin.ratingGrade);
+    const health = pp ? computeHealthProbe(pp, fin.ratingGrade) : computeHealth(fin.metrics, fin.ratingGrade);
     const levers = buildLevers({
       vendor: v,
       financials: fin.status === 'ok' ? fin : null,
@@ -129,10 +185,12 @@ async function main() {
       ratingGrade: fin.ratingGrade,
       ratingLabel: fin.ratingLabel,
       inc: fin.issuerNotCooperating,
+      probe: pp || null,
       bestGapNote: null,
     });
     out[v.key] = {
       vendorKey: v.key, name: v.name, type: fin.type, status: fin.status,
+      primarySource: fin.primarySource || (isListed ? 'listed' : 'none'),
       companyName: fin.companyName || null, symbol: fin.symbol || null, exchange: fin.exchange || null,
       cin: fin.cin || PRIVATE_CINS[v.key]?.cin || null,
       materialsSupplied: v.materialsSupplied, fdcSpend: v.totalNetSpend,
@@ -140,18 +198,21 @@ async function main() {
       source: fin.source || null, note: fin.note || null,
       ratingGrade: fin.ratingGrade || null, ratingLabel: fin.ratingLabel || null, ratingOutlook: fin.ratingOutlook || null,
       asOfFy: fin.asOfFy || null, ratingDate: fin.ratingDate || null, issuerNotCooperating: !!fin.issuerNotCooperating,
+      fallbackSource: fin.fallbackSource || null,
+      probe: fin.probe || null,
       levers,
     };
   }
 
   const listedCount = Object.values(out).filter((o) => o.status === 'ok' && o.type === 'listed').length;
+  const privateProbe = Object.values(out).filter((o) => o.primarySource === 'probe').length;
   const privateOk = Object.values(out).filter((o) => o.status === 'ok' && o.type === 'private').length;
   const privatePending = Object.values(out).filter((o) => o.status !== 'ok' && o.type === 'private').length;
 
   writeFileSync(path.join(DATA, 'vendor-financials.json'), JSON.stringify({
     generatedAt: new Date().toISOString(),
-    sources: { listed: 'Munshot market-data API (free)', private: 'Credit-rating-agency rationale docs (free); Probe42 dormant behind its secret' },
-    manifest: { listedResolved: listedCount, privateRated: privateOk, privateUnrated: privatePending, total: vendors.length },
+    sources: { listed: 'Munshot market-data API (free)', private: 'Probe42 comprehensive reports (MCA filings) — primary; credit-rating-agency rationale docs — fallback / cross-check' },
+    manifest: { listedResolved: listedCount, privateProbe, privateRated: privateOk, privateUnrated: privatePending, total: vendors.length },
     vendors: out,
   }, null, 2));
 
@@ -196,7 +257,7 @@ async function main() {
     note: 'Alternate suppliers to de-risk single-source materials and benchmark price. Listed alternates benchmarked live (Munshot); private via Probe42 (gated).',
   }, null, 2));
 
-  console.log(`\n✓ vendor-financials.json — listed ${listedCount} live, private ${privateOk} cached, ${privatePending} pending`);
+  console.log(`\n✓ vendor-financials.json — listed ${listedCount} live, private ${privateOk} with financials (${privateProbe} via Probe42), ${privatePending} pending`);
   console.log(`✓ alternatives.json — ${Object.values(altOut).flat().length} alternates across ${Object.keys(altOut).length} materials\n`);
 }
 

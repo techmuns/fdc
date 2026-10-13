@@ -10,10 +10,13 @@ financial feeds. Nothing is estimated, sampled, or fabricated.
 > Payment Terms, Vendors). **Phase 2** adds the *intelligence layer*: live
 > market-price benchmarks, real vendor financials & negotiation levers
 > (Vendor Health), and benchmarked alternate suppliers (Alternatives).
-> **Phase 2.1** makes the *private*-vendor financials real & free: they now
-> come from **credit-rating-agency rationale documents** (CRISIL / ICRA /
-> CARE / Acuité / Infomerics) — a plain fetch, **zero API keys, zero
-> Firecrawl**. Negotiation Briefs (AI) remain scaffolded for Phase 3.
+> **Phase 2.1** made the *private*-vendor financials real & free via
+> **credit-rating-agency rationale documents** (CRISIL / ICRA / CARE / Acuité /
+> Infomerics). **Phase 2.2** promotes **Probe42** (comprehensive MCA-filing
+> reports) to the *primary* private-vendor source — multi-year financials,
+> ratios, peer-median benchmarks, risk/legal flags and promoter detail — with the
+> credit-rating docs kept as a fallback & cross-check. Negotiation Briefs (AI)
+> remain scaffolded for Phase 3.
 
 ---
 
@@ -25,7 +28,7 @@ financial feeds. Nothing is estimated, sampled, or fabricated.
 | **💰 Price & Benchmark** | FDC price trend, price gap by supplier, inter-plant differences, item price table — **plus a Market-benchmark view**: our price vs real customs / producer / seller-ask lines and raw-material input trends, each source-stamped. |
 | **⏳ Payment Terms** | Where spend sits on payment terms, the cash freed by better terms (+15 / +30 day toggle), and the weakest terms by spend. |
 | **🏭 Vendors** | Sortable, colour-coded table of every supplier → click for a full profile (materials, price position, monthly trend, listed-company flag). |
-| **❤️ Vendor Health** | Real financials (revenue, margins, leverage, growth) for listed suppliers *and* for rated private suppliers (via their credit-rating rationale), a computed health score with the **credit-rating grade** folded in, a rating badge (grade / outlook / as-of FY / source), and plain-English **negotiation levers** from the numbers. Unrated private suppliers show an honest "financials not public" state — never fabricated. |
+| **❤️ Vendor Health** | Real financials for listed suppliers (Munshot) *and* private suppliers (**Probe42** MCA filings — multi-year revenue/margin/RoCE trend, working-capital days **vs peer median**, credit-rating badge + Probe financial score, risk/compliance chips), a computed health score, and evidence-backed **negotiation levers**. Suppliers with no Probe42 report and no public rating show an honest "financials not public" state — never fabricated. |
 | **🔁 Alternatives** | Benchmarked backup suppliers per material with a financial health check and fit note; second-source candidates highlighted for single-source-risk materials. |
 | **📝 Negotiation Briefs** | Scaffolded for Phase 3 (AI drafting on top of the levers built in Phase 2). |
 
@@ -102,21 +105,59 @@ benchmark*).
 - **Listed** vendors & alternates → real financials now, **free** via the Munshot
   market-data API (revenue, EBITDA/net/operating margins, debt/equity, growth,
   market cap). A transparent **health score** (A–D) is computed from these.
-- **Private** vendors → real financials now, **free** from **credit-rating-agency
-  rationale documents** (see Phase 2.1 below). **Probe42** (`scripts/probe/`) is
-  kept in the codebase but **dormant** behind `PROBE42_API_KEY_PROD` + VPN; if a
-  key is ever added, its cached payloads win over the rating-doc figures.
+- **Private** vendors → **Probe42** MCA-filing reports are the **primary** source
+  (see Phase 2.2 below): multi-year financials, ratios, peer-median benchmarks,
+  risk/legal flags. The **credit-rating docs** (Phase 2.1) stay as a **fallback**
+  (for any vendor Probe42 doesn't cover) and a **cross-check** (the published
+  long-term grade + "Issuer Not Cooperating" flag on the rating badge).
 - **Negotiation levers** (`scripts/levers.mjs`) turn real financials + real
-  procurement facts (the credit rating itself, our wallet-share of their revenue,
-  margins, leverage, single-source risk, weak terms, overpayment, returns) into
-  plain-English, evidence-backed opportunity / risk / watch levers.
+  procurement facts (credit rating, margin **vs peer median**, payable-days & cash
+  cycle vs peers, loss-making flag, our wallet-share of their revenue, leverage,
+  single-source risk, weak terms, overpayment, returns) into plain-English,
+  evidence-backed opportunity / risk / watch levers.
 
 ```bash
 npm run market       # market-price feeds → public/data/market/
-npm run ratings      # private-vendor financials from rating docs → public/data/rating-financials.json
+npm run ratings      # credit-rating-doc financials (fallback/cross-check) → public/data/rating-financials.json
+npm run probe        # Probe42 MCA-filing financials (primary private) → public/data/probe-financials.json
 npm run financials   # merge listed + private → public/data/vendor-financials.json, alternatives.json
-npm run data         # normalize + market + ratings + financials, all in one
+npm run data         # normalize + market + ratings + probe + financials, all in one
 ```
+
+### Phase 2.2 — Probe42 is the primary private-vendor source (MCA filings)
+
+Probe42's comprehensive-details reports pull a private company's **MCA-filed**
+financials — far richer than a rating rationale. The reports are committed once to
+**`data/probe-cache/{CIN}.json`** (a credit is spent only at fetch time; the
+extractor spends **nothing**). `npm run probe` (`scripts/probe-extract.mjs`) reads
+the local cache and walks each report by **exact key name**, scoped so same-named
+keys don't collide, taking the **latest filed year** (preferring STANDALONE over
+consolidated) and building a **multi-year series** from the `financials` array:
+
+- **Financials** (multi-year): net revenue, operating profit (EBITDA), PAT,
+  interest, depreciation; the full balance sheet (receivables, payables,
+  inventories, cash, share capital, reserves, borrowings, total assets, net worth,
+  total debt); and operating / investing / financing cash flows.
+- **Ratios** (per year): EBITDA & net margin, RoE, RoCE, debt/equity, interest
+  cover, current ratio, receivable / payable / inventory days, cash-conversion cycle.
+- **Peer medians** (`peer_comparison → benchMarks → median_*`) for the same year,
+  so every ratio shows **vs its peer set**.
+- **Credit rating** (latest long-term grade / agency / outlook / date — short-term
+  and withdrawn facility ratings are filtered out), **Probe financial score**
+  (overall + 5 sub-scores), and the key-indicator bands.
+- **Risk / legal**: open charges (count, ₹ sum, top lenders), legal history
+  (count / against / severe / pending), financial-dispute & MSME-delay counts,
+  defaulter / struck-off / GST-delay / EPF-delay flags → shown as coloured chips.
+- **People**: active directors (ceased excluded) and promoter shareholding %.
+
+The merge (`npm run financials`) makes Probe42 **primary** for the 10 covered
+vendors, folds the richer metrics + peer medians + credit rating into the health
+score, and keeps the rating-doc figures as a fallback / cross-check. Values are
+absolute INR (matching the listed-vendor scale); nothing is fabricated — a field
+absent from a filing stays null, and vendors with neither source (e.g.
+proprietorships) keep the honest "financials not public" state. A monthly
+**data-refresh** step re-runs the extractor so a refreshed cache flows straight to
+the cockpit (0 credits).
 
 ### Phase 2.1 — private-vendor financials from credit-rating docs (free, 0 keys, 0 Firecrawl)
 
@@ -151,7 +192,12 @@ fetch keeps the last-good entry rather than blanking a vendor.
 > agency republishes with fresh financials — is fully automated (see the monthly
 > workflow below).
 
-### Probe42 (private financials) — run on demand
+### Probe42 report fetching — run on demand (paid; the cache is committed)
+
+The reports in `data/probe-cache/` are the committed output of a paid fetch; once
+committed, `npm run probe` re-reads them for **free**. To add or refresh a report
+(a credit per company), the gated fetcher stays in the repo behind
+`PROBE42_API_KEY_PROD` + VPN:
 
 ```bash
 node scripts/probe/enrich.mjs --status          # free: survey data availability (0 credits)
@@ -161,7 +207,8 @@ node scripts/probe/enrich.mjs --live --limit 20 # paid: fetch comprehensive (VPN
 In CI, the **Probe42 private financials** GitHub Action connects the VPN, verifies
 the exit IP matches `VPN_EXPECTED_EXIT_IP` (hard-abort otherwise), runs the fetch,
 and commits the cache. A separate **Probe42 VPN check** workflow prints the
-before/after exit IP (0 credits) to help you capture that IP.
+before/after exit IP (0 credits) to help you capture that IP. The daily
+**data-refresh** workflow runs `npm run probe` (free) so any new cache is picked up.
 
 ---
 
@@ -221,20 +268,22 @@ push — Cloudflare redeploys automatically.
 data/raw/                 real SAP exports + vendor master
   masters/alt-vendors.json   seed of alternate suppliers (tracked, editable)
   masters/rating-docs.json   seed of rated-vendor rationale URLs + unrated keys (tracked, editable)
-data/probe-cache/         committed Probe42 payloads (pay a credit once; dormant)
+data/probe-cache/         committed Probe42 reports ({CIN}.json; pay a credit once, read free)
 scripts/
   normalize.mjs           SAP → public/data/*.json
+  probe-extract.mjs       Probe42 cache → public/data/probe-financials.json (0 credits, primary private)
   lib/        http.mjs (curl-based), fred.mjs
   market/     config · comtrade · fred-inputs · plastemart · wpi · marketplace · index
-  ratings/    fetch.mjs (plain HTML/PDF, 0 keys) · parse.mjs (per-agency) · index.mjs
+  ratings/    fetch.mjs (plain HTML/PDF, 0 keys) · parse.mjs (per-agency) · index.mjs  (fallback/cross-check)
   financials/ munshot.mjs · index.mjs   (listed financials + merge orchestrator)
-  probe/      client · extract · enrich · cins   (Probe42, dormant behind its secret)
+  probe/      client · extract · enrich · cins   (Probe42 paid fetcher, gated behind its secret)
   levers.mjs  negotiation-lever engine
 public/
   fdc-logo.png · _redirects
   data/*.json             Phase-1 clean data
   data/market/*.json      market prices + manifest
-  data/rating-financials.json   private-vendor financials from rating docs
+  data/probe-financials.json    private-vendor financials from Probe42 (primary)
+  data/rating-financials.json   credit-rating-doc financials (fallback / cross-check)
   data/vendor-financials.json · data/alternatives.json
 src/
   lib/        format · brand · data (loader) · chartMath
@@ -244,9 +293,9 @@ src/
   tabs/       Overview · PriceBenchmark · PaymentTermsTab · Vendors · VendorHealth · Alternatives
   types.ts
 .github/workflows/
-  data-refresh.yml         daily: refresh market + financials, commit JSON
+  data-refresh.yml         daily: market + Probe42 extract + financials, commit JSON
   ratings-refresh.yml      monthly: re-fetch rating docs (free, 0 keys), commit JSON
-  probe42-refresh.yml      manual: VPN-gated Probe42 fetch (paid, budgeted; dormant)
+  probe42-refresh.yml      manual: VPN-gated Probe42 fetch (paid, budgeted)
   probe42-vpn-check.yml    manual: print exit IP before/after VPN (0 credits)
 ```
 

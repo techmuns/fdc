@@ -1,0 +1,2493 @@
+{
+ "metadata": {
+  "api_version": "1.3",
+  "last_updated": "2026-06-11",
+  "identifier_changed": false
+ },
+ "data": {
+  "company": {
+   "cin": "U25200KA2021FTC152314",
+   "legal_name": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+   "efiling_status": "Active",
+   "incorporation_date": "2021-09-27",
+   "paid_up_capital": 44333330,
+   "sum_of_charges": 0,
+   "authorized_capital": 100000000,
+   "active_compliance": null,
+   "cirp_status": null,
+   "lei": {
+    "number": "335800KI82IIL56PAT36",
+    "status": "ISSUED",
+    "registration_date": "2021-11-26",
+    "last_updated_date": "2026-09-28",
+    "next_renewal_date": "2027-11-26"
+   },
+   "registered_address": {
+    "full_address": "No. 485, 13th Cross, 4th Phase   PIA, Bangalore 1110035, Bangalore, Bangalore, Karnataka - 560058",
+    "address_line1": "No. 485, 13th Cross, 4th Phase   PIA, Bangalore 1110035",
+    "address_line2": null,
+    "city": "Bangalore",
+    "pincode": "560058",
+    "state": "Karnataka"
+   },
+   "business_address": {
+    "address_line1": "485, 13th Cross, 4th Phase,",
+    "address_line2": "PIA",
+    "city": "Bengaluru",
+    "pincode": 560058,
+    "state": "Karnataka"
+   },
+   "pan": null,
+   "website": "https://www.berryglobal.com/",
+   "classification": "Private Limited Foreign Company Incorporated in India",
+   "category": "Company limited by shares",
+   "sub_category": "subsidiary of company incorporated outside India",
+   "class": "Private",
+   "status": "Unlisted",
+   "next_cin": null,
+   "last_agm_date": "2025-10-31",
+   "last_filing_date": "2025-03-31",
+   "email": "SushantBhavsar@berryglobal.com"
+  },
+  "description": {
+   "desc_thousand_char": "Berry Global India Private Limited (BGIPL), as per its annual filings, is engaged in the business of providing drug delivery solutions in the health sector. BGIPL is engaged in the business of manufacturing drug delivery and other packaging solutions, like cups, bottles, nozzles, and caps, for its customers. It also advises customers in the design and development of the devices and molds for such devices. The company has its manufacturing facility in Sira, India. BGIPL was incorporated in 2021 and has its registered office located in Bangalore, Karnataka."
+  },
+  "name_history": [],
+  "authorized_signatories": [
+   {
+    "pan": null,
+    "din": "10552343",
+    "name": "JASON KENT GREENE",
+    "designation": "Additional Director",
+    "din_status": "Approved",
+    "gender": "Male",
+    "date_of_birth": null,
+    "age": null,
+    "date_of_appointment": "2024-03-16",
+    "date_of_appointment_for_current_designation": "2024-03-16",
+    "date_of_cessation": "2025-05-19",
+    "nationality": "United States",
+    "dsc_status": null,
+    "dsc_expiry_date": null,
+    "father_name": null,
+    "address": null,
+    "association_history": [
+     {
+      "event": null,
+      "designation_after_event": "Additional Director",
+      "event_date": "2024-03-16",
+      "filing_date": null
+     }
+    ]
+   },
+   {
+    "pan": null,
+    "din": "07935461",
+    "name": "VADIGERE NARASIMHAPPA SHANKARA",
+    "designation": "Director",
+    "din_status": null,
+    "gender": null,
+    "date_of_birth": null,
+    "age": null,
+    "date_of_appointment": "2021-09-27",
+    "date_of_appointment_for_current_designation": "2021-09-27",
+    "date_of_cessation": "2023-10-12",
+    "nationality": null,
+    "dsc_status": null,
+    "dsc_expiry_date": null,
+    "father_name": null,
+    "address": null,
+    "association_history": [
+     {
+      "event": null,
+      "designation_after_event": "Director",
+      "event_date": "2021-09-27",
+      "filing_date": null
+     }
+    ]
+   },
+   {
+    "pan": null,
+    "din": "10344837",
+    "name": "JOSEPH EAPPACHAN",
+    "designation": "Additional Director",
+    "din_status": null,
+    "gender": null,
+    "date_of_birth": null,
+    "age": null,
+    "date_of_appointment": "2023-10-11",
+    "date_of_appointment_for_current_designation": "2023-10-11",
+    "date_of_cessation": "2024-06-17",
+    "nationality": null,
+    "dsc_status": null,
+    "dsc_expiry_date": null,
+    "father_name": null,
+    "address": null,
+    "association_history": [
+     {
+      "event": null,
+      "designation_after_event": "Additional Director",
+      "event_date": "2023-10-11",
+      "filing_date": null
+     }
+    ]
+   },
+   {
+    "pan": null,
+    "din": "06436267",
+    "name": "JASRAJ SINGH",
+    "designation": "Director",
+    "din_status": "Approved",
+    "gender": "Male",
+    "date_of_birth": null,
+    "age": null,
+    "date_of_appointment": "2021-09-27",
+    "date_of_appointment_for_current_designation": "2021-09-27",
+    "date_of_cessation": "2024-06-17",
+    "nationality": "India",
+    "dsc_status": null,
+    "dsc_expiry_date": null,
+    "father_name": null,
+    "address": null,
+    "association_history": [
+     {
+      "event": null,
+      "designation_after_event": "Director",
+      "event_date": "2021-09-27",
+      "filing_date": null
+     }
+    ]
+   },
+   {
+    "pan": null,
+    "din": "03612708",
+    "name": "PEDAKHASIM SAHEB SHAIK",
+    "designation": "Managing Director",
+    "din_status": "Approved",
+    "gender": "Male",
+    "date_of_birth": null,
+    "age": null,
+    "date_of_appointment": "2025-02-27",
+    "date_of_appointment_for_current_designation": "2025-02-27",
+    "date_of_cessation": null,
+    "nationality": "India",
+    "dsc_status": null,
+    "dsc_expiry_date": null,
+    "father_name": null,
+    "address": null,
+    "association_history": [
+     {
+      "event": null,
+      "designation_after_event": "Additional Director",
+      "event_date": "2025-02-27",
+      "filing_date": null
+     },
+     {
+      "event": null,
+      "designation_after_event": "Managing Director",
+      "event_date": "2025-02-27",
+      "filing_date": null
+     }
+    ]
+   },
+   {
+    "pan": null,
+    "din": "10701430",
+    "name": "SUSHANT BHAVSAR",
+    "designation": "Director",
+    "din_status": "Approved",
+    "gender": "Male",
+    "date_of_birth": null,
+    "age": null,
+    "date_of_appointment": "2024-07-12",
+    "date_of_appointment_for_current_designation": "2025-07-18",
+    "date_of_cessation": "2026-03-31",
+    "nationality": "India",
+    "dsc_status": null,
+    "dsc_expiry_date": null,
+    "father_name": null,
+    "address": null,
+    "association_history": [
+     {
+      "event": null,
+      "designation_after_event": "Director",
+      "event_date": "2025-07-18",
+      "filing_date": null
+     },
+     {
+      "event": null,
+      "designation_after_event": "Additional Director",
+      "event_date": "2024-07-12",
+      "filing_date": null
+     }
+    ]
+   },
+   {
+    "pan": null,
+    "din": "10552352",
+    "name": "MARK WILLIAM MILES",
+    "designation": "Director",
+    "din_status": "Approved",
+    "gender": "Male",
+    "date_of_birth": null,
+    "age": null,
+    "date_of_appointment": "2024-03-16",
+    "date_of_appointment_for_current_designation": "2025-07-18",
+    "date_of_cessation": null,
+    "nationality": "United States",
+    "dsc_status": null,
+    "dsc_expiry_date": null,
+    "father_name": null,
+    "address": null,
+    "association_history": [
+     {
+      "event": null,
+      "designation_after_event": "Director",
+      "event_date": "2025-07-18",
+      "filing_date": null
+     },
+     {
+      "event": null,
+      "designation_after_event": "Additional Director",
+      "event_date": "2024-03-16",
+      "filing_date": null
+     }
+    ]
+   },
+   {
+    "pan": null,
+    "din": "10552363",
+    "name": "WALID DJILANI HAMZA",
+    "designation": "Director",
+    "din_status": "Approved",
+    "gender": "Male",
+    "date_of_birth": null,
+    "age": null,
+    "date_of_appointment": "2024-03-16",
+    "date_of_appointment_for_current_designation": "2025-07-18",
+    "date_of_cessation": "2025-11-07",
+    "nationality": "France",
+    "dsc_status": null,
+    "dsc_expiry_date": null,
+    "father_name": null,
+    "address": null,
+    "association_history": [
+     {
+      "event": null,
+      "designation_after_event": "Director",
+      "event_date": "2025-07-18",
+      "filing_date": null
+     },
+     {
+      "event": null,
+      "designation_after_event": "Additional Director",
+      "event_date": "2024-03-16",
+      "filing_date": null
+     }
+    ]
+   }
+  ],
+  "director_network": [
+   {
+    "name": "PEDAKHASIM SAHEB SHAIK",
+    "pan": null,
+    "din": "03612708",
+    "network": {
+     "companies": [
+      {
+       "cin": "U74899DL1994PTC060426",
+       "legal_name": "TRIVENI POLYMERS PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1994-07-22",
+       "paid_up_capital": 21065000,
+       "sum_of_charges": 0,
+       "city": "Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Managing Director",
+       "date_of_appointment": "2022-03-22",
+       "date_of_appointment_for_current_designation": "2022-03-22",
+       "date_of_cessation": "2024-12-16"
+      },
+      {
+       "cin": "U33111MH2010PTC207393",
+       "legal_name": "GERRESHEIMER PHARMACEUTICAL PACKAGING MUMBAI PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2010-09-01",
+       "paid_up_capital": 29549480,
+       "sum_of_charges": 0,
+       "city": "Mumbai",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2018-06-30",
+       "date_of_appointment_for_current_designation": "2018-11-27",
+       "date_of_cessation": "2024-12-30"
+      },
+      {
+       "cin": "U91110UP1945NPL001322",
+       "legal_name": "THE WESTERN U.P. CHAMBER OF COMMERCE AND INDUSTRY",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1945-06-26",
+       "paid_up_capital": 0,
+       "sum_of_charges": 0,
+       "city": "UTTAR PRADESH",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2015-09-30",
+       "date_of_appointment_for_current_designation": "2015-09-30",
+       "date_of_cessation": "2018-08-26"
+      },
+      {
+       "cin": "U26100MH1986PTC039737",
+       "legal_name": "NEUTRAL GLASS & ALLIED INDUSTRIES PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1986-05-05",
+       "paid_up_capital": 976102990,
+       "sum_of_charges": 259000000,
+       "city": "Mumbai",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2018-06-30",
+       "date_of_appointment_for_current_designation": "2019-03-27",
+       "date_of_cessation": "2024-12-30"
+      },
+      {
+       "cin": "U24295KA1986PTC060481",
+       "legal_name": "BPREX PHARMA PACKAGING INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1986-12-16",
+       "paid_up_capital": 31530200,
+       "sum_of_charges": 29250000,
+       "city": "Bangalore",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Managing Director",
+       "date_of_appointment": "2025-02-27",
+       "date_of_appointment_for_current_designation": "2025-02-27",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U25200KA2021FTC152314",
+       "legal_name": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2021-09-27",
+       "paid_up_capital": 44333330,
+       "sum_of_charges": 0,
+       "city": "Bangalore",
+       "active_compliance": null,
+       "cirp_status": null,
+       "designation": "Managing Director",
+       "date_of_appointment": "2025-02-27",
+       "date_of_appointment_for_current_designation": "2025-02-27",
+       "date_of_cessation": null
+      }
+     ],
+     "llps": [],
+     "proprietorship": []
+    }
+   },
+   {
+    "name": "JASRAJ SINGH",
+    "pan": null,
+    "din": "06436267",
+    "network": {
+     "companies": [
+      {
+       "cin": "U24295KA1986PTC060481",
+       "legal_name": "BPREX PHARMA PACKAGING INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1986-12-16",
+       "paid_up_capital": 31530200,
+       "sum_of_charges": 29250000,
+       "city": "Bangalore",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Whole-time director",
+       "date_of_appointment": "2012-08-23",
+       "date_of_appointment_for_current_designation": "2015-04-23",
+       "date_of_cessation": "2024-06-17"
+      },
+      {
+       "cin": "U25209GJ2005PTC046585",
+       "legal_name": "SEAL FOR LIFE INDIA PRIVATE LIMITED",
+       "company_status": "AMALGAMATED",
+       "incorporation_date": "2005-08-10",
+       "paid_up_capital": 35980720,
+       "sum_of_charges": 0,
+       "city": "DIST  VADODARA",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Alternate Director",
+       "date_of_appointment": "2016-12-02",
+       "date_of_appointment_for_current_designation": "2016-12-02",
+       "date_of_cessation": "2017-03-31"
+      },
+      {
+       "cin": "U25200KA2021FTC152314",
+       "legal_name": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2021-09-27",
+       "paid_up_capital": 44333330,
+       "sum_of_charges": 0,
+       "city": "Bangalore",
+       "active_compliance": null,
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2021-09-27",
+       "date_of_appointment_for_current_designation": "2021-09-27",
+       "date_of_cessation": "2024-06-17"
+      },
+      {
+       "cin": "U74899DL1994PTC060426",
+       "legal_name": "TRIVENI POLYMERS PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1994-07-22",
+       "paid_up_capital": 21065000,
+       "sum_of_charges": 0,
+       "city": "Delhi",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Additional Director",
+       "date_of_appointment": "2026-07-02",
+       "date_of_appointment_for_current_designation": "2026-07-02",
+       "date_of_cessation": null
+      }
+     ],
+     "llps": [],
+     "proprietorship": []
+    }
+   },
+   {
+    "name": "VADIGERE NARASIMHAPPA SHANKARA",
+    "pan": null,
+    "din": "07935461",
+    "network": {
+     "companies": [
+      {
+       "cin": "U36900GJ2008PTC053659",
+       "legal_name": "TERRAPRO GEOSYNTHETICS PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2008-04-23",
+       "paid_up_capital": 179729760,
+       "sum_of_charges": 897800000,
+       "city": "Ahmedabad",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2019-08-17",
+       "date_of_appointment_for_current_designation": "2020-11-12",
+       "date_of_cessation": "2024-03-18"
+      },
+      {
+       "cin": "U24295KA1986PTC060481",
+       "legal_name": "BPREX PHARMA PACKAGING INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1986-12-16",
+       "paid_up_capital": 31530200,
+       "sum_of_charges": 29250000,
+       "city": "Bangalore",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Whole-time director",
+       "date_of_appointment": "2018-02-20",
+       "date_of_appointment_for_current_designation": "2018-09-29",
+       "date_of_cessation": "2023-10-12"
+      },
+      {
+       "cin": "U25209GJ2005PTC046585",
+       "legal_name": "SEAL FOR LIFE INDIA PRIVATE LIMITED",
+       "company_status": "AMALGAMATED",
+       "incorporation_date": "2005-08-10",
+       "paid_up_capital": 35980720,
+       "sum_of_charges": 0,
+       "city": "DIST  VADODARA",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2017-09-12",
+       "date_of_appointment_for_current_designation": "2017-09-29",
+       "date_of_cessation": "2019-07-23"
+      },
+      {
+       "cin": "U25200KA2021FTC152314",
+       "legal_name": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2021-09-27",
+       "paid_up_capital": 44333330,
+       "sum_of_charges": 0,
+       "city": "Bangalore",
+       "active_compliance": null,
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2021-09-27",
+       "date_of_appointment_for_current_designation": "2021-09-27",
+       "date_of_cessation": "2023-10-12"
+      }
+     ],
+     "llps": [],
+     "proprietorship": []
+    }
+   },
+   {
+    "name": "JOSEPH EAPPACHAN",
+    "pan": null,
+    "din": "10344837",
+    "network": {
+     "companies": [
+      {
+       "cin": "U24295KA1986PTC060481",
+       "legal_name": "BPREX PHARMA PACKAGING INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1986-12-16",
+       "paid_up_capital": 31530200,
+       "sum_of_charges": 29250000,
+       "city": "Bangalore",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Additional Director",
+       "date_of_appointment": "2023-10-11",
+       "date_of_appointment_for_current_designation": "2023-10-11",
+       "date_of_cessation": "2024-06-17"
+      },
+      {
+       "cin": "U25200KA2021FTC152314",
+       "legal_name": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2021-09-27",
+       "paid_up_capital": 44333330,
+       "sum_of_charges": 0,
+       "city": "Bangalore",
+       "active_compliance": null,
+       "cirp_status": null,
+       "designation": "Additional Director",
+       "date_of_appointment": "2023-10-11",
+       "date_of_appointment_for_current_designation": "2023-10-11",
+       "date_of_cessation": "2024-06-17"
+      }
+     ],
+     "llps": [],
+     "proprietorship": []
+    }
+   },
+   {
+    "name": "JASON KENT GREENE",
+    "pan": null,
+    "din": "10552343",
+    "network": {
+     "companies": [
+      {
+       "cin": "U24295KA1986PTC060481",
+       "legal_name": "BPREX PHARMA PACKAGING INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1986-12-16",
+       "paid_up_capital": 31530200,
+       "sum_of_charges": 29250000,
+       "city": "Bangalore",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Additional Director",
+       "date_of_appointment": "2024-03-16",
+       "date_of_appointment_for_current_designation": "2024-03-16",
+       "date_of_cessation": "2025-05-19"
+      },
+      {
+       "cin": "U25200KA2021FTC152314",
+       "legal_name": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2021-09-27",
+       "paid_up_capital": 44333330,
+       "sum_of_charges": 0,
+       "city": "Bangalore",
+       "active_compliance": null,
+       "cirp_status": null,
+       "designation": "Additional Director",
+       "date_of_appointment": "2024-03-16",
+       "date_of_appointment_for_current_designation": "2024-03-16",
+       "date_of_cessation": "2025-05-19"
+      }
+     ],
+     "llps": [],
+     "proprietorship": []
+    }
+   },
+   {
+    "name": "MARK WILLIAM MILES",
+    "pan": null,
+    "din": "10552352",
+    "network": {
+     "companies": [
+      {
+       "cin": "U24295KA1986PTC060481",
+       "legal_name": "BPREX PHARMA PACKAGING INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1986-12-16",
+       "paid_up_capital": 31530200,
+       "sum_of_charges": 29250000,
+       "city": "Bangalore",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2024-03-16",
+       "date_of_appointment_for_current_designation": "2025-07-18",
+       "date_of_cessation": null
+      },
+      {
+       "cin": "U25200KA2021FTC152314",
+       "legal_name": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2021-09-27",
+       "paid_up_capital": 44333330,
+       "sum_of_charges": 0,
+       "city": "Bangalore",
+       "active_compliance": null,
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2024-03-16",
+       "date_of_appointment_for_current_designation": "2025-07-18",
+       "date_of_cessation": null
+      }
+     ],
+     "llps": [],
+     "proprietorship": []
+    }
+   },
+   {
+    "name": "WALID DJILANI HAMZA",
+    "pan": null,
+    "din": "10552363",
+    "network": {
+     "companies": [
+      {
+       "cin": "U24295KA1986PTC060481",
+       "legal_name": "BPREX PHARMA PACKAGING INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1986-12-16",
+       "paid_up_capital": 31530200,
+       "sum_of_charges": 29250000,
+       "city": "Bangalore",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2024-03-16",
+       "date_of_appointment_for_current_designation": "2025-07-18",
+       "date_of_cessation": "2025-11-07"
+      },
+      {
+       "cin": "U25200KA2021FTC152314",
+       "legal_name": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2021-09-27",
+       "paid_up_capital": 44333330,
+       "sum_of_charges": 0,
+       "city": "Bangalore",
+       "active_compliance": null,
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2024-03-16",
+       "date_of_appointment_for_current_designation": "2025-07-18",
+       "date_of_cessation": "2025-11-07"
+      }
+     ],
+     "llps": [],
+     "proprietorship": []
+    }
+   },
+   {
+    "name": "SUSHANT BHAVSAR",
+    "pan": null,
+    "din": "10701430",
+    "network": {
+     "companies": [
+      {
+       "cin": "U24295KA1986PTC060481",
+       "legal_name": "BPREX PHARMA PACKAGING INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "1986-12-16",
+       "paid_up_capital": 31530200,
+       "sum_of_charges": 29250000,
+       "city": "Bangalore",
+       "active_compliance": "ACTIVE compliant",
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2024-07-12",
+       "date_of_appointment_for_current_designation": "2025-07-18",
+       "date_of_cessation": "2026-03-31"
+      },
+      {
+       "cin": "U25200KA2021FTC152314",
+       "legal_name": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+       "company_status": "ACTIVE",
+       "incorporation_date": "2021-09-27",
+       "paid_up_capital": 44333330,
+       "sum_of_charges": 0,
+       "city": "Bangalore",
+       "active_compliance": null,
+       "cirp_status": null,
+       "designation": "Director",
+       "date_of_appointment": "2024-07-12",
+       "date_of_appointment_for_current_designation": "2025-07-18",
+       "date_of_cessation": "2026-03-31"
+      }
+     ],
+     "llps": [],
+     "proprietorship": []
+    }
+   }
+  ],
+  "contact_details": {
+   "email": [
+    {
+     "emailId": "sushantbhavsar@berryglobal.com",
+     "status": null
+    }
+   ],
+   "phone": [
+    {
+     "phoneNumber": "02838657092",
+     "status": null
+    },
+    {
+     "phoneNumber": "09008065972",
+     "status": null
+    }
+   ]
+  },
+  "open_charges": [],
+  "open_charges_latest_event": [],
+  "charge_sequence": [],
+  "financials": [
+   {
+    "year": "2024-03-31",
+    "nature": "STANDALONE",
+    "stated_on": "2024-03-31",
+    "filing_type": "E_FORM",
+    "start_date": "2023-04-01",
+    "filing_standard": "Schedule III",
+    "ratios": {
+     "revenue_growth": null,
+     "gross_profit_margin": 53.82,
+     "net_margin": -199.23,
+     "ebitda_margin": -87.3,
+     "return_on_equity": -2875.09,
+     "return_on_capital_employed": -10.23,
+     "debt_ratio": 0.87,
+     "debt_by_equity": 220.44,
+     "interest_coverage_ratio": -3.71,
+     "current_ratio": 1.6,
+     "quick_ratio": 1.21,
+     "inventory_by_sales_days": 306.08,
+     "debtors_by_sales_days": 254,
+     "payables_by_sales_days": 225.54,
+     "cash_conversion_cycle": 334.54,
+     "sales_by_net_fixed_assets": 0.08
+    },
+    "bs": {
+     "assets": {
+      "tangible_assets": 1363572766,
+      "producing_properties": null,
+      "intangible_assets": 1645778,
+      "preproducing_properties": null,
+      "tangible_assets_capital_work_in_progress": 154341090,
+      "intangible_assets_under_development": 0,
+      "noncurrent_investments": 1077641,
+      "deferred_tax_assets_net": 0,
+      "foreign_curr_monetary_item_trans_diff_asset_account": null,
+      "long_term_loans_and_advances": 58479676,
+      "other_noncurrent_assets": 7036124,
+      "current_investments": 0,
+      "inventories": 94686368,
+      "trade_receivables": 78575405,
+      "cash_and_bank_balances": 132028978,
+      "short_term_loans_and_advances": 88324680,
+      "other_current_assets": 0,
+      "given_assets_total": 1979768506
+     },
+     "liabilities": {
+      "share_capital": 44333330,
+      "reserves_and_surplus": -36508988,
+      "money_received_against_share_warrants": 0,
+      "share_application_money_pending_allotment": 0,
+      "deferred_government_grants": null,
+      "minority_interest": null,
+      "long_term_borrowings": 1724786833,
+      "deferred_tax_liabilities_net": 0,
+      "foreign_curr_monetary_item_trans_diff_liability_account": null,
+      "other_long_term_liabilities": 0,
+      "long_term_provisions": 598828,
+      "short_term_borrowings": 0,
+      "trade_payables": 69773230,
+      "other_current_liabilities": 175048828,
+      "short_term_provisions": 1736445,
+      "given_liabilities_total": 1979768506
+     },
+     "subTotals": {
+      "total_equity": 7824342,
+      "total_non_current_liabilities": 1725385661,
+      "total_current_liabilities": 246558503,
+      "net_fixed_assets": 1365218544,
+      "total_current_assets": 393615431,
+      "capital_wip": 154341090,
+      "total_debt": 1724786833,
+      "total_other_non_current_assets": 66593441
+     },
+     "metadata": {
+      "doc_id": "816/U25200KA2021FTC152314/mca/AnnualReturnsEform/e63b8d604f8fc2b87f2bd7f6b76f896cv1.pdf",
+      "xml_to_pdf_converted_doc_id": null
+     },
+     "notes": {
+      "gross_fixed_assets": 1446799370,
+      "trade_receivable_exceeding_six_months": null
+     }
+    },
+    "pnl": {
+     "lineItems": {
+      "net_revenue": 112914648,
+      "total_cost_of_materials_consumed": 88627069,
+      "total_purchases_of_stock_in_trade": 1874324,
+      "total_changes_in_inventories_or_finished_goods": -38353432,
+      "total_employee_benefit_expense": 61749435,
+      "total_other_expenses": 97594729,
+      "operating_profit": -98577477,
+      "other_income": 2750937,
+      "depreciation": 81382169,
+      "profit_before_interest_and_tax": -177208709,
+      "interest": 47748448,
+      "profit_before_tax_and_exceptional_items_before_tax": -224957157,
+      "exceptional_items_before_tax": 0,
+      "profit_before_tax": -224957157,
+      "income_tax": 0,
+      "profit_for_period_from_continuing_operations": -224957157,
+      "profit_from_discontinuing_operation_after_tax": 0,
+      "minority_interest_and_profit_from_associates_and_joint_ventures": null,
+      "profit_after_tax": -224957157
+     },
+     "subTotals": {
+      "total_operating_cost": 211492125
+     },
+     "revenue_breakup": {
+      "sale_of_goods_manufactured_domestic": 0,
+      "sale_of_goods_traded_domestic": 112914648,
+      "sale_or_supply_of_services_domestic": 0,
+      "sale_of_goods_manufactured_export": 0,
+      "sale_of_goods_traded_export": 0,
+      "sale_or_supply_of_services_export": 0
+     },
+     "depreciation_breakup": {
+      "depreciation_and_amortization": 81382169
+     },
+     "metadata": {
+      "docId": "816/U25200KA2021FTC152314/mca/AnnualReturnsEform/e63b8d604f8fc2b87f2bd7f6b76f896cv1.pdf",
+      "xml_to_pdf_converted_doc_id": null
+     }
+    },
+    "cash_flow": null,
+    "pnl_key_schedule": {
+     "managerial_remuneration": 0,
+     "payment_to_auditors": 700000,
+     "insurance_expenses": 1170119,
+     "power_and_fuel": 26863914
+    },
+    "auditor": {
+     "auditor_name": "Murugadass R",
+     "auditor_firm_name": "S R BATLIBOI & ASSOCIATES LLP",
+     "pan": null,
+     "membership_number": "216887",
+     "firm_registration_number": "101049W/E300004",
+     "address": "12th Floor, UB City, Canberra Block, No. 24 Vittal Mallya Road Bengaluru Karnataka India 560001"
+    },
+    "auditor_comments": {
+     "report_has_adverse_remarks": false,
+     "disclosures_auditor_report": [],
+     "disclosures_director_report": []
+    },
+    "auditor_additional": null
+   },
+   {
+    "year": "2023-03-31",
+    "nature": "STANDALONE",
+    "stated_on": "2024-03-31",
+    "filing_type": "E_FORM",
+    "start_date": "2022-04-01",
+    "filing_standard": "Schedule III",
+    "ratios": {
+     "revenue_growth": null,
+     "gross_profit_margin": null,
+     "net_margin": null,
+     "ebitda_margin": null,
+     "return_on_equity": -27.84,
+     "return_on_capital_employed": -7.46,
+     "debt_ratio": 0.66,
+     "debt_by_equity": 2.73,
+     "interest_coverage_ratio": -1135.8,
+     "current_ratio": 0.38,
+     "quick_ratio": 0.38,
+     "inventory_by_sales_days": null,
+     "debtors_by_sales_days": null,
+     "payables_by_sales_days": null,
+     "cash_conversion_cycle": null,
+     "sales_by_net_fixed_assets": 0
+    },
+    "bs": {
+     "assets": {
+      "tangible_assets": 100503264,
+      "producing_properties": null,
+      "intangible_assets": 0,
+      "preproducing_properties": null,
+      "tangible_assets_capital_work_in_progress": 660564788,
+      "intangible_assets_under_development": 0,
+      "noncurrent_investments": 1000,
+      "deferred_tax_assets_net": 0,
+      "foreign_curr_monetary_item_trans_diff_asset_account": null,
+      "long_term_loans_and_advances": 161608607,
+      "other_noncurrent_assets": 3650000,
+      "current_investments": 0,
+      "inventories": 0,
+      "trade_receivables": 0,
+      "cash_and_bank_balances": 7465711,
+      "short_term_loans_and_advances": 27698344,
+      "other_current_assets": 0,
+      "given_assets_total": 961491714
+     },
+     "liabilities": {
+      "share_capital": 44333330,
+      "reserves_and_surplus": 188448169,
+      "money_received_against_share_warrants": 0,
+      "share_application_money_pending_allotment": 0,
+      "deferred_government_grants": null,
+      "minority_interest": null,
+      "long_term_borrowings": 635585171,
+      "deferred_tax_liabilities_net": 0,
+      "foreign_curr_monetary_item_trans_diff_liability_account": null,
+      "other_long_term_liabilities": 0,
+      "long_term_provisions": 0,
+      "short_term_borrowings": 0,
+      "trade_payables": 2396669,
+      "other_current_liabilities": 90450210,
+      "short_term_provisions": 278165,
+      "given_liabilities_total": 961491714
+     },
+     "subTotals": {
+      "total_equity": 232781499,
+      "total_non_current_liabilities": 635585171,
+      "total_current_liabilities": 93125044,
+      "net_fixed_assets": 100503264,
+      "total_current_assets": 35164055,
+      "capital_wip": 660564788,
+      "total_debt": 635585171,
+      "total_other_non_current_assets": 165259607
+     },
+     "metadata": {
+      "doc_id": "816/U25200KA2021FTC152314/mca/AnnualReturnsEform/e63b8d604f8fc2b87f2bd7f6b76f896cv1.pdf",
+      "xml_to_pdf_converted_doc_id": null
+     },
+     "notes": {
+      "gross_fixed_assets": 100701000,
+      "trade_receivable_exceeding_six_months": 0
+     }
+    },
+    "pnl": {
+     "lineItems": {
+      "net_revenue": 0,
+      "total_cost_of_materials_consumed": 0,
+      "total_purchases_of_stock_in_trade": 0,
+      "total_changes_in_inventories_or_finished_goods": 0,
+      "total_employee_benefit_expense": 5368772,
+      "total_other_expenses": 59188021,
+      "operating_profit": -64556793,
+      "other_income": 0,
+      "depreciation": 192799,
+      "profit_before_interest_and_tax": -64749592,
+      "interest": 57008,
+      "profit_before_tax_and_exceptional_items_before_tax": -64806600,
+      "exceptional_items_before_tax": 0,
+      "profit_before_tax": -64806600,
+      "income_tax": 0,
+      "profit_for_period_from_continuing_operations": -64806600,
+      "profit_from_discontinuing_operation_after_tax": 0,
+      "minority_interest_and_profit_from_associates_and_joint_ventures": null,
+      "profit_after_tax": -64806600
+     },
+     "subTotals": {
+      "total_operating_cost": 64556793
+     },
+     "revenue_breakup": {
+      "sale_of_goods_manufactured_domestic": 0,
+      "sale_of_goods_traded_domestic": 0,
+      "sale_or_supply_of_services_domestic": 0,
+      "sale_of_goods_manufactured_export": 0,
+      "sale_of_goods_traded_export": 0,
+      "sale_or_supply_of_services_export": 0
+     },
+     "depreciation_breakup": {
+      "depreciation_and_amortization": 192799
+     },
+     "metadata": {
+      "docId": "816/U25200KA2021FTC152314/mca/AnnualReturnsEform/e63b8d604f8fc2b87f2bd7f6b76f896cv1.pdf",
+      "xml_to_pdf_converted_doc_id": null
+     }
+    },
+    "cash_flow": null,
+    "pnl_key_schedule": {
+     "managerial_remuneration": 0,
+     "payment_to_auditors": 100000,
+     "insurance_expenses": 0,
+     "power_and_fuel": 215914
+    },
+    "auditor": {
+     "auditor_name": "NILESH JAIN",
+     "auditor_firm_name": "S K N J & CO",
+     "pan": null,
+     "membership_number": "214703",
+     "firm_registration_number": "013998S",
+     "address": "6/3, 1st Floor, 4th Cross, K S Garden, Lalbagh Road Bangalore KA IN 560027"
+    },
+    "auditor_comments": {
+     "report_has_adverse_remarks": false,
+     "disclosures_auditor_report": [],
+     "disclosures_director_report": []
+    },
+    "auditor_additional": null
+   },
+   {
+    "year": "2022-03-31",
+    "nature": "STANDALONE",
+    "stated_on": "2023-03-31",
+    "filing_type": "E_FORM",
+    "start_date": "2021-04-01",
+    "filing_standard": "Schedule III",
+    "ratios": {
+     "revenue_growth": null,
+     "gross_profit_margin": null,
+     "net_margin": null,
+     "ebitda_margin": null,
+     "return_on_equity": -0.81,
+     "return_on_capital_employed": -0.81,
+     "debt_ratio": 0,
+     "debt_by_equity": 0,
+     "interest_coverage_ratio": -213.47,
+     "current_ratio": 44.25,
+     "quick_ratio": 44.25,
+     "inventory_by_sales_days": null,
+     "debtors_by_sales_days": null,
+     "payables_by_sales_days": null,
+     "cash_conversion_cycle": null,
+     "sales_by_net_fixed_assets": 0
+    },
+    "bs": {
+     "assets": {
+      "tangible_assets": 100053574,
+      "producing_properties": null,
+      "intangible_assets": 7708553,
+      "preproducing_properties": null,
+      "tangible_assets_capital_work_in_progress": 0,
+      "intangible_assets_under_development": 0,
+      "noncurrent_investments": 0,
+      "deferred_tax_assets_net": 0,
+      "foreign_curr_monetary_item_trans_diff_asset_account": null,
+      "long_term_loans_and_advances": 0,
+      "other_noncurrent_assets": 0,
+      "current_investments": 0,
+      "inventories": 0,
+      "trade_receivables": 0,
+      "cash_and_bank_balances": 171936514,
+      "short_term_loans_and_advances": 0,
+      "other_current_assets": 22278249,
+      "given_assets_total": 301976890
+     },
+     "liabilities": {
+      "share_capital": 44333330,
+      "reserves_and_surplus": 253254769,
+      "money_received_against_share_warrants": 0,
+      "share_application_money_pending_allotment": 0,
+      "deferred_government_grants": null,
+      "minority_interest": null,
+      "long_term_borrowings": 0,
+      "deferred_tax_liabilities_net": 0,
+      "foreign_curr_monetary_item_trans_diff_liability_account": null,
+      "other_long_term_liabilities": 0,
+      "long_term_provisions": 0,
+      "short_term_borrowings": 0,
+      "trade_payables": 3414423,
+      "other_current_liabilities": 937080,
+      "short_term_provisions": 37288,
+      "given_liabilities_total": 301976890
+     },
+     "subTotals": {
+      "total_equity": 297588099,
+      "total_non_current_liabilities": 0,
+      "total_current_liabilities": 4388791,
+      "net_fixed_assets": 107762127,
+      "total_current_assets": 194214763,
+      "capital_wip": 0,
+      "total_debt": 0,
+      "total_other_non_current_assets": 0
+     },
+     "metadata": {
+      "doc_id": "816/U25200KA2021FTC152314/mca/AnnualReturnsEform/365a8cdf81c2134584e0e9b66c9a0989v1.pdf",
+      "xml_to_pdf_converted_doc_id": null
+     },
+     "notes": {
+      "gross_fixed_assets": 100059350,
+      "trade_receivable_exceeding_six_months": 0
+     }
+    },
+    "pnl": {
+     "lineItems": {
+      "net_revenue": 0,
+      "total_cost_of_materials_consumed": 0,
+      "total_purchases_of_stock_in_trade": 0,
+      "total_changes_in_inventories_or_finished_goods": 0,
+      "total_employee_benefit_expense": 0,
+      "total_other_expenses": 2394854,
+      "operating_profit": -2394854,
+      "other_income": 0,
+      "depreciation": 5776,
+      "profit_before_interest_and_tax": -2400630,
+      "interest": 11246,
+      "profit_before_tax_and_exceptional_items_before_tax": -2411876,
+      "exceptional_items_before_tax": 0,
+      "profit_before_tax": -2411876,
+      "income_tax": 0,
+      "profit_for_period_from_continuing_operations": -2411876,
+      "profit_from_discontinuing_operation_after_tax": 0,
+      "minority_interest_and_profit_from_associates_and_joint_ventures": null,
+      "profit_after_tax": -2411876
+     },
+     "subTotals": {
+      "total_operating_cost": 2394854
+     },
+     "revenue_breakup": {
+      "sale_of_goods_manufactured_domestic": 0,
+      "sale_of_goods_traded_domestic": 0,
+      "sale_or_supply_of_services_domestic": 0,
+      "sale_of_goods_manufactured_export": 0,
+      "sale_of_goods_traded_export": 0,
+      "sale_or_supply_of_services_export": 0
+     },
+     "depreciation_breakup": {
+      "depreciation_and_amortization": 5776
+     },
+     "metadata": {
+      "docId": "816/U25200KA2021FTC152314/mca/AnnualReturnsEform/365a8cdf81c2134584e0e9b66c9a0989v1.pdf",
+      "xml_to_pdf_converted_doc_id": null
+     }
+    },
+    "cash_flow": null,
+    "pnl_key_schedule": {
+     "managerial_remuneration": 0,
+     "payment_to_auditors": 100000,
+     "insurance_expenses": 0,
+     "power_and_fuel": 0
+    },
+    "auditor": {
+     "auditor_name": "NILESH JAIN",
+     "auditor_firm_name": "S K N J & CO",
+     "pan": null,
+     "membership_number": "214703",
+     "firm_registration_number": "013998S",
+     "address": "6/3, 1st Floor, 4th Cross, K S Garden, Lalbagh Road Bangalore KA IN 560027"
+    },
+    "auditor_comments": {
+     "report_has_adverse_remarks": false,
+     "disclosures_auditor_report": [],
+     "disclosures_director_report": []
+    },
+    "auditor_additional": null
+   }
+  ],
+  "nbfc_financials": [],
+  "financial_parameters": [
+   {
+    "year": "2024",
+    "nature": "STANDALONE",
+    "earning_fc": 0,
+    "expenditure_fc": 26445000,
+    "transaction_related_parties_as_18": 121471834,
+    "employee_benefit_expense": 61749435,
+    "number_of_employees": null,
+    "prescribed_csr_expenditure": null,
+    "total_amount_csr_spent_for_financial_year": null,
+    "gross_fixed_assets": 1446799370,
+    "trade_receivable_exceeding_six_months": null,
+    "proposed_dividend": "No"
+   },
+   {
+    "year": "2023",
+    "nature": "STANDALONE",
+    "earning_fc": 0,
+    "expenditure_fc": 11399126,
+    "transaction_related_parties_as_18": 15804192,
+    "employee_benefit_expense": 5138354,
+    "number_of_employees": null,
+    "prescribed_csr_expenditure": null,
+    "total_amount_csr_spent_for_financial_year": 0,
+    "gross_fixed_assets": 100701000,
+    "trade_receivable_exceeding_six_months": 0,
+    "proposed_dividend": "No"
+   },
+   {
+    "year": "2022",
+    "nature": "STANDALONE",
+    "earning_fc": 0,
+    "expenditure_fc": 1589666,
+    "transaction_related_parties_as_18": 1589666,
+    "employee_benefit_expense": 0,
+    "number_of_employees": null,
+    "prescribed_csr_expenditure": null,
+    "total_amount_csr_spent_for_financial_year": 0,
+    "gross_fixed_assets": 100059350,
+    "trade_receivable_exceeding_six_months": 0,
+    "proposed_dividend": "No"
+   }
+  ],
+  "industry_segments": [
+   {
+    "industry": "Packaging",
+    "segments": [
+     "Pharma Packaging"
+    ]
+   }
+  ],
+  "principal_business_activities": [
+   {
+    "year": "2025",
+    "main_activity_group_code": "C",
+    "main_activity_group_description": "Manufacturing",
+    "business_activity_code": "22",
+    "business_activity_description": "Manufacture of rubber and plastics products",
+    "percentage_of_turnover": 99.95
+   },
+   {
+    "year": "2025",
+    "main_activity_group_code": "M",
+    "main_activity_group_description": "Professional, Scientific and Technical activities",
+    "business_activity_code": "74",
+    "business_activity_description": "Other professional, scientific and technical activities",
+    "percentage_of_turnover": 0.05
+   }
+  ],
+  "related_party_transactions": [
+   {
+    "financial_year": "2024-03-31",
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": []
+   },
+   {
+    "financial_year": "2023-03-31",
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": []
+   },
+   {
+    "financial_year": "2022-03-31",
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": []
+   }
+  ],
+  "establishments_registered_with_epfo": [
+   {
+    "establishment_id": "PYPNY2475897000",
+    "establishment_name": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+    "working_status": "LIVE ESTABLISHMENT",
+    "principal_business_activities": "PLASTICS PRODUCTS",
+    "date_of_setup": "2021-09-27",
+    "address": "No. 485, 13th Cross, 4th Phase PIA, Bangalore 1110035,Bangalore,KARNATAKA,560058,India",
+    "city": "Bangalore",
+    "exemption_status_edli": "UNEXEMPTED",
+    "exemption_status_pension": "UNEXEMPTED",
+    "exemption_status_pf": "UNEXEMPTED",
+    "latest_wage_month": "APR-26",
+    "latest_date_of_credit": null,
+    "no_of_employees": 63,
+    "amount": 533980,
+    "payment_timeliness": "Paid on Time",
+    "filing_details": [
+     {
+      "wage_month": "APR-26",
+      "trrn": "2605247064478",
+      "date_of_credit": "2026-05-14",
+      "payment_due_date": "2026-05-15",
+      "no_of_employees": 63,
+      "amount": 533980,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "MAR-26",
+      "trrn": "2604247054327",
+      "date_of_credit": "2026-04-13",
+      "payment_due_date": "2026-04-15",
+      "no_of_employees": 62,
+      "amount": 414884,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "FEB-26",
+      "trrn": "2603247046443",
+      "date_of_credit": "2026-03-13",
+      "payment_due_date": "2026-03-15",
+      "no_of_employees": 62,
+      "amount": 419188,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "JAN-26",
+      "trrn": "2602247037048",
+      "date_of_credit": "2026-02-12",
+      "payment_due_date": "2026-02-15",
+      "no_of_employees": 62,
+      "amount": 418569,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "DEC-25",
+      "trrn": "2601247028495",
+      "date_of_credit": "2026-01-14",
+      "payment_due_date": "2026-01-15",
+      "no_of_employees": 63,
+      "amount": 399359,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "NOV-25",
+      "trrn": "2512247018820",
+      "date_of_credit": "2025-12-15",
+      "payment_due_date": "2025-12-15",
+      "no_of_employees": 62,
+      "amount": 415896,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "OCT-25",
+      "trrn": "2511247012146",
+      "date_of_credit": "2025-11-13",
+      "payment_due_date": "2025-11-15",
+      "no_of_employees": 63,
+      "amount": 413142,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "SEP-25",
+      "trrn": "2510247002927",
+      "date_of_credit": "2025-10-13",
+      "payment_due_date": "2025-10-15",
+      "no_of_employees": 63,
+      "amount": 411983,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "AUG-25",
+      "trrn": "2472509001801",
+      "date_of_credit": "2025-09-10",
+      "payment_due_date": "2025-09-15",
+      "no_of_employees": 62,
+      "amount": 398208,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "JUL-25",
+      "trrn": "2472508003740",
+      "date_of_credit": "2025-08-14",
+      "payment_due_date": "2025-08-15",
+      "no_of_employees": 62,
+      "amount": 397493,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "JUN-25",
+      "trrn": "2472507001586",
+      "date_of_credit": "2025-07-11",
+      "payment_due_date": "2025-07-15",
+      "no_of_employees": 48,
+      "amount": 334695,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "MAY-25",
+      "trrn": "2472506000404",
+      "date_of_credit": "2025-06-11",
+      "payment_due_date": "2025-06-15",
+      "no_of_employees": 47,
+      "amount": 330516,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "APR-25",
+      "trrn": "2472505001752",
+      "date_of_credit": "2025-05-12",
+      "payment_due_date": "2025-05-15",
+      "no_of_employees": 45,
+      "amount": 316377,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "MAR-25",
+      "trrn": "2472504003244",
+      "date_of_credit": "2025-04-10",
+      "payment_due_date": "2025-04-15",
+      "no_of_employees": 44,
+      "amount": 290766,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "FEB-25",
+      "trrn": "2472503001959",
+      "date_of_credit": "2025-03-12",
+      "payment_due_date": "2025-03-15",
+      "no_of_employees": 43,
+      "amount": 290847,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "JAN-25",
+      "trrn": "2472502003938",
+      "date_of_credit": "2025-02-12",
+      "payment_due_date": "2025-02-15",
+      "no_of_employees": 43,
+      "amount": 290847,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "DEC-24",
+      "trrn": "2472501000117",
+      "date_of_credit": "2025-01-14",
+      "payment_due_date": "2025-01-15",
+      "no_of_employees": 45,
+      "amount": 302014,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "NOV-24",
+      "trrn": "2472412004443",
+      "date_of_credit": "2024-12-17",
+      "payment_due_date": "2024-12-15",
+      "no_of_employees": 46,
+      "amount": 311276,
+      "payment_timeliness": "Payment After Due Date"
+     },
+     {
+      "wage_month": "OCT-24",
+      "trrn": "2472411000353",
+      "date_of_credit": "2024-11-13",
+      "payment_due_date": "2024-11-15",
+      "no_of_employees": 47,
+      "amount": 298118,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "SEP-24",
+      "trrn": "2472410000736",
+      "date_of_credit": "2024-10-10",
+      "payment_due_date": "2024-10-15",
+      "no_of_employees": 48,
+      "amount": 309096,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "AUG-24",
+      "trrn": "2472409002423",
+      "date_of_credit": "2024-09-11",
+      "payment_due_date": "2024-09-15",
+      "no_of_employees": 51,
+      "amount": 316991,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "JUL-24",
+      "trrn": "2472408000017",
+      "date_of_credit": "2024-08-13",
+      "payment_due_date": "2024-08-15",
+      "no_of_employees": 51,
+      "amount": 321377,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "JUN-24",
+      "trrn": "2472407000014",
+      "date_of_credit": "2024-07-09",
+      "payment_due_date": "2024-07-15",
+      "no_of_employees": 53,
+      "amount": 349603,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "MAY-24",
+      "trrn": "2472406000678",
+      "date_of_credit": "2024-06-13",
+      "payment_due_date": "2024-06-15",
+      "no_of_employees": 38,
+      "amount": 12200,
+      "payment_timeliness": "Paid on Time"
+     },
+     {
+      "wage_month": "MAY-24",
+      "trrn": "2472406000673",
+      "date_of_credit": "2024-06-13",
+      "payment_due_date": "2024-06-15",
+      "no_of_employees": 54,
+      "amount": 375793,
+      "payment_timeliness": "Paid on Time"
+     }
+    ]
+   }
+  ],
+  "shareholdings": [
+   {
+    "shareholders": "promoter",
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "category": "equity",
+    "indian_held_no_of_shares": 0,
+    "indian_held_percentage_of_shares": 0,
+    "nri_held_no_of_shares": 0,
+    "nri_held_percentage_of_shares": 0,
+    "foreign_held_other_than_nri_no_of_shares": 0,
+    "foreign_held_other_than_nri_percentage_of_shares": 0,
+    "central_government_held_no_of_shares": 0,
+    "central_government_held_percentage_of_shares": 0,
+    "state_government_held_no_of_shares": 0,
+    "state_government_held_percentage_of_shares": 0,
+    "government_company_held_no_shares": 0,
+    "government_company_held_percentage_of_shares": 0,
+    "insurance_company_held_no_of_shares": 0,
+    "insurance_company_held_percentage_of_shares": 0,
+    "bank_held_no_of_shares": 0,
+    "bank_held_percentage_of_shares": 0,
+    "financial_institutions_held_no_of_shares": 0,
+    "financial_institutions_held_percentage_of_shares": 0,
+    "financial_institutions_investors_held_no_of_shares": 0,
+    "financial_institutions_investors_held_percentage_of_shares": 0,
+    "mutual_funds_held_no_of_shares": 0,
+    "mutual_funds_held_percentage_of_shares": 0,
+    "venture_capital_held_no_of_shares": 0,
+    "venture_capital_held_percentage_of_shares": 0,
+    "body_corporate_held_no_of_shares": 4433333,
+    "body_corporate_held_percentage_of_shares": 100,
+    "others_held_no_of_shares": 0,
+    "others_held_percentage_of_shares": 0,
+    "total_no_of_shares": 4433333,
+    "total_percentage_of_shares": 100
+   },
+   {
+    "shareholders": "promoter",
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "category": "preference",
+    "indian_held_no_of_shares": 0,
+    "indian_held_percentage_of_shares": 0,
+    "nri_held_no_of_shares": 0,
+    "nri_held_percentage_of_shares": 0,
+    "foreign_held_other_than_nri_no_of_shares": 0,
+    "foreign_held_other_than_nri_percentage_of_shares": 0,
+    "central_government_held_no_of_shares": 0,
+    "central_government_held_percentage_of_shares": 0,
+    "state_government_held_no_of_shares": 0,
+    "state_government_held_percentage_of_shares": 0,
+    "government_company_held_no_shares": 0,
+    "government_company_held_percentage_of_shares": 0,
+    "insurance_company_held_no_of_shares": 0,
+    "insurance_company_held_percentage_of_shares": 0,
+    "bank_held_no_of_shares": 0,
+    "bank_held_percentage_of_shares": 0,
+    "financial_institutions_held_no_of_shares": 0,
+    "financial_institutions_held_percentage_of_shares": 0,
+    "financial_institutions_investors_held_no_of_shares": 0,
+    "financial_institutions_investors_held_percentage_of_shares": 0,
+    "mutual_funds_held_no_of_shares": 0,
+    "mutual_funds_held_percentage_of_shares": 0,
+    "venture_capital_held_no_of_shares": 0,
+    "venture_capital_held_percentage_of_shares": 0,
+    "body_corporate_held_no_of_shares": 0,
+    "body_corporate_held_percentage_of_shares": 0,
+    "others_held_no_of_shares": 0,
+    "others_held_percentage_of_shares": 0,
+    "total_no_of_shares": 0,
+    "total_percentage_of_shares": 0
+   },
+   {
+    "shareholders": "public",
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "category": "equity",
+    "indian_held_no_of_shares": 0,
+    "indian_held_percentage_of_shares": 0,
+    "nri_held_no_of_shares": 0,
+    "nri_held_percentage_of_shares": 0,
+    "foreign_held_other_than_nri_no_of_shares": 0,
+    "foreign_held_other_than_nri_percentage_of_shares": 0,
+    "central_government_held_no_of_shares": 0,
+    "central_government_held_percentage_of_shares": 0,
+    "state_government_held_no_of_shares": 0,
+    "state_government_held_percentage_of_shares": 0,
+    "government_company_held_no_shares": 0,
+    "government_company_held_percentage_of_shares": 0,
+    "insurance_company_held_no_of_shares": 0,
+    "insurance_company_held_percentage_of_shares": 0,
+    "bank_held_no_of_shares": 0,
+    "bank_held_percentage_of_shares": 0,
+    "financial_institutions_held_no_of_shares": 0,
+    "financial_institutions_held_percentage_of_shares": 0,
+    "financial_institutions_investors_held_no_of_shares": 0,
+    "financial_institutions_investors_held_percentage_of_shares": 0,
+    "mutual_funds_held_no_of_shares": 0,
+    "mutual_funds_held_percentage_of_shares": 0,
+    "venture_capital_held_no_of_shares": 0,
+    "venture_capital_held_percentage_of_shares": 0,
+    "body_corporate_held_no_of_shares": 0,
+    "body_corporate_held_percentage_of_shares": 0,
+    "others_held_no_of_shares": 0,
+    "others_held_percentage_of_shares": 0,
+    "total_no_of_shares": 0,
+    "total_percentage_of_shares": 0
+   },
+   {
+    "shareholders": "public",
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "category": "preference",
+    "indian_held_no_of_shares": 0,
+    "indian_held_percentage_of_shares": 0,
+    "nri_held_no_of_shares": 0,
+    "nri_held_percentage_of_shares": 0,
+    "foreign_held_other_than_nri_no_of_shares": 0,
+    "foreign_held_other_than_nri_percentage_of_shares": 0,
+    "central_government_held_no_of_shares": 0,
+    "central_government_held_percentage_of_shares": 0,
+    "state_government_held_no_of_shares": 0,
+    "state_government_held_percentage_of_shares": 0,
+    "government_company_held_no_shares": 0,
+    "government_company_held_percentage_of_shares": 0,
+    "insurance_company_held_no_of_shares": 0,
+    "insurance_company_held_percentage_of_shares": 0,
+    "bank_held_no_of_shares": 0,
+    "bank_held_percentage_of_shares": 0,
+    "financial_institutions_held_no_of_shares": 0,
+    "financial_institutions_held_percentage_of_shares": 0,
+    "financial_institutions_investors_held_no_of_shares": 0,
+    "financial_institutions_investors_held_percentage_of_shares": 0,
+    "mutual_funds_held_no_of_shares": 0,
+    "mutual_funds_held_percentage_of_shares": 0,
+    "venture_capital_held_no_of_shares": 0,
+    "venture_capital_held_percentage_of_shares": 0,
+    "body_corporate_held_no_of_shares": 0,
+    "body_corporate_held_percentage_of_shares": 0,
+    "others_held_no_of_shares": 0,
+    "others_held_percentage_of_shares": 0,
+    "total_no_of_shares": 0,
+    "total_percentage_of_shares": 0
+   }
+  ],
+  "shareholdings_more_than_five_percent": [
+   {
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": [
+     {
+      "name": "Berry Plastic International B.V.",
+      "shareholding_percentage": 99.99,
+      "no_of_shares": null,
+      "bid": null
+     }
+    ],
+    "financial_year": "2025-03-31"
+   },
+   {
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": [
+     {
+      "name": "BERRY PLASTIC INTERNATIONAL B.V.",
+      "shareholding_percentage": 99.99,
+      "no_of_shares": null,
+      "bid": null
+     }
+    ],
+    "financial_year": "2024-03-31"
+   },
+   {
+    "company": [],
+    "llp": [],
+    "individual": [],
+    "others": [
+     {
+      "name": "Berry Plastic International B.V.",
+      "shareholding_percentage": 99.99,
+      "no_of_shares": null,
+      "bid": null
+     }
+    ],
+    "financial_year": "2023-03-31"
+   }
+  ],
+  "shareholdings_summary": [
+   {
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "total_equity_shares": 4433333,
+    "total_preference_shares": 0,
+    "promoter": 2,
+    "public": null,
+    "total": 2,
+    "metadata": {
+     "doc_id": "816/U25200KA2021FTC152314/mca/AnnualReturnsEform/8e5ad36af74c6dd44d23ad19934edc18v1.pdf",
+     "xml_to_pdf_converted_doc_id": null
+    }
+   }
+  ],
+  "director_shareholdings": [
+   {
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "din_pan": "10552363",
+    "full_name": "WALID DJILANI HAMZA",
+    "designation": "Additional Director",
+    "date_of_cessation": null,
+    "no_of_shares": 0,
+    "percentage_holding": 0
+   },
+   {
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "din_pan": "03612708",
+    "full_name": "PEDAKHASIM SAHEB SHAIK",
+    "designation": "Managing Director",
+    "date_of_cessation": null,
+    "no_of_shares": 0,
+    "percentage_holding": 0
+   },
+   {
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "din_pan": "10552343",
+    "full_name": "JASON KENT GREENE",
+    "designation": "Additional Director",
+    "date_of_cessation": "2025-05-19",
+    "no_of_shares": 0,
+    "percentage_holding": 0
+   },
+   {
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "din_pan": "10701430",
+    "full_name": "SUSHANT BHAVSAR",
+    "designation": "Additional Director",
+    "date_of_cessation": null,
+    "no_of_shares": 0,
+    "percentage_holding": 0
+   },
+   {
+    "year": "2025",
+    "financial_year": "2025-03-31",
+    "din_pan": "10552352",
+    "full_name": "MARK WILLIAM MILES",
+    "designation": "Additional Director",
+    "date_of_cessation": null,
+    "no_of_shares": 0,
+    "percentage_holding": 0
+   }
+  ],
+  "bifr_history": [],
+  "cdr_history": [],
+  "defaulter_list": [],
+  "legal_history": [],
+  "credit_ratings": [],
+  "credit_rating_rationale": [],
+  "unaccepted_rating": null,
+  "holding_entities": {
+   "financial_year": "2025",
+   "company": [],
+   "llp": [],
+   "others": [
+    {
+     "legal_name": "BERRY PLASTIC INTERNATIONAL B.V.",
+     "share_holding_percentage": 99.99,
+     "bid": null
+    }
+   ]
+  },
+  "subsidiary_entities": null,
+  "associate_entities": null,
+  "joint_ventures": null,
+  "securities_allotment": [
+   {
+    "allotment_type": "Cash",
+    "allotment_date": "2022-01-05",
+    "instrument": "Equity Shares Without Differential Rights",
+    "total_amount_raised": 294999975,
+    "number_of_securities_allotted": 3933333,
+    "nominal_amount_per_security": 10,
+    "premium_amount_per_security": 65
+   }
+  ],
+  "peer_comparison": [
+   {
+    "bizIndustry": "Packaging",
+    "bizSegment": "Pharma Packaging",
+    "refYear": "2024",
+    "peers": [
+     {
+      "cin": "U74999MH2017PTC292350",
+      "legalName": "5S MEDIPACK PRIVATE LIMITED",
+      "revenue": 125394439,
+      "city": "MUMBAI"
+     },
+     {
+      "cin": "U25200MH1995PLC089959",
+      "legalName": "SANTAPET POLYMERS LIMITED",
+      "revenue": 123668584.1,
+      "city": "MUMBAI"
+     },
+     {
+      "cin": "U25200KA2021FTC152314",
+      "legalName": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+      "revenue": 112914648,
+      "city": "Bengaluru"
+     },
+     {
+      "cin": "U28990DL2011PTC224636",
+      "legalName": "INTALIO PRIVATE LIMITED",
+      "revenue": 109803858,
+      "city": "NEW DELHI"
+     },
+     {
+      "cin": "U25209PN2022PTC213874",
+      "legalName": "KESTRELL PRODUCTS PRIVATE LIMITED",
+      "revenue": 92015449,
+      "city": "PUNE"
+     }
+    ],
+    "benchMarks": [
+     {
+      "year": "2024",
+      "no_of_peers_in_sample": 30,
+      "revenue": 11.29,
+      "revenue_growth": null,
+      "net_margin": -199.23,
+      "ebitda_margin": -87.3,
+      "return_on_equity": -2875.09,
+      "sales_by_net_fixed_assets": 0.08,
+      "inventory_holding_period": 306.08,
+      "debtor_days_outstanding": 254,
+      "trade_payable_days": 225.54,
+      "cash_conversion_cycle": 334.53999999999996,
+      "debt_by_equity": 220.44,
+      "gross_profit_margin": 53.82,
+      "return_on_capital_employed": -10.23,
+      "interest_coverage_ratio": -3.71,
+      "debt_ratio": 0.87,
+      "current_ratio": 1.6,
+      "quick_ratio": 1.21,
+      "median_revenue": 8.61,
+      "median_revenue_growth": 10.754999999999999,
+      "median_net_margin": 2.26,
+      "median_ebitda_margin": 7.105,
+      "median_return_on_equity": 12.775,
+      "median_sales_by_net_fixed_assets": 5.710000000000001,
+      "median_inventory_holding_period": 36.47,
+      "median_debtor_days_outstanding": 71.395,
+      "median_trade_payable_days": 40.635,
+      "median_cash_conversion_cycle": 69.84,
+      "median_debt_by_equity": 1.1099999999999999,
+      "median_gross_profit_margin": 40.02,
+      "median_return_on_capital_employed": 12.45,
+      "median_interest_coverage_ratio": 1.6099999999999999,
+      "median_debt_ratio": 0.455,
+      "median_current_ratio": 1.625,
+      "median_quick_ratio": 1.065
+     }
+    ]
+   }
+  ],
+  "gst_details": [
+   {
+    "gstin": "29AAKCB1719J1ZG",
+    "status": "Active",
+    "company_name": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+    "trade_name": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+    "state": "Karnataka",
+    "state_jurisdiction": "LGSTO 075 - Bengaluru",
+    "centre_jurisdiction": "RANGE-BNWD1",
+    "date_of_registration": "2021-11-25",
+    "taxpayer_type": "Regular",
+    "nature_of_business_activities": "Export | Factory / Manufacturing | Import | Office / Sale Office | Recipient of Goods or Services | Supplier of Services | Warehouse / Depot",
+    "filing_timeliness": "Filed on Time",
+    "filings": [
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2026-06-10",
+      "filing_due_date": "2026-06-11",
+      "financial_year": "2026-2027",
+      "tax_period": "May",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2026-05-19",
+      "filing_due_date": "2026-05-20",
+      "financial_year": "2026-2027",
+      "tax_period": "April",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2026-05-08",
+      "filing_due_date": "2026-05-11",
+      "financial_year": "2026-2027",
+      "tax_period": "April",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2026-04-20",
+      "filing_due_date": "2026-04-21",
+      "financial_year": "2025-2026",
+      "tax_period": "March",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2026-04-09",
+      "filing_due_date": "2026-04-11",
+      "financial_year": "2025-2026",
+      "tax_period": "March",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2026-03-20",
+      "filing_due_date": "2026-03-20",
+      "financial_year": "2025-2026",
+      "tax_period": "February",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2026-03-09",
+      "filing_due_date": "2026-03-11",
+      "financial_year": "2025-2026",
+      "tax_period": "February",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2026-02-19",
+      "filing_due_date": "2026-02-20",
+      "financial_year": "2025-2026",
+      "tax_period": "January",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2026-02-10",
+      "filing_due_date": "2026-02-11",
+      "financial_year": "2025-2026",
+      "tax_period": "January",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2026-01-19",
+      "filing_due_date": "2026-01-20",
+      "financial_year": "2025-2026",
+      "tax_period": "December",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2026-01-09",
+      "filing_due_date": "2026-01-11",
+      "financial_year": "2025-2026",
+      "tax_period": "December",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2025-12-19",
+      "filing_due_date": "2025-12-20",
+      "financial_year": "2025-2026",
+      "tax_period": "November",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-12-10",
+      "filing_due_date": "2025-12-11",
+      "financial_year": "2025-2026",
+      "tax_period": "November",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2025-11-19",
+      "filing_due_date": "2025-11-20",
+      "financial_year": "2025-2026",
+      "tax_period": "October",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-11-10",
+      "filing_due_date": "2025-11-11",
+      "financial_year": "2025-2026",
+      "tax_period": "October",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2025-10-20",
+      "filing_due_date": "2025-10-25",
+      "financial_year": "2025-2026",
+      "tax_period": "September",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-10-10",
+      "filing_due_date": "2025-10-11",
+      "financial_year": "2025-2026",
+      "tax_period": "September",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2025-09-19",
+      "filing_due_date": "2025-09-20",
+      "financial_year": "2025-2026",
+      "tax_period": "August",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-09-11",
+      "filing_due_date": "2025-09-11",
+      "financial_year": "2025-2026",
+      "tax_period": "August",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2025-08-20",
+      "filing_due_date": "2025-08-20",
+      "financial_year": "2025-2026",
+      "tax_period": "July",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-08-08",
+      "filing_due_date": "2025-08-11",
+      "financial_year": "2025-2026",
+      "tax_period": "July",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2025-07-17",
+      "filing_due_date": "2025-07-20",
+      "financial_year": "2025-2026",
+      "tax_period": "June",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-07-09",
+      "filing_due_date": "2025-07-11",
+      "financial_year": "2025-2026",
+      "tax_period": "June",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2025-06-20",
+      "filing_due_date": "2025-06-20",
+      "financial_year": "2025-2026",
+      "tax_period": "May",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-06-10",
+      "filing_due_date": "2025-06-11",
+      "financial_year": "2025-2026",
+      "tax_period": "May",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2025-05-20",
+      "filing_due_date": "2025-05-20",
+      "financial_year": "2025-2026",
+      "tax_period": "April",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-05-09",
+      "filing_due_date": "2025-05-11",
+      "financial_year": "2025-2026",
+      "tax_period": "April",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2025-04-18",
+      "filing_due_date": "2025-04-20",
+      "financial_year": "2024-2025",
+      "tax_period": "March",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-04-10",
+      "filing_due_date": "2025-04-11",
+      "financial_year": "2024-2025",
+      "tax_period": "March",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2025-03-20",
+      "filing_due_date": "2025-03-20",
+      "financial_year": "2024-2025",
+      "tax_period": "February",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-03-10",
+      "filing_due_date": "2025-03-11",
+      "financial_year": "2024-2025",
+      "tax_period": "February",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2025-02-19",
+      "filing_due_date": "2025-02-20",
+      "financial_year": "2024-2025",
+      "tax_period": "January",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-02-07",
+      "filing_due_date": "2025-02-11",
+      "financial_year": "2024-2025",
+      "tax_period": "January",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2025-01-20",
+      "filing_due_date": "2025-01-22",
+      "financial_year": "2024-2025",
+      "tax_period": "December",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2025-01-08",
+      "filing_due_date": "2025-01-13",
+      "financial_year": "2024-2025",
+      "tax_period": "December",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2024-12-18",
+      "filing_due_date": "2024-12-20",
+      "financial_year": "2024-2025",
+      "tax_period": "November",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2024-12-09",
+      "filing_due_date": "2024-12-11",
+      "financial_year": "2024-2025",
+      "tax_period": "November",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2024-11-20",
+      "filing_due_date": "2024-11-20",
+      "financial_year": "2024-2025",
+      "tax_period": "October",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2024-11-11",
+      "filing_due_date": "2024-11-11",
+      "financial_year": "2024-2025",
+      "tax_period": "October",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2024-10-20",
+      "filing_due_date": "2024-10-20",
+      "financial_year": "2024-2025",
+      "tax_period": "September",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2024-10-09",
+      "filing_due_date": "2024-10-11",
+      "financial_year": "2024-2025",
+      "tax_period": "September",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2024-09-20",
+      "filing_due_date": "2024-09-20",
+      "financial_year": "2024-2025",
+      "tax_period": "August",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2024-09-10",
+      "filing_due_date": "2024-09-11",
+      "financial_year": "2024-2025",
+      "tax_period": "August",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2024-08-20",
+      "filing_due_date": "2024-08-20",
+      "financial_year": "2024-2025",
+      "tax_period": "July",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2024-08-09",
+      "filing_due_date": "2024-08-11",
+      "financial_year": "2024-2025",
+      "tax_period": "July",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR3B",
+      "date_of_filing": "2024-07-20",
+      "filing_due_date": "2024-07-20",
+      "financial_year": "2024-2025",
+      "tax_period": "June",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR1",
+      "date_of_filing": "2024-07-11",
+      "filing_due_date": "2024-07-11",
+      "financial_year": "2024-2025",
+      "tax_period": "June",
+      "status": "Filed",
+      "filing_timeliness": "Filed on Time"
+     },
+     {
+      "return_type": "GSTR9",
+      "date_of_filing": "2025-12-30",
+      "filing_due_date": null,
+      "financial_year": "2024-2025",
+      "tax_period": "Annual",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     },
+     {
+      "return_type": "GSTR9C",
+      "date_of_filing": "2025-12-30",
+      "filing_due_date": null,
+      "financial_year": "2024-2025",
+      "tax_period": "Annual",
+      "status": "Filed",
+      "filing_timeliness": "Filed"
+     }
+    ]
+   }
+  ],
+  "struckoff248_details": {
+   "struck_off_status": "As per our records, this corporate name was never removed under section 248(5) by ROC",
+   "restored_status": null
+  },
+  "msme_supplier_payment_delays": {
+   "trend": [
+    {
+     "period": "October 2022 to March 2023",
+     "amount": 9924129.38
+    },
+    {
+     "period": "April 2023 to September 2023",
+     "amount": 12630189.63
+    },
+    {
+     "period": "October 2023 to March 2024",
+     "amount": 3404836.94
+    },
+    {
+     "period": "April 2024 to September 2024",
+     "amount": 3697834.1
+    },
+    {
+     "period": "October 2024 to March 2025",
+     "amount": 3624029.44
+    },
+    {
+     "period": "April 2025 to September 2025",
+     "amount": 1113385.78
+    }
+   ],
+   "delays_for_period": {
+    "latest_period": "April 2025 to September 2025",
+    "total_amount_due_for_period": 1113385.78,
+    "delays": [
+     {
+      "supplier_name": "GRANUL A MASTER BATCHES INDIA PV",
+      "supplier_pan": "AAGCG2893Q",
+      "amount_due": 14897.5,
+      "amount_due_from_date": null,
+      "bid": "e020bfad1e8144e508cab04e0da358aafc1be5a7fa075ac93d7842d0c57bbad3"
+     },
+     {
+      "supplier_name": "HAMSA ENTERPR ISES",
+      "supplier_pan": "AXJPA3300K",
+      "amount_due": 833570.28,
+      "amount_due_from_date": null,
+      "bid": "cead6ebe316e2e933d14f96e856193405da5a29917dbcea8f728e34fb5c821ef"
+     },
+     {
+      "supplier_name": "KING FLEX HYDRAU LICS",
+      "supplier_pan": "AKCPV1520G",
+      "amount_due": 9558,
+      "amount_due_from_date": null,
+      "bid": "932144c20975defbbd1327478422ba9d9538902088cb1b0759e0aea566cc4ac6"
+     },
+     {
+      "supplier_name": "NGM TECHNOL OGIES",
+      "supplier_pan": "AGAPN8733B",
+      "amount_due": 34786.4,
+      "amount_due_from_date": null,
+      "bid": "0232b03012ab82c9d083650f5481131241958217f285d70530aaea5e86d899bd"
+     },
+     {
+      "supplier_name": "PREMIER INTEGRA TED BUSINES S SY",
+      "supplier_pan": "APEPC9789F",
+      "amount_due": 56073.6,
+      "amount_due_from_date": null,
+      "bid": "fd6ef9dace2232cc88314570204df53d4381aa269d973360e94acf32c43c6e12"
+     },
+     {
+      "supplier_name": "SAMRUD DI TOOL TECH",
+      "supplier_pan": "DRHPK2874M",
+      "amount_due": 72000,
+      "amount_due_from_date": null,
+      "bid": "62a893ab12deb6ee0debeb15c2067304a7211f13ac7a60e6ad3c14eddb920df8"
+     },
+     {
+      "supplier_name": "TRANSLI NE CONVEY ORS PRIVATE LI",
+      "supplier_pan": "AANCS4915Q",
+      "amount_due": 29500,
+      "amount_due_from_date": null,
+      "bid": "1059562d89042d50d023fa190cb88fa4fd963bed2d2a2c4d76ff685a8b6e196d"
+     },
+     {
+      "supplier_name": "TRANSPA CK",
+      "supplier_pan": "AAEFT6951B",
+      "amount_due": 63000,
+      "amount_due_from_date": null,
+      "bid": "5749977fae4f1467ca42e5c0893354ca97f0d6aa4cd5942a570c646d0f567a75"
+     }
+    ]
+   }
+  },
+  "legal_cases_of_financial_disputes": [],
+  "probe_financial_score": {
+   "overall_financial_score": 1,
+   "growth_score": 1,
+   "profitability_score": 1,
+   "liquidity_score": 4,
+   "solvency_score": 1,
+   "efficiency_score": 1
+  },
+  "key_indicators": {
+   "revenue": "Between 5 and 50 cr.",
+   "profit": "Loss Making",
+   "employee_count": "Upto 100",
+   "pending_cases_filed_against_this_corporate": false,
+   "bureau_defaults": false,
+   "gst_filing_delay": false,
+   "epf_payment_delay": false,
+   "severe_pending_cases_filed_against_this_corporate": false,
+   "credit_rating": null
+  },
+  "filing_dates": {
+   "aoc_4": {
+    "financial_year": "2024-03-31",
+    "filing_date": "2025-09-10"
+   },
+   "mgt_7": {
+    "financial_year": "2025-03-31",
+    "filing_date": "2025-12-26"
+   }
+  }
+ }
+}

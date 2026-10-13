@@ -1,14 +1,16 @@
 import { useMemo, useState } from 'react';
 import {
   HeartPulse, BadgeCheck, Lock, TrendingUp, TrendingDown, Minus, Factory,
-  Lightbulb, AlertTriangle, Eye, ExternalLink, Scale, Gauge,
+  Lightbulb, AlertTriangle, Eye, ExternalLink, Scale, Gauge, Activity, Database,
 } from 'lucide-react';
-import type { AppData, Vendor, VendorFin, Lever } from '../types';
+import type { AppData, Vendor, VendorFin, Lever, ProbeProfile, ProbeYear, ProbeFlag, ProbeScore } from '../types';
 import { Card, CardHeader, Badge, Pill } from '../components/ui/Card';
 import { Table, type Column } from '../components/ui/Table';
-import { money, pct, vendorShort } from '../lib/format';
+import { Sparkline } from '../components/charts/Sparkline';
+import { money, pct, crore, vendorShort } from '../lib/format';
 
 const GRADE_COLOR: Record<string, string> = { A: '#00973D', B: '#00A65B', C: '#EFAE0E', D: '#D91701' };
+const TONE: Record<ProbeFlag['tone'], string> = { risk: '#D91701', watch: '#F36D06', ok: '#00973D' };
 const LEVER_STYLE = {
   opportunity: { color: '#00973D', soft: '#E6F3EC', icon: Lightbulb, label: 'Opportunity' },
   risk: { color: '#D91701', soft: '#FDECEA', icon: AlertTriangle, label: 'Risk' },
@@ -39,6 +41,7 @@ export default function VendorHealth({ data }: { data: AppData }) {
   }
 
   const m = fins.manifest;
+  const probeN = (m as { privateProbe?: number }).privateProbe ?? 0;
   const okSpend = rows.filter((r) => r.fin?.status === 'ok').reduce((s, r) => s + r.vendor.totalNetSpend, 0);
   const totalSpend = rows.reduce((s, r) => s + r.vendor.totalNetSpend, 0);
 
@@ -51,7 +54,9 @@ export default function VendorHealth({ data }: { data: AppData }) {
           <span className="min-w-0">
             <span className="block truncate font-semibold text-fdc-ink" title={r.vendor.name}>{vendorShort(r.vendor.name)}</span>
             <span className="flex flex-wrap items-center gap-1 pt-0.5">
-              {r.fin?.type === 'listed' ? <Pill color="#2E7CE4"><BadgeCheck size={10} /> Listed</Pill> : <Pill color="#8E44AD"><Lock size={10} /> Private</Pill>}
+              {r.fin?.type === 'listed' ? <Pill color="#2E7CE4"><BadgeCheck size={10} /> Listed</Pill>
+                : r.fin?.primarySource === 'probe' ? <Pill color="#8E44AD"><Database size={10} /> Probe42</Pill>
+                : <Pill color="#8E44AD"><Lock size={10} /> Private</Pill>}
               {r.fin?.ratingGrade && <Pill color={gradeColor(r.fin.ratingGrade)}>{r.fin.ratingGrade}</Pill>}
             </span>
           </span>
@@ -95,8 +100,8 @@ export default function VendorHealth({ data }: { data: AppData }) {
           <h2 className="text-[15px] font-bold text-fdc-ink">Vendor Health</h2>
           <p className="text-[12.5px] text-fdc-grey">
             Real financials for <span className="font-semibold text-fdc-slate">{m.listedResolved} listed</span> +{' '}
-            <span className="font-semibold text-fdc-slate">{m.privateRated} rated-private</span> suppliers ({pct((okSpend / totalSpend) * 100, 0)} of spend) ·{' '}
-            {m.privateUnrated} unrated · listed via Munshot, private via free credit-rating docs — a price win should never come from a supplier about to wobble.
+            <span className="font-semibold text-fdc-slate">{m.privateRated} private</span> suppliers ({pct((okSpend / totalSpend) * 100, 0)} of spend) ·{' '}
+            {m.privateUnrated} not public · listed via Munshot, <span className="font-semibold text-fdc-slate">{probeN} private via Probe42</span> (MCA filings; credit-rating docs cross-check) — a price win should never come from a supplier about to wobble.
           </p>
         </div>
       </div>
@@ -137,6 +142,9 @@ function HealthPanel({ row }: { row: Row }) {
   const { vendor: v, fin } = row;
   const hs = fin?.healthScore ?? null;
   const met = fin?.metrics ?? null;
+  const probe = fin?.probe ?? null;
+  const isProbe = fin?.primarySource === 'probe';
+  const fyLabel = probe?.latestFy ?? fin?.asOfFy ?? null;
 
   return (
     <Card>
@@ -145,14 +153,17 @@ function HealthPanel({ row }: { row: Row }) {
         <div className="min-w-0">
           <h3 className="text-[15px] font-extrabold leading-tight text-fdc-ink">{vendorShort(v.name)}</h3>
           <div className="mt-1 flex flex-wrap items-center gap-1">
-            {fin?.type === 'listed' ? <Badge color="#2E7CE4"><BadgeCheck size={11} /> Listed{fin.symbol ? ` · ${fin.symbol}` : ''}</Badge> : <Badge color="#8E44AD"><Lock size={11} /> Private</Badge>}
+            {fin?.type === 'listed' ? <Badge color="#2E7CE4"><BadgeCheck size={11} /> Listed{fin.symbol ? ` · ${fin.symbol}` : ''}</Badge>
+              : isProbe ? <Badge color="#8E44AD"><Database size={11} /> Private · Probe42</Badge>
+              : <Badge color="#8E44AD"><Lock size={11} /> Private</Badge>}
             {fin?.ratingLabel && <Badge color={gradeColor(fin.ratingGrade || '')} soft={false}>{fin.ratingLabel}</Badge>}
             {fin?.issuerNotCooperating && <Badge color="#D91701"><AlertTriangle size={10} /> Not cooperating</Badge>}
             {v.materialsSupplied.map((mm, i) => <Badge key={i} color="#707070">{mm}</Badge>)}
           </div>
-          {(fin?.asOfFy || fin?.ratingDate) && (
+          {(fyLabel || fin?.ratingDate) && (
             <div className="mt-1 text-[10.5px] text-fdc-grey">
-              {fin?.asOfFy ? `Financials as of ${fin.asOfFy}` : ''}{fin?.asOfFy && fin?.ratingDate ? ' · ' : ''}{fin?.ratingDate ? `rated ${fin.ratingDate}` : ''}
+              {isProbe ? `Probe42 · MCA filings · ${fyLabel || '—'}` : fin?.asOfFy ? `Financials as of ${fin.asOfFy}` : ''}
+              {fin?.ratingDate ? ` · rated ${fin.ratingDate}` : ''}
             </div>
           )}
         </div>
@@ -183,30 +194,43 @@ function HealthPanel({ row }: { row: Row }) {
               </div>
             ))}
           </div>
+          {probe?.probeScore && <ProbeScoreStrip score={probe.probeScore} />}
           <p className="mt-2 text-[10.5px] italic leading-snug text-fdc-grey">{hs.note}</p>
         </div>
       ) : (
         <div className="rounded-2xl border border-dashed border-fdc-light bg-fdc-offwhite/60 p-4 text-center">
           <Lock size={20} className="mx-auto mb-1.5 text-fdc-grey" />
-          <div className="text-[13px] font-bold text-fdc-slate">{fin?.status === 'unrated' ? 'Not publicly rated' : 'Financials pending'}</div>
+          <div className="text-[13px] font-bold text-fdc-slate">{fin?.status === 'unrated' ? 'Financials not public' : 'Financials pending'}</div>
           <p className="mx-auto mt-1 max-w-xs text-[11.5px] leading-snug text-fdc-grey">
-            {fin?.note || 'No public credit rating found under this company’s legal name — private, unlisted companies aren’t required to file financials freely.'}
+            {fin?.note || 'No Probe42 report and no public credit rating under this company’s legal name — private, unlisted companies (and proprietorships) aren’t required to file financials freely.'}
             {fin?.cin && <> <span className="font-mono text-[10px]">({fin.cin})</span></>}
           </p>
         </div>
       )}
 
-      {/* key metrics (hide empty ones for rating-doc vendors) */}
+      {/* multi-year trend (Probe42) */}
+      {probe && probe.series.length >= 2 && <TrendMini series={probe.series} />}
+
+      {/* working capital vs peers (Probe42) */}
+      {probe?.peer && <WorkingCapital probe={probe} />}
+
+      {/* key metrics */}
       {met && (
-        <div className="mt-3 grid grid-cols-2 gap-2">
-          <Metric label="Revenue" value={money(met.revenue)} />
-          <Metric label={met.ebitdaMargin != null ? 'EBITDA margin' : 'Interest cover'} value={met.ebitdaMargin != null ? pct(met.ebitdaMargin) : met.interestCoverage != null ? `${met.interestCoverage}x` : '—'} />
-          <Metric label="Net margin" value={met.netMargin != null ? pct(met.netMargin) : '—'} />
-          <Metric label="Debt / equity" value={met.debtToEquity != null ? `${(met.debtToEquity / 100).toFixed(2)}x` : '—'} />
-          <Metric label={fin?.type === 'listed' ? 'Market cap' : 'Net worth'} value={fin?.type === 'listed' ? money(met.marketCap) : money(met.netWorth ?? null)} />
-          <Metric label="Rev growth" value={met.revenueGrowth != null ? pct(met.revenueGrowth) : '—'} />
-        </div>
+        <>
+          {isProbe && fyLabel && <div className="mt-3 mb-1 text-[10px] font-semibold uppercase tracking-wide text-fdc-grey">Probe42 · {fyLabel}</div>}
+          <div className={`${isProbe && fyLabel ? '' : 'mt-3'} grid grid-cols-2 gap-2`}>
+            <Metric label="Revenue" value={money(met.revenue)} />
+            <Metric label={met.ebitdaMargin != null ? 'EBITDA margin' : 'Interest cover'} value={met.ebitdaMargin != null ? pct(met.ebitdaMargin) : met.interestCoverage != null ? `${met.interestCoverage}x` : '—'} />
+            <Metric label="Net margin" value={met.netMargin != null ? pct(met.netMargin) : '—'} />
+            <Metric label="Debt / equity" value={met.debtToEquity != null ? `${(met.debtToEquity / 100).toFixed(2)}x` : '—'} />
+            <Metric label={fin?.type === 'listed' ? 'Market cap' : 'Net worth'} value={fin?.type === 'listed' ? money(met.marketCap) : money(met.netWorth ?? null)} />
+            <Metric label={isProbe ? 'Return on capital' : 'Rev growth'} value={isProbe ? (met.roce != null ? pct(met.roce) : '—') : met.revenueGrowth != null ? pct(met.revenueGrowth) : '—'} />
+          </div>
+        </>
       )}
+
+      {/* risk & compliance flags (Probe42) */}
+      {probe && probe.flags.length > 0 && <FlagChips flags={probe.flags} />}
 
       {/* FDC leverage context */}
       <div className="mt-3 flex items-center justify-between rounded-xl bg-fdc-green/[0.05] px-3 py-2">
@@ -227,18 +251,113 @@ function HealthPanel({ row }: { row: Row }) {
         </div>
       )}
 
-      {fin?.source && (
-        fin.source.sourceUrl ? (
-          <a href={fin.source.sourceUrl} target="_blank" rel="noreferrer" className="mt-3 flex items-center gap-1 text-[10.5px] text-fdc-grey hover:text-fdc-blue">
-            <ExternalLink size={10} /> Source: {fin.source.sourceName}{fin.source.date ? ` · ${fin.source.date}` : ''}
-          </a>
-        ) : (
-          <p className="mt-3 flex items-center gap-1 text-[10.5px] text-fdc-grey">
-            <ExternalLink size={10} /> Source: {fin.source.sourceName}{fin.source.date ? ` · ${fin.source.date}` : ''}
-          </p>
-        )
-      )}
+      {/* sources */}
+      <div className="mt-3 space-y-0.5">
+        {fin?.source && <SourceLine name={fin.source.sourceName} url={fin.source.sourceUrl} date={fin.source.date} />}
+        {fin?.fallbackSource && <SourceLine name={`Cross-check: ${fin.fallbackSource.sourceName}${fin.fallbackSource.ratingLabel ? ` (${fin.fallbackSource.ratingLabel})` : ''}`} url={fin.fallbackSource.sourceUrl} date={fin.fallbackSource.date} />}
+      </div>
     </Card>
+  );
+}
+
+function SourceLine({ name, url, date }: { name: string; url?: string | null; date?: string | null }) {
+  const label = <>Source: {name}{date ? ` · ${date}` : ''}</>;
+  return url ? (
+    <a href={url} target="_blank" rel="noreferrer" className="flex items-center gap-1 text-[10.5px] text-fdc-grey hover:text-fdc-blue"><ExternalLink size={10} /> {label}</a>
+  ) : (
+    <p className="flex items-center gap-1 text-[10.5px] text-fdc-grey"><ExternalLink size={10} /> {label}</p>
+  );
+}
+
+function TrendMini({ series }: { series: ProbeYear[] }) {
+  const specs: { label: string; key: keyof ProbeYear; color: string; fmt: (n: number) => string }[] = [
+    { label: 'Revenue', key: 'revenue', color: '#00973D', fmt: (n) => crore(n, 0) },
+    { label: 'Net margin', key: 'netMargin', color: '#2E7CE4', fmt: (n) => pct(n) },
+    { label: 'RoCE', key: 'roce', color: '#8E44AD', fmt: (n) => pct(n) },
+  ];
+  return (
+    <div className="mt-3 grid grid-cols-3 gap-2">
+      {specs.map((sp) => {
+        const pts = series.filter((s) => s[sp.key] != null).map((s) => ({ label: s.fy || s.year, value: s[sp.key] as number }));
+        const latest = pts[pts.length - 1];
+        return (
+          <div key={sp.label} className="rounded-xl border border-black/[0.06] p-2">
+            <div className="flex items-baseline justify-between gap-1">
+              <span className="truncate text-[9.5px] font-medium uppercase tracking-wide text-fdc-grey">{sp.label}</span>
+              <span className="tnum text-[11px] font-bold text-fdc-ink">{latest ? sp.fmt(latest.value) : '—'}</span>
+            </div>
+            {pts.length >= 2 ? <Sparkline points={pts} color={sp.color} height={32} format={sp.fmt} /> : <div className="grid h-[32px] place-items-center text-[10px] text-fdc-grey">1 yr</div>}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function WorkingCapital({ probe }: { probe: ProbeProfile }) {
+  const m = probe.metrics;
+  const peer = probe.peer!;
+  const rows: { label: string; v: number | null; p: number | null; lowerBetter: boolean }[] = [
+    { label: 'Receivable days', v: m.receivableDays, p: peer.receivableDays, lowerBetter: true },
+    { label: 'Payable days', v: m.payableDays, p: peer.payableDays, lowerBetter: false },
+    { label: 'Cash-conversion cycle', v: m.ccc, p: peer.ccc, lowerBetter: true },
+  ];
+  return (
+    <div className="mt-3 rounded-2xl border border-black/[0.06] p-3">
+      <div className="mb-1.5 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-fdc-grey"><Activity size={13} /> Working capital vs peers</div>
+      <div className="space-y-1.5">
+        {rows.map((r) => {
+          if (r.v == null) return null;
+          const worse = r.lowerBetter && r.p != null && r.v > r.p * 1.1;
+          return (
+            <div key={r.label} className="flex items-center gap-2 text-[11.5px]">
+              <span className="w-32 shrink-0 text-fdc-grey">{r.label}</span>
+              <span className="tnum font-bold text-fdc-ink">{Math.round(r.v)}d</span>
+              {r.p != null && <span className="tnum text-[10.5px] text-fdc-grey">peer {Math.round(r.p)}d</span>}
+              {worse && <span className="ml-auto text-[10px] font-semibold" style={{ color: '#F36D06' }}>above peers</span>}
+            </div>
+          );
+        })}
+      </div>
+      {peer.bizSegment && <p className="mt-1.5 text-[10px] text-fdc-grey">Peer set: {peer.bizSegment}{peer.peers ? ` · ${peer.peers} cos` : ''} (Probe42)</p>}
+    </div>
+  );
+}
+
+function ProbeScoreStrip({ score }: { score: ProbeScore }) {
+  if (score.overall == null) return null;
+  const col = (n: number | null) => (n == null ? '#C9C9C9' : n >= 6 ? '#00973D' : n >= 3 ? '#EFAE0E' : '#D91701');
+  const subs: [string, number | null][] = [['Growth', score.growth], ['Profit', score.profitability], ['Liquidity', score.liquidity], ['Solvency', score.solvency], ['Efficiency', score.efficiency]];
+  return (
+    <div className="mt-2.5 border-t border-black/[0.05] pt-2">
+      <div className="flex items-center justify-between">
+        <span className="text-[10.5px] font-semibold uppercase tracking-wide text-fdc-grey">Probe42 financial score</span>
+        <span className="tnum text-[12px] font-extrabold" style={{ color: col(score.overall) }}>{score.overall}<span className="text-[10px] font-medium text-fdc-grey">/10</span></span>
+      </div>
+      <div className="mt-1 flex gap-1">
+        {subs.map(([label, n]) => (
+          <div key={label} className="flex-1 text-center">
+            <div className="grid h-5 place-items-center rounded text-[10px] font-bold text-white" style={{ background: col(n) }}>{n ?? '–'}</div>
+            <div className="mt-0.5 text-[8.5px] text-fdc-grey">{label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function FlagChips({ flags }: { flags: ProbeFlag[] }) {
+  return (
+    <div className="mt-3">
+      <div className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-fdc-grey">Risk & compliance flags</div>
+      <div className="flex flex-wrap gap-1">
+        {flags.map((f, i) => (
+          <span key={i} className="inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[10.5px] font-semibold" style={{ background: `${TONE[f.tone]}18`, color: TONE[f.tone] }}>
+            <AlertTriangle size={9} /> {f.label}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 }
 
