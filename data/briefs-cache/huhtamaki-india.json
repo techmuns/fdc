@@ -1,0 +1,75 @@
+{
+  "inputHash": "1e63e36cc29463bb",
+  "brief": {
+    "headline": "Push for ₹250.00/KG laminate price — we're paying 326.9% above the best internal benchmark",
+    "priceAsk": {
+      "summary": "Target ₹250.00/KG for LAMINATE SKU, matching our best internal price",
+      "target": "₹250.00/KG — the price we pay Silk Polypack today",
+      "basis": "Our current Huhtamaki price is ₹1067.36/KG, a 326.9% gap vs best. Even the BOPET film import benchmark sits at 171.60 ₹/kg — raw substrate costs less than half what we're paying them for finished laminate. Closing this gap saves us ₹58850 annually."
+    },
+    "paymentTermAsk": {
+      "summary": "No change needed — we already have 30 Days After Receipt",
+      "cashImpact": "none"
+    },
+    "financialLeverage": "Huhtamaki India is a ₹2611.64 Cr company with a solid 8.3% EBITDA margin, 5.2% net margin, and low 0.11x debt-to-equity. They're healthy (B 64/100 score, no risk flags) and growing fast — the pre-computed lever cites 22.5%/yr revenue growth. We're ₹76850 spend, which rounds to 0.00% of their revenue, so standalone leverage is negligible. However, their growth appetite and converter economics mean they'll value committed volume; bundle a multi-year commitment or credibly threaten to split volume with UFLEX or Constantia Parikh to earn pricing concessions.",
+    "evidence": [
+      {
+        "point": "We pay Huhtamaki ₹1067.36/KG for LAMINATE — 326.9% above our best internal price",
+        "figure": "₹1067.36/KG vs ₹250.00/KG (Silk Polypack), gap 326.9%"
+      },
+      {
+        "point": "Closing the price gap saves us ₹58850 per year",
+        "figure": "₹58850"
+      },
+      {
+        "point": "The import benchmark for BOPET film substrate is only 171.60 ₹/kg — less than half our laminate price",
+        "figure": "171.60 ₹/kg"
+      },
+      {
+        "point": "Huhtamaki's revenue is ₹2611.64 Cr with healthy 8.3% EBITDA and 5.2% net margins",
+        "figure": "₹2611.64 Cr, 8.3%, 5.2%"
+      },
+      {
+        "point": "Our ₹76850 spend is 0.00% of their revenue — we need volume commitment or alternate threat for leverage",
+        "figure": "₹76850, 0.00%"
+      },
+      {
+        "point": "They carry minimal financial risk: 0.11x debt-to-equity, B health score 64/100, no flags",
+        "figure": "0.11x, B (64/100)"
+      }
+    ],
+    "alternates": [
+      {
+        "name": "UFLEX Ltd",
+        "why": "Listed flexibles giant handling both film substrate and conversion at scale — credible full second-source for laminates (health C)"
+      },
+      {
+        "name": "Constantia Parikh Packaging Pvt Ltd",
+        "why": "Global Constantia group's India converter specializing in pharma blister and sachet laminates — strong GEEP second-source capability"
+      },
+      {
+        "name": "Amcor Flexibles India Pvt Ltd",
+        "why": "Global Amcor's India arm with high-end pharma laminate expertise — premium tier but very reliable alternate"
+      }
+    ],
+    "risks": [
+      "At 0.00% of their revenue we have almost no standalone negotiating power — must bundle volume growth or credibly source elsewhere",
+      "The 326.9% gap vs Silk Polypack may reflect spec or quality differences not visible in DATA — verify comparability before hard push",
+      "Huhtamaki is financially strong (0.11x leverage, 8.3% EBITDA) and growing 22.5%/yr — they can afford to walk from a ₹76850 customer",
+      "Film-maker alternates (Ester, Polyplex, Jindal) supply substrate only, not finished laminate — not drop-in replacements for conversion"
+    ],
+    "suggestedOpeningLine": "We value the relationship, but at ₹1067.36/KG we're paying more than four times what we pay other suppliers for comparable laminate — let's discuss how we close that gap and grow volume together."
+  },
+  "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-13",
+  "usage": {
+    "cacheReadInputTokenCount": 0,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokenCount": 0,
+    "cacheWriteInputTokens": 0,
+    "inputTokens": 2212,
+    "outputTokens": 1208,
+    "serverToolUsage": {},
+    "totalTokens": 3420
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "inputHash": "82bf2382e6725411",
+  "brief": {
+    "headline": "Close the 16.6% price gap on PET bottles — ₹28644 annual saving is on the table from a supplier earning peer-level margins with an A-stable rating.",
+    "priceAsk": {
+      "summary": "Match Suraj Blow Plast's ₹1.87/NOS on the PET BOT AMBER 100ML/25MM NECK 12.5G bottle",
+      "target": "₹1.87/NOS (currently ₹2.18/NOS)",
+      "basis": "We pay Suraj Blow Plast ₹1.87/NOS for the identical SKU — a 16.6% gap. Closing it recovers ₹28644 annually. TPAC's 3.8% net margin matches the peer median of 3.7%, so there is no margin squeeze preventing parity."
+    },
+    "paymentTermAsk": {
+      "summary": "Move from 30 Days After Receipt to 45 Days (peer median is 33d payable, so 45d is achievable)",
+      "cashImpact": "An additional 15 days releases ₹46539 in working capital for FDC"
+    },
+    "financialLeverage": "TPAC is financially stable — [ICRA] A / Stable rating, 0.19x debt-to-equity, 4.55x interest coverage, and a 62/100 health score. Net margin of 3.8% sits at the peer median of 3.7%, and EBITDA margin of 10.4% is healthy. However, they squeeze suppliers hard: 17d payables versus peer median 33d, yet stretch receivables to 67d (peer 65d). Our ₹11.32 L is only 0.02% of their ₹637.48 Cr revenue, so we have near-zero individual leverage. But their strong balance sheet and investment-grade rating mean we can push firmly on price and terms without continuity risk — and we have four credible alternates if they resist.",
+    "evidence": [
+      {
+        "point": "We overpay by 16.6% on the key PET bottle SKU versus our best-in-house price",
+        "figure": "Gap: 16.6%, our price ₹2.18/NOS, best price ₹1.87/NOS from Suraj Blow Plast"
+      },
+      {
+        "point": "TPAC's net margin matches the peer median, so no underlying cost disadvantage",
+        "figure": "Net margin 3.8%, peer median 3.7%"
+      },
+      {
+        "point": "They pay suppliers in 17 days, half the peer median of 33 days — they extract aggressive terms upstream",
+        "figure": "Payable days 17d, peer median 33d"
+      },
+      {
+        "point": "Investment-grade credit rating confirms financial strength",
+        "figure": "[ICRA] A / Stable"
+      },
+      {
+        "point": "Our spend is immaterial to them",
+        "figure": "₹11.32 L is 0.02% of revenue ₹637.48 Cr"
+      },
+      {
+        "point": "Estimated annual excess cost on rigid plastic packaging totals ₹28644",
+        "figure": "₹28644"
+      }
+    ],
+    "alternates": [
+      {
+        "name": "Manjushree Technopack Ltd",
+        "why": "India's largest rigid-plastic packaging converter covering pharma bottles, caps, and preforms — top second-source candidate already flagged in our system"
+      },
+      {
+        "name": "Mold-Tek Packaging Ltd",
+        "why": "Listed rigid-packaging leader with A-grade health, serving pharma; robust alternate for bottles and closures"
+      },
+      {
+        "name": "Pearl Polymers Ltd",
+        "why": "Listed PET bottle and jar specialist (Pearlpet brand) — direct fit for our PET bottle requirement"
+      }
+    ],
+    "risks": [
+      "We are only 0.02% of their ₹637.48 Cr revenue — minimal single-account leverage; must bundle volume, extend commitment, or credibly pivot to Manjushree or Mold-Tek to gain traction",
+      "GST filing delays and EPF payment delays are on record — may signal administrative stress or cash tightness despite the A-stable rating; monitor continuity if we push hard",
+      "Their 17d payables show they demand tight terms from their own suppliers; they may resist giving us better than 30 days unless we offer volume or multi-year lock-in",
+      "Return on capital of 7.6% lags the peer median of 13.4% — profitability per rupee invested is weak, which may make them defensive on price even though absolute margin is in line"
+    ],
+    "suggestedOpeningLine": "We'd like to understand why we're paying ₹2.18 per bottle when our best price for the identical PET item is ₹1.87 — that's a 16.6% gap we need to close this year."
+  },
+  "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-13",
+  "usage": {
+    "cacheReadInputTokenCount": 0,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokenCount": 0,
+    "cacheWriteInputTokens": 0,
+    "inputTokens": 2158,
+    "outputTokens": 1268,
+    "serverToolUsage": {},
+    "totalTokens": 3426
+  }
+}

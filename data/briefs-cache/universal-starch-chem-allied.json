@@ -1,0 +1,75 @@
+{
+  "inputHash": "34275b1a3e45f70e",
+  "brief": {
+    "headline": "Close the 13.6% price gap to our best Dextrose rate and move toward the ₹42.95/kg India export benchmark.",
+    "priceAsk": {
+      "summary": "Reduce Dextrose to ₹66.48/KG or below, matching our best price from Sayaji Industries Limited.",
+      "target": "₹66.48/KG on Dextrose Anhydrous IP and all Dextrose grades; potential annual saving ₹14.26 L",
+      "basis": "We currently pay them ₹75.51/KG — 13.6% above our best price of ₹66.48/KG. India export unit value sits at ₹42.95/kg, proving headroom exists."
+    },
+    "paymentTermAsk": {
+      "summary": "Hold current 30 Days After Receipt terms; no extension.",
+      "cashImpact": "none"
+    },
+    "financialLeverage": "Universal Starch reports revenue of ₹514.62 Cr with a 3.7% net margin and 7.4% EBITDA margin — thin by any standard. Debt-to-equity of 0.73x is manageable but not fortress-strong. They carry a C health score (51/100). Our ₹59.65 L spend is just 0.12% of their revenue, so standalone leverage is negligible. However, they are growing at 21.4% per year and hunger for volume, which gives us an opening to trade committed tonnage for a lower unit price. Push firmly on price — they need the growth — but watch for quality or delivery slip if margins compress further.",
+    "evidence": [
+      {
+        "point": "We pay 13.6% more than our best Dextrose supplier",
+        "figure": "gap 13.6%, our price ₹75.51/KG vs best ₹66.48/KG"
+      },
+      {
+        "point": "Closing the gap saves us ₹14.26 L annually",
+        "figure": "₹14.26 L"
+      },
+      {
+        "point": "India export benchmark for Dextrose is far lower, signalling market headroom",
+        "figure": "₹42.95/kg"
+      },
+      {
+        "point": "Their net margin is razor-thin at 3.7%, limiting their ability to absorb cost shocks but also proving price discipline is possible",
+        "figure": "3.7%"
+      },
+      {
+        "point": "We represent only 0.12% of their ₹514.62 Cr revenue, so we need competitive tension to move them",
+        "figure": "0.12%, ₹59.65 L vs ₹514.62 Cr"
+      },
+      {
+        "point": "They are growing top-line at 21.4% per year and will value volume commitments",
+        "figure": "21.4%"
+      }
+    ],
+    "alternates": [
+      {
+        "name": "Gulshan Polyols Ltd",
+        "why": "Listed starch and polyol maker; established dextrose/sorbitol supplier — a drop-in alternate with C health."
+      },
+      {
+        "name": "Sanstar Ltd",
+        "why": "Recently-listed maize-derivatives specialist growing capacity in starch and dextrose; B health score."
+      },
+      {
+        "name": "Roquette India Pvt Ltd",
+        "why": "Indian arm of global starch major; pharma-grade dextrose and excipients with premium reliability."
+      }
+    ],
+    "risks": [
+      "At 0.12% of their revenue we lack unilateral clout — credibly threaten to shift volume to Sayaji, Gulshan, or Sanstar.",
+      "Their 3.7% net margin is already wafer-thin; aggressive price cuts may trigger quality or lead-time compromises — build quality KPIs into any new contract.",
+      "No credit rating or interest-coverage data in hand; if liquidity tightens they may push for earlier payment — do not budge on the 30-day terms.",
+      "Growing at 21.4% means capacity may be stretched; confirm lead times and minimum-order commitments before locking in volume."
+    ],
+    "suggestedOpeningLine": "We value the relationship, but at ₹75.51 per kilo we're paying 13.6% over our best Dextrose price — let's close that gap and talk about a volume commitment in return."
+  },
+  "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-13",
+  "usage": {
+    "cacheReadInputTokenCount": 0,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokenCount": 0,
+    "cacheWriteInputTokens": 0,
+    "inputTokens": 2183,
+    "outputTokens": 1119,
+    "serverToolUsage": {},
+    "totalTokens": 3302
+  }
+}

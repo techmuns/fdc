@@ -1,0 +1,75 @@
+{
+  "inputHash": "fc73e283fe8722e7",
+  "brief": {
+    "headline": "Close the ₹28.69 L gap to our best prices and move to 30-day payment to free ₹16.02 L working capital — we are 47.43% of their revenue and they cannot afford to lose us.",
+    "priceAsk": {
+      "summary": "Demand price parity with Mars Plastics and Premier Plastic across all rigid plastic packaging SKUs to eliminate the ₹28.69 L annual excess.",
+      "target": "₹0.81/NOS for PP CAP PLAS 28MM INDUCTUCTION WAD (currently ₹1.08/NOS), ₹1.38/NOS for HDPE BOT WHITE 30ML WITH RING MARK (currently ₹1.53/NOS), and ₹0.35/NOS for MESU. CUP 30MM TRANS.PP 2.5/5/10ML (currently ₹0.46/NOS)",
+      "basis": "We already pay these lower prices to Mars Plastics and Premier Plastic for identical items — the 33.2% gap on caps, 10.7% gap on bottles, and 30.6% gap on measuring cups is not justified and costs us ₹28.69 L annually."
+    },
+    "paymentTermAsk": {
+      "summary": "Move from 45 Days After Receipt to 30 Days After Receipt to match industry practice and free working capital for both parties.",
+      "cashImpact": "₹16.02 L one-time working capital release for FDC; they already stretch their own suppliers to 39d vs 23d peer median, so this is entirely fair."
+    },
+    "financialLeverage": "Cincorp is small (₹4.11 Cr revenue) and weak: their 6.0% net margin is less than half the 15.0% peer median, and they carry debt at 1.13x debt-to-equity. Our ₹1.95 Cr annual spend represents 47.43% of their total revenue — losing us would cripple them. Their 11.5% return on capital trails the 15.3% peer median. They are rated C (51/100) health and flagged as a small entity requiring verification. However, their tight margin means aggressive price cuts will hurt them badly, so we should balance price with payment-term and volume commitments. Their 4.77x interest coverage shows they can service debt, but cash matters — offer faster payment only in exchange for deeper discounts.",
+    "evidence": [
+      {
+        "point": "We overpay ₹28.69 L per year versus the best prices we already secure from other suppliers",
+        "figure": "₹28.69 L"
+      },
+      {
+        "point": "On our largest SKU, PP CAP PLAS 28MM INDUCTUCTION WAD, Cincorp charges ₹1.08/NOS while Mars Plastics supplies at ₹0.81/NOS — a 33.2% gap costing us ₹14.05 L annually",
+        "figure": "33.2% gap, ₹14.05 L"
+      },
+      {
+        "point": "FDC represents 47.43% of Cincorp's ₹4.11 Cr revenue, giving us decisive negotiating power",
+        "figure": "47.43%, ₹4.11 Cr"
+      },
+      {
+        "point": "Cincorp's 6.0% net margin is far below the 15.0% peer median, signaling tight profitability and limited room to absorb our business loss",
+        "figure": "6.0%, 15.0%"
+      },
+      {
+        "point": "They stretch their own suppliers to 39d payables versus 23d peer median, so asking for 30-day terms is equitable",
+        "figure": "39d, 23d"
+      },
+      {
+        "point": "Moving to 30-day terms releases ₹16.02 L of working capital for FDC",
+        "figure": "₹16.02 L"
+      }
+    ],
+    "alternates": [
+      {
+        "name": "Manjushree Technopack Ltd",
+        "why": "India's largest rigid-plastic packaging converter supplying pharma bottles, caps, and preforms — top second-source candidate already identified for packaging."
+      },
+      {
+        "name": "Mold-Tek Packaging Ltd",
+        "why": "Listed rigid-plastic leader (pails, containers, pharma) with A health rating — strong, profitable alternate for bottles and closures."
+      },
+      {
+        "name": "Mars Plastics",
+        "why": "Currently supplies us PP CAP PLAS 28MM INDUCTUCTION WAD at ₹0.81/NOS and HDPE BOT WHITE 30ML at ₹1.38/NOS — proven capability on our two largest SKUs."
+      }
+    ],
+    "risks": [
+      "Cincorp is flagged as a small entity (<₹10 Cr) requiring verification — confirm production capacity and financial stability before committing large volumes.",
+      "Their below-peer 6.0% margin means aggressive price cuts could push them into losses or force them to walk away — balance price demands with volume certainty or payment-term sweeteners.",
+      "With 1.13x debt-to-equity and ₹1.95 Cr total debt, financial stress could disrupt supply continuity — monitor their liquidity and have Manjushree Technopack or Mold-Tek ready to step in.",
+      "We are 47.43% of their revenue, so if they lose us they may not survive — this gives us leverage but also means we need a transition plan if negotiations fail."
+    ],
+    "suggestedOpeningLine": "We value the partnership, but we're paying ₹28.69 lakh more than our best suppliers on identical items — let's work together to close that gap and move to 30-day terms so we can both improve our working capital."
+  },
+  "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-13",
+  "usage": {
+    "cacheReadInputTokenCount": 0,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokenCount": 0,
+    "cacheWriteInputTokens": 0,
+    "inputTokens": 2703,
+    "outputTokens": 1467,
+    "serverToolUsage": {},
+    "totalTokens": 4170
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "inputHash": "8e3bae485268e07a",
+  "brief": {
+    "headline": "Push for a 35% price reduction to close the ₹23.53/KG gap to the India export benchmark of ₹42.95/KG, leveraging our 1.38% revenue share and three credible alternates.",
+    "priceAsk": {
+      "summary": "Demand price reduction from ₹66.48/KG to match or beat the India export unit value of ₹42.95/KG for Dextrose.",
+      "target": "₹42.95/KG (India export unit value from UN Comtrade)",
+      "basis": "We currently pay ₹66.48/KG — 55% above the market line of ₹42.95/KG. This gap is indefensible when export-grade material trades at ₹42.95/KG and we have multiple alternate suppliers including Gulshan Polyols, Sanstar, and Roquette India ready to quote."
+    },
+    "paymentTermAsk": {
+      "summary": "Offer to move from 30 Days After Receipt to immediate payment in exchange for a 2–3% cash discount, citing their high debt load.",
+      "cashImpact": "₹1.24 Cr (working capital currently locked; freeing it funds the discount and improves their cash flow)"
+    },
+    "financialLeverage": "Sayaji's net margin is a razor-thin 1.1% and EBITDA margin is 4.9%, so they have limited room to absorb deep cuts — but their debt-to-equity of 2.37x means cash is king. Our ₹15.03 Cr annual spend represents 1.38% of their ₹1087.88 Cr revenue, making us a meaningful customer they cannot afford to lose. Their D (17/100) health score signals stress, so frame the ask as a partnership to stabilize volume in exchange for competitive pricing. Offer faster payment to ease their working-capital squeeze, but anchor hard on the ₹42.95/KG market line — we have five credible alternates and no switching cost.",
+    "evidence": [
+      {
+        "point": "We pay ₹66.48/KG for Dextrose, 55% above the India export benchmark.",
+        "figure": "₹66.48/KG vs ₹42.95/KG market line"
+      },
+      {
+        "point": "Our ₹15.03 Cr annual spend is 1.38% of Sayaji's ₹1087.88 Cr revenue — a material customer relationship.",
+        "figure": "₹15.03 Cr, 1.38%, ₹1087.88 Cr"
+      },
+      {
+        "point": "Sayaji's net margin is only 1.1% and EBITDA margin is 4.9%, limiting their ability to defend high pricing.",
+        "figure": "1.1%, 4.9%"
+      },
+      {
+        "point": "Their debt-to-equity ratio is 2.37x, signaling cash-flow pressure and openness to faster payment in exchange for price relief.",
+        "figure": "2.37x"
+      },
+      {
+        "point": "Moving to immediate payment would free ₹1.24 Cr of our working capital, funding a discount while easing their cash cycle.",
+        "figure": "₹1.24 Cr"
+      },
+      {
+        "point": "Their financial health score is D (17/100), underscoring the need to secure volume and improve terms to stabilize operations.",
+        "figure": "D (17/100)"
+      }
+    ],
+    "alternates": [
+      {
+        "name": "Gulshan Polyols Ltd",
+        "why": "Listed starch & polyol maker; established dextrose/sorbitol supplier — a drop-in alternate to Sayaji with C health score."
+      },
+      {
+        "name": "Sanstar Ltd",
+        "why": "Recently-listed maize-derivatives specialist (starch, dextrose) — growing capacity with B health score, stronger financials than Sayaji."
+      },
+      {
+        "name": "Roquette India Pvt Ltd",
+        "why": "Indian arm of global starch major Roquette — pharma-grade dextrose/excipients; premium, very reliable, de-risking supply continuity concerns."
+      }
+    ],
+    "risks": [
+      "Sayaji's 1.1% net margin and D (17/100) health score mean aggressive price pressure could destabilize supply — balance the ask with volume commitment and faster payment to keep them viable.",
+      "We currently pay ₹66.48/KG with no gap to our own best price, so we lack internal benchmarking leverage — rely entirely on the ₹42.95/KG export market line and alternate quotes to justify the ask.",
+      "Their 2.37x debt-to-equity and thin margins may limit their ability to cut price deeply; if they refuse, pivot to payment terms (cash discount for faster payment) and lock in a commitment to revisit pricing quarterly against the export benchmark.",
+      "Our 1.38% share of their revenue gives us leverage, but not dominance — if we walk, they lose a meaningful customer but won't collapse; ensure alternates are pre-qualified before issuing an ultimatum."
+    ],
+    "suggestedOpeningLine": "We value the relationship, but at ₹66.48/KG we're paying 55% over the ₹42.95/KG India export benchmark for Dextrose — let's work together to close that gap so we can commit our full ₹15 Cr annual volume to you."
+  },
+  "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-13",
+  "usage": {
+    "cacheReadInputTokenCount": 0,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokenCount": 0,
+    "cacheWriteInputTokens": 0,
+    "inputTokens": 2099,
+    "outputTokens": 1377,
+    "serverToolUsage": {},
+    "totalTokens": 3476
+  }
+}

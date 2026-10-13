@@ -1,0 +1,75 @@
+{
+  "inputHash": "2583de81b5a989d4",
+  "brief": {
+    "headline": "Close the ₹1.26 Cr gap: benchmark Gujarat Ambuja's Dextrose to Sayaji's ₹66.48/KG and lock volume in exchange for price.",
+    "priceAsk": {
+      "summary": "Move Dextrose from ₹68.45/KG to ₹66.48/KG",
+      "target": "₹66.48/KG",
+      "basis": "We already pay Sayaji Industries Limited ₹66.48/KG for identical Dextrose; Gujarat Ambuja runs 3.0% higher, costing us ₹1.26 Cr annually in excess. The India export unit value sits at 42.95 ₹/kg, so there is substantial room below our ask."
+    },
+    "paymentTermAsk": {
+      "summary": "Hold at 30 Days After Receipt; no extension",
+      "cashImpact": "none"
+    },
+    "financialLeverage": "Gujarat Ambuja is financially robust—revenue of ₹6031.59 Cr, net margin of 6.9%, EBITDA margin of 10.1%, and very low leverage at 0.13x debt-to-equity. Our ₹21.21 Cr spend is just 0.35% of their revenue, so we are not a make-or-break account. However, their 23.5%/yr revenue growth signals they prize volume gains, and their B health score (70/100) with no risk flags means they can absorb a price concession to defend share. Push firmly on price; they have the margin and the motive.",
+    "evidence": [
+      {
+        "point": "We pay Gujarat Ambuja ₹68.45/KG for Dextrose, yet Sayaji Industries delivers the same material at a lower rate",
+        "figure": "₹66.48/KG"
+      },
+      {
+        "point": "The price gap costs us annually in avoidable excess spend",
+        "figure": "₹1.26 Cr"
+      },
+      {
+        "point": "For Dextrose Anhydrous IP specifically, the gap versus best price is identical",
+        "figure": "3.0%"
+      },
+      {
+        "point": "Gujarat Ambuja's EBITDA margin shows they earn well above basic commodity economics",
+        "figure": "10.1%"
+      },
+      {
+        "point": "They are growing fast, which means new volume is strategically valuable to them",
+        "figure": "23.5%"
+      },
+      {
+        "point": "The global reference price for Dextrose exports from India is far below even our target ask",
+        "figure": "42.95 ₹/kg"
+      }
+    ],
+    "alternates": [
+      {
+        "name": "Sanstar Ltd",
+        "why": "Recently-listed maize-derivatives specialist (starch, dextrose) with growing capacity and B health score—credible drop-in source to balance the 56% share Gujarat Ambuja holds."
+      },
+      {
+        "name": "Gulshan Polyols Ltd",
+        "why": "Listed starch & polyol maker; established dextrose/sorbitol supplier and a proven alternate to Gujarat Ambuja."
+      },
+      {
+        "name": "Roquette India Pvt Ltd",
+        "why": "Indian arm of global starch major Roquette with pharma-grade dextrose capability—premium quality and very reliable if Gujarat Ambuja will not move."
+      }
+    ],
+    "risks": [
+      "We source 56% of our Dextrose—₹21.21 Cr—through Gujarat Ambuja, creating single-source concentration; walking away without a qualified alternate is operationally risky.",
+      "At 0.35% of their ₹6031.59 Cr revenue, we lack account-level leverage; they can afford to lose us if we overplay our hand.",
+      "Their strong financials (10.1% EBITDA, 0.13x leverage, no risk flags) mean they do not face margin or liquidity pressure that would force a quick concession.",
+      "Payment terms are already at 30 Days After Receipt and not flagged as worst-in-class, so there is no working-capital lever to pull in parallel."
+    ],
+    "suggestedOpeningLine": "We value the partnership and the volume we place with you, but we're carrying a ₹1.26 Cr cost disadvantage on Dextrose versus Sayaji at ₹66.48/KG—let's close that gap and talk about locking in higher committed volume going forward."
+  },
+  "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-13",
+  "usage": {
+    "cacheReadInputTokenCount": 0,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokenCount": 0,
+    "cacheWriteInputTokens": 0,
+    "inputTokens": 2180,
+    "outputTokens": 1144,
+    "serverToolUsage": {},
+    "totalTokens": 3324
+  }
+}

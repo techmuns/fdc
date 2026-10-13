@@ -1,0 +1,75 @@
+{
+  "inputHash": "1f5464355896613b",
+  "brief": {
+    "headline": "Move to 30-day credit to unlock ₹8.73 L working capital, and close the ₹12.95 L annual price gap against our best supplier at ₹66.48/KG",
+    "priceAsk": {
+      "summary": "Reduce Dextrose price from ₹70.80/KG to ₹66.48/KG to match our lowest supplier",
+      "target": "₹66.48/KG (currently paying ₹70.80/KG)",
+      "basis": "We already pay Sayaji Industries Limited ₹66.48/KG for the same material — a 6.5% gap. Closing it saves ₹12.95 L annually. The India export unit value for Dextrose is 42.95 ₹/kg, well below both prices, so ₹66.48/KG is a fair domestic benchmark."
+    },
+    "paymentTermAsk": {
+      "summary": "Shift from 100% advance to standard 30-day credit terms",
+      "cashImpact": "₹8.73 L working capital freed"
+    },
+    "financialLeverage": "Sukhjit reported revenue of ₹1458.95 Cr with a thin 2.3% net margin and 6.4% EBITDA margin, so deep price cuts risk their viability. Debt-to-equity is moderate at 0.61x, but their health score is D (39/100). Our ₹1.06 Cr spend is only 0.07% of their revenue — we are a rounding error, which limits standalone leverage. However, their slim margins mean they badly need to avoid tying up cash in advance payments. Push hardest on payment terms; on price, frame it as alignment with market reality rather than a margin squeeze.",
+    "evidence": [
+      {
+        "point": "We pay 6.5% more than our best supplier for Dextrose",
+        "figure": "gapVsBest: 6.5%"
+      },
+      {
+        "point": "Our best price for Dextrose is ₹66.48/KG from Sayaji Industries Limited",
+        "figure": "bestPriceWePay: ₹66.48/KG"
+      },
+      {
+        "point": "Closing the price gap saves us ₹12.95 L per year",
+        "figure": "totalEstAnnualExcessVsBestPriceWePay: ₹12.95 L"
+      },
+      {
+        "point": "We currently pay 100% in advance, the worst payment terms in our vendor base",
+        "figure": "areWorstTerms: true"
+      },
+      {
+        "point": "Moving to 30-day credit unlocks ₹8.73 L in working capital",
+        "figure": "workingCapitalFreedIf30Day: ₹8.73 L"
+      },
+      {
+        "point": "India export unit value for Dextrose is 42.95 ₹/kg, far below what we pay",
+        "figure": "marketLine latest: 42.95 ₹/kg"
+      }
+    ],
+    "alternates": [
+      {
+        "name": "Gulshan Polyols Ltd",
+        "why": "Listed starch & polyol maker; established dextrose/sorbitol supplier — a drop-in alternate to Gujarat Ambuja/Sayaji."
+      },
+      {
+        "name": "Sanstar Ltd",
+        "why": "Recently-listed maize-derivatives specialist (starch, dextrose) — growing capacity."
+      },
+      {
+        "name": "Roquette India Pvt Ltd",
+        "why": "Indian arm of global starch major Roquette — pharma-grade dextrose/excipients; premium, very reliable."
+      }
+    ],
+    "risks": [
+      "At ₹1.06 Cr and 0.07% of their ₹1458.95 Cr revenue, we have negligible leverage — they can afford to lose us. Bundle commitments or threaten credible alternate sourcing.",
+      "Their 2.3% net margin is razor-thin; aggressive price demands could push them to exit or cut corners. Focus the fight on payment terms, where the cost to them is lower.",
+      "100% advance payment gives them zero incentive to negotiate — we've already handed over all leverage. Make payment-term shift non-negotiable to rebalance the relationship.",
+      "Health score of D (39/100) signals potential instability; if we push too hard and they falter, supply continuity is at risk. Qualify alternates now."
+    ],
+    "suggestedOpeningLine": "We value the relationship, but paying ₹70.80/KG when we source identical Dextrose at ₹66.48/KG elsewhere — and funding you 100% in advance — isn't sustainable; let's align on both price and standard 30-day terms today."
+  },
+  "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-13",
+  "usage": {
+    "cacheReadInputTokenCount": 0,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokenCount": 0,
+    "cacheWriteInputTokens": 0,
+    "inputTokens": 2298,
+    "outputTokens": 1228,
+    "serverToolUsage": {},
+    "totalTokens": 3526
+  }
+}
