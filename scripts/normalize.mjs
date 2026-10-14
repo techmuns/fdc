@@ -376,7 +376,7 @@ function buildValue(parsed, ctx) {
     if (!vLast[rk] || r.posting > vLast[rk]) vLast[rk] = r.posting;
     if (r.mvt === '101' && r.qty > 0) {
       const sk = `${r.material}|${r.matCode}|${r.unit}`;
-      (skuMap[sk] ||= { material: r.material, matCode: r.matCode, unit: r.unit, desc: r.desc, v: {} });
+      (skuMap[sk] ||= { material: r.material, matCode: r.matCode, unit: r.unit, desc: r.desc, rawDesc: r.rawDesc, v: {} });
       const vv = (skuMap[sk].v[vkey] ||= { vendorKey: vkey, vendor: cv.name, recSpend: 0, recQty: 0, last: null });
       vv.recSpend += r.amt; vv.recQty += r.qty; if (!vv.last || r.posting > vv.last) vv.last = r.posting;
       const age = dayDiff(r.posting, r.dom), shelf = dayDiff(r.sled, r.posting);
@@ -417,7 +417,7 @@ function buildValue(parsed, ctx) {
     for (const v of vendors) { v.gapVsBest = round(v.price - best, 3); v.excess = round((v.price - best) * v.qty); if (v.price > best) savings += (v.price - best) * v.qty; }
     vendors.sort((a, b) => a.price - b.price);
     const entry = {
-      desc: sk.desc, matCode: sk.matCode, unit: sk.unit,
+      desc: sk.desc, rawDesc: sk.rawDesc, matCode: sk.matCode, unit: sk.unit,
       spend: round(vendors.reduce((s, v) => s + v.spend, 0)), qty: round(vendors.reduce((s, v) => s + v.qty, 0), 3),
       vendorCount: vendors.length,
       bestVendorKey: bestRow.vendorKey, bestVendor: bestRow.vendor, bestPrice: round(best, 3),
@@ -432,6 +432,20 @@ function buildValue(parsed, ctx) {
   for (const mkey of Object.keys(materials)) {
     materials[mkey].skus.sort((a, b) => b.savings - a.savings || b.spend - a.spend);
     savingsByMaterial[mkey] = round(savingsByMaterial[mkey]);
+  }
+  // Disambiguate SKUs that share a display name but are different material codes
+  // (e.g. the unified "Dextrose Anhydrous IP" covers both the (FO) and (EXMPT) codes) —
+  // surface the distinguishing variant from the raw description, else fall back to the code.
+  for (const mkey of Object.keys(materials)) {
+    const byDesc = {};
+    for (const s of materials[mkey].skus) (byDesc[s.desc] ||= []).push(s);
+    for (const group of Object.values(byDesc)) {
+      if (group.length < 2) continue;
+      for (const s of group) {
+        const m = String(s.rawDesc || '').match(/\(([^)]+)\)\s*$/); // trailing "(FO)" / "(EXMPT)" etc.
+        s.desc = m ? `${s.desc} (${m[1].trim()})` : `${s.desc} · ${s.matCode}`;
+      }
+    }
   }
 
   // ---- freshness strip per material (per canonical vendor, this material) ----
@@ -469,11 +483,26 @@ function buildValue(parsed, ctx) {
   // ---- top-3 action cards (biggest defensible levers) ----
   const actions = buildActions({ materials, savingsByMaterial, vendors, canonicalByKey: ctx.canonicalByKey, fin, matShareOf });
 
+  // ---- cash you can FREE (working capital) — kept strictly separate from price (P&L) savings ----
+  // Vendors paid on advance/immediate terms tie up cash. Moving them to 30-day credit releases,
+  // one time, roughly annual spend × 30/365. This is NOT a cost saving and is never added to one.
+  const cashFreedBy = Object.values(vendors)
+    .filter((v) => (v.termCategory === 'advance' || v.termCategory === 'immediate') && v.spend > 0)
+    .map((v) => ({ vendorKey: v.vendorKey, name: v.name, spend: round(v.spend), termText: v.termText, termCategory: v.termCategory, cashFreed: round(v.spend * 30 / 365) }))
+    .sort((a, b) => b.cashFreed - a.cashFreed);
+  const cashFreed = round(cashFreedBy.reduce((s, x) => s + x.cashFreed, 0));
+
   return {
     generatedAt: new Date().toISOString(), currency: 'INR',
     dateRange: { from: fmtDate(new Date(Math.min(...all.map((r) => +r.posting)))), to: fmtDate(maxDate) },
     activeWindowDays: ACTIVE_DAYS,
-    headline: { totalSavings: round(totalSavings), note: `What FDC overpaid this year vs the cheapest price it already paid, across every material bought from 2+ vendors.` },
+    headline: {
+      totalSavings: round(totalSavings), // retained = cost (price) savings only
+      costSavings: round(totalSavings),
+      cashFreed,
+      cashFreedBy,
+      note: `Cost you can save is price-only — what FDC overpaid this year versus the cheapest price it already paid for the same items (every material bought from 2+ vendors). Cash you can free is one-time working capital, released by moving suppliers off advance/immediate terms onto 30-day credit (annual spend × 30/365) — a different kind of money, never added to the cost saving.`,
+    },
     savingsByMaterial: Object.keys(MATERIAL_META).map((k) => ({ materialKey: k, displayName: MATERIAL_META[k].displayName, color: MATERIAL_META[k].color, savings: savingsByMaterial[k] })),
     actions,
     materials,
@@ -543,25 +572,55 @@ function buildActions({ materials, savingsByMaterial, vendors, canonicalByKey, f
   const cand = [];
   for (const L of priceLevers) {
     const fragile = isFragile(L.toKey, fin, matShareOf, L.mkey);
-    cand.push({
-      key: `price-${L.from.vendorKey}-${L.mkey}`, kind: 'price', saving: L.saving, material: L.mkey, vendorKey: L.from.vendorKey,
-      action: `Move ${L.M.displayName} volume off ${short(L.from.vendor)} to ${short(L.toVendor)}.`,
-      why: `You pay ${short(L.from.vendor)} ₹${pf(L.from.price)}/${unitLbl(L.sku.unit)} for ${L.sku.desc} — ${short(L.toVendor)} already gives you the same at ₹${pf(L.toPrice)}/${unitLbl(L.sku.unit)}.`,
-      savingLabel: croreOrL(L.saving),
-      proof: { tab: 'material', material: L.mkey, skuDesc: L.sku.desc, vendorKey: L.from.vendorKey },
-      risk: fragile ? `${short(L.toVendor)} already carries a big share here — line up a second source so this saving doesn't create single-source risk.` : null,
-    });
+    const toMargin = fin[L.toKey]?.metrics?.netMargin ?? null;
+    const fromMargin = fin[L.from.vendorKey]?.metrics?.netMargin ?? null;
+    const fromTerms = canonicalByKey[L.from.vendorKey]?.terms;
+    const fromTermLabel = fromTerms?.category === 'net' && fromTerms.days ? `${fromTerms.days}-day credit` : null;
+    const fromStronger = fromMargin != null && toMargin != null && fromMargin >= toMargin + 2;
+    if (fragile) {
+      // The cheapest vendor is fragility-flagged (thin margin and/or already the biggest share).
+      // Don't recommend piling MORE volume onto a weak sole source — use its price as leverage.
+      const strongBits = [fromTermLabel, fromStronger ? 'stronger financials' : null].filter(Boolean).join(', ');
+      cand.push({
+        key: `price-${L.from.vendorKey}-${L.mkey}`, kind: 'price', isLeverage: true, saving: L.saving, material: L.mkey, vendorKey: L.from.vendorKey,
+        action: `Use ${short(L.toVendor)}'s lower price to push ${short(L.from.vendor)} down — don't just move more volume to ${short(L.toVendor)}.`,
+        why: `You pay ${short(L.from.vendor)} ₹${pf(L.from.price)}/${unitLbl(L.sku.unit)} for ${L.sku.desc}; ${short(L.toVendor)} sells the same at ₹${pf(L.toPrice)}/${unitLbl(L.sku.unit)}. But ${short(L.toVendor)} is already your biggest ${L.M.displayName} source${toMargin != null ? ` on a thin ~${Math.round(toMargin)}% net margin` : ''} — adding volume there deepens single-source risk. Use that gap to get ${short(L.from.vendor)}${strongBits ? ` (${strongBits})` : ''} down to it, or split to a second healthy source.`,
+        savingLabel: croreOrL(L.saving),
+        proof: { tab: 'material', material: L.mkey, skuDesc: L.sku.desc, vendorKey: L.from.vendorKey },
+        risk: `${short(L.toVendor)} is already your biggest ${L.M.displayName} source — keep its price as leverage, not a bigger basket.`,
+      });
+    } else {
+      cand.push({
+        key: `price-${L.from.vendorKey}-${L.mkey}`, kind: 'price', saving: L.saving, material: L.mkey, vendorKey: L.from.vendorKey,
+        action: `Move ${L.M.displayName} volume off ${short(L.from.vendor)} to ${short(L.toVendor)}.`,
+        why: `You pay ${short(L.from.vendor)} ₹${pf(L.from.price)}/${unitLbl(L.sku.unit)} for ${L.sku.desc} — ${short(L.toVendor)} already gives you the same at ₹${pf(L.toPrice)}/${unitLbl(L.sku.unit)}.`,
+        savingLabel: croreOrL(L.saving),
+        proof: { tab: 'material', material: L.mkey, skuDesc: L.sku.desc, vendorKey: L.from.vendorKey },
+        risk: null,
+      });
+    }
   }
-  if (termsLever && termsLever.score > 0) {
-    const altName = termsLever.alt ? short(termsLever.alt.vendor) : null;
+  if (termsLever && termsLever.cashFreed > 0) {
+    const tv = termsLever.v;
+    const isAdvance = tv.termCategory === 'advance';
+    // biggest OTHER advance-term vendor — mentioned as an even-worse (but smaller) secondary case
+    const worstAdvance = Object.values(vendors)
+      .filter((w) => w.termCategory === 'advance' && w.spend > 0 && w.vendorKey !== tv.vendorKey)
+      .sort((a, b) => b.spend - a.spend)[0] || null;
+    const action = isAdvance
+      ? `Stop pre-paying ${short(tv.name)} — it's 100% advance today.`
+      : `Put ${short(tv.name)} on 30-day credit — today it's pay-on-receipt.`;
+    const payPhrase = isAdvance
+      ? `you pay 100% up front, before the goods are even dispatched`
+      : `you pay on the day goods arrive — no credit at all`;
+    let why = `${short(tv.name)} is your largest supplier on weak terms: ${payPhrase}, while your other big suppliers already give you 30 days. On ${croreOrL(tv.spend)} of spend, securing 30-day credit frees about ${croreOrL(termsLever.cashFreed)} of working capital — a one-time cash release, not a price cut.`;
+    if (worstAdvance) why += ` ${short(worstAdvance.name)} is on even worse terms — 100% advance — but far smaller spend (${croreOrL(worstAdvance.spend)}).`;
     cand.push({
-      key: `terms-${termsLever.v.vendorKey}`, kind: 'terms', saving: termsLever.score, material: termsLever.mkey, vendorKey: termsLever.v.vendorKey,
-      action: `Stop pre-paying ${short(termsLever.v.name)} — ${termsLever.v.termText.toLowerCase()}.`,
-      why: altName
-        ? `You pay ${short(termsLever.v.name)} before goods even arrive${termsLever.mine && termsLever.alt && termsLever.mine.price > termsLever.alt.price ? ` at ₹${pf(termsLever.mine.price)}/${unitLbl(termsLever.sku.unit)}` : ''}. ${altName} supplies the same material on 30-day credit${termsLever.priceSave > 0 ? ` and cheaper (₹${pf(termsLever.alt.price)}/${unitLbl(termsLever.sku.unit)})` : ''}.`
-        : `You pay ${short(termsLever.v.name)} 100% before the goods arrive — the weakest possible terms. Move to 30-day credit to free up the cash.`,
-      savingLabel: termsLever.priceSave > 0 ? `${croreOrL(termsLever.priceSave)} + ${croreOrL(termsLever.cashFreed)} cash freed` : `${croreOrL(termsLever.cashFreed)} cash freed`,
-      proof: { tab: 'vendors', vendorKey: termsLever.v.vendorKey },
+      key: `terms-${tv.vendorKey}`, kind: 'terms', isCash: true, saving: termsLever.cashFreed, material: termsLever.mkey, vendorKey: tv.vendorKey,
+      action,
+      why,
+      savingLabel: croreOrL(termsLever.cashFreed),
+      proof: { tab: 'vendors', vendorKey: tv.vendorKey },
       risk: null,
     });
   }

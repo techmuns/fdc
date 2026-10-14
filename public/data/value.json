@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T09:24:36.295Z",
+  "generatedAt": "2026-10-14T10:29:20.819Z",
   "currency": "INR",
   "dateRange": {
     "from": "2025-04-01",
@@ -8,7 +8,27 @@
   "activeWindowDays": 120,
   "headline": {
     "totalSavings": 16903109.76,
-    "note": "What FDC overpaid this year vs the cheapest price it already paid, across every material bought from 2+ vendors."
+    "costSavings": 16903109.76,
+    "cashFreed": 5363392.13,
+    "cashFreedBy": [
+      {
+        "vendorKey": "tetrapak-india",
+        "name": "Tetrapak India Private limited.",
+        "spend": 54634604.27,
+        "termText": "Immediate",
+        "termCategory": "immediate",
+        "cashFreed": 4490515.42
+      },
+      {
+        "vendorKey": "sukhjit-corn-products",
+        "name": "SUKHJIT CORN PRODUCTS",
+        "spend": 10620000,
+        "termText": "Advance 100%(with tax)Against Proforma Invoice",
+        "termCategory": "advance",
+        "cashFreed": 872876.71
+      }
+    ],
+    "note": "Cost you can save is price-only — what FDC overpaid this year versus the cheapest price it already paid for the same items (every material bought from 2+ vendors). Cash you can free is one-time working capital, released by moving suppliers off advance/immediate terms onto 30-day credit (annual spend × 30/365) — a different kind of money, never added to the cost saving."
   },
   "savingsByMaterial": [
     {
@@ -34,30 +54,32 @@
     {
       "key": "price-gujarat-ambuja-exports-dextrose",
       "kind": "price",
+      "isLeverage": true,
       "saving": 6045483,
       "material": "dextrose",
       "vendorKey": "gujarat-ambuja-exports",
-      "action": "Move Dextrose volume off Gujarat Ambuja Exports to Sayaji Industries.",
-      "why": "You pay Gujarat Ambuja Exports ₹68.5/kg for Dextrose Anhydrous IP — Sayaji Industries already gives you the same at ₹66.6/kg.",
+      "action": "Use Sayaji Industries's lower price to push Gujarat Ambuja Exports down — don't just move more volume to Sayaji Industries.",
+      "why": "You pay Gujarat Ambuja Exports ₹68.5/kg for Dextrose Anhydrous IP (EXMPT); Sayaji Industries sells the same at ₹66.6/kg. But Sayaji Industries is already your biggest Dextrose source on a thin ~1% net margin — adding volume there deepens single-source risk. Use that gap to get Gujarat Ambuja Exports (30-day credit, stronger financials) down to it, or split to a second healthy source.",
       "savingLabel": "₹60.5 L",
       "proof": {
         "tab": "material",
         "material": "dextrose",
-        "skuDesc": "Dextrose Anhydrous IP",
+        "skuDesc": "Dextrose Anhydrous IP (EXMPT)",
         "vendorKey": "gujarat-ambuja-exports"
       },
-      "risk": "Sayaji Industries already carries a big share here — line up a second source so this saving doesn't create single-source risk.",
+      "risk": "Sayaji Industries is already your biggest Dextrose source — keep its price as leverage, not a bigger basket.",
       "rank": 1
     },
     {
       "key": "terms-tetrapak-india",
       "kind": "terms",
+      "isCash": true,
       "saving": 4490515.42,
       "material": "laminates",
       "vendorKey": "tetrapak-india",
-      "action": "Stop pre-paying Tetrapak — immediate.",
-      "why": "You pay Tetrapak 100% before the goods arrive — the weakest possible terms. Move to 30-day credit to free up the cash.",
-      "savingLabel": "₹44.9 L cash freed",
+      "action": "Put Tetrapak on 30-day credit — today it's pay-on-receipt.",
+      "why": "Tetrapak is your largest supplier on weak terms: you pay on the day goods arrive — no credit at all, while your other big suppliers already give you 30 days. On ₹5.46 Cr of spend, securing 30-day credit frees about ₹44.9 L of working capital — a one-time cash release, not a price cut. Sukhjit Corn Products is on even worse terms — 100% advance — but far smaller spend (₹1.06 Cr).",
+      "savingLabel": "₹44.9 L",
       "proof": {
         "tab": "vendors",
         "vendorKey": "tetrapak-india"
@@ -102,7 +124,8 @@
       },
       "skus": [
         {
-          "desc": "Dextrose Anhydrous IP",
+          "desc": "Dextrose Anhydrous IP (EXMPT)",
+          "rawDesc": "ANHYDROUS DEXTROSE IP (EXMPT)",
           "matCode": "1000001281",
           "unit": "KG",
           "spend": 370118965.5,
@@ -167,7 +190,8 @@
           ]
         },
         {
-          "desc": "Dextrose Anhydrous IP",
+          "desc": "Dextrose Anhydrous IP (FO)",
+          "rawDesc": "DEXTROSE ANHYDROUS IP (FO)",
           "matCode": "1000000710",
           "unit": "KG",
           "spend": 21410400,
@@ -256,6 +280,7 @@
       "skus": [
         {
           "desc": "HDPE BOT WHITE 30ML WITH RING MARK",
+          "rawDesc": "HDPE BOT WHITE 30ML WITH RING MARK",
           "matCode": "2000001148",
           "unit": "NOS",
           "spend": 19164040,
@@ -309,6 +334,7 @@
         },
         {
           "desc": "PP CAP PLAS 28MM INDUCTUCTION WAD",
+          "rawDesc": "PP CAP PLAS 28MM INDUCTUCTION WAD",
           "matCode": "2000003004",
           "unit": "NOS",
           "spend": 12098940,
@@ -362,6 +388,7 @@
         },
         {
           "desc": "MESU. CUP 30MM TRANS.PP 2.5/5/10ML",
+          "rawDesc": "MESU. CUP 30MM TRANS.PP 2.5/5/10ML",
           "matCode": "2000002628",
           "unit": "NOS",
           "spend": 5481800,
@@ -415,6 +442,7 @@
         },
         {
           "desc": "PET BOT AMBER 250ML/28MM WITH SHR SL 01",
+          "rawDesc": "PET BOT AMBER 250ML/28MM WITH SHR SL 01",
           "matCode": "2000014704",
           "unit": "NOS",
           "spend": 7737357.6,
@@ -456,6 +484,7 @@
         },
         {
           "desc": "LDPE BOTTLE 5ML WHITE OPAQUE",
+          "rawDesc": "LDPE BOTTLE 5ML WHITE OPAQUE",
           "matCode": "2000002152",
           "unit": "NOS",
           "spend": 8965240,
@@ -497,6 +526,7 @@
         },
         {
           "desc": "PET BOT AMBER BRUT 250ML/28MM NECK 26G",
+          "rawDesc": "PET BOT AMBER BRUT 250ML/28MM NECK 26G",
           "matCode": "2000002670",
           "unit": "NOS",
           "spend": 10930225.95,
@@ -538,6 +568,7 @@
         },
         {
           "desc": "PET BOT AMBER 100ML/25MM NECK 12.5G",
+          "rawDesc": "PET BOT AMBER 100ML/25MM NECK 12.5G",
           "matCode": "2000002660",
           "unit": "NOS",
           "spend": 1040127,
@@ -579,6 +610,7 @@
         },
         {
           "desc": "HDPE BOT WHITE 60ML WITH RING MARK",
+          "rawDesc": "HDPE BOT WHITE 60ML WITH RING MARK",
           "matCode": "2000016273",
           "unit": "NOS",
           "spend": 1283150,
@@ -620,6 +652,7 @@
         },
         {
           "desc": "PET PREFORM CLEAR 38MM NECK-400ML BOTTLE",
+          "rawDesc": "PET PREFORM CLEAR 38MM NECK-400ML BOTTLE",
           "matCode": "2000006817",
           "unit": "NOS",
           "spend": 49432470.24,
@@ -649,6 +682,7 @@
         },
         {
           "desc": "A.G. BOT 30ML 25MM NECK USP-III",
+          "rawDesc": "A.G. BOT 30ML 25MM NECK USP-III",
           "matCode": "2000000016",
           "unit": "NOS",
           "spend": 6425637.96,
@@ -678,6 +712,7 @@
         },
         {
           "desc": "PET PREFORM CLEAR 38MM NECK-500ML BOTTLE",
+          "rawDesc": "PET PREFORM CLEAR 38MM NECK-500ML BOTTLE",
           "matCode": "2000004846",
           "unit": "NOS",
           "spend": 6345080.44,
@@ -707,6 +742,7 @@
         },
         {
           "desc": "NOVELIA NOZZLE CAP PF10V2.4-20060589 WHT",
+          "rawDesc": "NOVELIA NOZZLE CAP PF10V2.4-20060589 WHT",
           "matCode": "2000006579",
           "unit": "NOS",
           "spend": 5915832,
@@ -736,6 +772,7 @@
         },
         {
           "desc": "A.G. BOT 15mL 22mm NECK USP-III",
+          "rawDesc": "A.G. BOT 15mL 22mm NECK USP-III",
           "matCode": "2000000012",
           "unit": "NOS",
           "spend": 3842619.26,
@@ -765,6 +802,7 @@
         },
         {
           "desc": "HDPE BOT SIMYL MCT OIL 100 mL",
+          "rawDesc": "HDPE BOT SIMYL MCT OIL 100 mL",
           "matCode": "2000008984",
           "unit": "NOS",
           "spend": 3434775,
@@ -806,6 +844,7 @@
         },
         {
           "desc": "HDPE CAP 20MM SPIKED",
+          "rawDesc": "HDPE CAP 20MM SPIKED",
           "matCode": "2000001149",
           "unit": "NOS",
           "spend": 2979160,
@@ -835,6 +874,7 @@
         },
         {
           "desc": "HDPE BOT WHITE 10ML WITH RING MARK",
+          "rawDesc": "HDPE BOT WHITE 10ML WITH RING MARK",
           "matCode": "2000001147",
           "unit": "NOS",
           "spend": 2413803,
@@ -864,6 +904,7 @@
         },
         {
           "desc": "PET BOT AMB 100ML/25MM SHRK SLV SLMDL DX",
+          "rawDesc": "PET BOT AMB 100ML/25MM SHRK SLV SLMDL DX",
           "matCode": "2000015040",
           "unit": "NOS",
           "spend": 2312125.2,
@@ -893,6 +934,7 @@
         },
         {
           "desc": "HDPE BOT 30ML WTH CAP XLSR603 CUP MARS",
+          "rawDesc": "HDPE BOT 30ML WTH CAP XLSR603 CUP MARS",
           "matCode": "2000017229",
           "unit": "NOS",
           "spend": 2040000,
@@ -922,6 +964,7 @@
         },
         {
           "desc": "PP CAP PLAS 25MM INDUCT. WAD",
+          "rawDesc": "PP CAP PLAS 25MM INDUCT. WAD",
           "matCode": "2000003001",
           "unit": "NOS",
           "spend": 1520934,
@@ -951,6 +994,7 @@
         },
         {
           "desc": "PP CAP 28MM WF (PT 414) PEEL UP WAD",
+          "rawDesc": "PP CAP 28MM WF (PT 414) PEEL UP WAD",
           "matCode": "2000005911",
           "unit": "NOS",
           "spend": 1463950,
@@ -980,6 +1024,7 @@
         },
         {
           "desc": "PP FLIP TOP CAP 100 mL",
+          "rawDesc": "PP FLIP TOP CAP 100 mL",
           "matCode": "2000008986",
           "unit": "NOS",
           "spend": 1435561.6,
@@ -1021,6 +1066,7 @@
         },
         {
           "desc": "PET BOT AMB 100ML/25MM SHRK SLV SLMDL LS",
+          "rawDesc": "PET BOT AMB 100ML/25MM SHRK SLV SLMDL LS",
           "matCode": "2000014724",
           "unit": "NOS",
           "spend": 1363753.5,
@@ -1050,6 +1096,7 @@
         },
         {
           "desc": "PET BOT AMBER 100ML/25MM WITH SHR SL01",
+          "rawDesc": "PET BOT AMBER 100ML/25MM WITH SHR SL01",
           "matCode": "2000014884",
           "unit": "NOS",
           "spend": 1271980.55,
@@ -1091,6 +1138,7 @@
         },
         {
           "desc": "LDPE BLOCK NOZZLE TRANSLUCENT",
+          "rawDesc": "LDPE BLOCK NOZZLE TRANSLUCENT",
           "matCode": "2000002161",
           "unit": "NOS",
           "spend": 1125680,
@@ -1120,6 +1168,7 @@
         },
         {
           "desc": "HDPE BOT WHITE 50ML WITH RING MARK",
+          "rawDesc": "HDPE BOT WHITE 50ML WITH RING MARK",
           "matCode": "2000005823",
           "unit": "NOS",
           "spend": 954500,
@@ -1149,6 +1198,7 @@
         },
         {
           "desc": "HDPE BOT 120 CC (MW) TRIVENI (DB 63)",
+          "rawDesc": "HDPE BOT 120 CC (MW) TRIVENI (DB 63)",
           "matCode": "2000010321",
           "unit": "NOS",
           "spend": 948400,
@@ -1178,6 +1228,7 @@
         },
         {
           "desc": "HDPE BOT WHITE 30ML WTH CAP CUP MARS",
+          "rawDesc": "HDPE BOT WHITE 30ML WTH CAP CUP MARS",
           "matCode": "2000017062",
           "unit": "NOS",
           "spend": 933000,
@@ -1207,6 +1258,7 @@
         },
         {
           "desc": "PET BOT AMB 60ML/25MM SHRK SLV ZO 50 LS",
+          "rawDesc": "PET BOT AMB 60ML/25MM SHRK SLV ZO 50 LS",
           "matCode": "2000015336",
           "unit": "NOS",
           "spend": 925391.32,
@@ -1236,6 +1288,7 @@
         },
         {
           "desc": "PET BOT AMBER BRUT 100ML/25MM NECK 13G",
+          "rawDesc": "PET BOT AMBER BRUT 100ML/25MM NECK 13G",
           "matCode": "2000002667",
           "unit": "NOS",
           "spend": 689188.5,
@@ -1265,6 +1318,7 @@
         },
         {
           "desc": "MESU. CUP 25MM TRANS.PP 2.5/5/10ML RING",
+          "rawDesc": "MESU. CUP 25MM TRANS.PP 2.5/5/10ML RING",
           "matCode": "2000002625",
           "unit": "NOS",
           "spend": 653580,
@@ -1294,6 +1348,7 @@
         },
         {
           "desc": "PET BOT AMB 60ML/25MM SHRK SLV SLMDL DX",
+          "rawDesc": "PET BOT AMB 60ML/25MM SHRK SLV SLMDL DX",
           "matCode": "2000015041",
           "unit": "NOS",
           "spend": 625309.79,
@@ -1323,6 +1378,7 @@
         },
         {
           "desc": "NOVELIA BOTL 11mL WHT BP-10002652 NEMERA",
+          "rawDesc": "NOVELIA BOTL 11mL WHT BP-10002652 NEMERA",
           "matCode": "2000011153",
           "unit": "NOS",
           "spend": 611424,
@@ -1352,6 +1408,7 @@
         },
         {
           "desc": "SCREW CAP 38mm/400 (DC02)(HS 123-20 PW)",
+          "rawDesc": "SCREW CAP 38mm/400 (DC02)(HS 123-20 PW)",
           "matCode": "2000010320",
           "unit": "NOS",
           "spend": 610350,
@@ -1381,6 +1438,7 @@
         },
         {
           "desc": "MESU. CUP 28MM TRANS 1.25/2.5/5/7.5/10ML",
+          "rawDesc": "MESU. CUP 28MM TRANS 1.25/2.5/5/7.5/10ML",
           "matCode": "2000002623",
           "unit": "NOS",
           "spend": 548625.02,
@@ -1410,6 +1468,7 @@
         },
         {
           "desc": "HDPE BOT 75 CC (MW) TRIVENI (DB 79)",
+          "rawDesc": "HDPE BOT 75 CC (MW) TRIVENI (DB 79)",
           "matCode": "2000010322",
           "unit": "NOS",
           "spend": 511330,
@@ -1439,6 +1498,7 @@
         },
         {
           "desc": "MESU. CUP 2.5/5/10ML",
+          "rawDesc": "MESU. CUP 2.5/5/10ML",
           "matCode": "2000002621",
           "unit": "NOS",
           "spend": 486850,
@@ -1468,6 +1528,7 @@
         },
         {
           "desc": "PET BOT AMB 30ML/25M SHRK SLV ZO 50 PS",
+          "rawDesc": "PET BOT AMB 30ML/25M SHRK SLV ZO 50 PS",
           "matCode": "2000015337",
           "unit": "NOS",
           "spend": 375648,
@@ -1497,6 +1558,7 @@
         },
         {
           "desc": "PET BOT AMBER 60ML/25MM WITH SHR SLEEVE",
+          "rawDesc": "PET BOT AMBER 60ML/25MM WITH SHR SLEEVE",
           "matCode": "2000014723",
           "unit": "NOS",
           "spend": 374839.08,
@@ -1526,6 +1588,7 @@
         },
         {
           "desc": "R DESIGN CAP BERRY PLASTIC HDPE CAP",
+          "rawDesc": "R DESIGN CAP BERRY PLASTIC HDPE CAP",
           "matCode": "2000006357",
           "unit": "NOS",
           "spend": 327030,
@@ -1555,6 +1618,7 @@
         },
         {
           "desc": "A.G. BOT 100ML 25MM NECK USP-III",
+          "rawDesc": "A.G. BOT 100ML 25MM NECK USP-III",
           "matCode": "2000000008",
           "unit": "NOS",
           "spend": 321378,
@@ -1584,6 +1648,7 @@
         },
         {
           "desc": "10 ML I DESIGN LDPE BOTTLE",
+          "rawDesc": "10 ML I DESIGN LDPE BOTTLE",
           "matCode": "2000017342",
           "unit": "NOS",
           "spend": 292695,
@@ -1613,6 +1678,7 @@
         },
         {
           "desc": "SR SL CLEAR 25 MIC PVC 45X35mm",
+          "rawDesc": "SR SL CLEAR 25 MIC PVC 45X35mm",
           "matCode": "2000009054",
           "unit": "NOS",
           "spend": 291434.98,
@@ -1642,6 +1708,7 @@
         },
         {
           "desc": "B-30ML FLAT WHITE (L)-NS LS",
+          "rawDesc": "B-30ML FLAT WHITE (L)-NS LS",
           "matCode": "2000014367",
           "unit": "NOS",
           "spend": 286500,
@@ -1671,6 +1738,7 @@
         },
         {
           "desc": "200ML PET AMBER ROUND BOTTLE",
+          "rawDesc": "200ML PET AMBER ROUND BOTTLE",
           "matCode": "2000016774",
           "unit": "NOS",
           "spend": 282319.75,
@@ -1700,6 +1768,7 @@
         },
         {
           "desc": "MESU. CUP 22MM TRANS.PP 2.5/5ML MARK",
+          "rawDesc": "MESU. CUP 22MM TRANS.PP 2.5/5ML MARK",
           "matCode": "2000002622",
           "unit": "NOS",
           "spend": 188300,
@@ -1729,6 +1798,7 @@
         },
         {
           "desc": "VIAL 10 mL LDPE WHITE OPQ R DESIGN-BPREX",
+          "rawDesc": "VIAL 10 mL LDPE WHITE OPQ R DESIGN-BPREX",
           "matCode": "2000009896",
           "unit": "NOS",
           "spend": 166656,
@@ -1758,6 +1828,7 @@
         },
         {
           "desc": "HDPE BOTTLE 40CC/33MM SP400 NECK M (HW)",
+          "rawDesc": "HDPE BOTTLE 40CC/33MM SP400 NECK M (HW)",
           "matCode": "2000005288",
           "unit": "NOS",
           "spend": 163100,
@@ -1787,6 +1858,7 @@
         },
         {
           "desc": "CRC 33MM SAF IIIA HS123 Liner-Tekni-Plex",
+          "rawDesc": "CRC 33MM SAF IIIA HS123 Liner-Tekni-Plex",
           "matCode": "2000012473",
           "unit": "NOS",
           "spend": 159186,
@@ -1816,6 +1888,7 @@
         },
         {
           "desc": "A.G.BOT125mL28mmNECKUSP-IIIPGJ-B-F3:5451",
+          "rawDesc": "A.G.BOT125mL28mmNECKUSP-IIIPGJ-B-F3:5451",
           "matCode": "2000007265",
           "unit": "NOS",
           "spend": 156657.6,
@@ -1845,6 +1918,7 @@
         },
         {
           "desc": "HDPE BOT 200 CC (MW) TRIVENI (DB 74)",
+          "rawDesc": "HDPE BOT 200 CC (MW) TRIVENI (DB 74)",
           "matCode": "2000015031",
           "unit": "NOS",
           "spend": 147030,
@@ -1874,6 +1948,7 @@
         },
         {
           "desc": "PET BOT AMBER 60ML/25MM NECK 10.18G",
+          "rawDesc": "PET BOT AMBER 60ML/25MM NECK 10.18G",
           "matCode": "2000002666",
           "unit": "NOS",
           "spend": 144240,
@@ -1903,6 +1978,7 @@
         },
         {
           "desc": "C-TAMPSAFE NS WHITE (H)-NS LS",
+          "rawDesc": "C-TAMPSAFE NS WHITE (H)-NS LS",
           "matCode": "2000014422",
           "unit": "NOS",
           "spend": 144000,
@@ -1932,6 +2008,7 @@
         },
         {
           "desc": "25 MM CR CAP WITH EPE WAD",
+          "rawDesc": "25 MM CR CAP WITH EPE WAD",
           "matCode": "2000014224",
           "unit": "NOS",
           "spend": 121900,
@@ -1961,6 +2038,7 @@
         },
         {
           "desc": "I DESIGN HDPE CAP",
+          "rawDesc": "I DESIGN HDPE CAP",
           "matCode": "2000017344",
           "unit": "NOS",
           "spend": 121662,
@@ -1990,6 +2068,7 @@
         },
         {
           "desc": "R DESIGN LDPE NOZZLE BERRY PLASTIC",
+          "rawDesc": "R DESIGN LDPE NOZZLE BERRY PLASTIC",
           "matCode": "2000006358",
           "unit": "NOS",
           "spend": 118720,
@@ -2019,6 +2098,7 @@
         },
         {
           "desc": "VIAL 5 mL LDPE WHITE OPQ R DESIGN-BPREX",
+          "rawDesc": "VIAL 5 mL LDPE WHITE OPQ R DESIGN-BPREX",
           "matCode": "2000006356",
           "unit": "NOS",
           "spend": 112902,
@@ -2048,6 +2128,7 @@
         },
         {
           "desc": "HDPE BOT SIMYL MCT OIL 30 mL",
+          "rawDesc": "HDPE BOT SIMYL MCT OIL 30 mL",
           "matCode": "2000008985",
           "unit": "NOS",
           "spend": 112191.2,
@@ -2077,6 +2158,7 @@
         },
         {
           "desc": "N-OPEN NS DTUBEASSY WHITE-NS LS",
+          "rawDesc": "N-OPEN NS DTUBEASSY WHITE-NS LS",
           "matCode": "2000014421",
           "unit": "NOS",
           "spend": 108000,
@@ -2106,6 +2188,7 @@
         },
         {
           "desc": "HDPE BOTTLE 150CC/38MM SP400 NECK M (HW)",
+          "rawDesc": "HDPE BOTTLE 150CC/38MM SP400 NECK M (HW)",
           "matCode": "2000005287",
           "unit": "NOS",
           "spend": 77889,
@@ -2135,6 +2218,7 @@
         },
         {
           "desc": "I DESIGN LDPE NOZZLE",
+          "rawDesc": "I DESIGN LDPE NOZZLE",
           "matCode": "2000017343",
           "unit": "NOS",
           "spend": 70547,
@@ -2164,6 +2248,7 @@
         },
         {
           "desc": "PP FLIP TOP CAP 30 mL",
+          "rawDesc": "PP FLIP TOP CAP 30 mL",
           "matCode": "2000009055",
           "unit": "NOS",
           "spend": 45896.4,
@@ -2193,6 +2278,7 @@
         },
         {
           "desc": "MESU.CUP 15ML TRANS. PP FOR CRC CAP",
+          "rawDesc": "MESU.CUP 15ML TRANS. PP FOR CRC CAP",
           "matCode": "2000014233",
           "unit": "NOS",
           "spend": 38280,
@@ -2222,6 +2308,7 @@
         },
         {
           "desc": "25MM ROPP CAP FDC LOGO PTD EPE LINER",
+          "rawDesc": "25MM ROPP CAP FDC LOGO PTD EPE LINER",
           "matCode": "2000017237",
           "unit": "NOS",
           "spend": 33675,
@@ -2251,6 +2338,7 @@
         },
         {
           "desc": "MESU. CUP 25MM TRANS.PP 5/10/15ML MARK",
+          "rawDesc": "MESU. CUP 25MM TRANS.PP 5/10/15ML MARK",
           "matCode": "2000002627",
           "unit": "NOS",
           "spend": 24700,
@@ -2447,6 +2535,7 @@
       "skus": [
         {
           "desc": "LM ELECTRAL MD 21.80g LS 07",
+          "rawDesc": "LM ELECTRAL MD 21.80g LS 07",
           "matCode": "2000014317",
           "unit": "KG",
           "spend": 146999966.05,
@@ -2500,6 +2589,7 @@
         },
         {
           "desc": "LM ELECTRAL MD 21.80g LS 08",
+          "rawDesc": "LM ELECTRAL MD 21.80g LS 08",
           "matCode": "2000015945",
           "unit": "KG",
           "spend": 19784817.16,
@@ -2553,6 +2643,7 @@
         },
         {
           "desc": "LM ELECTRAL UD 4.4G (AMBIKA) SP LS 01",
+          "rawDesc": "LM ELECTRAL UD 4.4G (AMBIKA) SP LS 01",
           "matCode": "2000014548",
           "unit": "KG",
           "spend": 60060790.5,
@@ -2594,6 +2685,7 @@
         },
         {
           "desc": "LM ELECTRAL ORANGE UD 4.4 gm LS 05",
+          "rawDesc": "LM ELECTRAL ORANGE UD 4.4 gm LS 05",
           "matCode": "2000012494",
           "unit": "KG",
           "spend": 27503899.05,
@@ -2635,6 +2727,7 @@
         },
         {
           "desc": "LAMINATE",
+          "rawDesc": "LAMINATE",
           "matCode": "9200013325",
           "unit": "KG",
           "spend": 259040.8,
@@ -2700,6 +2793,7 @@
         },
         {
           "desc": "LM ELECTRAL UD 4.4g LS 05",
+          "rawDesc": "LM ELECTRAL UD 4.4g LS 05",
           "matCode": "2000010434",
           "unit": "KG",
           "spend": 9973601.65,
@@ -2753,6 +2847,7 @@
         },
         {
           "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
+          "rawDesc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
           "matCode": "2000016475",
           "unit": "NOS",
           "spend": 24944620.07,
@@ -2782,6 +2877,7 @@
         },
         {
           "desc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
+          "rawDesc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
           "matCode": "2000014838",
           "unit": "NOS",
           "spend": 13008913.95,
@@ -2811,6 +2907,7 @@
         },
         {
           "desc": "LM ELECTRAL UD 4.4g SP LS 01",
+          "rawDesc": "LM ELECTRAL UD 4.4g SP LS 01",
           "matCode": "2000014396",
           "unit": "KG",
           "spend": 10260759.7,
@@ -2852,6 +2949,7 @@
         },
         {
           "desc": "LM ELECTRAL ORANGE MD 21.8 g LS 03",
+          "rawDesc": "LM ELECTRAL ORANGE MD 21.8 g LS 03",
           "matCode": "2000014300",
           "unit": "KG",
           "spend": 8704057.21,
@@ -2881,6 +2979,7 @@
         },
         {
           "desc": "LM ELECTRAL 21.8GM ES ET/MU 01",
+          "rawDesc": "LM ELECTRAL 21.8GM ES ET/MU 01",
           "matCode": "2000009632",
           "unit": "KG",
           "spend": 6800172.8,
@@ -2910,6 +3009,7 @@
         },
         {
           "desc": "LM ORS BP 20.5GM ES ET EPSS Tender 01",
+          "rawDesc": "LM ORS BP 20.5GM ES ET EPSS Tender 01",
           "matCode": "2000016543",
           "unit": "KG",
           "spend": 5785222.4,
@@ -2939,6 +3039,7 @@
         },
         {
           "desc": "LAM ELECTRAL APPLE RTD 200 mL LS 10",
+          "rawDesc": "LAM ELECTRAL APPLE RTD 200 mL LS 10",
           "matCode": "2000014830",
           "unit": "NOS",
           "spend": 5649022.1,
@@ -2968,6 +3069,7 @@
         },
         {
           "desc": "LM ELECTRAL UD 4.4g ADC LS 4 TRACK 02",
+          "rawDesc": "LM ELECTRAL UD 4.4g ADC LS 4 TRACK 02",
           "matCode": "2000012337",
           "unit": "KG",
           "spend": 5166078.12,
@@ -2997,6 +3099,7 @@
         },
         {
           "desc": "LM ELECTRAL 4.4G ORANGE (AMBIKA)NV LS 01",
+          "rawDesc": "LM ELECTRAL 4.4G ORANGE (AMBIKA)NV LS 01",
           "matCode": "2000016539",
           "unit": "KG",
           "spend": 4970543.5,
@@ -3026,6 +3129,7 @@
         },
         {
           "desc": "LM ELECTRAL FORTE 30g ES MM S1 07",
+          "rawDesc": "LM ELECTRAL FORTE 30g ES MM S1 07",
           "matCode": "2000015223",
           "unit": "KG",
           "spend": 4673014.4,
@@ -3055,6 +3159,7 @@
         },
         {
           "desc": "LM ENERZAL ORANGE 75 g LS S2 01",
+          "rawDesc": "LM ENERZAL ORANGE 75 g LS S2 01",
           "matCode": "2000015256",
           "unit": "KG",
           "spend": 4313631.6,
@@ -3084,6 +3189,7 @@
         },
         {
           "desc": "LAM ELECTRAL MANGO RTD 200 mL LS 10",
+          "rawDesc": "LAM ELECTRAL MANGO RTD 200 mL LS 10",
           "matCode": "2000014834",
           "unit": "NOS",
           "spend": 3760165.77,
@@ -3113,6 +3219,7 @@
         },
         {
           "desc": "LM ELECTRAL LIME FLAVOUR UD 4.4 gm LS 01",
+          "rawDesc": "LM ELECTRAL LIME FLAVOUR UD 4.4 gm LS 01",
           "matCode": "2000015870",
           "unit": "KG",
           "spend": 3482975.1,
@@ -3142,6 +3249,7 @@
         },
         {
           "desc": "LM ENERZAL ORANGE 100 g LS S2 08",
+          "rawDesc": "LM ENERZAL ORANGE 100 g LS S2 08",
           "matCode": "2000014401",
           "unit": "KG",
           "spend": 3378283.95,
@@ -3171,6 +3279,7 @@
         },
         {
           "desc": "LM ELECTRAL MANGO FLAVOUR UD 4.4GM LS 01",
+          "rawDesc": "LM ELECTRAL MANGO FLAVOUR UD 4.4GM LS 01",
           "matCode": "2000015874",
           "unit": "KG",
           "spend": 3269788.5,
@@ -3200,6 +3309,7 @@
         },
         {
           "desc": "LM ENERZAL ZERO ORANGE 5G S2 05",
+          "rawDesc": "LM ENERZAL ZERO ORANGE 5G S2 05",
           "matCode": "2000017143",
           "unit": "KG",
           "spend": 3215225.6,
@@ -3229,6 +3339,7 @@
         },
         {
           "desc": "LAM R5 RTD-ORANGE 200mL PMFP 03",
+          "rawDesc": "LAM R5 RTD-ORANGE 200mL PMFP 03",
           "matCode": "2000015619",
           "unit": "NOS",
           "spend": 3172217.53,
@@ -3258,6 +3369,7 @@
         },
         {
           "desc": "LM ELECTRAL LYCHEE UD 4.4 GM LS 01",
+          "rawDesc": "LM ELECTRAL LYCHEE UD 4.4 GM LS 01",
           "matCode": "2000015878",
           "unit": "KG",
           "spend": 2702323.8,
@@ -3287,6 +3399,7 @@
         },
         {
           "desc": "LM ELECTRAL PINEAPPLE UD 4.4 gm LS 01",
+          "rawDesc": "LM ELECTRAL PINEAPPLE UD 4.4 gm LS 01",
           "matCode": "2000015882",
           "unit": "KG",
           "spend": 2435459.4,
@@ -3316,6 +3429,7 @@
         },
         {
           "desc": "LM ELECTRAL BLACKCURRANT 21.8GM LS 01",
+          "rawDesc": "LM ELECTRAL BLACKCURRANT 21.8GM LS 01",
           "matCode": "2000017003",
           "unit": "KG",
           "spend": 2354566.5,
@@ -3345,6 +3459,7 @@
         },
         {
           "desc": "LM ELECTRAL PINEAPPLE 21.8G LS 01",
+          "rawDesc": "LM ELECTRAL PINEAPPLE 21.8G LS 01",
           "matCode": "2000016996",
           "unit": "KG",
           "spend": 2309343.3,
@@ -3374,6 +3489,7 @@
         },
         {
           "desc": "LM ELECTRAL LIME FLAVOUR 21.8 gm LS 01",
+          "rawDesc": "LM ELECTRAL LIME FLAVOUR 21.8 gm LS 01",
           "matCode": "2000016990",
           "unit": "KG",
           "spend": 2309244.3,
@@ -3403,6 +3519,7 @@
         },
         {
           "desc": "LM ELECTRAL LYCHEE 21.8G LS 01",
+          "rawDesc": "LM ELECTRAL LYCHEE 21.8G LS 01",
           "matCode": "2000016999",
           "unit": "KG",
           "spend": 2276646.9,
@@ -3432,6 +3549,7 @@
         },
         {
           "desc": "LM ELECTRAL 4.4G ES NZ 01",
+          "rawDesc": "LM ELECTRAL 4.4G ES NZ 01",
           "matCode": "2000010189",
           "unit": "KG",
           "spend": 2273715.2,
@@ -3461,6 +3579,7 @@
         },
         {
           "desc": "LM ELECTRAL BLACKCURRANT UD 4.4GM LS 01",
+          "rawDesc": "LM ELECTRAL BLACKCURRANT UD 4.4GM LS 01",
           "matCode": "2000015886",
           "unit": "KG",
           "spend": 2251665.9,
@@ -3490,6 +3609,7 @@
         },
         {
           "desc": "LM ELECTRAL MANGO FLAVOUR 21.8GM LS 01",
+          "rawDesc": "LM ELECTRAL MANGO FLAVOUR 21.8GM LS 01",
           "matCode": "2000016993",
           "unit": "KG",
           "spend": 2220533.7,
@@ -3519,6 +3639,7 @@
         },
         {
           "desc": "LAM ELECTRAL APPLE RTD 200ML LS AYK",
+          "rawDesc": "LAM ELECTRAL APPLE RTD 200ML LS AYK",
           "matCode": "2000016947",
           "unit": "KG",
           "spend": 2090004.3,
@@ -3548,6 +3669,7 @@
         },
         {
           "desc": "LM ELECTRAL UD 4.4G (AMBIKA) NV LS 01",
+          "rawDesc": "LM ELECTRAL UD 4.4G (AMBIKA) NV LS 01",
           "matCode": "2000016511",
           "unit": "KG",
           "spend": 1941902.4,
@@ -3577,6 +3699,7 @@
         },
         {
           "desc": "LAM ELECTRAL ORANGE RTD 200 mL AP LS 01",
+          "rawDesc": "LAM ELECTRAL ORANGE RTD 200 mL AP LS 01",
           "matCode": "2000016585",
           "unit": "NOS",
           "spend": 1917868.23,
@@ -3606,6 +3729,7 @@
         },
         {
           "desc": "LAM ELECTRAL MANGO RTD 200ML LS AYK",
+          "rawDesc": "LAM ELECTRAL MANGO RTD 200ML LS AYK",
           "matCode": "2000016951",
           "unit": "KG",
           "spend": 1890445.32,
@@ -3635,6 +3759,7 @@
         },
         {
           "desc": "LM GRIPOUT HOT DRINK 6G 190MM ES UA 06",
+          "rawDesc": "LM GRIPOUT HOT DRINK 6G 190MM ES UA 06",
           "matCode": "2000016073",
           "unit": "KG",
           "spend": 1819641.6,
@@ -3664,6 +3789,7 @@
         },
         {
           "desc": "LM ORS BP 20.5GM ES MF S1 03",
+          "rawDesc": "LM ORS BP 20.5GM ES MF S1 03",
           "matCode": "2000016819",
           "unit": "KG",
           "spend": 1783840,
@@ -3693,6 +3819,7 @@
         },
         {
           "desc": "T-LAM ENERZAL RTD-APPL 200mL FC PM/SD 02",
+          "rawDesc": "T-LAM ENERZAL RTD-APPL 200mL FC PM/SD 02",
           "matCode": "2000015624",
           "unit": "NOS",
           "spend": 1689843.16,
@@ -3722,6 +3849,7 @@
         },
         {
           "desc": "LM ORS POWDER 28.4GM ES CL 06",
+          "rawDesc": "LM ORS POWDER 28.4GM ES CL 06",
           "matCode": "2000012090",
           "unit": "KG",
           "spend": 1544947.2,
@@ -3751,6 +3879,7 @@
         },
         {
           "desc": "LAM ELECTRAL ORANGE RTD 200 mL LP 06",
+          "rawDesc": "LAM ELECTRAL ORANGE RTD 200 mL LP 06",
           "matCode": "2000014841",
           "unit": "NOS",
           "spend": 1493915.83,
@@ -3780,6 +3909,7 @@
         },
         {
           "desc": "LM RESOMAL 42G ES Unicef 02",
+          "rawDesc": "LM RESOMAL 42G ES Unicef 02",
           "matCode": "2000015712",
           "unit": "KG",
           "spend": 1442876.8,
@@ -3809,6 +3939,7 @@
         },
         {
           "desc": "LM ELECTRAL 21.8G ES TZ 01",
+          "rawDesc": "LM ELECTRAL 21.8G ES TZ 01",
           "matCode": "2000005761",
           "unit": "KG",
           "spend": 1416444.8,
@@ -3838,6 +3969,7 @@
         },
         {
           "desc": "LM ORS BP 21.8GM ES MM 02",
+          "rawDesc": "LM ORS BP 21.8GM ES MM 02",
           "matCode": "2000017075",
           "unit": "KG",
           "spend": 1351782.4,
@@ -3867,6 +3999,7 @@
         },
         {
           "desc": "LAM ELECTRAL APPLE RTD 200 mL LP 07",
+          "rawDesc": "LAM ELECTRAL APPLE RTD 200 mL LP 07",
           "matCode": "2000014833",
           "unit": "NOS",
           "spend": 1246230.03,
@@ -3896,6 +4029,7 @@
         },
         {
           "desc": "LM ORS BP 20.5GM ES MF W1 02",
+          "rawDesc": "LM ORS BP 20.5GM ES MF W1 02",
           "matCode": "2000002584",
           "unit": "KG",
           "spend": 1186902.4,
@@ -3925,6 +4059,7 @@
         },
         {
           "desc": "LM ELECTRAL ORANGE MD 21.8 g LS 04",
+          "rawDesc": "LM ELECTRAL ORANGE MD 21.8 g LS 04",
           "matCode": "2000015947",
           "unit": "KG",
           "spend": 1143198.75,
@@ -3954,6 +4089,7 @@
         },
         {
           "desc": "LM ORS POWDER 6.7GM ES COSTA RICA 01",
+          "rawDesc": "LM ORS POWDER 6.7GM ES COSTA RICA 01",
           "matCode": "2000015698",
           "unit": "KG",
           "spend": 1047852.8,
@@ -3983,6 +4119,7 @@
         },
         {
           "desc": "LM ELECTRAL Z PLUS UD 4.38g LS 01",
+          "rawDesc": "LM ELECTRAL Z PLUS UD 4.38g LS 01",
           "matCode": "2000014321",
           "unit": "KG",
           "spend": 818640.61,
@@ -4012,6 +4149,7 @@
         },
         {
           "desc": "LM ELECTRAL 21.8 GM ES UG 01",
+          "rawDesc": "LM ELECTRAL 21.8 GM ES UG 01",
           "matCode": "2000011495",
           "unit": "KG",
           "spend": 814934.4,
@@ -4041,6 +4179,7 @@
         },
         {
           "desc": "LAM ELECTRAL MANGO RTD 200 mL LP 07",
+          "rawDesc": "LAM ELECTRAL MANGO RTD 200 mL LP 07",
           "matCode": "2000014837",
           "unit": "NOS",
           "spend": 635852.66,
@@ -4070,6 +4209,7 @@
         },
         {
           "desc": "LM ELECTRAL 21.8GM ES BW 01",
+          "rawDesc": "LM ELECTRAL 21.8GM ES BW 01",
           "matCode": "2000011173",
           "unit": "KG",
           "spend": 621513.5,
@@ -4099,6 +4239,7 @@
         },
         {
           "desc": "LM ELECTRAL FORTE 6g ES MM S1 04",
+          "rawDesc": "LM ELECTRAL FORTE 6g ES MM S1 04",
           "matCode": "2000015225",
           "unit": "KG",
           "spend": 620492.8,
@@ -4128,6 +4269,7 @@
         },
         {
           "desc": "LM ELECTRAL 21.8g ES MM S1 04",
+          "rawDesc": "LM ELECTRAL 21.8g ES MM S1 04",
           "matCode": "2000015231",
           "unit": "KG",
           "spend": 605561.6,
@@ -4157,6 +4299,7 @@
         },
         {
           "desc": "LM ELECTRAL 21.8G ES OM 02",
+          "rawDesc": "LM ELECTRAL 21.8G ES OM 02",
           "matCode": "2000015719",
           "unit": "KG",
           "spend": 535472,
@@ -4186,6 +4329,7 @@
         },
         {
           "desc": "LM ELECTRAL 21.8GM ES ET/MU  S1 02",
+          "rawDesc": "LM ELECTRAL 21.8GM ES ET/MU  S1 02",
           "matCode": "2000002530",
           "unit": "KG",
           "spend": 488556.8,
@@ -4215,6 +4359,7 @@
         },
         {
           "desc": "LM ELECTRAL FORTE 6.0GM ES MY W1 02",
+          "rawDesc": "LM ELECTRAL FORTE 6.0GM ES MY W1 02",
           "matCode": "2000016622",
           "unit": "KG",
           "spend": 439577.6,
@@ -4244,6 +4389,7 @@
         },
         {
           "desc": "LM ENERZAL ORANGE 15 g LS S2 07",
+          "rawDesc": "LM ENERZAL ORANGE 15 g LS S2 07",
           "matCode": "2000014397",
           "unit": "KG",
           "spend": 396530.15,
@@ -4273,6 +4419,7 @@
         },
         {
           "desc": "LM ENERZAL LIME 75 G LS S2 00",
+          "rawDesc": "LM ENERZAL LIME 75 G LS S2 00",
           "matCode": "2000015419",
           "unit": "KG",
           "spend": 372307.3,
@@ -4302,6 +4449,7 @@
         },
         {
           "desc": "LAMINATE ORS POWDER 6.7GM ES CHILE 06",
+          "rawDesc": "LAMINATE ORS POWDER 6.7GM ES CHILE 06",
           "matCode": "2000015358",
           "unit": "KG",
           "spend": 354348.8,
@@ -4331,6 +4479,7 @@
         },
         {
           "desc": "LM SIMYL MCT POWDER  4.87GM LP S2 02",
+          "rawDesc": "LM SIMYL MCT POWDER  4.87GM LP S2 02",
           "matCode": "2000017137",
           "unit": "KG",
           "spend": 324081.1,
@@ -4360,6 +4509,7 @@
         },
         {
           "desc": "LM LEMLEM 21.8GM ES ET S1 01",
+          "rawDesc": "LM LEMLEM 21.8GM ES ET S1 01",
           "matCode": "2000006321",
           "unit": "KG",
           "spend": 263513.6,
@@ -4389,6 +4539,7 @@
         },
         {
           "desc": "LM RESOMAL 84GM ES MF 02",
+          "rawDesc": "LM RESOMAL 84GM ES MF 02",
           "matCode": "2000004670",
           "unit": "KG",
           "spend": 234409.6,
@@ -4418,6 +4569,7 @@
         },
         {
           "desc": "LM RESOMAL 42g ES IA 01",
+          "rawDesc": "LM RESOMAL 42g ES IA 01",
           "matCode": "2000006918",
           "unit": "KG",
           "spend": 216156.8,
@@ -4447,6 +4599,7 @@
         },
         {
           "desc": "LM ENERZAL LIME 100 g LS S2 08",
+          "rawDesc": "LM ENERZAL LIME 100 g LS S2 08",
           "matCode": "2000014408",
           "unit": "KG",
           "spend": 200555.76,
@@ -4476,6 +4629,7 @@
         },
         {
           "desc": "M ORASEL ORANGE 21.8GM ES KH (CAM) 08",
+          "rawDesc": "M ORASEL ORANGE 21.8GM ES KH (CAM) 08",
           "matCode": "2000017083",
           "unit": "KG",
           "spend": 187478.4,
@@ -4505,6 +4659,7 @@
         },
         {
           "desc": "LM ENERZAL ZERO ORANGE 5 g S2 03",
+          "rawDesc": "LM ENERZAL ZERO ORANGE 5 g S2 03",
           "matCode": "2000014415",
           "unit": "KG",
           "spend": 181287.7,
@@ -4534,6 +4689,7 @@
         },
         {
           "desc": "LM ORS POWDER 28.4GM ES CL 07",
+          "rawDesc": "LM ORS POWDER 28.4GM ES CL 07",
           "matCode": "2000017324",
           "unit": "KG",
           "spend": 172185.6,
@@ -4563,6 +4719,7 @@
         },
         {
           "desc": "LM ELECTRAL 21.8G ES AE 01",
+          "rawDesc": "LM ELECTRAL 21.8G ES AE 01",
           "matCode": "2000012794",
           "unit": "KG",
           "spend": 162451.2,
@@ -4592,6 +4749,7 @@
         },
         {
           "desc": "LM MUM-MUM 1  4.5 GM LP S2 02",
+          "rawDesc": "LM MUM-MUM 1  4.5 GM LP S2 02",
           "matCode": "2000017132",
           "unit": "KG",
           "spend": 161972.7,
@@ -4621,6 +4779,7 @@
         },
         {
           "desc": "LM ZEFRICH HP 16.5 G FS 03",
+          "rawDesc": "LM ZEFRICH HP 16.5 G FS 03",
           "matCode": "2000016767",
           "unit": "KG",
           "spend": 158600.85,
@@ -4650,6 +4809,7 @@
         },
         {
           "desc": "LM ENERZAL ORANGE 7.5GM ES MY 03",
+          "rawDesc": "LM ENERZAL ORANGE 7.5GM ES MY 03",
           "matCode": "2000016263",
           "unit": "KG",
           "spend": 142739.2,
@@ -4679,6 +4839,7 @@
         },
         {
           "desc": "LM ZEFRICH MM 17.5 G PS S2 10",
+          "rawDesc": "LM ZEFRICH MM 17.5 G PS S2 10",
           "matCode": "2000016765",
           "unit": "KG",
           "spend": 122109.35,
@@ -4708,6 +4869,7 @@
         },
         {
           "desc": "LM OMAX 21.8G ES TN 03",
+          "rawDesc": "LM OMAX 21.8G ES TN 03",
           "matCode": "2000016736",
           "unit": "KG",
           "spend": 81097.6,
@@ -4737,6 +4899,7 @@
         },
         {
           "desc": "LM ELECTRAL 21.8g ES ZW 02",
+          "rawDesc": "LM ELECTRAL 21.8g ES ZW 02",
           "matCode": "2000007270",
           "unit": "KG",
           "spend": 58393.6,
@@ -4766,6 +4929,7 @@
         },
         {
           "desc": "LM OMAX 21.8G ES TN 02",
+          "rawDesc": "LM OMAX 21.8G ES TN 02",
           "matCode": "2000014560",
           "unit": "KG",
           "spend": 56185.6,
@@ -4795,6 +4959,7 @@
         },
         {
           "desc": "LM ZEFRICH CHOC 17.5 G PS S2 10",
+          "rawDesc": "LM ZEFRICH CHOC 17.5 G PS S2 10",
           "matCode": "2000016763",
           "unit": "KG",
           "spend": 52501.15,
@@ -4824,6 +4989,7 @@
         },
         {
           "desc": "LM ELECTRAL FORTE 6.0GM ES MY W1 01",
+          "rawDesc": "LM ELECTRAL FORTE 6.0GM ES MY W1 01",
           "matCode": "2000006629",
           "unit": "KG",
           "spend": 43554,
@@ -4853,6 +5019,7 @@
         },
         {
           "desc": "LM ZEFRICH MM 17.5g PS S2 09",
+          "rawDesc": "LM ZEFRICH MM 17.5g PS S2 09",
           "matCode": "2000015296",
           "unit": "KG",
           "spend": 31213.95,
@@ -4882,6 +5049,7 @@
         },
         {
           "desc": "LM ZEFRICH CHOC 17.5g PS S2 09",
+          "rawDesc": "LM ZEFRICH CHOC 17.5g PS S2 09",
           "matCode": "2000015300",
           "unit": "KG",
           "spend": 30688.85,

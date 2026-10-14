@@ -453,7 +453,7 @@ export interface ValueVendorPrice {
   lastPurchase: string | null; active: boolean; gapVsBest: number; excess: number;
 }
 export interface ValueSku {
-  desc: string; matCode: string; unit: string; spend: number; qty: number; vendorCount: number;
+  desc: string; rawDesc?: string; matCode: string; unit: string; spend: number; qty: number; vendorCount: number;
   bestVendorKey: string; bestVendor: string; bestPrice: number;
   bestActiveVendorKey: string | null; bestActiveVendor: string | null; bestActivePrice: number | null;
   savings: number; vendors: ValueVendorPrice[];
@@ -468,8 +468,10 @@ export interface ValueMaterial {
 export interface ValueAction {
   rank: number; key: string; kind: 'price' | 'terms' | 'freshness'; saving: number; savingLabel: string;
   material: string; vendorKey?: string; action: string; why: string;
+  isCash?: boolean; isLeverage?: boolean;
   proof: { tab: 'material' | 'vendors'; material?: string; skuDesc?: string; vendorKey?: string }; risk: string | null;
 }
+export interface CashFreed { vendorKey: string; name: string; spend: number; termText: string | null; termCategory: string; cashFreed: number; }
 export interface ValueVendorOrders { materialKey: string; poCount: number; lineCount: number; avgOrderQty: number | null; deliveriesPerPo: number | null; }
 export interface ValueVendorRecency { materialKey: string; lastPurchase: string | null; daysSince: number | null; active: boolean; }
 export interface ValueVendorFreshness { materialKey: string; avgAgeDays: number | null; avgShelfDays: number | null; grade: 'fresh' | 'ok' | 'old' | null; }
@@ -484,7 +486,7 @@ export interface LedgerRow {
 }
 export interface ValueData {
   generatedAt: string; currency: string; dateRange: { from: string | null; to: string | null }; activeWindowDays: number;
-  headline: { totalSavings: number; note: string };
+  headline: { totalSavings: number; costSavings: number; cashFreed: number; cashFreedBy: CashFreed[]; note: string };
   savingsByMaterial: { materialKey: MaterialKey; displayName: string; color: string; savings: number }[];
   actions: ValueAction[];
   materials: Record<string, ValueMaterial>;
