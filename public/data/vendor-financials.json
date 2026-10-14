@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T20:03:14.334Z",
+  "generatedAt": "2026-10-14T06:23:20.503Z",
   "sources": {
     "listed": "Munshot market-data API (free)",
     "private": "Probe42 comprehensive reports (MCA filings) — primary; credit-rating-agency rationale docs — fallback / cross-check"
@@ -1210,7 +1210,7 @@
       "metrics": {
         "revenue": 60315901952,
         "ebitda": 6083474944,
-        "marketCap": 79469273088,
+        "marketCap": 79616057344,
         "totalDebt": 4409999872,
         "ebitdaMargin": 10.09,
         "netMargin": 6.9,
@@ -1219,11 +1219,11 @@
         "debtToEquity": 13.38,
         "revenueGrowth": 23.5,
         "earningsGrowth": 171.1,
-        "pe": 19.51,
+        "pe": 19.14,
         "evEbitda": 12.38,
-        "dividendYield": 18,
-        "currentPrice": 173.26,
-        "yearlyChange": 60.63,
+        "dividendYield": 17,
+        "currentPrice": 173.58,
+        "yearlyChange": 68.85,
         "employees": 2245,
         "roce": null,
         "roe": null
@@ -1262,7 +1262,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-13"
+        "date": "2026-10-14"
       },
       "note": null,
       "ratingGrade": null,
@@ -1330,7 +1330,7 @@
       "metrics": {
         "revenue": 10878784512,
         "ebitda": 532790016,
-        "marketCap": 2907200000,
+        "marketCap": 2903155200,
         "totalDebt": 2269750016,
         "ebitdaMargin": 4.9,
         "netMargin": 1.12,
@@ -1339,11 +1339,11 @@
         "debtToEquity": 236.51,
         "revenueGrowth": 5.9,
         "earningsGrowth": 0,
-        "pe": 3.93,
+        "pe": 3.94,
         "evEbitda": 9.74,
         "dividendYield": 0,
-        "currentPrice": 115,
-        "yearlyChange": 4.83,
+        "currentPrice": 114.84,
+        "yearlyChange": 4.59,
         "employees": 779,
         "roce": null,
         "roe": null
@@ -1382,7 +1382,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-13"
+        "date": "2026-10-14"
       },
       "note": null,
       "ratingGrade": null,
@@ -7262,7 +7262,7 @@
       "metrics": {
         "revenue": 14589500416,
         "ebitda": 938726016,
-        "marketCap": 4592243200,
+        "marketCap": 4595992576,
         "totalDebt": 3454099968,
         "ebitdaMargin": 6.43,
         "netMargin": 2.34,
@@ -7271,11 +7271,11 @@
         "debtToEquity": 60.88,
         "revenueGrowth": 7.2,
         "earningsGrowth": 143.1,
-        "pe": 13.44,
+        "pe": 13.71,
         "evEbitda": 7.61,
-        "dividendYield": 69,
-        "currentPrice": 146.98,
-        "yearlyChange": -12.19,
+        "dividendYield": 68,
+        "currentPrice": 147.1,
+        "yearlyChange": -11.21,
         "employees": 1210,
         "roce": null,
         "roe": null
@@ -7314,7 +7314,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-13"
+        "date": "2026-10-14"
       },
       "note": "Listed group entity: Sukhjit Starch & Chemicals Ltd",
       "ratingGrade": null,
@@ -9685,7 +9685,7 @@
       "metrics": {
         "revenue": 5146226176,
         "ebitda": 382657760,
-        "marketCap": 836849984,
+        "marketCap": 840000000,
         "totalDebt": 602000000,
         "ebitdaMargin": 7.44,
         "netMargin": 3.67,
@@ -9694,11 +9694,11 @@
         "debtToEquity": 72.84,
         "revenueGrowth": 21.4,
         "earningsGrowth": 0,
-        "pe": 4.42,
+        "pe": 4.28,
         "evEbitda": 3.63,
         "dividendYield": 0,
-        "currentPrice": 199.25,
-        "yearlyChange": 41.92,
+        "currentPrice": 200,
+        "yearlyChange": 41.68,
         "employees": 376,
         "roce": null,
         "roe": null
@@ -9737,7 +9737,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-13"
+        "date": "2026-10-14"
       },
       "note": "Thinly traded",
       "ratingGrade": null,
@@ -12834,7 +12834,7 @@
       "metrics": {
         "revenue": 26116399104,
         "ebitda": 2173799936,
-        "marketCap": 17521088512,
+        "marketCap": 17552807936,
         "totalDebt": 1445600000,
         "ebitdaMargin": 8.32,
         "netMargin": 5.22,
@@ -12843,11 +12843,11 @@
         "debtToEquity": 10.72,
         "revenueGrowth": 22.5,
         "earningsGrowth": 75.5,
-        "pe": 12.84,
+        "pe": 12.86,
         "evEbitda": 6.91,
-        "dividendYield": 88,
-        "currentPrice": 232,
-        "yearlyChange": -2.41,
+        "dividendYield": 86,
+        "currentPrice": 232.42,
+        "yearlyChange": 1.77,
         "employees": 2500,
         "roce": null,
         "roe": null
@@ -12886,7 +12886,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-13"
+        "date": "2026-10-14"
       },
       "note": null,
       "ratingGrade": null,
@@ -12943,7 +12943,7 @@
       "metrics": {
         "revenue": 164920033280,
         "ebitda": 22030196736,
-        "marketCap": 45395755008,
+        "marketCap": 45803745280,
         "totalDebt": 101523062784,
         "ebitdaMargin": 13.36,
         "netMargin": 4.14,
@@ -12952,11 +12952,11 @@
         "debtToEquity": 124.99,
         "revenueGrowth": 35.5,
         "earningsGrowth": 630,
-        "pe": 6.78,
+        "pe": 6.66,
         "evEbitda": 6.2,
-        "dividendYield": 47,
-        "currentPrice": 628.65,
-        "yearlyChange": 14.31,
+        "dividendYield": 48,
+        "currentPrice": 634.3,
+        "yearlyChange": 16.46,
         "employees": 7772,
         "roce": null,
         "roe": null
@@ -12995,7 +12995,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-13"
+        "date": "2026-10-14"
       },
       "note": null,
       "ratingGrade": null,

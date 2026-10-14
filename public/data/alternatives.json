@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T20:03:51.869Z",
+  "generatedAt": "2026-10-14T06:23:31.883Z",
   "byMaterial": {
     "dextrose": [
       {
@@ -16,7 +16,7 @@
         "metrics": {
           "revenue": 23590617088,
           "ebitda": 2800028672,
-          "marketCap": 10028320768,
+          "marketCap": 10282029056,
           "totalDebt": 3125575936,
           "ebitdaMargin": 11.87,
           "netMargin": 6.25,
@@ -25,11 +25,11 @@
           "debtToEquity": 43.5,
           "revenueGrowth": 7.9,
           "earningsGrowth": 306.6,
-          "pe": 6.93,
+          "pe": 6.98,
           "evEbitda": 4.61,
-          "dividendYield": 92,
-          "currentPrice": 161.27,
-          "yearlyChange": 15.9,
+          "dividendYield": 93,
+          "currentPrice": 165.35,
+          "yearlyChange": 16.48,
           "employees": 577,
           "roce": null,
           "roe": null
@@ -68,7 +68,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-13"
+          "date": "2026-10-14"
         },
         "note": null,
         "key": null,
@@ -94,7 +94,7 @@
         "metrics": {
           "revenue": 8211299840,
           "ebitda": 506057504,
-          "marketCap": 20100939776,
+          "marketCap": 20060884992,
           "totalDebt": 199000000,
           "ebitdaMargin": 6.16,
           "netMargin": 5.36,
@@ -103,11 +103,11 @@
           "debtToEquity": 2.87,
           "revenueGrowth": 22.1,
           "earningsGrowth": 0,
-          "pe": 41.82,
+          "pe": 42.27,
           "evEbitda": 33.75,
           "dividendYield": 0,
-          "currentPrice": 100.37,
-          "yearlyChange": 11.21,
+          "currentPrice": 100.17,
+          "yearlyChange": 6.85,
           "employees": 203,
           "roce": null,
           "roe": null
@@ -146,7 +146,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-13"
+          "date": "2026-10-14"
         },
         "note": null,
         "key": null,
@@ -1318,7 +1318,7 @@
         "metrics": {
           "revenue": 9465030656,
           "ebitda": 1826751232,
-          "marketCap": 21997541376,
+          "marketCap": 21731708928,
           "totalDebt": 2197662976,
           "ebitdaMargin": 19.3,
           "netMargin": 8.04,
@@ -1327,11 +1327,11 @@
           "debtToEquity": 31.85,
           "revenueGrowth": 24.9,
           "earningsGrowth": 14.2,
-          "pe": 29.14,
+          "pe": 28.76,
           "evEbitda": 13.24,
           "dividendYield": 91,
-          "currentPrice": 331,
-          "yearlyChange": -10.15,
+          "currentPrice": 327,
+          "yearlyChange": -12.59,
           "employees": 972,
           "roce": null,
           "roe": null
@@ -1370,7 +1370,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-13"
+          "date": "2026-10-14"
         },
         "note": null,
         "key": null,
@@ -1396,7 +1396,7 @@
         "metrics": {
           "revenue": 7011659776,
           "ebitda": 783537024,
-          "marketCap": 6410829824,
+          "marketCap": 6731156480,
           "totalDebt": 1373485952,
           "ebitdaMargin": 11.18,
           "netMargin": 2.5,
@@ -1405,11 +1405,11 @@
           "debtToEquity": 48.25,
           "revenueGrowth": 36.8,
           "earningsGrowth": 50,
-          "pe": 37.03,
+          "pe": 40.28,
           "evEbitda": 9.83,
-          "dividendYield": 28,
-          "currentPrice": 373.25,
-          "yearlyChange": 89.49,
+          "dividendYield": 27,
+          "currentPrice": 391.9,
+          "yearlyChange": 92.42,
           "employees": 633,
           "roce": null,
           "roe": null
@@ -1448,7 +1448,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-13"
+          "date": "2026-10-14"
         },
         "note": null,
         "key": null,
@@ -1474,7 +1474,7 @@
         "metrics": {
           "revenue": 198256000,
           "ebitda": -72575504,
-          "marketCap": 285520416,
+          "marketCap": 286193856,
           "totalDebt": 0,
           "ebitdaMargin": -36.61,
           "netMargin": -26.8,
@@ -1486,8 +1486,8 @@
           "pe": 0,
           "evEbitda": -0.7,
           "dividendYield": 0,
-          "currentPrice": 16.96,
-          "yearlyChange": -42.6,
+          "currentPrice": 17,
+          "yearlyChange": -42.41,
           "employees": 66,
           "roce": null,
           "roe": null
@@ -1526,7 +1526,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-13"
+          "date": "2026-10-14"
         },
         "note": null,
         "key": null,
@@ -2751,7 +2751,7 @@
         "metrics": {
           "revenue": 26116399104,
           "ebitda": 2173799936,
-          "marketCap": 17521088512,
+          "marketCap": 17552807936,
           "totalDebt": 1445600000,
           "ebitdaMargin": 8.32,
           "netMargin": 5.22,
@@ -2760,11 +2760,11 @@
           "debtToEquity": 10.72,
           "revenueGrowth": 22.5,
           "earningsGrowth": 75.5,
-          "pe": 12.84,
+          "pe": 12.86,
           "evEbitda": 6.91,
-          "dividendYield": 88,
-          "currentPrice": 232,
-          "yearlyChange": -2.41,
+          "dividendYield": 86,
+          "currentPrice": 232.42,
+          "yearlyChange": 1.77,
           "employees": 2500,
           "roce": null,
           "roe": null
@@ -2803,7 +2803,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-13"
+          "date": "2026-10-14"
         },
         "note": null,
         "key": null,
@@ -2829,7 +2829,7 @@
         "metrics": {
           "revenue": 164920033280,
           "ebitda": 22030196736,
-          "marketCap": 45395755008,
+          "marketCap": 45803745280,
           "totalDebt": 101523062784,
           "ebitdaMargin": 13.36,
           "netMargin": 4.14,
@@ -2838,11 +2838,11 @@
           "debtToEquity": 124.99,
           "revenueGrowth": 35.5,
           "earningsGrowth": 630,
-          "pe": 6.78,
+          "pe": 6.66,
           "evEbitda": 6.2,
-          "dividendYield": 47,
-          "currentPrice": 628.65,
-          "yearlyChange": 14.31,
+          "dividendYield": 48,
+          "currentPrice": 634.3,
+          "yearlyChange": 16.46,
           "employees": 7772,
           "roce": null,
           "roe": null
@@ -2881,7 +2881,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-13"
+          "date": "2026-10-14"
         },
         "note": null,
         "key": null,
@@ -2907,7 +2907,7 @@
         "metrics": {
           "revenue": 14691475456,
           "ebitda": 1229811200,
-          "marketCap": 9662936064,
+          "marketCap": 9775574016,
           "totalDebt": 7290094080,
           "ebitdaMargin": 8.37,
           "netMargin": -0.12,
@@ -2919,8 +2919,8 @@
           "pe": 0,
           "evEbitda": 12.49,
           "dividendYield": 27,
-          "currentPrice": 92.65,
-          "yearlyChange": -19.5,
+          "currentPrice": 93.73,
+          "yearlyChange": -19.41,
           "employees": 446,
           "roce": null,
           "roe": null
@@ -2959,7 +2959,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-13"
+          "date": "2026-10-14"
         },
         "note": null,
         "key": null,
@@ -2985,7 +2985,7 @@
         "metrics": {
           "revenue": 40042299392,
           "ebitda": 4101224960,
-          "marketCap": 21611462656,
+          "marketCap": 21934641152,
           "totalDebt": 16803800064,
           "ebitdaMargin": 10.24,
           "netMargin": 4.17,
@@ -2994,11 +2994,11 @@
           "debtToEquity": 103.94,
           "revenueGrowth": 45.7,
           "earningsGrowth": 25.2,
-          "pe": 13.66,
+          "pe": 13.29,
           "evEbitda": 8.4,
-          "dividendYield": 47,
-          "currentPrice": 832.55,
-          "yearlyChange": -9.7,
+          "dividendYield": 48,
+          "currentPrice": 845,
+          "yearlyChange": -2.18,
           "employees": 1568,
           "roce": null,
           "roe": null
@@ -3037,7 +3037,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-13"
+          "date": "2026-10-14"
         },
         "note": null,
         "key": null,
@@ -3063,7 +3063,7 @@
         "metrics": {
           "revenue": 76008103936,
           "ebitda": 5391079424,
-          "marketCap": 33021583360,
+          "marketCap": 33458264064,
           "totalDebt": 9353100288,
           "ebitdaMargin": 7.09,
           "netMargin": 2.04,
@@ -3072,11 +3072,11 @@
           "debtToEquity": 13.29,
           "revenueGrowth": 29.6,
           "earningsGrowth": 0,
-          "pe": 20.52,
+          "pe": 20.96,
           "evEbitda": 10.86,
           "dividendYield": 20,
-          "currentPrice": 1013.3,
-          "yearlyChange": 2.97,
+          "currentPrice": 1026.7,
+          "yearlyChange": 3.84,
           "employees": 1022,
           "roce": null,
           "roe": null
@@ -3115,7 +3115,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-13"
+          "date": "2026-10-14"
         },
         "note": null,
         "key": null,
@@ -3141,7 +3141,7 @@
         "metrics": {
           "revenue": 29018603520,
           "ebitda": -4695441920,
-          "marketCap": 28191881216,
+          "marketCap": 31985973248,
           "totalDebt": 40037449728,
           "ebitdaMargin": -16.18,
           "netMargin": -36.53,
@@ -3153,8 +3153,8 @@
           "pe": 0,
           "evEbitda": -8.77,
           "dividendYield": 0,
-          "currentPrice": 643.85,
-          "yearlyChange": 14.23,
+          "currentPrice": 730.5,
+          "yearlyChange": 12.95,
           "employees": 346,
           "roce": null,
           "roe": null
@@ -3193,7 +3193,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-13"
+          "date": "2026-10-14"
         },
         "note": null,
         "key": null,

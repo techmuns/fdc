@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-13T08:37:15.172Z",
+  "generatedAt": "2026-10-14T06:23:01.312Z",
   "fx": {
-    "value": 96.31,
-    "date": "2026-10-02",
+    "value": 96.73,
+    "date": "2026-10-09",
     "annual": {
       "2010": 45.651,
       "2011": 46.578,
@@ -20,7 +20,7 @@
       "2023": 82.571,
       "2024": 83.657,
       "2025": 87.147,
-      "2026": 93.985
+      "2026": 94.052
     },
     "sourceName": "FRED — U.S./India FX (DEXINUS)",
     "sourceUrl": "https://fred.stlouisfed.org/series/DEXINUS"
@@ -1246,7 +1246,7 @@
       "feed": "marketplace",
       "status": "skipped",
       "seriesCount": 0,
-      "reason": "no FIRECRAWL_API_KEY — add it as a secret to enable IndiaMART/TradeIndia seller-ask prices",
+      "reason": "Firecrawl returned no parseable asks",
       "gated": true
     }
   ],
