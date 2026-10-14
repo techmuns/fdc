@@ -3,7 +3,7 @@ import {
   X, Building2, TrendingUp, Scale, Landmark, Gavel, Users, PiggyBank, AlertTriangle,
   ShieldCheck, Factory, Banknote, Activity, GitBranch, Lightbulb, Eye, MapPin, BadgeCheck,
   Gauge, Boxes, Receipt, CalendarClock, ExternalLink, FileText, ChevronDown, Repeat2, ArrowUpRight,
-  Target,
+  Target, FlaskConical,
 } from 'lucide-react';
 import type { Vendor, VendorFin, AltVendor, ProbeProfile, ProbeYear, Lever, Brief } from '../types';
 import type { AltItem } from '../tabs/VendorsTab';
@@ -27,6 +27,9 @@ const gradeColor = (g?: string | null) => {
 };
 const deToX = (de: number | null | undefined) => (de == null ? '—' : `${(de / 100).toFixed(2)}x`);
 const ZONE = { safe: { c: FDC.green, label: 'Safe zone' }, grey: { c: FDC.goldDark, label: 'Grey zone' }, distress: { c: FDC.red, label: 'Distress zone' } } as const;
+// Same real-world entity? Compare on alphanumerics only, so a hyphen/space/"Ltd" difference
+// (e.g. "Universal Starch-Chem Allied Ltd" vs "Universal Starch Chem Allied") is NOT a proxy.
+const normName = (s: string) => vendorShort(s).toLowerCase().replace(/[^a-z0-9]/g, '');
 
 export default function VendorProfile({
   subject, onClose, brief = null, replacements = [], onPickReplacement,
@@ -66,7 +69,8 @@ export default function VendorProfile({
   const accent = gradeColor(health?.grade);
   const fyBadge = probe ? `Probe42 · ${asOfFy ?? probe.latestFy}` : type === 'listed' ? 'Listed · market data' : asOfFy ? `As of ${asOfFy}` : null;
   // honesty: listed figures shown under a different (parent) company name
-  const proxyName = type === 'listed' && isVendor && fin!.companyName && vendorShort(fin!.companyName).toLowerCase() !== vendorShort(name).toLowerCase() ? fin!.companyName : null;
+  const proxyName = type === 'listed' && isVendor && fin!.companyName && normName(fin!.companyName) !== normName(name) ? fin!.companyName : null;
+  const gradeLabel = alt?.gradeLabel || null;
 
   return (
     <div
@@ -123,6 +127,12 @@ export default function VendorProfile({
             <div className="mb-3 flex items-start gap-1.5 rounded-xl border border-fdc-blue/20 bg-fdc-blue/[0.05] px-3 py-2 text-[11.5px] leading-snug text-fdc-slate">
               <Building2 size={14} className="mt-0.5 shrink-0 text-fdc-blue" />
               <span>Figures below are for the <b>listed group parent, {vendorShort(proxyName)}</b>, shown as a proxy — the supplying entity doesn’t file separately.</span>
+            </div>
+          )}
+          {gradeLabel && (
+            <div className="mb-3 flex items-start gap-1.5 rounded-xl border border-fdc-gold/35 bg-fdc-gold/[0.10] px-3 py-2 text-[11.5px] leading-snug text-fdc-slate">
+              <FlaskConical size={14} className="mt-0.5 shrink-0 text-fdc-gold-dark" />
+              <span><b>Grade match:</b> {gradeLabel}. {alt?.fitNote}{alt?.fitNote && !/[.!?]$/.test(alt.fitNote.trim()) ? '.' : ''} Candidate/benchmark data only — not an FDC-negotiated price.</span>
             </div>
           )}
 

@@ -13,7 +13,7 @@ export const LISTED_VENDORS = {
   'gujarat-ambuja-exports': { tickers: ['GAEL'], expect: /ambuja/i },
   'sayaji-industries': { tickers: ['SAYAJIIND', '540728', '507692', 'SAYAJIND'], expect: /sayaji/i },
   'sukhjit-corn-products': { tickers: ['SUKHJITS'], expect: /sukhjit/i, note: 'Group parent — listed proxy: figures are for the listed parent The Sukhjit Starch & Chemicals Ltd (NSE/BSE: SUKHJITS), used as a proxy because the supplying entity Sukhjit Corn Products does not file separately.' },
-  'universal-starch-chem-allied': { tickers: ['524408', 'UNIVSTAR'], expect: /universal/i, note: 'Thinly traded' },
+  'universal-starch-chem-allied': { tickers: ['UNIVSTAR', '524408'], expect: /universal/i, note: 'Listed on BSE (UNIVSTAR) — thinly traded' },
   'uflex': { tickers: ['UFLEX', '500148'], expect: /uflex/i },
   'huhtamaki-india': { tickers: ['HUHTAMAKI', '509820'], expect: /huhtamaki/i },
   'empire-industries-virum-glass': { tickers: ['509525', 'EMPIREIND'], expect: /empire/i },

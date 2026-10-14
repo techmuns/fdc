@@ -231,6 +231,7 @@ async function main() {
       const rec = {
         name: alt.name, type: alt.type, role: alt.role, ticker: alt.ticker || null, cin: alt.cin || null,
         status: 'cin-unresolved', fitNote: alt.fitNote, secondSourceFor: alt.secondSourceFor || null,
+        gradeLabel: alt.gradeLabel || null,
         companyName: null, symbol: null, metrics: null, healthScore: null,
         source: { sourceName: alt.type === 'listed' ? 'Munshot' : 'Probe42', sourceUrl: alt.type === 'listed' ? 'https://fastapi.muns.io' : 'https://probe42.in' },
         note: null, key: null, primarySource: 'none', probe: null,

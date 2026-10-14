@@ -1,7 +1,86 @@
 {
-  "generatedAt": "2026-10-14T12:44:02.520Z",
+  "generatedAt": "2026-10-14T17:42:54.183Z",
   "byMaterial": {
     "dextrose": [
+      {
+        "name": "Tirupati Starch & Chemicals Ltd",
+        "type": "listed",
+        "role": "producer",
+        "ticker": "TIRUSTA",
+        "cin": null,
+        "status": "ok",
+        "fitNote": "Listed Indore maize wet-miller; makes Dextrose ANHYDROUS (IV-fluid grade) — exact form match; confirm IP monograph CoA before switching",
+        "secondSourceFor": "dextrose",
+        "gradeLabel": "exact anhydrous grade — pending IP-monograph confirmation",
+        "companyName": "Tirupati Starch and Chemicals Limited",
+        "symbol": "TIRUSTA.BO",
+        "metrics": {
+          "revenue": 3653911040,
+          "ebitda": 263994256,
+          "marketCap": 1148788736,
+          "totalDebt": 1101022976,
+          "ebitdaMargin": 7.22,
+          "netMargin": 1.54,
+          "grossMargin": 29.9,
+          "operatingMargin": 3.78,
+          "debtToEquity": 163.96,
+          "revenueGrowth": -0.7,
+          "earningsGrowth": -52.7,
+          "pe": 20.48,
+          "evEbitda": 8.55,
+          "dividendYield": 0,
+          "currentPrice": 119.8,
+          "yearlyChange": -30.13,
+          "employees": 332,
+          "roce": null,
+          "roe": null
+        },
+        "healthScore": {
+          "value": 20,
+          "grade": "D",
+          "components": [
+            {
+              "label": "Net margin",
+              "raw": 1.54,
+              "score": 10,
+              "weight": 0.3
+            },
+            {
+              "label": "EBITDA margin",
+              "raw": 7.22,
+              "score": 36,
+              "weight": 0.15
+            },
+            {
+              "label": "Revenue growth",
+              "raw": -0.7,
+              "score": 27,
+              "weight": 0.2
+            },
+            {
+              "label": "Low leverage",
+              "raw": 163.96,
+              "score": 18,
+              "weight": 0.2
+            }
+          ],
+          "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
+        },
+        "source": {
+          "sourceName": "Munshot market-data API",
+          "sourceUrl": "https://fastapi.muns.io",
+          "date": "2026-10-14"
+        },
+        "note": null,
+        "key": null,
+        "primarySource": "listed",
+        "probe": null,
+        "ratingGrade": null,
+        "ratingLabel": null,
+        "asOfFy": null,
+        "issuerNotCooperating": false,
+        "levers": []
+      },
       {
         "name": "Gulshan Polyols Ltd",
         "type": "listed",
@@ -11,6 +90,7 @@
         "status": "ok",
         "fitNote": "Listed starch & polyol maker; established dextrose/sorbitol supplier — a drop-in alternate to Gujarat Ambuja/Sayaji.",
         "secondSourceFor": "dextrose",
+        "gradeLabel": null,
         "companyName": "Gulshan Polyols Limited",
         "symbol": "GULPOLY.NS",
         "metrics": {
@@ -26,7 +106,7 @@
           "revenueGrowth": 7.9,
           "earningsGrowth": 306.6,
           "pe": 6.99,
-          "evEbitda": 4.61,
+          "evEbitda": 4.71,
           "dividendYield": 93,
           "currentPrice": 165.71,
           "yearlyChange": 16.48,
@@ -89,6 +169,7 @@
         "status": "ok",
         "fitNote": "Recently-listed maize-derivatives specialist (starch, dextrose) — growing capacity.",
         "secondSourceFor": "dextrose",
+        "gradeLabel": null,
         "companyName": "Sanstar Limited",
         "symbol": "SANSTAR.NS",
         "metrics": {
@@ -104,7 +185,7 @@
           "revenueGrowth": 22.1,
           "earningsGrowth": 0,
           "pe": 40.85,
-          "evEbitda": 33.75,
+          "evEbitda": 32.9,
           "dividendYield": 0,
           "currentPrice": 98.04,
           "yearlyChange": 8.32,
@@ -167,6 +248,7 @@
         "status": "ok",
         "fitNote": "Indian arm of global starch major Roquette — pharma-grade dextrose/excipients; premium, very reliable.",
         "secondSourceFor": null,
+        "gradeLabel": null,
         "companyName": "ROQUETTE INDIA PRIVATE LIMITED",
         "symbol": null,
         "metrics": {
@@ -1230,6 +1312,7 @@
         "status": "pending",
         "fitNote": "Global ingredients major; pharma & food dextrose; strong quality systems.",
         "secondSourceFor": null,
+        "gradeLabel": null,
         "companyName": null,
         "symbol": null,
         "metrics": null,
@@ -1257,6 +1340,7 @@
         "status": "pending",
         "fitNote": "South-India maize starch/dextrose maker; regional logistics advantage.",
         "secondSourceFor": null,
+        "gradeLabel": null,
         "companyName": null,
         "symbol": null,
         "metrics": null,
@@ -1284,6 +1368,7 @@
         "status": "pending",
         "fitNote": "North-India starch derivatives; newer entrant.",
         "secondSourceFor": null,
+        "gradeLabel": null,
         "companyName": null,
         "symbol": null,
         "metrics": null,
@@ -1313,6 +1398,7 @@
         "status": "ok",
         "fitNote": "Listed rigid-plastic leader (pails, containers, pharma); strong, profitable — a robust alternate for bottles/closures.",
         "secondSourceFor": "packaging",
+        "gradeLabel": null,
         "companyName": "Mold-Tek Packaging Limited",
         "symbol": "MOLDTKPAC.NS",
         "metrics": {
@@ -1328,7 +1414,7 @@
           "revenueGrowth": 24.9,
           "earningsGrowth": 14.2,
           "pe": 28.62,
-          "evEbitda": 13.24,
+          "evEbitda": 13.11,
           "dividendYield": 91,
           "currentPrice": 327.4,
           "yearlyChange": -12.02,
@@ -1391,6 +1477,7 @@
         "status": "ok",
         "fitNote": "Listed moulded & blow-moulded packaging; broad capability across bottles/caps.",
         "secondSourceFor": null,
+        "gradeLabel": null,
         "companyName": "Hitech Corporation Limited",
         "symbol": "HITECHCORP.NS",
         "metrics": {
@@ -1406,7 +1493,7 @@
           "revenueGrowth": 36.8,
           "earningsGrowth": 50,
           "pe": 38.35,
-          "evEbitda": 9.83,
+          "evEbitda": 10.24,
           "dividendYield": 27,
           "currentPrice": 391.9,
           "yearlyChange": 102.03,
@@ -1469,6 +1556,7 @@
         "status": "ok",
         "fitNote": "Listed PET bottle/jar specialist (Pearlpet) — direct fit for PET bottles.",
         "secondSourceFor": null,
+        "gradeLabel": null,
         "companyName": "Pearl Polymers Limited",
         "symbol": "PEARLPOLY.NS",
         "metrics": {
@@ -1484,7 +1572,7 @@
           "revenueGrowth": 2.5,
           "earningsGrowth": -18.6,
           "pe": 0,
-          "evEbitda": -0.7,
+          "evEbitda": -0.66,
           "dividendYield": 0,
           "currentPrice": 16.77,
           "yearlyChange": -41.62,
@@ -1547,6 +1635,7 @@
         "status": "ok",
         "fitNote": "India's largest rigid-plastic packaging converter — pharma bottles, caps, preforms. Top second-source candidate.",
         "secondSourceFor": "packaging",
+        "gradeLabel": null,
         "companyName": "ALTERNICQ LIMITED",
         "symbol": null,
         "metrics": {
@@ -2717,6 +2806,7 @@
         "status": "pending",
         "fitNote": "Pharma packaging converter; bottles & closures.",
         "secondSourceFor": null,
+        "gradeLabel": null,
         "companyName": null,
         "symbol": null,
         "metrics": null,
@@ -2746,6 +2836,7 @@
         "status": "ok",
         "fitNote": "Listed flexible-packaging converter (already a tiny FDC supplier) — a proven, scalable second source for laminate sachets.",
         "secondSourceFor": "laminates",
+        "gradeLabel": null,
         "companyName": "Huhtamaki India Limited",
         "symbol": "HUHTAMAKI.NS",
         "metrics": {
@@ -2824,6 +2915,7 @@
         "status": "ok",
         "fitNote": "Listed flexibles giant — both film substrate AND conversion; can second-source GEEP at scale.",
         "secondSourceFor": "laminates",
+        "gradeLabel": null,
         "companyName": "Uflex Limited",
         "symbol": "UFLEX.NS",
         "metrics": {
@@ -2839,7 +2931,7 @@
           "revenueGrowth": 35.5,
           "earningsGrowth": 630,
           "pe": 6.66,
-          "evEbitda": 6.2,
+          "evEbitda": 6.21,
           "dividendYield": 48,
           "currentPrice": 629,
           "yearlyChange": 15.49,
@@ -2902,6 +2994,7 @@
         "status": "ok",
         "fitNote": "Listed BOPET film maker — substrate supply, not finished laminate; use for film cost benchmarking.",
         "secondSourceFor": null,
+        "gradeLabel": null,
         "companyName": "Ester Industries Limited",
         "symbol": "ESTER.NS",
         "metrics": {
@@ -2917,7 +3010,7 @@
           "revenueGrowth": 27.8,
           "earningsGrowth": 0,
           "pe": 0,
-          "evEbitda": 12.49,
+          "evEbitda": 12.61,
           "dividendYield": 27,
           "currentPrice": 94.05,
           "yearlyChange": -19.41,
@@ -2980,6 +3073,7 @@
         "status": "ok",
         "fitNote": "Listed BOPP/specialty film maker — substrate, not conversion.",
         "secondSourceFor": null,
+        "gradeLabel": null,
         "companyName": "Cosmo First Limited",
         "symbol": "COSMOFIRST.NS",
         "metrics": {
@@ -2995,7 +3089,7 @@
           "revenueGrowth": 45.7,
           "earningsGrowth": 25.2,
           "pe": 13.15,
-          "evEbitda": 8.4,
+          "evEbitda": 8.42,
           "dividendYield": 48,
           "currentPrice": 835.8,
           "yearlyChange": -3.93,
@@ -3058,6 +3152,7 @@
         "status": "ok",
         "fitNote": "Listed PET film major — substrate benchmark.",
         "secondSourceFor": null,
+        "gradeLabel": null,
         "companyName": "Polyplex Corporation Limited",
         "symbol": "POLYPLEX.NS",
         "metrics": {
@@ -3072,8 +3167,8 @@
           "debtToEquity": 13.29,
           "revenueGrowth": 29.6,
           "earningsGrowth": 0,
-          "pe": 20.63,
-          "evEbitda": 10.86,
+          "pe": 20.42,
+          "evEbitda": 10.84,
           "dividendYield": 20,
           "currentPrice": 1010.4,
           "yearlyChange": 4.89,
@@ -3136,6 +3231,7 @@
         "status": "ok",
         "fitNote": "Listed BOPET/BOPP film major — substrate benchmark.",
         "secondSourceFor": null,
+        "gradeLabel": null,
         "companyName": "Jindal Poly Films Limited",
         "symbol": "JINDALPOLY.NS",
         "metrics": {
@@ -3151,7 +3247,7 @@
           "revenueGrowth": -52.5,
           "earningsGrowth": 0,
           "pe": 0,
-          "evEbitda": -8.77,
+          "evEbitda": -9.54,
           "dividendYield": 0,
           "currentPrice": 726.3,
           "yearlyChange": 12.77,
@@ -3214,6 +3310,7 @@
         "status": "ok",
         "fitNote": "Global Constantia group's India converter — pharma blister/sachet laminates; strong second-source for GEEP.",
         "secondSourceFor": "laminates",
+        "gradeLabel": null,
         "companyName": "PARIKH PACKAGING PRIVATE LIMITED",
         "symbol": null,
         "metrics": {
@@ -4246,6 +4343,7 @@
         "status": "pending",
         "fitNote": "Global Amcor's India arm — high-end pharma laminates; premium but very reliable.",
         "secondSourceFor": "laminates",
+        "gradeLabel": null,
         "companyName": null,
         "symbol": null,
         "metrics": null,
@@ -4273,6 +4371,7 @@
         "status": "ok",
         "fitNote": "Large Indian flexible-packaging converter — sachet & pouch laminates.",
         "secondSourceFor": null,
+        "gradeLabel": null,
         "companyName": "PAHARPUR 3P PRIVATE LIMITED",
         "symbol": null,
         "metrics": {
@@ -5226,6 +5325,7 @@
         "status": "pending",
         "fitNote": "Flexible laminate converter; sachets & pouches.",
         "secondSourceFor": null,
+        "gradeLabel": null,
         "companyName": null,
         "symbol": null,
         "metrics": null,
