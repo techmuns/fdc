@@ -6,33 +6,27 @@ terms are weak, and which vendors to negotiate with**. Every number is real and
 source-stamped: FDC's own SAP purchase exports plus live external price and
 financial feeds. Nothing is estimated, sampled, or fabricated.
 
-> **Phase 1** shipped the data foundation + the cockpit (Overview, Price,
-> Payment Terms, Vendors). **Phase 2** adds the *intelligence layer*: live
-> market-price benchmarks, real vendor financials & negotiation levers
-> (Vendor Health), and benchmarked alternate suppliers (Alternatives).
-> **Phase 2.1** made the *private*-vendor financials real & free via
-> **credit-rating-agency rationale documents** (CRISIL / ICRA / CARE / Acuité /
-> Infomerics). **Phase 2.2** promotes **Probe42** (comprehensive MCA-filing
-> reports) to the *primary* private-vendor source — multi-year financials,
-> ratios, peer-median benchmarks, risk/legal flags and promoter detail — with the
-> credit-rating docs kept as a fallback & cross-check. **Phase 3** adds the
-> **Negotiation Briefs** tab: Claude (on AWS Bedrock) writes a plain-English,
-> evidence-backed negotiation brief per vendor — grounded only in the real data
-> above, never an invented number — gated on the Bedrock secret.
+> **Phase 1–3** built the data foundation and a 7-tab analyst cockpit (price
+> benchmarks, payment terms, vendor financials via **Probe42** MCA filings +
+> credit-rating docs, benchmarked alternates, and AI negotiation briefs). All of
+> that pipeline still runs and still feeds the app. **Phase 5 — the Founder
+> Rebuild** turns the cockpit *inside-out*: from a beautiful data display into a
+> money machine. It collapses everything into **3 value-first tabs** where every
+> screen ends in **"Do X → save ₹Y"** in plain words a non-technical reader
+> grasps in 30 seconds. No metric repeats across tabs; nothing is estimated —
+> every figure is computed live from FDC's own SAP exports (now using the
+> manufacture-date, SLED/BBD and purchase-order fields that were never used
+> before), with Probe42 wired in for the vendor-negotiation view.
 
 ---
 
-## What's inside
+## What's inside — 3 tabs
 
 | Tab | What it answers |
 |---|---|
-| **🏠 Overview** | One-glance picture: spend by material, biggest savings, single-source risk, and the top alerts to act on. |
-| **💰 Price & Benchmark** | FDC price trend, price gap by supplier, inter-plant differences, item price table — **plus a Market-benchmark view**: our price vs real customs / producer / seller-ask lines and raw-material input trends, each source-stamped. |
-| **⏳ Payment Terms** | Where spend sits on payment terms, the cash freed by better terms (+15 / +30 day toggle), and the weakest terms by spend. |
-| **🏭 Vendors** | Sortable, colour-coded table of every supplier → click for a full profile (materials, price position, monthly trend, listed-company flag). |
-| **❤️ Vendor Health** | Real financials for listed suppliers (Munshot) *and* private suppliers (**Probe42** MCA filings — multi-year revenue/margin/RoCE trend, working-capital days **vs peer median**, credit-rating badge + Probe financial score, risk/compliance chips), a computed health score, and evidence-backed **negotiation levers**. Suppliers with no Probe42 report and no public rating show an honest "financials not public" state — never fabricated. |
-| **🔁 Alternatives** | Benchmarked backup suppliers per material with a financial health check and fit note; second-source candidates highlighted for single-source-risk materials. |
-| **📝 Negotiation Briefs** | A buyer-ready, AI-written brief per vendor — the headline ask, the price & payment-terms moves, the evidence (every figure copied from real data), their financial position in plain words, credible alternates, watch-outs, and a suggested opening line. Written by **Claude on AWS Bedrock**; ranked by opportunity; print/export-friendly. Shows an honest "add Bedrock key" state until configured — never fabricated. |
+| **📊 Overview — the money** | One headline (*"You can save about ₹X a year"*), the **top 3 actions** (each an **Action → Why → ₹ saving**, with a one-click "see proof"), where the savings sit by material, and a flag on fragile cheapest-suppliers (thin margin / big share) so a saving doesn't create single-source risk. |
+| **🧱 Material** | Toggle Dextrose / Rigid packaging / Laminates. **What each supplier charges** (price gap vs the cheapest you already pay, with a *labelled* market-input reference line — never shown as FDC's price, never overlaid across units), **who ships old stock** (average age from the manufacture date on every receipt), **every item** ranked by saving, and **every delivery** — the full, filterable goods-receipt ledger that is the raw proof behind every number. |
+| **🏭 Vendors** | Every supplier → a negotiation card: your spend & payment term, **how hard you can push** (margin trend from Probe42 — "~1% net, no room, win on terms instead" said plainly), **credit days** they give their customers vs the 30 they give you → *"ask for +N days"*, how fresh they ship, how they order, and **who could replace them** (real alternates for the same material — bigger/smaller, price, terms, why switch). Any vendor name anywhere in the app is clickable and lands here. |
 
 Built as a **static SPA** (React + TypeScript + Vite + Tailwind) with a
 **dependency-free SVG chart kit** (no chart library). Deploys to **Cloudflare Pages**.
@@ -72,7 +66,15 @@ Audited cleaning rules it applies:
    `0001`→immediate, `P001`→100% advance).
 
 Output files: `meta.json`, `materials.json`, `vendors.json`, `price-gaps.json`,
-`plants.json`, `payment-terms.json`.
+`plants.json`, `payment-terms.json`, and **`value.json`** — the Phase-5
+value-first computation that powers the 3-tab app. `value.json` adds, all
+computed live from the same receipts: **per-SKU savings** (Σ qty × price-gap vs
+the cheapest *active* vendor for each material code + unit), **freshness** (avg
+stock age and shelf-life left from `Date of Manufacture` and `SLED/BBD` on every
+receipt), **order behaviour** (PO count and lines-per-PO from `Purchase Order`),
+**recency** (last-purchase date per vendor, to flag stale suppliers), a
+latest-first **transaction ledger**, and the ranked **top-3 actions** — joined to
+Probe42 margin/credit-day signals for the vendor view.
 
 A built-in integrity check confirms the signed net of each file reproduces that
 file's own embedded total row.
@@ -375,8 +377,8 @@ src/
   lib/        format · brand · data (loader) · chartMath
   components/charts/  Bars · Columns · Donut · LineArea · StackedBar · Sparkline
   components/ui/      Card · Table · Tabs · Controls
-  components/  Header · ComingSoon · MarketBenchmark
-  tabs/       Overview · PriceBenchmark · PaymentTermsTab · Vendors · VendorHealth · Alternatives · NegotiationBriefs
+  components/  Header · MarketBenchmark · VendorProfile (full drill-down overlay)
+  tabs/       MoneyOverview · MaterialTab · VendorsTab   (the 3 value-first tabs)
   types.ts
 .github/workflows/
   data-refresh.yml         daily: market + Probe42 extract + financials, commit JSON

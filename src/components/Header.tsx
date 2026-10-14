@@ -26,7 +26,7 @@ export function Header({ meta }: { meta?: Meta }) {
               <span className="text-[11px] font-semibold text-fdc-slate">Live from SAP exports</span>
             </div>
             <p className="tnum mt-0.5 text-[11px] text-fdc-grey">
-              {dateLabel(meta.dateRange.from)} – {dateLabel(meta.dateRange.to)} · {meta.phase}
+              {dateLabel(meta.dateRange.from)} – {dateLabel(meta.dateRange.to)}
             </p>
           </div>
         )}

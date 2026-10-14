@@ -447,6 +447,52 @@ export interface Briefs {
   briefs: Brief[];
 }
 
+// ---- Phase 5 — the VALUE layer (money + the three unused SAP fields) ----
+export interface ValueVendorPrice {
+  vendorKey: string; vendor: string; color: string; price: number; qty: number; spend: number;
+  lastPurchase: string | null; active: boolean; gapVsBest: number; excess: number;
+}
+export interface ValueSku {
+  desc: string; matCode: string; unit: string; spend: number; qty: number; vendorCount: number;
+  bestVendorKey: string; bestVendor: string; bestPrice: number;
+  bestActiveVendorKey: string | null; bestActiveVendor: string | null; bestActivePrice: number | null;
+  savings: number; vendors: ValueVendorPrice[];
+}
+export interface ValueFreshness { vendorKey: string; vendor: string; color: string; avgAgeDays: number | null; avgShelfDays: number | null; grade: 'fresh' | 'ok' | 'old' | null; receipts: number; }
+export interface ValueMarketRef { price: number; unit: string; label: string; grade: string | null; source: string; date: string; strong: boolean; }
+export interface ValueMaterial {
+  key: MaterialKey; displayName: string; plainName: string; color: string; singleCommodity: boolean;
+  marketRef: ValueMarketRef | null; skus: ValueSku[]; freshness: ValueFreshness[];
+  savings: number; spend: number; unit: string | null;
+}
+export interface ValueAction {
+  rank: number; key: string; kind: 'price' | 'terms' | 'freshness'; saving: number; savingLabel: string;
+  material: string; vendorKey?: string; action: string; why: string;
+  proof: { tab: 'material' | 'vendors'; material?: string; skuDesc?: string; vendorKey?: string }; risk: string | null;
+}
+export interface ValueVendorOrders { materialKey: string; poCount: number; lineCount: number; avgOrderQty: number | null; deliveriesPerPo: number | null; }
+export interface ValueVendorRecency { materialKey: string; lastPurchase: string | null; daysSince: number | null; active: boolean; }
+export interface ValueVendorFreshness { materialKey: string; avgAgeDays: number | null; avgShelfDays: number | null; grade: 'fresh' | 'ok' | 'old' | null; }
+export interface ValueVendor {
+  vendorKey: string; name: string; color: string; spend: number;
+  termText: string | null; termDays: number | null; termCategory: string;
+  materialKeys: string[]; freshnessByMaterial: ValueVendorFreshness[]; orders: ValueVendorOrders[]; recency: ValueVendorRecency[];
+}
+export interface LedgerRow {
+  date: string; material: string; matCode: string; desc: string; vendorKey: string; vendor: string;
+  plant: string; plantName: string; qty: number; unit: string; price: number | null; amt: number; po: string | null; mvt: string; isReturn: boolean;
+}
+export interface ValueData {
+  generatedAt: string; currency: string; dateRange: { from: string | null; to: string | null }; activeWindowDays: number;
+  headline: { totalSavings: number; note: string };
+  savingsByMaterial: { materialKey: MaterialKey; displayName: string; color: string; savings: number }[];
+  actions: ValueAction[];
+  materials: Record<string, ValueMaterial>;
+  vendors: Record<string, ValueVendor>;
+  ledger: LedgerRow[];
+  counts: { ledgerRows: number; skus: number; vendors: number };
+}
+
 export interface AppData {
   meta: Meta;
   materials: Material[];
@@ -458,4 +504,5 @@ export interface AppData {
   financials: VendorFinancials | null;
   alternatives: Alternatives | null;
   briefs: Briefs | null;
+  value: ValueData | null;
 }

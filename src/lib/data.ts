@@ -1,6 +1,6 @@
 // Loads the clean JSON (written by the normalizer) from public/data/.
 import { useEffect, useState } from 'react';
-import type { AppData, Material, Vendor, PriceGaps, Plants, PaymentTerms, Meta, MarketData, VendorFinancials, Alternatives, Briefs } from '../types';
+import type { AppData, Material, Vendor, PriceGaps, Plants, PaymentTerms, Meta, MarketData, VendorFinancials, Alternatives, Briefs, ValueData } from '../types';
 
 const base = import.meta.env.BASE_URL || '/';
 const url = (f: string) => `${base}data/${f}`.replace(/\/{2,}/g, '/');
@@ -34,7 +34,7 @@ export function useAppData(): LoadState {
     let alive = true;
     (async () => {
       try {
-        const [meta, materials, vendors, priceGaps, plants, paymentTerms, market, financials, alternatives, briefs] = await Promise.all([
+        const [meta, materials, vendors, priceGaps, plants, paymentTerms, market, financials, alternatives, briefs, value] = await Promise.all([
           fetchJson<Meta>('meta.json'),
           fetchJson<Material[]>('materials.json'),
           fetchJson<Vendor[]>('vendors.json'),
@@ -45,11 +45,12 @@ export function useAppData(): LoadState {
           fetchOptional<VendorFinancials>('vendor-financials.json'),
           fetchOptional<Alternatives>('alternatives.json'),
           fetchOptional<Briefs>('briefs.json'),
+          fetchJson<ValueData>('value.json'),
         ]);
         if (!alive) return;
         setState({
           status: 'ready',
-          data: { meta, materials, vendors, priceGaps, plants, paymentTerms, market, financials, alternatives, briefs },
+          data: { meta, materials, vendors, priceGaps, plants, paymentTerms, market, financials, alternatives, briefs, value },
         });
       } catch (e) {
         if (!alive) return;
