@@ -82,10 +82,14 @@ function VendorCard({ vendor: x, data, onNavigate, onFull }: { vendor: ValueVend
   const marginSeries = (probe?.series ?? []).filter((y) => y.netMargin != null).map((y) => ({ label: y.fy || y.year, value: y.netMargin as number }));
   const marginFalling = marginSeries.length >= 2 && marginSeries[marginSeries.length - 1].value < marginSeries[0].value;
   const creditDays = m?.receivableDays ?? null; // days their customers take to pay them = credit they extend
-  const yourDays = x.termDays ?? (x.termCategory === 'advance' ? -100 : x.termCategory === 'immediate' ? 0 : null);
+  const yourDays = x.termCategory === 'immediate' ? 0 : x.termCategory === 'advance' ? null : (x.termDays ?? null);
   const pushDays = creditDays != null && yourDays != null ? Math.round(creditDays - yourDays) : null;
   const revenue = m?.revenue ?? null;
   const shareOfRev = revenue && x.spend ? (x.spend / revenue) * 100 : null;
+  // source for the financial figures (receivable days, margin, revenue) — for on-screen traceability
+  const srcName = fin?.source?.sourceName ?? null;
+  const srcWhen = probe?.latestFy ?? fin?.source?.date ?? null;
+  const srcLabel = srcName ? `${srcName}${srcWhen ? ` · ${srcWhen}` : ''}` : null;
 
   let marginRoom: { tone: 'room' | 'tight' | 'none'; text: string };
   if (netMargin == null) marginRoom = { tone: 'none', text: 'Their margin isn’t on file yet — open the full profile to check before pressing on price.' };
@@ -115,7 +119,7 @@ function VendorCard({ vendor: x, data, onNavigate, onFull }: { vendor: ValueVend
       {/* top facts */}
       <div className="grid grid-cols-2 gap-px bg-black/[0.05] sm:grid-cols-2">
         <Fact label="Your spend / yr" value={crore(x.spend)} />
-        <Fact label="Your payment term" value={x.termText ? shortTerm(x.termText) : '—'} tone={x.termCategory === 'advance' || x.termCategory === 'immediate' ? 'bad' : 'good'} />
+        <Fact label="Your payment term" value={termPlain(x.termCategory, x.termText)} tone={x.termCategory === 'advance' || x.termCategory === 'immediate' ? 'bad' : 'good'} />
       </div>
 
       <div className="space-y-3 p-4">
@@ -134,10 +138,13 @@ function VendorCard({ vendor: x, data, onNavigate, onFull }: { vendor: ValueVend
             <div className="rounded-xl border border-black/[0.06] p-2.5">
               <div className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-fdc-grey"><CalendarClock size={12} className="text-fdc-blue" /> Credit days</div>
               {creditDays != null ? (
-                <p className="text-[11.5px] leading-snug text-fdc-slate">
-                  They wait on average <b className="tnum">{Math.round(creditDays)} days</b> to get paid by their own customers, but give you <b className="tnum">{x.termText ? shortTerm(x.termText) : '—'}</b>.
-                  {pushDays != null && pushDays > 5 && <> Ask for <b className="text-fdc-green">+{pushDays} days</b> — they clearly live with it.</>}
-                </p>
+                <>
+                  <p className="text-[11.5px] leading-snug text-fdc-slate">
+                    They wait on average <b className="tnum">{Math.round(creditDays)} days</b> to get paid by their own customers, but give you <b className="tnum">{termPlain(x.termCategory, x.termText)}</b>.
+                    {pushDays != null && pushDays > 5 && <> Ask for <b className="text-fdc-green">+{pushDays} days</b> — they clearly live with it.</>}
+                  </p>
+                  {srcLabel && <p className="mt-1 text-[10px] leading-snug text-fdc-grey">Their <b>receivable days</b> — {srcLabel}. Your term — FDC SAP vendor master.</p>}
+                </>
               ) : <p className="text-[11.5px] leading-snug text-fdc-grey">Their customer credit days aren’t on file yet.</p>}
             </div>
           </div>
@@ -145,6 +152,9 @@ function VendorCard({ vendor: x, data, onNavigate, onFull }: { vendor: ValueVend
             <p className="mt-2 rounded-lg bg-fdc-green/[0.06] px-2.5 py-1.5 text-[11.5px] leading-snug text-fdc-slate">
               You are <b className="tnum">{pct(shareOfRev, shareOfRev < 1 ? 2 : 1)}</b> of their <b className="tnum">{crore(revenue!)}</b> revenue{shareOfRev >= 5 ? ' — a meaningful customer, so your ask carries weight.' : ' — a small customer, so lead with volume or a credible alternative.'}
             </p>
+          )}
+          {srcLabel && (netMargin != null || revenue != null) && (
+            <p className="mt-1.5 text-[10px] leading-snug text-fdc-grey">Margin &amp; revenue — {srcLabel}. Open <b>Full financials</b> for every figure and its source.</p>
           )}
         </Section>
 
@@ -260,4 +270,12 @@ function shortTerm(t: string): string {
   if (/immediate/i.test(t)) return 'Immediate';
   const m = t.match(/(\d+)\s*day/i);
   return m ? `${m[1]}-day credit` : t;
+}
+
+// plain, unambiguous payment-term label keyed off the category (not just the text)
+function termPlain(cat: string, text: string | null): string {
+  if (cat === 'advance') return '100% advance — before dispatch';
+  if (cat === 'immediate') return 'Immediate — pay on receipt';
+  const m = (text || '').match(/(\d+)\s*day/i);
+  return m ? `${m[1]}-day credit` : (text || '—');
 }

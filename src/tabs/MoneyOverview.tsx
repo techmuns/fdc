@@ -1,4 +1,4 @@
-import { ArrowRight, TrendingUp, Hourglass, Clock, Sparkles, AlertTriangle } from 'lucide-react';
+import { ArrowRight, TrendingUp, Scale, Coins, Clock, Sparkles, AlertTriangle } from 'lucide-react';
 import type { AppData, ValueAction } from '../types';
 import type { Nav } from '../App';
 import { Card } from '../components/ui/Card';
@@ -6,15 +6,23 @@ import { HBars, type HBarDatum } from '../components/charts/Bars';
 import { FDC, MATERIAL_COLOR } from '../lib/brand';
 
 const fmtSave = (n: number) => (n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : `₹${(n / 1e5).toFixed(1)} L`);
+
 const KIND = {
-  price: { icon: TrendingUp, color: FDC.green, label: 'Overpaying' },
-  terms: { icon: Hourglass, color: FDC.blue, label: 'Cash tied up' },
-  freshness: { icon: Clock, color: FDC.orange, label: 'Old stock' },
+  price: { icon: TrendingUp, color: FDC.green, label: 'Overpaying', save: 'Save' },
+  leverage: { icon: Scale, color: FDC.green, label: 'Price leverage', save: 'Price gap you hold' },
+  terms: { icon: Coins, color: FDC.blue, label: 'Cash to free', save: 'Cash freed' },
+  freshness: { icon: Clock, color: FDC.orange, label: 'Old stock', save: 'Save' },
 } as const;
+const kindOf = (a: ValueAction): keyof typeof KIND => (a.isLeverage ? 'leverage' : a.isCash ? 'terms' : a.kind);
 
 export default function MoneyOverview({ data, onNavigate }: { data: AppData; onNavigate: (n: Nav) => void }) {
   const v = data.value;
   if (!v) return <Card><p className="text-[13px] text-fdc-grey">Run <code className="rounded bg-black/5 px-1 py-0.5 font-mono text-[11px]">npm run normalize</code> to generate the value data.</p></Card>;
+
+  const cost = v.headline.costSavings ?? v.headline.totalSavings;
+  const cash = v.headline.cashFreed ?? 0;
+  const topMat = [...v.savingsByMaterial].sort((a, b) => b.savings - a.savings)[0]?.materialKey;
+  const cashVendor = v.headline.cashFreedBy?.[0];
 
   const bars: HBarDatum[] = v.savingsByMaterial
     .filter((s) => s.savings > 0)
@@ -37,11 +45,26 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
             <Sparkles size={14} /> FDC procurement — the money
           </div>
           <h1 className="text-[26px] font-extrabold leading-tight sm:text-[34px]">
-            You can save about <span className="text-fdc-gold">{fmtSave(v.headline.totalSavings)}</span> a year.
+            You can save about <span className="text-fdc-gold">{fmtSave(cost)}</span> a year.
           </h1>
           <p className="mt-1.5 max-w-2xl text-[13px] leading-snug text-white/85 sm:text-[14px]">
-            That's what you overpaid this year versus the cheapest price you already paid for the same items — plus cash tied up in weak payment terms. Three moves below capture most of it.
+            That's pure price saving — paying the lower price you already pay elsewhere for the same items. It lands in profit every year. Separately, you can free up one-time cash by fixing weak payment terms — two different kinds of money, shown apart below.
           </p>
+
+          {/* two money figures — never added together */}
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            <HeroStat
+              eyebrow="Cost you can save · every year" value={fmtSave(cost)} tone="white"
+              sub="Lower prices on items you already buy. Hits the P&L every year."
+              cta="See every line of proof" onClick={() => topMat && onNavigate({ tab: 'material', material: topMat })}
+            />
+            <HeroStat
+              eyebrow="Cash you can free · one-time" value={fmtSave(cash)} tone="gold"
+              sub="Working capital released by moving pay-on-receipt / advance suppliers to 30-day credit. Not a cost saving."
+              cta={cashVendor ? `See ${shortName(cashVendor.name)} — the proof` : 'See the proof'}
+              onClick={() => cashVendor && onNavigate({ tab: 'vendors', vendorKey: cashVendor.vendorKey })}
+            />
+          </div>
         </div>
       </div>
 
@@ -70,8 +93,25 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
   );
 }
 
+function HeroStat({ eyebrow, value, sub, cta, onClick, tone }: { eyebrow: string; value: string; sub: string; cta: string; onClick: () => void; tone: 'white' | 'gold' }) {
+  const gold = tone === 'gold';
+  return (
+    <button
+      onClick={onClick}
+      className={`group flex flex-col rounded-2xl border p-3.5 text-left backdrop-blur transition focus-ring ${gold ? 'border-fdc-gold/40 bg-fdc-gold/[0.14] hover:bg-fdc-gold/20' : 'border-white/25 bg-white/10 hover:bg-white/[0.18]'}`}
+    >
+      <div className="text-[10.5px] font-bold uppercase tracking-wide text-white/75">{eyebrow}</div>
+      <div className={`tnum mt-0.5 text-[28px] font-extrabold leading-none ${gold ? 'text-fdc-gold' : 'text-white'}`}>{value}</div>
+      <div className="mt-1.5 text-[11.5px] leading-snug text-white/80">{sub}</div>
+      <div className="mt-2 inline-flex items-center gap-1 text-[11.5px] font-semibold text-white">
+        {cta} <ArrowRight size={13} className="transition group-hover:translate-x-0.5" />
+      </div>
+    </button>
+  );
+}
+
 function ActionCard({ a, onNavigate }: { a: ValueAction; onNavigate: (n: Nav) => void }) {
-  const K = KIND[a.kind] || KIND.price;
+  const K = KIND[kindOf(a)];
   const Icon = K.icon;
   return (
     <Card className="flex flex-col">
@@ -96,8 +136,8 @@ function ActionCard({ a, onNavigate }: { a: ValueAction; onNavigate: (n: Nav) =>
 
       <div className="mt-auto flex items-end justify-between gap-2 pt-3">
         <div>
-          <div className="text-[10px] font-semibold uppercase tracking-wide text-fdc-grey">Save</div>
-          <div className="tnum text-[22px] font-extrabold leading-none" style={{ color: FDC.green }}>{a.savingLabel}</div>
+          <div className="text-[10px] font-semibold uppercase tracking-wide text-fdc-grey">{K.save}</div>
+          <div className="tnum text-[22px] font-extrabold leading-none" style={{ color: a.isCash ? FDC.blue : FDC.green }}>{a.savingLabel}</div>
         </div>
         <button
           onClick={() => onNavigate(a.proof.tab === 'vendors' ? { tab: 'vendors', vendorKey: a.proof.vendorKey } : { tab: 'material', material: a.proof.material as never, skuDesc: a.proof.skuDesc, vendorKey: a.proof.vendorKey })}
@@ -108,4 +148,8 @@ function ActionCard({ a, onNavigate }: { a: ValueAction; onNavigate: (n: Nav) =>
       </div>
     </Card>
   );
+}
+
+function shortName(name: string): string {
+  return String(name).replace(/\b(PRIVATE|PVT|LIMITED|LTD|INDIA|\(INDIA\))\b\.?/gi, '').replace(/\s{2,}/g, ' ').replace(/[.,]\s*$/, '').trim();
 }
