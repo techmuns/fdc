@@ -1,7 +1,7 @@
 {
   "app": "FDC Procurement Intelligence Cockpit",
   "phase": "Phase 2 — Intelligence",
-  "generatedAt": "2026-10-14T10:29:20.774Z",
+  "generatedAt": "2026-10-14T12:45:30.894Z",
   "currency": "INR",
   "dateRange": {
     "from": "2025-04-01",
@@ -96,6 +96,6 @@
     "Laminates mixes KG (film) and NOS (ready-to-drink pouches) — kept strictly separate.",
     "Vendor codes merged to one canonical vendor by normalized name (e.g. Gujarat Ambuja 1002002+1003710, PIK Plastics 1003376+1003248).",
     "Dextrose description variants unified to one product (ANHYDROUS DEXTROSE IP (EXMPT) = DEXTROSE ANHYDROUS IP (FO)).",
-    "Listed-company flags are PUBLIC classifications (not from FDC files), kept only as a hook for the upcoming vendor-financials phase; no financials are shown."
+    "Vendor financials are real and source-stamped: listed suppliers via the Munshot market-data API, private suppliers via Probe42 (MCA filings). Where a supplier does not file free financials, the card says \"pending\" rather than showing another entity's numbers."
   ]
 }

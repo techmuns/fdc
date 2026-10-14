@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-10-14T06:23:20.503Z",
+  "generatedAt": "2026-10-14T12:51:44.810Z",
   "sources": {
     "listed": "Munshot market-data API (free)",
     "private": "Probe42 comprehensive reports (MCA filings) — primary; credit-rating-agency rationale docs — fallback / cross-check"
   },
   "manifest": {
     "listedResolved": 6,
-    "privateProbe": 12,
-    "privateRated": 12,
-    "privateUnrated": 8,
+    "privateProbe": 11,
+    "privateRated": 11,
+    "privateUnrated": 9,
     "total": 27
   },
   "vendors": {
@@ -1210,7 +1210,7 @@
       "metrics": {
         "revenue": 60315901952,
         "ebitda": 6083474944,
-        "marketCap": 79616057344,
+        "marketCap": 82092875776,
         "totalDebt": 4409999872,
         "ebitdaMargin": 10.09,
         "netMargin": 6.9,
@@ -1219,14 +1219,18 @@
         "debtToEquity": 13.38,
         "revenueGrowth": 23.5,
         "earningsGrowth": 171.1,
-        "pe": 19.14,
+        "pe": 19.73,
         "evEbitda": 12.38,
         "dividendYield": 17,
-        "currentPrice": 173.58,
+        "currentPrice": 178.98,
         "yearlyChange": 68.85,
         "employees": 2245,
         "roce": null,
-        "roe": null
+        "roe": null,
+        "receivableDays": 28,
+        "inventoryDays": 70,
+        "payableDays": 13,
+        "cashConversionCycle": 84
       },
       "healthScore": {
         "value": 70,
@@ -1311,7 +1315,14 @@
             }
           ]
         }
-      ]
+      ],
+      "creditDaysSource": {
+        "sourceName": "Screener.in (from audited annual filings)",
+        "sourceUrl": "https://www.screener.in/company/GAEL/consolidated/",
+        "asOf": "Mar 2026",
+        "basis": "consolidated",
+        "date": "2026-10-14"
+      }
     },
     "sayaji-industries": {
       "vendorKey": "sayaji-industries",
@@ -1330,7 +1341,7 @@
       "metrics": {
         "revenue": 10878784512,
         "ebitda": 532790016,
-        "marketCap": 2903155200,
+        "marketCap": 2768160000,
         "totalDebt": 2269750016,
         "ebitdaMargin": 4.9,
         "netMargin": 1.12,
@@ -1339,14 +1350,18 @@
         "debtToEquity": 236.51,
         "revenueGrowth": 5.9,
         "earningsGrowth": 0,
-        "pe": 3.94,
+        "pe": 3.76,
         "evEbitda": 9.74,
         "dividendYield": 0,
-        "currentPrice": 114.84,
-        "yearlyChange": 4.59,
+        "currentPrice": 109.5,
+        "yearlyChange": 4.83,
         "employees": 779,
         "roce": null,
-        "roe": null
+        "roe": null,
+        "receivableDays": 22,
+        "inventoryDays": 49,
+        "payableDays": 84,
+        "cashConversionCycle": -14
       },
       "healthScore": {
         "value": 17,
@@ -1439,7 +1454,14 @@
             }
           ]
         }
-      ]
+      ],
+      "creditDaysSource": {
+        "sourceName": "Screener.in (from audited annual filings)",
+        "sourceUrl": "https://www.screener.in/company/SAYAJIIND/consolidated/",
+        "asOf": "Mar 2026",
+        "basis": "consolidated",
+        "date": "2026-10-14"
+      }
     },
     "shrinath-roto-pack": {
       "vendorKey": "shrinath-roto-pack",
@@ -7262,7 +7284,7 @@
       "metrics": {
         "revenue": 14589500416,
         "ebitda": 938726016,
-        "marketCap": 4595992576,
+        "marketCap": 4498510848,
         "totalDebt": 3454099968,
         "ebitdaMargin": 6.43,
         "netMargin": 2.34,
@@ -7271,14 +7293,18 @@
         "debtToEquity": 60.88,
         "revenueGrowth": 7.2,
         "earningsGrowth": 143.1,
-        "pe": 13.71,
+        "pe": 13.16,
         "evEbitda": 7.61,
         "dividendYield": 68,
-        "currentPrice": 147.1,
-        "yearlyChange": -11.21,
+        "currentPrice": 143.98,
+        "yearlyChange": -9.47,
         "employees": 1210,
         "roce": null,
-        "roe": null
+        "roe": null,
+        "receivableDays": 24,
+        "inventoryDays": 108,
+        "payableDays": 27,
+        "cashConversionCycle": 105
       },
       "healthScore": {
         "value": 39,
@@ -7316,7 +7342,7 @@
         "sourceUrl": "https://fastapi.muns.io",
         "date": "2026-10-14"
       },
-      "note": "Listed group entity: Sukhjit Starch & Chemicals Ltd",
+      "note": "Group parent — listed proxy: figures are for the listed parent The Sukhjit Starch & Chemicals Ltd (NSE/BSE: SUKHJITS), used as a proxy because the supplying entity Sukhjit Corn Products does not file separately.",
       "ratingGrade": null,
       "ratingLabel": null,
       "ratingOutlook": null,
@@ -7378,7 +7404,14 @@
             }
           ]
         }
-      ]
+      ],
+      "creditDaysSource": {
+        "sourceName": "Screener.in (from audited annual filings)",
+        "sourceUrl": "https://www.screener.in/company/SUKHJITS/consolidated/",
+        "asOf": "Mar 2026",
+        "basis": "consolidated",
+        "date": "2026-10-14"
+      }
     },
     "berry-global-india": {
       "vendorKey": "berry-global-india",
@@ -9081,592 +9114,29 @@
       "vendorKey": "bprex-pharma-packaging-india-p",
       "name": "Bprex Pharma Packaging India (P) Limited",
       "type": "private",
-      "status": "ok",
-      "primarySource": "probe",
-      "companyName": "BERRY GLOBAL INDIA PRIVATE LIMITED",
+      "status": "unrated",
+      "primarySource": "none",
+      "companyName": null,
       "symbol": null,
       "exchange": null,
-      "cin": "U25200KA2021FTC152314",
+      "cin": null,
       "materialsSupplied": [
         "Rigid plastic packaging"
       ],
       "fdcSpend": 6320592,
-      "metrics": {
-        "revenue": 112914648,
-        "ebitda": -98577477,
-        "marketCap": null,
-        "totalDebt": 1724786833,
-        "ebitdaMargin": -87.3,
-        "netMargin": -199.23,
-        "grossMargin": 53.82,
-        "operatingMargin": null,
-        "debtToEquity": 22044,
-        "revenueGrowth": null,
-        "earningsGrowth": null,
-        "pe": null,
-        "evEbitda": null,
-        "dividendYield": null,
-        "currentPrice": null,
-        "yearlyChange": null,
-        "employees": null,
-        "roce": -10.23,
-        "roe": -2875.09,
-        "pat": -224957157,
-        "netWorth": 7824342,
-        "interestCoverage": -3.71,
-        "currentRatio": 1.6,
-        "receivableDays": 254,
-        "payableDays": 225.54,
-        "cashConversionCycle": 334.54,
-        "creditRating": null
-      },
-      "healthScore": {
-        "value": 0,
-        "grade": "D",
-        "components": [
-          {
-            "label": "Net margin",
-            "raw": -199.23,
-            "score": 0,
-            "weight": 0.18
-          },
-          {
-            "label": "Margin vs peers",
-            "raw": -201.49,
-            "score": 0,
-            "weight": 0.12
-          },
-          {
-            "label": "Return on capital",
-            "raw": -10.23,
-            "score": 0,
-            "weight": 0.16
-          },
-          {
-            "label": "Low leverage",
-            "raw": 22044,
-            "score": 0,
-            "weight": 0.14
-          },
-          {
-            "label": "Interest cover",
-            "raw": -3.71,
-            "score": 0,
-            "weight": 0.14
-          },
-          {
-            "label": "Cash cycle vs peers",
-            "raw": 334.54,
-            "score": 0,
-            "weight": 0.1
-          }
-        ],
-        "note": "Computed by FDC from Probe42 (MCA-filed) financials vs peer medians + the credit rating — an analytical score, not a reported figure."
-      },
-      "source": {
-        "sourceName": "Probe42 (MCA filings)",
-        "sourceUrl": "https://probe42.in",
-        "date": "2026-06-11"
-      },
-      "note": null,
+      "metrics": null,
+      "healthScore": null,
+      "source": null,
+      "note": "unrated private company — financials not publicly filed free",
       "ratingGrade": null,
       "ratingLabel": null,
       "ratingOutlook": null,
-      "asOfFy": "FY2023-24",
+      "asOfFy": null,
       "ratingDate": null,
       "issuerNotCooperating": false,
       "fallbackSource": null,
-      "probe": {
-        "vendorKey": "bprex-pharma-packaging-india-p",
-        "cin": "U25200KA2021FTC152314",
-        "legalName": "BERRY GLOBAL INDIA PRIVATE LIMITED",
-        "status": "Active",
-        "incorporationDate": "2021-09-27",
-        "registeredAddress": "No. 485, 13th Cross, 4th Phase   PIA, Bangalore 1110035, Bangalore, Karnataka, 560058",
-        "website": "https://www.berryglobal.com/",
-        "lastFilingDate": "2025-03-31",
-        "latestFy": "FY2023-24",
-        "latestYear": "2024-03-31",
-        "nature": "STANDALONE",
-        "lossMaking": true,
-        "metrics": {
-          "fy": "FY2023-24",
-          "year": "2024-03-31",
-          "nature": "STANDALONE",
-          "revenue": 112914648,
-          "ebitda": -98577477,
-          "pat": -224957157,
-          "interest": 47748448,
-          "depreciation": 81382169,
-          "netMargin": -199.23,
-          "ebitdaMargin": -87.3,
-          "grossMargin": 53.82,
-          "roe": -2875.09,
-          "roce": -10.23,
-          "debtToEquity": 22044,
-          "interestCoverage": -3.71,
-          "currentRatio": 1.6,
-          "receivableDays": 254,
-          "payableDays": 225.54,
-          "inventoryDays": 306.08,
-          "ccc": 334.54,
-          "revenueGrowth": null,
-          "tradeReceivables": 78575405,
-          "tradePayables": 69773230,
-          "inventories": 94686368,
-          "cash": 132028978,
-          "shareCapital": 44333330,
-          "reservesAndSurplus": -36508988,
-          "longTermBorrowings": 1724786833,
-          "shortTermBorrowings": 0,
-          "totalAssets": 1979768506,
-          "netWorth": 7824342,
-          "totalDebt": 1724786833,
-          "cfOperating": null,
-          "cfInvesting": null,
-          "cfFinancing": null,
-          "ebit": -177208709,
-          "incomeTax": 0,
-          "otherIncome": 2750937,
-          "currentAssets": 393615431,
-          "currentLiabilities": 246558503,
-          "netFixedAssets": 1365218544,
-          "grossFixedAssets": 1446799370
-        },
-        "series": [
-          {
-            "fy": "FY2021-22",
-            "year": "2022-03-31",
-            "nature": "STANDALONE",
-            "revenue": 0,
-            "ebitda": -2394854,
-            "pat": -2411876,
-            "interest": 11246,
-            "depreciation": 5776,
-            "netMargin": null,
-            "ebitdaMargin": null,
-            "grossMargin": null,
-            "roe": -0.81,
-            "roce": -0.81,
-            "debtToEquity": 0,
-            "interestCoverage": -213.47,
-            "currentRatio": 44.25,
-            "receivableDays": null,
-            "payableDays": null,
-            "inventoryDays": null,
-            "ccc": null,
-            "revenueGrowth": null,
-            "tradeReceivables": 0,
-            "tradePayables": 3414423,
-            "inventories": 0,
-            "cash": 171936514,
-            "shareCapital": 44333330,
-            "reservesAndSurplus": 253254769,
-            "longTermBorrowings": 0,
-            "shortTermBorrowings": 0,
-            "totalAssets": 301976890,
-            "netWorth": 297588099,
-            "totalDebt": 0,
-            "cfOperating": null,
-            "cfInvesting": null,
-            "cfFinancing": null,
-            "ebit": -2400630,
-            "incomeTax": 0,
-            "otherIncome": 0,
-            "currentAssets": 194214763,
-            "currentLiabilities": 4388791,
-            "netFixedAssets": 107762127,
-            "grossFixedAssets": 100059350
-          },
-          {
-            "fy": "FY2022-23",
-            "year": "2023-03-31",
-            "nature": "STANDALONE",
-            "revenue": 0,
-            "ebitda": -64556793,
-            "pat": -64806600,
-            "interest": 57008,
-            "depreciation": 192799,
-            "netMargin": null,
-            "ebitdaMargin": null,
-            "grossMargin": null,
-            "roe": -27.84,
-            "roce": -7.46,
-            "debtToEquity": 273,
-            "interestCoverage": -1135.8,
-            "currentRatio": 0.38,
-            "receivableDays": null,
-            "payableDays": null,
-            "inventoryDays": null,
-            "ccc": null,
-            "revenueGrowth": null,
-            "tradeReceivables": 0,
-            "tradePayables": 2396669,
-            "inventories": 0,
-            "cash": 7465711,
-            "shareCapital": 44333330,
-            "reservesAndSurplus": 188448169,
-            "longTermBorrowings": 635585171,
-            "shortTermBorrowings": 0,
-            "totalAssets": 961491714,
-            "netWorth": 232781499,
-            "totalDebt": 635585171,
-            "cfOperating": null,
-            "cfInvesting": null,
-            "cfFinancing": null,
-            "ebit": -64749592,
-            "incomeTax": 0,
-            "otherIncome": 0,
-            "currentAssets": 35164055,
-            "currentLiabilities": 93125044,
-            "netFixedAssets": 100503264,
-            "grossFixedAssets": 100701000
-          },
-          {
-            "fy": "FY2023-24",
-            "year": "2024-03-31",
-            "nature": "STANDALONE",
-            "revenue": 112914648,
-            "ebitda": -98577477,
-            "pat": -224957157,
-            "interest": 47748448,
-            "depreciation": 81382169,
-            "netMargin": -199.23,
-            "ebitdaMargin": -87.3,
-            "grossMargin": 53.82,
-            "roe": -2875.09,
-            "roce": -10.23,
-            "debtToEquity": 22044,
-            "interestCoverage": -3.71,
-            "currentRatio": 1.6,
-            "receivableDays": 254,
-            "payableDays": 225.54,
-            "inventoryDays": 306.08,
-            "ccc": 334.54,
-            "revenueGrowth": null,
-            "tradeReceivables": 78575405,
-            "tradePayables": 69773230,
-            "inventories": 94686368,
-            "cash": 132028978,
-            "shareCapital": 44333330,
-            "reservesAndSurplus": -36508988,
-            "longTermBorrowings": 1724786833,
-            "shortTermBorrowings": 0,
-            "totalAssets": 1979768506,
-            "netWorth": 7824342,
-            "totalDebt": 1724786833,
-            "cfOperating": null,
-            "cfInvesting": null,
-            "cfFinancing": null,
-            "ebit": -177208709,
-            "incomeTax": 0,
-            "otherIncome": 2750937,
-            "currentAssets": 393615431,
-            "currentLiabilities": 246558503,
-            "netFixedAssets": 1365218544,
-            "grossFixedAssets": 1446799370
-          }
-        ],
-        "peer": {
-          "year": "2024",
-          "peers": 30,
-          "bizIndustry": "Packaging",
-          "bizSegment": "Pharma Packaging",
-          "netMargin": 2.26,
-          "ebitdaMargin": 7.105,
-          "roce": 12.45,
-          "roe": 12.775,
-          "receivableDays": 71.395,
-          "payableDays": 40.635,
-          "ccc": 69.84,
-          "debtToEquity": 111,
-          "interestCoverage": 1.6099999999999999,
-          "currentRatio": 1.625
-        },
-        "probeScore": {
-          "overall": 1,
-          "growth": 1,
-          "profitability": 1,
-          "liquidity": 4,
-          "solvency": 1,
-          "efficiency": 1
-        },
-        "creditRatingProbe": null,
-        "ratingHistory": [],
-        "issuerNotCooperating": false,
-        "keyIndicators": {
-          "revenueBand": "Between 5 and 50 cr.",
-          "profitBand": "Loss Making",
-          "employeeBand": "Upto 100"
-        },
-        "flags": [
-          {
-            "label": "Loss-making (FY2023-24)",
-            "tone": "risk"
-          },
-          {
-            "label": "High leverage (220.4x)",
-            "tone": "watch"
-          }
-        ],
-        "charges": {
-          "count": 0,
-          "sumAmount": null,
-          "topLenders": []
-        },
-        "legal": {
-          "total": 0,
-          "against": 0,
-          "severe": 0,
-          "pending": 0,
-          "financialDisputes": 0,
-          "msmeDelays": 0
-        },
-        "legalItems": [],
-        "financialDisputeItems": [],
-        "directors": [
-          {
-            "name": "PEDAKHASIM SAHEB SHAIK",
-            "designation": "Managing Director",
-            "din": "03612708",
-            "boards": 6
-          },
-          {
-            "name": "MARK WILLIAM MILES",
-            "designation": "Director",
-            "din": "10552352",
-            "boards": 2
-          }
-        ],
-        "promoterPct": 100,
-        "ownership": {
-          "promoterPct": 100,
-          "directorsHoldingPct": null,
-          "topHolderPct": 99.99,
-          "topHolderType": "other",
-          "fy": "FY2024-25"
-        },
-        "borrowing": {
-          "effectiveRatePct": 2.77,
-          "chargeRate": null,
-          "lenders": [],
-          "note": "Effective rate = interest expense ÷ total debt (from the filed P&L + balance sheet)."
-        },
-        "revenueMix": {
-          "available": true,
-          "fy": "FY2023-24",
-          "manufacturedPct": 0,
-          "tradedPct": 100,
-          "servicesPct": 0,
-          "exportPct": 0,
-          "domesticPct": 100,
-          "forexEarningsPct": 0,
-          "activity": "Manufacture of rubber and plastics products",
-          "note": null
-        },
-        "analytics": {
-          "dupont": {
-            "netMarginPct": -199.23,
-            "assetTurnover": 0.06,
-            "equityMultiplier": 253.03,
-            "roePct": -2875.09
-          },
-          "piotroski": {
-            "score": 3,
-            "outOf": 6,
-            "signals": [
-              {
-                "label": "Positive return on assets",
-                "pass": false
-              },
-              {
-                "label": "Rising return on assets",
-                "pass": false
-              },
-              {
-                "label": "Lower long-term leverage",
-                "pass": false
-              },
-              {
-                "label": "Improving current ratio",
-                "pass": true
-              },
-              {
-                "label": "No equity dilution",
-                "pass": true
-              },
-              {
-                "label": "Rising gross margin",
-                "pass": null
-              },
-              {
-                "label": "Rising asset turnover",
-                "pass": true
-              }
-            ],
-            "note": "Piotroski F — 7 of 9 signals testable; the 2 cash-flow signals need a cash-flow statement, not filed in AOC-4."
-          },
-          "altman": {
-            "z": -0.18,
-            "zone": "distress",
-            "model": "Altman Z' (private manufacturers)",
-            "components": {
-              "x1": 0.07,
-              "x2": -0.02,
-              "x3": -0.09,
-              "x4": 0,
-              "x5": 0.06
-            }
-          },
-          "fcf": {
-            "value": -1649693764,
-            "capex": 1346098370,
-            "deltaWC": 205017917,
-            "fy": "FY2023-24",
-            "method": "Approx: EBITDA − tax − capex (ΔGross fixed assets) − ΔWorking capital. No cash-flow statement is filed in AOC-4."
-          },
-          "accruals": {
-            "ratioPct": -0.06,
-            "quality": "high",
-            "note": "Sloan balance-sheet accruals ÷ avg assets — lower is higher earnings quality (profits backed by cash, not accruals)."
-          },
-          "operatingLeverage": null
-        },
-        "group": [],
-        "relatedParty": {
-          "fy": "FY2023-24",
-          "counterparties": 0,
-          "note": "No related-party transactions itemised in the latest filing."
-        },
-        "fundraising": [
-          {
-            "date": "2022-01-05",
-            "instrument": "Equity Shares Without Differential Rights",
-            "amountRaised": 294999975,
-            "securities": 3933333,
-            "type": "Cash"
-          }
-        ],
-        "headcount": {
-          "latest": 63,
-          "establishments": 1,
-          "paymentTimeliness": "Paid on Time",
-          "band": "Upto 100"
-        },
-        "industry": "Packaging",
-        "source": {
-          "sourceName": "Probe42 (MCA filings)",
-          "sourceUrl": "https://probe42.in",
-          "date": "2026-06-11"
-        }
-      },
-      "levers": [
-        {
-          "type": "risk",
-          "title": "Loss-making in FY2023-24",
-          "detail": "They posted a net loss in FY2023-24 (PAT ₹-22.50 Cr). A deep price cut could tip supply continuity — lead with faster payment or committed volume, and keep a second source warm.",
-          "evidence": [
-            {
-              "label": "PAT",
-              "value": "₹-22.50 Cr"
-            },
-            {
-              "label": "Net margin",
-              "value": "-199.2%"
-            }
-          ]
-        },
-        {
-          "type": "watch",
-          "title": "Below-peer margin — -199.2% vs 2.3% median",
-          "detail": "They earn less than peers, so price cuts bite harder here. Win on payment terms, volume or logistics rather than headline price.",
-          "evidence": [
-            {
-              "label": "Their margin",
-              "value": "-199.2%"
-            },
-            {
-              "label": "Peer median",
-              "value": "2.3%"
-            }
-          ]
-        },
-        {
-          "type": "opportunity",
-          "title": "They pay suppliers slower than peers — 226d vs 41d",
-          "detail": "They already stretch their own payables past the peer median, so asking them to extend our credit is only fair.",
-          "evidence": [
-            {
-              "label": "Their payable days",
-              "value": "226d"
-            },
-            {
-              "label": "Peer median",
-              "value": "41d"
-            }
-          ]
-        },
-        {
-          "type": "opportunity",
-          "title": "Cash tied up longer than peers — 335d cycle vs 70d",
-          "detail": "Their cash-conversion cycle runs above the peer median, so they value speed. Offer faster payment in exchange for a price cut.",
-          "evidence": [
-            {
-              "label": "Cash cycle",
-              "value": "335d"
-            },
-            {
-              "label": "Peer median",
-              "value": "70d"
-            }
-          ]
-        },
-        {
-          "type": "risk",
-          "title": "Weak Probe42 financial score (1/10)",
-          "detail": "Probe42's composite financial score is low — a supply-continuity watch. Don't over-concentrate volume here; qualify an alternate.",
-          "evidence": [
-            {
-              "label": "Probe score",
-              "value": "1/10"
-            }
-          ]
-        },
-        {
-          "type": "opportunity",
-          "title": "We're a meaningful customer — 5.60% of their revenue",
-          "detail": "Our ₹63.21 L/yr is a real slice of their ₹11.29 Cr revenue. That volume is leverage — ask for a price or terms concession to keep it.",
-          "evidence": [
-            {
-              "label": "Our spend",
-              "value": "₹63.21 L"
-            },
-            {
-              "label": "Their revenue",
-              "value": "₹11.29 Cr"
-            },
-            {
-              "label": "Share",
-              "value": "5.60%"
-            }
-          ]
-        },
-        {
-          "type": "risk",
-          "title": "Carrying debt (D/E 220.44x) — watch continuity, offer cash",
-          "detail": "A geared balance sheet is a supply-continuity watch — but it also means they value cash. Offer faster payment for a discount.",
-          "evidence": [
-            {
-              "label": "Debt / equity",
-              "value": "220.44x"
-            },
-            {
-              "label": "Total debt",
-              "value": "₹172.48 Cr"
-            }
-          ]
-        }
-      ]
+      "probe": null,
+      "levers": []
     },
     "universal-starch-chem-allied": {
       "vendorKey": "universal-starch-chem-allied",
@@ -9685,7 +9155,7 @@
       "metrics": {
         "revenue": 5146226176,
         "ebitda": 382657760,
-        "marketCap": 840000000,
+        "marketCap": 864990016,
         "totalDebt": 602000000,
         "ebitdaMargin": 7.44,
         "netMargin": 3.67,
@@ -9694,14 +9164,18 @@
         "debtToEquity": 72.84,
         "revenueGrowth": 21.4,
         "earningsGrowth": 0,
-        "pe": 4.28,
+        "pe": 4.41,
         "evEbitda": 3.63,
         "dividendYield": 0,
-        "currentPrice": 200,
-        "yearlyChange": 41.68,
+        "currentPrice": 205.95,
+        "yearlyChange": 36.38,
         "employees": 376,
         "roce": null,
-        "roe": null
+        "roe": null,
+        "receivableDays": 43,
+        "inventoryDays": 30,
+        "payableDays": 43,
+        "cashConversionCycle": 30
       },
       "healthScore": {
         "value": 51,
@@ -9786,7 +9260,14 @@
             }
           ]
         }
-      ]
+      ],
+      "creditDaysSource": {
+        "sourceName": "Screener.in (from audited annual filings)",
+        "sourceUrl": "https://www.screener.in/company/524408/",
+        "asOf": "Mar 2026",
+        "basis": "standalone",
+        "date": "2026-10-14"
+      }
     },
     "suraj-blow-plast": {
       "vendorKey": "suraj-blow-plast",
@@ -12834,7 +12315,7 @@
       "metrics": {
         "revenue": 26116399104,
         "ebitda": 2173799936,
-        "marketCap": 17552807936,
+        "marketCap": 17534683136,
         "totalDebt": 1445600000,
         "ebitdaMargin": 8.32,
         "netMargin": 5.22,
@@ -12843,14 +12324,18 @@
         "debtToEquity": 10.72,
         "revenueGrowth": 22.5,
         "earningsGrowth": 75.5,
-        "pe": 12.86,
+        "pe": 12.85,
         "evEbitda": 6.91,
         "dividendYield": 86,
-        "currentPrice": 232.42,
+        "currentPrice": 232.18,
         "yearlyChange": 1.77,
         "employees": 2500,
         "roce": null,
-        "roe": null
+        "roe": null,
+        "receivableDays": 82,
+        "inventoryDays": 46,
+        "payableDays": 102,
+        "cashConversionCycle": 26
       },
       "healthScore": {
         "value": 64,
@@ -12924,7 +12409,14 @@
             }
           ]
         }
-      ]
+      ],
+      "creditDaysSource": {
+        "sourceName": "Screener.in (from audited annual filings)",
+        "sourceUrl": "https://www.screener.in/company/HUHTAMAKI/",
+        "asOf": "Dec 2025",
+        "basis": "standalone",
+        "date": "2026-10-14"
+      }
     },
     "uflex": {
       "vendorKey": "uflex",
@@ -12943,7 +12435,7 @@
       "metrics": {
         "revenue": 164920033280,
         "ebitda": 22030196736,
-        "marketCap": 45803745280,
+        "marketCap": 45421027328,
         "totalDebt": 101523062784,
         "ebitdaMargin": 13.36,
         "netMargin": 4.14,
@@ -12955,11 +12447,15 @@
         "pe": 6.66,
         "evEbitda": 6.2,
         "dividendYield": 48,
-        "currentPrice": 634.3,
-        "yearlyChange": 16.46,
+        "currentPrice": 629,
+        "yearlyChange": 15.49,
         "employees": 7772,
         "roce": null,
-        "roe": null
+        "roe": null,
+        "receivableDays": 92,
+        "inventoryDays": 97,
+        "payableDays": 99,
+        "cashConversionCycle": 89
       },
       "healthScore": {
         "value": 54,
@@ -13048,7 +12544,14 @@
             }
           ]
         }
-      ]
+      ],
+      "creditDaysSource": {
+        "sourceName": "Screener.in (from audited annual filings)",
+        "sourceUrl": "https://www.screener.in/company/UFLEX/consolidated/",
+        "asOf": "Mar 2026",
+        "basis": "consolidated",
+        "date": "2026-10-14"
+      }
     },
     "silk-polypack": {
       "vendorKey": "silk-polypack",

@@ -1,9 +1,10 @@
-import { ArrowRight, TrendingUp, Scale, Coins, Clock, Sparkles, AlertTriangle } from 'lucide-react';
-import type { AppData, ValueAction } from '../types';
+import { ArrowRight, TrendingUp, Scale, Coins, Clock, Sparkles, AlertTriangle, Wallet } from 'lucide-react';
+import type { AppData, ValueAction, PaymentTerms } from '../types';
 import type { Nav } from '../App';
 import { Card } from '../components/ui/Card';
 import { HBars, type HBarDatum } from '../components/charts/Bars';
-import { FDC, MATERIAL_COLOR } from '../lib/brand';
+import { StackedBar, type StackSegment } from '../components/charts/StackedBar';
+import { FDC, MATERIAL_COLOR, TERM_COLOR } from '../lib/brand';
 
 const fmtSave = (n: number) => (n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : `₹${(n / 1e5).toFixed(1)} L`);
 
@@ -89,7 +90,56 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
           onClick={(d) => onNavigate({ tab: 'material', material: d.key as Nav extends { material?: infer M } ? M : never })}
         />
       </Card>
+
+      {/* payment terms & the cash they tie up */}
+      {data.paymentTerms && <PaymentTermsPanel pt={data.paymentTerms} onNavigate={onNavigate} />}
     </div>
+  );
+}
+
+const TERM_LABEL: Record<string, string> = { net: 'On credit (30-day)', immediate: 'Pay on receipt', advance: 'Paid in advance', unknown: 'Unknown' };
+function PaymentTermsPanel({ pt, onNavigate }: { pt: PaymentTerms; onNavigate: (n: Nav) => void }) {
+  const segs: StackSegment[] = [...pt.byCategory]
+    .sort((a, b) => b.spend - a.spend)
+    .map((c) => ({ key: c.category, label: TERM_LABEL[c.category] ?? c.category, value: c.spend, color: TERM_COLOR[c.category] ?? FDC.grey, note: `${c.count} supplier${c.count > 1 ? 's' : ''} · ${fmtSave(c.spend)} of spend on ${(TERM_LABEL[c.category] ?? c.category).toLowerCase()} terms.` }));
+  const weak = pt.worstBySpend ?? [];
+  // only the advance / pay-on-receipt suppliers have cash to free (the rest already give 30 days) —
+  // keep this consistent with the headline figure, never the gross "all spend × 30/365".
+  const freeable = weak.reduce((s, w) => s + (w.cashFreed30 || 0), 0);
+  return (
+    <Card>
+      <div className="mb-0.5 flex items-center gap-1.5">
+        <Wallet size={16} className="text-fdc-blue" strokeWidth={2.2} />
+        <h2 className="text-[15px] font-bold text-fdc-ink">Payment terms &amp; the cash they tie up</h2>
+      </div>
+      <p className="mb-3 text-[12.5px] leading-snug text-fdc-grey">
+        Your spend is on a <b className="text-fdc-slate">{pt.weightedAvgTermDays ?? '—'}-day</b> weighted-average term — most suppliers already give 30-day credit, so the money to free sits with the few on advance / pay-on-receipt. Moving just those to 30-day credit frees about <b className="text-fdc-slate">{fmtSave(freeable)}</b> of one-time working capital (not a cost saving).
+      </p>
+      <StackedBar segments={segs} format={(n) => fmtSave(n)} height={44} />
+      <div className="mt-2 flex flex-wrap gap-3 text-[11px] text-fdc-grey">
+        {segs.map((s) => <span key={s.key} className="inline-flex items-center gap-1"><span className="h-2.5 w-2.5 rounded-sm" style={{ background: s.color }} />{s.label} <b className="tnum text-fdc-slate">{fmtSave(s.value)}</b></span>)}
+      </div>
+
+      {weak.length > 0 && (
+        <div className="mt-3">
+          <div className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-fdc-grey">Suppliers on weak terms — where the cash is locked</div>
+          <div className="grid gap-2 sm:grid-cols-2">
+            {weak.map((w) => (
+              <button key={w.vendorKey} onClick={() => onNavigate({ tab: 'vendors', vendorKey: w.vendorKey })} className="flex items-center justify-between gap-2 rounded-xl border border-black/[0.06] bg-white px-3 py-2 text-left transition hover:border-fdc-blue/40 hover:bg-fdc-blue/[0.04] focus-ring">
+                <div className="min-w-0">
+                  <div className="truncate text-[12.5px] font-semibold text-fdc-ink">{shortName(w.vendor)}</div>
+                  <div className="text-[11px] text-fdc-grey">{w.termText} · {fmtSave(w.totalSpend)} spend</div>
+                </div>
+                <div className="shrink-0 text-right">
+                  <div className="tnum text-[14px] font-extrabold text-fdc-blue">{fmtSave(w.cashFreed30)}</div>
+                  <div className="text-[9.5px] uppercase tracking-wide text-fdc-grey">cash at 30d</div>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </Card>
   );
 }
 

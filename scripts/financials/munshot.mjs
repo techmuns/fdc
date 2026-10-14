@@ -12,7 +12,7 @@ const API = 'https://fastapi.muns.io/stock-data';
 export const LISTED_VENDORS = {
   'gujarat-ambuja-exports': { tickers: ['GAEL'], expect: /ambuja/i },
   'sayaji-industries': { tickers: ['SAYAJIIND', '540728', '507692', 'SAYAJIND'], expect: /sayaji/i },
-  'sukhjit-corn-products': { tickers: ['SUKHJITS'], expect: /sukhjit/i, note: 'Listed group entity: Sukhjit Starch & Chemicals Ltd' },
+  'sukhjit-corn-products': { tickers: ['SUKHJITS'], expect: /sukhjit/i, note: 'Group parent — listed proxy: figures are for the listed parent The Sukhjit Starch & Chemicals Ltd (NSE/BSE: SUKHJITS), used as a proxy because the supplying entity Sukhjit Corn Products does not file separately.' },
   'universal-starch-chem-allied': { tickers: ['524408', 'UNIVSTAR'], expect: /universal/i, note: 'Thinly traded' },
   'uflex': { tickers: ['UFLEX', '500148'], expect: /uflex/i },
   'huhtamaki-india': { tickers: ['HUHTAMAKI', '509820'], expect: /huhtamaki/i },

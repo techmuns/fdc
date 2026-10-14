@@ -1,19 +1,22 @@
 import { useMemo, useState, useEffect } from 'react';
-import { Layers, Search, Clock, Table2, Info } from 'lucide-react';
-import type { AppData, MaterialKey, ValueSku, ValueMaterial, LedgerRow } from '../types';
+import { Layers, Search, Clock, Table2, Info, Building2, LineChart as LineChartIcon, Globe2, GitCompareArrows, ChevronDown } from 'lucide-react';
+import type { AppData, MaterialKey, ValueSku, ValueMaterial, LedgerRow, MaterialPlants, AltVendor } from '../types';
 import type { Nav } from '../App';
-import { Card, Pill } from '../components/ui/Card';
+import { Card, Pill, Badge } from '../components/ui/Card';
 import { SubTabs } from '../components/ui/Tabs';
 import { Dropdown, type Option } from '../components/ui/Controls';
 import { Table, type Column } from '../components/ui/Table';
 import { HBars, type HBarDatum } from '../components/charts/Bars';
+import { LineArea } from '../components/charts/LineArea';
+import { MarketBenchmark } from '../components/MarketBenchmark';
 import { FDC, MATERIAL_COLOR, rampGYR } from '../lib/brand';
-import { vendorShort, dateLabel } from '../lib/format';
+import { vendorShort, dateLabel, monthLabel } from '../lib/format';
 
 const price = (n: number | null, unit: string) => (n == null ? '—' : `₹${n >= 100 ? Math.round(n) : n >= 10 ? n.toFixed(1) : n.toFixed(2)}/${unit.toLowerCase() === 'nos' ? 'pc' : unit.toLowerCase()}`);
 const fmtSave = (n: number) => (n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : n >= 1e5 ? `₹${(n / 1e5).toFixed(1)} L` : `₹${Math.round(n).toLocaleString('en-IN')}`);
 const qtyFmt = (n: number, unit: string) => `${Math.abs(n) >= 1e5 ? (n / 1e5).toFixed(1) + 'L' : Math.round(n).toLocaleString('en-IN')} ${unit.toLowerCase() === 'nos' ? 'pc' : unit.toLowerCase()}`;
 const GRADE = { fresh: FDC.green, ok: FDC.goldDark, old: FDC.red } as const;
+const plantShort = (name: string, code: string) => (name || code).replace(/FDC\s*Limited[,\s-]*/i, '').replace(/^\(|\)$/g, '').trim() || code;
 
 export default function MaterialTab({ data, nav, onNavigate }: { data: AppData; nav: Extract<Nav, { tab: 'material' }>; onNavigate: (n: Nav) => void }) {
   const v = data.value;
@@ -30,6 +33,10 @@ export default function MaterialTab({ data, nav, onNavigate }: { data: AppData; 
   }, [M, skuSel]);
 
   if (!v || !M) return <Card><p className="text-[13px] text-fdc-grey">No value data.</p></Card>;
+
+  const mp = data.plants?.byMaterial?.[mat] ?? null;
+  const alts = data.alternatives?.byMaterial?.[mat] ?? [];
+  const mdlMaterial = data.materials.find((m) => m.key === mat) ?? null;
 
   return (
     <div className="animate-fade-up space-y-4">
@@ -49,12 +56,21 @@ export default function MaterialTab({ data, nav, onNavigate }: { data: AppData; 
 
       {/* price gap + freshness */}
       <div className="grid gap-4 lg:grid-cols-5">
-        <div className="lg:col-span-3"><PriceGap sku={sku} M={M} onNavigate={onNavigate} /></div>
+        <div className="lg:col-span-3"><PriceGap sku={sku} M={M} alts={alts} onNavigate={onNavigate} /></div>
         <div className="lg:col-span-2"><Freshness M={M} onNavigate={onNavigate} /></div>
+      </div>
+
+      {/* plant arbitrage + price trend */}
+      <div className="grid gap-4 lg:grid-cols-2">
+        <PlantSpread mp={mp} />
+        <PriceTrend topSku={mdlMaterial?.topSkuMonthly?.[0] ?? null} color={MATERIAL_COLOR[mat]} />
       </div>
 
       {/* SKU list */}
       <SkuList M={M} selectedDesc={sku?.desc} onPick={(d) => setSkuSel(d)} />
+
+      {/* market reference (collapsible) */}
+      {data.market && <MarketReference material={mat} marketData={data.market} fdcPrice={M.singleCommodity && mdlMaterial?.vwap ? mdlMaterial.vwap : null} fdcLabel={`FDC paid, ${M.displayName} (our purchase data)`} />}
 
       {/* ledger */}
       <Ledger key={mat} rows={v.ledger.filter((r) => r.material === mat)} onNavigate={onNavigate} />
@@ -62,8 +78,9 @@ export default function MaterialTab({ data, nav, onNavigate }: { data: AppData; 
   );
 }
 
-function PriceGap({ sku, M, onNavigate }: { sku: ValueSku | undefined; M: ValueMaterial; onNavigate: (n: Nav) => void }) {
+function PriceGap({ sku, M, alts, onNavigate }: { sku: ValueSku | undefined; M: ValueMaterial; alts: AltVendor[]; onNavigate: (n: Nav) => void }) {
   if (!sku) return <Card><p className="text-[12.5px] text-fdc-grey">No comparable prices for this material.</p></Card>;
+  const singleSourced = sku.vendors.length < 2;
   const best = sku.bestPrice;
   const worst = Math.max(...sku.vendors.map((x) => x.price));
   const span = worst - best || 1;
@@ -88,17 +105,129 @@ function PriceGap({ sku, M, onNavigate }: { sku: ValueSku | undefined; M: ValueM
     <Card>
       <div className="mb-0.5 flex items-start justify-between gap-2">
         <h3 className="text-[14px] font-bold text-fdc-ink">What each supplier charges</h3>
+        {singleSourced
+          ? <Badge color={FDC.orange}><Globe2 size={11} /> Single-sourced — benchmark externally</Badge>
+          : <Badge color={FDC.green}><GitCompareArrows size={11} /> Internal gap — cheaper elsewhere in-house</Badge>}
       </div>
-      <p className="mb-3 text-[12px] leading-snug text-fdc-grey"><span className="font-semibold text-fdc-slate">{sku.desc}</span> · green = cheapest you already pay · grey = stale (not bought recently). Click a bar to open the supplier.</p>
+      <p className="mb-3 text-[12px] leading-snug text-fdc-grey"><span className="font-semibold text-fdc-slate">{sku.desc}</span> · {singleSourced ? 'only one supplier on file — there is no internal price to compare, so benchmark against the market and candidate alternatives below.' : 'green = cheapest you already pay · grey = stale (not bought recently). Click a bar to open the supplier.'}</p>
       <HBars data={bars} format={(n) => price(n, sku.unit)} barSize={28} labelWidth={150} axisTicks={4} onClick={(d) => onNavigate({ tab: 'vendors', vendorKey: d.key })} />
-      {showMarket && M.marketRef && (
+
+      {/* single-source → external benchmark panel */}
+      {singleSourced && (
+        <div className="mt-3 space-y-2 rounded-xl border border-fdc-orange/20 bg-fdc-orange/[0.04] p-3">
+          <div className="flex items-center gap-1.5 text-[11.5px] font-bold uppercase tracking-wide text-fdc-orange"><Globe2 size={12} /> External benchmark</div>
+          {M.marketRef ? (
+            <p className="text-[12px] leading-snug text-fdc-slate">
+              Market reference: <b>{M.marketRef.label}</b> ≈ <b className="tnum">₹{M.marketRef.price}/{M.marketRef.unit.replace('₹/', '')}</b> ({M.marketRef.date.slice(0, 4)}).
+              {showMarket ? ' A comparable ₹/kg input/benchmark cost — context only, not FDC’s price.' : ' This is an input cost driver (₹/kg), not a like-for-like price for this item — read it for direction only.'}
+            </p>
+          ) : <p className="text-[12px] text-fdc-grey">No market reference on file for this material.</p>}
+          {alts.length > 0 && (
+            <div>
+              <p className="mb-1 text-[11.5px] text-fdc-slate">Candidate alternatives to create competition:</p>
+              <div className="flex flex-wrap gap-1.5">
+                {alts.slice(0, 4).map((a, i) => (
+                  <span key={i} className="inline-flex items-center gap-1 rounded-md border border-black/[0.08] bg-white px-2 py-0.5 text-[11px] text-fdc-slate">
+                    <b className="text-fdc-ink">{vendorShort(a.name)}</b>
+                    {a.metrics?.revenue != null && <span className="text-fdc-grey">· ₹{(a.metrics.revenue / 1e7).toFixed(0)}Cr</span>}
+                    {a.status !== 'ok' && <Pill color={FDC.grey}>pending</Pill>}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {!singleSourced && showMarket && M.marketRef && (
         <p className="mt-2 flex items-start gap-1.5 rounded-lg bg-fdc-blue/[0.06] px-2.5 py-1.5 text-[11px] leading-snug text-fdc-slate">
           <Info size={13} className="mt-0.5 shrink-0 text-fdc-blue" />
           <span>Market input reference: <b>{M.marketRef.label}</b> ≈ <b className="tnum">₹{M.marketRef.price}/{M.marketRef.unit.replace('₹/', '')}</b> ({M.marketRef.date.slice(0, 4)}). This is an input/benchmark cost — not FDC's price — shown for context only.</span>
         </p>
       )}
-      {!showMarket && M.marketRef && (
+      {!singleSourced && !showMarket && M.marketRef && (
         <p className="mt-2 text-[11px] text-fdc-grey">Market input trend: {M.marketRef.label} ≈ ₹{M.marketRef.price}/{M.marketRef.unit.replace('₹/', '')} — a ₹/kg input, so it isn't overlaid on a per-piece price.</p>
+      )}
+    </Card>
+  );
+}
+
+function PlantSpread({ mp }: { mp: MaterialPlants | null }) {
+  if (!mp || !mp.plants.length) return <Card><h3 className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><Building2 size={15} className="text-fdc-green" /> Same material, different plants</h3><p className="mt-2 text-[12.5px] text-fdc-grey">No plant-level price split on file for this material.</p></Card>;
+  const prices = mp.plants.filter((p) => p.avgPrice != null);
+  const best = Math.min(...prices.map((p) => p.avgPrice as number));
+  const worst = Math.max(...prices.map((p) => p.avgPrice as number));
+  const span = worst - best || 1;
+  const bars: HBarDatum[] = [...prices].sort((a, b) => (a.avgPrice as number) - (b.avgPrice as number)).map((p) => ({
+    key: p.plant,
+    label: plantShort(p.plantName, p.plant),
+    value: p.avgPrice as number,
+    color: mp.likeForLike ? ((p.avgPrice as number) === best ? FDC.green : rampGYR(((p.avgPrice as number) - best) / span)) : FDC.blue,
+    valueLabel: price(p.avgPrice, mp.unit),
+    sublabel: qtyFmt(p.qty, mp.unit),
+    tipRows: [
+      { label: 'Avg price', value: price(p.avgPrice, mp.unit) },
+      { label: 'Volume', value: qtyFmt(p.qty, mp.unit) },
+      { label: 'Receipts', value: String(p.receiptCount ?? '—') },
+    ],
+  }));
+  // theoretical saving if the dearest plant's volume matched the cheapest price (like-for-like only)
+  const potential = mp.likeForLike && mp.dearestPlant?.avgPrice != null && mp.cheapestPlant?.avgPrice != null
+    ? (mp.dearestPlant.avgPrice - mp.cheapestPlant.avgPrice) * (mp.dearestPlant.qty || 0) : 0;
+  return (
+    <Card>
+      <div className="mb-0.5 flex items-start justify-between gap-2">
+        <h3 className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><Building2 size={15} className="text-fdc-green" /> Same material, different plants</h3>
+        {mp.spread && <Badge color={mp.likeForLike ? FDC.orange : FDC.grey}>{mp.likeForLike ? `${mp.spread.diffPct.toFixed(1)}% spread` : 'mixed basket'}</Badge>}
+      </div>
+      <p className="mb-3 text-[12px] leading-snug text-fdc-grey">
+        {mp.likeForLike
+          ? <>Same item, price paid at each FDC plant. Cheapest plant in green — the spread is a real like-for-like gap.</>
+          : <>Each plant buys a different mix of items, so this shows <b>where spend sits</b> per plant, not a like-for-like price gap.</>}
+      </p>
+      <HBars data={bars} format={(n) => price(n, mp.unit)} barSize={26} labelWidth={130} axisTicks={4} />
+      {mp.likeForLike && mp.spread && mp.cheapestPlant && mp.dearestPlant && (
+        <p className="mt-2 rounded-lg bg-fdc-green/[0.06] px-2.5 py-1.5 text-[11.5px] leading-snug text-fdc-slate">
+          <b>{plantShort(mp.dearestPlant.plantName, mp.dearestPlant.plant)}</b> pays <b className="tnum">{price(mp.dearestPlant.avgPrice, mp.unit)}</b> vs <b>{plantShort(mp.cheapestPlant.plantName, mp.cheapestPlant.plant)}</b> at <b className="tnum">{price(mp.cheapestPlant.avgPrice, mp.unit)}</b> — a <b className="tnum">{mp.spread.diffPct.toFixed(1)}%</b> gap on the same material.{potential > 2e4 ? <> Levelling every plant to the best plant's price is worth about <b className="tnum">{fmtSave(potential)}</b>/yr.</> : ''}
+        </p>
+      )}
+    </Card>
+  );
+}
+
+function PriceTrend({ topSku, color }: { topSku: { desc: string; unit: string; monthly: { month: string; avgPrice: number | null }[] } | null; color: string }) {
+  const pts = (topSku?.monthly ?? []).filter((m) => m.avgPrice != null).map((m) => ({ label: monthLabel(m.month), value: m.avgPrice as number }));
+  if (!topSku || pts.length < 3) return <Card><h3 className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><LineChartIcon size={15} className="text-fdc-green" /> Price over the year</h3><p className="mt-2 text-[12.5px] text-fdc-grey">Not enough monthly history to draw a trend.</p></Card>;
+  const first = pts[0].value; const last = pts[pts.length - 1].value;
+  const chg = first ? ((last - first) / first) * 100 : 0;
+  const u = topSku.unit.toLowerCase() === 'nos' ? 'pc' : topSku.unit.toLowerCase();
+  return (
+    <Card>
+      <div className="mb-0.5 flex items-start justify-between gap-2">
+        <h3 className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><LineChartIcon size={15} className="text-fdc-green" /> Price over the year</h3>
+        <Badge color={chg > 1 ? FDC.red : chg < -1 ? FDC.green : FDC.grey}>{chg > 0 ? '+' : ''}{chg.toFixed(1)}% over the year</Badge>
+      </div>
+      <p className="mb-2 text-[12px] leading-snug text-fdc-grey">Average ₹/{u} we paid for <span className="font-semibold text-fdc-slate">{topSku.desc}</span> (the biggest item), month by month.</p>
+      <LineArea points={pts} color={color} format={(n) => price(n, topSku.unit)} height={200} yAxisFormat={(n) => `₹${n >= 100 ? Math.round(n) : n.toFixed(1)}`} />
+    </Card>
+  );
+}
+
+function MarketReference({ material, marketData, fdcPrice, fdcLabel }: { material: MaterialKey; marketData: AppData['market']; fdcPrice: number | null; fdcLabel: string }) {
+  const [open, setOpen] = useState(false);
+  if (!marketData) return null;
+  const lines = marketData.materials[material]?.lines ?? [];
+  if (!lines.length) return null;
+  return (
+    <Card pad={false}>
+      <button onClick={() => setOpen((o) => !o)} className="flex w-full items-center justify-between gap-2 px-4 py-3 text-left transition hover:bg-black/[0.02] focus-ring">
+        <span className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><Globe2 size={15} className="text-fdc-blue" /> Our price vs the market <span className="text-[11.5px] font-medium text-fdc-grey">— reference &amp; input-cost trends</span></span>
+        <span className="flex items-center gap-1 text-[11.5px] font-semibold text-fdc-grey">{open ? 'Hide' : 'Show'} <ChevronDown size={15} className={`transition ${open ? 'rotate-180' : ''}`} /></span>
+      </button>
+      {open && (
+        <div className="border-t border-black/[0.06] p-4">
+          <MarketBenchmark material={material} fdcPrice={fdcPrice} fdcLabel={fdcLabel} marketData={marketData} />
+        </div>
       )}
     </Card>
   );
@@ -139,7 +268,7 @@ function SkuList({ M, selectedDesc, onPick }: { M: ValueMaterial; selectedDesc?:
   const rows = M.skus.filter((s) => s.vendorCount >= 1);
   const cols: Column<ValueSku>[] = [
     { key: 'desc', header: 'Item', sortable: true, sortValue: (s) => s.desc, render: (s) => <span className="font-semibold text-fdc-slate">{s.desc}</span> },
-    { key: 'vendors', header: 'Suppliers', align: 'right', sortable: true, sortValue: (s) => s.vendorCount, render: (s) => <span className="tnum">{s.vendorCount}</span> },
+    { key: 'vendors', header: 'Suppliers', align: 'right', sortable: true, sortValue: (s) => s.vendorCount, render: (s) => <span className="tnum">{s.vendorCount}{s.vendorCount < 2 && <span className="ml-1 text-[10px] text-fdc-orange">single</span>}</span> },
     { key: 'spend', header: 'Spend/yr', align: 'right', sortable: true, sortValue: (s) => s.spend, render: (s) => <span className="tnum">{fmtSave(s.spend)}</span> },
     { key: 'best', header: 'Cheapest you pay', align: 'right', sortable: true, sortValue: (s) => s.bestPrice, render: (s) => <span className="tnum text-fdc-green">{price(s.bestPrice, s.unit)} <span className="text-[10px] text-fdc-grey">{vendorShort(s.bestVendor)}</span></span> },
     { key: 'savings', header: 'Save by matching', align: 'right', sortable: true, sortValue: (s) => s.savings, render: (s) => <span className="tnum font-bold" style={{ color: s.savings > 0 ? FDC.orange : FDC.grey }}>{s.savings > 0 ? fmtSave(s.savings) : '—'}</span>, heat: (s) => (s.savings > 0 ? Math.min(1, s.savings / Math.max(...rows.map((x) => x.savings || 1))) : null), heatScale: 'hue', heatColor: FDC.orange },

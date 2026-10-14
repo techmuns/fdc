@@ -1,15 +1,18 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {
   X, Building2, TrendingUp, Scale, Landmark, Gavel, Users, PiggyBank, AlertTriangle,
   ShieldCheck, Factory, Banknote, Activity, GitBranch, Lightbulb, Eye, MapPin, BadgeCheck,
-  Gauge, Boxes, Receipt, CalendarClock, ExternalLink, FileText,
+  Gauge, Boxes, Receipt, CalendarClock, ExternalLink, FileText, ChevronDown, Repeat2, ArrowUpRight,
+  Target,
 } from 'lucide-react';
-import type { Vendor, VendorFin, AltVendor, ProbeProfile, ProbeYear, Lever } from '../types';
+import type { Vendor, VendorFin, AltVendor, ProbeProfile, ProbeYear, Lever, Brief } from '../types';
+import type { AltItem } from '../tabs/VendorsTab';
 import { Card, Badge, Pill } from './ui/Card';
 import { Table, type Column } from './ui/Table';
 import { Donut } from './charts/Donut';
 import { Columns } from './charts/Columns';
 import { Sparkline } from './charts/Sparkline';
+import { NegotiationBrief } from './NegotiationBrief';
 import { FDC } from '../lib/brand';
 import { money, crore, pct, vendorShort } from '../lib/format';
 
@@ -25,7 +28,15 @@ const gradeColor = (g?: string | null) => {
 const deToX = (de: number | null | undefined) => (de == null ? '—' : `${(de / 100).toFixed(2)}x`);
 const ZONE = { safe: { c: FDC.green, label: 'Safe zone' }, grey: { c: FDC.goldDark, label: 'Grey zone' }, distress: { c: FDC.red, label: 'Distress zone' } } as const;
 
-export default function VendorProfile({ subject, onClose }: { subject: ProfileSubject; onClose: () => void }) {
+export default function VendorProfile({
+  subject, onClose, brief = null, replacements = [], onPickReplacement,
+}: {
+  subject: ProfileSubject;
+  onClose: () => void;
+  brief?: Brief | null;
+  replacements?: AltItem[];
+  onPickReplacement?: (it: AltItem) => void;
+}) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', onKey);
@@ -54,6 +65,8 @@ export default function VendorProfile({ subject, onClose }: { subject: ProfileSu
   const levers = (isVendor ? fin!.levers : alt!.levers) || [];
   const accent = gradeColor(health?.grade);
   const fyBadge = probe ? `Probe42 · ${asOfFy ?? probe.latestFy}` : type === 'listed' ? 'Listed · market data' : asOfFy ? `As of ${asOfFy}` : null;
+  // honesty: listed figures shown under a different (parent) company name
+  const proxyName = type === 'listed' && isVendor && fin!.companyName && vendorShort(fin!.companyName).toLowerCase() !== vendorShort(name).toLowerCase() ? fin!.companyName : null;
 
   return (
     <div
@@ -98,6 +111,7 @@ export default function VendorProfile({ subject, onClose }: { subject: ProfileSu
 
         {/* scrollable body */}
         <div className="fdc-scroll min-h-0 flex-1 overflow-y-auto px-3 py-4 sm:px-5">
+          {/* negotiating weight (kept — it's the one-line "why they'll listen") */}
           {isVendor && vendor && (
             <div className="mb-3 flex flex-wrap items-center gap-2 rounded-xl border border-fdc-green/15 bg-fdc-green/[0.05] px-3 py-2 text-[12px] text-fdc-slate">
               <PiggyBank size={14} className="text-fdc-green" />
@@ -105,11 +119,17 @@ export default function VendorProfile({ subject, onClose }: { subject: ProfileSu
                 {metrics?.revenue ? <> — that's <b className="tnum">{pct((vendor.totalNetSpend / metrics.revenue) * 100, 2)}</b> of their revenue, real negotiating weight.</> : '.'}</span>
             </div>
           )}
+          {proxyName && (
+            <div className="mb-3 flex items-start gap-1.5 rounded-xl border border-fdc-blue/20 bg-fdc-blue/[0.05] px-3 py-2 text-[11.5px] leading-snug text-fdc-slate">
+              <Building2 size={14} className="mt-0.5 shrink-0 text-fdc-blue" />
+              <span>Figures below are for the <b>listed group parent, {vendorShort(proxyName)}</b>, shown as a proxy — the supplying entity doesn’t file separately.</span>
+            </div>
+          )}
 
           {probe ? (
-            <ProbeBody probe={probe} health={health} levers={levers} />
+            <ProbeBody probe={probe} health={health} levers={levers} brief={brief} replacements={replacements} onPickReplacement={onPickReplacement} />
           ) : type === 'listed' ? (
-            <ListedBody metrics={metrics} health={health} levers={levers} />
+            <ListedBody metrics={metrics} health={health} levers={levers} brief={brief} replacements={replacements} onPickReplacement={onPickReplacement} />
           ) : (
             <PendingBody note={note} status={status} />
           )}
@@ -136,22 +156,91 @@ export default function VendorProfile({ subject, onClose }: { subject: ProfileSu
   );
 }
 
+/* ============================ shared lead: takeaway + replacements + expander ============================ */
+function Takeaway({ brief, levers }: { brief: Brief | null; levers: Lever[] }) {
+  if (brief) {
+    return (
+      <div>
+        <LeadLabel icon={Target} text="What this means for FDC" />
+        <NegotiationBrief brief={brief} dense />
+      </div>
+    );
+  }
+  if (!levers.length) return null;
+  return (
+    <div>
+      <LeadLabel icon={Target} text="What this means for FDC" />
+      <div className="space-y-2">{levers.map((l, i) => <LeverCard key={i} lever={l} />)}</div>
+    </div>
+  );
+}
+
+/** Evidence-backed levers as a collapsible-section body (used inside the full-detail expander when a brief is the lead). */
+function LeversSection({ levers }: { levers: Lever[] }) {
+  if (!levers.length) return null;
+  return (
+    <Section icon={Lightbulb} title="Evidence-backed negotiation levers" color={FDC.green}>
+      <div className="space-y-2">{levers.map((l, i) => <LeverCard key={i} lever={l} />)}</div>
+    </Section>
+  );
+}
+
+function LeadLabel({ icon: Icon, text }: { icon: typeof Target; text: string }) {
+  return <div className="mb-1.5 flex items-center gap-1.5 text-[12px] font-bold uppercase tracking-wide text-fdc-green"><Icon size={13} strokeWidth={2.4} /> {text}</div>;
+}
+
+function Replacements({ items, onPick }: { items: AltItem[]; onPick?: (it: AltItem) => void }) {
+  const top = items.slice(0, 6);
+  if (!top.length || !onPick) return null;
+  return (
+    <div>
+      <div className="mb-1.5 flex items-center gap-1.5 text-[12px] font-bold text-fdc-ink"><Repeat2 size={14} className="text-fdc-blue" strokeWidth={2.2} /> Who could replace them</div>
+      <div className="grid gap-1.5 sm:grid-cols-2">
+        {top.map((it) => (
+          <button key={it.key} onClick={() => onPick(it)} className="flex items-start justify-between gap-2 rounded-lg border border-black/[0.06] bg-white px-2.5 py-1.5 text-left transition hover:border-fdc-green/40 hover:bg-fdc-green/[0.04] focus-ring">
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-1.5">
+                <span className="inline-flex items-center gap-0.5 text-[12px] font-semibold text-fdc-slate">{it.name} <ArrowUpRight size={11} className="text-fdc-grey" /></span>
+                {it.cheaper && <Pill color={FDC.green}>cheaper · ours</Pill>}
+                {!it.backed && <Pill color={FDC.grey}>pending</Pill>}
+              </div>
+              <p className="mt-0.5 line-clamp-2 text-[10.5px] leading-snug text-fdc-grey">{it.why}</p>
+            </div>
+            {it.price && <span className="tnum shrink-0 rounded-md bg-fdc-offwhite px-1.5 py-0.5 text-[11px] font-bold text-fdc-green">{it.price}</span>}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Expander({ title, children }: { title: string; children: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="overflow-hidden rounded-xl border border-black/[0.08] bg-white">
+      <button onClick={() => setOpen((v) => !v)} className="flex w-full items-center justify-between gap-2 px-3.5 py-2.5 text-left transition hover:bg-black/[0.02] focus-ring">
+        <span className="flex items-center gap-1.5 text-[13px] font-bold text-fdc-ink"><FileText size={14} className="text-fdc-slate" /> {title}</span>
+        <span className="flex items-center gap-1 text-[11.5px] font-semibold text-fdc-grey">{open ? 'Hide' : 'Show'} <ChevronDown size={15} className={`transition ${open ? 'rotate-180' : ''}`} /></span>
+      </button>
+      {open && <div className="space-y-3 border-t border-black/[0.06] bg-fdc-offwhite p-3 sm:p-3.5">{children}</div>}
+    </div>
+  );
+}
+
 /* ============================ PROBE (private) BODY ============================ */
-function ProbeBody({ probe, health, levers }: { probe: ProbeProfile; health: VendorFin['healthScore']; levers: Lever[] }) {
+function ProbeBody({ probe, health, levers, brief, replacements, onPickReplacement }: { probe: ProbeProfile; health: VendorFin['healthScore']; levers: Lever[]; brief: Brief | null; replacements: AltItem[]; onPickReplacement?: (it: AltItem) => void }) {
   const m = probe.metrics;
   const an = probe.analytics || null;
   return (
     <div className="space-y-3">
-      {/* at a glance */}
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+      {/* compact at-a-glance — shown ONCE */}
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
         <HealthTile health={health} />
         <ProbeScoreTile probe={probe} />
         <AltmanTile altman={an?.altman} />
         <StatTile label="Revenue" value={crore(m.revenue)} sub={probe.latestFy ?? undefined} color={FDC.green} />
-        <StatTile label="EBITDA margin" value={m.ebitdaMargin != null ? pct(m.ebitdaMargin) : '—'} color={FDC.blue} />
         <StatTile label="Net margin" value={m.netMargin != null ? pct(m.netMargin) : '—'} color={m.netMargin != null && m.netMargin < 0 ? FDC.red : FDC.ink} />
         <StatTile label="Debt / equity" value={deToX(m.debtToEquity)} color={m.debtToEquity != null && m.debtToEquity >= 150 ? FDC.orange : FDC.ink} />
-        <StatTile label="Eff. borrowing" value={probe.borrowing?.effectiveRatePct != null ? `${probe.borrowing.effectiveRatePct}%` : '—'} sub="interest ÷ debt" color={FDC.slate} />
       </div>
 
       {/* flags */}
@@ -165,135 +254,141 @@ function ProbeBody({ probe, health, levers }: { probe: ProbeProfile; health: Ven
         </div>
       )}
 
-      {/* trend grid */}
-      <Section icon={TrendingUp} title="Multi-year track record" sub={`${probe.series.length} filed years · ${probe.nature.toLowerCase()}`} color={FDC.green}>
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-          <TrendTile series={probe.series} field="revenue" label="Revenue" color={FDC.green} fmt={(n) => crore(n)} />
-          <TrendTile series={probe.series} field="netMargin" label="Net margin %" color={FDC.blue} fmt={(n) => pct(n)} />
-          <TrendTile series={probe.series} field="ebitdaMargin" label="EBITDA margin %" color="#8E44AD" fmt={(n) => pct(n)} />
-          <TrendTile series={probe.series} field="roce" label="Return on capital %" color={FDC.goldDark} fmt={(n) => pct(n)} />
-          <TrendTile series={probe.series} field="debtToEquity" label="Debt / equity" color={FDC.orange} fmt={(n) => `${(n / 100).toFixed(2)}x`} />
-          <TrendTile series={probe.series} field="pat" label="Profit after tax" color={FDC.greenLighter} fmt={(n) => crore(n)} />
-        </div>
-        <div className="mt-3">
-          <div className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-fdc-grey">Revenue by year</div>
-          <Columns
-            data={probe.series.filter((y) => y.revenue != null).map((y) => ({ key: y.year, label: (y.fy || y.year).replace('FY', '').slice(0, 5), value: y.revenue as number, color: FDC.green, valueLabel: crore(y.revenue), note: `${y.fy}: revenue ${crore(y.revenue)}${y.pat != null ? `, PAT ${crore(y.pat)}` : ''}.`, tipRows: [{ label: 'Revenue', value: crore(y.revenue) }, { label: 'PAT', value: y.pat != null ? crore(y.pat) : '—' }, { label: 'Net margin', value: y.netMargin != null ? pct(y.netMargin) : '—' }] }))}
-            format={(n) => crore(n)}
-            height={170}
-            yAxisFormat={(n) => (n >= 1e7 ? `${(n / 1e7).toFixed(0)}Cr` : n >= 1e5 ? `${(n / 1e5).toFixed(0)}L` : '0')}
-          />
-        </div>
-      </Section>
+      {/* lead takeaway: the negotiation brief (what to say & ask); levers are the takeaway when no brief */}
+      <Takeaway brief={brief} levers={levers} />
 
-      {/* revenue mix + dupont */}
-      <div className="grid gap-3 lg:grid-cols-2">
-        <Section icon={Boxes} title="Revenue mix — maker vs trader" color={FDC.blue}>
-          <RevenueMix probe={probe} />
+      {/* who could replace them */}
+      <Replacements items={replacements} onPick={onPickReplacement} />
+
+      {/* everything deep — collapsed behind ONE expander */}
+      <Expander title="Show full financial detail — levers, filings, ratios, borrowing, legal, board & group">
+        {brief && <LeversSection levers={levers} />}
+        <Section icon={TrendingUp} title="Multi-year track record" sub={`${probe.series.length} filed years · ${probe.nature.toLowerCase()}`} color={FDC.green}>
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+            <TrendTile series={probe.series} field="revenue" label="Revenue" color={FDC.green} fmt={(n) => crore(n)} />
+            <TrendTile series={probe.series} field="netMargin" label="Net margin %" color={FDC.blue} fmt={(n) => pct(n)} />
+            <TrendTile series={probe.series} field="ebitdaMargin" label="EBITDA margin %" color="#8E44AD" fmt={(n) => pct(n)} />
+            <TrendTile series={probe.series} field="roce" label="Return on capital %" color={FDC.goldDark} fmt={(n) => pct(n)} />
+            <TrendTile series={probe.series} field="debtToEquity" label="Debt / equity" color={FDC.orange} fmt={(n) => `${(n / 100).toFixed(2)}x`} />
+            <TrendTile series={probe.series} field="pat" label="Profit after tax" color={FDC.greenLighter} fmt={(n) => crore(n)} />
+          </div>
+          <div className="mt-3">
+            <div className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-fdc-grey">Revenue by year</div>
+            <Columns
+              data={probe.series.filter((y) => y.revenue != null).map((y) => ({ key: y.year, label: (y.fy || y.year).replace('FY', '').slice(0, 5), value: y.revenue as number, color: FDC.green, valueLabel: crore(y.revenue), note: `${y.fy}: revenue ${crore(y.revenue)}${y.pat != null ? `, PAT ${crore(y.pat)}` : ''}.`, tipRows: [{ label: 'Revenue', value: crore(y.revenue) }, { label: 'PAT', value: y.pat != null ? crore(y.pat) : '—' }, { label: 'Net margin', value: y.netMargin != null ? pct(y.netMargin) : '—' }] }))}
+              format={(n) => crore(n)}
+              height={170}
+              yAxisFormat={(n) => (n >= 1e7 ? `${(n / 1e7).toFixed(0)}Cr` : n >= 1e5 ? `${(n / 1e5).toFixed(0)}L` : '0')}
+            />
+          </div>
         </Section>
-        <Section icon={Activity} title="DuPont — what drives the return" color="#8E44AD">
-          <DuPont dupont={an?.dupont} />
-        </Section>
-      </div>
 
-      {/* distress & quality */}
-      <Section icon={Gauge} title="Distress & earnings-quality signals" sub="computed from the filed statements — analytical, not reported" color={FDC.goldDark}>
-        <div className="grid gap-3 md:grid-cols-2">
-          <Altman altman={an?.altman} />
-          <Piotroski piotroski={an?.piotroski} />
+        <div className="grid gap-3 lg:grid-cols-2">
+          <Section icon={Boxes} title="Revenue mix — maker vs trader" color={FDC.blue}>
+            <RevenueMix probe={probe} />
+          </Section>
+          <Section icon={Activity} title="DuPont — what drives the return" color="#8E44AD">
+            <DuPont dupont={an?.dupont} />
+          </Section>
         </div>
-        <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
-          <QualTile label="Free cash flow (approx)" value={an?.fcf?.value != null ? crore(an.fcf.value) : '—'} tone={an?.fcf?.value != null && an.fcf.value < 0 ? 'risk' : 'ok'} note={an?.fcf?.method} />
-          <QualTile label="Earnings quality" value={an?.accruals?.quality ? an.accruals.quality[0].toUpperCase() + an.accruals.quality.slice(1) : '—'} sub={an?.accruals?.ratioPct != null ? `accruals ${an.accruals.ratioPct}% of assets` : undefined} tone={an?.accruals?.quality === 'low' ? 'risk' : an?.accruals?.quality === 'moderate' ? 'watch' : 'ok'} note={an?.accruals?.note} />
-          <QualTile label="Operating leverage" value={an?.operatingLeverage?.dol != null ? `${an.operatingLeverage.dol}×` : '—'} tone={an?.operatingLeverage?.dol != null && Math.abs(an.operatingLeverage.dol) > 3 ? 'watch' : 'ok'} note={an?.operatingLeverage?.note} />
-        </div>
-      </Section>
 
-      {/* working capital vs peers */}
-      {probe.peer && <Section icon={Scale} title="Working capital vs peers" sub={`${probe.peer.bizSegment ?? probe.peer.bizIndustry ?? 'peer set'} · ${probe.peer.peers ?? '—'} companies (Probe42)`} color={FDC.blue}>
-        <WorkingCapital probe={probe} />
-      </Section>}
-
-      {/* borrowing & charges */}
-      <Section icon={Landmark} title="Borrowing cost & lenders" sub="early-payment-discount economics" color={FDC.orange}>
-        <Borrowing probe={probe} />
-      </Section>
-
-      {/* rating history */}
-      {probe.ratingHistory && probe.ratingHistory.length > 0 && (
-        <Section icon={ShieldCheck} title="Credit-rating history" color={FDC.green}>
-          <RatingHistory probe={probe} />
+        <Section icon={Gauge} title="Distress & earnings-quality signals" sub="computed from the filed statements — analytical, not reported" color={FDC.goldDark}>
+          <div className="grid gap-3 md:grid-cols-2">
+            <Altman altman={an?.altman} />
+            <Piotroski piotroski={an?.piotroski} />
+          </div>
+          <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
+            <QualTile label="Free cash flow (approx)" value={an?.fcf?.value != null ? crore(an.fcf.value) : '—'} tone={an?.fcf?.value != null && an.fcf.value < 0 ? 'risk' : 'ok'} note={an?.fcf?.method} />
+            <QualTile label="Earnings quality" value={an?.accruals?.quality ? an.accruals.quality[0].toUpperCase() + an.accruals.quality.slice(1) : '—'} sub={an?.accruals?.ratioPct != null ? `accruals ${an.accruals.ratioPct}% of assets` : undefined} tone={an?.accruals?.quality === 'low' ? 'risk' : an?.accruals?.quality === 'moderate' ? 'watch' : 'ok'} note={an?.accruals?.note} />
+            <QualTile label="Operating leverage" value={an?.operatingLeverage?.dol != null ? `${an.operatingLeverage.dol}×` : '—'} tone={an?.operatingLeverage?.dol != null && Math.abs(an.operatingLeverage.dol) > 3 ? 'watch' : 'ok'} note={an?.operatingLeverage?.note} />
+          </div>
         </Section>
-      )}
 
-      {/* legal & disputes */}
-      {(probe.legal.total > 0 || (probe.financialDisputeItems && probe.financialDisputeItems.length > 0)) && (
-        <Section icon={Gavel} title="Legal & disputes" sub={`${probe.legal.total} cases · ${probe.legal.against} against the company · ${probe.legal.pending} pending`} color={FDC.red}>
-          <Legal probe={probe} />
+        {probe.peer && <Section icon={Scale} title="Working capital vs peers" sub={`${probe.peer.bizSegment ?? probe.peer.bizIndustry ?? 'peer set'} · ${probe.peer.peers ?? '—'} companies (Probe42)`} color={FDC.blue}>
+          <WorkingCapital probe={probe} />
+        </Section>}
+
+        <Section icon={Landmark} title="Borrowing cost & lenders" sub="early-payment-discount economics" color={FDC.orange}>
+          <Borrowing probe={probe} />
         </Section>
-      )}
 
-      {/* ownership, directors & group */}
-      <Section icon={Users} title="Ownership, board & group" color="#8E44AD">
-        <OwnershipBoard probe={probe} />
-      </Section>
-
-      {/* fundraising + headcount + RPT */}
-      <div className="grid gap-3 lg:grid-cols-2">
-        {probe.fundraising && probe.fundraising.length > 0 && (
-          <Section icon={Banknote} title="Fundraising (securities allotted)" color={FDC.green}>
-            <Fundraising probe={probe} />
+        {probe.ratingHistory && probe.ratingHistory.length > 0 && (
+          <Section icon={ShieldCheck} title="Credit-rating history" color={FDC.green}>
+            <RatingHistory probe={probe} />
           </Section>
         )}
-        <Section icon={Receipt} title="People & related parties" color={FDC.slate}>
-          <PeopleRpt probe={probe} />
-        </Section>
-      </div>
 
-      {/* negotiation levers */}
-      {levers.length > 0 && (
-        <Section icon={Lightbulb} title="Evidence-backed negotiation levers" color={FDC.green}>
-          <div className="space-y-2">{levers.map((l, i) => <LeverCard key={i} lever={l} />)}</div>
+        {(probe.legal.total > 0 || (probe.financialDisputeItems && probe.financialDisputeItems.length > 0)) && (
+          <Section icon={Gavel} title="Legal & disputes" sub={`${probe.legal.total} cases · ${probe.legal.against} against the company · ${probe.legal.pending} pending`} color={FDC.red}>
+            <Legal probe={probe} />
+          </Section>
+        )}
+
+        <Section icon={Users} title="Ownership, board & group" color="#8E44AD">
+          <OwnershipBoard probe={probe} />
         </Section>
-      )}
+
+        <div className="grid gap-3 lg:grid-cols-2">
+          {probe.fundraising && probe.fundraising.length > 0 && (
+            <Section icon={Banknote} title="Fundraising (securities allotted)" color={FDC.green}>
+              <Fundraising probe={probe} />
+            </Section>
+          )}
+          <Section icon={Receipt} title="People & related parties" color={FDC.slate}>
+            <PeopleRpt probe={probe} />
+          </Section>
+        </div>
+      </Expander>
     </div>
   );
 }
 
 /* ============================ LISTED BODY ============================ */
-function ListedBody({ metrics, health, levers }: { metrics: VendorFin['metrics']; health: VendorFin['healthScore']; levers: Lever[] }) {
+function ListedBody({ metrics, health, levers, brief, replacements, onPickReplacement }: { metrics: VendorFin['metrics']; health: VendorFin['healthScore']; levers: Lever[]; brief: Brief | null; replacements: AltItem[]; onPickReplacement?: (it: AltItem) => void }) {
   const m = metrics;
   if (!m) return <PendingBody note="Listed company — market financials not resolved on the last run." status="pending" />;
   return (
     <div className="space-y-3">
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
         <HealthTile health={health} />
         <StatTile label="Revenue (TTM)" value={crore(m.revenue)} color={FDC.green} />
         <StatTile label="Net margin" value={m.netMargin != null ? pct(m.netMargin) : '—'} color={m.netMargin != null && m.netMargin < 0 ? FDC.red : FDC.ink} />
         <StatTile label="Revenue growth" value={m.revenueGrowth != null ? pct(m.revenueGrowth) : '—'} color={m.revenueGrowth != null && m.revenueGrowth < 0 ? FDC.red : FDC.green} />
-        <StatTile label="EBITDA margin" value={m.ebitdaMargin != null ? pct(m.ebitdaMargin) : '—'} color={FDC.blue} />
         <StatTile label="Debt / equity" value={deToX(m.debtToEquity)} color={FDC.ink} />
-        <StatTile label="Market cap" value={m.marketCap != null ? crore(m.marketCap) : '—'} color={FDC.slate} />
-        <StatTile label="P/E (TTM)" value={m.pe != null ? `${m.pe.toFixed(1)}×` : '—'} color={FDC.slate} />
+        <StatTile label="Debtor days" value={m.receivableDays != null ? `${Math.round(m.receivableDays)}d` : '—'} sub={m.payableDays != null ? `pay ${Math.round(m.payableDays)}d` : undefined} color={FDC.slate} />
       </div>
-      <Section icon={Building2} title="Market snapshot" sub="live market data via Munshot (keyless)" color={FDC.blue}>
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-          <KV label="EV / EBITDA" value={m.evEbitda != null ? `${m.evEbitda.toFixed(1)}×` : '—'} />
-          <KV label="Dividend yield" value={m.dividendYield != null ? pct(m.dividendYield) : '—'} />
-          <KV label="Current price" value={m.currentPrice != null ? `₹${m.currentPrice.toFixed(0)}` : '—'} />
-          <KV label="1-yr change" value={m.yearlyChange != null ? pct(m.yearlyChange) : '—'} tone={m.yearlyChange != null && m.yearlyChange < 0 ? 'risk' : 'ok'} />
-          <KV label="Gross margin" value={m.grossMargin != null ? pct(m.grossMargin) : '—'} />
-          <KV label="Employees" value={m.employees != null ? m.employees.toLocaleString('en-IN') : '—'} />
-        </div>
-        <p className="mt-2 rounded-lg bg-fdc-offwhite px-3 py-2 text-[11.5px] leading-snug text-fdc-grey">
-          This is a publicly-listed company — the figures above are live market data. MCA-filing drill-downs (charges, directors, legal, working-capital days) are shown for <b>private</b> suppliers via Probe42; a listed company's detail lives in its exchange filings.
-        </p>
-      </Section>
-      {levers.length > 0 && (
-        <Section icon={Lightbulb} title="Negotiation levers" color={FDC.green}>
-          <div className="space-y-2">{levers.map((l, i) => <LeverCard key={i} lever={l} />)}</div>
+
+      {/* lead takeaway */}
+      <Takeaway brief={brief} levers={levers} />
+
+      {/* who could replace them */}
+      <Replacements items={replacements} onPick={onPickReplacement} />
+
+      <Expander title="Show full market detail">
+        {brief && <LeversSection levers={levers} />}
+        <Section icon={Building2} title="Market snapshot" sub="live market data via Munshot (keyless)" color={FDC.blue}>
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+            <KV label="EBITDA margin" value={m.ebitdaMargin != null ? pct(m.ebitdaMargin) : '—'} />
+            <KV label="Market cap" value={m.marketCap != null ? crore(m.marketCap) : '—'} />
+            <KV label="P/E (TTM)" value={m.pe != null ? `${m.pe.toFixed(1)}×` : '—'} />
+            <KV label="EV / EBITDA" value={m.evEbitda != null ? `${m.evEbitda.toFixed(1)}×` : '—'} />
+            <KV label="Dividend yield" value={m.dividendYield != null ? pct(m.dividendYield) : '—'} />
+            <KV label="Current price" value={m.currentPrice != null ? `₹${m.currentPrice.toFixed(0)}` : '—'} />
+            <KV label="1-yr change" value={m.yearlyChange != null ? pct(m.yearlyChange) : '—'} tone={m.yearlyChange != null && m.yearlyChange < 0 ? 'risk' : 'ok'} />
+            <KV label="Gross margin" value={m.grossMargin != null ? pct(m.grossMargin) : '—'} />
+            <KV label="Employees" value={m.employees != null ? m.employees.toLocaleString('en-IN') : '—'} />
+          </div>
+          <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <KV label="Debtor days" value={m.receivableDays != null ? `${Math.round(m.receivableDays)}d` : '—'} />
+            <KV label="Days payable" value={m.payableDays != null ? `${Math.round(m.payableDays)}d` : '—'} />
+            <KV label="Inventory days" value={m.inventoryDays != null ? `${Math.round(m.inventoryDays)}d` : '—'} />
+            <KV label="Cash cycle" value={m.cashConversionCycle != null ? `${Math.round(m.cashConversionCycle)}d` : '—'} />
+          </div>
+          <p className="mt-2 rounded-lg bg-fdc-offwhite px-3 py-2 text-[11.5px] leading-snug text-fdc-grey">
+            Market figures are live via Munshot; working-capital days are from Screener.in (audited annual filings). MCA-filing drill-downs (charges, directors, legal) are shown for <b>private</b> suppliers via Probe42.
+          </p>
         </Section>
-      )}
+      </Expander>
     </div>
   );
 }

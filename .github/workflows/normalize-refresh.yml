@@ -1,0 +1,56 @@
+name: Reprocess SAP exports (normalize)
+
+# Turns a new SAP drop into the clean app data automatically: whenever the raw
+# SAP exports in data/raw/ change on main, this re-runs the normalizer (SAP →
+# value / materials / price-gaps / payment-terms / plants + meta) and commits the
+# refreshed JSON. Cloudflare Pages then auto-redeploys. Also available on-demand
+# via "Run workflow". Zero secrets, zero external calls — it only reads the
+# committed SAP files and the committed vendor-financials.json.
+#
+# To refresh FDC's numbers: commit the new *.XLSX into data/raw/ (and push to
+# main) — this workflow does the rest. No one needs to run npm locally.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/raw/**'
+      - 'scripts/normalize.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: normalize-refresh
+  cancel-in-progress: false
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Reprocess SAP exports → clean app data
+        run: npm run normalize
+
+      - name: Commit reprocessed data if changed
+        run: |
+          # No [skip ci] in the message: Cloudflare Pages honors it and would skip the
+          # production deploy. The commit only touches public/data (not data/raw), so
+          # the path filter above does not re-trigger this workflow — no loop.
+          git config user.name  "fdc-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/data
+          if git diff --cached --quiet; then
+            echo "No data changes after normalize."
+          else
+            git commit -m "chore(data): reprocess SAP exports (normalize)"
+            git push
+          fi
