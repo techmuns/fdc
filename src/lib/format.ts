@@ -121,7 +121,7 @@ export function plantShort(name: string, code?: string): string {
 
 /** Clean a vendor's legal name for display: drop Pvt/Ltd/India, empty/lone-letter parens. */
 export function vendorShort(name: string): string {
-  return String(name ?? '')
+  const s = String(name ?? '')
     .replace(/\([A-Za-z]\)/g, ' ') // (P), (I)
     .replace(/\b(PRIVATE|PVT|LIMITED|LTD|INDIA)\b\.?/gi, ' ')
     .replace(/\(\s*\)/g, ' ') // empty parens
@@ -129,4 +129,13 @@ export function vendorShort(name: string): string {
     .replace(/\s+[A-Za-z]\s*$/, '') // trailing lone letter (e.g. "…P")
     .replace(/\s+/g, ' ')
     .trim();
+  return titleCaseShout(s);
+}
+
+/** Title-case words that are SHOUTING in all-caps, keeping short acronyms (GLS, PGP, TPAC, RTD). */
+export function titleCaseShout(s: string): string {
+  return String(s ?? '')
+    .split(' ')
+    .map((w) => (w.length > 3 && w === w.toUpperCase() && /[A-Z]/.test(w) && !/\d/.test(w) ? w[0] + w.slice(1).toLowerCase() : w))
+    .join(' ');
 }

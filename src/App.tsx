@@ -1,50 +1,29 @@
 import { useState } from 'react';
-import {
-  Home,
-  Wallet,
-  Hourglass,
-  Factory,
-  HeartPulse,
-  Repeat2,
-  FileText,
-  AlertTriangle,
-  Loader2,
-} from 'lucide-react';
+import { LayoutDashboard, Layers, Factory, AlertTriangle, Loader2 } from 'lucide-react';
 import { useAppData } from './lib/data';
 import { Header } from './components/Header';
 import { Tabs, type TabDef } from './components/ui/Tabs';
-import Overview from './tabs/Overview';
-import PriceBenchmark from './tabs/PriceBenchmark';
-import PaymentTermsTab from './tabs/PaymentTermsTab';
-import Vendors from './tabs/Vendors';
-import VendorHealth from './tabs/VendorHealth';
-import Alternatives from './tabs/Alternatives';
-import NegotiationBriefs from './tabs/NegotiationBriefs';
-import VendorProfile, { type ProfileSubject } from './components/VendorProfile';
+import MoneyOverview from './tabs/MoneyOverview';
+import MaterialTab from './tabs/MaterialTab';
+import VendorsTab from './tabs/VendorsTab';
 import { dateLabel } from './lib/format';
+import type { MaterialKey } from './types';
 
-type TabKey =
-  | 'overview'
-  | 'price'
-  | 'payment'
-  | 'vendors'
-  | 'health'
-  | 'alternatives'
-  | 'briefs';
+export type Nav =
+  | { tab: 'overview' }
+  | { tab: 'material'; material?: MaterialKey; skuDesc?: string; vendorKey?: string }
+  | { tab: 'vendors'; vendorKey?: string };
+
+type TabKey = Nav['tab'];
 
 const TABS: TabDef<TabKey>[] = [
-  { key: 'overview', label: 'Overview', icon: Home },
-  { key: 'price', label: 'Price & Benchmark', icon: Wallet },
-  { key: 'payment', label: 'Payment Terms', icon: Hourglass },
+  { key: 'overview', label: 'Overview', icon: LayoutDashboard },
+  { key: 'material', label: 'Material', icon: Layers },
   { key: 'vendors', label: 'Vendors', icon: Factory },
-  { key: 'health', label: 'Vendor Health', icon: HeartPulse },
-  { key: 'alternatives', label: 'Alternatives', icon: Repeat2 },
-  { key: 'briefs', label: 'Negotiation Briefs', icon: FileText },
 ];
 
 export default function App() {
-  const [tab, setTab] = useState<TabKey>('overview');
-  const [profile, setProfile] = useState<ProfileSubject | null>(null);
+  const [nav, setNav] = useState<Nav>({ tab: 'overview' });
   const state = useAppData();
 
   return (
@@ -52,9 +31,8 @@ export default function App() {
       <Header meta={state.status === 'ready' ? state.data.meta : undefined} />
 
       <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
-        {/* tab bar */}
         <div className="sticky top-[57px] z-30 -mx-4 border-b border-black/[0.06] bg-fdc-offwhite/95 px-4 pt-1.5 backdrop-blur sm:-mx-6 sm:px-6">
-          <Tabs tabs={TABS} active={tab} onChange={setTab} />
+          <Tabs tabs={TABS} active={nav.tab} onChange={(k) => setNav(k === 'overview' ? { tab: 'overview' } : k === 'material' ? { tab: 'material' } : { tab: 'vendors' })} />
         </div>
 
         <main className="py-5">
@@ -62,20 +40,15 @@ export default function App() {
           {state.status === 'error' && <ErrorState message={state.error} />}
           {state.status === 'ready' && (
             <>
-              {tab === 'overview' && <Overview data={state.data} onNavigate={(t) => setTab(t as TabKey)} />}
-              {tab === 'price' && <PriceBenchmark data={state.data} />}
-              {tab === 'payment' && <PaymentTermsTab data={state.data} />}
-              {tab === 'vendors' && <Vendors data={state.data} onOpenProfile={setProfile} />}
-              {tab === 'health' && <VendorHealth data={state.data} onOpenProfile={setProfile} />}
-              {tab === 'alternatives' && <Alternatives data={state.data} onOpenProfile={setProfile} />}
-              {tab === 'briefs' && <NegotiationBriefs data={state.data} />}
+              {nav.tab === 'overview' && <MoneyOverview data={state.data} onNavigate={setNav} />}
+              {nav.tab === 'material' && <MaterialTab data={state.data} nav={nav} onNavigate={setNav} />}
+              {nav.tab === 'vendors' && <VendorsTab data={state.data} nav={nav} onNavigate={setNav} />}
             </>
           )}
         </main>
       </div>
 
       {state.status === 'ready' && <Footer generatedAt={state.data.meta.generatedAt} sources={state.data.meta.sources.map((s) => s.file)} />}
-      {state.status === 'ready' && profile && <VendorProfile subject={profile} onClose={() => setProfile(null)} />}
     </div>
   );
 }
@@ -107,10 +80,10 @@ function Footer({ generatedAt, sources }: { generatedAt: string; sources: string
   return (
     <footer className="mx-auto max-w-[1240px] px-4 pb-8 pt-2 sm:px-6">
       <div className="rounded-xl border border-black/[0.06] bg-white/60 px-4 py-3 text-[11px] leading-relaxed text-fdc-grey">
-        <span className="font-semibold text-fdc-slate">100% real data.</span> Every figure is computed from FDC’s
+        <span className="font-semibold text-fdc-slate">100% real data.</span> Every figure is computed live from FDC’s
         own SAP exports — no estimates or placeholders. Sources:{' '}
         <span className="font-medium">{sources.join(', ')}</span>. Data refreshed {dateLabel(generatedAt.slice(0, 10))}.
-        Prices use goods-receipt lines only; totals net off returns; units are never mixed.
+        Prices use goods-receipt lines only; totals net off returns; units are never mixed; market lines are input references, never FDC’s price.
       </div>
     </footer>
   );

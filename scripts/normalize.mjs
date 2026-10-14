@@ -249,7 +249,10 @@ function parseTxn(txn) {
     qty: H['Qty in Un. of Entry'], unit: H['Unit of Entry'], amt: H['Amount in LC'],
     mvt: H['Movement Type'], mvtText: H['Movement Type Text'], dc: H['Debit/Credit Ind.'],
     plant: H['Plant'], name1: H['Name 1'], valType: H['Valuation Type'],
+    // Phase 5 — three fields never used before
+    dom: H['Date of Manufacture'], sled: H['SLED/BBD'],
   };
+  const asDate = (v) => (v instanceof Date && !isNaN(v) ? v : v ? (isNaN(new Date(v)) ? null : new Date(v)) : null);
   const records = [];
   let droppedTotalRows = 0;
   let totalRowValue = null;
@@ -282,6 +285,8 @@ function parseTxn(txn) {
       dc: String(r[col.dc] ?? '').trim(),
       plant: String(r[col.plant] ?? '').trim(),
       plantName: String(r[col.name1] ?? '').trim(),
+      dom: asDate(r[col.dom]),   // Date of Manufacture
+      sled: asDate(r[col.sled]), // Shelf-Life Expiry / Best-Before
     });
   }
   return {
@@ -315,6 +320,289 @@ const minPrice = (a) => (a.prices.length ? Math.min(...a.prices) : null);
 const maxPrice = (a) => (a.prices.length ? Math.max(...a.prices) : null);
 // return rate = reversed goods-receipt lines as a % of 101 receipt lines (rule 3)
 const returnRate = (a) => (a.receiptCount > 0 ? (a.reversalCount / a.receiptCount) * 100 : 0);
+
+// ---------------------------------------------------------------------------
+// Phase 5 — VALUE layer: turn the clean data into money + the three unused
+// fields (Date of Manufacture, SLED/BBD, Purchase Order). Emits value.json.
+// ---------------------------------------------------------------------------
+const ACTIVE_DAYS = 120; // a vendor not bought from in the last 120 days of the data is "stale"
+
+function readJsonOpt(p) {
+  try { return JSON.parse(readFileSync(p, 'utf8')); } catch { return null; }
+}
+
+// latest ₹/kg market input line per material (never FDC's price — a context benchmark)
+function marketRefs() {
+  const mk = readJsonOpt(path.join(OUT_DIR, 'market', 'market.json'));
+  const out = {};
+  if (!mk?.materials) return out;
+  for (const [mkey, m] of Object.entries(mk.materials)) {
+    // prefer the primary input line in ₹/kg (resin / film / customs)
+    const line = (m.lines || []).find((l) => /kg/i.test(l.unit || '')) || (m.lines || [])[0];
+    if (!line || !line.points?.length) continue;
+    const pts = [...line.points].filter((p) => p.value != null).sort((a, b) => String(a.date).localeCompare(String(b.date)));
+    const last = pts[pts.length - 1];
+    if (!last) continue;
+    out[mkey] = { price: round(last.value, 2), unit: line.unit, label: line.label, grade: m.grading?.note || null, source: line.label, date: last.date, strong: m.grading?.tier === 'strong' };
+  }
+  return out;
+}
+
+function buildValue(parsed, ctx) {
+  const { canonicalOf, vendorColor, vendorName, matShareOf } = ctx;
+  const all = parsed.flatMap((p) => p.records);
+  const maxDate = new Date(Math.max(...all.map((r) => +r.posting)));
+  const cutoff = new Date(+maxDate - ACTIVE_DAYS * 86400000);
+  const dayDiff = (a, b) => (a instanceof Date && b instanceof Date ? Math.round((a - b) / 86400000) : null);
+  const fin = readJsonOpt(path.join(OUT_DIR, 'vendor-financials.json'))?.vendors || {};
+  const refs = marketRefs();
+
+  // accumulators
+  const skuMap = {};                 // material|matCode|unit -> {desc, v:{vkey:{recSpend,recQty,last}}}
+  const vFresh = {}, vOrders = {}, vLast = {}; // keyed `${vkey}|${material}`
+  const ledger = [];
+
+  for (const r of all) {
+    const cv = canonicalOf(r.vendorCode);
+    const vkey = cv.key;
+    const rk = `${vkey}|${r.material}`;
+    const price = r.mvt === '101' && r.qty > 0 ? round(r.amt / r.qty, 3) : null;
+    ledger.push({
+      date: fmtDate(r.posting), material: r.material, matCode: r.matCode, desc: r.desc,
+      vendorKey: vkey, vendor: cv.name, plant: r.plant, plantName: r.plantName,
+      qty: round(r.qty, 3), unit: r.unit, price, amt: round(r.amt), po: r.po || null,
+      mvt: r.mvt, isReturn: r.mvt === '102',
+    });
+    if (!vLast[rk] || r.posting > vLast[rk]) vLast[rk] = r.posting;
+    if (r.mvt === '101' && r.qty > 0) {
+      const sk = `${r.material}|${r.matCode}|${r.unit}`;
+      (skuMap[sk] ||= { material: r.material, matCode: r.matCode, unit: r.unit, desc: r.desc, v: {} });
+      const vv = (skuMap[sk].v[vkey] ||= { vendorKey: vkey, vendor: cv.name, recSpend: 0, recQty: 0, last: null });
+      vv.recSpend += r.amt; vv.recQty += r.qty; if (!vv.last || r.posting > vv.last) vv.last = r.posting;
+      const age = dayDiff(r.posting, r.dom), shelf = dayDiff(r.sled, r.posting);
+      (vFresh[rk] ||= { ageSum: 0, ageN: 0, shelfSum: 0, shelfN: 0 });
+      if (age != null && age >= 0) { vFresh[rk].ageSum += age; vFresh[rk].ageN++; }
+      if (shelf != null && shelf >= 0) { vFresh[rk].shelfSum += shelf; vFresh[rk].shelfN++; }
+      (vOrders[rk] ||= { pos: new Set(), lines: 0, qty: 0 });
+      if (r.po) vOrders[rk].pos.add(r.po);
+      vOrders[rk].lines++; vOrders[rk].qty += r.qty;
+    }
+  }
+  ledger.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0)); // latest first
+
+  // ---- per-SKU savings (benchmark = cheapest; recommend cheapest ACTIVE) ----
+  const materials = {}; const savingsByMaterial = {}; let totalSavings = 0;
+  for (const mkey of Object.keys(MATERIAL_META)) {
+    materials[mkey] = {
+      key: mkey, displayName: MATERIAL_META[mkey].displayName, plainName: MATERIAL_META[mkey].plainName,
+      color: MATERIAL_META[mkey].color, singleCommodity: MATERIAL_META[mkey].singleCommodity,
+      marketRef: refs[mkey] || null, skus: [], freshness: [], savings: 0, spend: 0, unit: null,
+    };
+    savingsByMaterial[mkey] = 0;
+  }
+  const ageGrade = (age) => (age == null ? null : age <= 30 ? 'fresh' : age <= 90 ? 'ok' : 'old');
+
+  for (const sk of Object.values(skuMap)) {
+    const vendors = Object.values(sk.v).map((v) => ({
+      vendorKey: v.vendorKey, vendor: v.vendor, color: vendorColor[v.vendorKey] || '#707070',
+      price: round(v.recSpend / v.recQty, 3), qty: round(v.recQty, 3), spend: round(v.recSpend),
+      lastPurchase: fmtDate(v.last), active: v.last >= cutoff,
+    }));
+    const best = Math.min(...vendors.map((v) => v.price));
+    const bestRow = vendors.find((v) => v.price === best);
+    const activeV = vendors.filter((v) => v.active);
+    const bestActive = activeV.length ? Math.min(...activeV.map((v) => v.price)) : null;
+    const bestActiveRow = bestActive != null ? activeV.find((v) => v.price === bestActive) : null;
+    let savings = 0;
+    for (const v of vendors) { v.gapVsBest = round(v.price - best, 3); v.excess = round((v.price - best) * v.qty); if (v.price > best) savings += (v.price - best) * v.qty; }
+    vendors.sort((a, b) => a.price - b.price);
+    const entry = {
+      desc: sk.desc, matCode: sk.matCode, unit: sk.unit,
+      spend: round(vendors.reduce((s, v) => s + v.spend, 0)), qty: round(vendors.reduce((s, v) => s + v.qty, 0), 3),
+      vendorCount: vendors.length,
+      bestVendorKey: bestRow.vendorKey, bestVendor: bestRow.vendor, bestPrice: round(best, 3),
+      bestActiveVendorKey: bestActiveRow?.vendorKey || null, bestActiveVendor: bestActiveRow?.vendor || null, bestActivePrice: bestActive != null ? round(bestActive, 3) : null,
+      savings: round(savings), vendors,
+    };
+    materials[sk.material].skus.push(entry);
+    materials[sk.material].spend = round(materials[sk.material].spend + entry.spend);
+    if (vendors.length >= 2) { savingsByMaterial[sk.material] += savings; totalSavings += savings; materials[sk.material].savings = round(materials[sk.material].savings + savings); }
+    if (!materials[sk.material].unit) materials[sk.material].unit = sk.unit;
+  }
+  for (const mkey of Object.keys(materials)) {
+    materials[mkey].skus.sort((a, b) => b.savings - a.savings || b.spend - a.spend);
+    savingsByMaterial[mkey] = round(savingsByMaterial[mkey]);
+  }
+
+  // ---- freshness strip per material (per canonical vendor, this material) ----
+  for (const rk of Object.keys(vFresh)) {
+    const [vkey, mkey] = rk.split('|');
+    const f = vFresh[rk];
+    const avgAge = f.ageN ? Math.round(f.ageSum / f.ageN) : null;
+    const avgShelf = f.shelfN ? Math.round(f.shelfSum / f.shelfN) : null;
+    if (materials[mkey]) materials[mkey].freshness.push({ vendorKey: vkey, vendor: vendorName(vkey), color: vendorColor[vkey] || '#707070', avgAgeDays: avgAge, avgShelfDays: avgShelf, grade: ageGrade(avgAge), receipts: f.ageN });
+  }
+  for (const mkey of Object.keys(materials)) materials[mkey].freshness.sort((a, b) => (b.avgAgeDays ?? -1) - (a.avgAgeDays ?? -1));
+
+  // ---- per-vendor value facts (Vendors tab) ----
+  const vendors = {};
+  const vLastByMat = {};
+  for (const rk of Object.keys(vLast)) { const [vkey, mkey] = rk.split('|'); (vLastByMat[vkey] ||= []).push({ materialKey: mkey, lastPurchase: fmtDate(vLast[rk]), daysSince: dayDiff(maxDate, vLast[rk]), active: vLast[rk] >= cutoff }); }
+  for (const p of parsed) { for (const r of p.records) { const cv = canonicalOf(r.vendorCode); vendors[cv.key] ||= { vendorKey: cv.key, name: cv.name }; } }
+  for (const vkey of Object.keys(vendors)) {
+    const cv = ctx.canonicalByKey[vkey];
+    const freshnessByMaterial = [], orders = [];
+    for (const mkey of Object.keys(MATERIAL_META)) {
+      const rk = `${vkey}|${mkey}`;
+      if (vFresh[rk]) { const f = vFresh[rk]; freshnessByMaterial.push({ materialKey: mkey, avgAgeDays: f.ageN ? Math.round(f.ageSum / f.ageN) : null, avgShelfDays: f.shelfN ? Math.round(f.shelfSum / f.shelfN) : null, grade: ageGrade(f.ageN ? Math.round(f.ageSum / f.ageN) : null) }); }
+      if (vOrders[rk]) { const o = vOrders[rk]; orders.push({ materialKey: mkey, poCount: o.pos.size, lineCount: o.lines, avgOrderQty: o.pos.size ? Math.round(o.qty / o.pos.size) : null, deliveriesPerPo: o.pos.size ? round(o.lines / o.pos.size, 1) : null }); }
+    }
+    vendors[vkey] = {
+      vendorKey: vkey, name: cv?.name || vendorName(vkey), color: vendorColor[vkey] || '#707070',
+      spend: round(matShareOf.vendorSpend[vkey] || 0),
+      termText: cv?.terms?.text || null, termDays: cv?.terms?.days ?? null, termCategory: cv?.terms?.category || 'unknown',
+      materialKeys: [...new Set((vLastByMat[vkey] || []).map((x) => x.materialKey))],
+      freshnessByMaterial, orders, recency: vLastByMat[vkey] || [],
+    };
+  }
+
+  // ---- top-3 action cards (biggest defensible levers) ----
+  const actions = buildActions({ materials, savingsByMaterial, vendors, canonicalByKey: ctx.canonicalByKey, fin, matShareOf });
+
+  return {
+    generatedAt: new Date().toISOString(), currency: 'INR',
+    dateRange: { from: fmtDate(new Date(Math.min(...all.map((r) => +r.posting)))), to: fmtDate(maxDate) },
+    activeWindowDays: ACTIVE_DAYS,
+    headline: { totalSavings: round(totalSavings), note: `What FDC overpaid this year vs the cheapest price it already paid, across every material bought from 2+ vendors.` },
+    savingsByMaterial: Object.keys(MATERIAL_META).map((k) => ({ materialKey: k, displayName: MATERIAL_META[k].displayName, color: MATERIAL_META[k].color, savings: savingsByMaterial[k] })),
+    actions,
+    materials,
+    vendors,
+    ledger,
+    counts: { ledgerRows: ledger.length, skus: Object.values(materials).reduce((s, m) => s + m.skus.length, 0), vendors: Object.keys(vendors).length },
+  };
+}
+
+// Build the three highest-value, defensible action cards from real computed numbers.
+function buildActions({ materials, savingsByMaterial, vendors, canonicalByKey, fin, matShareOf }) {
+  const croreOrL = (n) => (n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : `₹${(n / 1e5).toFixed(1)} L`);
+  const out = [];
+
+  // Candidate A — biggest over-paying ACTIVE vendor PER MATERIAL, moved to the cheapest ACTIVE vendor
+  const priceLevers = [];
+  for (const [mkey, M] of Object.entries(materials)) {
+    let lever = null;
+    for (const sku of M.skus) {
+      if (sku.vendorCount < 2 || !sku.bestActivePrice) continue;
+      for (const v of sku.vendors) {
+        if (!v.active || v.vendorKey === sku.bestActiveVendorKey) continue;
+        const saving = round((v.price - sku.bestActivePrice) * v.qty);
+        if (saving <= 0) continue;
+        if (!lever || saving > lever.saving) lever = { mkey, M, sku, from: v, toVendor: sku.bestActiveVendor, toKey: sku.bestActiveVendorKey, toPrice: sku.bestActivePrice, saving };
+      }
+    }
+    if (lever) priceLevers.push(lever);
+  }
+  priceLevers.sort((a, b) => b.saving - a.saving);
+
+  // Candidate B — worst payment terms (advance / immediate) on real spend → move to a cheaper credit-giving vendor
+  let termsLever = null;
+  for (const v of Object.values(vendors)) {
+    if (v.termCategory !== 'advance' && v.termCategory !== 'immediate') continue;
+    if (!v.spend || v.spend < 5e5) continue;
+    // a 30-day credit vendor on the same material, cheaper if possible
+    const mkey = v.materialKeys[0];
+    const M = materials[mkey];
+    const sku = M?.skus.find((s) => s.vendors.some((x) => x.vendorKey === v.vendorKey));
+    const mine = sku?.vendors.find((x) => x.vendorKey === v.vendorKey);
+    const alt = sku?.vendors.find((x) => x.active && x.vendorKey !== v.vendorKey && (canonicalByKey[x.vendorKey]?.terms?.category === 'net'));
+    const cashFreed = round(v.spend * 30 / 365);
+    const priceSave = mine && alt && mine.price > alt.price ? round((mine.price - alt.price) * mine.qty) : 0;
+    const score = cashFreed + priceSave;
+    if (!termsLever || score > termsLever.score) termsLever = { v, mkey, M, sku, mine, alt, cashFreed, priceSave, score };
+  }
+
+  // Candidate C — a vendor that CHARGES MORE and ships OLDER stock than a fresher rival (same material)
+  let freshLever = null;
+  for (const [mkey, M] of Object.entries(materials)) {
+    const fr = M.freshness.filter((f) => f.avgAgeDays != null);
+    if (fr.length < 2) continue;
+    const oldest = fr[0]; // sorted desc by age
+    const freshest = fr[fr.length - 1];
+    if (oldest.vendorKey === freshest.vendorKey || (oldest.avgAgeDays - freshest.avgAgeDays) < 20) continue;
+    // does the older one also cost more?
+    const sku = M.skus.find((s) => s.vendors.some((x) => x.vendorKey === oldest.vendorKey) && s.vendors.some((x) => x.vendorKey === freshest.vendorKey));
+    const oldV = sku?.vendors.find((x) => x.vendorKey === oldest.vendorKey);
+    const frV = sku?.vendors.find((x) => x.vendorKey === freshest.vendorKey);
+    if (!oldV || !frV || oldV.price <= frV.price) continue;
+    const saving = round((oldV.price - frV.price) * oldV.qty);
+    if (!freshLever || saving > freshLever.saving) freshLever = { mkey, M, oldest, freshest, oldV, frV, saving };
+  }
+
+  // assemble candidates, biggest first, de-duped by vendor+material
+  const cand = [];
+  for (const L of priceLevers) {
+    const fragile = isFragile(L.toKey, fin, matShareOf, L.mkey);
+    cand.push({
+      key: `price-${L.from.vendorKey}-${L.mkey}`, kind: 'price', saving: L.saving, material: L.mkey, vendorKey: L.from.vendorKey,
+      action: `Move ${L.M.displayName} volume off ${short(L.from.vendor)} to ${short(L.toVendor)}.`,
+      why: `You pay ${short(L.from.vendor)} ₹${pf(L.from.price)}/${unitLbl(L.sku.unit)} for ${L.sku.desc} — ${short(L.toVendor)} already gives you the same at ₹${pf(L.toPrice)}/${unitLbl(L.sku.unit)}.`,
+      savingLabel: croreOrL(L.saving),
+      proof: { tab: 'material', material: L.mkey, skuDesc: L.sku.desc, vendorKey: L.from.vendorKey },
+      risk: fragile ? `${short(L.toVendor)} already carries a big share here — line up a second source so this saving doesn't create single-source risk.` : null,
+    });
+  }
+  if (termsLever && termsLever.score > 0) {
+    const altName = termsLever.alt ? short(termsLever.alt.vendor) : null;
+    cand.push({
+      key: `terms-${termsLever.v.vendorKey}`, kind: 'terms', saving: termsLever.score, material: termsLever.mkey, vendorKey: termsLever.v.vendorKey,
+      action: `Stop pre-paying ${short(termsLever.v.name)} — ${termsLever.v.termText.toLowerCase()}.`,
+      why: altName
+        ? `You pay ${short(termsLever.v.name)} before goods even arrive${termsLever.mine && termsLever.alt && termsLever.mine.price > termsLever.alt.price ? ` at ₹${pf(termsLever.mine.price)}/${unitLbl(termsLever.sku.unit)}` : ''}. ${altName} supplies the same material on 30-day credit${termsLever.priceSave > 0 ? ` and cheaper (₹${pf(termsLever.alt.price)}/${unitLbl(termsLever.sku.unit)})` : ''}.`
+        : `You pay ${short(termsLever.v.name)} 100% before the goods arrive — the weakest possible terms. Move to 30-day credit to free up the cash.`,
+      savingLabel: termsLever.priceSave > 0 ? `${croreOrL(termsLever.priceSave)} + ${croreOrL(termsLever.cashFreed)} cash freed` : `${croreOrL(termsLever.cashFreed)} cash freed`,
+      proof: { tab: 'vendors', vendorKey: termsLever.v.vendorKey },
+      risk: null,
+    });
+  }
+  if (freshLever) {
+    cand.push({
+      key: `fresh-${freshLever.oldest.vendorKey}-${freshLever.mkey}`, kind: 'freshness', saving: freshLever.saving, material: freshLever.mkey, vendorKey: freshLever.oldest.vendorKey,
+      action: `Challenge ${short(freshLever.oldV.vendor)} on ${freshLever.M.displayName} — they cost more AND ship older stock.`,
+      why: `${short(freshLever.oldV.vendor)} charges ₹${pf(freshLever.oldV.price)}/${unitLbl(freshLever.M.unit)} and ships stock ~${freshLever.oldest.avgAgeDays}d old, vs ${short(freshLever.frV.vendor)} at ₹${pf(freshLever.frV.price)} and ~${freshLever.freshest.avgAgeDays}d old.`,
+      savingLabel: croreOrL(freshLever.saving),
+      proof: { tab: 'material', material: freshLever.mkey, vendorKey: freshLever.oldest.vendorKey },
+      risk: null,
+    });
+  }
+
+  // pick the 3 biggest, keeping variety: no repeated vendor, prefer different materials
+  cand.sort((a, b) => b.saving - a.saving);
+  const usedV = new Set(), usedM = new Set();
+  for (const c of cand) {
+    if (out.length >= 3) break;
+    if (usedV.has(c.vendorKey)) continue;
+    out.push(c); usedV.add(c.vendorKey); usedM.add(c.material);
+  }
+  // if fewer than 3 (e.g. vendor-dedup trimmed), backfill with next biggest regardless of material
+  for (const c of cand) { if (out.length >= 3) break; if (!out.includes(c) && !usedV.has(c.vendorKey)) { out.push(c); usedV.add(c.vendorKey); } }
+  return out.slice(0, 3).map((a, i) => ({ ...a, rank: i + 1 }));
+}
+
+const short = (n) => {
+  let s = String(n).replace(/\b(PRIVATE|PVT|LIMITED|LTD|INDIA|\(INDIA\))\b\.?/gi, '').replace(/\s{2,}/g, ' ').replace(/[.,]\s*$/, '').trim();
+  // title-case words that are shouting in ALL CAPS (keep short acronyms like PGP, GLS, TPAC)
+  s = s.split(' ').map((w) => (w.length > 3 && w === w.toUpperCase() && /[A-Z]/.test(w) ? w[0] + w.slice(1).toLowerCase() : w)).join(' ');
+  return s;
+};
+const unitLbl = (u) => (/nos/i.test(u) ? 'pc' : /kg/i.test(u) ? 'kg' : String(u || '').toLowerCase());
+const pf = (n) => (n == null ? '—' : n >= 100 ? String(Math.round(n)) : n >= 10 ? n.toFixed(1) : n.toFixed(2));
+function isFragile(vendorKey, fin, matShareOf, mkey) {
+  const f = fin[vendorKey];
+  const thinMargin = f?.metrics?.netMargin != null && f.metrics.netMargin < 3;
+  const bigShare = (matShareOf.byMaterial[mkey]?.[vendorKey] || 0) >= 0.45;
+  return thinMargin || bigShare;
+}
 
 // ---------------------------------------------------------------------------
 // MAIN
@@ -848,6 +1136,24 @@ function main() {
     ],
   };
 
+  // =========================================================================
+  // value.json  (Phase 5 — the money + the three unused fields)
+  // =========================================================================
+  const matShareOf = { vendorSpend: {}, byMaterial: {} };
+  for (const v of vendorList) matShareOf.vendorSpend[v.key] = v.totalNetSpend;
+  for (const m of materialsOut) {
+    matShareOf.byMaterial[m.key] = {};
+    const tot = m.totalNetSpend || m.vendors.reduce((s, v) => s + v.spend, 0) || 1;
+    for (const v of m.vendors) matShareOf.byMaterial[m.key][v.vendorKey] = v.spend / tot;
+  }
+  const value = buildValue(parsed, {
+    canonicalOf,
+    canonicalByKey: vIdx.canonical,
+    vendorColor,
+    vendorName,
+    matShareOf,
+  });
+
   // ---- write everything --------------------------------------------------
   const write = (name, obj) => {
     writeFileSync(path.join(OUT_DIR, name), JSON.stringify(obj, null, 2));
@@ -860,6 +1166,7 @@ function main() {
     write('price-gaps.json', priceGaps),
     write('plants.json', plantsOut),
     write('payment-terms.json', paymentTerms),
+    write('value.json', value),
   ];
 
   // ---- console summary ---------------------------------------------------
