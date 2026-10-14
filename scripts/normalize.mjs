@@ -589,7 +589,8 @@ function buildActions({ materials, savingsByMaterial, vendors, canonicalByKey, f
         proof: { tab: 'material', material: L.mkey, skuDesc: L.sku.desc, vendorKey: L.from.vendorKey },
         risk: `${short(L.toVendor)} is already your biggest ${L.M.displayName} source — keep its price as leverage, not a bigger basket.`,
       });
-    } else {
+    } else if (isBacked(L.toKey, fin)) {
+      // Destination is the cheapest ACTIVE vendor AND we can stand behind its books.
       cand.push({
         key: `price-${L.from.vendorKey}-${L.mkey}`, kind: 'price', saving: L.saving, material: L.mkey, vendorKey: L.from.vendorKey,
         action: `Move ${L.M.displayName} volume off ${short(L.from.vendor)} to ${short(L.toVendor)}.`,
@@ -598,6 +599,34 @@ function buildActions({ materials, savingsByMaterial, vendors, canonicalByKey, f
         proof: { tab: 'material', material: L.mkey, skuDesc: L.sku.desc, vendorKey: L.from.vendorKey },
         risk: null,
       });
+    } else {
+      // The cheapest quote is from a vendor whose financials we CANNOT verify yet.
+      // Never vouch for an unbacked supplier. Option (b): if a cheaper, financially-backed
+      // supplier also beats the incumbent, recommend THAT one. Option (a): otherwise keep
+      // the ₹ gap as leverage on the incumbent and flag the cheap vendor for verification.
+      const backedAlt = L.sku.vendors
+        .filter((x) => x.active && x.vendorKey !== L.from.vendorKey && x.price < L.from.price && isBacked(x.vendorKey, fin))
+        .sort((a, b) => a.price - b.price)[0] || null;
+      if (backedAlt) {
+        const saving = round((L.from.price - backedAlt.price) * L.from.qty);
+        cand.push({
+          key: `price-${L.from.vendorKey}-${L.mkey}`, kind: 'price', saving, material: L.mkey, vendorKey: L.from.vendorKey,
+          action: `Move ${L.M.displayName} volume off ${short(L.from.vendor)} to ${short(backedAlt.vendor)} (financially vetted).`,
+          why: `You pay ${short(L.from.vendor)} ₹${pf(L.from.price)}/${unitLbl(L.sku.unit)} for ${L.sku.desc}. ${short(backedAlt.vendor)} already gives you the same at ₹${pf(backedAlt.price)}/${unitLbl(L.sku.unit)} — and unlike the very cheapest quote (${short(L.toVendor)} at ₹${pf(L.toPrice)}, financials not yet verified) we can stand behind ${short(backedAlt.vendor)}'s books.`,
+          savingLabel: croreOrL(saving),
+          proof: { tab: 'material', material: L.mkey, skuDesc: L.sku.desc, vendorKey: L.from.vendorKey },
+          risk: null,
+        });
+      } else {
+        cand.push({
+          key: `price-${L.from.vendorKey}-${L.mkey}`, kind: 'price', isLeverage: true, saving: L.saving, material: L.mkey, vendorKey: L.from.vendorKey,
+          action: `Use ${short(L.toVendor)}'s lower price to push ${short(L.from.vendor)} down — verify ${short(L.toVendor)} before moving volume.`,
+          why: `You pay ${short(L.from.vendor)} ₹${pf(L.from.price)}/${unitLbl(L.sku.unit)} for ${L.sku.desc}; ${short(L.toVendor)} quotes the same at ₹${pf(L.toPrice)}/${unitLbl(L.sku.unit)} — a real price gap to lean on in your next review with ${short(L.from.vendor)}. But ${short(L.toVendor)}'s financials aren't verified yet, so qualify it (health, supply continuity) before shifting volume — we don't vouch for a supplier we can't back.`,
+          savingLabel: croreOrL(L.saving),
+          proof: { tab: 'material', material: L.mkey, skuDesc: L.sku.desc, vendorKey: L.from.vendorKey },
+          risk: `${short(L.toVendor)}'s financials are pending verification — use its price as leverage now; move volume only once it's vetted.`,
+        });
+      }
     }
   }
   if (termsLever && termsLever.cashFreed > 0) {
@@ -661,6 +690,13 @@ function isFragile(vendorKey, fin, matShareOf, mkey) {
   const thinMargin = f?.metrics?.netMargin != null && f.metrics.netMargin < 3;
   const bigShare = (matShareOf.byMaterial[mkey]?.[vendorKey] || 0) >= 0.45;
   return thinMargin || bigShare;
+}
+// A destination we can stand behind: real financials on file (listed metrics or a
+// Probe42/MCA profile), status ok. An unresolved/pending vendor is NOT backed, so we
+// never tell the client to move volume to it — we only use its price as leverage.
+function isBacked(vendorKey, fin) {
+  const f = fin[vendorKey];
+  return !!(f && f.status === 'ok' && (f.metrics || f.probe));
 }
 
 // ---------------------------------------------------------------------------
@@ -1191,7 +1227,7 @@ function main() {
       'Laminates mixes KG (film) and NOS (ready-to-drink pouches) — kept strictly separate.',
       'Vendor codes merged to one canonical vendor by normalized name (e.g. Gujarat Ambuja 1002002+1003710, PIK Plastics 1003376+1003248).',
       'Dextrose description variants unified to one product (ANHYDROUS DEXTROSE IP (EXMPT) = DEXTROSE ANHYDROUS IP (FO)).',
-      'Listed-company flags are PUBLIC classifications (not from FDC files), kept only as a hook for the upcoming vendor-financials phase; no financials are shown.',
+      'Vendor financials are real and source-stamped: listed suppliers via the Munshot market-data API, private suppliers via Probe42 (MCA filings). Where a supplier does not file free financials, the card says "pending" rather than showing another entity\'s numbers.',
     ],
   };
 

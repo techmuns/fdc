@@ -290,7 +290,7 @@ export interface FinMetrics {
   debtToEquity: number | null; revenueGrowth: number | null; earningsGrowth: number | null;
   pe: number | null; evEbitda: number | null; dividendYield: number | null; currentPrice: number | null;
   yearlyChange: number | null; employees: number | null; roce: number | null; roe: number | null;
-  receivableDays?: number | null; payableDays?: number | null; cashConversionCycle?: number | null;
+  receivableDays?: number | null; payableDays?: number | null; inventoryDays?: number | null; cashConversionCycle?: number | null;
   creditRating?: string | null; currentRatio?: number | null;
   pat?: number | null; netWorth?: number | null; interestCoverage?: number | null;
   flags?: { legalCases: number | null; gstDelays: number | null; epfDelays: number | null; charges: number | null };

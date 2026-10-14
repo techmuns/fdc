@@ -15,8 +15,15 @@ export const PRIVATE_CINS = {
   'pgp-glass': { cin: 'U74999MH2020PTC349649', name: 'PGP Glass Pvt Ltd' },
   'tetrapak-india': { cin: 'U21014PN1987PTC012926', name: 'Tetra Pak India Pvt Ltd', verify: true },
   'cincorp-international': { cin: 'U23209DL2008PLC184638', name: 'Cincorp International', verify: true, caveat: 'may be a trader, not a manufacturer' },
-  // Bprex is now Berry Global India — reuse Berry's CIN (one fetch, cache by CIN).
-  'bprex-pharma-packaging-india-p': { cin: 'U25200KA2021FTC152314', name: 'Berry Global India (formerly Bprex)', alias: 'berry-global-india' },
+  // Bprex Pharma Packaging India — do NOT reuse Berry Global India's CIN.
+  // Berry Global India Pvt Ltd (U25200KA2021FTC152314) was incorporated in 2021; the
+  // legacy Bangalore pharma-packaging entity traces to "Rexam Pharma Packaging India"
+  // (now LAPSED) → Bprex, which is a DIFFERENT legal entity. FDC's SAP master also
+  // carries Bprex and Berry as two separate active vendors. Showing Berry's filing under
+  // the Bprex name would attribute one company's financials to another — never do that.
+  // Until Bprex's own MCA filing is resolved & cached, leave cin:null → the pipeline
+  // renders an honest "financials pending" card instead of Berry's numbers.
+  'bprex-pharma-packaging-india-p': { cin: null, name: 'Bprex Pharma Packaging India (P) Ltd' },
   // Phase 4 — incumbent now resolved (report cached; file named by the pre-change CIN,
   // U99999…; the report's own company.cin is the current U21001… after an MCA change).
   'kilitch-healthcare-india': { cin: 'U99999MH1998PLC134973', name: 'Kilitch Healthcare India Ltd (loan-license)' },

@@ -145,6 +145,7 @@ export function MarketBenchmark({
             </a>
           ))}
         </div>
+        <FeedStatus manifest={marketData.manifest} />
       </Card>
     </div>
   );
@@ -175,6 +176,33 @@ function InputRow({ s }: { s: MarketSeries }) {
       </div>
       <Sparkline points={pts} color="#F36D06" height={40} format={fmt} />
       <p className="mt-1 text-[10.5px] italic leading-snug text-fdc-grey">{s.grade}</p>
+    </div>
+  );
+}
+
+const FEED_LABEL: Record<string, string> = {
+  comtrade: 'UN Comtrade (customs unit values)', inputs: 'Input commodities (FRED/World Bank)',
+  wpi: 'Govt WPI index (MOSPI)', marketplace: 'Marketplace seller asks (IndiaMART/TradeIndia)', plastemart: 'Plastemart resin prices',
+};
+function FeedStatus({ manifest }: { manifest: MarketData['manifest'] }) {
+  if (!manifest?.length) return null;
+  const on = manifest.filter((m) => m.status === 'ok');
+  const off = manifest.filter((m) => m.status !== 'ok');
+  return (
+    <div className="mt-3 border-t border-black/[0.06] pt-2.5 text-[11px] leading-snug">
+      <div className="mb-1 font-semibold uppercase tracking-wide text-fdc-grey">Market feeds</div>
+      <div className="flex flex-wrap gap-x-4 gap-y-1">
+        {on.map((m) => (
+          <span key={m.feed} className="inline-flex items-center gap-1 text-fdc-slate">
+            <span className="h-1.5 w-1.5 rounded-full bg-fdc-green" /> {FEED_LABEL[m.feed] ?? m.feed}<span className="text-fdc-grey"> · on</span>
+          </span>
+        ))}
+        {off.map((m) => (
+          <span key={m.feed} className="inline-flex items-center gap-1 text-fdc-grey" title={m.reason ?? undefined}>
+            <span className="h-1.5 w-1.5 rounded-full bg-fdc-light" /> {FEED_LABEL[m.feed] ?? m.feed}<span> · off{m.reason ? ` (${/token|key/i.test(m.reason) ? 'add key to enable' : 'no clean data'})` : ''}</span>
+          </span>
+        ))}
+      </div>
     </div>
   );
 }

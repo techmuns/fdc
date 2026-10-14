@@ -6,8 +6,8 @@
   "modelsConfigured": [
     "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
   ],
-  "note": null,
-  "count": 18,
+  "note": "Bprex Pharma Packaging India brief removed: it was generated from Berry Global India financials (shared-CIN error) and would attribute one entity’s numbers to another; brief pending Bprex’s own filing.",
+  "count": 17,
   "briefs": [
     {
       "vendorKey": "geep-industries-india",
@@ -577,88 +577,6 @@
         "Small entity under ₹10 Cr with a C (51/100) health score — verify production capacity and quality consistency before shifting significant volume, and qualify Manjushree or Mold-Tek in parallel to derisk."
       ],
       "suggestedOpeningLine": "We value the partnership, but we're paying ₹28.69 lakh more per year than our best suppliers for the same items — let's work together to close that gap and secure the volume for the long term.",
-      "approvalNote": "Recommendation only — any change of vendor, specification or source must be jointly approved by Procurement, QA and R&D before action. This brief informs the decision; it does not make it.",
-      "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-      "generatedAt": "2026-10-14",
-      "sources": [
-        {
-          "label": "Probe42 (MCA filings)",
-          "url": "https://probe42.in"
-        },
-        {
-          "label": "FDC SAP purchase exports (Phase-1 price & terms)",
-          "url": null
-        }
-      ]
-    },
-    {
-      "vendorKey": "bprex-pharma-packaging-india-p",
-      "vendor": "Bprex Pharma Packaging India (P) Limited",
-      "type": "private",
-      "material": "Rigid plastic packaging",
-      "materials": [
-        "Rigid plastic packaging"
-      ],
-      "fdcSpend": 6320592,
-      "priorityScore": 97,
-      "headline": "Supplier is a pure trader in distress (D-rated, -199.2% margin, 220.44x leverage, Altman Z -0.18) — lead with supply qualification and a second source, not a hard price squeeze.",
-      "priceAsk": {
-        "summary": "Benchmark to a direct manufacturer's price, because they are 100% trader and carry a reseller margin",
-        "target": "Target price tied to HDPE resin import unit value of 87.61 ₹/kg plus a transparent conversion margin",
-        "basis": "Their revenue mix is 100.0% traded / 0.0% manufactured, so our price includes a middleman markup; we should pay maker economics"
-      },
-      "paymentTermAsk": {
-        "summary": "Offer 15-day payment (freeing ₹2.60 L working capital for us) in exchange for a 2.77% price cut",
-        "cashImpact": "₹2.60 L working capital freed if we move to 15-day terms; their borrowing cost is 2.77%, so early payment is worth that rate to them"
-      },
-      "financialLeverage": "Bprex is deeply distressed: net margin -199.2% vs peer median 2.3%, debt-to-equity 220.44x, Altman Z score -0.18 (distress zone), Probe42 score 1/10, and FY2023-24 PAT ₹-22.50 Cr. They stretch payables to 226d vs peer 41d and run a 335d cash cycle vs peer 70d, so they need cash badly. We represent 5.60% of their ₹11.29 Cr revenue (our ₹63.21 L spend), which is meaningful volume — but pushing too hard risks tipping a supplier already in the red. Lead with supply-security questions and qualify a robust alternate (Mold-Tek, Manjushree) before negotiating price; then offer faster payment for a discount rather than a unilateral cut.",
-      "evidence": [
-        {
-          "point": "They are a pure trader, not a manufacturer, so our price includes reseller margin",
-          "figure": "Manufactured 0.0% / Traded 100.0%"
-        },
-        {
-          "point": "Supplier is loss-making and below peer profitability by a wide margin",
-          "figure": "Net margin -199.2% vs peer median 2.3%"
-        },
-        {
-          "point": "Extreme leverage flags solvency risk",
-          "figure": "Debt-to-equity 220.44x"
-        },
-        {
-          "point": "Altman Z-score places them in distress zone",
-          "figure": "Altman Z -0.18, zone: distress"
-        },
-        {
-          "point": "We are a meaningful customer, giving us negotiating weight",
-          "figure": "Our spend ₹63.21 L is 5.60% of their ₹11.29 Cr revenue"
-        },
-        {
-          "point": "They stretch payables far beyond peers, so asking for extended terms is fair",
-          "figure": "Their payable days 226d vs peer median 41d"
-        }
-      ],
-      "alternates": [
-        {
-          "name": "Mold-Tek Packaging Ltd",
-          "why": "Listed, financially strong (A-rated, 79/100 health), ₹946.50 Cr revenue, rigid-plastic leader for pharma bottles/closures — robust second source"
-        },
-        {
-          "name": "Manjushree Technopack Ltd",
-          "why": "India's largest rigid-plastic converter at ₹2569.83 Cr revenue, B-rated (65/100), pharma bottles & caps specialist — top alternate candidate"
-        },
-        {
-          "name": "Hitech Corporation Ltd",
-          "why": "Listed, ₹701.17 Cr revenue, C-rated (57/100), moulded & blow-moulded packaging capability for bottles/caps"
-        }
-      ],
-      "risks": [
-        "Supplier is in distress zone (Altman Z -0.18, D health score 0/100, Probe score 1/10) — a hard price cut could trigger supply failure; keep a second source warm",
-        "They are 100% trader, so switching to a direct manufacturer may provoke them to walk away; have Mold-Tek or Manjushree qualified before the meeting",
-        "Our ₹63.21 L is 5.60% of their revenue, so losing us hurts them — but their -199.2% margin means they may already be below cost; verify supply continuity first",
-        "Cash cycle of 335d vs peer 70d and negative free cash flow ₹-164.97 Cr signal liquidity stress — offer faster payment as a carrot, not just a stick on price"
-      ],
-      "suggestedOpeningLine": "We value the partnership, but as you know we're seeing HDPE resin at 87.61 ₹/kg landed and you're a trading house — help us understand the conversion and margin stack so we can align on a maker-equivalent price, and in return we can discuss faster payment to ease your 335-day cash cycle.",
       "approvalNote": "Recommendation only — any change of vendor, specification or source must be jointly approved by Procurement, QA and R&D before action. This brief informs the decision; it does not make it.",
       "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
       "generatedAt": "2026-10-14",

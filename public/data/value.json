@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T10:29:20.819Z",
+  "generatedAt": "2026-10-14T12:45:30.932Z",
   "currency": "INR",
   "dateRange": {
     "from": "2025-04-01",
@@ -90,11 +90,12 @@
     {
       "key": "price-cincorp-international-packaging",
       "kind": "price",
+      "isLeverage": true,
       "saving": 1404987,
       "material": "packaging",
       "vendorKey": "cincorp-international",
-      "action": "Move Rigid plastic packaging volume off Cincorp International to Mars Plastics.",
-      "why": "You pay Cincorp International ₹1.08/pc for PP CAP PLAS 28MM INDUCTUCTION WAD — Mars Plastics already gives you the same at ₹0.81/pc.",
+      "action": "Use Mars Plastics's lower price to push Cincorp International down — verify Mars Plastics before moving volume.",
+      "why": "You pay Cincorp International ₹1.08/pc for PP CAP PLAS 28MM INDUCTUCTION WAD; Mars Plastics quotes the same at ₹0.81/pc — a real price gap to lean on in your next review with Cincorp International. But Mars Plastics's financials aren't verified yet, so qualify it (health, supply continuity) before shifting volume — we don't vouch for a supplier we can't back.",
       "savingLabel": "₹14.0 L",
       "proof": {
         "tab": "material",
@@ -102,7 +103,7 @@
         "skuDesc": "PP CAP PLAS 28MM INDUCTUCTION WAD",
         "vendorKey": "cincorp-international"
       },
-      "risk": null,
+      "risk": "Mars Plastics's financials are pending verification — use its price as leverage now; move volume only once it's vetted.",
       "rank": 3
     }
   ],

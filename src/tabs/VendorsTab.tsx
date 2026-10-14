@@ -1,18 +1,66 @@
 import { useMemo, useState, useEffect } from 'react';
 import {
   Factory, Search, Hourglass, TrendingDown, TrendingUp, Clock, PackageSearch, Repeat2,
-  Maximize2, BadgeCheck, Lock, CalendarClock,
+  Maximize2, BadgeCheck, Lock, CalendarClock, HandCoins, Info, ArrowUpRight, CircleHelp,
 } from 'lucide-react';
-import type { AppData, ValueVendor, VendorFin } from '../types';
+import type { AppData, ValueVendor, VendorFin, MaterialKey, FinMetrics } from '../types';
 import type { Nav } from '../App';
 import { Card, Badge, Pill } from '../components/ui/Card';
 import { Sparkline } from '../components/charts/Sparkline';
 import VendorProfile, { type ProfileSubject } from '../components/VendorProfile';
+import { NegotiationBrief } from '../components/NegotiationBrief';
 import { FDC, MATERIAL_COLOR } from '../lib/brand';
 import { vendorShort, crore, pct } from '../lib/format';
 
 const MAT_NAME: Record<string, string> = { dextrose: 'Dextrose', packaging: 'Rigid packaging', laminates: 'Laminates' };
 const priceFmt = (n: number | null | undefined, unit = 'kg') => (n == null ? '—' : `₹${n >= 100 ? Math.round(n) : n >= 10 ? n.toFixed(1) : n.toFixed(2)}/${unit === 'NOS' ? 'pc' : unit.toLowerCase()}`);
+
+/* ---- "who could replace them": our cheaper suppliers + external alternatives ---- */
+export interface AltItem {
+  key: string; name: string; why: string;
+  cheaper?: boolean; size?: 'bigger' | 'smaller' | null; price?: string; term?: string;
+  navKey?: string;                 // click → open this existing FDC supplier
+  alt?: { material: MaterialKey; index: number };  // click → open this external alternative's profile
+  backed: boolean;                 // do we have real financials to stand behind?
+}
+function buildAlternatives(vendorKey: string, data: AppData): AltItem[] {
+  const x = data.value?.vendors[vendorKey];
+  if (!x) return [];
+  const fin = data.financials?.vendors ?? {};
+  const myRev = fin[vendorKey]?.metrics?.revenue ?? null;
+  const items: AltItem[] = [];
+  // our OWN cheaper suppliers for the same materials — SAME UNIT only (never KG vs pieces)
+  for (const mkey of x.materialKeys) {
+    const mat = data.materials.find((mm) => mm.key === mkey);
+    const mine = mat?.vendors.find((mv) => mv.vendorKey === vendorKey);
+    if (!mat || !mine || mine.avgPrice == null) continue;
+    for (const o of mat.vendors) {
+      if (o.vendorKey === vendorKey || o.avgPrice == null || o.unit !== mine.unit || o.avgPrice >= mine.avgPrice) continue;
+      const term = data.value?.vendors[o.vendorKey]?.termText;
+      items.push({
+        key: `own-${o.vendorKey}-${mkey}`, name: vendorShort(o.vendor), navKey: o.vendorKey,
+        cheaper: true, price: priceFmt(o.avgPrice, o.unit), term: term ? shortTerm(term) : undefined,
+        backed: !!(fin[o.vendorKey]?.status === 'ok' && (fin[o.vendorKey]?.metrics || fin[o.vendorKey]?.probe)),
+        why: `Supplies ${MAT_NAME[mkey]} at ${priceFmt(o.avgPrice, o.unit)} — cheaper than ${vendorShort(x.name)}'s ${priceFmt(mine.avgPrice, mine.unit)}.`,
+      });
+    }
+  }
+  // external alternatives (Munshot / Probe42) for the same materials
+  for (const mkey of x.materialKeys) {
+    const alts = data.alternatives?.byMaterial?.[mkey as 'dextrose'] ?? [];
+    alts.forEach((a, index) => {
+      if (items.some((it) => it.name === vendorShort(a.name))) return;
+      const rev = a.metrics?.revenue ?? null;
+      items.push({
+        key: `alt-${mkey}-${index}`, name: vendorShort(a.name), why: a.fitNote,
+        size: rev && myRev ? (rev > myRev ? 'bigger' : 'smaller') : null,
+        alt: { material: mkey as MaterialKey, index },
+        backed: !!(a.status === 'ok' && (a.metrics || a.probe)),
+      });
+    });
+  }
+  return items;
+}
 
 export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; nav: Extract<Nav, { tab: 'vendors' }>; onNavigate: (n: Nav) => void }) {
   const v = data.value;
@@ -26,11 +74,21 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
   const rows = list.filter((x) => !q || vendorShort(x.name).toLowerCase().includes(q.toLowerCase()));
   const selVendor = v.vendors[sel ?? ''] ?? list[0];
 
+  // open an external alternative's profile (or an honest "pending" card for name-only ones)
+  const openAlt = (ref: { material: MaterialKey; index: number }) => {
+    const alt = data.alternatives?.byMaterial?.[ref.material]?.[ref.index];
+    if (alt) setProfile({ kind: 'alt', alt });
+  };
+  const onPickAlt = (it: AltItem) => {
+    if (it.navKey) onNavigate({ tab: 'vendors', vendorKey: it.navKey });
+    else if (it.alt) openAlt(it.alt);
+  };
+
   return (
     <div className="animate-fade-up">
       <div className="mb-3">
         <h2 className="flex items-center gap-1.5 text-[16px] font-bold leading-tight text-fdc-ink"><Factory size={17} strokeWidth={2.3} className="text-fdc-green" /> Suppliers — where the negotiating room is</h2>
-        <p className="mt-1 text-[12.5px] leading-snug text-fdc-grey">{list.length} suppliers. Click any name anywhere in the app to land here. Each card shows how hard you can push and who could replace them.</p>
+        <p className="mt-1 text-[12.5px] leading-snug text-fdc-grey">{list.length} suppliers. Click any name anywhere in the app to land here. Each card gives you a ready script, how hard you can push, and who could replace them.</p>
       </div>
 
       <div className="grid gap-4 lg:grid-cols-5">
@@ -63,39 +121,51 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
 
         {/* detail */}
         <div className="lg:col-span-3">
-          {selVendor ? <VendorCard vendor={selVendor} data={data} onNavigate={onNavigate} onFull={(s) => setProfile(s)} /> : null}
+          {selVendor ? <VendorCard vendor={selVendor} data={data} onFull={(s) => setProfile(s)} onPickAlt={onPickAlt} /> : null}
         </div>
       </div>
 
-      {profile && <VendorProfile subject={profile} onClose={() => setProfile(null)} />}
+      {profile && (
+        <VendorProfile
+          subject={profile}
+          onClose={() => setProfile(null)}
+          brief={profile.kind === 'vendor' && profile.fin.status === 'ok' ? (data.briefs?.briefs.find((b) => b.vendorKey === profile.fin.vendorKey) ?? null) : null}
+          replacements={profile.kind === 'vendor' ? buildAlternatives(profile.fin.vendorKey, data) : []}
+          onPickReplacement={onPickAlt}
+        />
+      )}
     </div>
   );
 }
 
-function VendorCard({ vendor: x, data, onNavigate, onFull }: { vendor: ValueVendor; data: AppData; onNavigate: (n: Nav) => void; onFull: (s: ProfileSubject) => void }) {
+function VendorCard({ vendor: x, data, onFull, onPickAlt }: { vendor: ValueVendor; data: AppData; onFull: (s: ProfileSubject) => void; onPickAlt: (it: AltItem) => void }) {
   const fin: VendorFin | null = data.financials?.vendors[x.vendorKey] ?? null;
   const probe = fin?.probe ?? null;
   const m = fin?.metrics ?? null;
+  const brief = data.briefs?.briefs.find((b) => b.vendorKey === x.vendorKey) ?? null;
+  const briefVerified = brief && fin?.status === 'ok'; // never show a brief built on unverified financials
 
   // negotiation-room read
   const netMargin = m?.netMargin ?? null;
   const marginSeries = (probe?.series ?? []).filter((y) => y.netMargin != null).map((y) => ({ label: y.fy || y.year, value: y.netMargin as number }));
   const marginFalling = marginSeries.length >= 2 && marginSeries[marginSeries.length - 1].value < marginSeries[0].value;
-  const creditDays = m?.receivableDays ?? null; // days their customers take to pay them = credit they extend
-  const yourDays = x.termCategory === 'immediate' ? 0 : x.termCategory === 'advance' ? null : (x.termDays ?? null);
-  const pushDays = creditDays != null && yourDays != null ? Math.round(creditDays - yourDays) : null;
   const revenue = m?.revenue ?? null;
   const shareOfRev = revenue && x.spend ? (x.spend / revenue) * 100 : null;
-  // source for the financial figures (receivable days, margin, revenue) — for on-screen traceability
+  // source for the financial figures — for on-screen traceability
   const srcName = fin?.source?.sourceName ?? null;
   const srcWhen = probe?.latestFy ?? fin?.source?.date ?? null;
   const srcLabel = srcName ? `${srcName}${srcWhen ? ` · ${srcWhen}` : ''}` : null;
+  // listed-proxy / pending honesty labels
+  const isProxy = fin?.type === 'listed' && fin.companyName && vendorShort(fin.companyName).toLowerCase() !== vendorShort(x.name).toLowerCase();
+  const pending = fin && fin.status !== 'ok';
 
   let marginRoom: { tone: 'room' | 'tight' | 'none'; text: string };
   if (netMargin == null) marginRoom = { tone: 'none', text: 'Their margin isn’t on file yet — open the full profile to check before pressing on price.' };
   else if (netMargin < 2) marginRoom = { tone: 'tight', text: `Wafer-thin ~${pct(netMargin)} net margin — there is little room to cut their price. Win on payment terms, volume or freshness instead, not price.` };
   else if (marginFalling) marginRoom = { tone: 'room', text: `Net margin ~${pct(netMargin)} and sliding — they value keeping your volume, so there is room to ask for a better price.` };
   else marginRoom = { tone: 'room', text: `Healthy ~${pct(netMargin)} net margin — room to negotiate price, especially against a cheaper alternative.` };
+
+  const alts = buildAlternatives(x.vendorKey, data);
 
   return (
     <Card className="!p-0">
@@ -107,6 +177,7 @@ function VendorCard({ vendor: x, data, onNavigate, onFull }: { vendor: ValueVend
           <div className="mt-1 flex flex-wrap items-center gap-1">
             {x.materialKeys.map((k) => <Badge key={k} color={MATERIAL_COLOR[k as 'dextrose']}>{MAT_NAME[k]}</Badge>)}
             {fin?.type === 'listed' ? <Badge color={FDC.blue}><BadgeCheck size={11} /> Listed</Badge> : fin?.primarySource === 'probe' ? <Badge color="#8E44AD"><Lock size={11} /> Private</Badge> : null}
+            {pending && <Badge color={FDC.grey}><CircleHelp size={11} /> Financials pending</Badge>}
           </div>
         </div>
         {(probe || m) && (
@@ -116,6 +187,20 @@ function VendorCard({ vendor: x, data, onNavigate, onFull }: { vendor: ValueVend
         )}
       </div>
 
+      {/* honesty banners: listed proxy / financials pending */}
+      {isProxy && (
+        <div className="flex items-start gap-1.5 border-b border-black/[0.06] bg-fdc-blue/[0.05] px-4 py-2 text-[11px] leading-snug text-fdc-slate">
+          <Info size={13} className="mt-0.5 shrink-0 text-fdc-blue" />
+          <span>Financials below are for the <b>listed group parent, {vendorShort(fin!.companyName!)}</b> — shown as a proxy because the supplying entity doesn’t file separately.</span>
+        </div>
+      )}
+      {pending && fin?.note && (
+        <div className="flex items-start gap-1.5 border-b border-black/[0.06] bg-fdc-grey/[0.06] px-4 py-2 text-[11px] leading-snug text-fdc-slate">
+          <Info size={13} className="mt-0.5 shrink-0 text-fdc-grey" />
+          <span>{fin.note}</span>
+        </div>
+      )}
+
       {/* top facts */}
       <div className="grid grid-cols-2 gap-px bg-black/[0.05] sm:grid-cols-2">
         <Fact label="Your spend / yr" value={crore(x.spend)} />
@@ -123,6 +208,9 @@ function VendorCard({ vendor: x, data, onNavigate, onFull }: { vendor: ValueVend
       </div>
 
       <div className="space-y-3 p-4">
+        {/* the ready negotiation script — highest-value asset */}
+        {briefVerified && <NegotiationBrief brief={brief!} />}
+
         {/* negotiation room */}
         <Section icon={Hourglass} title="How hard can you push?" color={FDC.green}>
           <div className="grid gap-2.5 sm:grid-cols-2">
@@ -134,20 +222,13 @@ function VendorCard({ vendor: x, data, onNavigate, onFull }: { vendor: ValueVend
               {marginSeries.length >= 2 && <div className="mb-1 h-8"><Sparkline points={marginSeries} color={marginFalling ? FDC.red : FDC.blue} height={32} format={(n) => pct(n)} /></div>}
               <p className="text-[11.5px] leading-snug text-fdc-slate">{marginRoom.text}</p>
             </div>
-            {/* credit days */}
-            <div className="rounded-xl border border-black/[0.06] p-2.5">
-              <div className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-fdc-grey"><CalendarClock size={12} className="text-fdc-blue" /> Credit days</div>
-              {creditDays != null ? (
-                <>
-                  <p className="text-[11.5px] leading-snug text-fdc-slate">
-                    They wait on average <b className="tnum">{Math.round(creditDays)} days</b> to get paid by their own customers, but give you <b className="tnum">{termPlain(x.termCategory, x.termText)}</b>.
-                    {pushDays != null && pushDays > 5 && <> Ask for <b className="text-fdc-green">+{pushDays} days</b> — they clearly live with it.</>}
-                  </p>
-                  {srcLabel && <p className="mt-1 text-[10px] leading-snug text-fdc-grey">Their <b>receivable days</b> — {srcLabel}. Your term — FDC SAP vendor master.</p>}
-                </>
-              ) : <p className="text-[11.5px] leading-snug text-fdc-grey">Their customer credit days aren’t on file yet.</p>}
-            </div>
+            {/* credit days — the RIGHT call per vendor */}
+            <CreditDays x={x} m={m} srcLabel={creditSrcLabel(fin)} />
           </div>
+
+          {/* payables fairness — for advance / immediate vendors */}
+          <PayablesFairness x={x} m={m} />
+
           {shareOfRev != null && (
             <p className="mt-2 rounded-lg bg-fdc-green/[0.06] px-2.5 py-1.5 text-[11.5px] leading-snug text-fdc-slate">
               You are <b className="tnum">{pct(shareOfRev, shareOfRev < 1 ? 2 : 1)}</b> of their <b className="tnum">{crore(revenue!)}</b> revenue{shareOfRev >= 5 ? ' — a meaningful customer, so your ask carries weight.' : ' — a small customer, so lead with volume or a credible alternative.'}
@@ -186,59 +267,84 @@ function VendorCard({ vendor: x, data, onNavigate, onFull }: { vendor: ValueVend
           </Section>
         </div>
 
-        {/* alternatives */}
+        {/* alternatives — clickable */}
         <Section icon={Repeat2} title="Who could replace them" color={FDC.blue}>
-          <Alternatives vendor={x} data={data} onNavigate={onNavigate} />
+          <Alternatives items={alts} onPick={onPickAlt} />
         </Section>
       </div>
     </Card>
   );
 }
 
-function Alternatives({ vendor: x, data, onNavigate }: { vendor: ValueVendor; data: AppData; onNavigate: (n: Nav) => void }) {
-  const fin = data.financials?.vendors ?? {};
-  const myRev = fin[x.vendorKey]?.metrics?.revenue ?? null;
-  const items: { name: string; vendorKey?: string; price?: string; term?: string; why: string; size?: 'bigger' | 'smaller' | null; cheaper?: boolean }[] = [];
+/* ---- credit-days: give the RIGHT call per vendor, from their real debtor days ---- */
+function CreditDays({ x, m, srcLabel }: { x: ValueVendor; m: FinMetrics | null; srcLabel: string | null }) {
+  const debtor = m?.receivableDays != null ? Math.round(m.receivableDays) : null;
+  const cat = x.termCategory;
+  const fdcDays = x.termDays;
+  let call: { tone: 'opportunity' | 'satisfied' | 'neutral'; node: React.ReactNode } | null = null;
 
-  // our own cheaper suppliers for the same materials — SAME UNIT only (never mix KG vs pieces)
-  for (const mkey of x.materialKeys) {
-    const mat = data.materials.find((mm) => mm.key === mkey);
-    const mine = mat?.vendors.find((mv) => mv.vendorKey === x.vendorKey);
-    if (!mat || !mine || mine.avgPrice == null) continue;
-    for (const o of mat.vendors) {
-      if (o.vendorKey === x.vendorKey || o.avgPrice == null || o.unit !== mine.unit || o.avgPrice >= mine.avgPrice) continue;
-      const term = data.value?.vendors[o.vendorKey]?.termText;
-      items.push({ name: vendorShort(o.vendor), vendorKey: o.vendorKey, price: priceFmt(o.avgPrice, o.unit), term: term ? shortTerm(term) : undefined, cheaper: true, why: `Supplies ${MAT_NAME[mkey]} at ${priceFmt(o.avgPrice, o.unit)} — cheaper than ${vendorShort(x.name)}'s ${priceFmt(mine.avgPrice, mine.unit)}.` });
+  if (debtor != null) {
+    const theyWait = <>They wait on average <b className="tnum">{debtor} days</b> to be paid by their own customers.</>;
+    if (cat === 'advance' || cat === 'immediate') {
+      call = { tone: 'opportunity', node: <>{theyWait} Yet you pay <b>{termPlain(cat, x.termText)}</b> — you’re financing them. <b className="text-fdc-green">Push for 30-day credit</b> to match the terms they already extend others.</> };
+    } else if (cat === 'net' && fdcDays != null) {
+      const gap = debtor - fdcDays;
+      if (gap >= 8) call = { tone: 'opportunity', node: <>{theyWait} You only get <b className="tnum">{fdcDays} days</b> — ask for <b className="text-fdc-green">+{gap} days</b>; they clearly live with longer credit.</> };
+      else if (fdcDays - debtor >= 5) call = { tone: 'satisfied', node: <>{theyWait} You already pay slower (<b className="tnum">{fdcDays} days</b>) than they collect — <b className="text-fdc-green">better-than-average terms here</b>. Don’t push credit; win on volume or a credible alternative.</> };
+      else call = { tone: 'neutral', node: <>{theyWait} Your <b className="tnum">{fdcDays} days</b> is already in line — little room on terms, so lead with price or volume.</> };
+    } else {
+      call = { tone: 'neutral', node: <>{theyWait} Match that against your own term when you talk credit.</> };
     }
   }
-  // external alternatives (Munshot/Probe42) for the same materials
-  for (const mkey of x.materialKeys) {
-    const alts = data.alternatives?.byMaterial?.[mkey as 'dextrose'] ?? [];
-    for (const a of alts.slice(0, 3)) {
-      if (items.some((it) => it.name === vendorShort(a.name))) continue;
-      const rev = a.metrics?.revenue ?? null;
-      items.push({ name: vendorShort(a.name), why: a.fitNote, size: rev && myRev ? (rev > myRev ? 'bigger' : 'smaller') : null });
-    }
-  }
+
+  const c = call?.tone === 'opportunity' ? FDC.green : call?.tone === 'satisfied' ? FDC.blue : FDC.grey;
+  return (
+    <div className="rounded-xl border p-2.5" style={{ borderColor: call ? `${c}33` : 'rgba(0,0,0,0.06)' }}>
+      <div className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-fdc-grey"><CalendarClock size={12} style={{ color: c }} /> Credit days</div>
+      {call ? (
+        <>
+          <p className="text-[11.5px] leading-snug text-fdc-slate">{call.node}</p>
+          {srcLabel && <p className="mt-1 text-[10px] leading-snug text-fdc-grey">Their <b>debtor days</b> — {srcLabel}. Your term — FDC SAP vendor master.</p>}
+        </>
+      ) : <p className="text-[11.5px] leading-snug text-fdc-grey">Their customer credit days aren’t on file yet.</p>}
+    </div>
+  );
+}
+
+/* ---- payables fairness: advance/immediate vendors who stretch their OWN suppliers ---- */
+function PayablesFairness({ x, m }: { x: ValueVendor; m: FinMetrics | null }) {
+  const payable = m?.payableDays != null ? Math.round(m.payableDays) : null;
+  if ((x.termCategory !== 'advance' && x.termCategory !== 'immediate') || payable == null || payable < 10) return null;
+  const target = payable >= 25 ? `their own ~${payable}-day terms` : '30-day credit';
+  return (
+    <p className="mt-2 flex items-start gap-1.5 rounded-lg bg-fdc-gold/[0.10] px-2.5 py-1.5 text-[11.5px] leading-snug text-fdc-slate">
+      <HandCoins size={14} className="mt-0.5 shrink-0 text-fdc-gold-dark" />
+      <span><b>{vendorShort(x.name)}</b> takes about <b className="tnum">{payable} days</b> to pay its own suppliers, but makes you pay <b>{termPlain(x.termCategory, x.termText).toLowerCase()}</b>. That asymmetry is your strongest terms argument — ask to move onto {target}.</span>
+    </p>
+  );
+}
+
+function Alternatives({ items, onPick }: { items: AltItem[]; onPick: (it: AltItem) => void }) {
   const top = items.slice(0, 5);
   if (!top.length) return <p className="text-[11.5px] text-fdc-grey">No ready alternative on file for this material.</p>;
   return (
     <div className="space-y-1.5">
-      {top.map((it, i) => (
-        <div key={i} className="flex items-start justify-between gap-2 rounded-lg bg-fdc-offwhite px-2.5 py-1.5">
+      {top.map((it) => (
+        <button key={it.key} onClick={() => onPick(it)} className="flex w-full items-start justify-between gap-2 rounded-lg bg-fdc-offwhite px-2.5 py-1.5 text-left transition hover:bg-fdc-green/[0.06] focus-ring">
           <div className="min-w-0">
             <div className="flex flex-wrap items-center gap-1.5">
-              {it.vendorKey ? (
-                <button onClick={() => onNavigate({ tab: 'vendors', vendorKey: it.vendorKey! })} className="text-[12.5px] font-semibold text-fdc-slate underline-offset-2 hover:text-fdc-green hover:underline">{it.name}</button>
-              ) : <span className="text-[12.5px] font-semibold text-fdc-slate">{it.name}</span>}
+              <span className="inline-flex items-center gap-0.5 text-[12.5px] font-semibold text-fdc-slate">
+                {it.name} <ArrowUpRight size={12} className="text-fdc-grey" />
+              </span>
               {it.cheaper && <Pill color={FDC.green}>cheaper · ours</Pill>}
               {it.size && <Pill color={FDC.grey}>{it.size}</Pill>}
               {it.term && <Pill color={FDC.blue}>{it.term}</Pill>}
+              {!it.backed && <Pill color={FDC.grey}>financials pending</Pill>}
             </div>
             <p className="mt-0.5 text-[11px] leading-snug text-fdc-grey">{it.why}</p>
           </div>
           {it.price && <span className="tnum shrink-0 rounded-md bg-white px-1.5 py-0.5 text-[11.5px] font-bold text-fdc-green">{it.price}</span>}
-        </div>
+        </button>
       ))}
     </div>
   );
@@ -263,6 +369,15 @@ function Fact({ label, value, tone }: { label: string; value: string; tone?: 'go
       <div className="tnum mt-0.5 text-[15px] font-extrabold leading-none" style={{ color: tone === 'bad' ? FDC.red : tone === 'good' ? FDC.green : FDC.ink }}>{value}</div>
     </div>
   );
+}
+
+/** Source line for the credit-days (Screener for listed, Probe42 for private). */
+function creditSrcLabel(fin: VendorFin | null): string | null {
+  if (!fin) return null;
+  const cd = (fin as VendorFin & { creditDaysSource?: { sourceName: string; asOf: string | null } }).creditDaysSource;
+  if (cd) return `${cd.sourceName}${cd.asOf ? ` · ${cd.asOf}` : ''}`;
+  if (fin.probe) return `${fin.source?.sourceName ?? 'Probe42 (MCA filings)'}${fin.probe.latestFy ? ` · ${fin.probe.latestFy}` : ''}`;
+  return fin.source?.sourceName ?? null;
 }
 
 function shortTerm(t: string): string {
