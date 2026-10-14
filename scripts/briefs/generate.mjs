@@ -101,9 +101,14 @@ function buildInputs(v, ctx) {
       theirWorkingCapital: probe ? { payableDays: m.payableDays != null ? `${Math.round(m.payableDays)}d` : null, receivableDays: m.receivableDays != null ? `${Math.round(m.receivableDays)}d` : null, cashConversionCycle: m.cashConversionCycle != null ? `${Math.round(m.cashConversionCycle)}d` : null } : null,
       healthScore: v.healthScore ? `${v.healthScore.grade} (${v.healthScore.value}/100)` : null,
       riskFlags: (probe?.flags || []).map((f) => f.label),
+      // Phase 4 signals — sharpen the asks
+      borrowingCost: probe?.borrowing ? { effectiveRatePct: probe.borrowing.effectiveRatePct != null ? `${probe.borrowing.effectiveRatePct}%` : null, chargeRateRangePct: probe.borrowing.chargeRate ? `${probe.borrowing.chargeRate.minPct}-${probe.borrowing.chargeRate.maxPct}%` : null } : null,
+      revenueMix: probe?.revenueMix?.available ? { manufacturedPct: pct(probe.revenueMix.manufacturedPct), tradedPct: pct(probe.revenueMix.tradedPct), exportPct: pct(probe.revenueMix.exportPct), note: (probe.revenueMix.tradedPct ?? 0) >= 50 ? 'Mostly a trader/distributor — price carries a reseller margin' : 'Mostly an own-manufacturer' } : null,
+      distressSignal: probe?.analytics?.altman?.z != null ? { altmanZ: probe.analytics.altman.z, zone: probe.analytics.altman.zone } : null,
+      freeCashFlowApprox: probe?.analytics?.fcf?.value != null ? money(probe.analytics.fcf.value) : null,
     },
     preComputedNegotiationLevers: (v.levers || []).map((l) => ({ type: l.type, title: l.title, detail: l.detail, evidence: (l.evidence || []).map((e) => `${e.label}: ${e.value}`) })),
-    availableAlternates: matKeys.flatMap((mk) => (alternatives?.byMaterial?.[mk] || []).map((a) => ({ name: a.name, role: a.role, type: a.type, secondSourceFor: a.secondSourceFor || null, fit: a.fitNote, health: a.healthScore ? `${a.healthScore.grade}` : null }))).slice(0, 8),
+    availableAlternates: matKeys.flatMap((mk) => (alternatives?.byMaterial?.[mk] || []).map((a) => ({ name: a.name, role: a.role, type: a.type, secondSourceFor: a.secondSourceFor || null, fit: a.fitNote, health: a.healthScore ? `${a.healthScore.grade} (${a.healthScore.value}/100)` : null, revenue: a.metrics?.revenue != null ? money(a.metrics.revenue) : null }))).slice(0, 8),
   };
 }
 
@@ -127,6 +132,11 @@ ABSOLUTE RULES — these override everything else:
 3. Do NOT use any outside knowledge about this company, its industry, or typical prices. DATA is the whole world.
 4. Write plain English a buyer can say out loud. Be specific and concrete; no filler, no hype.
 5. Return ONLY a single valid JSON object — no markdown fences, no commentary before or after.
+
+HOW TO SHARPEN THE ASK (use only when the relevant field is present in DATA):
+- theirFinancials.borrowingCost → offer faster payment in exchange for a price cut roughly the size of their borrowing rate (paying early is worth that rate to them).
+- theirFinancials.revenueMix (mostly traded) → push to the maker's price: their price carries a reseller margin, so benchmark to a manufacturer.
+- theirFinancials.distressSignal (grey/distress zone) → lead with supply-security and qualifying a second source, not a hard squeeze that could tip a fragile supplier over.
 
 Output JSON schema (all fields required):
 {

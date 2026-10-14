@@ -20,6 +20,7 @@ import Vendors from './tabs/Vendors';
 import VendorHealth from './tabs/VendorHealth';
 import Alternatives from './tabs/Alternatives';
 import NegotiationBriefs from './tabs/NegotiationBriefs';
+import VendorProfile, { type ProfileSubject } from './components/VendorProfile';
 import { dateLabel } from './lib/format';
 
 type TabKey =
@@ -43,6 +44,7 @@ const TABS: TabDef<TabKey>[] = [
 
 export default function App() {
   const [tab, setTab] = useState<TabKey>('overview');
+  const [profile, setProfile] = useState<ProfileSubject | null>(null);
   const state = useAppData();
 
   return (
@@ -63,9 +65,9 @@ export default function App() {
               {tab === 'overview' && <Overview data={state.data} onNavigate={(t) => setTab(t as TabKey)} />}
               {tab === 'price' && <PriceBenchmark data={state.data} />}
               {tab === 'payment' && <PaymentTermsTab data={state.data} />}
-              {tab === 'vendors' && <Vendors data={state.data} />}
-              {tab === 'health' && <VendorHealth data={state.data} />}
-              {tab === 'alternatives' && <Alternatives data={state.data} />}
+              {tab === 'vendors' && <Vendors data={state.data} onOpenProfile={setProfile} />}
+              {tab === 'health' && <VendorHealth data={state.data} onOpenProfile={setProfile} />}
+              {tab === 'alternatives' && <Alternatives data={state.data} onOpenProfile={setProfile} />}
               {tab === 'briefs' && <NegotiationBriefs data={state.data} />}
             </>
           )}
@@ -73,6 +75,7 @@ export default function App() {
       </div>
 
       {state.status === 'ready' && <Footer generatedAt={state.data.meta.generatedAt} sources={state.data.meta.sources.map((s) => s.file)} />}
+      {state.status === 'ready' && profile && <VendorProfile subject={profile} onClose={() => setProfile(null)} />}
     </div>
   );
 }

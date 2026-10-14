@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import {
-  Repeat2, BadgeCheck, Lock, ShieldAlert, Star, Factory, Film, FlaskConical, ExternalLink, TrendingUp,
+  Repeat2, BadgeCheck, Lock, ShieldAlert, Star, Factory, Film, FlaskConical, ExternalLink, TrendingUp, Maximize2,
 } from 'lucide-react';
 import type { AppData, MaterialKey, AltVendor } from '../types';
+import type { ProfileSubject } from '../components/VendorProfile';
 import { Card, CardHeader, PageHeader, Badge, Pill } from '../components/ui/Card';
 import { SubTabs } from '../components/ui/Tabs';
 import { MATERIAL_COLOR } from '../lib/brand';
@@ -13,7 +14,7 @@ const ROLE_ICON: Record<string, typeof Factory> = {
   producer: FlaskConical, 'rigid-packaging': Factory, converter: Repeat2, 'film-maker': Film, 'converter+film': Repeat2,
 };
 
-export default function Alternatives({ data }: { data: AppData }) {
+export default function Alternatives({ data, onOpenProfile }: { data: AppData; onOpenProfile: (s: ProfileSubject) => void }) {
   const alts = data.alternatives;
   const [mat, setMat] = useState<MaterialKey>('laminates');
 
@@ -83,23 +84,30 @@ export default function Alternatives({ data }: { data: AppData }) {
 
       {/* alternates grid */}
       <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-        {list.map((a) => <AltCard key={a.name} alt={a} material={mat} />)}
+        {list.map((a) => <AltCard key={a.name} alt={a} material={mat} onOpen={a.status === 'ok' ? () => onOpenProfile({ kind: 'alt', alt: a }) : undefined} />)}
       </div>
 
       <p className="text-[11px] italic text-fdc-grey">
-        Listed alternates are benchmarked live via Munshot (real financials). Private alternates show financials once a Probe42 key + VPN are configured. Fit notes are editable in <span className="font-mono">data/raw/masters/alt-vendors.json</span>.
+        Listed alternates are benchmarked live via Munshot. Private alternates with a cached Probe42 (MCA) report show real financials — click for the full drill-down; the rest show an honest placeholder until their report is cached. Fit notes are editable in <span className="font-mono">data/raw/masters/alt-vendors.json</span>.
       </p>
     </div>
   );
 }
 
-function AltCard({ alt, material }: { alt: AltVendor; material: MaterialKey }) {
+function AltCard({ alt, material, onOpen }: { alt: AltVendor; material: MaterialKey; onOpen?: () => void }) {
   const RoleIcon = ROLE_ICON[alt.role] || Factory;
   const isSecond = alt.secondSourceFor === material;
   const hs = alt.healthScore;
   const met = alt.metrics;
+  const clickable = !!onOpen;
   return (
-    <div className={`rounded-2xl border bg-white p-4 shadow-card transition ${isSecond ? 'border-fdc-green/40 ring-1 ring-fdc-green/20' : 'border-black/[0.06]'}`}>
+    <div
+      className={`group rounded-2xl border bg-white p-4 shadow-card transition ${isSecond ? 'border-fdc-green/40 ring-1 ring-fdc-green/20' : 'border-black/[0.06]'} ${clickable ? 'cursor-pointer hover:shadow-card-hover hover:-translate-y-px focus-ring' : ''}`}
+      onClick={onOpen}
+      role={clickable ? 'button' : undefined}
+      tabIndex={clickable ? 0 : undefined}
+      onKeyDown={clickable ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen!(); } } : undefined}
+    >
       <div className="mb-2 flex items-start justify-between gap-2">
         <div className="flex items-start gap-2">
           <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-fdc-offwhite text-fdc-slate"><RoleIcon size={16} /></span>
@@ -135,11 +143,18 @@ function AltCard({ alt, material }: { alt: AltVendor; material: MaterialKey }) {
         </div>
       )}
 
-      {alt.source && (
-        <p className="mt-2 flex items-center gap-1 text-[10px] text-fdc-grey">
-          <ExternalLink size={9} /> {alt.source.sourceName}{alt.symbol ? ` · ${alt.symbol}` : ''}
-        </p>
-      )}
+      <div className="mt-2 flex items-center justify-between gap-2">
+        {alt.source ? (
+          <p className="flex min-w-0 items-center gap-1 truncate text-[10px] text-fdc-grey">
+            <ExternalLink size={9} className="shrink-0" /> {alt.source.sourceName}{alt.symbol ? ` · ${alt.symbol}` : ''}
+          </p>
+        ) : <span />}
+        {clickable && (
+          <span className="inline-flex shrink-0 items-center gap-0.5 text-[10.5px] font-semibold text-fdc-green opacity-70 transition group-hover:opacity-100">
+            <Maximize2 size={10} /> Full profile
+          </span>
+        )}
+      </div>
     </div>
   );
 }

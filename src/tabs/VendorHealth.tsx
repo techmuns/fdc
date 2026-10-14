@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react';
 import {
   HeartPulse, BadgeCheck, Lock, TrendingUp, TrendingDown, Minus, Factory,
-  Lightbulb, AlertTriangle, Eye, ExternalLink, Scale, Gauge, Activity, Database,
+  Lightbulb, AlertTriangle, Eye, ExternalLink, Scale, Gauge, Activity, Database, Maximize2,
 } from 'lucide-react';
 import type { AppData, Vendor, VendorFin, Lever, ProbeProfile, ProbeYear, ProbeFlag, ProbeScore } from '../types';
+import type { ProfileSubject } from '../components/VendorProfile';
 import { Card, CardHeader, PageHeader, Badge, Pill } from '../components/ui/Card';
 import { Table, type Column } from '../components/ui/Table';
 import { Sparkline } from '../components/charts/Sparkline';
@@ -22,7 +23,7 @@ interface Row {
   fin: VendorFin | null;
 }
 
-export default function VendorHealth({ data }: { data: AppData }) {
+export default function VendorHealth({ data, onOpenProfile }: { data: AppData; onOpenProfile: (s: ProfileSubject) => void }) {
   const fins = data.financials;
   const rows: Row[] = useMemo(
     () => [...data.vendors].sort((a, b) => b.totalNetSpend - a.totalNetSpend).map((v) => ({ vendor: v, fin: fins?.vendors[v.key] ?? null })),
@@ -30,6 +31,7 @@ export default function VendorHealth({ data }: { data: AppData }) {
   );
   const [sel, setSel] = useState<string | null>(rows[0]?.vendor.key ?? null);
   const selRow = rows.find((r) => r.vendor.key === sel) ?? null;
+  const openProfile = (key: string) => { const f = fins?.vendors[key]; if (f) onOpenProfile({ kind: 'vendor', fin: f, vendor: data.vendors.find((v) => v.key === key) ?? null }); };
 
   if (!fins) {
     return (
@@ -102,7 +104,7 @@ export default function VendorHealth({ data }: { data: AppData }) {
           <>
             Real financials for <span className="font-semibold text-fdc-slate">{m.listedResolved} listed</span> +{' '}
             <span className="font-semibold text-fdc-slate">{m.privateRated} private</span> suppliers ({pct((okSpend / totalSpend) * 100, 0)} of spend) ·{' '}
-            {m.privateUnrated} not public · listed via Munshot, <span className="font-semibold text-fdc-slate">{probeN} private via Probe42</span> (MCA filings; credit-rating docs cross-check) — a price win should never come from a supplier about to wobble.
+            {m.privateUnrated} not public · listed via Munshot, <span className="font-semibold text-fdc-slate">{probeN} private via Probe42</span> (MCA filings; credit-rating docs cross-check). <span className="font-semibold text-fdc-green">Click a supplier for the full drill-down.</span>
           </>
         }
       />
@@ -111,13 +113,13 @@ export default function VendorHealth({ data }: { data: AppData }) {
         <div className="min-w-0 lg:col-span-3">
           <Card pad={false}>
             <div className="px-2 py-2">
-              <Table columns={columns} rows={rows} getKey={(r) => r.vendor.key} initialSort={{ key: 'spend', dir: 'desc' }} onRowClick={(r) => setSel(r.vendor.key)} activeKey={sel} maxHeight={620} />
+              <Table columns={columns} rows={rows} getKey={(r) => r.vendor.key} initialSort={{ key: 'spend', dir: 'desc' }} onRowClick={(r) => { setSel(r.vendor.key); openProfile(r.vendor.key); }} activeKey={sel} maxHeight={620} />
             </div>
           </Card>
         </div>
         <div className="min-w-0 lg:col-span-2">
           <div className="lg:sticky lg:top-[124px]">
-            {selRow ? <HealthPanel row={selRow} /> : null}
+            {selRow ? <HealthPanel row={selRow} onFullProfile={() => openProfile(selRow.vendor.key)} /> : null}
           </div>
         </div>
       </div>
@@ -139,7 +141,7 @@ function gradeColor(g: string): string {
   return '#D91701';
 }
 
-function HealthPanel({ row }: { row: Row }) {
+function HealthPanel({ row, onFullProfile }: { row: Row; onFullProfile: () => void }) {
   const { vendor: v, fin } = row;
   const hs = fin?.healthScore ?? null;
   const met = fin?.metrics ?? null;
@@ -151,7 +153,7 @@ function HealthPanel({ row }: { row: Row }) {
     <Card>
       <div className="mb-3 flex items-start gap-2.5">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl text-white" style={{ background: v.color }}><Factory size={19} /></span>
-        <div className="min-w-0">
+        <div className="min-w-0 flex-1">
           <h3 className="text-[16px] font-extrabold leading-tight text-fdc-ink">{vendorShort(v.name)}</h3>
           <div className="mt-1 flex flex-wrap items-center gap-1">
             {fin?.type === 'listed' ? <Badge color="#2E7CE4"><BadgeCheck size={11} /> Listed{fin.symbol ? ` · ${fin.symbol}` : ''}</Badge>
@@ -168,6 +170,9 @@ function HealthPanel({ row }: { row: Row }) {
             </div>
           )}
         </div>
+        <button onClick={onFullProfile} className="inline-flex shrink-0 items-center gap-1 rounded-lg border border-fdc-green/30 bg-fdc-green/[0.06] px-2 py-1 text-[11px] font-semibold text-fdc-green transition hover:bg-fdc-green/[0.12]">
+          <Maximize2 size={12} /> Full profile
+        </button>
       </div>
 
       {/* health gauge */}

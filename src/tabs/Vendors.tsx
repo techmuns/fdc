@@ -9,8 +9,10 @@ import {
   Layers,
   BadgeCheck,
   MapPin,
+  Maximize2,
 } from 'lucide-react';
 import type { AppData, Vendor, MaterialKey } from '../types';
+import type { ProfileSubject } from '../components/VendorProfile';
 import { Card, PageHeader, Badge, Pill } from '../components/ui/Card';
 import { Dropdown, type Option } from '../components/ui/Controls';
 import { Table, type Column } from '../components/ui/Table';
@@ -20,10 +22,16 @@ import { money, price, pct, qty as fmtQty, monthLabel, vendorShort as cleanName 
 
 type Filter = 'all' | MaterialKey | 'listed' | 'worst';
 
-export default function Vendors({ data }: { data: AppData }) {
+export default function Vendors({ data, onOpenProfile }: { data: AppData; onOpenProfile: (s: ProfileSubject) => void }) {
   const { vendors } = data;
   const [selected, setSelected] = useState<string | null>(vendors[0]?.key ?? null);
   const [filter, setFilter] = useState<Filter>('all');
+
+  const openProfile = (key: string) => {
+    const fin = data.financials?.vendors[key];
+    if (!fin) return;
+    onOpenProfile({ kind: 'vendor', fin, vendor: vendors.find((v) => v.key === key) ?? null });
+  };
 
   const filterOptions: Option<Filter>[] = [
     { value: 'all', label: 'All suppliers', hint: `${vendors.length}` },
@@ -96,7 +104,7 @@ export default function Vendors({ data }: { data: AppData }) {
       <PageHeader
         icon={Factory}
         title="All suppliers"
-        subtitle={`${vendors.length} suppliers across 3 materials · click any row for the full picture`}
+        subtitle={`${vendors.length} suppliers across 3 materials · click a supplier for the full financial & governance profile`}
         right={<Dropdown label="Filter" value={filter} options={filterOptions} onChange={setFilter} width={220} />}
       />
 
@@ -109,7 +117,7 @@ export default function Vendors({ data }: { data: AppData }) {
                 rows={rows}
                 getKey={(r) => r.key}
                 initialSort={{ key: 'spend', dir: 'desc' }}
-                onRowClick={(r) => setSelected(r.key)}
+                onRowClick={(r) => { setSelected(r.key); openProfile(r.key); }}
                 activeKey={selected}
                 maxHeight={620}
               />
@@ -119,7 +127,7 @@ export default function Vendors({ data }: { data: AppData }) {
 
         <div className="min-w-0 lg:col-span-2">
           <div className="lg:sticky lg:top-[124px]">
-            {sel ? <VendorPanel vendor={sel} data={data} onClose={() => setSelected(null)} /> : <EmptyPanel />}
+            {sel ? <VendorPanel vendor={sel} data={data} onClose={() => setSelected(null)} onFullProfile={() => openProfile(sel.key)} /> : <EmptyPanel />}
           </div>
         </div>
       </div>
@@ -127,7 +135,7 @@ export default function Vendors({ data }: { data: AppData }) {
   );
 }
 
-function VendorPanel({ vendor: v, data, onClose }: { vendor: Vendor; data: AppData; onClose: () => void }) {
+function VendorPanel({ vendor: v, data, onClose, onFullProfile }: { vendor: Vendor; data: AppData; onClose: () => void; onFullProfile: () => void }) {
   const monthCols = v.monthly.map((m) => ({
     key: m.month,
     label: monthLabel(m.month).split(" ")[0],
@@ -169,9 +177,14 @@ function VendorPanel({ vendor: v, data, onClose }: { vendor: Vendor; data: AppDa
             </div>
           </div>
         </div>
-        <button onClick={onClose} className="rounded-lg p-1 text-fdc-grey transition hover:bg-black/5 hover:text-fdc-ink">
-          <X size={16} />
-        </button>
+        <div className="flex shrink-0 items-center gap-1">
+          <button onClick={onFullProfile} className="inline-flex items-center gap-1 rounded-lg border border-fdc-green/30 bg-fdc-green/[0.06] px-2 py-1 text-[11px] font-semibold text-fdc-green transition hover:bg-fdc-green/[0.12]">
+            <Maximize2 size={12} /> Full profile
+          </button>
+          <button onClick={onClose} className="rounded-lg p-1 text-fdc-grey transition hover:bg-black/5 hover:text-fdc-ink">
+            <X size={16} />
+          </button>
+        </div>
       </div>
 
       {/* key facts */}

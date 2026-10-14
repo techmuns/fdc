@@ -11,7 +11,6 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fetchListed, fetchMetrics, LISTED_VENDORS } from './munshot.mjs';
-import { readAllCached } from '../probe/enrich.mjs';
 import { PRIVATE_CINS } from '../probe/cins.mjs';
 import { buildLevers } from '../levers.mjs';
 
@@ -217,38 +216,55 @@ async function main() {
   }, null, 2));
 
   // ---- alternatives ----
-  console.log('\n▶ Alternatives (benchmarking listed alternates, free)…');
+  // Listed alternates → Munshot (free, live). Private alternates → the committed
+  // Probe42 cache, matched BY CIN (so a backup can be judged on real financials,
+  // not just named). Uncached private alts stay an honest 'pending'.
+  console.log('\n▶ Alternatives (listed via Munshot; private via Probe42 cache, by CIN)…');
+  const probeByCin = {};
+  for (const pp of Object.values(probeFin)) { if (pp?.cin) probeByCin[pp.cin] = pp; }
   const altSeed = JSON.parse(readFileSync(path.join(ROOT, 'data/raw/masters/alt-vendors.json'), 'utf8'));
   const altOut = {};
   for (const mat of Object.keys(altSeed)) {
     if (mat.startsWith('_')) continue;
     altOut[mat] = [];
     for (const alt of altSeed[mat]) {
-      let fin = null;
+      const rec = {
+        name: alt.name, type: alt.type, role: alt.role, ticker: alt.ticker || null, cin: alt.cin || null,
+        status: 'cin-unresolved', fitNote: alt.fitNote, secondSourceFor: alt.secondSourceFor || null,
+        companyName: null, symbol: null, metrics: null, healthScore: null,
+        source: { sourceName: alt.type === 'listed' ? 'Munshot' : 'Probe42', sourceUrl: alt.type === 'listed' ? 'https://fastapi.muns.io' : 'https://probe42.in' },
+        note: null, key: null, primarySource: 'none', probe: null,
+        ratingGrade: null, ratingLabel: null, asOfFy: null, issuerNotCooperating: false, levers: [],
+      };
       if (alt.type === 'listed') {
-        fin = await fetchMetrics([alt.ticker], alt.expect, null);
-      } else if (alt.cin) {
-        const cached = readAllCached({ x: { cin: alt.cin, name: alt.name } }).x;
-        if (cached?.status === 'ok') fin = cached;
+        const fin = await fetchMetrics([alt.ticker], alt.expect, null);
+        rec.metrics = fin?.metrics || null;
+        rec.status = rec.metrics ? 'ok' : 'pending';
+        rec.primarySource = rec.metrics ? 'listed' : 'none';
+        rec.companyName = fin?.companyName || null; rec.symbol = fin?.symbol || null;
+        rec.healthScore = computeHealth(rec.metrics);
+        if (fin?.source) rec.source = fin.source;
+        rec.note = rec.metrics ? null : 'Listed — ticker not resolved on this run; re-run to benchmark.';
+      } else {
+        const pp = alt.cin ? probeByCin[alt.cin] : null;
+        if (pp) {
+          const cr = pp.creditRatingProbe;
+          const ratingGrade = cr?.grade || null;
+          rec.status = 'ok'; rec.primarySource = 'probe'; rec.key = pp.vendorKey;
+          rec.companyName = pp.legalName; rec.cin = pp.cin; rec.probe = pp;
+          rec.metrics = fromProbe(pp).metrics;
+          rec.healthScore = computeHealthProbe(pp, ratingGrade);
+          rec.ratingGrade = ratingGrade;
+          rec.ratingLabel = cr ? `${cr.agency} ${cr.grade}${cr.outlook ? ` / ${cr.outlook}` : ''}` : null;
+          rec.asOfFy = pp.latestFy; rec.issuerNotCooperating = !!pp.issuerNotCooperating;
+          rec.source = pp.source;
+        } else {
+          rec.status = alt.cin ? 'pending' : 'cin-unresolved';
+          rec.note = alt.cin ? 'Financials via Probe42 — report not yet cached (gated).' : 'CIN unresolved — resolve before a Probe42 lookup.';
+        }
       }
-      const metrics = fin?.metrics || null;
-      altOut[mat].push({
-        name: alt.name,
-        type: alt.type,
-        role: alt.role,
-        ticker: alt.ticker || null,
-        cin: alt.cin || null,
-        status: metrics ? 'ok' : alt.type === 'listed' ? 'pending' : alt.cin ? 'pending' : 'cin-unresolved',
-        fitNote: alt.fitNote,
-        secondSourceFor: alt.secondSourceFor || null,
-        companyName: fin?.companyName || null,
-        symbol: fin?.symbol || null,
-        metrics,
-        healthScore: computeHealth(metrics),
-        source: fin?.source || { sourceName: alt.type === 'listed' ? 'Munshot' : 'Probe42', sourceUrl: alt.type === 'listed' ? 'https://fastapi.muns.io' : 'https://probe42.in' },
-        note: alt.type === 'private' && !metrics ? (alt.cin ? 'Financials via Probe42 (gated).' : 'CIN unresolved.') : null,
-      });
-      if (fin) console.log(`    ${mat.padEnd(10)} ${alt.name} — rev ₹${metrics.revenue ? (metrics.revenue / 1e7).toFixed(0) : '?'}Cr`);
+      altOut[mat].push(rec);
+      if (rec.metrics) console.log(`    ${mat.padEnd(10)} ${alt.name} [${rec.primarySource}] — rev ₹${rec.metrics.revenue ? (rec.metrics.revenue / 1e7).toFixed(0) : '?'}Cr${rec.healthScore ? ` · health ${rec.healthScore.value}/100 (${rec.healthScore.grade})` : ''}`);
     }
   }
   writeFileSync(path.join(DATA, 'alternatives.json'), JSON.stringify({

@@ -199,6 +199,40 @@ proprietorships) keep the honest "financials not public" state. A monthly
 **data-refresh** step re-runs the extractor so a refreshed cache flows straight to
 the cockpit (0 credits).
 
+### Phase 4 — full-depth Probe42, clickable drill-downs & alternates' financials
+
+Phase 4 leaves **no Probe42 datapoint unused**. `scripts/probe-extract.mjs` now
+pulls, per company, the full multi-year P&L / balance-sheet / ratios **plus**:
+
+- **Borrowing cost** — effective rate (interest ÷ debt, from the statements) and the
+  rate range across MCA charge filings, with the lenders listed.
+- **Revenue mix** — manufactured vs traded vs services + export share (the
+  trader-vs-maker read); honest "not itemised" where a filing omits it.
+- **Analyst metrics computed from the statements** (no new data) — DuPont RoE
+  breakdown, Piotroski F-score (the 2 cash-flow signals are flagged untestable when
+  no cash-flow statement is filed), Altman Z′ distress zone, an approximate free cash
+  flow (EBITDA − tax − capex − ΔWC, clearly labelled), Sloan balance-sheet accruals
+  (earnings quality) and operating leverage.
+- **Ratings history** (timeline + outlook + "Issuer Not Cooperating"), Probe financial
+  score + components, risk/legal (charges, itemised legal & financial disputes,
+  defaulter / struck-off / MSME-delay / GST-delay flags), and people & structure
+  (directors + their other directorships = overboarding, ownership %, group entities,
+  related-party activity, securities allotment, EPFO headcount).
+
+**Clickable drill-down** — every row in **Vendors** and **Vendor Health**, and every
+alternate card in **Alternatives**, opens a full FDC-branded profile
+(`src/components/VendorProfile.tsx`) rendering all of the above as trend charts,
+working-capital-vs-peers bars, distress/quality gauges, a revenue-mix donut, a
+borrowing/charges table, a rating-history timeline, legal & governance tables and the
+evidence-backed negotiation levers — every figure stamped "Probe42 · FY____".
+
+**Alternates now carry real financials** from the right source each: listed alternates
+(Gulshan, Sanstar, Mold-Tek, Hitech, Pearl, Ester, Cosmo, Jindal Poly, Polyplex) via
+the same keyless Munshot route; private alternates (Roquette, Constantia Parikh,
+Paharpur 3P, Manjushree) from their cached Probe42 report, matched **by CIN**. The
+negotiation-brief inputs now include the borrowing rate, revenue mix and distress
+score, so the asks sharpen on the next keyed run.
+
 ### Phase 2.1 — private-vendor financials from credit-rating docs (free, 0 keys, 0 Firecrawl)
 
 Private suppliers don't file financials publicly, but the **rated** ones have a
