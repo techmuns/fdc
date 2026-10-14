@@ -22,6 +22,7 @@ export interface AltItem {
   navKey?: string;                 // click → open this existing FDC supplier
   alt?: { material: MaterialKey; index: number };  // click → open this external alternative's profile
   backed: boolean;                 // do we have real financials to stand behind?
+  gradeLabel?: string;             // honest spec/grade-match caveat
 }
 function buildAlternatives(vendorKey: string, data: AppData): AltItem[] {
   const x = data.value?.vendors[vendorKey];
@@ -56,6 +57,7 @@ function buildAlternatives(vendorKey: string, data: AppData): AltItem[] {
         size: rev && myRev ? (rev > myRev ? 'bigger' : 'smaller') : null,
         alt: { material: mkey as MaterialKey, index },
         backed: !!(a.status === 'ok' && (a.metrics || a.probe)),
+        gradeLabel: a.gradeLabel ?? undefined,
       });
     });
   }
@@ -156,7 +158,8 @@ function VendorCard({ vendor: x, data, onFull, onPickAlt }: { vendor: ValueVendo
   const srcWhen = probe?.latestFy ?? fin?.source?.date ?? null;
   const srcLabel = srcName ? `${srcName}${srcWhen ? ` · ${srcWhen}` : ''}` : null;
   // listed-proxy / pending honesty labels
-  const isProxy = fin?.type === 'listed' && fin.companyName && vendorShort(fin.companyName).toLowerCase() !== vendorShort(x.name).toLowerCase();
+  const norm = (s: string) => vendorShort(s).toLowerCase().replace(/[^a-z0-9]/g, '');
+  const isProxy = fin?.type === 'listed' && fin.companyName && norm(fin.companyName) !== norm(x.name);
   const pending = fin && fin.status !== 'ok';
 
   let marginRoom: { tone: 'room' | 'tight' | 'none'; text: string };
@@ -342,6 +345,7 @@ function Alternatives({ items, onPick }: { items: AltItem[]; onPick: (it: AltIte
               {!it.backed && <Pill color={FDC.grey}>financials pending</Pill>}
             </div>
             <p className="mt-0.5 text-[11px] leading-snug text-fdc-grey">{it.why}</p>
+            {it.gradeLabel && <span className="mt-1 inline-block rounded bg-fdc-gold/15 px-1.5 py-0.5 text-[10px] font-semibold text-fdc-gold-dark">✓ {it.gradeLabel}</span>}
           </div>
           {it.price && <span className="tnum shrink-0 rounded-md bg-white px-1.5 py-0.5 text-[11.5px] font-bold text-fdc-green">{it.price}</span>}
         </button>
