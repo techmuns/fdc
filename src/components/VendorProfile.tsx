@@ -378,15 +378,15 @@ function ListedBody({ metrics, health, levers, brief, replacements, onPickReplac
         {brief && <LeversSection levers={levers} />}
         <Section icon={Building2} title="Market snapshot" sub="live market data via Munshot (keyless)" color={FDC.blue}>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+            <KV label="ROCE" value={m.roce != null ? pct(m.roce) : '—'} />
+            <KV label="ROE" value={m.roe != null ? pct(m.roe) : '—'} />
             <KV label="EBITDA margin" value={m.ebitdaMargin != null ? pct(m.ebitdaMargin) : '—'} />
             <KV label="Market cap" value={m.marketCap != null ? crore(m.marketCap) : '—'} />
             <KV label="P/E (TTM)" value={m.pe != null ? `${m.pe.toFixed(1)}×` : '—'} />
             <KV label="EV / EBITDA" value={m.evEbitda != null ? `${m.evEbitda.toFixed(1)}×` : '—'} />
             <KV label="Dividend yield" value={m.dividendYield != null ? pct(m.dividendYield) : '—'} />
-            <KV label="Current price" value={m.currentPrice != null ? `₹${m.currentPrice.toFixed(0)}` : '—'} />
             <KV label="1-yr change" value={m.yearlyChange != null ? pct(m.yearlyChange) : '—'} tone={m.yearlyChange != null && m.yearlyChange < 0 ? 'risk' : 'ok'} />
             <KV label="Gross margin" value={m.grossMargin != null ? pct(m.grossMargin) : '—'} />
-            <KV label="Employees" value={m.employees != null ? m.employees.toLocaleString('en-IN') : '—'} />
           </div>
           <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4">
             <KV label="Debtor days" value={m.receivableDays != null ? `${Math.round(m.receivableDays)}d` : '—'} />
@@ -395,7 +395,7 @@ function ListedBody({ metrics, health, levers, brief, replacements, onPickReplac
             <KV label="Cash cycle" value={m.cashConversionCycle != null ? `${Math.round(m.cashConversionCycle)}d` : '—'} />
           </div>
           <p className="mt-2 rounded-lg bg-fdc-offwhite px-3 py-2 text-[11.5px] leading-snug text-fdc-grey">
-            Market figures are live via Munshot; working-capital days are from Screener.in (audited annual filings). MCA-filing drill-downs (charges, directors, legal) are shown for <b>private</b> suppliers via Probe42.
+            Price/market figures are live via Munshot; ROCE, ROE and working-capital days are from Screener.in (audited annual filings) and feed the health score. MCA-filing drill-downs (charges, directors, legal) are shown for <b>private</b> suppliers via Probe42.
           </p>
         </Section>
       </Expander>

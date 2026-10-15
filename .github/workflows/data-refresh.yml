@@ -51,8 +51,8 @@ jobs:
       - name: Refresh vendor & alternative financials (listed = Munshot; private = Probe42 → rating-doc fallback)
         run: npm run financials
 
-      - name: Add listed-vendor working-capital days (Screener.in, free) — never fatal
-        run: npm run screener || echo "Screener step failed (non-fatal) — credit days keep their last values."
+      - name: Enrich listed vendors & alternatives from Screener.in (days + ROCE/ROE → health) — never fatal
+        run: npm run screener || echo "Screener step failed (non-fatal) — listed enrichment keeps its last values."
 
       - name: Commit refreshed data if changed
         run: |

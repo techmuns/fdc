@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T17:43:24.327Z",
+  "generatedAt": "2026-10-15T04:14:16.859Z",
   "sources": {
     "listed": "Munshot market-data API (free)",
     "private": "Probe42 comprehensive reports (MCA filings) — primary; credit-rating-agency rationale docs — fallback / cross-check"
@@ -1210,7 +1210,7 @@
       "metrics": {
         "revenue": 60315901952,
         "ebitda": 6083474944,
-        "marketCap": 82092875776,
+        "marketCap": 81079214080,
         "totalDebt": 4409999872,
         "ebitdaMargin": 10.09,
         "netMargin": 6.9,
@@ -1219,21 +1219,21 @@
         "debtToEquity": 13.38,
         "revenueGrowth": 23.5,
         "earningsGrowth": 171.1,
-        "pe": 19.73,
+        "pe": 19.49,
         "evEbitda": 12.81,
         "dividendYield": 17,
-        "currentPrice": 178.98,
-        "yearlyChange": 68.85,
+        "currentPrice": 176.77,
+        "yearlyChange": 62.12,
         "employees": 2245,
-        "roce": null,
-        "roe": null,
+        "roce": 12.5,
+        "roe": 9.72,
         "receivableDays": 28,
         "inventoryDays": 70,
         "payableDays": 13,
         "cashConversionCycle": 84
       },
       "healthScore": {
-        "value": 70,
+        "value": 64,
         "grade": "B",
         "components": [
           {
@@ -1259,6 +1259,18 @@
             "raw": 13.38,
             "score": 93,
             "weight": 0.2
+          },
+          {
+            "label": "Return on capital",
+            "raw": 12.5,
+            "score": 50,
+            "weight": 0.15
+          },
+          {
+            "label": "Return on equity",
+            "raw": 9.72,
+            "score": 49,
+            "weight": 0.15
           }
         ],
         "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -1266,7 +1278,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-14"
+        "date": "2026-10-15"
       },
       "note": null,
       "ratingGrade": null,
@@ -1321,7 +1333,7 @@
         "sourceUrl": "https://www.screener.in/company/GAEL/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-10-14"
+        "date": "2026-10-15"
       }
     },
     "sayaji-industries": {
@@ -1350,21 +1362,21 @@
         "debtToEquity": 236.51,
         "revenueGrowth": 5.9,
         "earningsGrowth": 0,
-        "pe": 3.76,
+        "pe": 3.75,
         "evEbitda": 9.48,
         "dividendYield": 0,
         "currentPrice": 109.5,
         "yearlyChange": 4.83,
         "employees": 779,
-        "roce": null,
-        "roe": null,
+        "roce": 8.18,
+        "roe": 1.49,
         "receivableDays": 22,
         "inventoryDays": 49,
         "payableDays": 84,
         "cashConversionCycle": -14
       },
       "healthScore": {
-        "value": 17,
+        "value": 18,
         "grade": "D",
         "components": [
           {
@@ -1390,6 +1402,18 @@
             "raw": 236.51,
             "score": 0,
             "weight": 0.2
+          },
+          {
+            "label": "Return on capital",
+            "raw": 8.18,
+            "score": 33,
+            "weight": 0.15
+          },
+          {
+            "label": "Return on equity",
+            "raw": 1.49,
+            "score": 7,
+            "weight": 0.15
           }
         ],
         "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -1397,7 +1421,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-14"
+        "date": "2026-10-15"
       },
       "note": null,
       "ratingGrade": null,
@@ -1460,7 +1484,7 @@
         "sourceUrl": "https://www.screener.in/company/SAYAJIIND/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-10-14"
+        "date": "2026-10-15"
       }
     },
     "shrinath-roto-pack": {
@@ -7284,7 +7308,7 @@
       "metrics": {
         "revenue": 14589500416,
         "ebitda": 938726016,
-        "marketCap": 4498510848,
+        "marketCap": 4549751296,
         "totalDebt": 3454099968,
         "ebitdaMargin": 6.43,
         "netMargin": 2.34,
@@ -7293,21 +7317,21 @@
         "debtToEquity": 60.88,
         "revenueGrowth": 7.2,
         "earningsGrowth": 143.1,
-        "pe": 13.16,
+        "pe": 13.04,
         "evEbitda": 7.51,
-        "dividendYield": 68,
-        "currentPrice": 143.98,
-        "yearlyChange": -9.47,
+        "dividendYield": 69,
+        "currentPrice": 145.62,
+        "yearlyChange": -11.24,
         "employees": 1210,
-        "roce": null,
-        "roe": null,
+        "roce": 5.88,
+        "roe": 1.47,
         "receivableDays": 24,
         "inventoryDays": 108,
         "payableDays": 27,
         "cashConversionCycle": 105
       },
       "healthScore": {
-        "value": 39,
+        "value": 33,
         "grade": "D",
         "components": [
           {
@@ -7333,6 +7357,18 @@
             "raw": 60.88,
             "score": 70,
             "weight": 0.2
+          },
+          {
+            "label": "Return on capital",
+            "raw": 5.88,
+            "score": 24,
+            "weight": 0.15
+          },
+          {
+            "label": "Return on equity",
+            "raw": 1.47,
+            "score": 7,
+            "weight": 0.15
           }
         ],
         "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -7340,7 +7376,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-14"
+        "date": "2026-10-15"
       },
       "note": "Group parent — listed proxy: figures are for the listed parent The Sukhjit Starch & Chemicals Ltd (NSE/BSE: SUKHJITS), used as a proxy because the supplying entity Sukhjit Corn Products does not file separately.",
       "ratingGrade": null,
@@ -7410,7 +7446,7 @@
         "sourceUrl": "https://www.screener.in/company/SUKHJITS/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-10-14"
+        "date": "2026-10-15"
       }
     },
     "berry-global-india": {
@@ -9155,7 +9191,7 @@
       "metrics": {
         "revenue": 5146226176,
         "ebitda": 382657760,
-        "marketCap": 864990016,
+        "marketCap": 819000000,
         "totalDebt": 602000000,
         "ebitdaMargin": 7.44,
         "netMargin": 3.67,
@@ -9164,21 +9200,21 @@
         "debtToEquity": 72.84,
         "revenueGrowth": 21.4,
         "earningsGrowth": 0,
-        "pe": 4.58,
+        "pe": 4.34,
         "evEbitda": 3.71,
         "dividendYield": 0,
-        "currentPrice": 205.95,
-        "yearlyChange": 36.38,
+        "currentPrice": 195,
+        "yearlyChange": 35.96,
         "employees": 376,
-        "roce": null,
-        "roe": null,
+        "roce": 17.6,
+        "roe": 17.3,
         "receivableDays": 43,
         "inventoryDays": 30,
         "payableDays": 43,
         "cashConversionCycle": 30
       },
       "healthScore": {
-        "value": 51,
+        "value": 58,
         "grade": "C",
         "components": [
           {
@@ -9204,6 +9240,18 @@
             "raw": 72.84,
             "score": 64,
             "weight": 0.2
+          },
+          {
+            "label": "Return on capital",
+            "raw": 17.6,
+            "score": 70,
+            "weight": 0.15
+          },
+          {
+            "label": "Return on equity",
+            "raw": 17.3,
+            "score": 87,
+            "weight": 0.15
           }
         ],
         "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -9211,7 +9259,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-14"
+        "date": "2026-10-15"
       },
       "note": "Listed on BSE (UNIVSTAR) — thinly traded",
       "ratingGrade": null,
@@ -9266,7 +9314,7 @@
         "sourceUrl": "https://www.screener.in/company/524408/",
         "asOf": "Mar 2026",
         "basis": "standalone",
-        "date": "2026-10-14"
+        "date": "2026-10-15"
       }
     },
     "suraj-blow-plast": {
@@ -12315,7 +12363,7 @@
       "metrics": {
         "revenue": 26116399104,
         "ebitda": 2173799936,
-        "marketCap": 17534683136,
+        "marketCap": 17216735232,
         "totalDebt": 1445600000,
         "ebitdaMargin": 8.32,
         "netMargin": 5.22,
@@ -12324,22 +12372,22 @@
         "debtToEquity": 10.72,
         "revenueGrowth": 22.5,
         "earningsGrowth": 75.5,
-        "pe": 12.85,
+        "pe": 12.62,
         "evEbitda": 6.91,
         "dividendYield": 86,
-        "currentPrice": 232.18,
-        "yearlyChange": 1.77,
+        "currentPrice": 227.97,
+        "yearlyChange": -9.6,
         "employees": 2500,
-        "roce": null,
-        "roe": null,
+        "roce": 12,
+        "roe": 8.96,
         "receivableDays": 82,
         "inventoryDays": 46,
         "payableDays": 102,
         "cashConversionCycle": 26
       },
       "healthScore": {
-        "value": 64,
-        "grade": "B",
+        "value": 59,
+        "grade": "C",
         "components": [
           {
             "label": "Net margin",
@@ -12364,6 +12412,18 @@
             "raw": 10.72,
             "score": 95,
             "weight": 0.2
+          },
+          {
+            "label": "Return on capital",
+            "raw": 12,
+            "score": 48,
+            "weight": 0.15
+          },
+          {
+            "label": "Return on equity",
+            "raw": 8.96,
+            "score": 45,
+            "weight": 0.15
           }
         ],
         "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -12371,7 +12431,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-14"
+        "date": "2026-10-15"
       },
       "note": null,
       "ratingGrade": null,
@@ -12415,7 +12475,7 @@
         "sourceUrl": "https://www.screener.in/company/HUHTAMAKI/",
         "asOf": "Dec 2025",
         "basis": "standalone",
-        "date": "2026-10-14"
+        "date": "2026-10-15"
       }
     },
     "uflex": {
@@ -12435,7 +12495,7 @@
       "metrics": {
         "revenue": 164920033280,
         "ebitda": 22030196736,
-        "marketCap": 45421027328,
+        "marketCap": 44969705472,
         "totalDebt": 101523062784,
         "ebitdaMargin": 13.36,
         "netMargin": 4.14,
@@ -12444,21 +12504,21 @@
         "debtToEquity": 124.99,
         "revenueGrowth": 35.5,
         "earningsGrowth": 630,
-        "pe": 6.66,
+        "pe": 6.59,
         "evEbitda": 6.21,
         "dividendYield": 48,
-        "currentPrice": 629,
-        "yearlyChange": 15.49,
+        "currentPrice": 622.75,
+        "yearlyChange": 14.72,
         "employees": 7772,
-        "roce": null,
-        "roe": null,
+        "roce": 7.03,
+        "roe": 4.27,
         "receivableDays": 92,
         "inventoryDays": 97,
         "payableDays": 99,
         "cashConversionCycle": 89
       },
       "healthScore": {
-        "value": 54,
+        "value": 46,
         "grade": "C",
         "components": [
           {
@@ -12484,6 +12544,18 @@
             "raw": 124.99,
             "score": 38,
             "weight": 0.2
+          },
+          {
+            "label": "Return on capital",
+            "raw": 7.03,
+            "score": 28,
+            "weight": 0.15
+          },
+          {
+            "label": "Return on equity",
+            "raw": 4.27,
+            "score": 21,
+            "weight": 0.15
           }
         ],
         "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -12491,7 +12563,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-14"
+        "date": "2026-10-15"
       },
       "note": null,
       "ratingGrade": null,
@@ -12550,7 +12622,7 @@
         "sourceUrl": "https://www.screener.in/company/UFLEX/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-10-14"
+        "date": "2026-10-15"
       }
     },
     "silk-polypack": {
