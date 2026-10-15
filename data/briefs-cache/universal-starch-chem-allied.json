@@ -1,75 +1,75 @@
 {
-  "inputHash": "5aa3329173c81045",
+  "inputHash": "6341c840fc0d0d4f",
   "brief": {
-    "headline": "Close the 13.6% price gap to Sayaji's ₹66.48/KG — we're paying ₹14.26 L/yr more than we need to",
+    "headline": "Close the 13.6% price gap to Sayaji's ₹66.48/KG and recover ₹14.26 L annual excess — we have three credible alternates ready to quote.",
     "priceAsk": {
-      "summary": "Target ₹66.48/KG for Dextrose Anhydrous IP to match our best-in-system price",
-      "target": "₹66.48/KG (saving ₹14.26 L annually)",
-      "basis": "We already pay Sayaji Industries Limited ₹66.48/KG for the same material; our current ₹75.51/KG with Universal Starch creates a 13.6% gap and ₹14.26 L annual excess spend. The India export unit value for dextrose sits at 42.95 ₹/kg, confirming significant room below our current rate."
+      "summary": "Reduce Dextrose Anhydrous IP from ₹75.51/KG to ₹66.48/KG to match our best price",
+      "target": "₹66.48/KG — the rate Sayaji Industries Limited gives us today",
+      "basis": "Current 13.6% gap costs us ₹14.26 L/yr excess; India export unit value sits at 42.95 ₹/kg, so our ask is reasonable and still above market line"
     },
     "paymentTermAsk": {
-      "summary": "Maintain 30 Days After Receipt — no change needed",
-      "cashImpact": "₹4.90 L working capital already committed at 30 days; no incremental ask"
+      "summary": "No change needed — 30 Days After Receipt is acceptable",
+      "cashImpact": "none"
     },
-    "financialLeverage": "Universal Starch is a ₹514.62 Cr revenue company with 3.7% net margin and 7.4% EBITDA margin, growing at 21.4%/yr. Their 0.73x debt-to-equity is manageable and they carry a C health score (51/100) with no red flags. We represent only 0.12% of their revenue at ₹59.65 L — minimal leverage as a standalone customer. However, their fast growth means they value volume commitments, and their margins leave room to move on price. Push firmly on the price gap but frame it as a path to higher volume from us.",
+    "financialLeverage": "Universal Starch earned ₹514.62 Cr revenue with 3.7% net margin and 7.4% EBITDAMARGIN, 0.73x debt-to-equity, and 17.6% return on capital — financials are stable but margins are thin. Their C health score (58/100) signals moderate resilience. We represent only 0.12% of their revenue (₹59.65 L spend), so our standalone leverage is minimal. However, they are growing at 21.4%/yr and value incremental volume. We can trade a volume commitment for the price cut, but must keep Gulshan, Sanstar, and Tirupati warm as alternates to create competitive tension.",
     "evidence": [
       {
-        "point": "We pay 13.6% above our best dextrose price",
+        "point": "We pay 13.6% more than our cheapest supplier for the same Dextrose",
         "figure": "13.6%"
       },
       {
-        "point": "Annual excess spend versus Sayaji Industries Limited",
+        "point": "Annual excess cost versus best price we already secure elsewhere",
         "figure": "₹14.26 L"
       },
       {
-        "point": "Our current average dextrose price with them",
-        "figure": "₹75.51/KG"
-      },
-      {
-        "point": "Best price we pay elsewhere for the same material",
+        "point": "Sayaji Industries delivers Dextrose Anhydrous IP at this lower rate today",
         "figure": "₹66.48/KG"
       },
       {
-        "point": "India dextrose export benchmark",
+        "point": "India export benchmark shows dextrose trades well below our current price",
         "figure": "42.95 ₹/kg"
       },
       {
-        "point": "We are a tiny fraction of their business",
-        "figure": "0.12%"
+        "point": "Universal Starch's thin net margin leaves limited room but is not distressed",
+        "figure": "3.7%"
+      },
+      {
+        "point": "They are growing fast and will want to protect volume share",
+        "figure": "21.4%"
       }
     ],
     "alternates": [
       {
         "name": "Gulshan Polyols Ltd",
-        "why": "Listed starch & polyol maker; established dextrose/sorbitol supplier — a drop-in alternate to Gujarat Ambuja/Sayaji. Revenue ₹2359.06 Cr, health score C (56/100)."
+        "why": "Listed starch & polyol maker, ₹2359.06 Cr revenue, B health score (62/100) — established dextrose supplier and a drop-in alternate"
       },
       {
         "name": "Sanstar Ltd",
-        "why": "Recently-listed maize-derivatives specialist (starch, dextrose) — growing capacity. Revenue ₹821.13 Cr, health score B (63/100)."
+        "why": "Recently-listed maize-derivatives specialist, ₹821.13 Cr revenue, C health (53/100) — growing dextrose capacity"
       },
       {
-        "name": "Sayaji Industries Limited",
-        "why": "Already our best-price supplier at ₹66.48/KG — proven quality and reliability for Dextrose Anhydrous IP."
+        "name": "Tirupati Starch & Chemicals Ltd",
+        "why": "Listed Indore wet-miller, ₹365.39 Cr revenue, makes Dextrose ANHYDROUS IV-fluid grade — exact form match with IP monograph available"
       }
     ],
     "risks": [
-      "At 0.12% of their ₹514.62 Cr revenue, we lack solo clout — they may walk if pushed without a volume sweetener.",
-      "Their 21.4%/yr growth suggests strong demand elsewhere; don't assume they need our ₹59.65 L badly.",
-      "C health score (51/100) and 3.7% net margin mean thin cushion — verify supply continuity even if price holds.",
-      "India export benchmark of 42.95 ₹/kg implies commodity pressure, but pharma-grade premiums may justify part of the gap — qualify spec differences before demanding full parity."
+      "At 0.12% of their ₹514.62 Cr revenue, we lack solo leverage — they may walk if we push without a volume sweetener or visible competitive threat",
+      "Thin 3.7% net margin means a steep cut could squeeze them harder than peers; anchor the ask on our existing ₹66.48/KG price, not the 42.95 ₹/kg export floor",
+      "Tirupati's D health score (27/100) and Roquette India's D (28/100) mean two alternates carry higher risk — prioritize Gulshan (B, 62/100) if we need to switch fast",
+      "No borrowing-cost data available, so early-payment discount is off the table as a lever"
     ],
-    "suggestedOpeningLine": "We value the partnership, but we're carrying a 13.6% price premium versus Sayaji at ₹66.48/KG — help us understand how we close that ₹14.26 L gap and grow volume together."
+    "suggestedOpeningLine": "We value the partnership, but at ₹75.51/KG we're paying 13.6% over the ₹66.48/KG that Sayaji gives us for identical Dextrose — let's close that gap and talk about a volume commitment in return."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-10-14",
+  "generatedAt": "2026-10-15",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
-    "inputTokens": 2452,
-    "outputTokens": 1104,
+    "inputTokens": 2580,
+    "outputTokens": 1138,
     "serverToolUsage": {},
-    "totalTokens": 3556
+    "totalTokens": 3718
   }
 }
