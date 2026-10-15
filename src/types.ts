@@ -408,6 +408,7 @@ export interface AltVendor {
   name: string; type: 'listed' | 'private'; role: string; ticker: string | null; cin: string | null;
   status: 'ok' | 'pending' | 'cin-unresolved'; fitNote: string; secondSourceFor: string | null;
   gradeLabel?: string | null; // honest spec/grade match caveat (e.g. "exact anhydrous grade — pending IP-monograph confirmation")
+  screener?: string | null;   // Screener.in slug override (BSE code) when the ticker doesn't resolve
   companyName: string | null; symbol: string | null; metrics: FinMetrics | null; healthScore: HealthScore | null;
   source: { sourceName: string; sourceUrl: string }; note: string | null;
   // Phase 4 — private alternates now carry their full Probe42 profile (matched by CIN)

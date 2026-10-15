@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T17:42:54.183Z",
+  "generatedAt": "2026-10-15T04:14:48.123Z",
   "byMaterial": {
     "dextrose": [
       {
@@ -7,6 +7,7 @@
         "type": "listed",
         "role": "producer",
         "ticker": "TIRUSTA",
+        "screener": "524582",
         "cin": null,
         "status": "ok",
         "fitNote": "Listed Indore maize wet-miller; makes Dextrose ANHYDROUS (IV-fluid grade) — exact form match; confirm IP monograph CoA before switching",
@@ -26,17 +27,21 @@
           "debtToEquity": 163.96,
           "revenueGrowth": -0.7,
           "earningsGrowth": -52.7,
-          "pe": 20.48,
+          "pe": 20.17,
           "evEbitda": 8.55,
           "dividendYield": 0,
           "currentPrice": 119.8,
           "yearlyChange": -30.13,
           "employees": 332,
-          "roce": null,
-          "roe": null
+          "roce": 10.2,
+          "roe": 10.1,
+          "receivableDays": 30,
+          "inventoryDays": 50,
+          "payableDays": 28,
+          "cashConversionCycle": 53
         },
         "healthScore": {
-          "value": 20,
+          "value": 27,
           "grade": "D",
           "components": [
             {
@@ -62,6 +67,18 @@
               "raw": 163.96,
               "score": 18,
               "weight": 0.2
+            },
+            {
+              "label": "Return on capital",
+              "raw": 10.2,
+              "score": 41,
+              "weight": 0.15
+            },
+            {
+              "label": "Return on equity",
+              "raw": 10.1,
+              "score": 51,
+              "weight": 0.15
             }
           ],
           "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -69,7 +86,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-14"
+          "date": "2026-10-15"
         },
         "note": null,
         "key": null,
@@ -79,13 +96,21 @@
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": []
+        "levers": [],
+        "creditDaysSource": {
+          "sourceName": "Screener.in (from audited annual filings)",
+          "sourceUrl": "https://www.screener.in/company/524582/consolidated/",
+          "asOf": "Mar 2026",
+          "basis": "consolidated",
+          "date": "2026-10-15"
+        }
       },
       {
         "name": "Gulshan Polyols Ltd",
         "type": "listed",
         "role": "producer",
         "ticker": "GULPOLY",
+        "screener": null,
         "cin": null,
         "status": "ok",
         "fitNote": "Listed starch & polyol maker; established dextrose/sorbitol supplier — a drop-in alternate to Gujarat Ambuja/Sayaji.",
@@ -96,7 +121,7 @@
         "metrics": {
           "revenue": 23590617088,
           "ebitda": 2800028672,
-          "marketCap": 10304415744,
+          "marketCap": 10182535168,
           "totalDebt": 3125575936,
           "ebitdaMargin": 11.87,
           "netMargin": 6.25,
@@ -105,18 +130,22 @@
           "debtToEquity": 43.5,
           "revenueGrowth": 7.9,
           "earningsGrowth": 306.6,
-          "pe": 6.99,
+          "pe": 6.91,
           "evEbitda": 4.71,
-          "dividendYield": 93,
-          "currentPrice": 165.71,
+          "dividendYield": 91,
+          "currentPrice": 163.75,
           "yearlyChange": 16.48,
           "employees": 577,
-          "roce": null,
-          "roe": null
+          "roce": 18.6,
+          "roe": 16.6,
+          "receivableDays": 32,
+          "inventoryDays": 53,
+          "payableDays": 38,
+          "cashConversionCycle": 48
         },
         "healthScore": {
-          "value": 56,
-          "grade": "C",
+          "value": 62,
+          "grade": "B",
           "components": [
             {
               "label": "Net margin",
@@ -141,6 +170,18 @@
               "raw": 43.5,
               "score": 78,
               "weight": 0.2
+            },
+            {
+              "label": "Return on capital",
+              "raw": 18.6,
+              "score": 74,
+              "weight": 0.15
+            },
+            {
+              "label": "Return on equity",
+              "raw": 16.6,
+              "score": 83,
+              "weight": 0.15
             }
           ],
           "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -148,7 +189,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-14"
+          "date": "2026-10-15"
         },
         "note": null,
         "key": null,
@@ -158,13 +199,21 @@
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": []
+        "levers": [],
+        "creditDaysSource": {
+          "sourceName": "Screener.in (from audited annual filings)",
+          "sourceUrl": "https://www.screener.in/company/GULPOLY/",
+          "asOf": "Mar 2026",
+          "basis": "standalone",
+          "date": "2026-10-15"
+        }
       },
       {
         "name": "Sanstar Ltd",
         "type": "listed",
         "role": "producer",
         "ticker": "SANSTAR",
+        "screener": null,
         "cin": null,
         "status": "ok",
         "fitNote": "Recently-listed maize-derivatives specialist (starch, dextrose) — growing capacity.",
@@ -175,7 +224,7 @@
         "metrics": {
           "revenue": 8211299840,
           "ebitda": 506057504,
-          "marketCap": 19634313216,
+          "marketCap": 19568224256,
           "totalDebt": 199000000,
           "ebitdaMargin": 6.16,
           "netMargin": 5.36,
@@ -184,18 +233,22 @@
           "debtToEquity": 2.87,
           "revenueGrowth": 22.1,
           "earningsGrowth": 0,
-          "pe": 40.85,
+          "pe": 39.72,
           "evEbitda": 32.9,
           "dividendYield": 0,
-          "currentPrice": 98.04,
+          "currentPrice": 97.71,
           "yearlyChange": 8.32,
           "employees": 203,
-          "roce": null,
-          "roe": null
+          "roce": 5.83,
+          "roe": 5.22,
+          "receivableDays": 44,
+          "inventoryDays": 28,
+          "payableDays": 19,
+          "cashConversionCycle": 53
         },
         "healthScore": {
-          "value": 63,
-          "grade": "B",
+          "value": 53,
+          "grade": "C",
           "components": [
             {
               "label": "Net margin",
@@ -220,6 +273,18 @@
               "raw": 2.87,
               "score": 99,
               "weight": 0.2
+            },
+            {
+              "label": "Return on capital",
+              "raw": 5.83,
+              "score": 23,
+              "weight": 0.15
+            },
+            {
+              "label": "Return on equity",
+              "raw": 5.22,
+              "score": 26,
+              "weight": 0.15
             }
           ],
           "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -227,7 +292,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-14"
+          "date": "2026-10-15"
         },
         "note": null,
         "key": null,
@@ -237,13 +302,21 @@
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": []
+        "levers": [],
+        "creditDaysSource": {
+          "sourceName": "Screener.in (from audited annual filings)",
+          "sourceUrl": "https://www.screener.in/company/SANSTAR/",
+          "asOf": "Mar 2026",
+          "basis": "standalone",
+          "date": "2026-10-15"
+        }
       },
       {
         "name": "Roquette India Pvt Ltd",
         "type": "private",
         "role": "producer",
         "ticker": null,
+        "screener": null,
         "cin": "U15326MH2010PTC310407",
         "status": "ok",
         "fitNote": "Indian arm of global starch major Roquette — pharma-grade dextrose/excipients; premium, very reliable.",
@@ -1308,6 +1381,7 @@
         "type": "private",
         "role": "producer",
         "ticker": null,
+        "screener": null,
         "cin": "U51101MH2010PTC208697",
         "status": "pending",
         "fitNote": "Global ingredients major; pharma & food dextrose; strong quality systems.",
@@ -1336,6 +1410,7 @@
         "type": "private",
         "role": "producer",
         "ticker": null,
+        "screener": null,
         "cin": "U15320TZ2010PTC015946",
         "status": "pending",
         "fitNote": "South-India maize starch/dextrose maker; regional logistics advantage.",
@@ -1364,6 +1439,7 @@
         "type": "private",
         "role": "producer",
         "ticker": null,
+        "screener": null,
         "cin": "U01100HR2016PTC108842",
         "status": "pending",
         "fitNote": "North-India starch derivatives; newer entrant.",
@@ -1394,6 +1470,7 @@
         "type": "listed",
         "role": "rigid-packaging",
         "ticker": "MOLDTKPAC",
+        "screener": null,
         "cin": null,
         "status": "ok",
         "fitNote": "Listed rigid-plastic leader (pails, containers, pharma); strong, profitable — a robust alternate for bottles/closures.",
@@ -1404,7 +1481,7 @@
         "metrics": {
           "revenue": 9465030656,
           "ebitda": 1826751232,
-          "marketCap": 21758291968,
+          "marketCap": 21439295488,
           "totalDebt": 2197662976,
           "ebitdaMargin": 19.3,
           "netMargin": 8.04,
@@ -1413,18 +1490,22 @@
           "debtToEquity": 31.85,
           "revenueGrowth": 24.9,
           "earningsGrowth": 14.2,
-          "pe": 28.62,
+          "pe": 28.2,
           "evEbitda": 13.11,
-          "dividendYield": 91,
-          "currentPrice": 327.4,
-          "yearlyChange": -12.02,
+          "dividendYield": 92,
+          "currentPrice": 322.6,
+          "yearlyChange": -14.38,
           "employees": 972,
-          "roce": null,
-          "roe": null
+          "roce": 13.3,
+          "roe": 10.8,
+          "receivableDays": 72,
+          "inventoryDays": 148,
+          "payableDays": 77,
+          "cashConversionCycle": 144
         },
         "healthScore": {
-          "value": 79,
-          "grade": "A",
+          "value": 73,
+          "grade": "B",
           "components": [
             {
               "label": "Net margin",
@@ -1449,6 +1530,18 @@
               "raw": 31.85,
               "score": 84,
               "weight": 0.2
+            },
+            {
+              "label": "Return on capital",
+              "raw": 13.3,
+              "score": 53,
+              "weight": 0.15
+            },
+            {
+              "label": "Return on equity",
+              "raw": 10.8,
+              "score": 54,
+              "weight": 0.15
             }
           ],
           "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -1456,7 +1549,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-14"
+          "date": "2026-10-15"
         },
         "note": null,
         "key": null,
@@ -1466,13 +1559,21 @@
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": []
+        "levers": [],
+        "creditDaysSource": {
+          "sourceName": "Screener.in (from audited annual filings)",
+          "sourceUrl": "https://www.screener.in/company/MOLDTKPAC/",
+          "asOf": "Mar 2026",
+          "basis": "standalone",
+          "date": "2026-10-15"
+        }
       },
       {
         "name": "Hitech Corporation Ltd",
         "type": "listed",
         "role": "rigid-packaging",
         "ticker": "HITECHCORP",
+        "screener": null,
         "cin": null,
         "status": "ok",
         "fitNote": "Listed moulded & blow-moulded packaging; broad capability across bottles/caps.",
@@ -1483,7 +1584,7 @@
         "metrics": {
           "revenue": 7011659776,
           "ebitda": 783537024,
-          "marketCap": 6731156480,
+          "marketCap": 7066941952,
           "totalDebt": 1373485952,
           "ebitdaMargin": 11.18,
           "netMargin": 2.5,
@@ -1492,17 +1593,21 @@
           "debtToEquity": 48.25,
           "revenueGrowth": 36.8,
           "earningsGrowth": 50,
-          "pe": 38.35,
+          "pe": 40.26,
           "evEbitda": 10.24,
-          "dividendYield": 27,
-          "currentPrice": 391.9,
-          "yearlyChange": 102.03,
+          "dividendYield": 26,
+          "currentPrice": 411.45,
+          "yearlyChange": 94.95,
           "employees": 633,
-          "roce": null,
-          "roe": null
+          "roce": 9.57,
+          "roe": 5.71,
+          "receivableDays": 41,
+          "inventoryDays": 68,
+          "payableDays": 33,
+          "cashConversionCycle": 77
         },
         "healthScore": {
-          "value": 57,
+          "value": 51,
           "grade": "C",
           "components": [
             {
@@ -1528,6 +1633,18 @@
               "raw": 48.25,
               "score": 76,
               "weight": 0.2
+            },
+            {
+              "label": "Return on capital",
+              "raw": 9.57,
+              "score": 38,
+              "weight": 0.15
+            },
+            {
+              "label": "Return on equity",
+              "raw": 5.71,
+              "score": 29,
+              "weight": 0.15
             }
           ],
           "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -1535,7 +1652,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-14"
+          "date": "2026-10-15"
         },
         "note": null,
         "key": null,
@@ -1545,13 +1662,21 @@
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": []
+        "levers": [],
+        "creditDaysSource": {
+          "sourceName": "Screener.in (from audited annual filings)",
+          "sourceUrl": "https://www.screener.in/company/HITECHCORP/consolidated/",
+          "asOf": "Mar 2026",
+          "basis": "consolidated",
+          "date": "2026-10-15"
+        }
       },
       {
         "name": "Pearl Polymers Ltd",
         "type": "listed",
         "role": "rigid-packaging",
         "ticker": "PEARLPOLY",
+        "screener": null,
         "cin": null,
         "status": "ok",
         "fitNote": "Listed PET bottle/jar specialist (Pearlpet) — direct fit for PET bottles.",
@@ -1562,7 +1687,7 @@
         "metrics": {
           "revenue": 198256000,
           "ebitda": -72575504,
-          "marketCap": 282321824,
+          "marketCap": 276261216,
           "totalDebt": 0,
           "ebitdaMargin": -36.61,
           "netMargin": -26.8,
@@ -1574,14 +1699,18 @@
           "pe": 0,
           "evEbitda": -0.66,
           "dividendYield": 0,
-          "currentPrice": 16.77,
-          "yearlyChange": -41.62,
+          "currentPrice": 16.41,
+          "yearlyChange": -41.92,
           "employees": 66,
-          "roce": null,
-          "roe": null
+          "roce": -17.2,
+          "roe": -17,
+          "receivableDays": 35.57,
+          "inventoryDays": 41.64,
+          "payableDays": 138.18,
+          "cashConversionCycle": -60.96
         },
         "healthScore": {
-          "value": 32,
+          "value": 24,
           "grade": "D",
           "components": [
             {
@@ -1607,6 +1736,18 @@
               "raw": 0,
               "score": 100,
               "weight": 0.2
+            },
+            {
+              "label": "Return on capital",
+              "raw": -17.2,
+              "score": 0,
+              "weight": 0.15
+            },
+            {
+              "label": "Return on equity",
+              "raw": -17,
+              "score": 0,
+              "weight": 0.15
             }
           ],
           "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -1614,7 +1755,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-14"
+          "date": "2026-10-15"
         },
         "note": null,
         "key": null,
@@ -1624,13 +1765,21 @@
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": []
+        "levers": [],
+        "creditDaysSource": {
+          "sourceName": "Screener.in (from audited annual filings)",
+          "sourceUrl": "https://www.screener.in/company/PEARLPOLY/",
+          "asOf": "Mar 2026",
+          "basis": "standalone",
+          "date": "2026-10-15"
+        }
       },
       {
         "name": "Manjushree Technopack Ltd",
         "type": "private",
         "role": "rigid-packaging",
         "ticker": null,
+        "screener": null,
         "cin": "U67120HR1987PLC138149",
         "status": "ok",
         "fitNote": "India's largest rigid-plastic packaging converter — pharma bottles, caps, preforms. Top second-source candidate.",
@@ -2802,6 +2951,7 @@
         "type": "private",
         "role": "rigid-packaging",
         "ticker": null,
+        "screener": null,
         "cin": "U29219TG1993PTC016451",
         "status": "pending",
         "fitNote": "Pharma packaging converter; bottles & closures.",
@@ -2832,6 +2982,7 @@
         "type": "listed",
         "role": "converter",
         "ticker": "HUHTAMAKI",
+        "screener": null,
         "cin": null,
         "status": "ok",
         "fitNote": "Listed flexible-packaging converter (already a tiny FDC supplier) — a proven, scalable second source for laminate sachets.",
@@ -2842,7 +2993,7 @@
         "metrics": {
           "revenue": 26116399104,
           "ebitda": 2173799936,
-          "marketCap": 17534683136,
+          "marketCap": 17216735232,
           "totalDebt": 1445600000,
           "ebitdaMargin": 8.32,
           "netMargin": 5.22,
@@ -2851,18 +3002,22 @@
           "debtToEquity": 10.72,
           "revenueGrowth": 22.5,
           "earningsGrowth": 75.5,
-          "pe": 12.85,
+          "pe": 12.62,
           "evEbitda": 6.91,
           "dividendYield": 86,
-          "currentPrice": 232.18,
-          "yearlyChange": 1.77,
+          "currentPrice": 227.97,
+          "yearlyChange": -9.6,
           "employees": 2500,
-          "roce": null,
-          "roe": null
+          "roce": 12,
+          "roe": 8.96,
+          "receivableDays": 82,
+          "inventoryDays": 46,
+          "payableDays": 102,
+          "cashConversionCycle": 26
         },
         "healthScore": {
-          "value": 64,
-          "grade": "B",
+          "value": 59,
+          "grade": "C",
           "components": [
             {
               "label": "Net margin",
@@ -2887,6 +3042,18 @@
               "raw": 10.72,
               "score": 95,
               "weight": 0.2
+            },
+            {
+              "label": "Return on capital",
+              "raw": 12,
+              "score": 48,
+              "weight": 0.15
+            },
+            {
+              "label": "Return on equity",
+              "raw": 8.96,
+              "score": 45,
+              "weight": 0.15
             }
           ],
           "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -2894,7 +3061,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-14"
+          "date": "2026-10-15"
         },
         "note": null,
         "key": null,
@@ -2904,13 +3071,21 @@
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": []
+        "levers": [],
+        "creditDaysSource": {
+          "sourceName": "Screener.in (from audited annual filings)",
+          "sourceUrl": "https://www.screener.in/company/HUHTAMAKI/",
+          "asOf": "Dec 2025",
+          "basis": "standalone",
+          "date": "2026-10-15"
+        }
       },
       {
         "name": "UFLEX Ltd",
         "type": "listed",
         "role": "converter+film",
         "ticker": "UFLEX",
+        "screener": null,
         "cin": null,
         "status": "ok",
         "fitNote": "Listed flexibles giant — both film substrate AND conversion; can second-source GEEP at scale.",
@@ -2921,7 +3096,7 @@
         "metrics": {
           "revenue": 164920033280,
           "ebitda": 22030196736,
-          "marketCap": 45421027328,
+          "marketCap": 44944433152,
           "totalDebt": 101523062784,
           "ebitdaMargin": 13.36,
           "netMargin": 4.14,
@@ -2930,17 +3105,21 @@
           "debtToEquity": 124.99,
           "revenueGrowth": 35.5,
           "earningsGrowth": 630,
-          "pe": 6.66,
+          "pe": 6.59,
           "evEbitda": 6.21,
           "dividendYield": 48,
-          "currentPrice": 629,
-          "yearlyChange": 15.49,
+          "currentPrice": 622.4,
+          "yearlyChange": 14.72,
           "employees": 7772,
-          "roce": null,
-          "roe": null
+          "roce": 7.03,
+          "roe": 4.27,
+          "receivableDays": 92,
+          "inventoryDays": 97,
+          "payableDays": 99,
+          "cashConversionCycle": 89
         },
         "healthScore": {
-          "value": 54,
+          "value": 46,
           "grade": "C",
           "components": [
             {
@@ -2966,6 +3145,18 @@
               "raw": 124.99,
               "score": 38,
               "weight": 0.2
+            },
+            {
+              "label": "Return on capital",
+              "raw": 7.03,
+              "score": 28,
+              "weight": 0.15
+            },
+            {
+              "label": "Return on equity",
+              "raw": 4.27,
+              "score": 21,
+              "weight": 0.15
             }
           ],
           "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -2973,7 +3164,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-14"
+          "date": "2026-10-15"
         },
         "note": null,
         "key": null,
@@ -2983,13 +3174,21 @@
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": []
+        "levers": [],
+        "creditDaysSource": {
+          "sourceName": "Screener.in (from audited annual filings)",
+          "sourceUrl": "https://www.screener.in/company/UFLEX/consolidated/",
+          "asOf": "Mar 2026",
+          "basis": "consolidated",
+          "date": "2026-10-15"
+        }
       },
       {
         "name": "Ester Industries Ltd",
         "type": "listed",
         "role": "film-maker",
         "ticker": "ESTER",
+        "screener": null,
         "cin": null,
         "status": "ok",
         "fitNote": "Listed BOPET film maker — substrate supply, not finished laminate; use for film cost benchmarking.",
@@ -3000,7 +3199,7 @@
         "metrics": {
           "revenue": 14691475456,
           "ebitda": 1229811200,
-          "marketCap": 9808949248,
+          "marketCap": 9751585792,
           "totalDebt": 7290094080,
           "ebitdaMargin": 8.37,
           "netMargin": -0.12,
@@ -3012,14 +3211,18 @@
           "pe": 0,
           "evEbitda": 12.61,
           "dividendYield": 27,
-          "currentPrice": 94.05,
+          "currentPrice": 93.5,
           "yearlyChange": -19.41,
           "employees": 446,
-          "roce": null,
-          "roe": null
+          "roce": 2.75,
+          "roe": -3.56,
+          "receivableDays": 49,
+          "inventoryDays": 86,
+          "payableDays": 27,
+          "cashConversionCycle": 108
         },
         "healthScore": {
-          "value": 43,
+          "value": 34,
           "grade": "D",
           "components": [
             {
@@ -3045,6 +3248,18 @@
               "raw": 93.14,
               "score": 53,
               "weight": 0.2
+            },
+            {
+              "label": "Return on capital",
+              "raw": 2.75,
+              "score": 11,
+              "weight": 0.15
+            },
+            {
+              "label": "Return on equity",
+              "raw": -3.56,
+              "score": 0,
+              "weight": 0.15
             }
           ],
           "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -3052,7 +3267,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-14"
+          "date": "2026-10-15"
         },
         "note": null,
         "key": null,
@@ -3062,13 +3277,21 @@
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": []
+        "levers": [],
+        "creditDaysSource": {
+          "sourceName": "Screener.in (from audited annual filings)",
+          "sourceUrl": "https://www.screener.in/company/ESTER/consolidated/",
+          "asOf": "Mar 2026",
+          "basis": "consolidated",
+          "date": "2026-10-15"
+        }
       },
       {
         "name": "Cosmo First Ltd",
         "type": "listed",
         "role": "film-maker",
         "ticker": "COSMOFIRST",
+        "screener": null,
         "cin": null,
         "status": "ok",
         "fitNote": "Listed BOPP/specialty film maker — substrate, not conversion.",
@@ -3079,7 +3302,7 @@
         "metrics": {
           "revenue": 40042299392,
           "ebitda": 4101224960,
-          "marketCap": 21695825920,
+          "marketCap": 21576419328,
           "totalDebt": 16803800064,
           "ebitdaMargin": 10.24,
           "netMargin": 4.17,
@@ -3088,17 +3311,21 @@
           "debtToEquity": 103.94,
           "revenueGrowth": 45.7,
           "earningsGrowth": 25.2,
-          "pe": 13.15,
+          "pe": 13.08,
           "evEbitda": 8.42,
           "dividendYield": 48,
-          "currentPrice": 835.8,
+          "currentPrice": 831.2,
           "yearlyChange": -3.93,
           "employees": 1568,
-          "roce": null,
-          "roe": null
+          "roce": 11.2,
+          "roe": 10.4,
+          "receivableDays": 40,
+          "inventoryDays": 110,
+          "payableDays": 140,
+          "cashConversionCycle": 10
         },
         "healthScore": {
-          "value": 54,
+          "value": 52,
           "grade": "C",
           "components": [
             {
@@ -3124,6 +3351,18 @@
               "raw": 103.94,
               "score": 48,
               "weight": 0.2
+            },
+            {
+              "label": "Return on capital",
+              "raw": 11.2,
+              "score": 45,
+              "weight": 0.15
+            },
+            {
+              "label": "Return on equity",
+              "raw": 10.4,
+              "score": 52,
+              "weight": 0.15
             }
           ],
           "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -3131,7 +3370,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-14"
+          "date": "2026-10-15"
         },
         "note": null,
         "key": null,
@@ -3141,13 +3380,21 @@
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": []
+        "levers": [],
+        "creditDaysSource": {
+          "sourceName": "Screener.in (from audited annual filings)",
+          "sourceUrl": "https://www.screener.in/company/COSMOFIRST/consolidated/",
+          "asOf": "Mar 2026",
+          "basis": "consolidated",
+          "date": "2026-10-15"
+        }
       },
       {
         "name": "Polyplex Corporation Ltd",
         "type": "listed",
         "role": "film-maker",
         "ticker": "POLYPLEX",
+        "screener": null,
         "cin": null,
         "status": "ok",
         "fitNote": "Listed PET film major — substrate benchmark.",
@@ -3158,7 +3405,7 @@
         "metrics": {
           "revenue": 76008103936,
           "ebitda": 5391079424,
-          "marketCap": 32927080448,
+          "marketCap": 32751101952,
           "totalDebt": 9353100288,
           "ebitdaMargin": 7.09,
           "netMargin": 2.04,
@@ -3167,18 +3414,22 @@
           "debtToEquity": 13.29,
           "revenueGrowth": 29.6,
           "earningsGrowth": 0,
-          "pe": 20.42,
+          "pe": 20.32,
           "evEbitda": 10.84,
           "dividendYield": 20,
-          "currentPrice": 1010.4,
+          "currentPrice": 1005,
           "yearlyChange": 4.89,
           "employees": 1022,
-          "roce": null,
-          "roe": null
+          "roce": 0.89,
+          "roe": 0.54,
+          "receivableDays": 58,
+          "inventoryDays": 150,
+          "payableDays": 55,
+          "cashConversionCycle": 153
         },
         "healthScore": {
-          "value": 57,
-          "grade": "C",
+          "value": 43,
+          "grade": "D",
           "components": [
             {
               "label": "Net margin",
@@ -3203,6 +3454,18 @@
               "raw": 13.29,
               "score": 93,
               "weight": 0.2
+            },
+            {
+              "label": "Return on capital",
+              "raw": 0.89,
+              "score": 4,
+              "weight": 0.15
+            },
+            {
+              "label": "Return on equity",
+              "raw": 0.54,
+              "score": 3,
+              "weight": 0.15
             }
           ],
           "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -3210,7 +3473,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-14"
+          "date": "2026-10-15"
         },
         "note": null,
         "key": null,
@@ -3220,13 +3483,21 @@
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": []
+        "levers": [],
+        "creditDaysSource": {
+          "sourceName": "Screener.in (from audited annual filings)",
+          "sourceUrl": "https://www.screener.in/company/POLYPLEX/consolidated/",
+          "asOf": "Mar 2026",
+          "basis": "consolidated",
+          "date": "2026-10-15"
+        }
       },
       {
         "name": "Jindal Poly Films Ltd",
         "type": "listed",
         "role": "film-maker",
         "ticker": "JINDALPOLY",
+        "screener": null,
         "cin": null,
         "status": "ok",
         "fitNote": "Listed BOPET/BOPP film major — substrate benchmark.",
@@ -3237,7 +3508,7 @@
         "metrics": {
           "revenue": 29018603520,
           "ebitda": -4695441920,
-          "marketCap": 31802071040,
+          "marketCap": 30547591168,
           "totalDebt": 40037449728,
           "ebitdaMargin": -16.18,
           "netMargin": -36.53,
@@ -3249,14 +3520,18 @@
           "pe": 0,
           "evEbitda": -9.54,
           "dividendYield": 0,
-          "currentPrice": 726.3,
-          "yearlyChange": 12.77,
+          "currentPrice": 697.65,
+          "yearlyChange": 28.62,
           "employees": 346,
-          "roce": null,
-          "roe": null
+          "roce": -1.99,
+          "roe": -0.97,
+          "receivableDays": 29,
+          "inventoryDays": 116,
+          "payableDays": 64,
+          "cashConversionCycle": 81
         },
         "healthScore": {
-          "value": 8,
+          "value": 6,
           "grade": "D",
           "components": [
             {
@@ -3282,6 +3557,18 @@
               "raw": 131.57,
               "score": 34,
               "weight": 0.2
+            },
+            {
+              "label": "Return on capital",
+              "raw": -1.99,
+              "score": 0,
+              "weight": 0.15
+            },
+            {
+              "label": "Return on equity",
+              "raw": -0.97,
+              "score": 0,
+              "weight": 0.15
             }
           ],
           "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -3289,7 +3576,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-10-14"
+          "date": "2026-10-15"
         },
         "note": null,
         "key": null,
@@ -3299,13 +3586,21 @@
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": []
+        "levers": [],
+        "creditDaysSource": {
+          "sourceName": "Screener.in (from audited annual filings)",
+          "sourceUrl": "https://www.screener.in/company/JINDALPOLY/consolidated/",
+          "asOf": "Mar 2026",
+          "basis": "consolidated",
+          "date": "2026-10-15"
+        }
       },
       {
         "name": "Constantia Parikh Packaging Pvt Ltd",
         "type": "private",
         "role": "converter",
         "ticker": null,
+        "screener": null,
         "cin": "U25209GJ1999PTC036763",
         "status": "ok",
         "fitNote": "Global Constantia group's India converter — pharma blister/sachet laminates; strong second-source for GEEP.",
@@ -4339,6 +4634,7 @@
         "type": "private",
         "role": "converter",
         "ticker": null,
+        "screener": null,
         "cin": "U27203MH2006FTC166397",
         "status": "pending",
         "fitNote": "Global Amcor's India arm — high-end pharma laminates; premium but very reliable.",
@@ -4367,6 +4663,7 @@
         "type": "private",
         "role": "converter",
         "ticker": null,
+        "screener": null,
         "cin": "U45400WB2014PTC200219",
         "status": "ok",
         "fitNote": "Large Indian flexible-packaging converter — sachet & pouch laminates.",
@@ -5321,6 +5618,7 @@
         "type": "private",
         "role": "converter",
         "ticker": null,
+        "screener": null,
         "cin": "U25202GJ1989PTC153102",
         "status": "pending",
         "fitNote": "Flexible laminate converter; sachets & pouches.",
