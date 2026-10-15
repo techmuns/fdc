@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T06:23:01.312Z",
+  "generatedAt": "2026-10-15T06:06:48.554Z",
   "fx": {
     "value": 96.73,
     "date": "2026-10-09"
@@ -23,7 +23,7 @@
       "feed": "plastemart",
       "status": "skipped",
       "seriesCount": 0,
-      "reason": "no clean absolute price levels in current news text",
+      "reason": "fetch failed: HTTP failed after 4 tries: Plastemart\ncurl: (28) Operation t",
       "gated": false
     },
     {
