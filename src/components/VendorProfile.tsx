@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import {
   X, Building2, TrendingUp, Scale, Landmark, Gavel, Users, PiggyBank, AlertTriangle,
   ShieldCheck, Factory, Banknote, Activity, GitBranch, Lightbulb, Eye, MapPin, BadgeCheck,
@@ -72,20 +73,20 @@ export default function VendorProfile({
   const proxyName = type === 'listed' && isVendor && fin!.companyName && normName(fin!.companyName) !== normName(name) ? fin!.companyName : null;
   const gradeLabel = alt?.gradeLabel || null;
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex justify-center bg-fdc-ink/55 backdrop-blur-sm animate-fade-in sm:p-4 md:p-6"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-fdc-ink/55 backdrop-blur-sm animate-fade-in sm:p-4 md:p-6"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={`${name} — full supplier profile`}
     >
       <div
-        className="flex max-h-full w-full max-w-5xl flex-col overflow-hidden bg-fdc-offwhite shadow-pop sm:rounded-2xl animate-fade-up"
+        className="flex max-h-[92vh] min-h-0 w-full max-w-5xl flex-col overflow-hidden bg-fdc-offwhite shadow-pop sm:rounded-2xl animate-fade-up"
         onClick={(e) => e.stopPropagation()}
       >
         {/* sticky header */}
-        <div className="sticky top-0 z-10 flex items-start gap-3 border-b border-black/[0.07] bg-white px-4 py-3 sm:px-5">
+        <div className="flex shrink-0 items-start gap-3 border-b border-black/[0.07] bg-white px-4 py-3 sm:px-5">
           <span className="mt-0.5 grid h-11 w-11 shrink-0 place-items-center rounded-xl text-white" style={{ background: accent }}>
             <Factory size={20} />
           </span>
@@ -162,7 +163,8 @@ export default function VendorProfile({
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
