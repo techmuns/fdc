@@ -1,6 +1,6 @@
 import { useMemo, useState, useEffect } from 'react';
-import { Layers, Search, Clock, Table2, Info, Building2, LineChart as LineChartIcon, Globe2, GitCompareArrows, ChevronDown } from 'lucide-react';
-import type { AppData, MaterialKey, ValueSku, ValueMaterial, LedgerRow, MaterialPlants, AltVendor } from '../types';
+import { Layers, Search, Clock, Table2, Info, Building2, LineChart as LineChartIcon, Globe2, GitCompareArrows, ChevronDown, Tag, Store, ShieldAlert, ExternalLink } from 'lucide-react';
+import type { AppData, MaterialKey, ValueSku, ValueMaterial, LedgerRow, MaterialPlants, AltVendor, MarketAskMaterial, MarketAsks, MarketAskSeller } from '../types';
 import type { Nav } from '../App';
 import { Card, Pill, Badge } from '../components/ui/Card';
 import { SubTabs } from '../components/ui/Tabs';
@@ -37,6 +37,8 @@ export default function MaterialTab({ data, nav, onNavigate }: { data: AppData; 
   const mp = data.plants?.byMaterial?.[mat] ?? null;
   const alts = data.alternatives?.byMaterial?.[mat] ?? [];
   const mdlMaterial = data.materials.find((m) => m.key === mat) ?? null;
+  const asks = data.marketAsks ?? null;
+  const ask = asks?.materials[mat] ?? null;
 
   return (
     <div className="animate-fade-up space-y-4">
@@ -54,9 +56,12 @@ export default function MaterialTab({ data, nav, onNavigate }: { data: AppData; 
         />
       </div>
 
+      {/* you pay vs market ask — honest headline strip + packaging WAD-CHECK */}
+      <MarketAskStrip mat={mat} ask={ask} meta={asks} />
+
       {/* price gap + freshness */}
       <div className="grid gap-4 lg:grid-cols-5">
-        <div className="lg:col-span-3"><PriceGap sku={sku} M={M} alts={alts} onNavigate={onNavigate} /></div>
+        <div className="lg:col-span-3"><PriceGap sku={sku} M={M} alts={alts} ask={ask} meta={asks} onNavigate={onNavigate} /></div>
         <div className="lg:col-span-2"><Freshness M={M} onNavigate={onNavigate} /></div>
       </div>
 
@@ -69,16 +74,108 @@ export default function MaterialTab({ data, nav, onNavigate }: { data: AppData; 
       {/* SKU list */}
       <SkuList M={M} selectedDesc={sku?.desc} onPick={(d) => setSkuSel(d)} />
 
-      {/* market reference (collapsible) */}
-      {data.market && <MarketReference material={mat} marketData={data.market} fdcPrice={M.singleCommodity && mdlMaterial?.vwap ? mdlMaterial.vwap : null} fdcLabel={`FDC paid, ${M.displayName} (our purchase data)`} />}
+      {/* who else sells this — market-ask leverage list (NOT FDC suppliers) */}
+      <MarketAskSellers ask={ask} meta={asks} />
 
-      {/* ledger */}
+      {/* ledger — the raw proof */}
       <Ledger key={mat} rows={v.ledger.filter((r) => r.material === mat)} onNavigate={onNavigate} />
+
+      {/* market reference (collapsible) — moved to the BOTTOM, after the ledger */}
+      {data.market && <MarketReference material={mat} marketData={data.market} fdcPrice={M.singleCommodity && mdlMaterial?.vwap ? mdlMaterial.vwap : null} fdcLabel={`FDC paid, ${M.displayName} (our purchase data)`} />}
     </div>
   );
 }
 
-function PriceGap({ sku, M, alts, onNavigate }: { sku: ValueSku | undefined; M: ValueMaterial; alts: AltVendor[]; onNavigate: (n: Nav) => void }) {
+// "Oct 2026" short + "15 Oct 2026" full, from an ISO date string.
+const asOfShort = (iso: string) => { const d = new Date(iso); return isNaN(+d) ? iso : d.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' }); };
+const asOfLong = (iso: string) => { const d = new Date(iso); return isNaN(+d) ? iso : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }); };
+const SELLER_TYPE_COLOR: Record<string, string> = { maker: FDC.green, trader: FDC.blue, converter: FDC.goldDark, proprietor: FDC.grey };
+
+/** Honest headline: what FDC pays vs the open-market ASK band. Green = fair, amber = headroom.
+ *  Marketplace listing price (ex-GST, MOQ-based) — never FDC's negotiated price. */
+function MarketAskStrip({ mat, ask, meta }: { mat: MaterialKey; ask: MarketAskMaterial | null; meta: MarketAsks | null }) {
+  const [wadMain, wadOther] = useMemo(() => {
+    if (!ask) return [null, null] as const;
+    const m = ask.note.match(/^([\s\S]*?)(Other items market ask:[\s\S]*)$/i);
+    return m ? [m[1].trim(), m[2].trim()] as const : [ask.note, null] as const;
+  }, [ask]);
+  if (!ask) return null;
+  const headroom = ask.tone === 'headroom';
+  const accent = headroom ? FDC.goldDark : FDC.green;
+  return (
+    <Card>
+      <div className="mb-2 flex flex-wrap items-start justify-between gap-2">
+        <h3 className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink">
+          <Tag size={15} style={{ color: accent }} /> You pay vs the market ask <span className="text-[11.5px] font-medium text-fdc-grey">— {ask.benchItem}</span>
+        </h3>
+        <Badge color={accent}>{headroom ? 'Room to push' : 'Fair'}</Badge>
+      </div>
+      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl px-3 py-2.5 text-[13px] leading-snug" style={{ background: `${accent}12`, border: `1px solid ${accent}2e` }}>
+        <span className="text-fdc-slate">You pay <b className="tnum text-fdc-ink">{ask.fdcPays}</b></span>
+        <span className="text-fdc-light">·</span>
+        <span className="text-fdc-slate">market ask <b className="tnum text-fdc-ink">{ask.band}</b> <span className="text-fdc-grey">(typ. {ask.typical})</span></span>
+        <span className="text-fdc-light">·</span>
+        <span className="font-bold" style={{ color: accent }}>{ask.verdict}</span>
+      </div>
+      <p className="mt-2 flex items-start gap-1.5 text-[11px] leading-snug text-fdc-grey">
+        <Info size={12.5} className="mt-0.5 shrink-0" />
+        <span>Marketplace <b>ASK / listing</b> price — ex-GST, MOQ-dependent. A reference, <b>not FDC's negotiated price</b> and not an FDC supplier. {meta ? <>Source: {meta.source}, as of {asOfLong(meta.asOf)}.</> : null}</span>
+      </p>
+
+      {/* packaging → WAD-CHECK amber callout; other materials → soft context note */}
+      {mat === 'packaging' ? (
+        <div className="mt-2.5 rounded-lg px-3 py-2 text-[11.5px] leading-snug" style={{ background: `${FDC.goldDark}14`, border: `1px solid ${FDC.goldDark}38` }}>
+          <span className="flex items-start gap-1.5">
+            <ShieldAlert size={14} className="mt-px shrink-0" style={{ color: FDC.goldDark }} />
+            <span className="font-semibold" style={{ color: FDC.slate }}>{wadMain}</span>
+          </span>
+          {wadOther && <p className="mt-1 pl-[20px] text-[11px] text-fdc-grey">{wadOther}</p>}
+        </div>
+      ) : (
+        <p className="mt-2.5 flex items-start gap-1.5 rounded-lg bg-fdc-blue/[0.06] px-3 py-2 text-[11.5px] leading-snug text-fdc-slate">
+          <Info size={13} className="mt-0.5 shrink-0 text-fdc-blue" /><span>{ask.note}</span>
+        </p>
+      )}
+    </Card>
+  );
+}
+
+/** Open-market sellers + their public ASK prices — a leverage list to create competition.
+ *  NOT FDC's suppliers, NOT FDC's price, no financials implied. */
+function MarketAskSellers({ ask, meta }: { ask: MarketAskMaterial | null; meta: MarketAsks | null }) {
+  if (!ask || !ask.sellers.length) return null;
+  const cols: Column<MarketAskSeller>[] = [
+    { key: 'name', header: 'Seller', render: (s) => (
+      <div className="min-w-0">
+        <div className="font-semibold text-fdc-slate">{s.name}</div>
+        <div className="text-[10.5px] text-fdc-grey">{s.item}</div>
+      </div>
+    ) },
+    { key: 'location', header: 'Location', render: (s) => <span className="text-fdc-grey">{s.location}</span> },
+    { key: 'type', header: 'Type', render: (s) => <Pill color={SELLER_TYPE_COLOR[s.type] ?? FDC.grey}>{s.type}</Pill> },
+    { key: 'ask', header: 'Market ask', align: 'right', sortable: true, sortValue: (s) => s.askRate, render: (s) => <span className="tnum whitespace-nowrap font-bold text-fdc-ink">{s.askRate}</span> },
+    { key: 'link', header: 'Source', align: 'right', render: (s) => s.sourceUrl
+      ? <a href={s.sourceUrl} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 text-fdc-blue underline-offset-2 hover:underline" onClick={(e) => e.stopPropagation()}>view <ExternalLink size={11} /></a>
+      : <span className="text-fdc-grey">listed</span> },
+  ];
+  return (
+    <Card pad={false}>
+      <div className="px-4 pt-3.5">
+        <h3 className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink">
+          <Store size={15} className="text-fdc-blue" /> Who else sells this — market ask <span className="text-[11.5px] font-medium text-fdc-grey">(leverage list)</span>
+        </h3>
+        <p className="mt-0.5 text-[12px] leading-snug text-fdc-grey">
+          Open-market sellers and the public <b>ASK price</b> they quote for {ask.benchItem}. <b className="text-fdc-slate">Not FDC's suppliers, not FDC's price</b> — a list to create competition. No financials implied.{meta ? <> {meta.source}, as of {asOfLong(meta.asOf)}.</> : null}
+        </p>
+      </div>
+      <div className="px-2 py-2">
+        <Table columns={cols} rows={ask.sellers} getKey={(s) => s.name} initialSort={{ key: 'ask', dir: 'asc' }} dense />
+      </div>
+    </Card>
+  );
+}
+
+function PriceGap({ sku, M, alts, ask, meta, onNavigate }: { sku: ValueSku | undefined; M: ValueMaterial; alts: AltVendor[]; ask: MarketAskMaterial | null; meta: MarketAsks | null; onNavigate: (n: Nav) => void }) {
   if (!sku) return <Card><p className="text-[12.5px] text-fdc-grey">No comparable prices for this material.</p></Card>;
   const singleSourced = sku.vendors.length < 2;
   const best = sku.bestPrice;
@@ -101,6 +198,11 @@ function PriceGap({ sku, M, alts, onNavigate }: { sku: ValueSku | undefined; M: 
     ],
   }));
   const showMarket = M.marketRef && /kg/i.test(M.marketRef.unit) && /kg/i.test(sku.unit);
+  const unitWord = sku.unit.toLowerCase() === 'nos' ? 'pieces' : sku.unit.toLowerCase();
+  const askMonth = meta ? asOfShort(meta.asOf) : 'Oct 2026';
+  const askRef = ask ? (
+    <>Market ask ({askMonth}) · {ask.benchItem}: <b className="tnum">{ask.band}</b> <span className="text-fdc-grey">(typ. {ask.typical})</span>. Marketplace listing price — ex-GST, MOQ-based — a reference, <b>not FDC's price</b>.</>
+  ) : null;
   return (
     <Card>
       <div className="mb-0.5 flex items-start justify-between gap-2">
@@ -109,14 +211,20 @@ function PriceGap({ sku, M, alts, onNavigate }: { sku: ValueSku | undefined; M: 
           ? <Badge color={FDC.orange}><Globe2 size={11} /> Single-sourced — benchmark externally</Badge>
           : <Badge color={FDC.green}><GitCompareArrows size={11} /> Internal gap — cheaper elsewhere in-house</Badge>}
       </div>
-      <p className="mb-3 text-[12px] leading-snug text-fdc-grey"><span className="font-semibold text-fdc-slate">{sku.desc}</span> · {singleSourced ? 'only one supplier on file — there is no internal price to compare, so benchmark against the market and candidate alternatives below.' : 'green = cheapest you already pay · grey = stale (not bought recently). Click a bar to open the supplier.'}</p>
+      <p className="mb-1.5 text-[12px] leading-snug text-fdc-grey"><span className="font-semibold text-fdc-slate">{sku.desc}</span> · {singleSourced ? 'only one supplier on file — there is no internal price to compare, so benchmark against the market and candidate alternatives below.' : 'green = cheapest you already pay · grey = stale (not bought recently). Click a bar to open the supplier.'}</p>
+      <p className="mb-3 flex items-start gap-1.5 text-[11px] leading-snug text-fdc-grey">
+        <Info size={12.5} className="mt-0.5 shrink-0" />
+        <span><b className="text-fdc-slate">How is this calculated?</b> Each price = total ₹ you paid ÷ total {unitWord} you bought over the year (a volume-weighted average), from your SAP goods-receipts. The ledger below is every raw line.</span>
+      </p>
       <HBars data={bars} format={(n) => price(n, sku.unit)} barSize={28} labelWidth={150} axisTicks={4} onClick={(d) => onNavigate({ tab: 'vendors', vendorKey: d.key })} />
 
       {/* single-source → external benchmark panel */}
       {singleSourced && (
         <div className="mt-3 space-y-2 rounded-xl border border-fdc-orange/20 bg-fdc-orange/[0.04] p-3">
           <div className="flex items-center gap-1.5 text-[11.5px] font-bold uppercase tracking-wide text-fdc-orange"><Globe2 size={12} /> External benchmark</div>
-          {M.marketRef ? (
+          {ask ? (
+            <p className="text-[12px] leading-snug text-fdc-slate">{askRef}</p>
+          ) : M.marketRef ? (
             <p className="text-[12px] leading-snug text-fdc-slate">
               Market reference: <b>{M.marketRef.label}</b> ≈ <b className="tnum">₹{M.marketRef.price}/{M.marketRef.unit.replace('₹/', '')}</b> ({M.marketRef.date.slice(0, 4)}).
               {showMarket ? ' A comparable ₹/kg input/benchmark cost — context only, not FDC’s price.' : ' This is an input cost driver (₹/kg), not a like-for-like price for this item — read it for direction only.'}
@@ -139,13 +247,19 @@ function PriceGap({ sku, M, alts, onNavigate }: { sku: ValueSku | undefined; M: 
         </div>
       )}
 
-      {!singleSourced && showMarket && M.marketRef && (
+      {!singleSourced && ask && (
+        <p className="mt-2 flex items-start gap-1.5 rounded-lg bg-fdc-blue/[0.06] px-2.5 py-1.5 text-[11px] leading-snug text-fdc-slate">
+          <Info size={13} className="mt-0.5 shrink-0 text-fdc-blue" />
+          <span>{askRef}</span>
+        </p>
+      )}
+      {!singleSourced && !ask && showMarket && M.marketRef && (
         <p className="mt-2 flex items-start gap-1.5 rounded-lg bg-fdc-blue/[0.06] px-2.5 py-1.5 text-[11px] leading-snug text-fdc-slate">
           <Info size={13} className="mt-0.5 shrink-0 text-fdc-blue" />
           <span>Market input reference: <b>{M.marketRef.label}</b> ≈ <b className="tnum">₹{M.marketRef.price}/{M.marketRef.unit.replace('₹/', '')}</b> ({M.marketRef.date.slice(0, 4)}). This is an input/benchmark cost — not FDC's price — shown for context only.</span>
         </p>
       )}
-      {!singleSourced && !showMarket && M.marketRef && (
+      {!singleSourced && !ask && !showMarket && M.marketRef && (
         <p className="mt-2 text-[11px] text-fdc-grey">Market input trend: {M.marketRef.label} ≈ ₹{M.marketRef.price}/{M.marketRef.unit.replace('₹/', '')} — a ₹/kg input, so it isn't overlaid on a per-piece price.</p>
       )}
     </Card>

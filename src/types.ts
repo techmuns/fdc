@@ -497,6 +497,19 @@ export interface ValueData {
   counts: { ledgerRows: number; skus: number; vendors: number };
 }
 
+// ---- Marketplace ASK benchmark (hand-curated reference, NOT FDC's price) ----
+export interface MarketAskSeller {
+  name: string; location: string; type: string; item: string; askRate: string; sourceUrl: string | null;
+}
+export interface MarketAskMaterial {
+  benchItem: string; band: string; typical: string; fdcPays: string;
+  verdict: string; tone: 'fair' | 'headroom'; note: string; sellers: MarketAskSeller[];
+}
+export interface MarketAsks {
+  asOf: string; source: string; disclaimer: string;
+  materials: Record<string, MarketAskMaterial>;
+}
+
 export interface AppData {
   meta: Meta;
   materials: Material[];
@@ -509,4 +522,5 @@ export interface AppData {
   alternatives: Alternatives | null;
   briefs: Briefs | null;
   value: ValueData | null;
+  marketAsks: MarketAsks | null;
 }

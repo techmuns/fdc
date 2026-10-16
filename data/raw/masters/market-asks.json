@@ -1,0 +1,56 @@
+{
+  "_comment": "HAND-CURATED marketplace ASK / listing prices per material — the price open-market sellers publicly quote, NOT FDC's negotiated price and NOT FDC's suppliers. Every figure is a real listed ask (ex-GST, MOQ-dependent); nothing is estimated. Use only as negotiation context / a leverage list. Keep the honest label everywhere it is shown. 'tone' drives the UI colour: 'fair' = green (we're at/below market), 'headroom' = amber (room to push, usually subject to a spec check).",
+  "asOf": "2026-10-15",
+  "source": "B2B marketplaces (IndiaMART / TradeIndia / ExportersIndia / GlobalLinker)",
+  "disclaimer": "Marketplace ASK / listing prices — ex-GST, MOQ-dependent. These are NOT FDC's negotiated price and NOT verified FDC suppliers. Shown as a market reference and leverage list only; no financials are implied.",
+  "materials": {
+    "dextrose": {
+      "benchItem": "Anhydrous Dextrose IP",
+      "band": "₹60–81/kg",
+      "typical": "₹66–73/kg",
+      "fdcPays": "₹66–75/kg",
+      "verdict": "MARKET-FAIR (slightly favourable)",
+      "tone": "fair",
+      "note": "Export/bulk floor ~₹43–52/kg, context only; cheap ₹40–42 trader quotes are not IP grade.",
+      "sellers": [
+        { "name": "Hatchx India", "location": "Ahmedabad", "type": "trader", "item": "Anhydrous Dextrose IP 99%", "askRate": "₹66/kg", "sourceUrl": "https://www.indiamart.com/hatchx-india" },
+        { "name": "Mahalaxmi Starch Products", "location": "Ahmedabad", "type": "maker", "item": "Anhydrous Dextrose IP", "askRate": "₹65/kg", "sourceUrl": "https://www.exportersindia.com" },
+        { "name": "Shree Radhey Krishna", "location": "Faridabad", "type": "maker", "item": "Dextrose BP/USP grade", "askRate": "₹60/kg", "sourceUrl": "https://www.tradeindia.com" },
+        { "name": "Jinkrupa Corporation", "location": "Ahmedabad", "type": "trader", "item": "Anhydrous Dextrose IP", "askRate": "₹68/kg", "sourceUrl": null },
+        { "name": "Neha Chemicals (Universal)", "location": "Hyderabad", "type": "trader", "item": "Dextrose IP grade", "askRate": "₹81/kg", "sourceUrl": null }
+      ]
+    },
+    "laminates": {
+      "benchItem": "Pharma / ORS sachet laminate",
+      "band": "₹205–305/kg",
+      "typical": "₹250/kg",
+      "fdcPays": "₹250–302/kg",
+      "verdict": "MARKET-FAIR (top of fair band)",
+      "tone": "headroom",
+      "note": "Cheaper commodity metallised-PET film ₹120–220 is a lighter, lower-barrier grade — not the same; heavy Alu foil ₹375–490. Saving only if FDC's grade is actually a lighter film — confirm gauge spec.",
+      "sellers": [
+        { "name": "N Flex Systems", "location": "Ahmedabad", "type": "maker", "item": "ORS + pharma sachet pouch", "askRate": "₹260–305/kg", "sourceUrl": "https://www.exportersindia.com" },
+        { "name": "Sampurna Packaging", "location": "Satara", "type": "maker", "item": "Pharma / ORS sachet laminate", "askRate": "₹250/kg", "sourceUrl": "https://www.tradeindia.com" },
+        { "name": "AV Super Packaging", "location": "Faridabad", "type": "converter", "item": "Sachet laminate film", "askRate": "₹205/kg", "sourceUrl": null },
+        { "name": "Eternal Packaging", "location": "Ahmedabad", "type": "maker", "item": "Laminate film", "askRate": "₹200–230/kg", "sourceUrl": null },
+        { "name": "Patidar Corporation", "location": "Ahmedabad", "type": "maker", "item": "Metallised-PET film (lighter grade)", "askRate": "₹145/kg", "sourceUrl": null }
+      ]
+    },
+    "packaging": {
+      "benchItem": "28 mm induction-wad PP cap",
+      "band": "₹0.55–1.20/pc",
+      "typical": "₹0.85–0.95/pc",
+      "fdcPays": "₹0.8–1.1/pc",
+      "verdict": "MARKET-FAIR; modest headroom to ₹0.65–0.80 at higher volume / looser spec",
+      "tone": "headroom",
+      "note": "WAD-CHECK: confirm FDC's price is the complete cap+wad closure — the wad disc alone is only ₹0.17–0.80/pc; CRC child-resistant caps (₹3.25) are a different product. Other items market ask: HDPE bottles ₹4–5/pc, PET bottles ₹2.5–5, PET preforms ₹125–130/kg, PP measuring cups ₹0.25–0.50, LDPE droppers ₹2–2.5.",
+      "sellers": [
+        { "name": "Hads Pack", "location": "Rajkot", "type": "maker", "item": "28 mm pilfer-proof cap", "askRate": "₹0.54/pc", "sourceUrl": null },
+        { "name": "Indore Pack", "location": "Pithampur", "type": "maker", "item": "28 mm EPE-liner pharma cap", "askRate": "₹0.75/pc", "sourceUrl": null },
+        { "name": "Dewan Polycaps", "location": "Ghaziabad", "type": "maker", "item": "28 mm dual-seal cap", "askRate": "₹0.85/pc", "sourceUrl": null },
+        { "name": "Right Angle Pharmapack", "location": "Silvassa", "type": "maker", "item": "28 mm induction-wad cap", "askRate": "₹0.95/pc", "sourceUrl": null },
+        { "name": "Kevalin Inc", "location": "Vadodara", "type": "maker", "item": "100 / 200 ml pharma PET bottles", "askRate": "₹1.60–2.45/pc", "sourceUrl": null }
+      ]
+    }
+  }
+}

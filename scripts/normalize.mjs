@@ -1254,6 +1254,9 @@ function main() {
     writeFileSync(path.join(OUT_DIR, name), JSON.stringify(obj, null, 2));
     return `${name} (${(JSON.stringify(obj).length / 1024).toFixed(1)} KB)`;
   };
+  // Hand-curated marketplace ASK benchmark (reference data, not derived from SAP).
+  // Copied verbatim from the master so public/data stays the single fetch source.
+  const marketAsks = readJsonOpt(path.join(RAW_DIR, 'masters', 'market-asks.json'));
   const written = [
     write('meta.json', meta),
     write('materials.json', materialsOut),
@@ -1262,6 +1265,7 @@ function main() {
     write('plants.json', plantsOut),
     write('payment-terms.json', paymentTerms),
     write('value.json', value),
+    ...(marketAsks ? [write('market-asks.json', marketAsks)] : []),
   ];
 
   // ---- console summary ---------------------------------------------------
