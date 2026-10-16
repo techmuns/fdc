@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T05:30:22.284Z",
+  "generatedAt": "2026-10-16T05:59:48.578Z",
   "currency": "INR",
   "dateRange": {
     "from": "2025-04-01",
@@ -60,6 +60,11 @@
       "vendorKey": "gujarat-ambuja-exports",
       "action": "Use Sayaji Industries's lower price to push Gujarat Ambuja Exports down — don't just move more volume to Sayaji Industries.",
       "why": "You pay Gujarat Ambuja Exports ₹68.5/kg for Dextrose Anhydrous IP (EXMPT); Sayaji Industries sells the same at ₹66.6/kg. But Sayaji Industries is already your biggest Dextrose source, and they only keep about 1% as profit — putting even more through one supplier is risky. Use that gap to get Gujarat Ambuja Exports (30-day credit, in better financial shape) down to the same price, or split some to a second solid supplier.",
+      "whyBullets": [
+        "You pay Gujarat Ambuja Exports ₹68.5/kg; Sayaji Industries ₹66.6 for the same.",
+        "Sayaji Industries is already your biggest Dextrose source (~1% profit) — don't overload it.",
+        "Push Gujarat Ambuja Exports to ₹66.6, or split to a 2nd supplier."
+      ],
       "savingLabel": "₹60.5 L",
       "proof": {
         "tab": "material",
@@ -79,6 +84,11 @@
       "vendorKey": "tetrapak-india",
       "action": "Put Tetrapak on 30-day credit — today it's pay-on-receipt.",
       "why": "Tetrapak is your largest supplier you pay too soon: you pay on the day goods arrive — no credit at all, while your other big suppliers already give you 30 days. On ₹5.46 Cr of spend, moving them to 30-day credit frees up about ₹44.9 L of cash, one time — not a price cut. Sukhjit Corn Products is on even worse terms — 100% advance — but far smaller spend (₹1.06 Cr).",
+      "whyBullets": [
+        "You pay on delivery, no credit — others give you 30 days.",
+        "On ₹5.46 Cr of spend, 30-day credit frees ~₹44.9 L cash (one-time).",
+        "Sukhjit Corn Products is worse (100% advance) but far smaller (₹1.06 Cr)."
+      ],
       "savingLabel": "₹44.9 L",
       "proof": {
         "tab": "vendors",
@@ -96,6 +106,11 @@
       "vendorKey": "cincorp-international",
       "action": "Use Mars Plastics's lower price to push Cincorp International down — verify Mars Plastics before moving volume.",
       "why": "You pay Cincorp International ₹1.08/pc for PP CAP PLAS 28MM INDUCTUCTION WAD; Mars Plastics quotes the same at ₹0.81/pc — a real price gap to lean on in your next review with Cincorp International. But Mars Plastics's financials aren't verified yet, so qualify it (health, supply continuity) before shifting volume — we don't vouch for a supplier we can't back.",
+      "whyBullets": [
+        "You pay Cincorp International ₹1.08/pc; Mars Plastics quotes ₹0.81.",
+        "Mars Plastics's financials aren't checked yet.",
+        "Use the gap to push Cincorp International down; vet Mars Plastics before moving volume."
+      ],
       "savingLabel": "₹14.0 L",
       "proof": {
         "tab": "material",

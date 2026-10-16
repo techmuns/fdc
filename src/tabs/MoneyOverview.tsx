@@ -25,15 +25,21 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
   const topMat = [...v.savingsByMaterial].sort((a, b) => b.savings - a.savings)[0]?.materialKey;
   const cashVendor = v.headline.cashFreedBy?.[0];
 
+  const spendOf = (k: string) => (data.meta.totals.byMaterial as Record<string, number>)[k] ?? 0;
   const bars: HBarDatum[] = v.savingsByMaterial
     .filter((s) => s.savings > 0)
     .sort((a, b) => b.savings - a.savings)
-    .map((s) => ({
-      key: s.materialKey, label: s.displayName, value: s.savings, color: MATERIAL_COLOR[s.materialKey],
-      valueLabel: fmtSave(s.savings),
-      note: `${s.displayName}: you overpaid ${fmtSave(s.savings)} this year vs the cheapest price you already paid for the same items.`,
-      tipRows: [{ label: 'Saving / yr', value: fmtSave(s.savings) }],
-    }));
+    .map((s) => {
+      const spend = spendOf(s.materialKey);
+      const pc = spend ? (s.savings / spend) * 100 : 0;
+      return {
+        key: s.materialKey, label: s.displayName, value: s.savings, color: MATERIAL_COLOR[s.materialKey],
+        valueLabel: fmtSave(s.savings),
+        sublabel: `of ${fmtSave(spend)} spent · ${pc.toFixed(1)}%`,
+        note: `${s.displayName}: you spend ${fmtSave(spend)}/yr and can save ${fmtSave(s.savings)} (${pc.toFixed(1)}%) by matching the cheapest price you already pay.`,
+        tipRows: [{ label: 'You spend / yr', value: fmtSave(spend) }, { label: 'You can save', value: fmtSave(s.savings) }],
+      };
+    });
 
   return (
     <div className="animate-fade-up space-y-5">
@@ -49,7 +55,7 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
             You can save about <span className="text-fdc-gold">{fmtSave(cost)}</span> a year.
           </h1>
           <p className="mt-1.5 max-w-2xl text-[13px] leading-snug text-white/85 sm:text-[14px]">
-            That's just from price — paying the lower price you already pay elsewhere for the very same items. It drops into profit every year. Separately, you can free up a chunk of one-time cash by fixing weak payment terms — two different kinds of money, kept apart below.
+            Two kinds of money, kept separate below: <b>yearly savings</b> (pay the lower price you already pay elsewhere) and <b>one-time cash</b> (fix weak payment terms).
           </p>
 
           {/* two money figures — never added together */}
@@ -79,8 +85,8 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
 
       {/* savings by material */}
       <Card>
-        <h2 className="mb-0.5 text-[15px] font-bold text-fdc-ink">Where the savings are</h2>
-        <p className="mb-3 text-[12.5px] text-fdc-grey">Yearly overpay by material — click a bar to see every line of proof.</p>
+        <h2 className="mb-0.5 text-[15px] font-bold text-fdc-ink">Spend &amp; savings by material</h2>
+        <p className="mb-3 text-[12.5px] text-fdc-grey">The bar = what you can save each year; the line under it = what you spend. Tap a bar for the proof.</p>
         <HBars
           data={bars}
           format={(n) => fmtSave(n)}
@@ -176,7 +182,16 @@ function ActionCard({ a, onNavigate }: { a: ValueAction; onNavigate: (n: Nav) =>
       <p className="text-[15px] font-bold leading-snug text-fdc-ink">{a.action}</p>
 
       <div className="mt-2.5 mb-1 text-[10px] font-semibold uppercase tracking-wide text-fdc-grey">Why</div>
-      <p className="text-[12.5px] leading-snug text-fdc-slate">{a.why}</p>
+      {a.whyBullets?.length ? (
+        <ul className="space-y-1">
+          {a.whyBullets.map((b, i) => (
+            <li key={i} className="flex gap-1.5 text-[12px] leading-snug text-fdc-slate">
+              <span className="mt-[6px] h-1 w-1 shrink-0 rounded-full" style={{ background: K.color }} />
+              <span>{b}</span>
+            </li>
+          ))}
+        </ul>
+      ) : <p className="text-[12.5px] leading-snug text-fdc-slate">{a.why}</p>}
 
       {a.risk && (
         <p className="mt-2 flex items-start gap-1.5 rounded-lg bg-fdc-orange/[0.08] px-2.5 py-1.5 text-[11.5px] leading-snug text-fdc-slate">

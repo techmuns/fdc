@@ -469,7 +469,7 @@ export interface ValueMaterial {
 }
 export interface ValueAction {
   rank: number; key: string; kind: 'price' | 'terms' | 'freshness'; saving: number; savingLabel: string;
-  material: string; vendorKey?: string; action: string; why: string;
+  material: string; vendorKey?: string; action: string; why: string; whyBullets?: string[];
   isCash?: boolean; isLeverage?: boolean;
   proof: { tab: 'material' | 'vendors'; material?: string; skuDesc?: string; vendorKey?: string }; risk: string | null;
 }
