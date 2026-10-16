@@ -32,13 +32,16 @@ export function Card({
   children,
   className = '',
   pad = true,
+  onClick,
 }: {
   children: ReactNode;
   className?: string;
   pad?: boolean;
+  onClick?: () => void;
 }) {
   return (
     <section
+      onClick={onClick}
       className={`min-w-0 rounded-2xl border border-black/[0.06] bg-white shadow-card ${pad ? 'p-4 sm:p-5' : ''} ${className}`}
     >
       {children}

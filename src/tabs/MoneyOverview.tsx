@@ -1,7 +1,9 @@
-import { ArrowRight, TrendingUp, Scale, Coins, Clock, Sparkles, AlertTriangle, Wallet } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowRight, TrendingUp, Scale, Coins, Clock, Sparkles, AlertTriangle, Wallet, Eye } from 'lucide-react';
 import type { AppData, ValueAction, PaymentTerms } from '../types';
 import type { Nav } from '../App';
 import { Card } from '../components/ui/Card';
+import { ActionProof } from '../components/ActionProof';
 import { HBars, type HBarDatum } from '../components/charts/Bars';
 import { StackedBar, type StackSegment } from '../components/charts/StackedBar';
 import { FDC, MATERIAL_COLOR, TERM_COLOR } from '../lib/brand';
@@ -18,6 +20,7 @@ const kindOf = (a: ValueAction): keyof typeof KIND => (a.isLeverage ? 'leverage'
 
 export default function MoneyOverview({ data, onNavigate }: { data: AppData; onNavigate: (n: Nav) => void }) {
   const v = data.value;
+  const [proof, setProof] = useState<ValueAction | null>(null);
   if (!v) return <Card><p className="text-[13px] text-fdc-grey">Run <code className="rounded bg-black/5 px-1 py-0.5 font-mono text-[11px]">npm run normalize</code> to generate the value data.</p></Card>;
 
   const cost = v.headline.costSavings ?? v.headline.totalSavings;
@@ -79,9 +82,9 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
 
       {/* 3 action cards */}
       <div>
-        <h2 className="mb-2.5 text-[13px] font-bold uppercase tracking-wide text-fdc-grey">Do these three things first</h2>
+        <h2 className="mb-2.5 text-[13px] font-bold uppercase tracking-wide text-fdc-grey">Do these three things first <span className="ml-1 font-medium normal-case text-fdc-grey/80">— tap a card to see the proof</span></h2>
         <div className="grid gap-3 lg:grid-cols-3">
-          {v.actions.map((a) => <ActionCard key={a.key} a={a} onNavigate={onNavigate} />)}
+          {v.actions.map((a) => <ActionCard key={a.key} a={a} onNavigate={onNavigate} onProof={setProof} />)}
         </div>
       </div>
 
@@ -101,6 +104,8 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
 
       {/* payment terms & the cash they tie up */}
       {data.paymentTerms && <PaymentTermsPanel pt={data.paymentTerms} onNavigate={onNavigate} />}
+
+      {proof && <ActionProof action={proof} data={data} onClose={() => setProof(null)} onNavigate={onNavigate} />}
     </div>
   );
 }
@@ -168,11 +173,11 @@ function HeroStat({ eyebrow, value, sub, cta, onClick, tone }: { eyebrow: string
   );
 }
 
-function ActionCard({ a, onNavigate }: { a: ValueAction; onNavigate: (n: Nav) => void }) {
+function ActionCard({ a, onNavigate, onProof }: { a: ValueAction; onNavigate: (n: Nav) => void; onProof: (a: ValueAction) => void }) {
   const K = KIND[kindOf(a)];
   const Icon = K.icon;
   return (
-    <Card className="flex flex-col">
+    <Card className="group flex cursor-pointer flex-col transition hover:shadow-card-hover" onClick={() => onProof(a)}>
       <div className="mb-2 flex items-center justify-between">
         <span className="inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[10.5px] font-bold uppercase tracking-wide" style={{ background: `${K.color}14`, color: K.color }}>
           <Icon size={12} /> {K.label}
@@ -206,12 +211,15 @@ function ActionCard({ a, onNavigate }: { a: ValueAction; onNavigate: (n: Nav) =>
           <div className="text-[10px] font-semibold uppercase tracking-wide text-fdc-grey">{K.save}</div>
           <div className="tnum text-[22px] font-extrabold leading-none" style={{ color: a.isCash ? FDC.blue : FDC.green }}>{a.savingLabel}</div>
         </div>
-        <button
-          onClick={() => onNavigate(a.proof.tab === 'vendors' ? { tab: 'vendors', vendorKey: a.proof.vendorKey } : { tab: 'material', material: a.proof.material as never, skuDesc: a.proof.skuDesc, vendorKey: a.proof.vendorKey })}
-          className="inline-flex items-center gap-1 rounded-lg border border-fdc-green/30 bg-fdc-green/[0.06] px-2.5 py-1.5 text-[12px] font-semibold text-fdc-green transition hover:bg-fdc-green/[0.12] focus-ring"
-        >
-          See proof <ArrowRight size={13} />
-        </button>
+        <div className="flex items-center gap-1.5">
+          <span className="hidden items-center gap-1 text-[11px] font-semibold text-fdc-slate opacity-0 transition group-hover:opacity-100 sm:inline-flex"><Eye size={12} /> tap for proof</span>
+          <button
+            onClick={(e) => { e.stopPropagation(); onNavigate(a.proof.tab === 'vendors' ? { tab: 'vendors', vendorKey: a.proof.vendorKey } : { tab: 'material', material: a.proof.material as never, skuDesc: a.proof.skuDesc, vendorKey: a.proof.vendorKey }); }}
+            className="inline-flex items-center gap-1 rounded-lg border border-fdc-green/30 bg-fdc-green/[0.06] px-2.5 py-1.5 text-[12px] font-semibold text-fdc-green transition hover:bg-fdc-green/[0.12] focus-ring"
+          >
+            Full view <ArrowRight size={13} />
+          </button>
+        </div>
       </div>
     </Card>
   );
