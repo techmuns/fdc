@@ -580,14 +580,14 @@ function buildActions({ materials, savingsByMaterial, vendors, canonicalByKey, f
     if (fragile) {
       // The cheapest vendor is fragility-flagged (thin margin and/or already the biggest share).
       // Don't recommend piling MORE volume onto a weak sole source — use its price as leverage.
-      const strongBits = [fromTermLabel, fromStronger ? 'stronger financials' : null].filter(Boolean).join(', ');
+      const strongBits = [fromTermLabel, fromStronger ? 'in better financial shape' : null].filter(Boolean).join(', ');
       cand.push({
         key: `price-${L.from.vendorKey}-${L.mkey}`, kind: 'price', isLeverage: true, saving: L.saving, material: L.mkey, vendorKey: L.from.vendorKey,
         action: `Use ${short(L.toVendor)}'s lower price to push ${short(L.from.vendor)} down — don't just move more volume to ${short(L.toVendor)}.`,
-        why: `You pay ${short(L.from.vendor)} ₹${pf(L.from.price)}/${unitLbl(L.sku.unit)} for ${L.sku.desc}; ${short(L.toVendor)} sells the same at ₹${pf(L.toPrice)}/${unitLbl(L.sku.unit)}. But ${short(L.toVendor)} is already your biggest ${L.M.displayName} source${toMargin != null ? ` on a thin ~${Math.round(toMargin)}% net margin` : ''} — adding volume there deepens single-source risk. Use that gap to get ${short(L.from.vendor)}${strongBits ? ` (${strongBits})` : ''} down to it, or split to a second healthy source.`,
+        why: `You pay ${short(L.from.vendor)} ₹${pf(L.from.price)}/${unitLbl(L.sku.unit)} for ${L.sku.desc}; ${short(L.toVendor)} sells the same at ₹${pf(L.toPrice)}/${unitLbl(L.sku.unit)}. But ${short(L.toVendor)} is already your biggest ${L.M.displayName} source${toMargin != null ? `, and they only keep about ${Math.round(toMargin)}% as profit` : ''} — putting even more through one supplier is risky. Use that gap to get ${short(L.from.vendor)}${strongBits ? ` (${strongBits})` : ''} down to the same price, or split some to a second solid supplier.`,
         savingLabel: croreOrL(L.saving),
         proof: { tab: 'material', material: L.mkey, skuDesc: L.sku.desc, vendorKey: L.from.vendorKey },
-        risk: `${short(L.toVendor)} is already your biggest ${L.M.displayName} source — keep its price as leverage, not a bigger basket.`,
+        risk: `${short(L.toVendor)} is already your biggest ${L.M.displayName} source — use its low price to push the dearer one down, don't just move more volume to it.`,
       });
     } else if (isBacked(L.toKey, fin)) {
       // Destination is the cheapest ACTIVE vendor AND we can stand behind its books.
@@ -642,7 +642,7 @@ function buildActions({ materials, savingsByMaterial, vendors, canonicalByKey, f
     const payPhrase = isAdvance
       ? `you pay 100% up front, before the goods are even dispatched`
       : `you pay on the day goods arrive — no credit at all`;
-    let why = `${short(tv.name)} is your largest supplier on weak terms: ${payPhrase}, while your other big suppliers already give you 30 days. On ${croreOrL(tv.spend)} of spend, securing 30-day credit frees about ${croreOrL(termsLever.cashFreed)} of working capital — a one-time cash release, not a price cut.`;
+    let why = `${short(tv.name)} is your largest supplier you pay too soon: ${payPhrase}, while your other big suppliers already give you 30 days. On ${croreOrL(tv.spend)} of spend, moving them to 30-day credit frees up about ${croreOrL(termsLever.cashFreed)} of cash, one time — not a price cut.`;
     if (worstAdvance) why += ` ${short(worstAdvance.name)} is on even worse terms — 100% advance — but far smaller spend (${croreOrL(worstAdvance.spend)}).`;
     cand.push({
       key: `terms-${tv.vendorKey}`, kind: 'terms', isCash: true, saving: termsLever.cashFreed, material: termsLever.mkey, vendorKey: tv.vendorKey,

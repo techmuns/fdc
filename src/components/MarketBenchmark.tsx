@@ -11,7 +11,7 @@ const KIND_COLOR: Record<string, string> = {
   fdc: '#00973D', customs: '#2E7CE4', producer: '#1ABC9C', ask: '#8E44AD', wpi: '#EFAE0E', input: '#F36D06',
 };
 const KIND_LABEL: Record<string, string> = {
-  customs: 'Customs unit value', producer: 'Producer list', ask: 'Seller ask', wpi: 'Govt WPI index', input: 'Raw-material input',
+  customs: 'Import/export price', producer: 'Factory price', ask: "Seller's asking price", wpi: 'Govt price index', input: 'Raw-material cost',
 };
 
 export function MarketBenchmark({
@@ -64,7 +64,7 @@ export function MarketBenchmark({
   if (!lines.length) {
     return (
       <Card>
-        <CardHeader icon={Globe2} title="Market benchmark" subtitle="Live external prices" accent="#2E7CE4" />
+        <CardHeader icon={Globe2} title="Market comparison" subtitle="Live outside prices" accent="#2E7CE4" />
         <p className="text-[13px] text-fdc-grey">No market lines resolved for this material yet.</p>
       </Card>
     );
@@ -76,9 +76,9 @@ export function MarketBenchmark({
         <CardHeader
           icon={Globe2}
           title="Our price vs the market"
-          subtitle={fdcPrice != null ? 'Where FDC sits against real external reference prices (all ₹/kg)' : 'External reference prices for this material (FDC buys finished pieces — see note)'}
+          subtitle={fdcPrice != null ? 'Where your price sits against real outside prices (all ₹/kg)' : 'Outside reference prices for this material (FDC buys finished pieces — see note)'}
           accent="#2E7CE4"
-          right={grading && <Badge color={grading.tier === 'strong' ? '#00973D' : '#F36D06'}>{grading.tier === 'strong' ? 'strong benchmark' : 'context only'}</Badge>}
+          right={grading && <Badge color={grading.tier === 'strong' ? '#00973D' : '#F36D06'}>{grading.tier === 'strong' ? 'good comparison' : 'rough guide'}</Badge>}
         />
         {grading && (
           <div className="mb-3 flex items-start gap-2 rounded-lg bg-fdc-offwhite px-3 py-2 text-[11.5px] leading-snug text-fdc-slate">
@@ -93,7 +93,7 @@ export function MarketBenchmark({
         )}
         {fdcPrice == null && comparable.length > 0 && (
           <p className="mt-3 rounded-lg bg-fdc-blue/[0.06] px-3 py-2 text-[11.5px] leading-snug text-fdc-slate">
-            FDC buys finished items priced per piece, so these per-kg lines are <span className="font-semibold">material-cost drivers</span>, not a like-for-like benchmark — use them to read which way input costs are moving.
+            FDC buys finished items priced per piece, so these per-kg lines are a <span className="font-semibold">guide to which way raw-material costs are heading</span> — not a direct price for this item.
           </p>
         )}
       </Card>
@@ -101,7 +101,7 @@ export function MarketBenchmark({
       <div className="grid gap-4 lg:grid-cols-2">
         {customsTrend && (
           <Card>
-            <CardHeader icon={Factory} title="Customs unit-value trend" subtitle={`${customsTrend.grade}`} accent="#2E7CE4" />
+            <CardHeader icon={Factory} title="Import/export price trend" subtitle={`${customsTrend.grade}`} accent="#2E7CE4" />
             <LineArea
               points={customsTrend.points.map((p) => ({
                 label: (p.fxYear || p.date.slice(0, 4)),
@@ -119,7 +119,7 @@ export function MarketBenchmark({
         )}
 
         <Card>
-          <CardHeader icon={Droplets} title="Raw-material input trend" subtitle="Upstream cost drivers — NOT the material’s own price" accent="#F36D06" />
+          <CardHeader icon={Droplets} title="Raw-material cost trend" subtitle="What the raw materials cost — NOT this item’s own price" accent="#F36D06" />
           {inputs.length ? (
             <div className="space-y-3">
               {inputs.map((inp) => <InputRow key={inp.key} s={inp} />)}

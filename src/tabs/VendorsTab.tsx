@@ -163,10 +163,10 @@ function VendorCard({ vendor: x, data, onFull, onPickAlt }: { vendor: ValueVendo
   const pending = fin && fin.status !== 'ok';
 
   let marginRoom: { tone: 'room' | 'tight' | 'none'; text: string };
-  if (netMargin == null) marginRoom = { tone: 'none', text: 'Their margin isn’t on file yet — open the full profile to check before pressing on price.' };
-  else if (netMargin < 2) marginRoom = { tone: 'tight', text: `Wafer-thin ~${pct(netMargin)} net margin — there is little room to cut their price. Win on payment terms, volume or freshness instead, not price.` };
-  else if (marginFalling) marginRoom = { tone: 'room', text: `Net margin ~${pct(netMargin)} and sliding — they value keeping your volume, so there is room to ask for a better price.` };
-  else marginRoom = { tone: 'room', text: `Healthy ~${pct(netMargin)} net margin — room to negotiate price, especially against a cheaper alternative.` };
+  if (netMargin == null) marginRoom = { tone: 'none', text: 'We don’t have their profit on file yet — open the full details to check before you push on price.' };
+  else if (netMargin < 2) marginRoom = { tone: 'tight', text: `They keep only about ${pct(netMargin)} as profit — almost no room to cut their price. Win on payment terms, bigger volume or fresher stock instead, not price.` };
+  else if (marginFalling) marginRoom = { tone: 'room', text: `They keep about ${pct(netMargin)} as profit, and it’s shrinking — they want to hold on to your orders, so there’s room to ask for a better price.` };
+  else marginRoom = { tone: 'room', text: `Healthy — they keep about ${pct(netMargin)} as profit, so there’s room to push on price, especially against a cheaper option.` };
 
   const alts = buildAlternatives(x.vendorKey, data);
 
@@ -179,13 +179,13 @@ function VendorCard({ vendor: x, data, onFull, onPickAlt }: { vendor: ValueVendo
           <h3 className="text-[17px] font-extrabold leading-tight text-fdc-ink">{vendorShort(x.name)}</h3>
           <div className="mt-1 flex flex-wrap items-center gap-1">
             {x.materialKeys.map((k) => <Badge key={k} color={MATERIAL_COLOR[k as 'dextrose']}>{MAT_NAME[k]}</Badge>)}
-            {fin?.type === 'listed' ? <Badge color={FDC.blue}><BadgeCheck size={11} /> Listed</Badge> : fin?.primarySource === 'probe' ? <Badge color="#8E44AD"><Lock size={11} /> Private</Badge> : null}
-            {pending && <Badge color={FDC.grey}><CircleHelp size={11} /> Financials pending</Badge>}
+            {fin?.type === 'listed' ? <Badge color={FDC.blue}><BadgeCheck size={11} /> Listed company</Badge> : fin?.primarySource === 'probe' ? <Badge color="#8E44AD"><Lock size={11} /> Private company</Badge> : null}
+            {pending && <Badge color={FDC.grey}><CircleHelp size={11} /> Money info pending</Badge>}
           </div>
         </div>
         {(probe || m) && (
           <button onClick={() => onFull({ kind: 'vendor', fin: fin!, vendor: data.vendors.find((dv) => dv.key === x.vendorKey) ?? null })} className="inline-flex shrink-0 items-center gap-1 rounded-lg border border-fdc-green/30 bg-fdc-green/[0.06] px-2 py-1 text-[11px] font-semibold text-fdc-green transition hover:bg-fdc-green/[0.12] focus-ring">
-            <Maximize2 size={12} /> Full financials
+            <Maximize2 size={12} /> Full details
           </button>
         )}
       </div>
@@ -194,7 +194,7 @@ function VendorCard({ vendor: x, data, onFull, onPickAlt }: { vendor: ValueVendo
       {isProxy && (
         <div className="flex items-start gap-1.5 border-b border-black/[0.06] bg-fdc-blue/[0.05] px-4 py-2 text-[11px] leading-snug text-fdc-slate">
           <Info size={13} className="mt-0.5 shrink-0 text-fdc-blue" />
-          <span>Financials below are for the <b>listed group parent, {vendorShort(fin!.companyName!)}</b> — shown as a proxy because the supplying entity doesn’t file separately.</span>
+          <span>The money figures below are for their <b>listed parent company, {vendorShort(fin!.companyName!)}</b> — the supplier itself doesn’t publish its own.</span>
         </div>
       )}
       {pending && fin?.note && (
@@ -206,8 +206,8 @@ function VendorCard({ vendor: x, data, onFull, onPickAlt }: { vendor: ValueVendo
 
       {/* top facts */}
       <div className="grid grid-cols-2 gap-px bg-black/[0.05] sm:grid-cols-2">
-        <Fact label="Your spend / yr" value={crore(x.spend)} />
-        <Fact label="Your payment term" value={termPlain(x.termCategory, x.termText)} tone={x.termCategory === 'advance' || x.termCategory === 'immediate' ? 'bad' : 'good'} />
+        <Fact label="What you spend / yr" value={crore(x.spend)} />
+        <Fact label="When you pay them" value={termPlain(x.termCategory, x.termText)} tone={x.termCategory === 'advance' || x.termCategory === 'immediate' ? 'bad' : 'good'} />
       </div>
 
       <div className="space-y-3 p-4">
@@ -220,7 +220,7 @@ function VendorCard({ vendor: x, data, onFull, onPickAlt }: { vendor: ValueVendo
             {/* margin room */}
             <div className="rounded-xl border border-black/[0.06] p-2.5">
               <div className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-fdc-grey">
-                {marginRoom.tone === 'room' ? <TrendingDown size={12} className="text-fdc-green" /> : <TrendingUp size={12} className="text-fdc-orange" />} Their margin
+                {marginRoom.tone === 'room' ? <TrendingDown size={12} className="text-fdc-green" /> : <TrendingUp size={12} className="text-fdc-orange" />} How much profit they keep
               </div>
               {marginSeries.length >= 2 && <div className="mb-1 h-8"><Sparkline points={marginSeries} color={marginFalling ? FDC.red : FDC.blue} height={32} format={(n) => pct(n)} /></div>}
               <p className="text-[11.5px] leading-snug text-fdc-slate">{marginRoom.text}</p>
@@ -234,11 +234,11 @@ function VendorCard({ vendor: x, data, onFull, onPickAlt }: { vendor: ValueVendo
 
           {shareOfRev != null && (
             <p className="mt-2 rounded-lg bg-fdc-green/[0.06] px-2.5 py-1.5 text-[11.5px] leading-snug text-fdc-slate">
-              You are <b className="tnum">{pct(shareOfRev, shareOfRev < 1 ? 2 : 1)}</b> of their <b className="tnum">{crore(revenue!)}</b> revenue{shareOfRev >= 5 ? ' — a meaningful customer, so your ask carries weight.' : ' — a small customer, so lead with volume or a credible alternative.'}
+              Your orders are <b className="tnum">{pct(shareOfRev, shareOfRev < 1 ? 2 : 1)}</b> of everything they sell (<b className="tnum">{crore(revenue!)}</b> a year){shareOfRev >= 5 ? ' — a big customer, so your ask carries real weight.' : ' — a small customer, so lead with bigger volume or a cheaper option you could switch to.'}
             </p>
           )}
           {srcLabel && (netMargin != null || revenue != null) && (
-            <p className="mt-1.5 text-[10px] leading-snug text-fdc-grey">Margin &amp; revenue — {srcLabel}. Open <b>Full financials</b> for every figure and its source.</p>
+            <p className="mt-1.5 text-[10px] leading-snug text-fdc-grey">Their profit &amp; sales — {srcLabel}. Open <b>Full details</b> for every figure and where it comes from.</p>
           )}
         </Section>
 
@@ -307,9 +307,9 @@ function CreditDays({ x, m, srcLabel }: { x: ValueVendor; m: FinMetrics | null; 
       {call ? (
         <>
           <p className="text-[11.5px] leading-snug text-fdc-slate">{call.node}</p>
-          {srcLabel && <p className="mt-1 text-[10px] leading-snug text-fdc-grey">Their <b>debtor days</b> — {srcLabel}. Your term — FDC SAP vendor master.</p>}
+          {srcLabel && <p className="mt-1 text-[10px] leading-snug text-fdc-grey">How long they wait to get paid — {srcLabel}. Your term — FDC’s SAP records.</p>}
         </>
-      ) : <p className="text-[11.5px] leading-snug text-fdc-grey">Their customer credit days aren’t on file yet.</p>}
+      ) : <p className="text-[11.5px] leading-snug text-fdc-grey">We don’t yet know how long they let their own customers wait to pay.</p>}
     </div>
   );
 }
@@ -322,7 +322,7 @@ function PayablesFairness({ x, m }: { x: ValueVendor; m: FinMetrics | null }) {
   return (
     <p className="mt-2 flex items-start gap-1.5 rounded-lg bg-fdc-gold/[0.10] px-2.5 py-1.5 text-[11.5px] leading-snug text-fdc-slate">
       <HandCoins size={14} className="mt-0.5 shrink-0 text-fdc-gold-dark" />
-      <span><b>{vendorShort(x.name)}</b> takes about <b className="tnum">{payable} days</b> to pay its own suppliers, but makes you pay <b>{termPlain(x.termCategory, x.termText).toLowerCase()}</b>. That asymmetry is your strongest terms argument — ask to move onto {target}.</span>
+      <span><b>{vendorShort(x.name)}</b> takes about <b className="tnum">{payable} days</b> to pay its own suppliers, but makes you pay <b>{termPlain(x.termCategory, x.termText).toLowerCase()}</b>. That gap is your strongest argument on payment — ask to move onto {target}.</span>
     </p>
   );
 }
@@ -342,7 +342,7 @@ function Alternatives({ items, onPick }: { items: AltItem[]; onPick: (it: AltIte
               {it.cheaper && <Pill color={FDC.green}>cheaper · ours</Pill>}
               {it.size && <Pill color={FDC.grey}>{it.size}</Pill>}
               {it.term && <Pill color={FDC.blue}>{it.term}</Pill>}
-              {!it.backed && <Pill color={FDC.grey}>financials pending</Pill>}
+              {!it.backed && <Pill color={FDC.grey}>money info pending</Pill>}
             </div>
             <p className="mt-0.5 text-[11px] leading-snug text-fdc-grey">{it.why}</p>
             {it.gradeLabel && <span className="mt-1 inline-block rounded bg-fdc-gold/15 px-1.5 py-0.5 text-[10px] font-semibold text-fdc-gold-dark">✓ {it.gradeLabel}</span>}

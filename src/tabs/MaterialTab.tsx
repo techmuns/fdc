@@ -119,7 +119,7 @@ function MarketAskStrip({ mat, ask, meta }: { mat: MaterialKey; ask: MarketAskMa
       </div>
       <p className="mt-2 flex items-start gap-1.5 text-[11px] leading-snug text-fdc-grey">
         <Info size={12.5} className="mt-0.5 shrink-0" />
-        <span>Marketplace <b>ASK / listing</b> price — ex-GST, MOQ-dependent. A reference, <b>not FDC's negotiated price</b> and not an FDC supplier. {meta ? <>Source: {meta.source}, as of {asOfLong(meta.asOf)}.</> : null}</span>
+        <span>This is the price sellers <b>openly list</b> — before GST, and it changes with order size. A rough guide, <b>not a price FDC has agreed</b>, and these aren't FDC's suppliers. {meta ? <>Source: {meta.source}, as of {asOfLong(meta.asOf)}.</> : null}</span>
       </p>
 
       {/* packaging → WAD-CHECK amber callout; other materials → soft context note */}
@@ -201,27 +201,27 @@ function PriceGap({ sku, M, alts, ask, meta, onNavigate }: { sku: ValueSku | und
   const unitWord = sku.unit.toLowerCase() === 'nos' ? 'pieces' : sku.unit.toLowerCase();
   const askMonth = meta ? asOfShort(meta.asOf) : 'Oct 2026';
   const askRef = ask ? (
-    <>Market ask ({askMonth}) · {ask.benchItem}: <b className="tnum">{ask.band}</b> <span className="text-fdc-grey">(typ. {ask.typical})</span>. Marketplace listing price — ex-GST, MOQ-based — a reference, <b>not FDC's price</b>.</>
+    <>Market ask ({askMonth}) · {ask.benchItem}: <b className="tnum">{ask.band}</b> <span className="text-fdc-grey">(typ. {ask.typical})</span>. The price sellers openly list — before GST, changes with order size — a rough guide, <b>not FDC's price</b>.</>
   ) : null;
   return (
     <Card>
       <div className="mb-0.5 flex items-start justify-between gap-2">
         <h3 className="text-[14px] font-bold text-fdc-ink">What each supplier charges</h3>
         {singleSourced
-          ? <Badge color={FDC.orange}><Globe2 size={11} /> Single-sourced — benchmark externally</Badge>
-          : <Badge color={FDC.green}><GitCompareArrows size={11} /> Internal gap — cheaper elsewhere in-house</Badge>}
+          ? <Badge color={FDC.orange}><Globe2 size={11} /> Only one supplier — compare outside</Badge>
+          : <Badge color={FDC.green}><GitCompareArrows size={11} /> You already pay less elsewhere</Badge>}
       </div>
-      <p className="mb-1.5 text-[12px] leading-snug text-fdc-grey"><span className="font-semibold text-fdc-slate">{sku.desc}</span> · {singleSourced ? 'only one supplier on file — there is no internal price to compare, so benchmark against the market and candidate alternatives below.' : 'green = cheapest you already pay · grey = stale (not bought recently). Click a bar to open the supplier.'}</p>
+      <p className="mb-1.5 text-[12px] leading-snug text-fdc-grey"><span className="font-semibold text-fdc-slate">{sku.desc}</span> · {singleSourced ? "only one supplier on file — there's no second price to compare against, so check it against the market and the options below." : 'green = the cheapest you already pay · grey = you haven’t bought from them lately. Tap a bar to open that supplier.'}</p>
       <p className="mb-3 flex items-start gap-1.5 text-[11px] leading-snug text-fdc-grey">
         <Info size={12.5} className="mt-0.5 shrink-0" />
-        <span><b className="text-fdc-slate">How is this calculated?</b> Each price = total ₹ you paid ÷ total {unitWord} you bought over the year (a volume-weighted average), from your SAP goods-receipts. The ledger below is every raw line.</span>
+        <span><b className="text-fdc-slate">How is this worked out?</b> Each price = total ₹ you paid ÷ total {unitWord} you bought over the year (so bigger buys count more), straight from your SAP goods-receipts. The ledger at the bottom is every single line.</span>
       </p>
       <HBars data={bars} format={(n) => price(n, sku.unit)} barSize={28} labelWidth={150} axisTicks={4} onClick={(d) => onNavigate({ tab: 'vendors', vendorKey: d.key })} />
 
       {/* single-source → external benchmark panel */}
       {singleSourced && (
         <div className="mt-3 space-y-2 rounded-xl border border-fdc-orange/20 bg-fdc-orange/[0.04] p-3">
-          <div className="flex items-center gap-1.5 text-[11.5px] font-bold uppercase tracking-wide text-fdc-orange"><Globe2 size={12} /> External benchmark</div>
+          <div className="flex items-center gap-1.5 text-[11.5px] font-bold uppercase tracking-wide text-fdc-orange"><Globe2 size={12} /> Compare with the outside market</div>
           {ask ? (
             <p className="text-[12px] leading-snug text-fdc-slate">{askRef}</p>
           ) : M.marketRef ? (
@@ -232,7 +232,7 @@ function PriceGap({ sku, M, alts, ask, meta, onNavigate }: { sku: ValueSku | und
           ) : <p className="text-[12px] text-fdc-grey">No market reference on file for this material.</p>}
           {alts.length > 0 && (
             <div>
-              <p className="mb-1 text-[11.5px] text-fdc-slate">Candidate alternatives to create competition:</p>
+              <p className="mb-1 text-[11.5px] text-fdc-slate">Other sellers you could bring in to get a better price:</p>
               <div className="flex flex-wrap gap-1.5">
                 {alts.slice(0, 4).map((a, i) => (
                   <span key={i} className="inline-flex items-center gap-1 rounded-md border border-black/[0.08] bg-white px-2 py-0.5 text-[11px] text-fdc-slate">
@@ -292,17 +292,17 @@ function PlantSpread({ mp }: { mp: MaterialPlants | null }) {
     <Card>
       <div className="mb-0.5 flex items-start justify-between gap-2">
         <h3 className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><Building2 size={15} className="text-fdc-green" /> Same material, different plants</h3>
-        {mp.spread && <Badge color={mp.likeForLike ? FDC.orange : FDC.grey}>{mp.likeForLike ? `${mp.spread.diffPct.toFixed(1)}% spread` : 'mixed basket'}</Badge>}
+        {mp.spread && <Badge color={mp.likeForLike ? FDC.orange : FDC.grey}>{mp.likeForLike ? `${mp.spread.diffPct.toFixed(1)}% gap` : 'different items'}</Badge>}
       </div>
       <p className="mb-3 text-[12px] leading-snug text-fdc-grey">
         {mp.likeForLike
-          ? <>Same item, price paid at each FDC plant. Cheapest plant in green — the spread is a real like-for-like gap.</>
-          : <>Each plant buys a different mix of items, so this shows <b>where spend sits</b> per plant, not a like-for-like price gap.</>}
+          ? <>The same item, and what each FDC plant paid for it. Cheapest plant in green — this is a real, fair gap.</>
+          : <>Each plant buys a different mix of items, so this just shows <b>where the spending sits</b> per plant — not a fair price comparison.</>}
       </p>
       <HBars data={bars} format={(n) => price(n, mp.unit)} barSize={26} labelWidth={130} axisTicks={4} />
       {mp.likeForLike && mp.spread && mp.cheapestPlant && mp.dearestPlant && (
         <p className="mt-2 rounded-lg bg-fdc-green/[0.06] px-2.5 py-1.5 text-[11.5px] leading-snug text-fdc-slate">
-          <b>{plantShort(mp.dearestPlant.plantName, mp.dearestPlant.plant)}</b> pays <b className="tnum">{price(mp.dearestPlant.avgPrice, mp.unit)}</b> vs <b>{plantShort(mp.cheapestPlant.plantName, mp.cheapestPlant.plant)}</b> at <b className="tnum">{price(mp.cheapestPlant.avgPrice, mp.unit)}</b> — a <b className="tnum">{mp.spread.diffPct.toFixed(1)}%</b> gap on the same material.{potential > 2e4 ? <> Levelling every plant to the best plant's price is worth about <b className="tnum">{fmtSave(potential)}</b>/yr.</> : ''}
+          <b>{plantShort(mp.dearestPlant.plantName, mp.dearestPlant.plant)}</b> pays <b className="tnum">{price(mp.dearestPlant.avgPrice, mp.unit)}</b> vs <b>{plantShort(mp.cheapestPlant.plantName, mp.cheapestPlant.plant)}</b> at <b className="tnum">{price(mp.cheapestPlant.avgPrice, mp.unit)}</b> — a <b className="tnum">{mp.spread.diffPct.toFixed(1)}%</b> gap on the exact same material.{potential > 2e4 ? <> If every plant paid the cheapest plant's price, that's about <b className="tnum">{fmtSave(potential)}</b>/yr saved.</> : ''}
         </p>
       )}
     </Card>
@@ -335,7 +335,7 @@ function MarketReference({ material, marketData, fdcPrice, fdcLabel }: { materia
   return (
     <Card pad={false}>
       <button onClick={() => setOpen((o) => !o)} className="flex w-full items-center justify-between gap-2 px-4 py-3 text-left transition hover:bg-black/[0.02] focus-ring">
-        <span className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><Globe2 size={15} className="text-fdc-blue" /> Our price vs the market <span className="text-[11.5px] font-medium text-fdc-grey">— reference &amp; input-cost trends</span></span>
+        <span className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><Globe2 size={15} className="text-fdc-blue" /> Our price vs the market <span className="text-[11.5px] font-medium text-fdc-grey">— how it compares to the wider market</span></span>
         <span className="flex items-center gap-1 text-[11.5px] font-semibold text-fdc-grey">{open ? 'Hide' : 'Show'} <ChevronDown size={15} className={`transition ${open ? 'rotate-180' : ''}`} /></span>
       </button>
       {open && (

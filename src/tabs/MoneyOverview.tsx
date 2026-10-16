@@ -9,9 +9,9 @@ import { FDC, MATERIAL_COLOR, TERM_COLOR } from '../lib/brand';
 const fmtSave = (n: number) => (n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : `₹${(n / 1e5).toFixed(1)} L`);
 
 const KIND = {
-  price: { icon: TrendingUp, color: FDC.green, label: 'Overpaying', save: 'Save' },
-  leverage: { icon: Scale, color: FDC.green, label: 'Price leverage', save: 'Price gap you hold' },
-  terms: { icon: Coins, color: FDC.blue, label: 'Cash to free', save: 'Cash freed' },
+  price: { icon: TrendingUp, color: FDC.green, label: 'Paying too much', save: 'Save' },
+  leverage: { icon: Scale, color: FDC.green, label: 'Price in your favour', save: 'Price gap in your favour' },
+  terms: { icon: Coins, color: FDC.blue, label: 'Cash to free up', save: 'Cash freed' },
   freshness: { icon: Clock, color: FDC.orange, label: 'Old stock', save: 'Save' },
 } as const;
 const kindOf = (a: ValueAction): keyof typeof KIND => (a.isLeverage ? 'leverage' : a.isCash ? 'terms' : a.kind);
@@ -49,19 +49,19 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
             You can save about <span className="text-fdc-gold">{fmtSave(cost)}</span> a year.
           </h1>
           <p className="mt-1.5 max-w-2xl text-[13px] leading-snug text-white/85 sm:text-[14px]">
-            That's pure price saving — paying the lower price you already pay elsewhere for the same items. It lands in profit every year. Separately, you can free up one-time cash by fixing weak payment terms — two different kinds of money, shown apart below.
+            That's just from price — paying the lower price you already pay elsewhere for the very same items. It drops into profit every year. Separately, you can free up a chunk of one-time cash by fixing weak payment terms — two different kinds of money, kept apart below.
           </p>
 
           {/* two money figures — never added together */}
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             <HeroStat
-              eyebrow="Cost you can save · every year" value={fmtSave(cost)} tone="white"
-              sub="Lower prices on items you already buy. Hits the P&L every year."
+              eyebrow="Money you can save · every year" value={fmtSave(cost)} tone="white"
+              sub="Lower prices on items you already buy — goes straight to profit, every year."
               cta="See every line of proof" onClick={() => topMat && onNavigate({ tab: 'material', material: topMat })}
             />
             <HeroStat
-              eyebrow="Cash you can free · one-time" value={fmtSave(cash)} tone="gold"
-              sub="Working capital released by moving pay-on-receipt / advance suppliers to 30-day credit. Not a cost saving."
+              eyebrow="Cash you can free up · one-time" value={fmtSave(cash)} tone="gold"
+              sub="One-time cash freed up by moving advance / pay-on-delivery suppliers onto 30-day credit. Not a yearly saving."
               cta={cashVendor ? `See ${shortName(cashVendor.name)} — the proof` : 'See the proof'}
               onClick={() => cashVendor && onNavigate({ tab: 'vendors', vendorKey: cashVendor.vendorKey })}
             />
@@ -113,7 +113,7 @@ function PaymentTermsPanel({ pt, onNavigate }: { pt: PaymentTerms; onNavigate: (
         <h2 className="text-[15px] font-bold text-fdc-ink">Payment terms &amp; the cash they tie up</h2>
       </div>
       <p className="mb-3 text-[12.5px] leading-snug text-fdc-grey">
-        Your spend is on a <b className="text-fdc-slate">{pt.weightedAvgTermDays ?? '—'}-day</b> weighted-average term — most suppliers already give 30-day credit, so the money to free sits with the few on advance / pay-on-receipt. Moving just those to 30-day credit frees about <b className="text-fdc-slate">{fmtSave(freeable)}</b> of one-time working capital (not a cost saving).
+        On average you pay your suppliers in about <b className="text-fdc-slate">{pt.weightedAvgTermDays ?? '—'} days</b>. Most already give you 30 days, so the cash to free up sits with the few you pay in advance or on delivery. Moving just those onto 30-day credit frees up about <b className="text-fdc-slate">{fmtSave(freeable)}</b> in one-time cash (not a yearly saving).
       </p>
       <StackedBar segments={segs} format={(n) => fmtSave(n)} height={44} />
       <div className="mt-2 flex flex-wrap gap-3 text-[11px] text-fdc-grey">
@@ -122,7 +122,7 @@ function PaymentTermsPanel({ pt, onNavigate }: { pt: PaymentTerms; onNavigate: (
 
       {weak.length > 0 && (
         <div className="mt-3">
-          <div className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-fdc-grey">Suppliers on weak terms — where the cash is locked</div>
+          <div className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-fdc-grey">Suppliers you pay too soon — where your cash is stuck</div>
           <div className="grid gap-2 sm:grid-cols-2">
             {weak.map((w) => (
               <button key={w.vendorKey} onClick={() => onNavigate({ tab: 'vendors', vendorKey: w.vendorKey })} className="flex items-center justify-between gap-2 rounded-xl border border-black/[0.06] bg-white px-3 py-2 text-left transition hover:border-fdc-blue/40 hover:bg-fdc-blue/[0.04] focus-ring">
@@ -132,7 +132,7 @@ function PaymentTermsPanel({ pt, onNavigate }: { pt: PaymentTerms; onNavigate: (
                 </div>
                 <div className="shrink-0 text-right">
                   <div className="tnum text-[14px] font-extrabold text-fdc-blue">{fmtSave(w.cashFreed30)}</div>
-                  <div className="text-[9.5px] uppercase tracking-wide text-fdc-grey">cash at 30d</div>
+                  <div className="text-[9.5px] uppercase tracking-wide text-fdc-grey">cash freed</div>
                 </div>
               </button>
             ))}

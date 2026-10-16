@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T02:40:04.094Z",
+  "generatedAt": "2026-10-16T03:21:30.764Z",
   "currency": "INR",
   "dateRange": {
     "from": "2025-04-01",
@@ -59,7 +59,7 @@
       "material": "dextrose",
       "vendorKey": "gujarat-ambuja-exports",
       "action": "Use Sayaji Industries's lower price to push Gujarat Ambuja Exports down — don't just move more volume to Sayaji Industries.",
-      "why": "You pay Gujarat Ambuja Exports ₹68.5/kg for Dextrose Anhydrous IP (EXMPT); Sayaji Industries sells the same at ₹66.6/kg. But Sayaji Industries is already your biggest Dextrose source on a thin ~1% net margin — adding volume there deepens single-source risk. Use that gap to get Gujarat Ambuja Exports (30-day credit, stronger financials) down to it, or split to a second healthy source.",
+      "why": "You pay Gujarat Ambuja Exports ₹68.5/kg for Dextrose Anhydrous IP (EXMPT); Sayaji Industries sells the same at ₹66.6/kg. But Sayaji Industries is already your biggest Dextrose source, and they only keep about 1% as profit — putting even more through one supplier is risky. Use that gap to get Gujarat Ambuja Exports (30-day credit, in better financial shape) down to the same price, or split some to a second solid supplier.",
       "savingLabel": "₹60.5 L",
       "proof": {
         "tab": "material",
@@ -67,7 +67,7 @@
         "skuDesc": "Dextrose Anhydrous IP (EXMPT)",
         "vendorKey": "gujarat-ambuja-exports"
       },
-      "risk": "Sayaji Industries is already your biggest Dextrose source — keep its price as leverage, not a bigger basket.",
+      "risk": "Sayaji Industries is already your biggest Dextrose source — use its low price to push the dearer one down, don't just move more volume to it.",
       "rank": 1
     },
     {
@@ -78,7 +78,7 @@
       "material": "laminates",
       "vendorKey": "tetrapak-india",
       "action": "Put Tetrapak on 30-day credit — today it's pay-on-receipt.",
-      "why": "Tetrapak is your largest supplier on weak terms: you pay on the day goods arrive — no credit at all, while your other big suppliers already give you 30 days. On ₹5.46 Cr of spend, securing 30-day credit frees about ₹44.9 L of working capital — a one-time cash release, not a price cut. Sukhjit Corn Products is on even worse terms — 100% advance — but far smaller spend (₹1.06 Cr).",
+      "why": "Tetrapak is your largest supplier you pay too soon: you pay on the day goods arrive — no credit at all, while your other big suppliers already give you 30 days. On ₹5.46 Cr of spend, moving them to 30-day credit frees up about ₹44.9 L of cash, one time — not a price cut. Sukhjit Corn Products is on even worse terms — 100% advance — but far smaller spend (₹1.06 Cr).",
       "savingLabel": "₹44.9 L",
       "proof": {
         "tab": "vendors",

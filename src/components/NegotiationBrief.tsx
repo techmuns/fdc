@@ -51,8 +51,8 @@ export function NegotiationBrief({ brief, dense = false }: { brief: Brief; dense
             </button>
             {open && (
               <div className="space-y-2.5 rounded-lg bg-white px-3 py-2.5">
-                {brief.priceAsk.basis && <p className="text-[11.5px] leading-snug text-fdc-slate"><b className="text-fdc-ink">Price basis:</b> {brief.priceAsk.basis}</p>}
-                {brief.financialLeverage && <p className="text-[11.5px] leading-snug text-fdc-slate"><b className="text-fdc-ink">Financial leverage:</b> {brief.financialLeverage}</p>}
+                {brief.priceAsk.basis && <p className="text-[11.5px] leading-snug text-fdc-slate"><b className="text-fdc-ink">Why this price:</b> {brief.priceAsk.basis}</p>}
+                {brief.financialLeverage && <p className="text-[11.5px] leading-snug text-fdc-slate"><b className="text-fdc-ink">Why they'll budge:</b> {brief.financialLeverage}</p>}
                 {brief.evidence?.length > 0 && (
                   <div className="flex flex-wrap gap-1">
                     {brief.evidence.map((e, i) => (

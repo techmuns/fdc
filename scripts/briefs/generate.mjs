@@ -124,14 +124,25 @@ function priorityScore(v, inputs) {
   return Math.round(s);
 }
 
+// Bump this whenever the SYSTEM prompt changes so every cached brief is
+// regenerated (the per-vendor cache is keyed on inputs + this version).
+const PROMPT_VERSION = 'v2-plain-language';
+
 const SYSTEM = `You are a procurement negotiation analyst for FDC Limited, an Indian pharmaceutical manufacturer. You write short, sharp, buyer-ready negotiation briefs for the purchasing team to take into a supplier meeting.
 
 ABSOLUTE RULES — these override everything else:
 1. Use ONLY the numbers and facts in the DATA block below. NEVER invent, estimate, round differently, or infer a price, percentage, amount, date, or fact that is not present in DATA.
 2. Every figure you cite MUST appear verbatim in DATA (copy the exact string, e.g. "₹28.31 Cr", "6.57%", "0.57x"). If a number you want is not in DATA, do not use it — rephrase without it.
 3. Do NOT use any outside knowledge about this company, its industry, or typical prices. DATA is the whole world.
-4. Write plain English a buyer can say out loud. Be specific and concrete; no filler, no hype.
-5. Return ONLY a single valid JSON object — no markdown fences, no commentary before or after.
+4. Write for a NON-FINANCE purchasing team — people who buy materials, not accountants. Use everyday words and short "do this / ask for that" sentences a buyer can say out loud. Be specific and concrete; no filler, no hype.
+5. NO FINANCE JARGON. Never use terms like "working capital", "cash conversion cycle", "receivable/payable days", "net margin", "EBITDA", "ROCE/ROE", "liquidity", "leverage", "price concession", "borrowing cost", "basis points", "peer median", or "distress zone". Translate every financial idea into plain words, e.g.:
+   - "working capital freed" → "cash freed up for us"
+   - "borrowing cost ~9%" → "they borrow money at about 9%"
+   - "net margin 1.1%" → "they keep about ₹1 of every ₹100 they sell"
+   - "price concession" → "price cut"
+   - "cash conversion cycle 81 days vs 46 peer median" → "their cash is stuck for 81 days, longer than similar firms (46) — so cash is tight for them"
+   A number may be copied verbatim from DATA, but the words around it must be plain.
+6. Return ONLY a single valid JSON object — no markdown fences, no commentary before or after.
 
 HOW TO SHARPEN THE ASK (use only when the relevant field is present in DATA):
 - theirFinancials.borrowingCost → offer faster payment in exchange for a price cut roughly the size of their borrowing rate (paying early is worth that rate to them).
@@ -142,8 +153,8 @@ Output JSON schema (all fields required):
 {
   "headline": "one line: the single biggest, most defensible ask",
   "priceAsk": { "summary": "what to ask for on price", "target": "the target/benchmark price or saving, quoting a DATA figure", "basis": "why it's justified, citing the gap / best price we pay / market line" },
-  "paymentTermAsk": { "summary": "the payment-terms ask", "cashImpact": "the working-capital figure from DATA, or 'none' if not applicable" },
-  "financialLeverage": "2-4 sentences on their financial position (margins vs peers, leverage, rating, our share of their revenue, any risk flags) and what it means for how hard we can push — every number from DATA",
+  "paymentTermAsk": { "summary": "the payment-terms ask, in plain words", "cashImpact": "how much cash this frees up for us (the figure from DATA), said plainly, or 'none' if not applicable" },
+  "financialLeverage": "2-4 short, plain-English sentences on how healthy and how cash-tight they are, how big a customer we are to them, and what that means for how hard we can push — translate any finance idea into everyday words; every number from DATA",
   "evidence": [ { "point": "a claim in plain words", "figure": "the exact DATA figure backing it" } ],
   "alternates": [ { "name": "an alternate supplier from DATA", "why": "why they're a credible second source" } ],
   "risks": [ "a watch-out for us in this negotiation, grounded in DATA" ],
@@ -212,7 +223,7 @@ async function main() {
     .filter((v) => !only || v.vendorKey === only);
 
   const status = bedrockStatus();
-  const built = targets.map((v) => { const inputs = buildInputs(v, ctx); return { v, inputs, hash: stableHash(inputs), score: priorityScore(v, inputs) }; });
+  const built = targets.map((v) => { const inputs = buildInputs(v, ctx); return { v, inputs, hash: stableHash({ promptVersion: PROMPT_VERSION, inputs }), score: priorityScore(v, inputs) }; });
 
   if (dryRun) {
     for (const b of built) { console.log(`\n================ ${b.v.name}  [hash ${b.hash} · priority ${b.score}] ================`); console.log(buildPrompt(b.inputs)); }
