@@ -46,9 +46,22 @@ function sortKeys(x) {
 }
 
 /** Assemble the REAL input package for one vendor (every field traceable). */
+const DB_MATS = { dextrose: ['dextrose'], packaging: ['pet-resin', 'pet-bottles', 'caps'], laminates: ['bopet'] };
+
 function buildInputs(v, ctx) {
-  const { priceGaps, paymentTerms, alternatives, materials, market } = ctx;
+  const { priceGaps, paymentTerms, alternatives, materials, market, backups, marketAsks } = ctx;
   const matKeys = (v.materialsSupplied || []).map((d) => matKeyOf(materials, d)).filter(Boolean);
+
+  // extra backup suppliers from the founder's researched market database (leads, not qualified)
+  const dbKeys = [...new Set(matKeys.flatMap((mk) => DB_MATS[mk] || []))];
+  const dbScore = (l) => (l.confidence === 'High' ? 3 : l.confidence === 'Medium' ? 2 : 1) + (l.maker ? 1.5 : 0) + (/india/i.test(l.country) ? 0.5 : 0);
+  const seen = new Set();
+  const marketBackups = (backups?.lines || [])
+    .filter((l) => dbKeys.includes(l.materialKey))
+    .sort((a, b) => dbScore(b) - dbScore(a))
+    .filter((l) => { const n = l.company.toLowerCase(); if (seen.has(n)) return false; seen.add(n); return true; })
+    .slice(0, 6)
+    .map((l) => ({ name: l.company, role: (l.role.split(/[;,(|]/)[0] || '').trim(), where: /india/i.test(l.country) ? l.region : l.country, isMaker: l.maker, confidence: l.confidence }));
 
   // price position per material (material-level + sku-level, from real price-gaps)
   const perMaterial = [];
@@ -72,6 +85,7 @@ function buildInputs(v, ctx) {
       estAnnualExcess: matExcess > 0 ? money(matExcess) : null,
       topSkuGaps: topSku.length ? topSku : null,
       marketLine: marketLine ? { label: marketLine.label, latest: fmtMarket(marketLine.latest?.value ?? marketLine.latest?.usdPerKg, marketLine.unit), source: marketLine.sourceName } : null,
+      marketAsk: marketAsks?.materials?.[mk] ? { item: marketAsks.materials[mk].benchItem, askBand: marketAsks.materials[mk].band, typical: marketAsks.materials[mk].typical, verdict: marketAsks.materials[mk].verdict } : null,
     });
   }
 
@@ -109,6 +123,8 @@ function buildInputs(v, ctx) {
     },
     preComputedNegotiationLevers: (v.levers || []).map((l) => ({ type: l.type, title: l.title, detail: l.detail, evidence: (l.evidence || []).map((e) => `${e.label}: ${e.value}`) })),
     availableAlternates: matKeys.flatMap((mk) => (alternatives?.byMaterial?.[mk] || []).map((a) => ({ name: a.name, role: a.role, type: a.type, secondSourceFor: a.secondSourceFor || null, fit: a.fitNote, health: a.healthScore ? `${a.healthScore.grade} (${a.healthScore.value}/100)` : null, revenue: a.metrics?.revenue != null ? money(a.metrics.revenue) : null }))).slice(0, 8),
+    marketBackups: marketBackups.length ? marketBackups : null,
+    financialsPublic: !!(v.status === 'ok' && v.metrics),
   };
 }
 
@@ -126,7 +142,7 @@ function priorityScore(v, inputs) {
 
 // Bump this whenever the SYSTEM prompt changes so every cached brief is
 // regenerated (the per-vendor cache is keyed on inputs + this version).
-const PROMPT_VERSION = 'v2-plain-language';
+const PROMPT_VERSION = 'v3-market-data-plain';
 
 const SYSTEM = `You are a procurement negotiation analyst for FDC Limited, an Indian pharmaceutical manufacturer. You write short, sharp, buyer-ready negotiation briefs for the purchasing team to take into a supplier meeting.
 
@@ -148,6 +164,9 @@ HOW TO SHARPEN THE ASK (use only when the relevant field is present in DATA):
 - theirFinancials.borrowingCost → offer faster payment in exchange for a price cut roughly the size of their borrowing rate (paying early is worth that rate to them).
 - theirFinancials.revenueMix (mostly traded) → push to the maker's price: their price carries a reseller margin, so benchmark to a manufacturer.
 - theirFinancials.distressSignal (grey/distress zone) → lead with supply-security and qualifying a second source, not a hard squeeze that could tip a fragile supplier over.
+- pricePosition.perMaterial[].marketAsk → the open-market ASKING price for this item (ex-GST, MOQ-based reference, NOT a quote FDC received). Use its band and verdict to justify the target price in plain words; never call it FDC's price.
+- marketBackups → extra potential backup suppliers found by public web research. These are LEADS — not qualified, audited or priced. You may name one or two of the strongest under 'alternates', but always flag each as "a lead to qualify (verify before RFQ)"; never present one as approved, priced or a current source.
+- financialsPublic=false → this supplier publishes no financials. Do NOT invent or estimate any financial figure (revenue, profit, debt, rating). Build the price and payment asks from our purchase data, the market ask and the backups, and say plainly that their finances aren't public — so the plan leans on our own data and on lining up a second source.
 
 Output JSON schema (all fields required):
 {
@@ -212,14 +231,18 @@ async function main() {
   const fin = readOpt('vendor-financials.json');
   const alternatives = readOpt('alternatives.json');
   const market = readOpt('market/market.json');
+  const backups = readOpt('backup-suppliers.json');
+  const marketAsks = readOpt('market-asks.json');
   if (!fin) { console.error('No vendor-financials.json — run `npm run financials` first.'); process.exit(1); }
-  const ctx = { priceGaps, paymentTerms, alternatives, materials, market };
+  const ctx = { priceGaps, paymentTerms, alternatives, materials, market, backups, marketAsks };
   if (!existsSync(CACHE)) mkdirSync(CACHE, { recursive: true });
 
-  // targets: vendors with REAL financials (listed Munshot or private Probe42/rating-doc)
+  // targets: EVERY vendor we buy from. Vendors with real financials get the full
+  // treatment; those without (small private firms) get a lighter brief built from
+  // purchase data + market ask + backups, honestly flagged 'no public financials'.
   let targets = vendors
     .map((v) => fin.vendors[v.key])
-    .filter((v) => v && v.status === 'ok' && v.metrics)
+    .filter((v) => v && v.fdcSpend > 0)
     .filter((v) => !only || v.vendorKey === only);
 
   const status = bedrockStatus();

@@ -131,7 +131,7 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
         <VendorProfile
           subject={profile}
           onClose={() => setProfile(null)}
-          brief={profile.kind === 'vendor' && profile.fin.status === 'ok' ? (data.briefs?.briefs.find((b) => b.vendorKey === profile.fin.vendorKey) ?? null) : null}
+          brief={profile.kind === 'vendor' ? (data.briefs?.briefs.find((b) => b.vendorKey === profile.fin.vendorKey) ?? null) : null}
           replacements={profile.kind === 'vendor' ? buildAlternatives(profile.fin.vendorKey, data) : []}
           onPickReplacement={onPickAlt}
         />
@@ -148,7 +148,7 @@ function VendorCard({ vendor: x, data, onFull, onPickAlt, onNavigate }: { vendor
   const probe = fin?.probe ?? null;
   const m = fin?.metrics ?? null;
   const brief = data.briefs?.briefs.find((b) => b.vendorKey === x.vendorKey) ?? null;
-  const briefVerified = brief && fin?.status === 'ok'; // never show a brief built on unverified financials
+  const briefVerified = !!brief; // briefs are honest — a no-financials vendor gets a lighter brief flagged as such
 
   // negotiation-room read
   const netMargin = m?.netMargin ?? null;
