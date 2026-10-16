@@ -22,6 +22,8 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
 
   const cost = v.headline.costSavings ?? v.headline.totalSavings;
   const cash = v.headline.cashFreed ?? 0;
+  const totalSpend = data.meta.totals.netSpend;
+  const savePct = totalSpend ? (cost / totalSpend) * 100 : 0;
   const topMat = [...v.savingsByMaterial].sort((a, b) => b.savings - a.savings)[0]?.materialKey;
   const cashVendor = v.headline.cashFreedBy?.[0];
 
@@ -55,14 +57,14 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
             You can save about <span className="text-fdc-gold">{fmtSave(cost)}</span> a year.
           </h1>
           <p className="mt-1.5 max-w-2xl text-[13px] leading-snug text-white/85 sm:text-[14px]">
-            Two kinds of money, kept separate below: <b>yearly savings</b> (pay the lower price you already pay elsewhere) and <b>one-time cash</b> (fix weak payment terms).
+            You spend <b>{fmtSave(totalSpend)}/yr</b> on these materials — <b>{fmtSave(cost)}</b> (<b>{savePct.toFixed(1)}%</b>) is saveable on price, plus <b>{fmtSave(cash)}</b> one-time cash from fixing payment terms.
           </p>
 
           {/* two money figures — never added together */}
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             <HeroStat
               eyebrow="Money you can save · every year" value={fmtSave(cost)} tone="white"
-              sub="Lower prices on items you already buy — goes straight to profit, every year."
+              sub={`${savePct.toFixed(1)}% of your ${fmtSave(totalSpend)} yearly spend — straight to profit.`}
               cta="See every line of proof" onClick={() => topMat && onNavigate({ tab: 'material', material: topMat })}
             />
             <HeroStat
