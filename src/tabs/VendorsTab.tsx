@@ -1,9 +1,9 @@
 import { useMemo, useState, useEffect } from 'react';
 import {
   Factory, Search, Hourglass, TrendingDown, TrendingUp, Clock, PackageSearch, Repeat2,
-  Maximize2, BadgeCheck, Lock, CalendarClock, HandCoins, Info, ArrowUpRight, CircleHelp,
+  Maximize2, BadgeCheck, Lock, CalendarClock, HandCoins, Info, ArrowUpRight, CircleHelp, Globe2,
 } from 'lucide-react';
-import type { AppData, ValueVendor, VendorFin, MaterialKey, FinMetrics } from '../types';
+import type { AppData, ValueVendor, VendorFin, MaterialKey, FinMetrics, SupplierLine } from '../types';
 import type { Nav } from '../App';
 import { Card, Badge, Pill } from '../components/ui/Card';
 import { Sparkline } from '../components/charts/Sparkline';
@@ -123,7 +123,7 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
 
         {/* detail */}
         <div className="lg:col-span-3">
-          {selVendor ? <VendorCard vendor={selVendor} data={data} onFull={(s) => setProfile(s)} onPickAlt={onPickAlt} /> : null}
+          {selVendor ? <VendorCard vendor={selVendor} data={data} onFull={(s) => setProfile(s)} onPickAlt={onPickAlt} onNavigate={onNavigate} /> : null}
         </div>
       </div>
 
@@ -140,7 +140,10 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
   );
 }
 
-function VendorCard({ vendor: x, data, onFull, onPickAlt }: { vendor: ValueVendor; data: AppData; onFull: (s: ProfileSubject) => void; onPickAlt: (it: AltItem) => void }) {
+// map our materials to the backup-database material keys
+const DB_MATS: Record<string, string[]> = { dextrose: ['dextrose'], packaging: ['pet-resin', 'pet-bottles', 'caps'], laminates: ['bopet'] };
+
+function VendorCard({ vendor: x, data, onFull, onPickAlt, onNavigate }: { vendor: ValueVendor; data: AppData; onFull: (s: ProfileSubject) => void; onPickAlt: (it: AltItem) => void; onNavigate: (n: Nav) => void }) {
   const fin: VendorFin | null = data.financials?.vendors[x.vendorKey] ?? null;
   const probe = fin?.probe ?? null;
   const m = fin?.metrics ?? null;
@@ -169,6 +172,15 @@ function VendorCard({ vendor: x, data, onFull, onPickAlt }: { vendor: ValueVendo
   else marginRoom = { tone: 'room', text: `Healthy — they keep about ${pct(netMargin)} as profit, so there’s room to push on price, especially against a cheaper option.` };
 
   const alts = buildAlternatives(x.vendorKey, data);
+
+  // extra backup candidates from the founder's researched market database
+  const dbKeys = [...new Set(x.materialKeys.flatMap((k) => DB_MATS[k] ?? []))];
+  const selfNorm = norm(x.name);
+  const dbLines = (data.backupSuppliers?.lines ?? []).filter((l) => dbKeys.includes(l.materialKey) && norm(l.company) !== selfNorm);
+  const dbCount = new Set(dbLines.map((l) => l.id)).size;
+  const dbScore = (l: SupplierLine) => (l.confidence === 'High' ? 3 : l.confidence === 'Medium' ? 2 : 1) + (l.maker ? 1.5 : 0) + (/india/i.test(l.country) ? 0.5 : 0);
+  const dbTop = [...new Map(dbLines.map((l) => [l.id, l])).values()].sort((a, b) => dbScore(b) - dbScore(a)).slice(0, 4);
+  const presetMat = x.materialKeys.length === 1 && DB_MATS[x.materialKeys[0]]?.length === 1 ? DB_MATS[x.materialKeys[0]][0] : undefined;
 
   return (
     <Card className="!p-0">
@@ -273,6 +285,15 @@ function VendorCard({ vendor: x, data, onFull, onPickAlt }: { vendor: ValueVendo
         {/* alternatives — clickable */}
         <Section icon={Repeat2} title="Who could replace them" color={FDC.blue}>
           <Alternatives items={alts} onPick={onPickAlt} />
+          {dbCount > 0 && (
+            <div className="mt-2.5 rounded-xl border border-fdc-blue/20 bg-fdc-blue/[0.04] p-2.5">
+              <div className="flex items-center justify-between gap-2">
+                <span className="flex items-center gap-1.5 text-[11.5px] font-bold text-fdc-slate"><Globe2 size={13} className="text-fdc-blue" /> {dbCount} more potential backups in the market</span>
+                <button onClick={() => onNavigate({ tab: 'backup', materialKey: presetMat })} className="inline-flex items-center gap-1 whitespace-nowrap text-[11.5px] font-semibold text-fdc-blue underline-offset-2 hover:underline">See all <ArrowUpRight size={12} /></button>
+              </div>
+              <p className="mt-1 text-[10.5px] leading-snug text-fdc-grey">{dbTop.map((l) => vendorShort(l.company)).join(' · ')}… <span className="italic">leads from public research — verify before RFQ.</span></p>
+            </div>
+          )}
         </Section>
       </div>
     </Card>

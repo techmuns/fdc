@@ -510,6 +510,26 @@ export interface MarketAsks {
   materials: Record<string, MarketAskMaterial>;
 }
 
+// ---- Backup-supplier database (founder's researched Excel → JSON) ----
+export interface SupplierLine {
+  id: string; company: string; brand: string; legalVerified: boolean;
+  material: string; materialKey: string; segment: string; subcategory: string;
+  products: string; grades: string; relatedOut: string; role: string; applications: string; priority: string;
+  region: string; hq: string; country: string; plants: string; website: string; certifications: string;
+  capacity: string; revenue: string; ownership: string; creditRating: string; notes: string;
+  confidence: 'High' | 'Medium' | 'Low'; alsoUnder: string; sourceCount: number; sources: string[];
+  listed: boolean; maker: boolean; lon: number; lat: number;
+}
+export interface SupplierCoverage { key: string; label: string; color: string; total: number; india: number; intl: number; makers: number; strong: number; credible: number; }
+export interface BackupSuppliers {
+  compiledAt: string; source: string; note: string;
+  counts: { companies: number; lines: number; sources: number };
+  materials: { key: string; label: string; color: string }[];
+  coverage: SupplierCoverage[];
+  filters: { regions: string[]; countries: string[]; roles: string[]; confidence: string[] };
+  lines: SupplierLine[];
+}
+
 export interface AppData {
   meta: Meta;
   materials: Material[];
@@ -523,4 +543,5 @@ export interface AppData {
   briefs: Briefs | null;
   value: ValueData | null;
   marketAsks: MarketAsks | null;
+  backupSuppliers: BackupSuppliers | null;
 }
