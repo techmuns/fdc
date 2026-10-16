@@ -61,5 +61,12 @@ jobs:
             echo "No brief changes."
           else
             git commit -m "chore(briefs): refresh AI negotiation briefs"
-            git push
+            # Resilient push: Bedrock generation takes minutes, during which another
+            # job (data bot, a merge to main) may have moved the branch. Rebase on the
+            # latest and retry so the refreshed briefs are never dropped.
+            for i in 1 2 3 4 5; do
+              git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+              git push origin "HEAD:${GITHUB_REF_NAME}" && { echo "pushed"; break; }
+              echo "push failed — retry ${i}"; sleep 3
+            done
           fi
