@@ -1,0 +1,71 @@
+{
+  "inputHash": "4a883af7eb34688d",
+  "brief": {
+    "headline": "Close a ₹16.09 L/yr price gap to match Mars Plastics on bottles and caps, then shorten payment to 30 days to free up ₹10.63 L cash.",
+    "priceAsk": {
+      "summary": "Match Mars Plastics' prices on HDPE bottles and PP caps — our current cheapest supplier for these items.",
+      "target": "₹16.09 L/yr saving by closing the gap on the top SKUs: ₹1.38/NOS for 30ML bottles (vs ₹1.65 today), ₹0.81/NOS for 28MM caps (vs ₹0.90 today), ₹2.20/NOS for 60ML bottles (vs ₹2.25 today).",
+      "basis": "We already buy identical items from Mars Plastics and Cincorp at those lower prices. The market asking price for 28MM caps sits at ₹0.85–0.95/pc typical (band ₹0.55–1.20/pc), so ₹0.81 is well within fair range. Premier's prices carry a 19.6% premium on the 30ML bottle alone, which accounts for ₹11.74 L of the excess."
+    },
+    "paymentTermAsk": {
+      "summary": "Move from 45 days after receipt to 30 days.",
+      "cashImpact": "₹10.63 L cash freed up for us; an extra 15-day improvement beyond that would free another ₹5.31 L."
+    },
+    "financialLeverage": "Premier Plastic publishes no financials, so we can't see their profit, debt or cash position. Our ₹1.29 Cr annual spend is meaningful but not enormous. Without visibility into their books, we lean on the fact that we have strong alternates lined up — Manjushree (₹2569.83 Cr revenue, health B) and Mold-Tek (₹946.50 Cr, health B) are both proven rigid-packaging suppliers we can qualify. That competition, plus the clear price benchmarks from Mars and Cincorp, gives us room to push firmly on price and payment without worrying about their internal numbers.",
+    "evidence": [
+      {
+        "point": "We pay Premier ₹16.09 L/yr more than the best prices we already get for the same rigid plastic items.",
+        "figure": "₹16.09 L"
+      },
+      {
+        "point": "The 30ML white HDPE bottle costs us ₹1.65/NOS from Premier but only ₹1.38/NOS from Mars Plastics — a 19.6% gap costing ₹11.74 L/yr.",
+        "figure": "₹1.65/NOS vs ₹1.38/NOS, gap 19.6%, ₹11.74 L"
+      },
+      {
+        "point": "The 28MM PP induction-wad cap runs ₹0.90/NOS here versus ₹0.81/NOS at Mars — an 11.1% gap worth ₹4.23 L/yr.",
+        "figure": "₹0.90/NOS vs ₹0.81/NOS, gap 11.1%, ₹4.23 L"
+      },
+      {
+        "point": "Market asking prices for 28MM caps are ₹0.85–0.95/pc typical, so Mars' ₹0.81 is fair and Premier's ₹0.90 sits at the high end.",
+        "figure": "₹0.55–1.20/pc band, ₹0.85–0.95/pc typical"
+      },
+      {
+        "point": "Shortening payment from 45 to 30 days releases ₹10.63 L of working capital for FDC.",
+        "figure": "₹10.63 L"
+      }
+    ],
+    "alternates": [
+      {
+        "name": "Manjushree Technopack Ltd",
+        "why": "India's largest rigid-plastic packaging converter (₹2569.83 Cr revenue, health B) — pharma bottles, caps and preforms; top second-source candidate already on our radar."
+      },
+      {
+        "name": "Mold-Tek Packaging Ltd",
+        "why": "Listed rigid-plastic leader (₹946.50 Cr revenue, health B) making pails, containers and pharma packaging; robust alternate for bottles and closures."
+      },
+      {
+        "name": "Hitech Corporation Ltd",
+        "why": "Listed blow-moulded and injection-moulded packaging house (₹701.17 Cr revenue, health C); broad capability across bottles and caps."
+      }
+    ],
+    "risks": [
+      "Premier's financials aren't public, so we don't know if they're healthy or stretched — qualify Manjushree or Mold-Tek fast so we have a live backup before pushing too hard.",
+      "The ₹16.09 L gap is large (12.5% of our ₹1.29 Cr spend with them); if they can't move much on price, split the volume and shift the 30ML bottle (the biggest piece, ₹11.74 L excess) to Mars immediately.",
+      "We hold 45-day terms today, which aren't the worst in our book, so the payment ask is a 'nice to have' — lead with price, then trade faster payment only if they resist the full price cut.",
+      "Market backups like Reliance, Srichakra and IVL Dhunseri are leads to qualify (verify before RFQ) — don't present them as approved sources yet."
+    ],
+    "suggestedOpeningLine": "We'd like to bring your pricing in line with Mars Plastics — today we're paying you ₹16 lakh more per year for the same bottles and caps, and we need that gap closed."
+  },
+  "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-17",
+  "usage": {
+    "cacheReadInputTokenCount": 0,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokenCount": 0,
+    "cacheWriteInputTokens": 0,
+    "inputTokens": 3332,
+    "outputTokens": 1469,
+    "serverToolUsage": {},
+    "totalTokens": 4801
+  }
+}

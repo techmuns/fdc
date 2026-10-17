@@ -1,0 +1,71 @@
+{
+  "inputHash": "563cdb78da58c27d",
+  "brief": {
+    "headline": "Push for a 10–15% price cut to ₹0.65–0.80/pc on caps — the open market shows headroom at higher volume.",
+    "priceAsk": {
+      "summary": "Ask for prices in the ₹0.65–0.80/pc range on our 28 mm PP caps, down from the typical ₹0.85–0.95/pc band.",
+      "target": "₹0.65–0.80/pc",
+      "basis": "The open market for 28 mm induction-wad PP caps shows asking prices of ₹0.55–1.20/pc, typically ₹0.85–0.95/pc, with the verdict 'MARKET-FAIR; modest headroom to ₹0.65–0.80 at higher volume / looser spec.' Our ₹44.37 L annual spend gives us the volume to unlock that lower band."
+    },
+    "paymentTermAsk": {
+      "summary": "Keep current 30-day terms; no push for faster payment.",
+      "cashImpact": "none"
+    },
+    "financialLeverage": "Rachana Plastics publishes no financials, so we don't know their revenue, profit, or how tight their cash is. That means we lean on our own purchasing data and the open market to justify the ask. Our ₹44.37 L annual spend is meaningful for a private packaging converter, and we have four strong alternates — including Manjushree (₹2569.83 Cr, health B) and Mold-Tek (₹946.50 Cr, health B, listed) — so we can walk if they won't move. The lack of public numbers also means we should qualify a second source now, not wait.",
+    "evidence": [
+      {
+        "point": "The open-market asking price for 28 mm PP caps is ₹0.55–1.20/pc, typically ₹0.85–0.95/pc.",
+        "figure": "₹0.55–1.20/pc typical ₹0.85–0.95/pc"
+      },
+      {
+        "point": "The market verdict says there is modest headroom to ₹0.65–0.80 at higher volume or looser spec.",
+        "figure": "modest headroom to ₹0.65–0.80 at higher volume / looser spec"
+      },
+      {
+        "point": "We spend ₹44.37 L a year with them — enough volume to qualify for the lower band.",
+        "figure": "₹44.37 L"
+      },
+      {
+        "point": "HDPE resin import price sits at 87.61 ₹/kg, giving us a raw-material baseline for any price discussion.",
+        "figure": "87.61 ₹/kg"
+      },
+      {
+        "point": "We currently pay 30 days after receipt; moving to 15 days earlier would free up ₹1.82 L of our cash.",
+        "figure": "₹1.82 L"
+      }
+    ],
+    "alternates": [
+      {
+        "name": "Manjushree Technopack Ltd",
+        "why": "India's largest rigid-plastic packaging converter (₹2569.83 Cr revenue, health B) — pharma bottles, caps, preforms — top second-source candidate."
+      },
+      {
+        "name": "Mold-Tek Packaging Ltd",
+        "why": "Listed rigid-plastic leader (₹946.50 Cr revenue, health B) for pails, containers, pharma — a robust alternate for bottles and closures."
+      },
+      {
+        "name": "Reliance Industries Limited (lead to qualify)",
+        "why": "Manufacturer covering India-Pan — a lead to qualify before issuing an RFQ (verify capability and pricing first)."
+      }
+    ],
+    "risks": [
+      "Rachana's financials aren't public, so we can't see if they're fragile or flush with cash — push hard but watch for signs they might walk or stumble on delivery.",
+      "We have no current best-price benchmark from another vendor, so the ₹0.65–0.80 target rests entirely on the open-market band — be ready to justify volume and spec tradeoffs if they push back.",
+      "If we squeeze too hard without a qualified second source in hand, we risk a supply gap — start the Manjushree or Mold-Tek RFQ this quarter.",
+      "The market backups (Reliance, Srichakra, IVL Dhunseri, Dalmia, Ganesha, Chemco) are leads only — not yet verified for pharma-grade caps or pricing, so don't lean on them in the room until qualified."
+    ],
+    "suggestedOpeningLine": "We'd like to talk about moving our cap prices down to ₹0.65–0.80 per piece — the open market shows that range is fair at our ₹44 lakh annual volume, and we're lining up a second source to make sure we're always competitive."
+  },
+  "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-17",
+  "usage": {
+    "cacheReadInputTokenCount": 0,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokenCount": 0,
+    "cacheWriteInputTokens": 0,
+    "inputTokens": 2885,
+    "outputTokens": 1256,
+    "serverToolUsage": {},
+    "totalTokens": 4141
+  }
+}

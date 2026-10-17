@@ -1,75 +1,75 @@
 {
-  "inputHash": "c102ee882b6529fd",
+  "inputHash": "39915a2b5749a41c",
   "brief": {
-    "headline": "Move from 100% advance to 30-day credit — our strongest, simplest win worth ₹8.73 L in working capital — then close the ₹12.95 L price gap to Sayaji's ₹66.48/KG.",
+    "headline": "Switch from 100% advance to normal 30-day credit — that alone frees up ₹8.73 L of our cash — then close the ₹12.95 L/yr price gap to match Sayaji.",
     "priceAsk": {
-      "summary": "Match Sayaji's ₹66.48/KG for Dextrose, closing the current 6.5% gap",
-      "target": "₹66.48/KG (our best price from Sayaji Industries Limited), saving ₹12.95 L annually",
-      "basis": "We already pay ₹66.48/KG to Sayaji Industries Limited for the same material; paying them ₹70.80/KG creates a 6.5% gap and costs us ₹12.95 L extra per year. India export unit value sits at 42.95 ₹/kg, showing the market runs well below both prices — ₹66.48/KG is our internal benchmark, not an aggressive outlier."
+      "summary": "Match the ₹66.48/KG we pay Sayaji Industries Limited for Dextrose",
+      "target": "₹66.48/KG (saving ₹12.95 L/yr)",
+      "basis": "We already buy the same material at ₹66.48/KG from Sayaji; market asking price for Anhydrous Dextrose IP is ₹60–81/kg (typical ₹66–73/kg), so ₹66.48/KG sits in the fair band and we know it's achievable because we pay it today."
     },
     "paymentTermAsk": {
-      "summary": "Shift from 100% advance to standard 30-day credit",
-      "cashImpact": "₹8.73 L working capital freed if we move to 30-day terms"
+      "summary": "Move from 100% advance to standard 30-day credit after delivery",
+      "cashImpact": "₹8.73 L freed up for us"
     },
-    "financialLeverage": "Sukhjit runs ₹1458.95 Cr revenue but only a 2.3% net margin and 5.9% return on capital — thin profitability that limits room for deep price cuts. Their D (33/100) health score signals fragility; squeezing too hard risks destabilising a supplier. Debt-to-equity of 0.61x is moderate, not alarming. We represent just 0.07% of their revenue (₹1.06 Cr), so we have negligible standalone leverage. Lead with the payment-terms ask — it costs them little and delivers real cash relief to us — then use the Sayaji benchmark and credible alternates to justify the price move without threatening their viability.",
+    "financialLeverage": "They're a ₹1458.95 Cr company but keep only 2.3% as profit — very thin margins, so a brutal price fight could backfire. We're tiny to them: our ₹1.06 Cr is just 0.07% of their sales, so alone we have almost no pull. Their overall financial health scores D (33/100), meaning they're weaker than most peers. Because margins are paper-thin and we're small, lead with payment terms (which costs them nothing and saves us real cash), then use the credible alternates and our existing ₹66.48/KG benchmark to justify the price move — don't squeeze so hard they walk or stumble.",
     "evidence": [
       {
-        "point": "We pay ₹70.80/KG; Sayaji delivers the same material at ₹66.48/KG",
-        "figure": "ourAvgPrice: ₹70.80/KG, bestPriceWePay: ₹66.48/KG, gapVsBest: 6.5%"
+        "point": "We pay them ₹70.80/KG; we pay Sayaji ₹66.48/KG for the same Dextrose",
+        "figure": "₹70.80/KG vs ₹66.48/KG, gap 6.5%"
       },
       {
-        "point": "The 6.5% gap costs us ₹12.95 L every year in avoidable excess",
-        "figure": "totalEstAnnualExcessVsBestPriceWePay: ₹12.95 L"
+        "point": "Closing that gap saves us ₹12.95 L every year",
+        "figure": "₹12.95 L"
       },
       {
-        "point": "We pay 100% in advance; moving to 30-day terms frees ₹8.73 L working capital",
-        "figure": "current: Advance 100%(with tax)Against Proforma Invoice, workingCapitalFreedIf30Day: ₹8.73 L"
+        "point": "Right now we pay them 100% in advance — the worst terms we give anyone",
+        "figure": "Advance 100%(with tax)Against Proforma Invoice, areWorstTerms: true"
       },
       {
-        "point": "India's dextrose export unit value is 42.95 ₹/kg — the market runs far below our current price",
-        "figure": "marketLine latest: 42.95 ₹/kg"
+        "point": "Moving to 30-day credit frees up ₹8.73 L of our cash",
+        "figure": "₹8.73 L"
       },
       {
-        "point": "Sukhjit's net margin is 2.3% and health score D (33/100) — thin profitability, fragile footing",
-        "figure": "netMargin: 2.3%, healthScore: D (33/100)"
+        "point": "We are 0.07% of their ₹1458.95 Cr revenue — a very small customer",
+        "figure": "0.07%, revenue ₹1458.95 Cr"
       },
       {
-        "point": "Our ₹1.06 Cr spend is 0.07% of their ₹1458.95 Cr revenue — we're a rounding error",
-        "figure": "fdcAnnualSpendWithThem: ₹1.06 Cr, ourSpendAsShareOfTheirRevenue: 0.07%, revenue: ₹1458.95 Cr"
+        "point": "They keep only 2.3% profit on every rupee sold, so margins are razor-thin",
+        "figure": "2.3%"
       }
     ],
     "alternates": [
       {
         "name": "Gulshan Polyols Ltd",
-        "why": "Listed starch & polyol maker, ₹2359.06 Cr revenue, B (62/100) health — established dextrose supplier, financially stronger, drop-in alternate to our current sources."
+        "why": "Listed starch & polyol maker, ₹2359.06 Cr revenue, health score B (62/100) — established dextrose supplier, stronger financials than Sukhjit, a credible drop-in alternate."
       },
       {
         "name": "Sanstar Ltd",
-        "why": "Recently-listed maize-derivatives specialist (starch, dextrose), ₹821.13 Cr revenue, C (53/100) health — growing capacity, credible second source."
+        "why": "Recently-listed maize-derivatives specialist (starch, dextrose), ₹821.13 Cr revenue, health C (53/100) — growing capacity, another direct alternate."
       },
       {
-        "name": "Tirupati Starch & Chemicals Ltd",
-        "why": "Listed Indore wet-miller, ₹365.39 Cr revenue, makes Dextrose ANHYDROUS (IV-fluid grade) matching our spec — exact form match pending CoA confirmation."
+        "name": "Roquette India Pvt Ltd",
+        "why": "Indian arm of global starch major, ₹2898.05 Cr revenue — pharma-grade dextrose, very reliable, premium quality systems (though health score D (28/100) so verify stability before RFQ)."
       }
     ],
     "risks": [
-      "We're 0.07% of their revenue — negligible leverage alone; bundle volume commitment or multi-year term to gain weight.",
-      "2.3% net margin and D (33/100) health: pushing a hard price cut risks tipping a fragile supplier and losing supply continuity.",
-      "100% advance terms mean they're cash-cautious or risk-averse; expect resistance to credit — frame 30-day as industry-standard, not a concession.",
-      "No borrowing-cost data means we can't quantify an early-payment discount; stick to benchmark pricing and standard terms rather than creative finance levers."
+      "We're only 0.07% of their sales, so they may ignore us unless we bundle more volume or commit longer term.",
+      "Margins at 2.3% mean pushing price too hard could force them to walk or cut quality — prioritise payment terms first.",
+      "Their financial health is D (33/100), weaker than peers, so watch for any supply hiccups and line up a second source now.",
+      "We pay 100% advance today — any move to credit will need their finance sign-off; be ready to phase it (e.g. start at 15 days, then 30)."
     ],
-    "suggestedOpeningLine": "We'd like to move to standard 30-day credit — that frees ₹8.73 L for us and aligns you with how we work with every other supplier — and then talk about closing the gap to the ₹66.48/KG we already pay Sayaji for identical Dextrose."
+    "suggestedOpeningLine": "We'd like to align your pricing to the ₹66.48/KG we already pay Sayaji for Dextrose and move from advance payment to standard 30-day terms — that's fair to both sides and frees up working cash for us."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-10-15",
+  "generatedAt": "2026-10-17",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
-    "inputTokens": 2695,
-    "outputTokens": 1453,
+    "inputTokens": 3707,
+    "outputTokens": 1241,
     "serverToolUsage": {},
-    "totalTokens": 4148
+    "totalTokens": 4948
   }
 }

@@ -1,0 +1,67 @@
+{
+  "inputHash": "351583c6456b6978",
+  "brief": {
+    "headline": "Push toward ₹205/kg (bottom of the fair market band) and ask for 45-day terms in exchange for freeing up ₹639 for us — we have no public numbers on them, so lean on market pricing and line up Huhtamaki or Constantia as a second source.",
+    "priceAsk": {
+      "summary": "Ask for a price of ₹205/kg, the bottom of the market-fair band.",
+      "target": "₹205/kg",
+      "basis": "Market asking price for pharma/ORS sachet laminate runs ₹205–305/kg, typical ₹250/kg, and the verdict is 'MARKET-FAIR (top of fair band)' — so ₹205/kg is the low end of what's reasonable and fair in the open market."
+    },
+    "paymentTermAsk": {
+      "summary": "Move from 30 days after receipt to 45 days after receipt.",
+      "cashImpact": "Shifting to 45-day terms frees up ₹639 in cash for us."
+    },
+    "financialLeverage": "Silk Polypack publishes no financial statements, so we don't know their revenue, profit or how tight their cash is. Our annual spend with them is ₹7,775 — a small account. Because we're flying blind on their strength, we should not squeeze hard; instead, use the market price band to justify a fair target and offer longer payment (45 days, worth ₹639 to us) as a trade. At the same time, quietly qualify Huhtamaki or Constantia as a proven second source so we're not locked in.",
+    "evidence": [
+      {
+        "point": "Market asking price for this laminate is ₹205–305/kg, typical ₹250/kg, verdict 'MARKET-FAIR (top of fair band)'.",
+        "figure": "₹205–305/kg, typical ₹250/kg"
+      },
+      {
+        "point": "BOPET film import unit value (the base substrate) is ₹171.60/kg.",
+        "figure": "171.60 ₹/kg"
+      },
+      {
+        "point": "We spend ₹7,775 a year with Silk Polypack.",
+        "figure": "₹7775"
+      },
+      {
+        "point": "Moving to 45-day terms frees up ₹639 in cash for us.",
+        "figure": "₹639"
+      },
+      {
+        "point": "Silk Polypack does not publish financials, so we have no revenue, profit or cash picture.",
+        "figure": "financialsPublic: false"
+      }
+    ],
+    "alternates": [
+      {
+        "name": "Huhtamaki India Ltd",
+        "why": "Listed flexible-packaging converter, already a tiny FDC supplier — a proven, scalable second source for laminate sachets (revenue ₹2,611.64 Cr, health C 59/100)."
+      },
+      {
+        "name": "Constantia Parikh Packaging Pvt Ltd",
+        "why": "Part of the global Constantia group, converts pharma blister and sachet laminates in India — strong second-source fit for our ORS sachets (revenue ₹222.04 Cr, health D 31/100)."
+      }
+    ],
+    "risks": [
+      "No public financials means we can't see if they're healthy or struggling — don't push so hard that a weak supplier walks or fails.",
+      "We spend only ₹7,775/year with them, so we have almost no volume leverage.",
+      "The market band is wide (₹205–305/kg) — if we ask for the bottom, they may point to typical ₹250/kg and refuse to move much.",
+      "We currently pay on 30-day terms; asking for 45 days may meet resistance unless we sweeten the deal (volume commitment or longer contract)."
+    ],
+    "suggestedOpeningLine": "We'd like to work toward the ₹205/kg floor of the market band for this laminate and shift to 45-day payment terms — that way we both benefit, and we'd be happy to discuss a longer commitment if the economics work."
+  },
+  "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-17",
+  "usage": {
+    "cacheReadInputTokenCount": 0,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokenCount": 0,
+    "cacheWriteInputTokens": 0,
+    "inputTokens": 3141,
+    "outputTokens": 1053,
+    "serverToolUsage": {},
+    "totalTokens": 4194
+  }
+}

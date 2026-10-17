@@ -1,0 +1,75 @@
+{
+  "inputHash": "ecc7cf74f33033db",
+  "brief": {
+    "headline": "Push for 15-day faster payment to free ₹1.13 L cash and qualify Manjushree as a second source to strengthen our supply security.",
+    "priceAsk": {
+      "summary": "Ask for a quote at the lower end of the market band for higher volume or relaxed specs.",
+      "target": "₹0.65–0.80/pc for 28 mm caps at scale",
+      "basis": "Market asking prices for similar caps run ₹0.55–1.20/pc, typically ₹0.85–0.95/pc. The market verdict is MARKET-FAIR with modest headroom to ₹0.65–0.80 at higher volume or looser spec — so there's room to move down if we commit more volume or adjust specs."
+    },
+    "paymentTermAsk": {
+      "summary": "Move from 45 Days After Receipt to 30 Days After Receipt.",
+      "cashImpact": "This frees up ₹2.25 L of our cash; if we can go further to 15 days faster (net 30 days total), we free another ₹1.13 L."
+    },
+    "financialLeverage": "Abhinav publishes no financials, so we can't see their revenue, profit or how tight their cash is. That means our negotiating position rests on our own data and on having credible backup suppliers lined up. We spend ₹27.42 L a year with them — not huge, but enough to matter to a private packaging converter. Without their financial picture, we keep the tone firm but fair: lead with faster payment (worth real money to any supplier) and make clear we're qualifying a second source to protect our supply.",
+    "evidence": [
+      {
+        "point": "We currently pay them 45 days after receipt.",
+        "figure": "45 Days After Receipt"
+      },
+      {
+        "point": "Speeding up to 30 days frees up cash for us.",
+        "figure": "₹2.25 L"
+      },
+      {
+        "point": "Going another 15 days faster frees another chunk of cash.",
+        "figure": "₹1.13 L"
+      },
+      {
+        "point": "Our annual spend with them.",
+        "figure": "₹27.42 L"
+      },
+      {
+        "point": "Market asking price band for 28 mm induction-wad PP caps.",
+        "figure": "₹0.55–1.20/pc"
+      },
+      {
+        "point": "Market verdict shows modest room to negotiate down at higher volume or looser spec.",
+        "figure": "MARKET-FAIR; modest headroom to ₹0.65–0.80 at higher volume / looser spec"
+      }
+    ],
+    "alternates": [
+      {
+        "name": "Manjushree Technopack Ltd",
+        "why": "India's largest rigid-plastic packaging converter (₹2569.83 Cr revenue, health B 65/100) — pharma bottles, caps, preforms; top second-source candidate and already qualified as a packaging alternate."
+      },
+      {
+        "name": "Mold-Tek Packaging Ltd",
+        "why": "Listed rigid-plastic leader (₹946.50 Cr revenue, health B 73/100) for pails, containers, pharma — strong, profitable, robust alternate for bottles and closures."
+      },
+      {
+        "name": "Reliance Industries Limited (lead to qualify)",
+        "why": "A pan-India manufacturer lead for rigid plastic — verify capability and get an RFQ before treating as approved."
+      }
+    ],
+    "risks": [
+      "Abhinav's financials aren't public, so we can't gauge how stable they are or how hard we can push before risking supply disruption.",
+      "We have no internal benchmark (no best price we pay for this item from another vendor), so our price ask leans entirely on the open-market band — make sure we cross-check any quote against that ₹0.55–1.20/pc range.",
+      "The market backups (Reliance, Srichakra, IVL Dhunseri, Dalmia, Ganesha, Chemco) are leads from web research — not yet qualified or priced; don't assume any of them can supply tomorrow.",
+      "If we push too hard on price and payment together without a qualified second source live, we risk Abhinav walking away and leaving us scrambling."
+    ],
+    "suggestedOpeningLine": "We'd like to move to 30-day payment to free up cash on both sides, and we're also qualifying Manjushree as a second source to strengthen our supply base — let's talk about how we make that work for everyone."
+  },
+  "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-17",
+  "usage": {
+    "cacheReadInputTokenCount": 0,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokenCount": 0,
+    "cacheWriteInputTokens": 0,
+    "inputTokens": 2895,
+    "outputTokens": 1163,
+    "serverToolUsage": {},
+    "totalTokens": 4058
+  }
+}

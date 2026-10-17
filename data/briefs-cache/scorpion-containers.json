@@ -1,0 +1,71 @@
+{
+  "inputHash": "d13da1d45d0dc24c",
+  "brief": {
+    "headline": "Fix the 40% return rate first, then push price toward ₹0.65–0.80/pc at volume using market benchmark and four ready alternates",
+    "priceAsk": {
+      "summary": "Target ₹0.65–0.80/pc for 28 mm caps at higher volume, down from typical ₹0.85–0.95/pc",
+      "target": "₹0.65–0.80/pc",
+      "basis": "Market research shows 28 mm induction-wad PP caps typically ask ₹0.85–0.95/pc, with modest headroom to ₹0.65–0.80 at higher volume or looser spec — we want that lower band"
+    },
+    "paymentTermAsk": {
+      "summary": "Move from 30 days after receipt to 45 days after receipt",
+      "cashImpact": "₹6817"
+    },
+    "financialLeverage": "Scorpion publishes no financials, so we can't see their revenue, profit or cash position. Our ₹1.66 L annual spend is small, so we're not a must-keep account for them. That means we push on price and quality using the market benchmark and four strong alternates lined up — Manjushree (₹2569.83 Cr, the country's largest rigid-plastic converter), Mold-Tek (₹946.50 Cr, listed and profitable), Hitech (₹701.17 Cr, listed) and Pearl (₹19.83 Cr, PET specialist) — rather than trying to squeeze a supplier whose finances we can't see. The 40% return rate is the bigger risk: fix quality first, then use the alternates to justify the target price.",
+    "evidence": [
+      {
+        "point": "40% of their deliveries get sent back — quality or paperwork failures are costing us time and money",
+        "figure": "Return rate: 40%"
+      },
+      {
+        "point": "Market asking price for 28 mm induction-wad PP caps is typically ₹0.85–0.95/pc, with room down to ₹0.65–0.80 at higher volume",
+        "figure": "askBand: ₹0.55–1.20/pc; typical: ₹0.85–0.95/pc; verdict: MARKET-FAIR; modest headroom to ₹0.65–0.80 at higher volume / looser spec"
+      },
+      {
+        "point": "HDPE resin import unit value sits at 87.61 ₹/kg, giving us a raw-material floor to benchmark against",
+        "figure": "87.61 ₹/kg"
+      },
+      {
+        "point": "Our annual spend with them is only ₹1.66 L — small enough that we can walk if quality and price don't improve",
+        "figure": "₹1.66 L"
+      },
+      {
+        "point": "Extending payment by 15 days frees up ₹6817 in cash for us",
+        "figure": "₹6817"
+      }
+    ],
+    "alternates": [
+      {
+        "name": "Manjushree Technopack Ltd",
+        "why": "India's largest rigid-plastic packaging converter (₹2569.83 Cr revenue, health B 65/100) — pharma bottles, caps, preforms; top second-source candidate"
+      },
+      {
+        "name": "Mold-Tek Packaging Ltd",
+        "why": "Listed rigid-plastic leader (₹946.50 Cr revenue, health B 73/100) — pails, containers, pharma; strong and profitable alternate for bottles and closures"
+      },
+      {
+        "name": "Hitech Corporation Ltd",
+        "why": "Listed moulded and blow-moulded packaging (₹701.17 Cr revenue, health C 51/100) — broad capability across bottles and caps"
+      }
+    ],
+    "risks": [
+      "The 40% return rate is the urgent problem — push for a root-cause fix (process, spec, inspection) before committing more volume, or the savings evaporate in rework and delays",
+      "Scorpion's finances aren't public, so we can't tell if they're stretched or stable — keep the tone firm but not harsh, and have Manjushree or Mold-Tek ready to quote if they can't meet our ask",
+      "Our ₹1.66 L spend is tiny — they may not bend much for us alone, so bundle the ask: better price plus 45-day terms plus zero returns, and make it clear we're qualifying a second source",
+      "Market backups (Reliance, Srichakra, IVL Dhunseri, Dalmia, Ganesha, Chemco) are leads to qualify — verify capability and get quotes before treating any as an approved alternate"
+    ],
+    "suggestedOpeningLine": "We want to grow the business with you, but the 40% return rate has to drop to zero and we need your best price — ₹0.65–0.80/pc at volume — because we're lining up Manjushree and Mold-Tek as second sources and the market benchmark sits at ₹0.85–0.95 with room to move lower."
+  },
+  "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-17",
+  "usage": {
+    "cacheReadInputTokenCount": 0,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokenCount": 0,
+    "cacheWriteInputTokens": 0,
+    "inputTokens": 2969,
+    "outputTokens": 1317,
+    "serverToolUsage": {},
+    "totalTokens": 4286
+  }
+}

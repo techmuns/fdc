@@ -1,0 +1,67 @@
+{
+  "inputHash": "7d9f81f9ebce9331",
+  "brief": {
+    "headline": "Push price toward ₹0.65–0.80/pc (market fair-range floor) and qualify Manjushree or Mold-Tek as a second source to tighten our supply and sharpen future bids",
+    "priceAsk": {
+      "summary": "Ask for pricing in the ₹0.65–0.80/pc range for the 28 mm cap at higher volumes",
+      "target": "₹0.65–0.80/pc",
+      "basis": "Market asking price for a 28 mm induction-wad PP cap is ₹0.55–1.20/pc, typically ₹0.85–0.95/pc; market verdict is MARKET-FAIR with modest headroom to ₹0.65–0.80 at higher volume or looser spec — so we anchor to that lower band"
+    },
+    "paymentTermAsk": {
+      "summary": "Keep current 30 Days After Receipt; no change needed",
+      "cashImpact": "none"
+    },
+    "financialLeverage": "Empire publishes no financials, so we can't see their revenue, profit or cash position. That means we build our case on the open-market price bands and on having a second source ready. Our ₹67.47 L annual spend is meaningful leverage if we can credibly shift volume. Since we don't know how tight their cash is, we lead on price and supply security rather than payment pressure.",
+    "evidence": [
+      {
+        "point": "Market asking price for 28 mm PP cap runs ₹0.55–1.20/pc, typically ₹0.85–0.95/pc",
+        "figure": "₹0.55–1.20/pc typical ₹0.85–0.95/pc"
+      },
+      {
+        "point": "Market verdict says MARKET-FAIR with modest headroom to ₹0.65–0.80 at higher volume or looser spec",
+        "figure": "₹0.65–0.80/pc"
+      },
+      {
+        "point": "HDPE resin import unit value stands at 87.61 ₹/kg, giving us a raw-material reference line",
+        "figure": "87.61 ₹/kg"
+      },
+      {
+        "point": "We spend ₹67.47 L a year with them — enough volume to earn better-than-typical pricing",
+        "figure": "₹67.47 L"
+      }
+    ],
+    "alternates": [
+      {
+        "name": "Manjushree Technopack Ltd",
+        "why": "India's largest rigid-plastic packaging converter (₹2569.83 Cr revenue, health B 65/100) — pharma bottles, caps, preforms; top second-source candidate and a strong negotiating card"
+      },
+      {
+        "name": "Mold-Tek Packaging Ltd",
+        "why": "Listed rigid-plastic leader (₹946.50 Cr revenue, health B 73/100) for pails, containers, pharma — robust, profitable alternate for bottles and closures"
+      },
+      {
+        "name": "Reliance Industries Limited",
+        "role": "a lead to qualify (verify before RFQ) — pan-India manufacturer, medium confidence"
+      }
+    ],
+    "risks": [
+      "Empire's financials aren't public, so we can't gauge how fragile or cash-hungry they are — pushing too hard without that view could destabilize a sole source",
+      "We have no internal price benchmark (no best-price-we-pay figure), so our ask rests entirely on the open-market band — verify that band with a second quote before the meeting",
+      "Alternates Manjushree and Mold-Tek are qualified on paper but not yet priced or audited for our SKUs — line up an RFQ in parallel so Empire knows we're serious",
+      "If Empire's margins are thin and hidden, a sudden 15–20 % price cut to ₹0.65–0.80 might force them to cut corners on quality or delivery — watch lead-times and spec compliance closely"
+    ],
+    "suggestedOpeningLine": "We'd like to bring our 28 mm cap pricing into the ₹0.65–0.80 range that the market shows is achievable at our volume, and at the same time we're qualifying a second source to make sure we have supply security and competitive tension going forward."
+  },
+  "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-17",
+  "usage": {
+    "cacheReadInputTokenCount": 0,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokenCount": 0,
+    "cacheWriteInputTokens": 0,
+    "inputTokens": 2889,
+    "outputTokens": 1094,
+    "serverToolUsage": {},
+    "totalTokens": 3983
+  }
+}

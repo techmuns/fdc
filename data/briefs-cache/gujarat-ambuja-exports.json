@@ -1,75 +1,66 @@
 {
-  "inputHash": "d47e4fa71d700020",
+  "inputHash": "8a0dac98ae8f83c3",
   "brief": {
-    "headline": "Cut Dextrose price by 3.0% to match our best rate and save ₹1.26 Cr/yr — you are growing fast and we hold 56% of our Dextrose volume with you, making this the easiest win for both sides.",
+    "headline": "Cut Dextrose price by 3.0% to match Sayaji's ₹66.48/KG — we're overpaying ₹1.26 Cr a year and they supply 56% of our Dextrose, so we need a second source and a fair price.",
     "priceAsk": {
-      "summary": "Reduce Dextrose price from ₹68.45/KG to ₹66.48/KG",
-      "target": "₹66.48/KG — a 3.0% reduction saving ₹1.26 Cr annually",
-      "basis": "We already pay ₹66.48/KG to Sayaji Industries Limited for comparable Dextrose; your rate runs 3.0% above that benchmark. The India export unit value sits at 42.95 ₹/kg, well below both prices, so ₹66.48/KG remains commercially attractive."
+      "summary": "Ask them to match Sayaji Industries' ₹66.48/KG for Dextrose Anhydrous IP",
+      "target": "₹66.48/KG (a 3.0% reduction from our current ₹68.45/KG)",
+      "basis": "We already pay ₹66.48/KG to Sayaji for the same material. The market asking price for Anhydrous Dextrose IP is ₹60–81/kg (typical ₹66–73/kg), so ₹66.48/KG sits right in the fair band. Closing this gap saves us ₹1.26 Cr a year."
     },
     "paymentTermAsk": {
-      "summary": "Keep current 30 Days After Receipt terms",
-      "cashImpact": "₹1.74 Cr working capital already tied up; no ask to worsen terms"
+      "summary": "Keep the current 30 Days After Receipt terms — no change needed",
+      "cashImpact": "none"
     },
-    "financialLeverage": "Gujarat Ambuja is financially robust: ₹6031.59 Cr revenue, 6.9% net margin, 10.1% EBITDA margin, 12.5% return on capital, and low debt at 0.13x debt-to-equity. Health score is B (64/100) with no red flags. Our ₹21.21 Cr spend represents just 0.35% of their revenue, so we are not material to them individually. However, they are growing at 23.5% per year and will value volume commitment. Their strong balance sheet means they can afford the 3.0% price cut without distress, and the size disparity means we push firmly on price but must also dangle volume growth to make the deal attractive.",
+    "financialLeverage": "Gujarat Ambuja is healthy and big — revenue of ₹6031.59 Cr, they keep ₹6.9 of every ₹100 they sell, and their debt is low at 0.13x equity. Our ₹21.21 Cr spend is just 0.35% of their sales, so we're a small customer to them. They're growing fast at 23.5% a year, which means they want more orders. We can push on price by offering steady volume, but they won't feel much pain if we walk — so lining up Gulshan or Sanstar as a qualified second source is the real lever that makes them move.",
     "evidence": [
       {
-        "point": "We pay ₹68.45/KG for Dextrose from Gujarat Ambuja, which is 3.0% above our best price",
-        "figure": "₹68.45/KG, gap 3.0%, ₹1.26 Cr annual excess"
+        "point": "We pay ₹68.45/KG to Gujarat Ambuja while Sayaji charges us only ₹66.48/KG for the same Dextrose",
+        "figure": "Gap: 3.0%, costing us ₹1.26 Cr/year"
       },
       {
-        "point": "Sayaji Industries delivers the same material at our best-in-house rate",
-        "figure": "₹66.48/KG"
+        "point": "The open market asking price for Anhydrous Dextrose IP is ₹60–81/kg, typically ₹66–73/kg, so our current price is market-fair but Sayaji's is better",
+        "figure": "Market verdict: MARKET-FAIR (slightly favourable)"
       },
       {
-        "point": "India export unit value for Dextrose runs far below both our rates",
-        "figure": "42.95 ₹/kg"
+        "point": "Gujarat Ambuja supplies 56% of our Dextrose (₹21.21 Cr) — we're too reliant on one source",
+        "figure": "Share of material: 56%"
       },
       {
-        "point": "Gujarat Ambuja is our dominant Dextrose supplier, concentrating risk and giving us serious leverage to rebalance",
-        "figure": "₹21.21 Cr annual spend, 56% share of material"
+        "point": "They're growing sales fast and want new business",
+        "figure": "Sales growth: 23.5%"
       },
       {
-        "point": "They are growing revenue rapidly and will trade price for committed volume",
-        "figure": "23.5% revenue growth per year"
-      },
-      {
-        "point": "Their financials are solid — margins healthy, leverage negligible, rating stable",
-        "figure": "6.9% net margin, 10.1% EBITDA margin, 0.13x debt-to-equity, B (64/100) health score"
+        "point": "We're a tiny customer to them",
+        "figure": "Our ₹21.21 Cr is 0.35% of their ₹6031.59 Cr revenue"
       }
     ],
     "alternates": [
       {
-        "name": "Gulshan Polyols Ltd",
-        "why": "Listed starch & polyol maker, ₹2359.06 Cr revenue, B (62/100) health — established dextrose/sorbitol supplier, a drop-in alternate to Gujarat Ambuja."
+        "name": "Gulshan Polyols Ltd (a lead to qualify — verify before RFQ)",
+        "why": "Listed starch and polyol maker, revenue ₹2359.06 Cr, health score B (62/100) — a drop-in alternate to Gujarat Ambuja for dextrose; established supplier in this space"
       },
       {
-        "name": "Sanstar Ltd",
-        "why": "Recently-listed maize-derivatives specialist, ₹821.13 Cr revenue, C (53/100) health — growing capacity in starch and dextrose."
-      },
-      {
-        "name": "Roquette India Pvt Ltd",
-        "why": "Indian arm of global starch major, ₹2898.05 Cr revenue — pharma-grade dextrose/excipients, premium quality and very reliable."
+        "name": "Sanstar Ltd (a lead to qualify — verify before RFQ)",
+        "why": "Recently-listed maize-derivatives specialist making starch and dextrose, revenue ₹821.13 Cr, health C (53/100) — growing capacity, could be a solid second source"
       }
     ],
     "risks": [
-      "Gujarat Ambuja supplies 56% of our Dextrose volume (₹21.21 Cr); pushing too hard without a qualified second source in place risks supply continuity if they walk.",
-      "We represent only 0.35% of their ₹6031.59 Cr revenue — we have limited commercial importance to them, so volume commitment (not just price pressure) is essential to secure the cut.",
-      "Market export price of 42.95 ₹/kg is far below both our ₹68.45/KG and the ₹66.48/KG target — if they cite export floors, counter that our benchmark is a proven Indian supplier price, not export parity.",
-      "Their 23.5% growth trajectory means they may prioritise higher-margin customers or export markets over a 3.0% domestic price concession unless we lock in multi-year volume."
+      "Gujarat Ambuja holds 56% of our Dextrose volume — if they dig in or we sour the relationship, we have no approved backup ready today; qualify Gulshan or Sanstar fast",
+      "We're only 0.35% of their revenue, so they won't chase our business hard — the price ask works only if they believe we'll shift volume to Sayaji or bring in a second supplier",
+      "Their strong financials (revenue ₹6031.59 Cr, net margin 6.9%, low debt 0.13x) mean they can afford to say no — don't bluff without a real alternate lined up"
     ],
-    "suggestedOpeningLine": "We value the partnership, but at ₹68.45/KG you're running 3.0% above the ₹66.48/KG we pay Sayaji for identical Dextrose — let's close that ₹1.26 Cr gap, and in return we'll commit the volume growth your 23.5% trajectory needs."
+    "suggestedOpeningLine": "We value the partnership, but we're paying ₹68.45/KG when Sayaji gives us ₹66.48/KG for the same Dextrose — can you match that price so we can keep the volume with you?"
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-10-15",
+  "generatedAt": "2026-10-17",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
-    "inputTokens": 2577,
-    "outputTokens": 1344,
+    "inputTokens": 3540,
+    "outputTokens": 1193,
     "serverToolUsage": {},
-    "totalTokens": 3921
+    "totalTokens": 4733
   }
 }
