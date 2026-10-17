@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T06:07:48.237Z",
+  "generatedAt": "2026-10-17T05:49:38.933Z",
   "sources": {
     "listed": "Munshot market-data API (free)",
     "private": "Probe42 comprehensive reports (MCA filings) — primary; credit-rating-agency rationale docs — fallback / cross-check"
@@ -1111,8 +1111,8 @@
       "levers": [
         {
           "type": "risk",
-          "title": "CRISIL BB+ / Stable — but not cooperating with the rating agency",
-          "detail": "The latest rating is on an \"Issuer Not Cooperating\" basis, so the numbers are stale/best-available. Treat their financial health as uncertain and keep a second source warm.",
+          "title": "CRISIL BB+ / Stable — but they stopped sharing info with the rating agency",
+          "detail": "The latest rating was done without the company's help, so the numbers may be out of date. Treat their financial health as uncertain and keep a backup supplier ready.",
           "evidence": [
             {
               "label": "Rating",
@@ -1122,53 +1122,53 @@
         },
         {
           "type": "opportunity",
-          "title": "Cash tied up longer than peers — 81d cycle vs 46d",
-          "detail": "Their cash-conversion cycle runs above the peer median, so they value speed. Offer faster payment in exchange for a price cut.",
+          "title": "Their cash is stuck longer than most — 81d vs 46d",
+          "detail": "Their cash is tied up longer than similar firms, so they'll value being paid faster. Offer quicker payment in exchange for a price cut.",
           "evidence": [
             {
-              "label": "Cash cycle",
+              "label": "Cash stuck for",
               "value": "81d"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "46d"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "We're a meaningful customer — 9.72% of their revenue",
-          "detail": "Our ₹28.31 Cr/yr is a real slice of their ₹291.36 Cr revenue. That volume is leverage — ask for a price or terms concession to keep it.",
+          "title": "You're a big customer — 9.72% of everything they sell",
+          "detail": "Your ₹28.31 Cr/yr is a real chunk of their ₹291.36 Cr in sales. That buying power is your lever — ask for a better price or terms to keep it.",
           "evidence": [
             {
-              "label": "Our spend",
+              "label": "You spend",
               "value": "₹28.31 Cr"
             },
             {
-              "label": "Their revenue",
+              "label": "Their sales",
               "value": "₹291.36 Cr"
             },
             {
-              "label": "Share",
+              "label": "Your share",
               "value": "9.72%"
             }
           ]
         },
         {
           "type": "watch",
-          "title": "Thin 1.1% margin — press terms, not price",
-          "detail": "Margins are slim, so deep price cuts risk their stability (and our supply). Win on payment terms, volume or logistics instead.",
+          "title": "They keep only 1.1% as profit — push terms, not price",
+          "detail": "There's very little profit to spare, so a big price cut could hurt them (and your supply). Win on payment terms, volume or delivery instead.",
           "evidence": [
             {
-              "label": "Net margin",
+              "label": "Profit kept",
               "value": "1.1%"
             }
           ]
         },
         {
           "type": "risk",
-          "title": "Single-source: 67% of Laminates runs through them",
-          "detail": "They're our dominant source for Laminates (₹28.31 Cr). Qualify a second supplier — it cuts risk and hands us negotiating leverage.",
+          "title": "Only supplier: 67% of Laminates comes from them",
+          "detail": "They're your main source for Laminates (₹28.31 Cr). Find and approve a second supplier — it lowers your risk and gives you a stronger hand in talks.",
           "evidence": [
             {
               "label": "Share of material",
@@ -1182,11 +1182,11 @@
         },
         {
           "type": "opportunity",
-          "title": "Paying ₹32.69 L/yr above our cheapest supplier",
-          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "title": "Paying ₹32.69 L/yr more than your cheapest supplier",
+          "detail": "For the same sort of items they charge more than the lowest price you already pay. Hold them to that price.",
           "evidence": [
             {
-              "label": "Excess vs best",
+              "label": "Extra vs cheapest",
               "value": "₹32.69 L"
             }
           ]
@@ -1210,7 +1210,7 @@
       "metrics": {
         "revenue": 60315901952,
         "ebitda": 6083474944,
-        "marketCap": 80120586240,
+        "marketCap": 79872909312,
         "totalDebt": 4409999872,
         "ebitdaMargin": 10.09,
         "netMargin": 6.9,
@@ -1219,11 +1219,11 @@
         "debtToEquity": 13.38,
         "revenueGrowth": 23.5,
         "earningsGrowth": 171.1,
-        "pe": 19.9,
-        "evEbitda": 12.81,
+        "pe": 19.24,
+        "evEbitda": 12.45,
         "dividendYield": 17,
-        "currentPrice": 174.68,
-        "yearlyChange": 62.12,
+        "currentPrice": 174.14,
+        "yearlyChange": 67.6,
         "employees": 2245,
         "roce": 12.5,
         "roe": 9.72,
@@ -1278,7 +1278,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-15"
+        "date": "2026-10-17"
       },
       "note": null,
       "ratingGrade": null,
@@ -1292,19 +1292,19 @@
       "levers": [
         {
           "type": "opportunity",
-          "title": "Growing 23.5%/yr — trade volume for price",
-          "detail": "Fast top-line growth means they value new volume. Offer a committed higher volume in return for a lower unit price.",
+          "title": "Growing fast (23.5%/yr) — swap volume for a better price",
+          "detail": "Their sales are growing fast, so they want new orders. Offer to commit more volume in return for a lower price.",
           "evidence": [
             {
-              "label": "Revenue growth",
+              "label": "Sales growth",
               "value": "23.5%"
             }
           ]
         },
         {
           "type": "risk",
-          "title": "Single-source: 56% of Dextrose runs through them",
-          "detail": "They're our dominant source for Dextrose (₹21.21 Cr). Qualify a second supplier — it cuts risk and hands us negotiating leverage.",
+          "title": "Only supplier: 56% of Dextrose comes from them",
+          "detail": "They're your main source for Dextrose (₹21.21 Cr). Find and approve a second supplier — it lowers your risk and gives you a stronger hand in talks.",
           "evidence": [
             {
               "label": "Share of material",
@@ -1318,11 +1318,11 @@
         },
         {
           "type": "opportunity",
-          "title": "Paying ₹1.26 Cr/yr above our cheapest supplier",
-          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "title": "Paying ₹1.26 Cr/yr more than your cheapest supplier",
+          "detail": "For the same sort of items they charge more than the lowest price you already pay. Hold them to that price.",
           "evidence": [
             {
-              "label": "Excess vs best",
+              "label": "Extra vs cheapest",
               "value": "₹1.26 Cr"
             }
           ]
@@ -1333,7 +1333,7 @@
         "sourceUrl": "https://www.screener.in/company/GAEL/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-10-15"
+        "date": "2026-10-17"
       }
     },
     "sayaji-industries": {
@@ -1353,7 +1353,7 @@
       "metrics": {
         "revenue": 10878784512,
         "ebitda": 532790016,
-        "marketCap": 2881667072,
+        "marketCap": 2804057600,
         "totalDebt": 2269750016,
         "ebitdaMargin": 4.9,
         "netMargin": 1.12,
@@ -1362,11 +1362,11 @@
         "debtToEquity": 236.51,
         "revenueGrowth": 5.9,
         "earningsGrowth": 0,
-        "pe": 3.9,
-        "evEbitda": 9.48,
+        "pe": 3.8,
+        "evEbitda": 9.55,
         "dividendYield": 0,
-        "currentPrice": 113.99,
-        "yearlyChange": 4.83,
+        "currentPrice": 110.92,
+        "yearlyChange": -4.34,
         "employees": 779,
         "roce": 8.18,
         "roe": 1.49,
@@ -1421,7 +1421,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-15"
+        "date": "2026-10-17"
       },
       "note": null,
       "ratingGrade": null,
@@ -1435,45 +1435,45 @@
       "levers": [
         {
           "type": "opportunity",
-          "title": "We're a meaningful customer — 1.38% of their revenue",
-          "detail": "Our ₹15.03 Cr/yr is a real slice of their ₹1087.88 Cr revenue. That volume is leverage — ask for a price or terms concession to keep it.",
+          "title": "You're a big customer — 1.38% of everything they sell",
+          "detail": "Your ₹15.03 Cr/yr is a real chunk of their ₹1087.88 Cr in sales. That buying power is your lever — ask for a better price or terms to keep it.",
           "evidence": [
             {
-              "label": "Our spend",
+              "label": "You spend",
               "value": "₹15.03 Cr"
             },
             {
-              "label": "Their revenue",
+              "label": "Their sales",
               "value": "₹1087.88 Cr"
             },
             {
-              "label": "Share",
+              "label": "Your share",
               "value": "1.38%"
             }
           ]
         },
         {
           "type": "watch",
-          "title": "Thin 1.1% margin — press terms, not price",
-          "detail": "Margins are slim, so deep price cuts risk their stability (and our supply). Win on payment terms, volume or logistics instead.",
+          "title": "They keep only 1.1% as profit — push terms, not price",
+          "detail": "There's very little profit to spare, so a big price cut could hurt them (and your supply). Win on payment terms, volume or delivery instead.",
           "evidence": [
             {
-              "label": "Net margin",
+              "label": "Profit kept",
               "value": "1.1%"
             }
           ]
         },
         {
           "type": "risk",
-          "title": "Carrying debt (D/E 2.37x) — watch continuity, offer cash",
-          "detail": "A geared balance sheet is a supply-continuity watch — but it also means they value cash. Offer faster payment for a discount.",
+          "title": "They owe a lot (2.37× their own cash) — watch supply, offer to pay fast",
+          "detail": "They carry a lot of debt — a small risk to steady supply, but it also means they value cash. Offer to pay faster for a discount.",
           "evidence": [
             {
-              "label": "Debt / equity",
+              "label": "Owed vs own cash",
               "value": "2.37x"
             },
             {
-              "label": "Total debt",
+              "label": "Total owed",
               "value": "₹226.98 Cr"
             }
           ]
@@ -1484,7 +1484,7 @@
         "sourceUrl": "https://www.screener.in/company/SAYAJIIND/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-10-15"
+        "date": "2026-10-17"
       }
     },
     "shrinath-roto-pack": {
@@ -2658,7 +2658,7 @@
         {
           "type": "watch",
           "title": "Credit rating: CARE BBB+ / Stable",
-          "detail": "Mid-tier credit rating — factor into how much volume we route here.",
+          "detail": "A middling credit rating — bear it in mind when deciding how much to buy from them.",
           "evidence": [
             {
               "label": "Rating",
@@ -2668,56 +2668,56 @@
         },
         {
           "type": "opportunity",
-          "title": "They pay suppliers slower than peers — 51d vs 40d",
-          "detail": "They already stretch their own payables past the peer median, so asking them to extend our credit is only fair.",
+          "title": "They pay their own suppliers slower than most — 51d vs 40d",
+          "detail": "They already take longer than similar firms to pay their own suppliers, so asking them to give you more time to pay is only fair.",
           "evidence": [
             {
-              "label": "Their payable days",
+              "label": "They take",
               "value": "51d"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "40d"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "Cash tied up longer than peers — 101d cycle vs 64d",
-          "detail": "Their cash-conversion cycle runs above the peer median, so they value speed. Offer faster payment in exchange for a price cut.",
+          "title": "Their cash is stuck longer than most — 101d vs 64d",
+          "detail": "Their cash is tied up longer than similar firms, so they'll value being paid faster. Offer quicker payment in exchange for a price cut.",
           "evidence": [
             {
-              "label": "Cash cycle",
+              "label": "Cash stuck for",
               "value": "101d"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "64d"
             }
           ]
         },
         {
           "type": "watch",
-          "title": "Thin 2.3% margin — press terms, not price",
-          "detail": "Margins are slim, so deep price cuts risk their stability (and our supply). Win on payment terms, volume or logistics instead.",
+          "title": "They keep only 2.3% as profit — push terms, not price",
+          "detail": "There's very little profit to spare, so a big price cut could hurt them (and your supply). Win on payment terms, volume or delivery instead.",
           "evidence": [
             {
-              "label": "Net margin",
+              "label": "Profit kept",
               "value": "2.3%"
             }
           ]
         },
         {
           "type": "risk",
-          "title": "Carrying debt (D/E 1.25x) — watch continuity, offer cash",
-          "detail": "A geared balance sheet is a supply-continuity watch — but it also means they value cash. Offer faster payment for a discount.",
+          "title": "They owe a lot (1.25× their own cash) — watch supply, offer to pay fast",
+          "detail": "They carry a lot of debt — a small risk to steady supply, but it also means they value cash. Offer to pay faster for a discount.",
           "evidence": [
             {
-              "label": "Debt / equity",
+              "label": "Owed vs own cash",
               "value": "1.25x"
             },
             {
-              "label": "Total debt",
+              "label": "Total owed",
               "value": "₹282.62 Cr"
             }
           ]
@@ -3921,8 +3921,8 @@
       "levers": [
         {
           "type": "watch",
-          "title": "Solid credit rating (CRISIL A+ / Stable)",
-          "detail": "An investment-grade rating means low continuity risk — we can push harder on price/terms without worrying they'll wobble.",
+          "title": "Strong credit rating (CRISIL A+ / Stable)",
+          "detail": "A high credit rating means little risk they'll run into trouble — so you can push harder on price and terms.",
           "evidence": [
             {
               "label": "Rating",
@@ -3932,56 +3932,56 @@
         },
         {
           "type": "opportunity",
-          "title": "Out-earns its peers — 5.9% net margin vs 3.8% median",
-          "detail": "They run a fatter margin than the Bottles and Caps median (30 peers). There's headroom in the price they charge us.",
+          "title": "Makes more profit than similar firms — keeps 5.9% vs 3.8%",
+          "detail": "They keep more profit than other Bottles and Caps firms (30 compared). That means there's room in the price they charge you.",
           "evidence": [
             {
-              "label": "Their margin",
+              "label": "They keep",
               "value": "5.9%"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "3.8%"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "They pay suppliers slower than peers — 49d vs 37d",
-          "detail": "They already stretch their own payables past the peer median, so asking them to extend our credit is only fair.",
+          "title": "They pay their own suppliers slower than most — 49d vs 37d",
+          "detail": "They already take longer than similar firms to pay their own suppliers, so asking them to give you more time to pay is only fair.",
           "evidence": [
             {
-              "label": "Their payable days",
+              "label": "They take",
               "value": "49d"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "37d"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "Cash tied up longer than peers — 104d cycle vs 79d",
-          "detail": "Their cash-conversion cycle runs above the peer median, so they value speed. Offer faster payment in exchange for a price cut.",
+          "title": "Their cash is stuck longer than most — 104d vs 79d",
+          "detail": "Their cash is tied up longer than similar firms, so they'll value being paid faster. Offer quicker payment in exchange for a price cut.",
           "evidence": [
             {
-              "label": "Cash cycle",
+              "label": "Cash stuck for",
               "value": "104d"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "79d"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "Growing 22.1%/yr — trade volume for price",
-          "detail": "Fast top-line growth means they value new volume. Offer a committed higher volume in return for a lower unit price.",
+          "title": "Growing fast (22.1%/yr) — swap volume for a better price",
+          "detail": "Their sales are growing fast, so they want new orders. Offer to commit more volume in return for a lower price.",
           "evidence": [
             {
-              "label": "Revenue growth",
+              "label": "Sales growth",
               "value": "22.1%"
             }
           ]
@@ -4900,98 +4900,98 @@
       "levers": [
         {
           "type": "watch",
-          "title": "Below-peer margin — 5.4% vs 10.2% median",
-          "detail": "They earn less than peers, so price cuts bite harder here. Win on payment terms, volume or logistics rather than headline price.",
+          "title": "Keeps less profit than similar firms — 5.4% vs 10.2%",
+          "detail": "They keep less profit than their rivals, so price cuts hurt them more. Win on payment terms, volume or delivery instead of headline price.",
           "evidence": [
             {
-              "label": "Their margin",
+              "label": "They keep",
               "value": "5.4%"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "10.2%"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "They pay suppliers slower than peers — 63d vs 6d",
-          "detail": "They already stretch their own payables past the peer median, so asking them to extend our credit is only fair.",
+          "title": "They pay their own suppliers slower than most — 63d vs 6d",
+          "detail": "They already take longer than similar firms to pay their own suppliers, so asking them to give you more time to pay is only fair.",
           "evidence": [
             {
-              "label": "Their payable days",
+              "label": "They take",
               "value": "63d"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "6d"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "Cash tied up longer than peers — 75d cycle vs 30d",
-          "detail": "Their cash-conversion cycle runs above the peer median, so they value speed. Offer faster payment in exchange for a price cut.",
+          "title": "Their cash is stuck longer than most — 75d vs 30d",
+          "detail": "Their cash is tied up longer than similar firms, so they'll value being paid faster. Offer quicker payment in exchange for a price cut.",
           "evidence": [
             {
-              "label": "Cash cycle",
+              "label": "Cash stuck for",
               "value": "75d"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "30d"
             }
           ]
         },
         {
           "type": "watch",
-          "title": "We're a small customer — 0.12% of their revenue",
-          "detail": "At ₹5.46 Cr we're a rounding error against their ₹4491.70 Cr. Low standalone leverage — bundle volume, commit multi-year, or compete them against an alternate.",
+          "title": "You're a small customer — 0.12% of everything they sell",
+          "detail": "At ₹5.46 Cr you're tiny next to their ₹4491.70 Cr in sales. On your own you have little pull — bundle more volume, commit for several years, or play them off against another supplier.",
           "evidence": [
             {
-              "label": "Our spend",
+              "label": "You spend",
               "value": "₹5.46 Cr"
             },
             {
-              "label": "Share",
+              "label": "Your share",
               "value": "0.12%"
             }
           ]
         },
         {
           "type": "risk",
-          "title": "Carrying debt (D/E 1.09x) — watch continuity, offer cash",
-          "detail": "A geared balance sheet is a supply-continuity watch — but it also means they value cash. Offer faster payment for a discount.",
+          "title": "They owe a lot (1.09× their own cash) — watch supply, offer to pay fast",
+          "detail": "They carry a lot of debt — a small risk to steady supply, but it also means they value cash. Offer to pay faster for a discount.",
           "evidence": [
             {
-              "label": "Debt / equity",
+              "label": "Owed vs own cash",
               "value": "1.09x"
             },
             {
-              "label": "Total debt",
+              "label": "Total owed",
               "value": "₹551.00 Cr"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "We pay them on delivery",
-          "detail": "Moving to standard 30-day credit frees working capital (~₹44.91 L). Our strongest, simplest ask.",
+          "title": "You pay them on delivery",
+          "detail": "Moving them to normal 30-day credit frees up about ₹44.91 L of your cash. Your strongest, simplest ask.",
           "evidence": [
             {
-              "label": "Current terms",
-              "value": "Immediate"
+              "label": "Right now",
+              "value": "Pay on delivery"
             },
             {
-              "label": "Cash if 30-day",
+              "label": "Cash freed at 30 days",
               "value": "₹44.91 L"
             }
           ]
         },
         {
           "type": "watch",
-          "title": "High goods-receipt reversal rate (22%)",
-          "detail": "22% of their receipts were later reversed — raise quality/paperwork before it costs more.",
+          "title": "A lot of their deliveries get sent back (22%)",
+          "detail": "22% of what they deliver ends up reversed or returned — sort out quality and paperwork before it costs more.",
           "evidence": [
             {
               "label": "Return rate",
@@ -6198,7 +6198,7 @@
         {
           "type": "watch",
           "title": "Credit rating: IVR BBB- / Stable",
-          "detail": "Mid-tier credit rating — factor into how much volume we route here.",
+          "detail": "A middling credit rating — bear it in mind when deciding how much to buy from them.",
           "evidence": [
             {
               "label": "Rating",
@@ -6208,82 +6208,82 @@
         },
         {
           "type": "risk",
-          "title": "Loss-making in FY2024-25",
-          "detail": "They posted a net loss in FY2024-25 (PAT ₹-23.68 Cr). A deep price cut could tip supply continuity — lead with faster payment or committed volume, and keep a second source warm.",
+          "title": "Lost money in FY2024-25",
+          "detail": "They made a loss in FY2024-25 (₹-23.68 Cr). Pushing hard on price could put your supply at risk — lead with faster payment or a volume commitment, and keep a backup supplier ready.",
           "evidence": [
             {
-              "label": "PAT",
+              "label": "Final profit",
               "value": "₹-23.68 Cr"
             },
             {
-              "label": "Net margin",
+              "label": "Profit kept",
               "value": "-3.4%"
             }
           ]
         },
         {
           "type": "watch",
-          "title": "Below-peer margin — -3.4% vs 2.5% median",
-          "detail": "They earn less than peers, so price cuts bite harder here. Win on payment terms, volume or logistics rather than headline price.",
+          "title": "Keeps less profit than similar firms — -3.4% vs 2.5%",
+          "detail": "They keep less profit than their rivals, so price cuts hurt them more. Win on payment terms, volume or delivery instead of headline price.",
           "evidence": [
             {
-              "label": "Their margin",
+              "label": "They keep",
               "value": "-3.4%"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "2.5%"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "They pay suppliers slower than peers — 53d vs 36d",
-          "detail": "They already stretch their own payables past the peer median, so asking them to extend our credit is only fair.",
+          "title": "They pay their own suppliers slower than most — 53d vs 36d",
+          "detail": "They already take longer than similar firms to pay their own suppliers, so asking them to give you more time to pay is only fair.",
           "evidence": [
             {
-              "label": "Their payable days",
+              "label": "They take",
               "value": "53d"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "36d"
             }
           ]
         },
         {
           "type": "risk",
-          "title": "Weak Probe42 financial score (2/10)",
-          "detail": "Probe42's composite financial score is low — a supply-continuity watch. Don't over-concentrate volume here; qualify an alternate.",
+          "title": "Weak money-health score (2/10)",
+          "detail": "Their overall money-health score is low — a risk to steady supply. Don't put too much through them; line up a backup.",
           "evidence": [
             {
-              "label": "Probe score",
+              "label": "Money-health",
               "value": "2/10"
             }
           ]
         },
         {
           "type": "risk",
-          "title": "Carrying debt (D/E 2.15x) — watch continuity, offer cash",
-          "detail": "A geared balance sheet is a supply-continuity watch — but it also means they value cash. Offer faster payment for a discount.",
+          "title": "They owe a lot (2.15× their own cash) — watch supply, offer to pay fast",
+          "detail": "They carry a lot of debt — a small risk to steady supply, but it also means they value cash. Offer to pay faster for a discount.",
           "evidence": [
             {
-              "label": "Debt / equity",
+              "label": "Owed vs own cash",
               "value": "2.15x"
             },
             {
-              "label": "Total debt",
+              "label": "Total owed",
               "value": "₹208.21 Cr"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "Paying ₹3.91 L/yr above our cheapest supplier",
-          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "title": "Paying ₹3.91 L/yr more than your cheapest supplier",
+          "detail": "For the same sort of items they charge more than the lowest price you already pay. Hold them to that price.",
           "evidence": [
             {
-              "label": "Excess vs best",
+              "label": "Extra vs cheapest",
               "value": "₹3.91 L"
             }
           ]
@@ -7108,75 +7108,75 @@
       "levers": [
         {
           "type": "watch",
-          "title": "Below-peer margin — 6.0% vs 15.0% median",
-          "detail": "They earn less than peers, so price cuts bite harder here. Win on payment terms, volume or logistics rather than headline price.",
+          "title": "Keeps less profit than similar firms — 6.0% vs 15.0%",
+          "detail": "They keep less profit than their rivals, so price cuts hurt them more. Win on payment terms, volume or delivery instead of headline price.",
           "evidence": [
             {
-              "label": "Their margin",
+              "label": "They keep",
               "value": "6.0%"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "15.0%"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "They pay suppliers slower than peers — 39d vs 23d",
-          "detail": "They already stretch their own payables past the peer median, so asking them to extend our credit is only fair.",
+          "title": "They pay their own suppliers slower than most — 39d vs 23d",
+          "detail": "They already take longer than similar firms to pay their own suppliers, so asking them to give you more time to pay is only fair.",
           "evidence": [
             {
-              "label": "Their payable days",
+              "label": "They take",
               "value": "39d"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "23d"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "We're a meaningful customer — 47.43% of their revenue",
-          "detail": "Our ₹1.95 Cr/yr is a real slice of their ₹4.11 Cr revenue. That volume is leverage — ask for a price or terms concession to keep it.",
+          "title": "You're a big customer — 47.43% of everything they sell",
+          "detail": "Your ₹1.95 Cr/yr is a real chunk of their ₹4.11 Cr in sales. That buying power is your lever — ask for a better price or terms to keep it.",
           "evidence": [
             {
-              "label": "Our spend",
+              "label": "You spend",
               "value": "₹1.95 Cr"
             },
             {
-              "label": "Their revenue",
+              "label": "Their sales",
               "value": "₹4.11 Cr"
             },
             {
-              "label": "Share",
+              "label": "Your share",
               "value": "47.43%"
             }
           ]
         },
         {
           "type": "risk",
-          "title": "Carrying debt (D/E 1.13x) — watch continuity, offer cash",
-          "detail": "A geared balance sheet is a supply-continuity watch — but it also means they value cash. Offer faster payment for a discount.",
+          "title": "They owe a lot (1.13× their own cash) — watch supply, offer to pay fast",
+          "detail": "They carry a lot of debt — a small risk to steady supply, but it also means they value cash. Offer to pay faster for a discount.",
           "evidence": [
             {
-              "label": "Debt / equity",
+              "label": "Owed vs own cash",
               "value": "1.13x"
             },
             {
-              "label": "Total debt",
+              "label": "Total owed",
               "value": "₹1.95 Cr"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "Paying ₹28.69 L/yr above our cheapest supplier",
-          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "title": "Paying ₹28.69 L/yr more than your cheapest supplier",
+          "detail": "For the same sort of items they charge more than the lowest price you already pay. Hold them to that price.",
           "evidence": [
             {
-              "label": "Excess vs best",
+              "label": "Extra vs cheapest",
               "value": "₹28.69 L"
             }
           ]
@@ -7212,11 +7212,11 @@
       "levers": [
         {
           "type": "opportunity",
-          "title": "Paying ₹8.48 L/yr above our cheapest supplier",
-          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "title": "Paying ₹8.48 L/yr more than your cheapest supplier",
+          "detail": "For the same sort of items they charge more than the lowest price you already pay. Hold them to that price.",
           "evidence": [
             {
-              "label": "Excess vs best",
+              "label": "Extra vs cheapest",
               "value": "₹8.48 L"
             }
           ]
@@ -7252,11 +7252,11 @@
       "levers": [
         {
           "type": "opportunity",
-          "title": "Paying ₹16.09 L/yr above our cheapest supplier",
-          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "title": "Paying ₹16.09 L/yr more than your cheapest supplier",
+          "detail": "For the same sort of items they charge more than the lowest price you already pay. Hold them to that price.",
           "evidence": [
             {
-              "label": "Excess vs best",
+              "label": "Extra vs cheapest",
               "value": "₹16.09 L"
             }
           ]
@@ -7308,7 +7308,7 @@
       "metrics": {
         "revenue": 14589500416,
         "ebitda": 938726016,
-        "marketCap": 4509446656,
+        "marketCap": 4450707456,
         "totalDebt": 3454099968,
         "ebitdaMargin": 6.43,
         "netMargin": 2.34,
@@ -7317,11 +7317,11 @@
         "debtToEquity": 60.88,
         "revenueGrowth": 7.2,
         "earningsGrowth": 143.1,
-        "pe": 12.92,
-        "evEbitda": 7.51,
-        "dividendYield": 69,
-        "currentPrice": 144.33,
-        "yearlyChange": -11.24,
+        "pe": 12.89,
+        "evEbitda": 7.46,
+        "dividendYield": 70,
+        "currentPrice": 142.45,
+        "yearlyChange": -10.91,
         "employees": 1210,
         "roce": 5.88,
         "roe": 1.47,
@@ -7376,7 +7376,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-15"
+        "date": "2026-10-17"
       },
       "note": "Group parent — listed proxy: figures are for the listed parent The Sukhjit Starch & Chemicals Ltd (NSE/BSE: SUKHJITS), used as a proxy because the supplying entity Sukhjit Corn Products does not file separately.",
       "ratingGrade": null,
@@ -7390,52 +7390,52 @@
       "levers": [
         {
           "type": "watch",
-          "title": "We're a small customer — 0.07% of their revenue",
-          "detail": "At ₹1.06 Cr we're a rounding error against their ₹1458.95 Cr. Low standalone leverage — bundle volume, commit multi-year, or compete them against an alternate.",
+          "title": "You're a small customer — 0.07% of everything they sell",
+          "detail": "At ₹1.06 Cr you're tiny next to their ₹1458.95 Cr in sales. On your own you have little pull — bundle more volume, commit for several years, or play them off against another supplier.",
           "evidence": [
             {
-              "label": "Our spend",
+              "label": "You spend",
               "value": "₹1.06 Cr"
             },
             {
-              "label": "Share",
+              "label": "Your share",
               "value": "0.07%"
             }
           ]
         },
         {
           "type": "watch",
-          "title": "Thin 2.3% margin — press terms, not price",
-          "detail": "Margins are slim, so deep price cuts risk their stability (and our supply). Win on payment terms, volume or logistics instead.",
+          "title": "They keep only 2.3% as profit — push terms, not price",
+          "detail": "There's very little profit to spare, so a big price cut could hurt them (and your supply). Win on payment terms, volume or delivery instead.",
           "evidence": [
             {
-              "label": "Net margin",
+              "label": "Profit kept",
               "value": "2.3%"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "We pay them 100% in advance",
-          "detail": "Moving to standard 30-day credit frees working capital (~₹8.73 L). Our strongest, simplest ask.",
+          "title": "You pay them 100% in advance",
+          "detail": "Moving them to normal 30-day credit frees up about ₹8.73 L of your cash. Your strongest, simplest ask.",
           "evidence": [
             {
-              "label": "Current terms",
+              "label": "Right now",
               "value": "100% advance"
             },
             {
-              "label": "Cash if 30-day",
+              "label": "Cash freed at 30 days",
               "value": "₹8.73 L"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "Paying ₹12.95 L/yr above our cheapest supplier",
-          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "title": "Paying ₹12.95 L/yr more than your cheapest supplier",
+          "detail": "For the same sort of items they charge more than the lowest price you already pay. Hold them to that price.",
           "evidence": [
             {
-              "label": "Excess vs best",
+              "label": "Extra vs cheapest",
               "value": "₹12.95 L"
             }
           ]
@@ -7446,7 +7446,7 @@
         "sourceUrl": "https://www.screener.in/company/SUKHJITS/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-10-15"
+        "date": "2026-10-17"
       }
     },
     "berry-global-india": {
@@ -7935,116 +7935,116 @@
       "levers": [
         {
           "type": "risk",
-          "title": "Loss-making in FY2023-24",
-          "detail": "They posted a net loss in FY2023-24 (PAT ₹-22.50 Cr). A deep price cut could tip supply continuity — lead with faster payment or committed volume, and keep a second source warm.",
+          "title": "Lost money in FY2023-24",
+          "detail": "They made a loss in FY2023-24 (₹-22.50 Cr). Pushing hard on price could put your supply at risk — lead with faster payment or a volume commitment, and keep a backup supplier ready.",
           "evidence": [
             {
-              "label": "PAT",
+              "label": "Final profit",
               "value": "₹-22.50 Cr"
             },
             {
-              "label": "Net margin",
+              "label": "Profit kept",
               "value": "-199.2%"
             }
           ]
         },
         {
           "type": "watch",
-          "title": "Below-peer margin — -199.2% vs 2.3% median",
-          "detail": "They earn less than peers, so price cuts bite harder here. Win on payment terms, volume or logistics rather than headline price.",
+          "title": "Keeps less profit than similar firms — -199.2% vs 2.3%",
+          "detail": "They keep less profit than their rivals, so price cuts hurt them more. Win on payment terms, volume or delivery instead of headline price.",
           "evidence": [
             {
-              "label": "Their margin",
+              "label": "They keep",
               "value": "-199.2%"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "2.3%"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "They pay suppliers slower than peers — 226d vs 41d",
-          "detail": "They already stretch their own payables past the peer median, so asking them to extend our credit is only fair.",
+          "title": "They pay their own suppliers slower than most — 226d vs 41d",
+          "detail": "They already take longer than similar firms to pay their own suppliers, so asking them to give you more time to pay is only fair.",
           "evidence": [
             {
-              "label": "Their payable days",
+              "label": "They take",
               "value": "226d"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "41d"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "Cash tied up longer than peers — 335d cycle vs 70d",
-          "detail": "Their cash-conversion cycle runs above the peer median, so they value speed. Offer faster payment in exchange for a price cut.",
+          "title": "Their cash is stuck longer than most — 335d vs 70d",
+          "detail": "Their cash is tied up longer than similar firms, so they'll value being paid faster. Offer quicker payment in exchange for a price cut.",
           "evidence": [
             {
-              "label": "Cash cycle",
+              "label": "Cash stuck for",
               "value": "335d"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "70d"
             }
           ]
         },
         {
           "type": "risk",
-          "title": "Weak Probe42 financial score (1/10)",
-          "detail": "Probe42's composite financial score is low — a supply-continuity watch. Don't over-concentrate volume here; qualify an alternate.",
+          "title": "Weak money-health score (1/10)",
+          "detail": "Their overall money-health score is low — a risk to steady supply. Don't put too much through them; line up a backup.",
           "evidence": [
             {
-              "label": "Probe score",
+              "label": "Money-health",
               "value": "1/10"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "We're a meaningful customer — 7.21% of their revenue",
-          "detail": "Our ₹81.39 L/yr is a real slice of their ₹11.29 Cr revenue. That volume is leverage — ask for a price or terms concession to keep it.",
+          "title": "You're a big customer — 7.21% of everything they sell",
+          "detail": "Your ₹81.39 L/yr is a real chunk of their ₹11.29 Cr in sales. That buying power is your lever — ask for a better price or terms to keep it.",
           "evidence": [
             {
-              "label": "Our spend",
+              "label": "You spend",
               "value": "₹81.39 L"
             },
             {
-              "label": "Their revenue",
+              "label": "Their sales",
               "value": "₹11.29 Cr"
             },
             {
-              "label": "Share",
+              "label": "Your share",
               "value": "7.21%"
             }
           ]
         },
         {
           "type": "risk",
-          "title": "Carrying debt (D/E 220.44x) — watch continuity, offer cash",
-          "detail": "A geared balance sheet is a supply-continuity watch — but it also means they value cash. Offer faster payment for a discount.",
+          "title": "They owe a lot (220.44× their own cash) — watch supply, offer to pay fast",
+          "detail": "They carry a lot of debt — a small risk to steady supply, but it also means they value cash. Offer to pay faster for a discount.",
           "evidence": [
             {
-              "label": "Debt / equity",
+              "label": "Owed vs own cash",
               "value": "220.44x"
             },
             {
-              "label": "Total debt",
+              "label": "Total owed",
               "value": "₹172.48 Cr"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "Paying ₹3.37 L/yr above our cheapest supplier",
-          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "title": "Paying ₹3.37 L/yr more than your cheapest supplier",
+          "detail": "For the same sort of items they charge more than the lowest price you already pay. Hold them to that price.",
           "evidence": [
             {
-              "label": "Excess vs best",
+              "label": "Extra vs cheapest",
               "value": "₹3.37 L"
             }
           ]
@@ -9090,56 +9090,56 @@
       "levers": [
         {
           "type": "opportunity",
-          "title": "They pay suppliers slower than peers — 105d vs 57d",
-          "detail": "They already stretch their own payables past the peer median, so asking them to extend our credit is only fair.",
+          "title": "They pay their own suppliers slower than most — 105d vs 57d",
+          "detail": "They already take longer than similar firms to pay their own suppliers, so asking them to give you more time to pay is only fair.",
           "evidence": [
             {
-              "label": "Their payable days",
+              "label": "They take",
               "value": "105d"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "57d"
             }
           ]
         },
         {
           "type": "risk",
-          "title": "Weak Probe42 financial score (2/10)",
-          "detail": "Probe42's composite financial score is low — a supply-continuity watch. Don't over-concentrate volume here; qualify an alternate.",
+          "title": "Weak money-health score (2/10)",
+          "detail": "Their overall money-health score is low — a risk to steady supply. Don't put too much through them; line up a backup.",
           "evidence": [
             {
-              "label": "Probe score",
+              "label": "Money-health",
               "value": "2/10"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "We're a meaningful customer — 1.19% of their revenue",
-          "detail": "Our ₹65.27 L/yr is a real slice of their ₹54.69 Cr revenue. That volume is leverage — ask for a price or terms concession to keep it.",
+          "title": "You're a big customer — 1.19% of everything they sell",
+          "detail": "Your ₹65.27 L/yr is a real chunk of their ₹54.69 Cr in sales. That buying power is your lever — ask for a better price or terms to keep it.",
           "evidence": [
             {
-              "label": "Our spend",
+              "label": "You spend",
               "value": "₹65.27 L"
             },
             {
-              "label": "Their revenue",
+              "label": "Their sales",
               "value": "₹54.69 Cr"
             },
             {
-              "label": "Share",
+              "label": "Your share",
               "value": "1.19%"
             }
           ]
         },
         {
           "type": "watch",
-          "title": "Thin 2.8% margin — press terms, not price",
-          "detail": "Margins are slim, so deep price cuts risk their stability (and our supply). Win on payment terms, volume or logistics instead.",
+          "title": "They keep only 2.8% as profit — push terms, not price",
+          "detail": "There's very little profit to spare, so a big price cut could hurt them (and your supply). Win on payment terms, volume or delivery instead.",
           "evidence": [
             {
-              "label": "Net margin",
+              "label": "Profit kept",
               "value": "2.8%"
             }
           ]
@@ -9191,7 +9191,7 @@
       "metrics": {
         "revenue": 5146226176,
         "ebitda": 382657760,
-        "marketCap": 819420032,
+        "marketCap": 856800000,
         "totalDebt": 602000000,
         "ebitdaMargin": 7.44,
         "netMargin": 3.67,
@@ -9200,11 +9200,11 @@
         "debtToEquity": 72.84,
         "revenueGrowth": 21.4,
         "earningsGrowth": 0,
-        "pe": 4.34,
-        "evEbitda": 3.71,
+        "pe": 4.54,
+        "evEbitda": 3.69,
         "dividendYield": 0,
-        "currentPrice": 195.1,
-        "yearlyChange": 35.96,
+        "currentPrice": 204,
+        "yearlyChange": 38.57,
         "employees": 376,
         "roce": 17.6,
         "roe": 17.3,
@@ -9259,7 +9259,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-15"
+        "date": "2026-10-17"
       },
       "note": "Listed on BSE (UNIVSTAR) — thinly traded",
       "ratingGrade": null,
@@ -9273,37 +9273,37 @@
       "levers": [
         {
           "type": "watch",
-          "title": "We're a small customer — 0.12% of their revenue",
-          "detail": "At ₹59.65 L we're a rounding error against their ₹514.62 Cr. Low standalone leverage — bundle volume, commit multi-year, or compete them against an alternate.",
+          "title": "You're a small customer — 0.12% of everything they sell",
+          "detail": "At ₹59.65 L you're tiny next to their ₹514.62 Cr in sales. On your own you have little pull — bundle more volume, commit for several years, or play them off against another supplier.",
           "evidence": [
             {
-              "label": "Our spend",
+              "label": "You spend",
               "value": "₹59.65 L"
             },
             {
-              "label": "Share",
+              "label": "Your share",
               "value": "0.12%"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "Growing 21.4%/yr — trade volume for price",
-          "detail": "Fast top-line growth means they value new volume. Offer a committed higher volume in return for a lower unit price.",
+          "title": "Growing fast (21.4%/yr) — swap volume for a better price",
+          "detail": "Their sales are growing fast, so they want new orders. Offer to commit more volume in return for a lower price.",
           "evidence": [
             {
-              "label": "Revenue growth",
+              "label": "Sales growth",
               "value": "21.4%"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "Paying ₹14.26 L/yr above our cheapest supplier",
-          "detail": "For comparable items they run above the lowest price we already pay. Benchmark them to that price.",
+          "title": "Paying ₹14.26 L/yr more than your cheapest supplier",
+          "detail": "For the same sort of items they charge more than the lowest price you already pay. Hold them to that price.",
           "evidence": [
             {
-              "label": "Excess vs best",
+              "label": "Extra vs cheapest",
               "value": "₹14.26 L"
             }
           ]
@@ -9314,7 +9314,7 @@
         "sourceUrl": "https://www.screener.in/company/524408/",
         "asOf": "Mar 2026",
         "basis": "standalone",
-        "date": "2026-10-15"
+        "date": "2026-10-17"
       }
     },
     "suraj-blow-plast": {
@@ -10255,8 +10255,8 @@
       "levers": [
         {
           "type": "watch",
-          "title": "Solid credit rating (CARE A+ / Stable)",
-          "detail": "An investment-grade rating means low continuity risk — we can push harder on price/terms without worrying they'll wobble.",
+          "title": "Strong credit rating (CARE A+ / Stable)",
+          "detail": "A high credit rating means little risk they'll run into trouble — so you can push harder on price and terms.",
           "evidence": [
             {
               "label": "Rating",
@@ -10266,30 +10266,30 @@
         },
         {
           "type": "opportunity",
-          "title": "Out-earns its peers — 7.4% net margin vs 5.0% median",
-          "detail": "They run a fatter margin than the Glass Works median (30 peers). There's headroom in the price they charge us.",
+          "title": "Makes more profit than similar firms — keeps 7.4% vs 5.0%",
+          "detail": "They keep more profit than other Glass Works firms (30 compared). That means there's room in the price they charge you.",
           "evidence": [
             {
-              "label": "Their margin",
+              "label": "They keep",
               "value": "7.4%"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "5.0%"
             }
           ]
         },
         {
           "type": "watch",
-          "title": "We're a small customer — 0.01% of their revenue",
-          "detail": "At ₹39.99 L we're a rounding error against their ₹3373.51 Cr. Low standalone leverage — bundle volume, commit multi-year, or compete them against an alternate.",
+          "title": "You're a small customer — 0.01% of everything they sell",
+          "detail": "At ₹39.99 L you're tiny next to their ₹3373.51 Cr in sales. On your own you have little pull — bundle more volume, commit for several years, or play them off against another supplier.",
           "evidence": [
             {
-              "label": "Our spend",
+              "label": "You spend",
               "value": "₹39.99 L"
             },
             {
-              "label": "Share",
+              "label": "Your share",
               "value": "0.01%"
             }
           ]
@@ -11274,45 +11274,45 @@
       "levers": [
         {
           "type": "opportunity",
-          "title": "Out-earns its peers — 8.5% net margin vs 4.8% median",
-          "detail": "They run a fatter margin than the Pharma Packaging median (30 peers). There's headroom in the price they charge us.",
+          "title": "Makes more profit than similar firms — keeps 8.5% vs 4.8%",
+          "detail": "They keep more profit than other Pharma Packaging firms (30 compared). That means there's room in the price they charge you.",
           "evidence": [
             {
-              "label": "Their margin",
+              "label": "They keep",
               "value": "8.5%"
             },
             {
-              "label": "Peer median",
+              "label": "Similar firms",
               "value": "4.8%"
             }
           ]
         },
         {
           "type": "watch",
-          "title": "We're a small customer — 0.15% of their revenue",
-          "detail": "At ₹26.17 L we're a rounding error against their ₹179.69 Cr. Low standalone leverage — bundle volume, commit multi-year, or compete them against an alternate.",
+          "title": "You're a small customer — 0.15% of everything they sell",
+          "detail": "At ₹26.17 L you're tiny next to their ₹179.69 Cr in sales. On your own you have little pull — bundle more volume, commit for several years, or play them off against another supplier.",
           "evidence": [
             {
-              "label": "Our spend",
+              "label": "You spend",
               "value": "₹26.17 L"
             },
             {
-              "label": "Share",
+              "label": "Your share",
               "value": "0.15%"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "Healthy 8.5% net margin — room on price",
-          "detail": "They earn a comfortable 8.5% net margin (14.5% EBITDA). A price ask won't threaten their viability.",
+          "title": "They keep a healthy 8.5% as profit — room on price",
+          "detail": "They keep a comfortable 8.5% of sales as profit. Asking for a better price won't put them in trouble.",
           "evidence": [
             {
-              "label": "Net margin",
+              "label": "Profit kept",
               "value": "8.5%"
             },
             {
-              "label": "EBITDA margin",
+              "label": "Operating profit",
               "value": "14.5%"
             }
           ]
@@ -12280,8 +12280,8 @@
       "levers": [
         {
           "type": "watch",
-          "title": "Solid credit rating ([ICRA] A / Stable)",
-          "detail": "An investment-grade rating means low continuity risk — we can push harder on price/terms without worrying they'll wobble.",
+          "title": "Strong credit rating ([ICRA] A / Stable)",
+          "detail": "A high credit rating means little risk they'll run into trouble — so you can push harder on price and terms.",
           "evidence": [
             {
               "label": "Rating",
@@ -12291,15 +12291,15 @@
         },
         {
           "type": "watch",
-          "title": "We're a small customer — 0.02% of their revenue",
-          "detail": "At ₹11.32 L we're a rounding error against their ₹637.48 Cr. Low standalone leverage — bundle volume, commit multi-year, or compete them against an alternate.",
+          "title": "You're a small customer — 0.02% of everything they sell",
+          "detail": "At ₹11.32 L you're tiny next to their ₹637.48 Cr in sales. On your own you have little pull — bundle more volume, commit for several years, or play them off against another supplier.",
           "evidence": [
             {
-              "label": "Our spend",
+              "label": "You spend",
               "value": "₹11.32 L"
             },
             {
-              "label": "Share",
+              "label": "Your share",
               "value": "0.02%"
             }
           ]
@@ -12335,8 +12335,8 @@
       "levers": [
         {
           "type": "watch",
-          "title": "High goods-receipt reversal rate (40%)",
-          "detail": "40% of their receipts were later reversed — raise quality/paperwork before it costs more.",
+          "title": "A lot of their deliveries get sent back (40%)",
+          "detail": "40% of what they deliver ends up reversed or returned — sort out quality and paperwork before it costs more.",
           "evidence": [
             {
               "label": "Return rate",
@@ -12363,7 +12363,7 @@
       "metrics": {
         "revenue": 26116399104,
         "ebitda": 2173799936,
-        "marketCap": 17114025984,
+        "marketCap": 18166046720,
         "totalDebt": 1445600000,
         "ebitdaMargin": 8.32,
         "netMargin": 5.22,
@@ -12372,11 +12372,11 @@
         "debtToEquity": 10.72,
         "revenueGrowth": 22.5,
         "earningsGrowth": 75.5,
-        "pe": 12.55,
-        "evEbitda": 6.91,
-        "dividendYield": 86,
-        "currentPrice": 226.61,
-        "yearlyChange": -9.6,
+        "pe": 14.21,
+        "evEbitda": 7.2,
+        "dividendYield": 83,
+        "currentPrice": 240.54,
+        "yearlyChange": -14.88,
         "employees": 2500,
         "roce": 12,
         "roe": 8.96,
@@ -12431,7 +12431,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-15"
+        "date": "2026-10-17"
       },
       "note": null,
       "ratingGrade": null,
@@ -12445,26 +12445,26 @@
       "levers": [
         {
           "type": "watch",
-          "title": "We're a small customer — 0.00% of their revenue",
-          "detail": "At ₹76850 we're a rounding error against their ₹2611.64 Cr. Low standalone leverage — bundle volume, commit multi-year, or compete them against an alternate.",
+          "title": "You're a small customer — 0.00% of everything they sell",
+          "detail": "At ₹76850 you're tiny next to their ₹2611.64 Cr in sales. On your own you have little pull — bundle more volume, commit for several years, or play them off against another supplier.",
           "evidence": [
             {
-              "label": "Our spend",
+              "label": "You spend",
               "value": "₹76850"
             },
             {
-              "label": "Share",
+              "label": "Your share",
               "value": "0.00%"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "Growing 22.5%/yr — trade volume for price",
-          "detail": "Fast top-line growth means they value new volume. Offer a committed higher volume in return for a lower unit price.",
+          "title": "Growing fast (22.5%/yr) — swap volume for a better price",
+          "detail": "Their sales are growing fast, so they want new orders. Offer to commit more volume in return for a lower price.",
           "evidence": [
             {
-              "label": "Revenue growth",
+              "label": "Sales growth",
               "value": "22.5%"
             }
           ]
@@ -12475,7 +12475,7 @@
         "sourceUrl": "https://www.screener.in/company/HUHTAMAKI/",
         "asOf": "Dec 2025",
         "basis": "standalone",
-        "date": "2026-10-15"
+        "date": "2026-10-17"
       }
     },
     "uflex": {
@@ -12495,7 +12495,7 @@
       "metrics": {
         "revenue": 164920033280,
         "ebitda": 22030196736,
-        "marketCap": 44521992192,
+        "marketCap": 44659195904,
         "totalDebt": 101523062784,
         "ebitdaMargin": 13.36,
         "netMargin": 4.14,
@@ -12504,11 +12504,11 @@
         "debtToEquity": 124.99,
         "revenueGrowth": 35.5,
         "earningsGrowth": 630,
-        "pe": 6.53,
-        "evEbitda": 6.21,
-        "dividendYield": 48,
-        "currentPrice": 616.55,
-        "yearlyChange": 14.72,
+        "pe": 6.61,
+        "evEbitda": 6.17,
+        "dividendYield": 49,
+        "currentPrice": 618.45,
+        "yearlyChange": 12,
         "employees": 7772,
         "roce": 7.03,
         "roe": 4.27,
@@ -12563,7 +12563,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-15"
+        "date": "2026-10-17"
       },
       "note": null,
       "ratingGrade": null,
@@ -12577,41 +12577,41 @@
       "levers": [
         {
           "type": "watch",
-          "title": "We're a small customer — 0.00% of their revenue",
-          "detail": "At ₹64788 we're a rounding error against their ₹16492.00 Cr. Low standalone leverage — bundle volume, commit multi-year, or compete them against an alternate.",
+          "title": "You're a small customer — 0.00% of everything they sell",
+          "detail": "At ₹64788 you're tiny next to their ₹16492.00 Cr in sales. On your own you have little pull — bundle more volume, commit for several years, or play them off against another supplier.",
           "evidence": [
             {
-              "label": "Our spend",
+              "label": "You spend",
               "value": "₹64788"
             },
             {
-              "label": "Share",
+              "label": "Your share",
               "value": "0.00%"
             }
           ]
         },
         {
           "type": "opportunity",
-          "title": "Growing 35.5%/yr — trade volume for price",
-          "detail": "Fast top-line growth means they value new volume. Offer a committed higher volume in return for a lower unit price.",
+          "title": "Growing fast (35.5%/yr) — swap volume for a better price",
+          "detail": "Their sales are growing fast, so they want new orders. Offer to commit more volume in return for a lower price.",
           "evidence": [
             {
-              "label": "Revenue growth",
+              "label": "Sales growth",
               "value": "35.5%"
             }
           ]
         },
         {
           "type": "risk",
-          "title": "Carrying debt (D/E 1.25x) — watch continuity, offer cash",
-          "detail": "A geared balance sheet is a supply-continuity watch — but it also means they value cash. Offer faster payment for a discount.",
+          "title": "They owe a lot (1.25× their own cash) — watch supply, offer to pay fast",
+          "detail": "They carry a lot of debt — a small risk to steady supply, but it also means they value cash. Offer to pay faster for a discount.",
           "evidence": [
             {
-              "label": "Debt / equity",
+              "label": "Owed vs own cash",
               "value": "1.25x"
             },
             {
-              "label": "Total debt",
+              "label": "Total owed",
               "value": "₹10152.31 Cr"
             }
           ]
@@ -12622,7 +12622,7 @@
         "sourceUrl": "https://www.screener.in/company/UFLEX/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-10-15"
+        "date": "2026-10-17"
       }
     },
     "silk-polypack": {
