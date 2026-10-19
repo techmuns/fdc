@@ -1,19 +1,22 @@
 import { useMemo, useState, useEffect } from 'react';
 import {
-  Factory, Search, Hourglass, TrendingDown, TrendingUp, Clock, PackageSearch, Repeat2,
-  Maximize2, BadgeCheck, Lock, CalendarClock, HandCoins, Info, ArrowUpRight, CircleHelp, Globe2,
+  Factory, Hourglass, TrendingDown, TrendingUp, Clock, PackageSearch, Repeat2,
+  Maximize2, BadgeCheck, Lock, CalendarClock, HandCoins, Info, ArrowUpRight, CircleHelp, Globe2, Layers,
 } from 'lucide-react';
-import type { AppData, ValueVendor, VendorFin, MaterialKey, FinMetrics, SupplierLine } from '../types';
+import type { AppData, ValueVendor, ValueMaterial, ValueData, VendorFin, MaterialKey, FinMetrics, SupplierLine } from '../types';
 import type { Nav } from '../App';
 import { Card, Badge, Pill } from '../components/ui/Card';
+import { Dropdown, type Option } from '../components/ui/Controls';
+import { Table, type Column } from '../components/ui/Table';
 import { Sparkline } from '../components/charts/Sparkline';
 import VendorProfile, { type ProfileSubject } from '../components/VendorProfile';
-import { NegotiationBrief } from '../components/NegotiationBrief';
+import { MaterialDetail } from './MaterialTab';
 import { FDC, MATERIAL_COLOR } from '../lib/brand';
 import { vendorShort, crore, pct } from '../lib/format';
 
 const MAT_NAME: Record<string, string> = { dextrose: 'Dextrose', packaging: 'Rigid packaging', laminates: 'Laminates' };
 const priceFmt = (n: number | null | undefined, unit = 'kg') => (n == null ? '—' : `₹${n >= 100 ? Math.round(n) : n >= 10 ? n.toFixed(1) : n.toFixed(2)}/${unit === 'NOS' ? 'pc' : unit.toLowerCase()}`);
+const fmtSave = (n: number) => (n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : n >= 1e5 ? `₹${(n / 1e5).toFixed(1)} L` : `₹${Math.round(n).toLocaleString('en-IN')}`);
 
 /* ---- "who could replace them": our cheaper suppliers + external alternatives ---- */
 export interface AltItem {
@@ -64,17 +67,80 @@ function buildAlternatives(vendorKey: string, data: AppData): AltItem[] {
   return items;
 }
 
+/* ---- the lead money table: one row per supplier of the selected material ---- */
+type TagTone = 'save' | 'old' | 'term' | 'single' | 'cheap';
+const TAG_COLOR: Record<TagTone, string> = { save: FDC.orange, old: FDC.red, term: FDC.blue, single: FDC.orange, cheap: FDC.green };
+interface SupRow {
+  vendorKey: string; name: string; color: string;
+  pay: number; save: number; items: number;
+  main: string; tags: { label: string; tone: TagTone }[];
+}
+/** Aggregate every price line for this material down to one honest row per supplier:
+ *  what you pay them a year, what you could save vs the cheapest you already pay, and the single
+ *  most useful "why & what to do". No scripts — just spend, saving, and the reason. */
+function buildSupplierRows(M: ValueMaterial, v: ValueData, mat: MaterialKey): SupRow[] {
+  const agg = new Map<string, { pay: number; save: number; items: number; single: boolean; cheap: number }>();
+  for (const s of M.skus) {
+    for (const vp of s.vendors) {
+      const cur = agg.get(vp.vendorKey) ?? { pay: 0, save: 0, items: 0, single: false, cheap: 0 };
+      cur.pay += vp.spend;
+      cur.save += Math.max(0, vp.excess);
+      cur.items += 1;
+      if (s.vendorCount < 2) cur.single = true;
+      if ((s.bestActiveVendorKey ?? s.bestVendorKey) === vp.vendorKey) cur.cheap += 1;
+      agg.set(vp.vendorKey, cur);
+    }
+  }
+  const rows: SupRow[] = [];
+  for (const [vk, a] of agg) {
+    const vv = v.vendors[vk];
+    if (!vv) continue;
+    const fr = vv.freshnessByMaterial.find((f) => f.materialKey === mat);
+    const isOld = fr?.grade === 'old';
+    const isAdvance = vv.termCategory === 'advance' || vv.termCategory === 'immediate';
+
+    let main: string;
+    if (a.save >= 50000) main = `You pay about ${fmtSave(a.save)}/yr more than the cheapest price you already pay${a.items > 1 ? ` across ${a.items} items` : ''}. Match that price, or move some volume to the cheaper supplier.`;
+    else if (isOld) main = `Ships old stock — about ${fr?.avgAgeDays}d old on average when it reaches you. Ask for fresher, newer-made batches before you reorder.`;
+    else if (isAdvance) main = `You pay ${termPlain(vv.termCategory, vv.termText).toLowerCase()}. Ask to move onto 30-day credit to free up cash.`;
+    else if (a.single) main = `The only supplier on file for ${a.items > 1 ? 'these items' : 'this item'} — bring in a second quote so you have a price to compare against.`;
+    else if (a.cheap > 0) main = `Already the cheapest you pay here${a.cheap > 1 ? ` on ${a.cheap} items` : ''} — protect it, and use it to push the dearer suppliers down.`;
+    else main = `Roughly in line on price. If you want more off, lead with bigger volume or faster payment, not a flat price ask.`;
+
+    const tags: { label: string; tone: TagTone }[] = [];
+    if (a.save > 0) tags.push({ label: `save ${fmtSave(a.save)}`, tone: 'save' });
+    if (isOld) tags.push({ label: 'old stock', tone: 'old' });
+    if (isAdvance) tags.push({ label: 'you pay early', tone: 'term' });
+    if (a.single) tags.push({ label: 'sole supplier', tone: 'single' });
+    if (a.save === 0 && a.cheap > 0) tags.push({ label: 'cheapest', tone: 'cheap' });
+
+    rows.push({ vendorKey: vk, name: vv.name, color: vv.color, pay: a.pay, save: a.save, items: a.items, main, tags });
+  }
+  rows.sort((x, y) => y.save - x.save || y.pay - x.pay);
+  return rows;
+}
+
 export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; nav: Extract<Nav, { tab: 'vendors' }>; onNavigate: (n: Nav) => void }) {
   const v = data.value;
-  const list = useMemo(() => (v ? Object.values(v.vendors).sort((a, b) => b.spend - a.spend) : []), [v]);
-  const [sel, setSel] = useState<string | null>(nav.vendorKey ?? list[0]?.vendorKey ?? null);
-  const [q, setQ] = useState('');
+  const [mat, setMat] = useState<MaterialKey>(nav.material ?? 'dextrose');
+  const [sel, setSel] = useState<string | null>(nav.vendorKey ?? null);
   const [profile, setProfile] = useState<ProfileSubject | null>(null);
+  useEffect(() => { if (nav.material) setMat(nav.material); }, [nav.material]);
   useEffect(() => { if (nav.vendorKey) setSel(nav.vendorKey); }, [nav.vendorKey]);
 
-  if (!v) return <Card><p className="text-[13px] text-fdc-grey">No value data.</p></Card>;
-  const rows = list.filter((x) => !q || vendorShort(x.name).toLowerCase().includes(q.toLowerCase()));
-  const selVendor = v.vendors[sel ?? ''] ?? list[0];
+  const M = v?.materials[mat] ?? null;
+  const rows = useMemo(() => (v && M ? buildSupplierRows(M, v, mat) : []), [v, M, mat]);
+
+  if (!v || !M) return <Card><p className="text-[13px] text-fdc-grey">No value data.</p></Card>;
+
+  const matOptions: Option<MaterialKey>[] = (['dextrose', 'packaging', 'laminates'] as MaterialKey[])
+    .filter((k) => v.materials[k])
+    .map((k) => ({ value: k, label: v.materials[k].displayName, color: MATERIAL_COLOR[k] }));
+
+  // the selected supplier — default to the biggest saver in this material
+  const selKey = sel && rows.some((r) => r.vendorKey === sel) ? sel : (rows[0]?.vendorKey ?? null);
+  const selVendor = selKey ? v.vendors[selKey] ?? null : null;
+  const maxSave = Math.max(1, ...rows.map((r) => r.save));
 
   // open an external alternative's profile (or an honest "pending" card for name-only ones)
   const openAlt = (ref: { material: MaterialKey; index: number }) => {
@@ -82,56 +148,71 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
     if (alt) setProfile({ kind: 'alt', alt });
   };
   const onPickAlt = (it: AltItem) => {
-    if (it.navKey) onNavigate({ tab: 'vendors', vendorKey: it.navKey });
+    if (it.navKey) { setSel(it.navKey); onNavigate({ tab: 'vendors', vendorKey: it.navKey }); }
     else if (it.alt) openAlt(it.alt);
   };
 
+  const cols: Column<SupRow>[] = [
+    { key: 'name', header: 'Supplier', sortable: true, sortValue: (r) => vendorShort(r.name), render: (r) => (
+      <span className="flex min-w-0 items-center gap-2">
+        <span className="h-2.5 w-2.5 shrink-0 rounded-sm" style={{ background: r.color }} />
+        <span className="truncate font-semibold text-fdc-slate">{vendorShort(r.name)}</span>
+      </span>
+    ) },
+    { key: 'pay', header: 'You pay / yr', align: 'right', sortable: true, sortValue: (r) => r.pay, render: (r) => <span className="tnum whitespace-nowrap font-semibold text-fdc-ink">{fmtSave(r.pay)}</span> },
+    { key: 'save', header: 'Can save', align: 'right', sortable: true, sortValue: (r) => r.save, render: (r) => (r.save > 0 ? <span className="tnum whitespace-nowrap font-bold text-fdc-orange">{fmtSave(r.save)}</span> : <span className="text-fdc-grey">—</span>), heat: (r) => (r.save > 0 ? Math.min(1, r.save / maxSave) : null), heatScale: 'hue', heatColor: FDC.orange },
+    { key: 'why', header: 'Why & what to do', render: (r) => (
+      <div className="min-w-0 max-w-[460px]">
+        <p className="text-[12px] leading-snug text-fdc-slate">{r.main}</p>
+        {r.tags.length > 0 && <div className="mt-1 flex flex-wrap gap-1">{r.tags.map((t, i) => <Pill key={i} color={TAG_COLOR[t.tone]}>{t.label}</Pill>)}</div>}
+      </div>
+    ) },
+  ];
+
   return (
-    <div className="animate-fade-up">
-      <div className="mb-3">
-        <h2 className="flex items-center gap-1.5 text-[16px] font-bold leading-tight text-fdc-ink"><Factory size={17} strokeWidth={2.3} className="text-fdc-green" /> Suppliers — where the negotiating room is</h2>
-        <p className="mt-1 text-[12.5px] leading-snug text-fdc-grey">{list.length} suppliers. Click any name anywhere in the app to land here. Each card gives you a ready script, how hard you can push, and who could replace them.</p>
+    <div className="animate-fade-up space-y-4">
+      {/* header + the one control that drives everything: the material dropdown */}
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div className="min-w-0">
+          <h2 className="flex items-center gap-1.5 text-[16px] font-bold leading-tight text-fdc-ink"><Factory size={17} strokeWidth={2.3} className="text-fdc-green" /> Suppliers — {M.displayName}</h2>
+          <p className="mt-1 text-[12.5px] leading-snug text-fdc-grey">Pick a material to see its suppliers: what you pay each a year, how much you can save, and why. Everything below is for the material you choose. Click any supplier for the full detail.</p>
+        </div>
+        <Dropdown label="Material" value={mat} options={matOptions} onChange={(k) => { setMat(k); setSel(null); }} width={210} />
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-5">
-        {/* list */}
-        <div className="lg:col-span-2">
-          <Card pad={false}>
-            <div className="border-b border-black/[0.05] p-2.5">
-              <label className="flex items-center gap-1.5 rounded-lg border border-black/[0.12] bg-white px-2.5 py-1.5">
-                <Search size={14} className="text-fdc-grey" />
-                <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Find a supplier" className="w-full bg-transparent text-[12.5px] text-fdc-ink outline-none placeholder:text-fdc-grey" />
-              </label>
-            </div>
-            <div className="fdc-scroll max-h-[640px] overflow-y-auto p-1.5">
-              {rows.map((x) => {
-                const active = x.vendorKey === selVendor?.vendorKey;
-                return (
-                  <button key={x.vendorKey} onClick={() => setSel(x.vendorKey)} className={`mb-0.5 flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-left transition focus-ring ${active ? 'bg-fdc-green/[0.08] ring-1 ring-inset ring-fdc-green/30' : 'hover:bg-black/[0.03]'}`}>
-                    <span className="h-2.5 w-2.5 shrink-0 rounded-sm" style={{ background: x.color }} />
-                    <span className="min-w-0 flex-1">
-                      <span className="block truncate text-[12.5px] font-semibold text-fdc-ink">{vendorShort(x.name)}</span>
-                      <span className="block truncate text-[10.5px] text-fdc-grey">{x.materialKeys.map((k) => MAT_NAME[k]).join(', ')}</span>
-                    </span>
-                    <span className="tnum shrink-0 text-[11.5px] font-bold text-fdc-slate">{crore(x.spend)}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </Card>
-        </div>
+      {/* money strip — the whole mantra in four numbers */}
+      <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-black/[0.06] bg-black/[0.05] sm:grid-cols-4">
+        <Stat label="You spend / yr" value={fmtSave(M.spend)} />
+        <Stat label="You can save / yr" value={M.savings > 0 ? fmtSave(M.savings) : '—'} tone={M.savings > 0 ? 'save' : undefined} />
+        <Stat label="Suppliers" value={String(rows.length)} />
+        <Stat label="Vs market ask" value={data.marketAsks?.materials[mat] ? (data.marketAsks.materials[mat].tone === 'headroom' ? 'Room to push' : 'Fair') : '—'} tone={data.marketAsks?.materials[mat]?.tone === 'headroom' ? 'warn' : data.marketAsks?.materials[mat] ? 'good' : undefined} />
+      </div>
 
-        {/* detail */}
-        <div className="lg:col-span-3">
-          {selVendor ? <VendorCard vendor={selVendor} data={data} onFull={(s) => setProfile(s)} onPickAlt={onPickAlt} onNavigate={onNavigate} /> : null}
+      {/* the lead table */}
+      <Card pad={false}>
+        <div className="px-4 pt-3.5">
+          <h3 className="text-[14px] font-bold text-fdc-ink">What you pay each supplier — biggest saving first</h3>
+          <p className="text-[12px] text-fdc-grey">{rows.length} supplier{rows.length === 1 ? '' : 's'} of {M.displayName.toLowerCase()}. Click a row to open that supplier’s full detail.</p>
         </div>
+        <div className="px-2 py-2">
+          <Table columns={cols} rows={rows} getKey={(r) => r.vendorKey} initialSort={{ key: 'save', dir: 'desc' }} onRowClick={(r) => setSel(r.vendorKey)} activeKey={selKey} maxHeight={420} dense />
+        </div>
+      </Card>
+
+      {/* the selected supplier's full operational read (click "Full details" for the money/financials) */}
+      {selVendor && <VendorCard vendor={selVendor} data={data} onFull={(s) => setProfile(s)} onPickAlt={onPickAlt} onSelect={(k) => setSel(k)} />}
+
+      {/* everything else about this material — prices per item, old stock, plants, market, every delivery */}
+      <div className="pt-1">
+        <h3 className="mb-2 flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><Layers size={16} strokeWidth={2.3} className="text-fdc-green" /> The numbers behind it — {M.displayName}</h3>
+        <MaterialDetail key={mat} data={data} mat={mat} skuDesc={nav.skuDesc} onNavigate={onNavigate} />
       </div>
 
       {profile && (
         <VendorProfile
           subject={profile}
           onClose={() => setProfile(null)}
-          brief={profile.kind === 'vendor' ? (data.briefs?.briefs.find((b) => b.vendorKey === profile.fin.vendorKey) ?? null) : null}
+          brief={null}
           replacements={profile.kind === 'vendor' ? buildAlternatives(profile.fin.vendorKey, data) : []}
           onPickReplacement={onPickAlt}
         />
@@ -140,15 +221,23 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
   );
 }
 
+function Stat({ label, value, tone }: { label: string; value: string; tone?: 'save' | 'warn' | 'good' }) {
+  const color = tone === 'save' ? FDC.orange : tone === 'warn' ? FDC.goldDark : tone === 'good' ? FDC.green : FDC.ink;
+  return (
+    <div className="bg-white px-4 py-2.5">
+      <div className="text-[10px] font-medium uppercase tracking-wide text-fdc-grey">{label}</div>
+      <div className="tnum mt-0.5 text-[16px] font-extrabold leading-none" style={{ color }}>{value}</div>
+    </div>
+  );
+}
+
 // map our materials to the backup-database material keys
 const DB_MATS: Record<string, string[]> = { dextrose: ['dextrose'], packaging: ['pet-resin', 'pet-bottles', 'caps'], laminates: ['bopet'] };
 
-function VendorCard({ vendor: x, data, onFull, onPickAlt, onNavigate }: { vendor: ValueVendor; data: AppData; onFull: (s: ProfileSubject) => void; onPickAlt: (it: AltItem) => void; onNavigate: (n: Nav) => void }) {
+function VendorCard({ vendor: x, data, onFull, onPickAlt, onSelect }: { vendor: ValueVendor; data: AppData; onFull: (s: ProfileSubject) => void; onPickAlt: (it: AltItem) => void; onSelect: (k: string) => void }) {
   const fin: VendorFin | null = data.financials?.vendors[x.vendorKey] ?? null;
   const probe = fin?.probe ?? null;
   const m = fin?.metrics ?? null;
-  const brief = data.briefs?.briefs.find((b) => b.vendorKey === x.vendorKey) ?? null;
-  const briefVerified = !!brief; // briefs are honest — a no-financials vendor gets a lighter brief flagged as such
 
   // negotiation-room read
   const netMargin = m?.netMargin ?? null;
@@ -222,9 +311,6 @@ function VendorCard({ vendor: x, data, onFull, onPickAlt, onNavigate }: { vendor
       </div>
 
       <div className="space-y-3 p-4">
-        {/* the ready negotiation script — highest-value asset */}
-        {briefVerified && <NegotiationBrief brief={brief!} />}
-
         {/* negotiation room */}
         <Section icon={Hourglass} title="How hard can you push?" color={FDC.green}>
           <div className="grid gap-2.5 sm:grid-cols-2">
@@ -288,9 +374,9 @@ function VendorCard({ vendor: x, data, onFull, onPickAlt, onNavigate }: { vendor
             <div className="mt-2.5 rounded-xl border border-fdc-blue/20 bg-fdc-blue/[0.04] p-2.5">
               <div className="flex items-center justify-between gap-2">
                 <span className="flex items-center gap-1.5 text-[11.5px] font-bold text-fdc-slate"><Globe2 size={13} className="text-fdc-blue" /> {dbCount} more potential backups in the market</span>
-                <button onClick={() => onNavigate({ tab: 'material', material: x.materialKeys[0] as MaterialKey })} className="inline-flex items-center gap-1 whitespace-nowrap text-[11.5px] font-semibold text-fdc-blue underline-offset-2 hover:underline">See all <ArrowUpRight size={12} /></button>
+                <button onClick={() => onSelect(x.vendorKey)} className="inline-flex items-center gap-1 whitespace-nowrap text-[11.5px] font-semibold text-fdc-blue underline-offset-2 hover:underline">See the full list below <ArrowUpRight size={12} /></button>
               </div>
-              <p className="mt-1 text-[10.5px] leading-snug text-fdc-grey">{dbTop.map((l) => vendorShort(l.company)).join(' · ')}… <span className="italic">leads from public research — verify before RFQ.</span></p>
+              <p className="mt-1 text-[10.5px] leading-snug text-fdc-grey">{dbTop.map((l) => vendorShort(l.company)).join(' · ')}… <span className="italic">leads from public research — verify before RFQ. Full list under “The numbers behind it”.</span></p>
             </div>
           )}
         </Section>

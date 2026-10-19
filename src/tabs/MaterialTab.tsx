@@ -1,9 +1,8 @@
 import { useMemo, useState, useEffect } from 'react';
-import { Layers, Search, Clock, Table2, Info, Building2, LineChart as LineChartIcon, Globe2, GitCompareArrows, ChevronDown, Tag, Store, ShieldAlert, ExternalLink } from 'lucide-react';
+import { Search, Clock, Table2, Info, Building2, LineChart as LineChartIcon, Globe2, GitCompareArrows, ChevronDown, Tag, Store, ShieldAlert, ExternalLink } from 'lucide-react';
 import type { AppData, MaterialKey, ValueSku, ValueMaterial, LedgerRow, MaterialPlants, AltVendor, MarketAskMaterial, MarketAsks, MarketAskSeller } from '../types';
 import type { Nav } from '../App';
 import { Card, Pill, Badge } from '../components/ui/Card';
-import { SubTabs } from '../components/ui/Tabs';
 import { Dropdown, type Option } from '../components/ui/Controls';
 import { Table, type Column } from '../components/ui/Table';
 import { HBars, type HBarDatum } from '../components/charts/Bars';
@@ -22,21 +21,24 @@ const qtyFmt = (n: number, unit: string) => `${Math.abs(n) >= 1e5 ? (n / 1e5).to
 const GRADE = { fresh: FDC.green, ok: FDC.goldDark, old: FDC.red } as const;
 const plantShort = (name: string, code: string) => (name || code).replace(/FDC\s*Limited[,\s-]*/i, '').replace(/^\(|\)$/g, '').trim() || code;
 
-export default function MaterialTab({ data, nav, onNavigate }: { data: AppData; nav: Extract<Nav, { tab: 'material' }>; onNavigate: (n: Nav) => void }) {
+/**
+ * The full "what we pay" detail for ONE material — every section the old Material tab
+ * had, minus its own heading + material picker (the Suppliers tab now owns the dropdown
+ * and renders this filtered to the chosen material). Remount with key={mat} on change.
+ */
+export function MaterialDetail({ data, mat, skuDesc, onNavigate }: { data: AppData; mat: MaterialKey; skuDesc?: string; onNavigate: (n: Nav) => void }) {
   const v = data.value;
-  const [mat, setMat] = useState<MaterialKey>(nav.material ?? 'dextrose');
-  useEffect(() => { if (nav.material) setMat(nav.material); }, [nav.material]);
-  const M = v?.materials[mat];
+  const M = v?.materials[mat] ?? null;
 
-  // selected SKU for the price-gap visual
-  const [skuSel, setSkuSel] = useState<string | null>(nav.skuDesc ?? null);
-  useEffect(() => { if (nav.skuDesc) setSkuSel(nav.skuDesc); }, [nav.skuDesc]);
+  // selected SKU for the price-gap visual (seeded from a deep-link, else the biggest item)
+  const [skuSel, setSkuSel] = useState<string | null>(skuDesc ?? null);
+  useEffect(() => { if (skuDesc) setSkuSel(skuDesc); }, [skuDesc]);
   const sku: ValueSku | undefined = useMemo(() => {
     if (!M?.skus.length) return undefined;
     return M.skus.find((s) => s.desc === skuSel) ?? M.skus[0];
   }, [M, skuSel]);
 
-  if (!v || !M) return <Card><p className="text-[13px] text-fdc-grey">No value data.</p></Card>;
+  if (!v || !M) return null;
 
   const mp = data.plants?.byMaterial?.[mat] ?? null;
   const alts = data.alternatives?.byMaterial?.[mat] ?? [];
@@ -45,21 +47,7 @@ export default function MaterialTab({ data, nav, onNavigate }: { data: AppData; 
   const ask = asks?.materials[mat] ?? null;
 
   return (
-    <div className="animate-fade-up space-y-4">
-      <div className="mb-1 flex flex-wrap items-end justify-between gap-2">
-        <div className="min-w-0">
-          <h2 className="flex items-center gap-1.5 text-[16px] font-bold leading-tight text-fdc-ink">
-            <Layers size={17} strokeWidth={2.3} className="text-fdc-green" /> What we pay — {M.displayName}
-          </h2>
-          <p className="mt-1 text-[12.5px] leading-snug text-fdc-grey">{M.plainName} · <span className="font-semibold text-fdc-slate">{fmtSave(M.savings)}</span> to save vs the cheapest price we already pay.</p>
-        </div>
-        <SubTabs
-          tabs={(['dextrose', 'packaging', 'laminates'] as MaterialKey[]).map((k) => ({ key: k, label: v.materials[k].displayName, color: MATERIAL_COLOR[k] }))}
-          active={mat}
-          onChange={(k) => { setMat(k as MaterialKey); setSkuSel(null); }}
-        />
-      </div>
-
+    <div className="space-y-4">
       {/* you pay vs market ask — honest headline strip + packaging WAD-CHECK */}
       <MarketAskStrip mat={mat} ask={ask} meta={asks} />
 
@@ -85,7 +73,7 @@ export default function MaterialTab({ data, nav, onNavigate }: { data: AppData; 
       <MarketSuppliers data={data} materialKeys={DB_MATS[mat] ?? []} />
 
       {/* ledger — the raw proof */}
-      <Ledger key={mat} rows={v.ledger.filter((r) => r.material === mat)} onNavigate={onNavigate} />
+      <Ledger rows={v.ledger.filter((r) => r.material === mat)} onNavigate={onNavigate} />
 
       {/* market reference (collapsible) — moved to the BOTTOM, after the ledger */}
       {data.market && <MarketReference material={mat} marketData={data.market} fdcPrice={M.singleCommodity && mdlMaterial?.vwap ? mdlMaterial.vwap : null} fdcLabel={`FDC paid, ${M.displayName} (our purchase data)`} />}

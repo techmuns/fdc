@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ArrowRight, TrendingUp, Scale, Coins, Clock, Sparkles, AlertTriangle, Wallet, Eye } from 'lucide-react';
-import type { AppData, ValueAction, PaymentTerms } from '../types';
+import type { AppData, ValueAction, PaymentTerms, MaterialKey } from '../types';
 import type { Nav } from '../App';
 import { Card } from '../components/ui/Card';
 import { ActionProof } from '../components/ActionProof';
@@ -68,7 +68,7 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
             <HeroStat
               eyebrow="Money you can save · every year" value={fmtSave(cost)} tone="white"
               sub={`${savePct.toFixed(1)}% of your ${fmtSave(totalSpend)} yearly spend — straight to profit.`}
-              cta="See every line of proof" onClick={() => topMat && onNavigate({ tab: 'material', material: topMat })}
+              cta="See every line of proof" onClick={() => topMat && onNavigate({ tab: 'vendors', material: topMat })}
             />
             <HeroStat
               eyebrow="Cash you can free up · one-time" value={fmtSave(cash)} tone="gold"
@@ -98,7 +98,7 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
           barSize={30}
           labelWidth={160}
           axisTicks={4}
-          onClick={(d) => onNavigate({ tab: 'material', material: d.key as Nav extends { material?: infer M } ? M : never })}
+          onClick={(d) => onNavigate({ tab: 'vendors', material: d.key as MaterialKey })}
         />
       </Card>
 
@@ -214,7 +214,7 @@ function ActionCard({ a, onNavigate, onProof }: { a: ValueAction; onNavigate: (n
         <div className="flex items-center gap-1.5">
           <span className="hidden items-center gap-1 text-[11px] font-semibold text-fdc-slate opacity-0 transition group-hover:opacity-100 sm:inline-flex"><Eye size={12} /> tap for proof</span>
           <button
-            onClick={(e) => { e.stopPropagation(); onNavigate(a.proof.tab === 'vendors' ? { tab: 'vendors', vendorKey: a.proof.vendorKey } : { tab: 'material', material: a.proof.material as never, skuDesc: a.proof.skuDesc, vendorKey: a.proof.vendorKey }); }}
+            onClick={(e) => { e.stopPropagation(); onNavigate(a.proof.tab === 'vendors' ? { tab: 'vendors', vendorKey: a.proof.vendorKey } : { tab: 'vendors', material: a.proof.material as MaterialKey | undefined, skuDesc: a.proof.skuDesc, vendorKey: a.proof.vendorKey }); }}
             className="inline-flex items-center gap-1 rounded-lg border border-fdc-green/30 bg-fdc-green/[0.06] px-2.5 py-1.5 text-[12px] font-semibold text-fdc-green transition hover:bg-fdc-green/[0.12] focus-ring"
           >
             Full view <ArrowRight size={13} />
