@@ -180,7 +180,6 @@ function VendorCard({ vendor: x, data, onFull, onPickAlt, onNavigate }: { vendor
   const dbCount = new Set(dbLines.map((l) => l.id)).size;
   const dbScore = (l: SupplierLine) => (l.confidence === 'High' ? 3 : l.confidence === 'Medium' ? 2 : 1) + (l.maker ? 1.5 : 0) + (/india/i.test(l.country) ? 0.5 : 0);
   const dbTop = [...new Map(dbLines.map((l) => [l.id, l])).values()].sort((a, b) => dbScore(b) - dbScore(a)).slice(0, 4);
-  const presetMat = x.materialKeys.length === 1 && DB_MATS[x.materialKeys[0]]?.length === 1 ? DB_MATS[x.materialKeys[0]][0] : undefined;
 
   return (
     <Card className="!p-0">
@@ -289,7 +288,7 @@ function VendorCard({ vendor: x, data, onFull, onPickAlt, onNavigate }: { vendor
             <div className="mt-2.5 rounded-xl border border-fdc-blue/20 bg-fdc-blue/[0.04] p-2.5">
               <div className="flex items-center justify-between gap-2">
                 <span className="flex items-center gap-1.5 text-[11.5px] font-bold text-fdc-slate"><Globe2 size={13} className="text-fdc-blue" /> {dbCount} more potential backups in the market</span>
-                <button onClick={() => onNavigate({ tab: 'backup', materialKey: presetMat })} className="inline-flex items-center gap-1 whitespace-nowrap text-[11.5px] font-semibold text-fdc-blue underline-offset-2 hover:underline">See all <ArrowUpRight size={12} /></button>
+                <button onClick={() => onNavigate({ tab: 'material', material: x.materialKeys[0] as MaterialKey })} className="inline-flex items-center gap-1 whitespace-nowrap text-[11.5px] font-semibold text-fdc-blue underline-offset-2 hover:underline">See all <ArrowUpRight size={12} /></button>
               </div>
               <p className="mt-1 text-[10.5px] leading-snug text-fdc-grey">{dbTop.map((l) => vendorShort(l.company)).join(' · ')}… <span className="italic">leads from public research — verify before RFQ.</span></p>
             </div>

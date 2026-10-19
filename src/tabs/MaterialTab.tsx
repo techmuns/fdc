@@ -11,6 +11,10 @@ import { LineArea } from '../components/charts/LineArea';
 import { MarketBenchmark } from '../components/MarketBenchmark';
 import { FDC, MATERIAL_COLOR, rampGYR } from '../lib/brand';
 import { vendorShort, dateLabel, monthLabel } from '../lib/format';
+import { MarketSuppliers } from './BackupSuppliersTab';
+
+// our 3 materials → the backup-database material keys they map to
+const DB_MATS: Record<string, string[]> = { dextrose: ['dextrose'], packaging: ['pet-resin', 'pet-bottles', 'caps'], laminates: ['bopet'] };
 
 const price = (n: number | null, unit: string) => (n == null ? '—' : `₹${n >= 100 ? Math.round(n) : n >= 10 ? n.toFixed(1) : n.toFixed(2)}/${unit.toLowerCase() === 'nos' ? 'pc' : unit.toLowerCase()}`);
 const fmtSave = (n: number) => (n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : n >= 1e5 ? `₹${(n / 1e5).toFixed(1)} L` : `₹${Math.round(n).toLocaleString('en-IN')}`);
@@ -76,6 +80,9 @@ export default function MaterialTab({ data, nav, onNavigate }: { data: AppData; 
 
       {/* who else sells this — market-ask leverage list (NOT FDC suppliers) */}
       <MarketAskSellers ask={ask} meta={asks} />
+
+      {/* other suppliers in the market for this material (folded in from the old Backup tab) */}
+      <MarketSuppliers data={data} materialKeys={DB_MATS[mat] ?? []} />
 
       {/* ledger — the raw proof */}
       <Ledger key={mat} rows={v.ledger.filter((r) => r.material === mat)} onNavigate={onNavigate} />
