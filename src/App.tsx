@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { LayoutDashboard, Layers, Factory, Globe2, Wallet, AlertTriangle, Loader2 } from 'lucide-react';
+import { LayoutDashboard, Layers, Factory, Wallet, AlertTriangle, Loader2 } from 'lucide-react';
 import { useAppData } from './lib/data';
 import { Header } from './components/Header';
 import { Tabs, type TabDef } from './components/ui/Tabs';
 import MoneyOverview from './tabs/MoneyOverview';
 import MaterialTab from './tabs/MaterialTab';
 import VendorsTab from './tabs/VendorsTab';
-import BackupSuppliersTab from './tabs/BackupSuppliersTab';
 import CreditTermsTab from './tabs/CreditTermsTab';
 import { dateLabel } from './lib/format';
 import type { MaterialKey } from './types';
@@ -15,8 +14,7 @@ export type Nav =
   | { tab: 'overview' }
   | { tab: 'material'; material?: MaterialKey; skuDesc?: string; vendorKey?: string }
   | { tab: 'vendors'; vendorKey?: string }
-  | { tab: 'credit'; vendorKey?: string }
-  | { tab: 'backup'; materialKey?: string };
+  | { tab: 'credit'; vendorKey?: string };
 
 type TabKey = Nav['tab'];
 
@@ -25,7 +23,6 @@ const TABS: TabDef<TabKey>[] = [
   { key: 'material', label: 'Material', icon: Layers },
   { key: 'vendors', label: 'Vendors', icon: Factory },
   { key: 'credit', label: 'Credit & terms', icon: Wallet },
-  { key: 'backup', label: 'Backup suppliers', icon: Globe2 },
 ];
 
 export default function App() {
@@ -38,7 +35,7 @@ export default function App() {
 
       <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
         <div className="sticky top-[57px] z-30 -mx-4 border-b border-black/[0.06] bg-fdc-offwhite/95 px-4 pt-1.5 backdrop-blur sm:-mx-6 sm:px-6">
-          <Tabs tabs={TABS} active={nav.tab} onChange={(k) => setNav(k === 'overview' ? { tab: 'overview' } : k === 'material' ? { tab: 'material' } : k === 'vendors' ? { tab: 'vendors' } : k === 'credit' ? { tab: 'credit' } : { tab: 'backup' })} />
+          <Tabs tabs={TABS} active={nav.tab} onChange={(k) => setNav(k === 'overview' ? { tab: 'overview' } : k === 'material' ? { tab: 'material' } : k === 'vendors' ? { tab: 'vendors' } : { tab: 'credit' })} />
         </div>
 
         <main className="py-5">
@@ -50,7 +47,6 @@ export default function App() {
               {nav.tab === 'material' && <MaterialTab data={state.data} nav={nav} onNavigate={setNav} />}
               {nav.tab === 'vendors' && <VendorsTab data={state.data} nav={nav} onNavigate={setNav} />}
               {nav.tab === 'credit' && <CreditTermsTab data={state.data} nav={nav} onNavigate={setNav} />}
-              {nav.tab === 'backup' && <BackupSuppliersTab data={state.data} nav={nav} />}
             </>
           )}
         </main>

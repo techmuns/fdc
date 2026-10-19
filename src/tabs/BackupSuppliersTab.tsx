@@ -5,7 +5,6 @@ import {
   AlertTriangle, Boxes, FileText, Info, Factory,
 } from 'lucide-react';
 import type { AppData, SupplierLine } from '../types';
-import type { Nav } from '../App';
 import { Card, Badge } from '../components/ui/Card';
 import { Dropdown, type Option } from '../components/ui/Controls';
 import { Table, type Column } from '../components/ui/Table';
@@ -24,10 +23,15 @@ const roleBucket = (r: string) => {
   return 'Other';
 };
 
-export default function BackupSuppliersTab({ data, nav }: { data: AppData; nav: Extract<Nav, { tab: 'backup' }> }) {
+/**
+ * Market / backup suppliers for ONE material — folded into the Material tab
+ * (previously its own "Backup suppliers" tab). Same public-research database,
+ * filtered to the material in view, so "who else can supply this" lives in one
+ * place next to what we pay for it. `materialKeys` are the backup-DB keys that
+ * map to the current material (e.g. packaging → pet-resin / pet-bottles / caps).
+ */
+export function MarketSuppliers({ data, materialKeys }: { data: AppData; materialKeys: string[] }) {
   const db = data.backupSuppliers;
-  const [mat, setMat] = useState<string>(nav.materialKey ?? 'all');
-  useEffect(() => { if (nav.materialKey) setMat(nav.materialKey); }, [nav.materialKey]);
   const [country, setCountry] = useState<string>('all');
   const [role, setRole] = useState<string>('all');
   const [conf, setConf] = useState<string>('all');
@@ -40,19 +44,22 @@ export default function BackupSuppliersTab({ data, nav }: { data: AppData; nav: 
     return m;
   }, [db]);
 
+  const inMaterial = useMemo(
+    () => (db?.lines ?? []).filter((l) => materialKeys.includes(l.materialKey)),
+    [db, materialKeys]
+  );
+
   const filtered = useMemo(() => {
-    if (!db) return [];
     const ql = q.trim().toLowerCase();
-    return db.lines.filter((l) =>
-      (mat === 'all' || l.materialKey === mat) &&
+    return inMaterial.filter((l) =>
       (country === 'all' || (country === 'India' ? /india/i.test(l.country) : country === 'International' ? !/india/i.test(l.country) : l.country === country)) &&
       (role === 'all' || roleBucket(l.role) === role) &&
       (conf === 'all' || l.confidence === conf) &&
       (!ql || (l.company + ' ' + l.brand + ' ' + l.products + ' ' + l.hq + ' ' + l.subcategory).toLowerCase().includes(ql))
     );
-  }, [db, mat, country, role, conf, q]);
+  }, [inMaterial, country, role, conf, q]);
 
-  if (!db) return <Card><p className="text-[13px] text-fdc-grey">No backup-supplier database loaded. Run <code className="rounded bg-black/5 px-1 py-0.5 font-mono text-[11px]">npm run suppliers</code>.</p></Card>;
+  if (!db || inMaterial.length === 0) return null;
 
   const countryOpts: Option<string>[] = [{ value: 'all', label: 'Anywhere' }, { value: 'India', label: 'India only' }, { value: 'International', label: 'International only' }, ...db.filters.countries.filter((c) => c && c !== 'India').map((c) => ({ value: c, label: c }))];
   const roleOpts: Option<string>[] = [{ value: 'all', label: 'Any role' }, ...db.filters.roles.map((r) => ({ value: r, label: r }))];
@@ -65,10 +72,10 @@ export default function BackupSuppliersTab({ data, nav }: { data: AppData; nav: 
         <div className="truncate text-[10.5px] text-fdc-grey">{l.brand || l.subcategory}</div>
       </div>
     ) },
-    { key: 'material', header: 'Material', sortable: true, sortValue: (l) => l.material, render: (l) => (
+    { key: 'material', header: 'Makes', sortable: true, sortValue: (l) => l.subcategory || l.material, render: (l) => (
       <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
         <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: colorOf[l.materialKey] }} />
-        <span className="text-fdc-slate">{l.material.replace('Polyester/BOPET Film & Laminates', 'BOPET / Laminates')}</span>
+        <span className="text-fdc-slate">{(l.subcategory || l.material).replace('Polyester/BOPET Film & Laminates', 'BOPET / Laminates')}</span>
       </span>
     ) },
     { key: 'where', header: 'Where', sortable: true, sortValue: (l) => l.region, render: (l) => (
@@ -79,24 +86,15 @@ export default function BackupSuppliersTab({ data, nav }: { data: AppData; nav: 
     ) },
   ];
 
-  return (
-    <div className="animate-fade-up space-y-4">
-      {/* header */}
-      <div className="mb-1">
-        <h2 className="flex items-center gap-1.5 text-[16px] font-bold leading-tight text-fdc-ink">
-          <Globe2 size={17} strokeWidth={2.3} className="text-fdc-green" /> Backup suppliers — the market beyond your vendors
-        </h2>
-        <p className="mt-1 max-w-3xl text-[12.5px] leading-snug text-fdc-grey">
-          <b className="text-fdc-slate">{db.counts.companies} companies · {db.counts.lines} supplier lines · {db.counts.sources} sources.</b> Other firms that make or trade your materials — a list to create competition and backups. Tap a dot or a row for full details.
-        </p>
-      </div>
+  const anyFilter = country !== 'all' || role !== 'all' || conf !== 'all' || q;
 
-      {/* material filter chips = legend + coverage counts */}
-      <div className="flex flex-wrap gap-1.5">
-        <Chip active={mat === 'all'} onClick={() => setMat('all')} label="All materials" count={db.counts.lines} />
-        {db.coverage.map((c) => (
-          <Chip key={c.key} active={mat === c.key} color={c.color} onClick={() => setMat(mat === c.key ? 'all' : c.key)} label={c.label.replace('Polyester / BOPET Film & Laminates', 'BOPET / Laminates')} count={c.total} />
-        ))}
+  return (
+    <div className="space-y-3">
+      <div>
+        <h3 className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink">
+          <Globe2 size={15} className="text-fdc-green" /> Other suppliers in the market <span className="text-[11.5px] font-medium text-fdc-grey">— {inMaterial.length} found who make or trade this material</span>
+        </h3>
+        <p className="mt-0.5 text-[12px] leading-snug text-fdc-grey">Potential backups to create competition and de-risk a single source. From public research — verify grade &amp; certificates before any RFQ. Tap a dot or a row for details.</p>
       </div>
 
       {/* map */}
@@ -113,34 +111,24 @@ export default function BackupSuppliersTab({ data, nav }: { data: AppData; nav: 
           <Search size={13} className="text-fdc-grey" />
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Find company / product" className="w-44 bg-transparent text-[12.5px] text-fdc-ink outline-none placeholder:text-fdc-grey" />
         </label>
-        {(mat !== 'all' || country !== 'all' || role !== 'all' || conf !== 'all' || q) && (
-          <button onClick={() => { setMat('all'); setCountry('all'); setRole('all'); setConf('all'); setQ(''); }} className="text-[11.5px] font-semibold text-fdc-grey underline-offset-2 hover:text-fdc-slate hover:underline">Clear</button>
+        {anyFilter && (
+          <button onClick={() => { setCountry('all'); setRole('all'); setConf('all'); setQ(''); }} className="text-[11.5px] font-semibold text-fdc-grey underline-offset-2 hover:text-fdc-slate hover:underline">Clear</button>
         )}
       </div>
 
       {/* table */}
       <Card pad={false}>
         <div className="px-4 pt-3.5">
-          <h3 className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><Boxes size={15} className="text-fdc-green" /> {filtered.length} supplier{filtered.length === 1 ? '' : 's'} {mat === 'all' ? 'across all materials' : `in ${db.materials.find((m) => m.key === mat)?.label}`}</h3>
+          <h4 className="flex items-center gap-1.5 text-[13.5px] font-bold text-fdc-ink"><Boxes size={15} className="text-fdc-green" /> {filtered.length} supplier{filtered.length === 1 ? '' : 's'}</h4>
           <p className="text-[12px] text-fdc-grey">Click any row to open the full profile and every source link.</p>
         </div>
         <div className="px-2 py-2">
-          <Table columns={cols} rows={filtered} getKey={(l) => l.id + '|' + l.materialKey} initialSort={{ key: 'company', dir: 'asc' }} onRowClick={(l) => setSel(l)} maxHeight={520} dense />
+          <Table columns={cols} rows={filtered} getKey={(l) => l.id + '|' + l.materialKey} initialSort={{ key: 'company', dir: 'asc' }} onRowClick={(l) => setSel(l)} maxHeight={460} dense />
         </div>
       </Card>
 
       {sel && <SupplierDetail line={sel} color={colorOf[sel.materialKey]} onClose={() => setSel(null)} />}
     </div>
-  );
-}
-
-function Chip({ active, color, label, count, onClick }: { active: boolean; color?: string; label: string; count: number; onClick: () => void }) {
-  return (
-    <button onClick={onClick} className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11.5px] font-semibold transition focus-ring ${active ? 'border-transparent text-white' : 'border-black/[0.1] bg-white text-fdc-slate hover:bg-black/[0.03]'}`} style={active ? { background: color ?? FDC.green } : undefined}>
-      {color && <span className="h-2.5 w-2.5 rounded-full" style={{ background: active ? 'rgba(255,255,255,0.9)' : color }} />}
-      {label}
-      <span className={`tnum rounded-full px-1.5 text-[10px] ${active ? 'bg-white/20' : 'bg-black/[0.06] text-fdc-grey'}`}>{count}</span>
-    </button>
   );
 }
 
@@ -151,7 +139,7 @@ const BBOX = {
 };
 function SupplierMap({ lines, colorOf, onPick }: { lines: SupplierLine[]; colorOf: Record<string, string>; onPick: (l: SupplierLine) => void }) {
   const [rings, setRings] = useState<number[][][] | null>(null);
-  const [view, setView] = useState<'world' | 'india'>('world');
+  const [view, setView] = useState<'world' | 'india'>('india');
   const [hover, setHover] = useState<{ l: SupplierLine; x: number; y: number } | null>(null);
   const base = import.meta.env.BASE_URL || '/';
 
@@ -203,7 +191,7 @@ function SupplierMap({ lines, colorOf, onPick }: { lines: SupplierLine[]; colorO
           </div>
         )}
       </div>
-      <p className="px-4 pb-3 text-[10.5px] leading-snug text-fdc-grey">Dot colour = material (see chips above). Position is approximate (from the company's stated location). Tap a dot for the full profile.</p>
+      <p className="px-4 pb-3 text-[10.5px] leading-snug text-fdc-grey">Position is approximate (from the company's stated location). Tap a dot for the full profile.</p>
     </div>
   );
 }
