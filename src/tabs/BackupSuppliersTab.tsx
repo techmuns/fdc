@@ -54,7 +54,6 @@ export default function BackupSuppliersTab({ data, nav }: { data: AppData; nav: 
 
   if (!db) return <Card><p className="text-[13px] text-fdc-grey">No backup-supplier database loaded. Run <code className="rounded bg-black/5 px-1 py-0.5 font-mono text-[11px]">npm run suppliers</code>.</p></Card>;
 
-  const thinnest = [...db.coverage].sort((a, b) => a.total - b.total)[0];
   const countryOpts: Option<string>[] = [{ value: 'all', label: 'Anywhere' }, { value: 'India', label: 'India only' }, { value: 'International', label: 'International only' }, ...db.filters.countries.filter((c) => c && c !== 'India').map((c) => ({ value: c, label: c }))];
   const roleOpts: Option<string>[] = [{ value: 'all', label: 'Any role' }, ...db.filters.roles.map((r) => ({ value: r, label: r }))];
   const confOpts: Option<string>[] = [{ value: 'all', label: 'Any confidence' }, ...db.filters.confidence.map((c) => ({ value: c, label: `${c} confidence` }))];
@@ -90,12 +89,6 @@ export default function BackupSuppliersTab({ data, nav }: { data: AppData; nav: 
         <p className="mt-1 max-w-3xl text-[12.5px] leading-snug text-fdc-grey">
           <b className="text-fdc-slate">{db.counts.companies} companies · {db.counts.lines} supplier lines · {db.counts.sources} sources.</b> Other firms that make or trade your materials — a list to create competition and backups. Tap a dot or a row for full details.
         </p>
-      </div>
-
-      {/* honesty banner */}
-      <div className="flex items-start gap-1.5 rounded-xl border border-fdc-gold/35 bg-fdc-gold/[0.08] px-3 py-2 text-[11.5px] leading-snug text-fdc-slate">
-        <AlertTriangle size={14} className="mt-0.5 shrink-0 text-fdc-gold-dark" />
-        <span><b>These are leads, not approved vendors.</b> Found from public web research — potential suppliers only, no price and no FDC relationship. Confirm the legal name, grade certificates and a plant audit before any RFQ. {thinnest && <>Thinnest cover right now: <b>{thinnest.label}</b> ({thinnest.total} found) — a single-source risk to watch.</>}</span>
       </div>
 
       {/* material filter chips = legend + coverage counts */}
