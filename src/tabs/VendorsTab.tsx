@@ -1,22 +1,26 @@
 import { useMemo, useState, useEffect } from 'react';
 import {
   Factory, Hourglass, TrendingDown, TrendingUp, Clock, PackageSearch, Repeat2,
-  Maximize2, BadgeCheck, Lock, CalendarClock, HandCoins, Info, ArrowUpRight, CircleHelp, Globe2, Layers,
+  Maximize2, BadgeCheck, Lock, CalendarClock, HandCoins, Info, CircleHelp, Layers, ChevronDown,
 } from 'lucide-react';
-import type { AppData, ValueVendor, ValueMaterial, ValueData, VendorFin, MaterialKey, FinMetrics, SupplierLine } from '../types';
+import type { AppData, ValueVendor, ValueMaterial, ValueData, VendorFin, MaterialKey, FinMetrics, AltVendor } from '../types';
 import type { Nav } from '../App';
 import { Card, Badge, Pill } from '../components/ui/Card';
-import { Dropdown, type Option } from '../components/ui/Controls';
+import { Dropdown, Segmented, type Option } from '../components/ui/Controls';
 import { Table, type Column } from '../components/ui/Table';
 import { Sparkline } from '../components/charts/Sparkline';
 import VendorProfile, { type ProfileSubject } from '../components/VendorProfile';
 import { MaterialDetail } from './MaterialTab';
+import { MarketSuppliers } from './BackupSuppliersTab';
 import { FDC, MATERIAL_COLOR } from '../lib/brand';
 import { vendorShort, crore, pct } from '../lib/format';
 
 const MAT_NAME: Record<string, string> = { dextrose: 'Dextrose', packaging: 'Rigid packaging', laminates: 'Laminates' };
 const priceFmt = (n: number | null | undefined, unit = 'kg') => (n == null ? '—' : `₹${n >= 100 ? Math.round(n) : n >= 10 ? n.toFixed(1) : n.toFixed(2)}/${unit === 'NOS' ? 'pc' : unit.toLowerCase()}`);
 const fmtSave = (n: number) => (n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : n >= 1e5 ? `₹${(n / 1e5).toFixed(1)} L` : `₹${Math.round(n).toLocaleString('en-IN')}`);
+
+// map our materials to the backup-database material keys
+const DB_MATS: Record<string, string[]> = { dextrose: ['dextrose'], packaging: ['pet-resin', 'pet-bottles', 'caps'], laminates: ['bopet'] };
 
 /* ---- "who could replace them": our cheaper suppliers + external alternatives ---- */
 export interface AltItem {
@@ -124,9 +128,10 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
   const v = data.value;
   const [mat, setMat] = useState<MaterialKey>(nav.material ?? 'dextrose');
   const [sel, setSel] = useState<string | null>(nav.vendorKey ?? null);
+  const [view, setView] = useState<'current' | 'alternatives'>('current');
   const [profile, setProfile] = useState<ProfileSubject | null>(null);
   useEffect(() => { if (nav.material) setMat(nav.material); }, [nav.material]);
-  useEffect(() => { if (nav.vendorKey) setSel(nav.vendorKey); }, [nav.vendorKey]);
+  useEffect(() => { if (nav.vendorKey) { setSel(nav.vendorKey); setView('current'); } }, [nav.vendorKey]);
 
   const M = v?.materials[mat] ?? null;
   const rows = useMemo(() => (v && M ? buildSupplierRows(M, v, mat) : []), [v, M, mat]);
@@ -142,13 +147,17 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
   const selVendor = selKey ? v.vendors[selKey] ?? null : null;
   const maxSave = Math.max(1, ...rows.map((r) => r.save));
 
+  // how many alternatives exist for this material (curated + market research) — for the toggle label
+  const marketCount = new Set((data.backupSuppliers?.lines ?? []).filter((l) => (DB_MATS[mat] ?? []).includes(l.materialKey)).map((l) => l.id)).size;
+  const altCount = (data.alternatives?.byMaterial?.[mat]?.length ?? 0) + marketCount;
+
   // open an external alternative's profile (or an honest "pending" card for name-only ones)
   const openAlt = (ref: { material: MaterialKey; index: number }) => {
     const alt = data.alternatives?.byMaterial?.[ref.material]?.[ref.index];
     if (alt) setProfile({ kind: 'alt', alt });
   };
   const onPickAlt = (it: AltItem) => {
-    if (it.navKey) { setSel(it.navKey); onNavigate({ tab: 'vendors', vendorKey: it.navKey }); }
+    if (it.navKey) { setSel(it.navKey); setView('current'); }
     else if (it.alt) openAlt(it.alt);
   };
 
@@ -175,7 +184,7 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div className="min-w-0">
           <h2 className="flex items-center gap-1.5 text-[16px] font-bold leading-tight text-fdc-ink"><Factory size={17} strokeWidth={2.3} className="text-fdc-green" /> Suppliers — {M.displayName}</h2>
-          <p className="mt-1 text-[12.5px] leading-snug text-fdc-grey">Pick a material to see its suppliers: what you pay each a year, how much you can save, and why. Everything below is for the material you choose. Click any supplier for the full detail.</p>
+          <p className="mt-1 text-[12.5px] leading-snug text-fdc-grey">Pick a material, then switch between the suppliers you use today and the alternatives you could bring in. Click any supplier for the full detail.</p>
         </div>
         <Dropdown label="Material" value={mat} options={matOptions} onChange={(k) => { setMat(k); setSel(null); }} width={210} />
       </div>
@@ -184,29 +193,47 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
       <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-black/[0.06] bg-black/[0.05] sm:grid-cols-4">
         <Stat label="You spend / yr" value={fmtSave(M.spend)} />
         <Stat label="You can save / yr" value={M.savings > 0 ? fmtSave(M.savings) : '—'} tone={M.savings > 0 ? 'save' : undefined} />
-        <Stat label="Suppliers" value={String(rows.length)} />
+        <Stat label="Suppliers you use" value={String(rows.length)} />
         <Stat label="Vs market ask" value={data.marketAsks?.materials[mat] ? (data.marketAsks.materials[mat].tone === 'headroom' ? 'Room to push' : 'Fair') : '—'} tone={data.marketAsks?.materials[mat]?.tone === 'headroom' ? 'warn' : data.marketAsks?.materials[mat] ? 'good' : undefined} />
       </div>
 
-      {/* the lead table */}
-      <Card pad={false}>
-        <div className="px-4 pt-3.5">
-          <h3 className="text-[14px] font-bold text-fdc-ink">What you pay each supplier — biggest saving first</h3>
-          <p className="text-[12px] text-fdc-grey">{rows.length} supplier{rows.length === 1 ? '' : 's'} of {M.displayName.toLowerCase()}. Click a row to open that supplier’s full detail.</p>
-        </div>
-        <div className="px-2 py-2">
-          <Table columns={cols} rows={rows} getKey={(r) => r.vendorKey} initialSort={{ key: 'save', dir: 'desc' }} onRowClick={(r) => setSel(r.vendorKey)} activeKey={selKey} maxHeight={420} dense />
-        </div>
-      </Card>
-
-      {/* the selected supplier's full operational read (click "Full details" for the money/financials) */}
-      {selVendor && <VendorCard vendor={selVendor} data={data} onFull={(s) => setProfile(s)} onPickAlt={onPickAlt} onSelect={(k) => setSel(k)} />}
-
-      {/* everything else about this material — prices per item, old stock, plants, market, every delivery */}
-      <div className="pt-1">
-        <h3 className="mb-2 flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><Layers size={16} strokeWidth={2.3} className="text-fdc-green" /> The numbers behind it — {M.displayName}</h3>
-        <MaterialDetail key={mat} data={data} mat={mat} skuDesc={nav.skuDesc} onNavigate={onNavigate} />
+      {/* current suppliers  ⇄  alternative suppliers */}
+      <div className="flex flex-wrap items-center gap-2.5">
+        <Segmented
+          value={view}
+          onChange={setView}
+          options={[
+            { value: 'current', label: `Current suppliers (${rows.length})` },
+            { value: 'alternatives', label: `Alternative suppliers${altCount ? ` (${altCount})` : ''}` },
+          ]}
+        />
+        <span className="text-[11.5px] text-fdc-grey">{view === 'current' ? 'Who you buy from today.' : 'Other suppliers you could bring in — not FDC suppliers yet.'}</span>
       </div>
+
+      {view === 'current' ? (
+        <>
+          {/* the lead table */}
+          <Card pad={false}>
+            <div className="px-4 pt-3.5">
+              <h3 className="text-[14px] font-bold text-fdc-ink">What you pay each supplier — biggest saving first</h3>
+              <p className="text-[12px] text-fdc-grey">{rows.length} supplier{rows.length === 1 ? '' : 's'} of {M.displayName.toLowerCase()}. Click a row to open that supplier’s full detail.</p>
+            </div>
+            <div className="px-2 py-2">
+              <Table columns={cols} rows={rows} getKey={(r) => r.vendorKey} initialSort={{ key: 'save', dir: 'desc' }} onRowClick={(r) => setSel(r.vendorKey)} activeKey={selKey} maxHeight={420} dense />
+            </div>
+          </Card>
+
+          {/* the selected supplier's full operational read */}
+          {selVendor && <VendorCard vendor={selVendor} data={data} onFull={(s) => setProfile(s)} onSeeAlternatives={() => setView('alternatives')} />}
+
+          {/* everything else about this material — collapsed by default to keep the page short */}
+          <Collapsible title={`All the numbers behind ${M.displayName}`} subtitle="Prices per item, who ships old stock, plant-by-plant, price trend, and every delivery." defaultOpen={!!nav.skuDesc}>
+            <MaterialDetail key={mat} data={data} mat={mat} skuDesc={nav.skuDesc} onNavigate={onNavigate} showMarketSuppliers={false} />
+          </Collapsible>
+        </>
+      ) : (
+        <AlternativesView data={data} mat={mat} onOpenAlt={(alt) => setProfile({ kind: 'alt', alt })} />
+      )}
 
       {profile && (
         <VendorProfile
@@ -231,10 +258,66 @@ function Stat({ label, value, tone }: { label: string; value: string; tone?: 'sa
   );
 }
 
-// map our materials to the backup-database material keys
-const DB_MATS: Record<string, string[]> = { dextrose: ['dextrose'], packaging: ['pet-resin', 'pet-bottles', 'caps'], laminates: ['bopet'] };
+/* ---- collapsible "show more" wrapper — keeps the deep detail one tap away ---- */
+function Collapsible({ title, subtitle, defaultOpen = false, children }: { title: string; subtitle?: string; defaultOpen?: boolean; children: React.ReactNode }) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <Card pad={false}>
+      <button onClick={() => setOpen((o) => !o)} className="flex w-full items-center justify-between gap-2 px-4 py-3 text-left transition hover:bg-black/[0.02] focus-ring">
+        <span className="min-w-0">
+          <span className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><Layers size={15} strokeWidth={2.3} className="text-fdc-green" /> {title}</span>
+          {subtitle && <span className="mt-0.5 block text-[11.5px] leading-snug text-fdc-grey">{subtitle}</span>}
+        </span>
+        <span className="flex shrink-0 items-center gap-1 text-[11.5px] font-semibold text-fdc-grey">{open ? 'Hide' : 'Show'} <ChevronDown size={15} className={`transition ${open ? 'rotate-180' : ''}`} /></span>
+      </button>
+      {open && <div className="border-t border-black/[0.06] p-4">{children}</div>}
+    </Card>
+  );
+}
 
-function VendorCard({ vendor: x, data, onFull, onPickAlt, onSelect }: { vendor: ValueVendor; data: AppData; onFull: (s: ProfileSubject) => void; onPickAlt: (it: AltItem) => void; onSelect: (k: string) => void }) {
+/* ============================ alternative suppliers view ============================ */
+function AlternativesView({ data, mat, onOpenAlt }: { data: AppData; mat: MaterialKey; onOpenAlt: (alt: AltVendor) => void }) {
+  const alts = data.alternatives?.byMaterial?.[mat] ?? [];
+  return (
+    <div className="space-y-4">
+      {alts.length > 0 && <AlternativesTable alts={alts} onOpen={onOpenAlt} />}
+      {/* broader public-research market database — map + filterable table + detail */}
+      <MarketSuppliers data={data} materialKeys={DB_MATS[mat] ?? []} />
+    </div>
+  );
+}
+
+function AlternativesTable({ alts, onOpen }: { alts: AltVendor[]; onOpen: (a: AltVendor) => void }) {
+  const cols: Column<AltVendor>[] = [
+    { key: 'name', header: 'Supplier', sortable: true, sortValue: (a) => vendorShort(a.name), render: (a) => (
+      <div className="min-w-0">
+        <div className="flex items-center gap-1.5 font-semibold text-fdc-slate">{vendorShort(a.name)}{a.secondSourceFor && <Badge color={FDC.green}>2nd source</Badge>}</div>
+        <div className="truncate text-[10.5px] text-fdc-grey">{(a.role || '').replace(/-/g, ' ')}</div>
+      </div>
+    ) },
+    { key: 'type', header: 'Type', render: (a) => (a.type === 'listed' ? <Badge color={FDC.blue}><BadgeCheck size={11} /> Listed</Badge> : <Badge color="#8E44AD"><Lock size={11} /> Private</Badge>) },
+    { key: 'size', header: 'Yearly sales', align: 'right', sortable: true, sortValue: (a) => a.metrics?.revenue ?? -1, render: (a) => (a.metrics?.revenue != null ? <span className="tnum whitespace-nowrap">{crore(a.metrics.revenue)}</span> : <span className="text-fdc-grey">{a.status !== 'ok' ? 'pending' : '—'}</span>) },
+    { key: 'fit', header: 'Grade match / why it fits', render: (a) => (
+      <div className="min-w-0 max-w-[460px]">
+        {a.gradeLabel && <span className="mb-1 inline-block rounded bg-fdc-gold/15 px-1.5 py-0.5 text-[10px] font-semibold text-fdc-gold-dark">✓ {a.gradeLabel}</span>}
+        <p className="text-[11.5px] leading-snug text-fdc-grey">{a.fitNote}</p>
+      </div>
+    ) },
+  ];
+  return (
+    <Card pad={false}>
+      <div className="px-4 pt-3.5">
+        <h3 className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><Repeat2 size={15} className="text-fdc-blue" /> Ready alternatives — researched &amp; grade-checked</h3>
+        <p className="text-[12px] leading-snug text-fdc-grey">{alts.length} vetted option{alts.length === 1 ? '' : 's'} with real financials on file. Click a row for the full profile. Not FDC suppliers yet — confirm grade, certificates and an audit before any RFQ.</p>
+      </div>
+      <div className="px-2 py-2">
+        <Table columns={cols} rows={alts} getKey={(a) => a.name} onRowClick={onOpen} initialSort={{ key: 'size', dir: 'desc' }} maxHeight={420} dense />
+      </div>
+    </Card>
+  );
+}
+
+function VendorCard({ vendor: x, data, onFull, onSeeAlternatives }: { vendor: ValueVendor; data: AppData; onFull: (s: ProfileSubject) => void; onSeeAlternatives: () => void }) {
   const fin: VendorFin | null = data.financials?.vendors[x.vendorKey] ?? null;
   const probe = fin?.probe ?? null;
   const m = fin?.metrics ?? null;
@@ -262,13 +345,11 @@ function VendorCard({ vendor: x, data, onFull, onPickAlt, onSelect }: { vendor: 
 
   const alts = buildAlternatives(x.vendorKey, data);
 
-  // extra backup candidates from the founder's researched market database
+  // extra backup candidates from the founder's researched market database (count only — full list in Alternatives view)
   const dbKeys = [...new Set(x.materialKeys.flatMap((k) => DB_MATS[k] ?? []))];
   const selfNorm = norm(x.name);
   const dbLines = (data.backupSuppliers?.lines ?? []).filter((l) => dbKeys.includes(l.materialKey) && norm(l.company) !== selfNorm);
   const dbCount = new Set(dbLines.map((l) => l.id)).size;
-  const dbScore = (l: SupplierLine) => (l.confidence === 'High' ? 3 : l.confidence === 'Medium' ? 2 : 1) + (l.maker ? 1.5 : 0) + (/india/i.test(l.country) ? 0.5 : 0);
-  const dbTop = [...new Map(dbLines.map((l) => [l.id, l])).values()].sort((a, b) => dbScore(b) - dbScore(a)).slice(0, 4);
 
   return (
     <Card className="!p-0">
@@ -367,18 +448,19 @@ function VendorCard({ vendor: x, data, onFull, onPickAlt, onSelect }: { vendor: 
           </Section>
         </div>
 
-        {/* alternatives — clickable */}
+        {/* alternatives — compact pointer to the dedicated Alternative suppliers view */}
         <Section icon={Repeat2} title="Who could replace them" color={FDC.blue}>
-          <Alternatives items={alts} onPick={onPickAlt} />
-          {dbCount > 0 && (
-            <div className="mt-2.5 rounded-xl border border-fdc-blue/20 bg-fdc-blue/[0.04] p-2.5">
-              <div className="flex items-center justify-between gap-2">
-                <span className="flex items-center gap-1.5 text-[11.5px] font-bold text-fdc-slate"><Globe2 size={13} className="text-fdc-blue" /> {dbCount} more potential backups in the market</span>
-                <button onClick={() => onSelect(x.vendorKey)} className="inline-flex items-center gap-1 whitespace-nowrap text-[11.5px] font-semibold text-fdc-blue underline-offset-2 hover:underline">See the full list below <ArrowUpRight size={12} /></button>
-              </div>
-              <p className="mt-1 text-[10.5px] leading-snug text-fdc-grey">{dbTop.map((l) => vendorShort(l.company)).join(' · ')}… <span className="italic">leads from public research — verify before RFQ. Full list under “The numbers behind it”.</span></p>
-            </div>
+          {alts.length > 0 ? (
+            <p className="text-[11.5px] leading-snug text-fdc-slate">
+              <b>{alts.slice(0, 3).map((a) => a.name).join(' · ')}</b>{alts.length > 3 ? ` and ${alts.length - 3} more` : ''} can supply the same.{' '}
+              <button onClick={onSeeAlternatives} className="font-semibold text-fdc-blue underline-offset-2 hover:underline">See all alternatives →</button>
+            </p>
+          ) : (
+            <p className="text-[11.5px] leading-snug text-fdc-grey">No ready alternative on file for this one.{' '}
+              <button onClick={onSeeAlternatives} className="font-semibold text-fdc-blue underline-offset-2 hover:underline">Browse the market →</button>
+            </p>
           )}
+          {dbCount > 0 && <p className="mt-1 text-[10.5px] leading-snug text-fdc-grey">Plus <b>{dbCount}</b> more potential backups from public market research — open the <b>Alternative suppliers</b> tab above.</p>}
         </Section>
       </div>
     </Card>
@@ -430,33 +512,6 @@ function PayablesFairness({ x, m }: { x: ValueVendor; m: FinMetrics | null }) {
       <HandCoins size={14} className="mt-0.5 shrink-0 text-fdc-gold-dark" />
       <span><b>{vendorShort(x.name)}</b> takes about <b className="tnum">{payable} days</b> to pay its own suppliers, but makes you pay <b>{termPlain(x.termCategory, x.termText).toLowerCase()}</b>. That gap is your strongest argument on payment — ask to move onto {target}.</span>
     </p>
-  );
-}
-
-function Alternatives({ items, onPick }: { items: AltItem[]; onPick: (it: AltItem) => void }) {
-  const top = items.slice(0, 5);
-  if (!top.length) return <p className="text-[11.5px] text-fdc-grey">No ready alternative on file for this material.</p>;
-  return (
-    <div className="space-y-1.5">
-      {top.map((it) => (
-        <button key={it.key} onClick={() => onPick(it)} className="flex w-full items-start justify-between gap-2 rounded-lg bg-fdc-offwhite px-2.5 py-1.5 text-left transition hover:bg-fdc-green/[0.06] focus-ring">
-          <div className="min-w-0">
-            <div className="flex flex-wrap items-center gap-1.5">
-              <span className="inline-flex items-center gap-0.5 text-[12.5px] font-semibold text-fdc-slate">
-                {it.name} <ArrowUpRight size={12} className="text-fdc-grey" />
-              </span>
-              {it.cheaper && <Pill color={FDC.green}>cheaper · ours</Pill>}
-              {it.size && <Pill color={FDC.grey}>{it.size}</Pill>}
-              {it.term && <Pill color={FDC.blue}>{it.term}</Pill>}
-              {!it.backed && <Pill color={FDC.grey}>money info pending</Pill>}
-            </div>
-            <p className="mt-0.5 text-[11px] leading-snug text-fdc-grey">{it.why}</p>
-            {it.gradeLabel && <span className="mt-1 inline-block rounded bg-fdc-gold/15 px-1.5 py-0.5 text-[10px] font-semibold text-fdc-gold-dark">✓ {it.gradeLabel}</span>}
-          </div>
-          {it.price && <span className="tnum shrink-0 rounded-md bg-white px-1.5 py-0.5 text-[11.5px] font-bold text-fdc-green">{it.price}</span>}
-        </button>
-      ))}
-    </div>
   );
 }
 

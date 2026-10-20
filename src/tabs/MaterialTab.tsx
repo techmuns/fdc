@@ -26,7 +26,7 @@ const plantShort = (name: string, code: string) => (name || code).replace(/FDC\s
  * had, minus its own heading + material picker (the Suppliers tab now owns the dropdown
  * and renders this filtered to the chosen material). Remount with key={mat} on change.
  */
-export function MaterialDetail({ data, mat, skuDesc, onNavigate }: { data: AppData; mat: MaterialKey; skuDesc?: string; onNavigate: (n: Nav) => void }) {
+export function MaterialDetail({ data, mat, skuDesc, onNavigate, showMarketSuppliers = true }: { data: AppData; mat: MaterialKey; skuDesc?: string; onNavigate: (n: Nav) => void; showMarketSuppliers?: boolean }) {
   const v = data.value;
   const M = v?.materials[mat] ?? null;
 
@@ -69,8 +69,9 @@ export function MaterialDetail({ data, mat, skuDesc, onNavigate }: { data: AppDa
       {/* who else sells this — market-ask leverage list (NOT FDC suppliers) */}
       <MarketAskSellers ask={ask} meta={asks} />
 
-      {/* other suppliers in the market for this material (folded in from the old Backup tab) */}
-      <MarketSuppliers data={data} materialKeys={DB_MATS[mat] ?? []} />
+      {/* other suppliers in the market for this material — shown here unless the Suppliers tab
+          has moved them to its dedicated "Alternative suppliers" view */}
+      {showMarketSuppliers && <MarketSuppliers data={data} materialKeys={DB_MATS[mat] ?? []} />}
 
       {/* ledger — the raw proof */}
       <Ledger rows={v.ledger.filter((r) => r.material === mat)} onNavigate={onNavigate} />

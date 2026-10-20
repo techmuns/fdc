@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { ArrowRight, TrendingUp, Scale, Coins, Clock, Sparkles, AlertTriangle, Wallet, Eye } from 'lucide-react';
+import { useState, useMemo } from 'react';
+import { ArrowRight, TrendingUp, Scale, Coins, Clock, Sparkles, AlertTriangle, Wallet, Eye, ListChecks, ChevronDown } from 'lucide-react';
 import type { AppData, ValueAction, PaymentTerms, MaterialKey } from '../types';
 import type { Nav } from '../App';
-import { Card } from '../components/ui/Card';
+import { Card, Pill } from '../components/ui/Card';
+import { Table, type Column } from '../components/ui/Table';
 import { ActionProof } from '../components/ActionProof';
 import { HBars, type HBarDatum } from '../components/charts/Bars';
 import { StackedBar, type StackSegment } from '../components/charts/StackedBar';
@@ -88,6 +89,9 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
         </div>
       </div>
 
+      {/* every insight in one table — the full, end-to-end list (toggle open) */}
+      <AllInsights data={data} onNavigate={onNavigate} />
+
       {/* savings by material */}
       <Card>
         <h2 className="mb-0.5 text-[15px] font-bold text-fdc-ink">Spend &amp; savings by material</h2>
@@ -107,6 +111,84 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
 
       {proof && <ActionProof action={proof} data={data} onClose={() => setProof(null)} onNavigate={onNavigate} />}
     </div>
+  );
+}
+
+/* ---- the full insight list: every place there's money to save or cash to free ---- */
+type InsightKind = 'price' | 'cash' | 'fresh';
+interface InsightRow {
+  key: string; supplier: string; vendorKey?: string; area: string;
+  kind: InsightKind; spend: number; save: number; saveLabel: string; what: string;
+}
+function buildAllInsights(data: AppData): InsightRow[] {
+  const v = data.value;
+  if (!v) return [];
+  const rows: InsightRow[] = [];
+  // price savings + old-stock, per material per supplier (same maths as the Suppliers table)
+  for (const mk of Object.keys(v.materials)) {
+    const M = v.materials[mk];
+    const agg = new Map<string, { pay: number; save: number; items: number }>();
+    for (const s of M.skus) for (const vp of s.vendors) {
+      const c = agg.get(vp.vendorKey) ?? { pay: 0, save: 0, items: 0 };
+      c.pay += vp.spend; c.save += Math.max(0, vp.excess); c.items += 1;
+      agg.set(vp.vendorKey, c);
+    }
+    for (const [vk, a] of agg) {
+      const vv = v.vendors[vk];
+      if (!vv) continue;
+      const fr = vv.freshnessByMaterial.find((f) => f.materialKey === mk);
+      if (a.save > 0) {
+        rows.push({ key: `price-${mk}-${vk}`, supplier: vv.name, vendorKey: vk, area: M.displayName, kind: 'price', spend: a.pay, save: a.save, saveLabel: `${fmtSave(a.save)}/yr`, what: `Match the cheapest ${M.displayName.toLowerCase()} price you already pay${a.items > 1 ? ` across ${a.items} items` : ''}, or move volume to the cheaper supplier.` });
+      } else if (fr?.grade === 'old') {
+        rows.push({ key: `fresh-${mk}-${vk}`, supplier: vv.name, vendorKey: vk, area: M.displayName, kind: 'fresh', spend: a.pay, save: 0, saveLabel: 'fresher stock', what: `Ships old stock (~${fr.avgAgeDays}d old). Ask for newer-made batches before you reorder.` });
+      }
+    }
+  }
+  // one-time cash from fixing advance / pay-on-receipt terms
+  for (const w of data.paymentTerms?.worstBySpend ?? []) {
+    if (!w.cashFreed30) continue;
+    rows.push({ key: `cash-${w.vendorKey}`, supplier: w.vendor, vendorKey: w.vendorKey, area: (w.materials || []).join(', ') || '—', kind: 'cash', spend: w.totalSpend, save: w.cashFreed30, saveLabel: `${fmtSave(w.cashFreed30)} one-time`, what: `You pay them ${w.termText}. Move onto 30-day credit to free up cash.` });
+  }
+  rows.sort((a, b) => b.save - a.save);
+  return rows;
+}
+
+const INSIGHT_KIND: Record<InsightKind, { label: string; color: string }> = {
+  price: { label: 'Lower price', color: FDC.green },
+  cash: { label: 'Free up cash', color: FDC.blue },
+  fresh: { label: 'Fresher stock', color: FDC.orange },
+};
+
+function AllInsights({ data, onNavigate }: { data: AppData; onNavigate: (n: Nav) => void }) {
+  const [open, setOpen] = useState(false);
+  const rows = useMemo(() => buildAllInsights(data), [data]);
+  if (!rows.length) return null;
+  const maxSave = Math.max(1, ...rows.map((r) => r.save));
+  const priceTotal = rows.filter((r) => r.kind === 'price').reduce((s, r) => s + r.save, 0);
+  const cols: Column<InsightRow>[] = [
+    { key: 'supplier', header: 'Supplier', sortable: true, sortValue: (r) => r.supplier, render: (r) => <span className="font-semibold text-fdc-slate">{shortName(r.supplier)}</span> },
+    { key: 'area', header: 'Area', sortable: true, sortValue: (r) => r.area, render: (r) => <span className="whitespace-nowrap text-fdc-grey">{r.area}</span> },
+    { key: 'kind', header: 'Type', render: (r) => <Pill color={INSIGHT_KIND[r.kind].color}>{INSIGHT_KIND[r.kind].label}</Pill> },
+    { key: 'spend', header: 'You spend / yr', align: 'right', sortable: true, sortValue: (r) => r.spend, render: (r) => <span className="tnum whitespace-nowrap">{fmtSave(r.spend)}</span> },
+    { key: 'save', header: 'Can save', align: 'right', sortable: true, sortValue: (r) => r.save, render: (r) => <span className="tnum whitespace-nowrap font-bold" style={{ color: r.save > 0 ? INSIGHT_KIND[r.kind].color : FDC.grey }}>{r.saveLabel}</span>, heat: (r) => (r.save > 0 ? Math.min(1, r.save / maxSave) : null), heatScale: 'hue', heatColor: FDC.green },
+    { key: 'what', header: 'What to do', render: (r) => <span className="text-[12px] leading-snug text-fdc-slate">{r.what}</span> },
+  ];
+  return (
+    <Card pad={false}>
+      <button onClick={() => setOpen((o) => !o)} className="flex w-full items-center justify-between gap-2 px-4 py-3.5 text-left transition hover:bg-black/[0.02] focus-ring">
+        <span className="min-w-0">
+          <span className="flex items-center gap-1.5 text-[15px] font-bold text-fdc-ink"><ListChecks size={16} strokeWidth={2.3} className="text-fdc-green" /> All insights <span className="font-medium text-fdc-grey">— {rows.length} opportunities</span></span>
+          <span className="mt-0.5 block text-[12px] leading-snug text-fdc-grey">Every supplier where there’s money to save or cash to free — the full, end-to-end list. About <b className="text-fdc-slate">{fmtSave(priceTotal)}/yr</b> in price savings across them all.</span>
+        </span>
+        <span className="flex shrink-0 items-center gap-1 text-[12px] font-semibold text-fdc-slate">{open ? 'Hide' : 'Show all'} <ChevronDown size={16} className={`transition ${open ? 'rotate-180' : ''}`} /></span>
+      </button>
+      {open && (
+        <div className="border-t border-black/[0.06] px-2 py-2">
+          <Table columns={cols} rows={rows} getKey={(r) => r.key} initialSort={{ key: 'save', dir: 'desc' }} onRowClick={(r) => onNavigate(r.vendorKey ? { tab: 'vendors', vendorKey: r.vendorKey } : { tab: 'vendors' })} maxHeight={520} dense />
+          <p className="px-2 pb-1 pt-1.5 text-[10.5px] leading-snug text-fdc-grey">Price savings are per year; “free up cash” is a one-time amount from fixing payment terms — the two are never added together. Click any row to open that supplier.</p>
+        </div>
+      )}
+    </Card>
   );
 }
 
