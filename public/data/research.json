@@ -1,0 +1,129 @@
+{
+  "asOf": "October 2026",
+  "source": "Deep supplier research via ChatGPT web search (19 Oct 2026). Public sources only — company websites, BSE/NSE filings, CARE/CRISIL rationales, annual reports, and IndiaMART/TradeIndia for clearly-labelled advertised ask prices (not confirmed quotes). These are leads to verify before any RFQ; no price or figure was invented.",
+  "suppliers": {
+    "universal-starch-chem-allied": {
+      "grade": { "tone": "good", "label": "Dextrose Anhydrous IP ✓" },
+      "gradeNote": "Its own site explicitly lists Dextrose Anhydrous IP/BP/USP — the clearest pharma-grade match of the dextrose suppliers.",
+      "plant": "Dondaicha, Dhule, Maharashtra — the nearest dextrose plant to FDC's West-India operations.",
+      "financials": "FY2025-26: revenue ₹488.60 Cr · net margin 2.69% (improved vs FY25).",
+      "priceRef": "Advertised ask ₹65/kg (25 kg) and ₹57/kg (1 MT) on marketplaces — ex-GST unverified, not a confirmed bulk quote.",
+      "angle": "Strongest grade + closest plant. Get one written IP-grade quote (annual volume, delivered West India, batch COA, shelf life, credit) and use the ₹57–65/kg ask as the opening reference.",
+      "sources": ["universalstarch.com", "BSE: 524408", "IndiaMART / TradeIndia listings"]
+    },
+    "gujarat-ambuja-exports": {
+      "grade": { "tone": "check", "label": "Anhydrous made — IP COA to confirm" },
+      "correction": "Earlier read was “monohydrate only”. Corrected: GAEL does make dextrose anhydrous (per its catalogue and FY24-25 report). But no document confirms the Dextrose Anhydrous IP monograph yet — ask for the IP-grade COA.",
+      "rating": "CARE AA− · outlook revised Stable → Positive, reaffirmed 8 Oct 2026 (₹395 Cr bank facilities). A better outlook, not a rating upgrade.",
+      "angle": "Get the IP-grade COA, then a volume-linked ₹/kg cut benchmarked against Universal's verified grade.",
+      "sources": ["ambujagroup.com", "NSE: GAEL", "CARE Ratings, 8 Oct 2026"]
+    },
+    "sayaji-industries": {
+      "grade": { "tone": "check", "label": "Anhydrous made — IP SKU to confirm" },
+      "correction": "“Maize Products” is Sayaji's own division (injectable-grade Dextrose Anhydrous IP/BP/USP, Kathwada, Ahmedabad) — not a separate alternative supplier. Treat it as the same company.",
+      "financials": "FY2025-26 (85th annual report, filed 26 Aug 2026): total income ₹1,075.10 Cr · PAT ₹1.50 Cr · net margin ≈0.14% (razor-thin). Back to profit after two loss years.",
+      "angle": "Operating profit jumped ~95% on lower maize cost and better utilisation, but the net margin is wafer-thin — there's little room to simply cut price. Push a cost-structure / maize-input pass-through discussion tied to your committed volume, not a flat discount.",
+      "sources": ["Sayaji FY2025-26 annual report", "BSE: 540728", "maizeproducts.com"]
+    },
+    "sukhjit-corn-products": {
+      "grade": { "tone": "check", "label": "Anhydrous made — IP SKU to confirm" },
+      "financials": "FY2025-26: turnover ₹1,425.68 Cr · PAT ₹26.09 Cr · implied net margin ≈1.83% (turnover and PAT down YoY).",
+      "plant": "Plants in Phagwara (Punjab), Nizamabad (Telangana), Malda (WB), Himachal — none verified in West India.",
+      "angle": "Useful second source to avoid dependence on West-India makers. Run a same-grade landed-price comparison and ask for matching delivered-to-FDC pricing.",
+      "sources": ["Sukhjit directors' report FY2025-26", "NSE: SUKHJITS"]
+    },
+    "tetrapak-india": {
+      "grade": { "tone": "diff", "label": "Aseptic cartons — not laminate film" },
+      "correction": "Tetra Pak supplies aseptic beverage/ORS cartons (a finished packaging system, sold per piece), NOT the sachet/blister laminate film the other suppliers make. Don't compare its price against the film suppliers — that's apples to oranges.",
+      "angle": "Benchmark it only against other aseptic-carton systems — SIG (new Ahmedabad plant) and GLS Elopak (Rewari) — and only if your filling machine is compatible. Switching needs compatible machinery + revalidation, so negotiate per-carton price, rebates, support and payment terms with Tetra Pak directly.",
+      "plant": "Chakan, Pune, Maharashtra (ISCC-PLUS packaging-material facility).",
+      "sources": ["tetrapak.com", "SIG / GLS Elopak announcements"]
+    },
+    "huhtamaki-india": {
+      "grade": { "tone": "good", "label": "Primary pharma laminates ✓" },
+      "financials": "Calendar year 2025: revenue ₹2,469.41 Cr · PAT ₹118.16 Cr · net margin 4.78% (EBITDA up to ₹226 Cr from ₹151 Cr). Note: calendar-year accounts, not FY25-26.",
+      "angle": "Profit recovered on mix, pricing and raw-material. Ask for a documented raw-material cost pass-through plus a volume rebate — on the same approved laminate structure, not a cheaper spec.",
+      "sources": ["Huhtamaki India 2025 annual report", "BSE: 509820"]
+    },
+    "uflex": {
+      "grade": { "tone": "good", "label": "Strip/blister pharma foil ✓" },
+      "financials": "FY2024-25: consolidated revenue ₹15,183.8 Cr · normalised PAT ₹320.1 Cr (normalised, not statutory net margin).",
+      "angle": "Demand a transparent aluminium/resin input-price reset, and compare your qualified strip/blister structures against ACG and Bilcare as leverage.",
+      "sources": ["UFlex FY2024-25 results", "NSE: UFLEX"]
+    },
+    "gls-films-industries-p": {
+      "financials": "Private — no company-level revenue verified (the ₹3,000 Cr figure is GLS Group-wide, not GLS Films).",
+      "angle": "Its Phase-II +18,000 t/yr expansion (→36,000 t/yr) was targeted for July 2026, but commissioning is NOT verified as of Oct 2026. Don't assume spare capacity — ask for the actual commercial-start date, current output and qualified pharma-line slots, then negotiate a volume-based price concession.",
+      "sources": ["GLS Films expansion presentation"]
+    },
+    "geep-industries-india": {
+      "financials": "Private — the parent Thanawala group's ₹400 Cr is group-wide, not GEEP laminate revenue. Site capacity ~4,000 t/yr; Thane, Maharashtra.",
+      "angle": "Local, flexible on small artwork runs. Ask for repeat-SKU pricing on consolidated laminate consumption backed by documented material-cost moves.",
+      "sources": ["geepflexibles company site"]
+    },
+    "shrinath-roto-pack": {
+      "financials": "Private — claims ₹1,000 Cr turnover (financial year / audited basis not verified). Plants in Telangana; Aug 2026 export shipments show activity, not spare capacity.",
+      "angle": "Negotiate annual-volume rebates and guaranteed delivery slots against verified comparable laminate offers.",
+      "sources": ["shrinath company site", "export shipment records"]
+    },
+    "berry-global-india": {
+      "correction": "Berry Global India and Bprex are the SAME group — Bprex is Berry's Bangalore healthcare operation. Treating them as two separate bidders would create fake competition. Negotiate once at group level.",
+      "sources": ["berryglobal.com"]
+    },
+    "bprex-pharma-packaging-india-p": {
+      "correction": "Bprex is Berry's Bangalore (Peenya) healthcare arm — related to Berry Global India, not an independent competitor. Keep SKU/entity traceability and negotiate as one group.",
+      "sources": ["berryglobal.com"]
+    },
+    "pgp-glass": {
+      "grade": { "tone": "diff", "label": "Glass packaging — not PET/HDPE" },
+      "correction": "PGP makes pharmaceutical GLASS (Type I/II/III bottles & vials) — not a PET/HDPE plastic comparator. Benchmark it only against other pharma-glass suppliers, never against your plastic bottles.",
+      "plant": "Kosamba & Jambusar, Gujarat.",
+      "sources": ["pgpglass.com"]
+    },
+    "empire-industries-virum-glass": {
+      "grade": { "tone": "diff", "label": "Amber glass — not PET/HDPE" },
+      "correction": "Empire's Vitrum division makes amber GLASS bottles and ROPP packaging — a separate category from PET/HDPE plastic. Benchmark against glass suppliers only.",
+      "financials": "Listed, BSE: 509525 (FY26 segment figures not verified in this pass).",
+      "sources": ["empiremumbai.com", "BSE: 509525"]
+    },
+    "cincorp-international": {
+      "grade": { "tone": "good", "label": "Strong cap/bottle match ✓" },
+      "angle": "Catalogue covers 28/33/38mm CT & child-resistant closures, 30/60ml dry-syrup bottles and measuring cups, with ISO Class 8 cleanroom. Quote the 28mm closure + dry-syrup bottle + measuring cup as one approved component set.",
+      "sources": ["cincorp.co.in"]
+    },
+    "triveni-polymers": {
+      "grade": { "tone": "good", "label": "Gerresheimer — West India ✓" },
+      "angle": "Gerresheimer group — Kosamba, Gujarat (West India) plus Kundli, Haryana; induction-seal bottles & CR caps. Put Kosamba into the West-India landed-cost competition for matched bottle/closure systems.",
+      "sources": ["gerresheimer.com"]
+    },
+    "scorpion-containers": {
+      "grade": { "tone": "good", "label": "Multi-SKU West-India match ✓" },
+      "angle": "Pardi, Gujarat — PET/HDPE bottles, caps, preforms and measuring cups, DMF-labelled. A credible challenger: run a multi-SKU tender covering comparable bottles, closures, preforms and cups.",
+      "sources": ["scorpioncontainers.com"]
+    },
+    "kilitch-healthcare-india": {
+      "correction": "Kilitch is mainly a sterile-injectable manufacturer — independent sale of rigid-plastic components isn't established. Reconcile the actual purchase-ledger item before treating it as a plastics supplier.",
+      "sources": ["kilitch.com"]
+    }
+  },
+  "leads": {
+    "dextrose": [
+      { "name": "Maize Products", "grade": { "tone": "check", "label": "= Sayaji's own division" }, "format": "Injectable-grade Dextrose Anhydrous IP/BP/USP", "where": "Kathwada, Ahmedabad, Gujarat", "role": "Maker (division of Sayaji Industries)", "note": "Not an independent alternative — it is Sayaji. Valuable as a higher-grade (injectable) option from an existing supplier; get current certificates and a comparable-volume quote.", "sources": ["maizeproducts.com"] },
+      { "name": "Loba Chemie", "grade": { "tone": "check", "label": "IP spec published" }, "format": "Dextrose Anhydrous IP (product ID001)", "where": "India — SKU plant not verified", "role": "Supplier / brand (own-manufacture to check)", "note": "IP specification and COA access advertised (spec revised Sep 2026); commercial suitability for bulk pharma to confirm.", "sources": ["lobachemie.com"] },
+      { "name": "Anmol Chemicals", "grade": { "tone": "diff", "label": "ACS/AR grade — not IP" }, "format": "Dextrose Anhydrous (ACS/AR grade page)", "where": "India — site not verified", "role": "Maker claimed", "note": "The specific SKU's IP compliance is NOT confirmed — lower-priority lead until an IP grade is shown.", "sources": ["anmolchemicals.com"] }
+    ],
+    "packaging": [
+      { "name": "Mold-Tek Packaging", "grade": { "tone": "check", "label": "ISO 15378 / DMF planned" }, "format": "Pharma HDPE tablet bottles, CT/CRC caps (33/38/53mm); 28mm CR liquid-syrup closure announced", "where": "Sultanpur, Telangana", "role": "Maker — listed (NSE: MOLDTKPAC)", "note": "28mm CR is not automatically the same as a 28mm induction-wad PP cap — match neck, liner and site qualification first.", "sources": ["moldtekpackaging.com", "NSE: MOLDTKPAC"] },
+      { "name": "SSF Plastics India", "grade": { "tone": "check", "label": "Pharma cleanroom capability" }, "format": "Pharma PET/HDPE/PP bottles, tablet & dry-syrup bottles, caps/closures", "where": "Daman, Baddi, Pardi, Hosur, Hyderabad (15 facilities)", "role": "Maker — private", "note": "Strong pharma capability; match neck, liner, induction compatibility and site cleanroom certificate.", "sources": ["ssfplastics.com"] },
+      { "name": "Weener Empire Plastics", "grade": { "tone": "check", "label": "Pharma HDPE/PP bottles & caps" }, "format": "Pharmaceutical HDPE/PP bottles, jars, closures & dispensing systems", "where": "Maharashtra (exact site to confirm)", "role": "Maker — private (FY24 revenue band ₹100–500 Cr)", "note": "Confirm the exact 28mm induction-wad design and pharma site qualification.", "sources": ["weener.de"] },
+      { "name": "Dhiren Packaging", "grade": { "tone": "check", "label": "28mm PP CRC induction-wad" }, "format": "28mm PP child-resistant, tamper-evident induction-wad cap; pharma measuring caps", "where": "Ahmedabad, Gujarat", "role": "Maker — private", "note": "Advertised ask ₹2/piece (listing date & GST unverified). Very relevant closure, but CRC build and liner must match FDC exactly.", "sources": ["dhiren packaging listing"] }
+    ],
+    "laminates": [
+      { "name": "ACG (Packaging Materials)", "grade": { "tone": "check", "label": "Blister lidding foil" }, "format": "Pharma aluminium blister lidding foil (Alumlid) for thermoform & cold-form", "where": "India group — foil plant for the SKU to confirm", "role": "Maker — private group", "note": "Strong blister-foil capability; match the approved foil gauge, lacquer, print and substrate.", "sources": ["acg-world.com"] },
+      { "name": "Bilcare", "grade": { "tone": "check", "label": "Cold-form laminate" }, "format": "Vento Venus cold-form laminate (OPA/aluminium/polyolefin)", "where": "India — commercial site to confirm", "role": "Maker", "note": "Qualified only if your existing laminate spec matches — not a chemistry change. Published structure, water-vapour and heat-seal data.", "sources": ["bilcare.com"] },
+      { "name": "SIG (Ahmedabad)", "grade": { "tone": "check", "label": "Aseptic cartons — Tetra Pak alt" }, "format": "Aseptic carton packages (dairy / non-carbonated beverages)", "where": "Ahmedabad, Gujarat — plant fully operational 12 Dec 2025", "role": "Maker / system provider — private (SIG Group, Switzerland)", "note": "A West-India aseptic-carton alternative to Tetra Pak — only if your filling machine is compatible; equipment/revalidation is the blocker.", "sources": ["sig.biz"] },
+      { "name": "GLS Elopak", "grade": { "tone": "check", "label": "Aseptic cartons — ORS use" }, "format": "Pure-Pak / Alpak aseptic liquid cartons (incl. ORS & liquid nutrition)", "where": "Gurawara, Rewari, Haryana (capacity 5bn+ packs/yr)", "role": "Maker / system supplier — JV (Elopak listed, Norway)", "note": "Second aseptic-carton alternative; confirm carton & filler compatibility and product-contact validation.", "sources": ["glselopak.com"] },
+      { "name": "Constantia Flexibles (India)", "grade": { "tone": "check", "label": "Blister lidding & flexibles" }, "format": "Pharma blister lidding & flexible laminates", "where": "India presence — qualifying plant to confirm", "role": "Maker / converter — global", "note": "Credible established converter; confirm country of manufacture, structure, heat-seal and site approval.", "sources": ["cflex.com"] }
+    ]
+  }
+}

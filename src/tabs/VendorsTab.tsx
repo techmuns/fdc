@@ -2,8 +2,9 @@ import { useMemo, useState, useEffect } from 'react';
 import {
   Factory, Hourglass, TrendingDown, TrendingUp, Clock, PackageSearch, Repeat2,
   Maximize2, BadgeCheck, Lock, CalendarClock, HandCoins, Info, CircleHelp, Layers, ChevronDown,
+  FlaskConical, Lightbulb, ShieldCheck, Sparkles, AlertTriangle,
 } from 'lucide-react';
-import type { AppData, ValueVendor, ValueMaterial, ValueData, VendorFin, MaterialKey, FinMetrics, AltVendor } from '../types';
+import type { AppData, ValueVendor, ValueMaterial, ValueData, VendorFin, MaterialKey, FinMetrics, AltVendor, ResearchGrade, ResearchSupplier, ResearchLead } from '../types';
 import type { Nav } from '../App';
 import { Card, Badge, Pill } from '../components/ui/Card';
 import { Dropdown, Segmented, type Option } from '../components/ui/Controls';
@@ -275,11 +276,73 @@ function Collapsible({ title, subtitle, defaultOpen = false, children }: { title
   );
 }
 
+/* ============================ curated research overlay ============================ */
+const GRADE_TONE: Record<'good' | 'check' | 'diff', string> = { good: FDC.green, check: FDC.goldDark, diff: FDC.slate };
+function GradeBadge({ g }: { g: ResearchGrade }) {
+  const Icon = g.tone === 'diff' ? AlertTriangle : FlaskConical;
+  return <Badge color={GRADE_TONE[g.tone]}><Icon size={11} /> {g.label}</Badge>;
+}
+function ResearchLine({ icon: Icon, label, text, tone }: { icon: typeof Info; label: string; text: string; tone?: 'green' }) {
+  return (
+    <div className="flex items-start gap-1.5 text-[11.5px] leading-snug">
+      <Icon size={13} className={`mt-0.5 shrink-0 ${tone === 'green' ? 'text-fdc-green' : 'text-fdc-blue'}`} />
+      <span className="text-fdc-slate"><b className="text-fdc-ink">{label}:</b> {text}</span>
+    </div>
+  );
+}
+function ResearchPanel({ r, asOf }: { r: ResearchSupplier; asOf?: string }) {
+  if (!(r.gradeNote || r.financials || r.rating || r.priceRef || r.plant || r.angle)) return null;
+  return (
+    <Section icon={Sparkles} title={`Latest verified research${asOf ? ` — ${asOf}` : ''}`} color={FDC.blue}>
+      <div className="space-y-1.5 rounded-xl border border-fdc-blue/15 bg-fdc-blue/[0.03] p-2.5">
+        {r.gradeNote && <ResearchLine icon={FlaskConical} label="Grade" text={r.gradeNote} />}
+        {r.financials && <ResearchLine icon={TrendingUp} label="Latest financials" text={r.financials} />}
+        {r.rating && <ResearchLine icon={ShieldCheck} label="Credit rating" text={r.rating} />}
+        {r.priceRef && <ResearchLine icon={Info} label="Market ask" text={r.priceRef} />}
+        {r.plant && <ResearchLine icon={Factory} label="Plant" text={r.plant} />}
+        {r.angle && <ResearchLine icon={Lightbulb} label="Best angle" text={r.angle} tone="green" />}
+        {r.sources?.length ? <p className="pt-0.5 text-[10px] leading-snug text-fdc-grey">Sources: {r.sources.join(' · ')}. Public research — verify before any RFQ; advertised prices are not confirmed quotes.</p> : null}
+      </div>
+    </Section>
+  );
+}
+function ResearchLeads({ leads, asOf }: { leads: ResearchLead[]; asOf?: string }) {
+  const cols: Column<ResearchLead>[] = [
+    { key: 'name', header: 'Lead', sortable: true, sortValue: (l) => l.name, render: (l) => (
+      <div className="min-w-0">
+        <div className="font-semibold text-fdc-slate">{l.name}</div>
+        <div className="truncate text-[10.5px] text-fdc-grey">{l.role}</div>
+      </div>
+    ) },
+    { key: 'grade', header: 'Grade / fit', render: (l) => (l.grade ? <GradeBadge g={l.grade} /> : <span className="text-fdc-grey">—</span>) },
+    { key: 'where', header: 'Where', render: (l) => <span className="whitespace-nowrap text-fdc-grey">{l.where}</span> },
+    { key: 'note', header: 'What it makes & why it fits', render: (l) => (
+      <div className="min-w-0 max-w-[460px]">
+        {l.format && <div className="text-[11.5px] text-fdc-slate">{l.format}</div>}
+        {l.note && <p className="mt-0.5 text-[11px] leading-snug text-fdc-grey">{l.note}</p>}
+      </div>
+    ) },
+  ];
+  return (
+    <Card pad={false}>
+      <div className="px-4 pt-3.5">
+        <h3 className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><Sparkles size={15} className="text-fdc-blue" /> New leads from latest research{asOf ? ` — ${asOf}` : ''}</h3>
+        <p className="text-[12px] leading-snug text-fdc-grey">{leads.length} fresh name{leads.length === 1 ? '' : 's'} from public research. Leads to qualify — confirm grade, certificates &amp; site before any RFQ.</p>
+      </div>
+      <div className="px-2 py-2">
+        <Table columns={cols} rows={leads} getKey={(l) => l.name} maxHeight={380} dense />
+      </div>
+    </Card>
+  );
+}
+
 /* ============================ alternative suppliers view ============================ */
 function AlternativesView({ data, mat, onOpenAlt }: { data: AppData; mat: MaterialKey; onOpenAlt: (alt: AltVendor) => void }) {
   const alts = data.alternatives?.byMaterial?.[mat] ?? [];
+  const leads = data.research?.leads?.[mat] ?? [];
   return (
     <div className="space-y-4">
+      {leads.length > 0 && <ResearchLeads leads={leads} asOf={data.research?.asOf} />}
       {alts.length > 0 && <AlternativesTable alts={alts} onOpen={onOpenAlt} />}
       {/* broader public-research market database — map + filterable table + detail */}
       <MarketSuppliers data={data} materialKeys={DB_MATS[mat] ?? []} />
@@ -321,6 +384,7 @@ function VendorCard({ vendor: x, data, onFull, onSeeAlternatives }: { vendor: Va
   const fin: VendorFin | null = data.financials?.vendors[x.vendorKey] ?? null;
   const probe = fin?.probe ?? null;
   const m = fin?.metrics ?? null;
+  const research = data.research?.suppliers[x.vendorKey] ?? null;
 
   // negotiation-room read
   const netMargin = m?.netMargin ?? null;
@@ -362,6 +426,7 @@ function VendorCard({ vendor: x, data, onFull, onSeeAlternatives }: { vendor: Va
             {x.materialKeys.map((k) => <Badge key={k} color={MATERIAL_COLOR[k as 'dextrose']}>{MAT_NAME[k]}</Badge>)}
             {fin?.type === 'listed' ? <Badge color={FDC.blue}><BadgeCheck size={11} /> Listed company</Badge> : fin?.primarySource === 'probe' ? <Badge color="#8E44AD"><Lock size={11} /> Private company</Badge> : null}
             {pending && <Badge color={FDC.grey}><CircleHelp size={11} /> Money info pending</Badge>}
+            {research?.grade && <GradeBadge g={research.grade} />}
           </div>
         </div>
         {(probe || m) && (
@@ -384,6 +449,12 @@ function VendorCard({ vendor: x, data, onFull, onSeeAlternatives }: { vendor: Va
           <span>{fin.note}</span>
         </div>
       )}
+      {research?.correction && (
+        <div className="flex items-start gap-1.5 border-b border-black/[0.06] bg-fdc-gold/[0.08] px-4 py-2 text-[11.5px] leading-snug text-fdc-slate">
+          <AlertTriangle size={14} className="mt-0.5 shrink-0 text-fdc-gold-dark" />
+          <span><b>Heads up{data.research?.asOf ? ` (${data.research.asOf} research)` : ''}:</b> {research.correction}</span>
+        </div>
+      )}
 
       {/* top facts */}
       <div className="grid grid-cols-2 gap-px bg-black/[0.05] sm:grid-cols-2">
@@ -392,6 +463,9 @@ function VendorCard({ vendor: x, data, onFull, onSeeAlternatives }: { vendor: Va
       </div>
 
       <div className="space-y-3 p-4">
+        {/* latest verified research (from the Oct 2026 supplier deep-dive) */}
+        {research && <ResearchPanel r={research} asOf={data.research?.asOf} />}
+
         {/* negotiation room */}
         <Section icon={Hourglass} title="How hard can you push?" color={FDC.green}>
           <div className="grid gap-2.5 sm:grid-cols-2">
