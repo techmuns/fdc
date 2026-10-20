@@ -90,7 +90,7 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
       </div>
 
       {/* every insight in one table — the full, end-to-end list (toggle open) */}
-      <AllInsights data={data} onNavigate={onNavigate} />
+      <AllInsights data={data} onProof={setProof} />
 
       {/* savings by material */}
       <Card>
@@ -119,6 +119,7 @@ type InsightKind = 'price' | 'cash' | 'fresh';
 interface InsightRow {
   key: string; supplier: string; vendorKey?: string; area: string;
   kind: InsightKind; spend: number; save: number; saveLabel: string; what: string;
+  materialKey?: MaterialKey; skuDesc?: string; items?: number;
 }
 function buildAllInsights(data: AppData): InsightRow[] {
   const v = data.value;
@@ -127,10 +128,12 @@ function buildAllInsights(data: AppData): InsightRow[] {
   // price savings + old-stock, per material per supplier (same maths as the Suppliers table)
   for (const mk of Object.keys(v.materials)) {
     const M = v.materials[mk];
-    const agg = new Map<string, { pay: number; save: number; items: number }>();
+    const agg = new Map<string, { pay: number; save: number; items: number; topSku?: string; topExcess: number }>();
     for (const s of M.skus) for (const vp of s.vendors) {
-      const c = agg.get(vp.vendorKey) ?? { pay: 0, save: 0, items: 0 };
-      c.pay += vp.spend; c.save += Math.max(0, vp.excess); c.items += 1;
+      const c = agg.get(vp.vendorKey) ?? { pay: 0, save: 0, items: 0, topExcess: 0 };
+      const ex = Math.max(0, vp.excess);
+      c.pay += vp.spend; c.save += ex; c.items += 1;
+      if (ex > c.topExcess) { c.topExcess = ex; c.topSku = s.desc; } // the single item with the biggest gap — the sharpest proof
       agg.set(vp.vendorKey, c);
     }
     for (const [vk, a] of agg) {
@@ -138,9 +141,9 @@ function buildAllInsights(data: AppData): InsightRow[] {
       if (!vv) continue;
       const fr = vv.freshnessByMaterial.find((f) => f.materialKey === mk);
       if (a.save > 0) {
-        rows.push({ key: `price-${mk}-${vk}`, supplier: vv.name, vendorKey: vk, area: M.displayName, kind: 'price', spend: a.pay, save: a.save, saveLabel: `${fmtSave(a.save)}/yr`, what: `Match the cheapest ${M.displayName.toLowerCase()} price you already pay${a.items > 1 ? ` across ${a.items} items` : ''}, or move volume to the cheaper supplier.` });
+        rows.push({ key: `price-${mk}-${vk}`, supplier: vv.name, vendorKey: vk, area: M.displayName, kind: 'price', spend: a.pay, save: a.save, saveLabel: `${fmtSave(a.save)}/yr`, materialKey: mk as MaterialKey, skuDesc: a.topSku, items: a.items, what: `Match the cheapest ${M.displayName.toLowerCase()} price you already pay${a.items > 1 ? ` across ${a.items} items` : ''}, or move volume to the cheaper supplier.` });
       } else if (fr?.grade === 'old') {
-        rows.push({ key: `fresh-${mk}-${vk}`, supplier: vv.name, vendorKey: vk, area: M.displayName, kind: 'fresh', spend: a.pay, save: 0, saveLabel: 'fresher stock', what: `Ships old stock (~${fr.avgAgeDays}d old). Ask for newer-made batches before you reorder.` });
+        rows.push({ key: `fresh-${mk}-${vk}`, supplier: vv.name, vendorKey: vk, area: M.displayName, kind: 'fresh', spend: a.pay, save: 0, saveLabel: 'fresher stock', materialKey: mk as MaterialKey, what: `Ships old stock (~${fr.avgAgeDays}d old). Ask for newer-made batches before you reorder.` });
       }
     }
   }
@@ -153,13 +156,33 @@ function buildAllInsights(data: AppData): InsightRow[] {
   return rows;
 }
 
+// turn a table row into the same ValueAction shape the 3 action cards use, so the
+// identical proof popup (price-gap bars / credit comparison / stock age) opens on click.
+function insightToAction(r: InsightRow): ValueAction {
+  const base = { rank: 0, key: r.key, vendorKey: r.vendorKey, action: r.what, why: r.what, risk: null };
+  if (r.kind === 'cash') {
+    return { ...base, kind: 'terms', saving: r.save, savingLabel: fmtSave(r.save), material: '', isCash: true,
+      whyBullets: [`You pay ${shortName(r.supplier)} too soon on ${fmtSave(r.spend)} of spend.`, `Moving them onto 30-day credit frees about ${fmtSave(r.save)} in one-time cash.`],
+      proof: { tab: 'vendors', vendorKey: r.vendorKey } };
+  }
+  if (r.kind === 'fresh') {
+    return { ...base, kind: 'freshness', saving: 0, savingLabel: 'Fresher stock', material: r.materialKey ?? '',
+      whyBullets: [`${shortName(r.supplier)} ships older ${r.area.toLowerCase()} stock than other suppliers you use.`, `Ask for newer-made batches before your next order — same price, more shelf life.`],
+      proof: { tab: 'vendors', material: r.materialKey, vendorKey: r.vendorKey } };
+  }
+  return { ...base, kind: 'price', saving: r.save, savingLabel: fmtSave(r.save), material: r.materialKey ?? '',
+    whyBullets: [`You spend ${fmtSave(r.spend)}/yr with ${shortName(r.supplier)} on ${r.area.toLowerCase()}.`,
+      (r.items ?? 1) > 1 ? `The bars below show your biggest single gap; across all ${r.items} ${r.area.toLowerCase()} items you buy from them, matching the cheapest price you already pay is worth about ${fmtSave(r.save)}/yr.` : `Matching the cheapest price you already pay is worth about ${fmtSave(r.save)}/yr.`],
+    proof: { tab: 'material', material: r.materialKey, skuDesc: r.skuDesc, vendorKey: r.vendorKey } };
+}
+
 const INSIGHT_KIND: Record<InsightKind, { label: string; color: string }> = {
   price: { label: 'Lower price', color: FDC.green },
   cash: { label: 'Free up cash', color: FDC.blue },
   fresh: { label: 'Fresher stock', color: FDC.orange },
 };
 
-function AllInsights({ data, onNavigate }: { data: AppData; onNavigate: (n: Nav) => void }) {
+function AllInsights({ data, onProof }: { data: AppData; onProof: (a: ValueAction) => void }) {
   const [open, setOpen] = useState(false);
   const rows = useMemo(() => buildAllInsights(data), [data]);
   if (!rows.length) return null;
@@ -184,8 +207,9 @@ function AllInsights({ data, onNavigate }: { data: AppData; onNavigate: (n: Nav)
       </button>
       {open && (
         <div className="border-t border-black/[0.06] px-2 py-2">
-          <Table columns={cols} rows={rows} getKey={(r) => r.key} initialSort={{ key: 'save', dir: 'desc' }} onRowClick={(r) => onNavigate(r.vendorKey ? { tab: 'vendors', vendorKey: r.vendorKey } : { tab: 'vendors' })} maxHeight={520} dense />
-          <p className="px-2 pb-1 pt-1.5 text-[10.5px] leading-snug text-fdc-grey">Price savings are per year; “free up cash” is a one-time amount from fixing payment terms — the two are never added together. Click any row to open that supplier.</p>
+          <p className="flex items-center gap-1.5 px-2 pb-1.5 text-[11px] font-medium text-fdc-slate"><Eye size={12} className="text-fdc-green" /> Tap any row to see the proof — the price gap, the credit comparison, or the stock age behind it.</p>
+          <Table columns={cols} rows={rows} getKey={(r) => r.key} initialSort={{ key: 'save', dir: 'desc' }} onRowClick={(r) => onProof(insightToAction(r))} maxHeight={520} dense />
+          <p className="px-2 pb-1 pt-1.5 text-[10.5px] leading-snug text-fdc-grey">Price savings are per year; “free up cash” is a one-time amount from fixing payment terms — the two are never added together.</p>
         </div>
       )}
     </Card>
