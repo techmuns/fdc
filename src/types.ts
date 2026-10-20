@@ -530,6 +530,29 @@ export interface BackupSuppliers {
   lines: SupplierLine[];
 }
 
+// ---- Curated research overlay: verified facts + corrections from supplier research ----
+export interface ResearchGrade { tone: 'good' | 'check' | 'diff'; label: string; }
+export interface ResearchSupplier {
+  grade?: ResearchGrade;
+  gradeNote?: string;
+  correction?: string;
+  financials?: string;
+  rating?: string;
+  priceRef?: string;
+  plant?: string;
+  angle?: string;
+  sources?: string[];
+}
+export interface ResearchLead {
+  name: string; grade?: ResearchGrade; format?: string; where?: string; role?: string; note?: string; sources?: string[];
+}
+export interface ResearchData {
+  asOf: string;
+  source: string;
+  suppliers: Record<string, ResearchSupplier>;
+  leads: Record<string, ResearchLead[]>;
+}
+
 export interface AppData {
   meta: Meta;
   materials: Material[];
@@ -544,4 +567,5 @@ export interface AppData {
   value: ValueData | null;
   marketAsks: MarketAsks | null;
   backupSuppliers: BackupSuppliers | null;
+  research: ResearchData | null;
 }
