@@ -22,8 +22,10 @@ export function ActionProof({ action, data, onClose, onNavigate }: { action: Val
   }, [onClose]);
 
   const isTerms = action.isCash || action.kind === 'terms';
-  const accent = isTerms ? FDC.blue : action.kind === 'freshness' ? FDC.orange : FDC.green;
-  const Icon = isTerms ? Coins : action.kind === 'freshness' ? Clock : TrendingDown;
+  const isFresh = !isTerms && action.kind === 'freshness';
+  const accent = isTerms ? FDC.blue : isFresh ? FDC.orange : FDC.green;
+  const Icon = isTerms ? Coins : isFresh ? Clock : TrendingDown;
+  const badgeText = isTerms ? `Cash freed ${action.savingLabel}` : isFresh ? action.savingLabel : `You can save ${action.savingLabel}`;
 
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-fdc-ink/55 backdrop-blur-sm animate-fade-in sm:p-4 md:p-6" onClick={onClose} role="dialog" aria-modal="true" aria-label={`Proof: ${action.action}`}>
@@ -32,14 +34,14 @@ export function ActionProof({ action, data, onClose, onNavigate }: { action: Val
         <div className="flex shrink-0 items-start gap-3 border-b border-black/[0.07] bg-white px-4 py-3 sm:px-5">
           <span className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl text-white" style={{ background: accent }}><Icon size={18} /></span>
           <div className="min-w-0 flex-1">
-            <div className="mb-0.5 flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-wide" style={{ color: accent }}>The proof <Badge color={accent}>{isTerms ? 'Cash freed' : 'You can save'} {action.savingLabel}</Badge></div>
+            <div className="mb-0.5 flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-wide" style={{ color: accent }}>The proof <Badge color={accent}>{badgeText}</Badge></div>
             <h2 className="text-[14.5px] font-bold leading-snug text-fdc-ink">{action.action}</h2>
           </div>
           <button onClick={onClose} className="shrink-0 rounded-lg p-1.5 text-fdc-grey transition hover:bg-black/5 hover:text-fdc-ink focus-ring" aria-label="Close"><X size={18} /></button>
         </div>
         {/* body */}
         <div className="fdc-scroll min-h-0 flex-1 space-y-3 overflow-y-auto px-3 py-4 sm:px-4">
-          {isTerms ? <TermsProof action={action} data={data} /> : <PriceProof action={action} data={data} />}
+          {isTerms ? <TermsProof action={action} data={data} /> : isFresh ? <FreshnessProof action={action} data={data} /> : <PriceProof action={action} data={data} />}
           {/* recap */}
           {action.whyBullets?.length ? (
             <div className="rounded-xl border border-black/[0.06] bg-white p-3.5">
@@ -90,7 +92,7 @@ function PriceProof({ action, data }: { action: ValueAction; data: AppData }) {
     <>
       <Section icon={GitCompareArrows} title="The price gap — same item, what each supplier charges" color={FDC.green}>
         <HBars data={bars} format={(n) => priceFmt(n, sku.unit)} barSize={26} labelWidth={140} axisTicks={4} />
-        <p className="mt-2 text-[11.5px] leading-snug text-fdc-slate"><b className="tnum">{sku.desc}</b> — gap of <b className="tnum">{priceFmt(gap, sku.unit)}</b> between the dearest and the cheapest you already pay. Match it and you save <b className="tnum" style={{ color: FDC.green }}>{fmtSave(action.saving)}</b>/yr.</p>
+        <p className="mt-2 text-[11.5px] leading-snug text-fdc-slate"><b className="tnum">{sku.desc}</b> — gap of <b className="tnum">{priceFmt(gap, sku.unit)}</b> between the dearest and the cheapest you already pay. Matching the cheapest price you already pay is worth about <b className="tnum" style={{ color: FDC.green }}>{fmtSave(action.saving)}</b>/yr.</p>
       </Section>
 
       {action.isLeverage && cMargin != null ? (
@@ -110,6 +112,41 @@ function PriceProof({ action, data }: { action: ValueAction; data: AppData }) {
           <p className="rounded-lg bg-fdc-orange/[0.08] px-2.5 py-1.5 text-[11.5px] leading-snug text-fdc-slate">{cName}'s financials aren't on file yet, so we can't vouch for its health or supply continuity. <b>Use its price as leverage now</b>; qualify it (health, certs, audit) before shifting volume.</p>
         </Section>
       ) : null}
+    </>
+  );
+}
+
+/* ---------- FRESHNESS proof: how old each supplier's stock is for the same item ---------- */
+function FreshnessProof({ action, data }: { action: ValueAction; data: AppData }) {
+  const M = data.value?.materials[action.material];
+  const rated = (M?.freshness ?? []).filter((f) => f.avgAgeDays != null);
+  if (!rated.length) return <Empty text="No stock-age records for this item yet." />;
+  const mine = rated.find((f) => f.vendorKey === action.vendorKey);
+  const freshest = [...rated].sort((a, b) => (a.avgAgeDays as number) - (b.avgAgeDays as number))[0];
+  const bars: HBarDatum[] = [...rated]
+    .sort((a, b) => (a.avgAgeDays as number) - (b.avgAgeDays as number))
+    .map((f) => ({
+      key: f.vendorKey, label: vendorShort(f.vendor), value: f.avgAgeDays as number,
+      color: f.vendorKey === action.vendorKey ? FDC.orange : f.vendorKey === freshest.vendorKey ? FDC.green : '#C9C9C9',
+      valueLabel: `${Math.round(f.avgAgeDays as number)}d`,
+      sublabel: f.vendorKey === action.vendorKey ? 'old stock' : f.vendorKey === freshest.vendorKey ? 'freshest' : undefined,
+    }));
+  const name = mine ? vendorShort(mine.vendor) : 'This supplier';
+  return (
+    <>
+      <Section icon={Clock} title="Stock age — same item, how old each supplier's stock is" color={FDC.orange}>
+        <HBars data={bars} format={(n) => `${Math.round(n)}d old`} barSize={24} labelWidth={140} axisTicks={4} />
+        <p className="mt-2 text-[11.5px] leading-snug text-fdc-slate">
+          {mine && mine.avgAgeDays != null ? (
+            <><b style={{ color: FDC.orange }}>{name}</b> ships stock about <b className="tnum">{Math.round(mine.avgAgeDays)} days</b> old{freshest && freshest.vendorKey !== mine.vendorKey && freshest.avgAgeDays != null ? <> — while the freshest you already get, <b>{vendorShort(freshest.vendor)}</b>, is ~<b className="tnum">{Math.round(freshest.avgAgeDays)} days</b>.</> : '.'}</>
+          ) : (
+            <>Lower is fresher. The green bar is the freshest stock you already receive for this item.</>
+          )}
+        </p>
+      </Section>
+      <Section icon={Scale} title="What to do" color={FDC.green}>
+        <p className="text-[11.5px] leading-snug text-fdc-slate">Ask {name} for newer-made batches (closer to the production date) before you reorder — same price, more usable shelf life left. Fresher stock means less write-off risk, not a price cut.</p>
+      </Section>
     </>
   );
 }
