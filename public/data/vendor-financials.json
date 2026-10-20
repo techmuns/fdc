@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T06:14:36.494Z",
+  "generatedAt": "2026-10-20T10:34:18.181Z",
   "sources": {
     "listed": "Munshot market-data API (free)",
     "private": "Probe42 comprehensive reports (MCA filings) — primary; credit-rating-agency rationale docs — fallback / cross-check"
@@ -1334,7 +1334,93 @@
         "asOf": "Mar 2026",
         "basis": "consolidated",
         "date": "2026-10-20"
-      }
+      },
+      "series": [
+        {
+          "fy": "FY12",
+          "revenue": 21220000000,
+          "netMargin": 2.36,
+          "roce": 10,
+          "receivableDays": 30
+        },
+        {
+          "fy": "FY13",
+          "revenue": 30160000000,
+          "netMargin": 3.75,
+          "roce": 19,
+          "receivableDays": 13
+        },
+        {
+          "fy": "FY14",
+          "revenue": 30920000000,
+          "netMargin": 3.59,
+          "roce": 15,
+          "receivableDays": 18
+        },
+        {
+          "fy": "FY15",
+          "revenue": 25310000000,
+          "netMargin": 3.32,
+          "roce": 9,
+          "receivableDays": 16
+        },
+        {
+          "fy": "FY16",
+          "revenue": 27360000000,
+          "netMargin": 3.8,
+          "roce": 11,
+          "receivableDays": 23
+        },
+        {
+          "fy": "FY20",
+          "revenue": 38170000000,
+          "netMargin": 3.82,
+          "roce": null,
+          "receivableDays": 15
+        },
+        {
+          "fy": "FY21",
+          "revenue": 47050000000,
+          "netMargin": 7.18,
+          "roce": 28,
+          "receivableDays": 17
+        },
+        {
+          "fy": "FY22",
+          "revenue": 46700000000,
+          "netMargin": 10.17,
+          "roce": 30,
+          "receivableDays": 18
+        },
+        {
+          "fy": "FY23",
+          "revenue": 49090000000,
+          "netMargin": 6.72,
+          "roce": 18,
+          "receivableDays": 21
+        },
+        {
+          "fy": "FY24",
+          "revenue": 49270000000,
+          "netMargin": 7.02,
+          "roce": 16,
+          "receivableDays": 24
+        },
+        {
+          "fy": "FY25",
+          "revenue": 46130000000,
+          "netMargin": 5.4,
+          "roce": 11,
+          "receivableDays": 28
+        },
+        {
+          "fy": "FY26",
+          "revenue": 57290000000,
+          "netMargin": 5.31,
+          "roce": 12,
+          "receivableDays": 28
+        }
+      ]
     },
     "sayaji-industries": {
       "vendorKey": "sayaji-industries",
@@ -1485,7 +1571,86 @@
         "asOf": "Mar 2026",
         "basis": "consolidated",
         "date": "2026-10-20"
-      }
+      },
+      "series": [
+        {
+          "fy": "FY16",
+          "revenue": 5030000000,
+          "netMargin": 0.8,
+          "roce": null,
+          "receivableDays": 26
+        },
+        {
+          "fy": "FY17",
+          "revenue": 5310000000,
+          "netMargin": 0.94,
+          "roce": 11,
+          "receivableDays": 25
+        },
+        {
+          "fy": "FY18",
+          "revenue": 5860000000,
+          "netMargin": 1.19,
+          "roce": 13,
+          "receivableDays": 24
+        },
+        {
+          "fy": "FY19",
+          "revenue": 6440000000,
+          "netMargin": 3.88,
+          "roce": 12,
+          "receivableDays": 26
+        },
+        {
+          "fy": "FY20",
+          "revenue": 6390000000,
+          "netMargin": -0.31,
+          "roce": 4,
+          "receivableDays": 31
+        },
+        {
+          "fy": "FY21",
+          "revenue": 5590000000,
+          "netMargin": 3.04,
+          "roce": 19,
+          "receivableDays": 33
+        },
+        {
+          "fy": "FY22",
+          "revenue": 7930000000,
+          "netMargin": 2.4,
+          "roce": 18,
+          "receivableDays": 28
+        },
+        {
+          "fy": "FY23",
+          "revenue": 10400000000,
+          "netMargin": 0.67,
+          "roce": 5,
+          "receivableDays": 20
+        },
+        {
+          "fy": "FY24",
+          "revenue": 9750000000,
+          "netMargin": -1.23,
+          "roce": -1,
+          "receivableDays": 25
+        },
+        {
+          "fy": "FY25",
+          "revenue": 10040000000,
+          "netMargin": -1.1,
+          "roce": -8,
+          "receivableDays": 24
+        },
+        {
+          "fy": "FY26",
+          "revenue": 10720000000,
+          "netMargin": 0.19,
+          "roce": 8,
+          "receivableDays": 22
+        }
+      ]
     },
     "shrinath-roto-pack": {
       "vendorKey": "shrinath-roto-pack",
@@ -7447,7 +7612,93 @@
         "asOf": "Mar 2026",
         "basis": "consolidated",
         "date": "2026-10-20"
-      }
+      },
+      "series": [
+        {
+          "fy": "FY15",
+          "revenue": 5320000000,
+          "netMargin": 4.32,
+          "roce": 15,
+          "receivableDays": 39
+        },
+        {
+          "fy": "FY16",
+          "revenue": 5650000000,
+          "netMargin": 3.89,
+          "roce": 14,
+          "receivableDays": 38
+        },
+        {
+          "fy": "FY17",
+          "revenue": 6520000000,
+          "netMargin": 2.76,
+          "roce": 12,
+          "receivableDays": 34
+        },
+        {
+          "fy": "FY18",
+          "revenue": 7010000000,
+          "netMargin": 3.28,
+          "roce": 13,
+          "receivableDays": 37
+        },
+        {
+          "fy": "FY19",
+          "revenue": 7420000000,
+          "netMargin": 5.66,
+          "roce": 19,
+          "receivableDays": 30
+        },
+        {
+          "fy": "FY20",
+          "revenue": 7990000000,
+          "netMargin": 4.13,
+          "roce": 8,
+          "receivableDays": 25
+        },
+        {
+          "fy": "FY21",
+          "revenue": 6990000000,
+          "netMargin": 3,
+          "roce": 7,
+          "receivableDays": 33
+        },
+        {
+          "fy": "FY22",
+          "revenue": 11590000000,
+          "netMargin": 6.3,
+          "roce": 19,
+          "receivableDays": 21
+        },
+        {
+          "fy": "FY23",
+          "revenue": 14470000000,
+          "netMargin": 4.35,
+          "roce": 15,
+          "receivableDays": 20
+        },
+        {
+          "fy": "FY24",
+          "revenue": 13750000000,
+          "netMargin": 3.64,
+          "roce": 12,
+          "receivableDays": 21
+        },
+        {
+          "fy": "FY25",
+          "revenue": 14980000000,
+          "netMargin": 2.67,
+          "roce": 9,
+          "receivableDays": 28
+        },
+        {
+          "fy": "FY26",
+          "revenue": 14320000000,
+          "netMargin": 1.89,
+          "roce": 6,
+          "receivableDays": 24
+        }
+      ]
     },
     "berry-global-india": {
       "vendorKey": "berry-global-india",
@@ -9315,7 +9566,93 @@
         "asOf": "Mar 2026",
         "basis": "standalone",
         "date": "2026-10-20"
-      }
+      },
+      "series": [
+        {
+          "fy": "FY15",
+          "revenue": 1950000000,
+          "netMargin": -0.51,
+          "roce": 7,
+          "receivableDays": 34
+        },
+        {
+          "fy": "FY16",
+          "revenue": 1650000000,
+          "netMargin": -1.21,
+          "roce": 1,
+          "receivableDays": 44
+        },
+        {
+          "fy": "FY17",
+          "revenue": 2140000000,
+          "netMargin": -1.87,
+          "roce": -5,
+          "receivableDays": 36
+        },
+        {
+          "fy": "FY18",
+          "revenue": 1980000000,
+          "netMargin": 0,
+          "roce": 9,
+          "receivableDays": 47
+        },
+        {
+          "fy": "FY19",
+          "revenue": 2790000000,
+          "netMargin": 0.36,
+          "roce": 12,
+          "receivableDays": 34
+        },
+        {
+          "fy": "FY20",
+          "revenue": 2640000000,
+          "netMargin": 0.38,
+          "roce": 8,
+          "receivableDays": 42
+        },
+        {
+          "fy": "FY21",
+          "revenue": 2960000000,
+          "netMargin": 2.03,
+          "roce": 15,
+          "receivableDays": 43
+        },
+        {
+          "fy": "FY22",
+          "revenue": 4560000000,
+          "netMargin": 2.41,
+          "roce": 23,
+          "receivableDays": 37
+        },
+        {
+          "fy": "FY23",
+          "revenue": 5160000000,
+          "netMargin": 1.16,
+          "roce": 13,
+          "receivableDays": 32
+        },
+        {
+          "fy": "FY24",
+          "revenue": 5270000000,
+          "netMargin": 1.33,
+          "roce": 13,
+          "receivableDays": 37
+        },
+        {
+          "fy": "FY25",
+          "revenue": 4910000000,
+          "netMargin": 0.61,
+          "roce": 9,
+          "receivableDays": 35
+        },
+        {
+          "fy": "FY26",
+          "revenue": 4890000000,
+          "netMargin": 2.66,
+          "roce": 18,
+          "receivableDays": 43
+        }
+      ]
     },
     "suraj-blow-plast": {
       "vendorKey": "suraj-blow-plast",
@@ -12476,7 +12813,93 @@
         "asOf": "Dec 2025",
         "basis": "standalone",
         "date": "2026-10-20"
-      }
+      },
+      "series": [
+        {
+          "fy": "FY14",
+          "revenue": 11350000000,
+          "netMargin": 5.73,
+          "roce": 15,
+          "receivableDays": 70
+        },
+        {
+          "fy": "FY15",
+          "revenue": 11510000000,
+          "netMargin": 4.26,
+          "roce": 12,
+          "receivableDays": 69
+        },
+        {
+          "fy": "FY16",
+          "revenue": 21810000000,
+          "netMargin": 3.76,
+          "roce": 18,
+          "receivableDays": 77
+        },
+        {
+          "fy": "FY17",
+          "revenue": 21310000000,
+          "netMargin": 3,
+          "roce": 16,
+          "receivableDays": 90
+        },
+        {
+          "fy": "FY18",
+          "revenue": 23690000000,
+          "netMargin": 1.48,
+          "roce": 15,
+          "receivableDays": 88
+        },
+        {
+          "fy": "FY19",
+          "revenue": 25990000000,
+          "netMargin": 6.54,
+          "roce": 22,
+          "receivableDays": 87
+        },
+        {
+          "fy": "FY20",
+          "revenue": 24630000000,
+          "netMargin": 3.9,
+          "roce": 14,
+          "receivableDays": 79
+        },
+        {
+          "fy": "FY21",
+          "revenue": 26250000000,
+          "netMargin": -0.88,
+          "roce": 2,
+          "receivableDays": 88
+        },
+        {
+          "fy": "FY22",
+          "revenue": 29830000000,
+          "netMargin": 1.68,
+          "roce": 7,
+          "receivableDays": 81
+        },
+        {
+          "fy": "FY23",
+          "revenue": 25490000000,
+          "netMargin": 16.08,
+          "roce": 12,
+          "receivableDays": 79
+        },
+        {
+          "fy": "FY24",
+          "revenue": 25210000000,
+          "netMargin": 3.49,
+          "roce": 7,
+          "receivableDays": 83
+        },
+        {
+          "fy": "FY25",
+          "revenue": 24690000000,
+          "netMargin": 4.78,
+          "roce": 12,
+          "receivableDays": 82
+        }
+      ]
     },
     "uflex": {
       "vendorKey": "uflex",
@@ -12623,7 +13046,93 @@
         "asOf": "Mar 2026",
         "basis": "consolidated",
         "date": "2026-10-20"
-      }
+      },
+      "series": [
+        {
+          "fy": "FY15",
+          "revenue": 61300000000,
+          "netMargin": 4.18,
+          "roce": 9,
+          "receivableDays": 90
+        },
+        {
+          "fy": "FY16",
+          "revenue": 63660000000,
+          "netMargin": 4.98,
+          "roce": 10,
+          "receivableDays": 85
+        },
+        {
+          "fy": "FY17",
+          "revenue": 65050000000,
+          "netMargin": 5.4,
+          "roce": 10,
+          "receivableDays": 93
+        },
+        {
+          "fy": "FY18",
+          "revenue": 68020000000,
+          "netMargin": 4.59,
+          "roce": 9,
+          "receivableDays": 104
+        },
+        {
+          "fy": "FY19",
+          "revenue": 79570000000,
+          "netMargin": 3.96,
+          "roce": 10,
+          "receivableDays": 94
+        },
+        {
+          "fy": "FY20",
+          "revenue": 74050000000,
+          "netMargin": 5.01,
+          "roce": 10,
+          "receivableDays": 96
+        },
+        {
+          "fy": "FY21",
+          "revenue": 88890000000,
+          "netMargin": 9.49,
+          "roce": 15,
+          "receivableDays": 99
+        },
+        {
+          "fy": "FY22",
+          "revenue": 131270000000,
+          "netMargin": 8.37,
+          "roce": 17,
+          "receivableDays": 98
+        },
+        {
+          "fy": "FY23",
+          "revenue": 146630000000,
+          "netMargin": 3.28,
+          "roce": 10,
+          "receivableDays": 80
+        },
+        {
+          "fy": "FY24",
+          "revenue": 133640000000,
+          "netMargin": -5.17,
+          "roce": 6,
+          "receivableDays": 94
+        },
+        {
+          "fy": "FY25",
+          "revenue": 150360000000,
+          "netMargin": 0.94,
+          "roce": 8,
+          "receivableDays": 91
+        },
+        {
+          "fy": "FY26",
+          "revenue": 154010000000,
+          "netMargin": 2.06,
+          "roce": 7,
+          "receivableDays": 92
+        }
+      ]
     },
     "silk-polypack": {
       "vendorKey": "silk-polypack",

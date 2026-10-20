@@ -490,10 +490,11 @@ function MiniTrend({ label, series, fmt, goodWhenUp }: { label: string; series: 
 function CompareTrendPanel({ data, v, mat, vendorKey, unit, onOpenFull }: { data: AppData; v: ValueData; mat: MaterialKey; vendorKey: string; unit: string; onOpenFull: (k: string) => void }) {
   const vv = v.vendors[vendorKey];
   if (!vv) return null;
-  const probe = data.financials?.vendors[vendorKey]?.probe ?? null;
+  const fin = data.financials?.vendors[vendorKey] ?? null;
+  const probe = fin?.probe ?? null;
   const priceS = priceSeriesFor(v.ledger, mat, vendorKey);
   const qtyS = qtySeriesFor(v.ledger, mat, vendorKey);
-  const fs = probe?.series ?? [];
+  const fs = [...(probe?.series ?? fin?.series ?? [])];
   const rev = fs.filter((y) => y.revenue != null).map((y) => ({ label: (y.fy || y.year) as string, value: y.revenue as number }));
   const mar = fs.filter((y) => y.netMargin != null).map((y) => ({ label: (y.fy || y.year) as string, value: y.netMargin as number }));
   const roce = fs.filter((y) => y.roce != null).map((y) => ({ label: (y.fy || y.year) as string, value: y.roce as number }));
@@ -545,7 +546,7 @@ function VendorCompare({ data, v, mat, onSelect }: { data: AppData; v: ValueData
     const ps = priceSeriesFor(v.ledger, mat, vk);
     const yoY = ps.length >= 2 && ps[0].value ? ((ps[ps.length - 1].value - ps[0].value) / ps[0].value) * 100 : null;
     const fr = vv?.freshnessByMaterial.find((f) => f.materialKey === mat) ?? null;
-    const ms = (fin?.probe?.series ?? []).filter((y) => y.netMargin != null).map((y) => ({ label: (y.fy || y.year) as string, value: y.netMargin as number }));
+    const ms = [...(fin?.probe?.series ?? fin?.series ?? [])].filter((y) => y.netMargin != null).map((y) => ({ label: (y.fy || y.year) as string, value: y.netMargin as number }));
     const a = agg.get(vk) ?? { pay: 0, save: 0 };
     return {
       vendorKey: vk, name: vv?.name ?? mv.vendor, color: vv?.color ?? mv.color,
@@ -569,10 +570,11 @@ function VendorCompare({ data, v, mat, onSelect }: { data: AppData; v: ValueData
 
   const cols: Column<CmpRow>[] = [
     { key: 'name', header: 'Supplier', sortable: true, sortValue: (r) => vendorShort(r.name), render: (r) => (
-      <button onClick={() => setPick(r.vendorKey)} className={`flex min-w-0 items-center gap-2 text-left focus-ring ${r.vendorKey === picked ? 'font-bold' : ''}`}>
+      <span className="flex min-w-0 items-center gap-2">
         <span className="h-2.5 w-2.5 shrink-0 rounded-sm" style={{ background: r.color }} />
-        <span className="truncate font-semibold text-fdc-slate underline-offset-2 hover:underline">{vendorShort(r.name)}</span>
-      </button>
+        <span className={`truncate text-fdc-slate ${r.vendorKey === picked ? 'font-extrabold' : 'font-semibold'}`}>{vendorShort(r.name)}</span>
+        {r.vendorKey === picked && <ChevronDown size={13} className="shrink-0 text-fdc-green" />}
+      </span>
     ) },
     { key: 'price', header: blended ? 'Avg price' : 'Price & trend', align: 'right', sortable: true, sortValue: (r) => (r.offUnit ? 1e12 : (r.price ?? 1e11)), render: (r) => {
       if (r.price == null) return <span className="text-fdc-grey">mixed units</span>;
@@ -616,7 +618,7 @@ function VendorCompare({ data, v, mat, onSelect }: { data: AppData; v: ValueData
     <Card pad={false}>
       <div className="px-4 pt-3.5">
         <h3 className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><Scale size={15} className="text-fdc-green" /> Compare your {M.displayName.toLowerCase()} suppliers</h3>
-        <p className="text-[12px] leading-snug text-fdc-grey">{rows.length} suppliers side by side — price and profit shown <b>with their trend over the year</b>, not just today. <b>Tap a name</b> to open its full trend deep-dive below.</p>
+        <p className="text-[12px] leading-snug text-fdc-grey">{rows.length} suppliers side by side — price and profit shown <b>with their trend over the year</b>, not just today. <b>Tap any row</b> to open its full trend deep-dive below (open by default for the first).</p>
       </div>
       {(cheapest || rising.length > 0 || shrinking.length > 0) && (
         <div className="mx-4 mt-2 space-y-0.5 rounded-xl border border-fdc-green/15 bg-fdc-green/[0.05] px-3 py-2 text-[12px] leading-snug text-fdc-slate">
@@ -626,7 +628,7 @@ function VendorCompare({ data, v, mat, onSelect }: { data: AppData; v: ValueData
         </div>
       )}
       <div className="px-2 py-2">
-        <Table columns={cols} rows={rows} getKey={(r) => r.vendorKey} initialSort={blended ? { key: 'save', dir: 'desc' } : { key: 'price', dir: 'asc' }} maxHeight={560} dense />
+        <Table columns={cols} rows={rows} getKey={(r) => r.vendorKey} initialSort={blended ? { key: 'save', dir: 'desc' } : { key: 'price', dir: 'asc' }} onRowClick={(r) => setPick(r.vendorKey)} activeKey={picked} maxHeight={560} dense />
         {blended && <p className="px-2 pt-1 text-[10.5px] leading-snug text-fdc-grey">Prices here are a rough average across each supplier's different items — <b>not a like-for-like price</b>. Compare the same item in “All the numbers behind it” (under Current). Profit trend, terms and freshness are exact.</p>}
       </div>
       {picked && <CompareTrendPanel data={data} v={v} mat={mat} vendorKey={picked} unit={pickedUnit} onOpenFull={onSelect} />}
@@ -642,7 +644,7 @@ function VendorCard({ vendor: x, data, onFull, onSeeAlternatives }: { vendor: Va
 
   // negotiation-room read
   const netMargin = m?.netMargin ?? null;
-  const marginSeries = (probe?.series ?? []).filter((y) => y.netMargin != null).map((y) => ({ label: y.fy || y.year, value: y.netMargin as number }));
+  const marginSeries = [...(probe?.series ?? fin?.series ?? [])].filter((y) => y.netMargin != null).map((y) => ({ label: (y.fy || y.year) as string, value: y.netMargin as number }));
   const marginFalling = marginSeries.length >= 2 && marginSeries[marginSeries.length - 1].value < marginSeries[0].value;
   const revenue = m?.revenue ?? null;
   const shareOfRev = revenue && x.spend ? (x.spend / revenue) * 100 : null;

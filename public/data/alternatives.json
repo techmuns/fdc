@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T06:15:04.568Z",
+  "generatedAt": "2026-10-20T10:35:00.137Z",
   "byMaterial": {
     "dextrose": [
       {
@@ -103,7 +103,37 @@
           "asOf": "Mar 2026",
           "basis": "consolidated",
           "date": "2026-10-20"
-        }
+        },
+        "series": [
+          {
+            "fy": "FY23",
+            "revenue": 3640000000,
+            "netMargin": 1.92,
+            "roce": null,
+            "receivableDays": 33
+          },
+          {
+            "fy": "FY24",
+            "revenue": 3060000000,
+            "netMargin": 0.65,
+            "roce": 8,
+            "receivableDays": 41
+          },
+          {
+            "fy": "FY25",
+            "revenue": 3860000000,
+            "netMargin": 2.07,
+            "roce": 10,
+            "receivableDays": 37
+          },
+          {
+            "fy": "FY26",
+            "revenue": 3630000000,
+            "netMargin": 1.65,
+            "roce": 10,
+            "receivableDays": 30
+          }
+        ]
       },
       {
         "name": "Gulshan Polyols Ltd",
@@ -206,7 +236,93 @@
           "asOf": "Mar 2026",
           "basis": "standalone",
           "date": "2026-10-20"
-        }
+        },
+        "series": [
+          {
+            "fy": "FY15",
+            "revenue": 3950000000,
+            "netMargin": 6.33,
+            "roce": 12,
+            "receivableDays": 59
+          },
+          {
+            "fy": "FY16",
+            "revenue": 4330000000,
+            "netMargin": 6.93,
+            "roce": 12,
+            "receivableDays": 62
+          },
+          {
+            "fy": "FY17",
+            "revenue": 4920000000,
+            "netMargin": 5.49,
+            "roce": 9,
+            "receivableDays": 66
+          },
+          {
+            "fy": "FY18",
+            "revenue": 6160000000,
+            "netMargin": 2.92,
+            "roce": 8,
+            "receivableDays": 69
+          },
+          {
+            "fy": "FY19",
+            "revenue": 6740000000,
+            "netMargin": 3.12,
+            "roce": 9,
+            "receivableDays": 54
+          },
+          {
+            "fy": "FY20",
+            "revenue": 6210000000,
+            "netMargin": 3.38,
+            "roce": 9,
+            "receivableDays": 48
+          },
+          {
+            "fy": "FY21",
+            "revenue": 7660000000,
+            "netMargin": 8.09,
+            "roce": 25,
+            "receivableDays": 47
+          },
+          {
+            "fy": "FY22",
+            "revenue": 11010000000,
+            "netMargin": 7.72,
+            "roce": 23,
+            "receivableDays": 40
+          },
+          {
+            "fy": "FY23",
+            "revenue": 11800000000,
+            "netMargin": 3.81,
+            "roce": 9,
+            "receivableDays": 44
+          },
+          {
+            "fy": "FY24",
+            "revenue": 13780000000,
+            "netMargin": 1.31,
+            "roce": 3,
+            "receivableDays": 44
+          },
+          {
+            "fy": "FY25",
+            "revenue": 20200000000,
+            "netMargin": 1.24,
+            "roce": 6,
+            "receivableDays": 33
+          },
+          {
+            "fy": "FY26",
+            "revenue": 23120000000,
+            "netMargin": 4.63,
+            "roce": 19,
+            "receivableDays": 32
+          }
+        ]
       },
       {
         "name": "Sanstar Ltd",
@@ -309,7 +425,58 @@
           "asOf": "Mar 2026",
           "basis": "standalone",
           "date": "2026-10-20"
-        }
+        },
+        "series": [
+          {
+            "fy": "FY20",
+            "revenue": 2610000000,
+            "netMargin": -0.38,
+            "roce": null,
+            "receivableDays": 44
+          },
+          {
+            "fy": "FY21",
+            "revenue": 3170000000,
+            "netMargin": 4.42,
+            "roce": 17,
+            "receivableDays": 24
+          },
+          {
+            "fy": "FY22",
+            "revenue": 5040000000,
+            "netMargin": 3.17,
+            "roce": 18,
+            "receivableDays": 29
+          },
+          {
+            "fy": "FY23",
+            "revenue": 7600000000,
+            "netMargin": 5.39,
+            "roce": 33,
+            "receivableDays": 20
+          },
+          {
+            "fy": "FY24",
+            "revenue": 11100000000,
+            "netMargin": 6.04,
+            "roce": 34,
+            "receivableDays": 39
+          },
+          {
+            "fy": "FY25",
+            "revenue": 9570000000,
+            "netMargin": 4.6,
+            "roce": 12,
+            "receivableDays": 39
+          },
+          {
+            "fy": "FY26",
+            "revenue": 7850000000,
+            "netMargin": 4.33,
+            "roce": 6,
+            "receivableDays": 44
+          }
+        ]
       },
       {
         "name": "Roquette India Pvt Ltd",
@@ -1566,7 +1733,93 @@
           "asOf": "Mar 2026",
           "basis": "standalone",
           "date": "2026-10-20"
-        }
+        },
+        "series": [
+          {
+            "fy": "FY15",
+            "revenue": 2760000000,
+            "netMargin": 6.16,
+            "roce": 25,
+            "receivableDays": 59
+          },
+          {
+            "fy": "FY16",
+            "revenue": 2670000000,
+            "netMargin": 8.99,
+            "roce": 26,
+            "receivableDays": 75
+          },
+          {
+            "fy": "FY17",
+            "revenue": 3010000000,
+            "netMargin": 8.97,
+            "roce": 24,
+            "receivableDays": 74
+          },
+          {
+            "fy": "FY18",
+            "revenue": 3390000000,
+            "netMargin": 9.44,
+            "roce": 23,
+            "receivableDays": 89
+          },
+          {
+            "fy": "FY19",
+            "revenue": 3940000000,
+            "netMargin": 6.09,
+            "roce": 21,
+            "receivableDays": 62
+          },
+          {
+            "fy": "FY20",
+            "revenue": 4370000000,
+            "netMargin": 8.7,
+            "roce": 21,
+            "receivableDays": 48
+          },
+          {
+            "fy": "FY21",
+            "revenue": 4790000000,
+            "netMargin": 10.02,
+            "roce": 22,
+            "receivableDays": 69
+          },
+          {
+            "fy": "FY22",
+            "revenue": 6310000000,
+            "netMargin": 10.14,
+            "roce": 22,
+            "receivableDays": 83
+          },
+          {
+            "fy": "FY23",
+            "revenue": 7300000000,
+            "netMargin": 10.96,
+            "roce": 19,
+            "receivableDays": 62
+          },
+          {
+            "fy": "FY24",
+            "revenue": 6990000000,
+            "netMargin": 9.59,
+            "roce": 14,
+            "receivableDays": 71
+          },
+          {
+            "fy": "FY25",
+            "revenue": 7810000000,
+            "netMargin": 7.81,
+            "roce": 12,
+            "receivableDays": 63
+          },
+          {
+            "fy": "FY26",
+            "revenue": 8870000000,
+            "netMargin": 8.23,
+            "roce": 13,
+            "receivableDays": 72
+          }
+        ]
       },
       {
         "name": "Hitech Corporation Ltd",
@@ -1669,7 +1922,86 @@
           "asOf": "Mar 2026",
           "basis": "consolidated",
           "date": "2026-10-20"
-        }
+        },
+        "series": [
+          {
+            "fy": "FY06",
+            "revenue": 830000000,
+            "netMargin": 6.02,
+            "roce": null,
+            "receivableDays": 62
+          },
+          {
+            "fy": "FY07",
+            "revenue": 1550000000,
+            "netMargin": 5.16,
+            "roce": 23,
+            "receivableDays": 60
+          },
+          {
+            "fy": "FY08",
+            "revenue": 1790000000,
+            "netMargin": 6.15,
+            "roce": 22,
+            "receivableDays": 66
+          },
+          {
+            "fy": "FY09",
+            "revenue": 2160000000,
+            "netMargin": 5.09,
+            "roce": 23,
+            "receivableDays": 55
+          },
+          {
+            "fy": "FY10",
+            "revenue": 2620000000,
+            "netMargin": 6.11,
+            "roce": 23,
+            "receivableDays": 64
+          },
+          {
+            "fy": "FY11",
+            "revenue": 3450000000,
+            "netMargin": 4.64,
+            "roce": 19,
+            "receivableDays": 61
+          },
+          {
+            "fy": "FY12",
+            "revenue": 3860000000,
+            "netMargin": 2.59,
+            "roce": 14,
+            "receivableDays": 59
+          },
+          {
+            "fy": "FY13",
+            "revenue": 4390000000,
+            "netMargin": 2.28,
+            "roce": 13,
+            "receivableDays": 51
+          },
+          {
+            "fy": "FY14",
+            "revenue": 4600000000,
+            "netMargin": 1.74,
+            "roce": 14,
+            "receivableDays": 58
+          },
+          {
+            "fy": "FY25",
+            "revenue": 5610000000,
+            "netMargin": 1.6,
+            "roce": null,
+            "receivableDays": 35
+          },
+          {
+            "fy": "FY26",
+            "revenue": 6400000000,
+            "netMargin": 2.34,
+            "roce": 10,
+            "receivableDays": 41
+          }
+        ]
       },
       {
         "name": "Pearl Polymers Ltd",
@@ -1772,7 +2104,93 @@
           "asOf": "Mar 2026",
           "basis": "standalone",
           "date": "2026-10-20"
-        }
+        },
+        "series": [
+          {
+            "fy": "FY15",
+            "revenue": 1982000000,
+            "netMargin": -1.27,
+            "roce": 5.04,
+            "receivableDays": 75.14
+          },
+          {
+            "fy": "FY16",
+            "revenue": 1765300000,
+            "netMargin": 0.26,
+            "roce": 6.24,
+            "receivableDays": 76.3
+          },
+          {
+            "fy": "FY17",
+            "revenue": 1739600000,
+            "netMargin": -0.37,
+            "roce": 5.55,
+            "receivableDays": 90.47
+          },
+          {
+            "fy": "FY18",
+            "revenue": 1809800000,
+            "netMargin": -1.45,
+            "roce": 0.11,
+            "receivableDays": 96.42
+          },
+          {
+            "fy": "FY19",
+            "revenue": 1786800000,
+            "netMargin": -2.72,
+            "roce": -2.66,
+            "receivableDays": 88.88
+          },
+          {
+            "fy": "FY20",
+            "revenue": 1394400000,
+            "netMargin": -8,
+            "roce": -14.3,
+            "receivableDays": 79.63
+          },
+          {
+            "fy": "FY21",
+            "revenue": 1115800000,
+            "netMargin": -9.48,
+            "roce": -14.6,
+            "receivableDays": 86.88
+          },
+          {
+            "fy": "FY22",
+            "revenue": 139600000,
+            "netMargin": 156.45,
+            "roce": 54.74,
+            "receivableDays": 58.57
+          },
+          {
+            "fy": "FY23",
+            "revenue": 171200000,
+            "netMargin": -47.72,
+            "roce": -17.43,
+            "receivableDays": 43.71
+          },
+          {
+            "fy": "FY24",
+            "revenue": 164000000,
+            "netMargin": 3.96,
+            "roce": -2.6,
+            "receivableDays": 38.95
+          },
+          {
+            "fy": "FY25",
+            "revenue": 219700000,
+            "netMargin": -23.3,
+            "roce": -15.93,
+            "receivableDays": 28.58
+          },
+          {
+            "fy": "FY26",
+            "revenue": 197000000,
+            "netMargin": -24.21,
+            "roce": -17.25,
+            "receivableDays": 35.57
+          }
+        ]
       },
       {
         "name": "Manjushree Technopack Ltd",
@@ -3078,7 +3496,93 @@
           "asOf": "Dec 2025",
           "basis": "standalone",
           "date": "2026-10-20"
-        }
+        },
+        "series": [
+          {
+            "fy": "FY14",
+            "revenue": 11350000000,
+            "netMargin": 5.73,
+            "roce": 15,
+            "receivableDays": 70
+          },
+          {
+            "fy": "FY15",
+            "revenue": 11510000000,
+            "netMargin": 4.26,
+            "roce": 12,
+            "receivableDays": 69
+          },
+          {
+            "fy": "FY16",
+            "revenue": 21810000000,
+            "netMargin": 3.76,
+            "roce": 18,
+            "receivableDays": 77
+          },
+          {
+            "fy": "FY17",
+            "revenue": 21310000000,
+            "netMargin": 3,
+            "roce": 16,
+            "receivableDays": 90
+          },
+          {
+            "fy": "FY18",
+            "revenue": 23690000000,
+            "netMargin": 1.48,
+            "roce": 15,
+            "receivableDays": 88
+          },
+          {
+            "fy": "FY19",
+            "revenue": 25990000000,
+            "netMargin": 6.54,
+            "roce": 22,
+            "receivableDays": 87
+          },
+          {
+            "fy": "FY20",
+            "revenue": 24630000000,
+            "netMargin": 3.9,
+            "roce": 14,
+            "receivableDays": 79
+          },
+          {
+            "fy": "FY21",
+            "revenue": 26250000000,
+            "netMargin": -0.88,
+            "roce": 2,
+            "receivableDays": 88
+          },
+          {
+            "fy": "FY22",
+            "revenue": 29830000000,
+            "netMargin": 1.68,
+            "roce": 7,
+            "receivableDays": 81
+          },
+          {
+            "fy": "FY23",
+            "revenue": 25490000000,
+            "netMargin": 16.08,
+            "roce": 12,
+            "receivableDays": 79
+          },
+          {
+            "fy": "FY24",
+            "revenue": 25210000000,
+            "netMargin": 3.49,
+            "roce": 7,
+            "receivableDays": 83
+          },
+          {
+            "fy": "FY25",
+            "revenue": 24690000000,
+            "netMargin": 4.78,
+            "roce": 12,
+            "receivableDays": 82
+          }
+        ]
       },
       {
         "name": "UFLEX Ltd",
@@ -3181,7 +3685,93 @@
           "asOf": "Mar 2026",
           "basis": "consolidated",
           "date": "2026-10-20"
-        }
+        },
+        "series": [
+          {
+            "fy": "FY15",
+            "revenue": 61300000000,
+            "netMargin": 4.18,
+            "roce": 9,
+            "receivableDays": 90
+          },
+          {
+            "fy": "FY16",
+            "revenue": 63660000000,
+            "netMargin": 4.98,
+            "roce": 10,
+            "receivableDays": 85
+          },
+          {
+            "fy": "FY17",
+            "revenue": 65050000000,
+            "netMargin": 5.4,
+            "roce": 10,
+            "receivableDays": 93
+          },
+          {
+            "fy": "FY18",
+            "revenue": 68020000000,
+            "netMargin": 4.59,
+            "roce": 9,
+            "receivableDays": 104
+          },
+          {
+            "fy": "FY19",
+            "revenue": 79570000000,
+            "netMargin": 3.96,
+            "roce": 10,
+            "receivableDays": 94
+          },
+          {
+            "fy": "FY20",
+            "revenue": 74050000000,
+            "netMargin": 5.01,
+            "roce": 10,
+            "receivableDays": 96
+          },
+          {
+            "fy": "FY21",
+            "revenue": 88890000000,
+            "netMargin": 9.49,
+            "roce": 15,
+            "receivableDays": 99
+          },
+          {
+            "fy": "FY22",
+            "revenue": 131270000000,
+            "netMargin": 8.37,
+            "roce": 17,
+            "receivableDays": 98
+          },
+          {
+            "fy": "FY23",
+            "revenue": 146630000000,
+            "netMargin": 3.28,
+            "roce": 10,
+            "receivableDays": 80
+          },
+          {
+            "fy": "FY24",
+            "revenue": 133640000000,
+            "netMargin": -5.17,
+            "roce": 6,
+            "receivableDays": 94
+          },
+          {
+            "fy": "FY25",
+            "revenue": 150360000000,
+            "netMargin": 0.94,
+            "roce": 8,
+            "receivableDays": 91
+          },
+          {
+            "fy": "FY26",
+            "revenue": 154010000000,
+            "netMargin": 2.06,
+            "roce": 7,
+            "receivableDays": 92
+          }
+        ]
       },
       {
         "name": "Ester Industries Ltd",
@@ -3284,7 +3874,93 @@
           "asOf": "Mar 2026",
           "basis": "consolidated",
           "date": "2026-10-20"
-        }
+        },
+        "series": [
+          {
+            "fy": "FY11",
+            "revenue": 6710000000,
+            "netMargin": 19.23,
+            "roce": 56,
+            "receivableDays": 66
+          },
+          {
+            "fy": "FY12",
+            "revenue": 6980000000,
+            "netMargin": -2.01,
+            "roce": 3,
+            "receivableDays": 44
+          },
+          {
+            "fy": "FY13",
+            "revenue": 8840000000,
+            "netMargin": -0.57,
+            "roce": 3,
+            "receivableDays": 45
+          },
+          {
+            "fy": "FY14",
+            "revenue": 9280000000,
+            "netMargin": 0.86,
+            "roce": 8,
+            "receivableDays": 49
+          },
+          {
+            "fy": "FY15",
+            "revenue": 8950000000,
+            "netMargin": 0.45,
+            "roce": 7,
+            "receivableDays": 48
+          },
+          {
+            "fy": "FY16",
+            "revenue": 7680000000,
+            "netMargin": 0.65,
+            "roce": 7,
+            "receivableDays": 53
+          },
+          {
+            "fy": "FY21",
+            "revenue": 9920000000,
+            "netMargin": 13.81,
+            "roce": null,
+            "receivableDays": 56
+          },
+          {
+            "fy": "FY22",
+            "revenue": 11100000000,
+            "netMargin": 12.34,
+            "roce": 14,
+            "receivableDays": 64
+          },
+          {
+            "fy": "FY23",
+            "revenue": 11140000000,
+            "netMargin": 12.3,
+            "roce": 4,
+            "receivableDays": 50
+          },
+          {
+            "fy": "FY24",
+            "revenue": 10630000000,
+            "netMargin": -11.38,
+            "roce": -5,
+            "receivableDays": 51
+          },
+          {
+            "fy": "FY25",
+            "revenue": 12820000000,
+            "netMargin": 1.09,
+            "roce": 6,
+            "receivableDays": 48
+          },
+          {
+            "fy": "FY26",
+            "revenue": 13750000000,
+            "netMargin": -1.96,
+            "roce": 3,
+            "receivableDays": 49
+          }
+        ]
       },
       {
         "name": "Cosmo First Ltd",
@@ -3387,7 +4063,93 @@
           "asOf": "Mar 2026",
           "basis": "consolidated",
           "date": "2026-10-20"
-        }
+        },
+        "series": [
+          {
+            "fy": "FY15",
+            "revenue": 16470000000,
+            "netMargin": 1.7,
+            "roce": 9,
+            "receivableDays": 27
+          },
+          {
+            "fy": "FY16",
+            "revenue": 16210000000,
+            "netMargin": 5.92,
+            "roce": 18,
+            "receivableDays": 26
+          },
+          {
+            "fy": "FY17",
+            "revenue": 15870000000,
+            "netMargin": 5.42,
+            "roce": 12,
+            "receivableDays": 37
+          },
+          {
+            "fy": "FY18",
+            "revenue": 18470000000,
+            "netMargin": 3.47,
+            "roce": 9,
+            "receivableDays": 38
+          },
+          {
+            "fy": "FY19",
+            "revenue": 21570000000,
+            "netMargin": 2.83,
+            "roce": 8,
+            "receivableDays": 35
+          },
+          {
+            "fy": "FY20",
+            "revenue": 22040000000,
+            "netMargin": 5.13,
+            "roce": 14,
+            "receivableDays": 32
+          },
+          {
+            "fy": "FY21",
+            "revenue": 22850000000,
+            "netMargin": 10.37,
+            "roce": 23,
+            "receivableDays": 30
+          },
+          {
+            "fy": "FY22",
+            "revenue": 30380000000,
+            "netMargin": 13.07,
+            "roce": 31,
+            "receivableDays": 26
+          },
+          {
+            "fy": "FY23",
+            "revenue": 30650000000,
+            "netMargin": 7.96,
+            "roce": 17,
+            "receivableDays": 24
+          },
+          {
+            "fy": "FY24",
+            "revenue": 25870000000,
+            "netMargin": 2.4,
+            "roce": 7,
+            "receivableDays": 37
+          },
+          {
+            "fy": "FY25",
+            "revenue": 28950000000,
+            "netMargin": 4.59,
+            "roce": 10,
+            "receivableDays": 39
+          },
+          {
+            "fy": "FY26",
+            "revenue": 36390000000,
+            "netMargin": 4.29,
+            "roce": 11,
+            "receivableDays": 40
+          }
+        ]
       },
       {
         "name": "Polyplex Corporation Ltd",
@@ -3490,7 +4252,93 @@
           "asOf": "Mar 2026",
           "basis": "consolidated",
           "date": "2026-10-20"
-        }
+        },
+        "series": [
+          {
+            "fy": "FY15",
+            "revenue": 32040000000,
+            "netMargin": 2.43,
+            "roce": 4,
+            "receivableDays": 46
+          },
+          {
+            "fy": "FY16",
+            "revenue": 32020000000,
+            "netMargin": 0.5,
+            "roce": 4,
+            "receivableDays": 49
+          },
+          {
+            "fy": "FY17",
+            "revenue": 32010000000,
+            "netMargin": 11.28,
+            "roce": 9,
+            "receivableDays": 53
+          },
+          {
+            "fy": "FY18",
+            "revenue": 35720000000,
+            "netMargin": 7.95,
+            "roce": 8,
+            "receivableDays": 56
+          },
+          {
+            "fy": "FY19",
+            "revenue": 45700000000,
+            "netMargin": 12.78,
+            "roce": 15,
+            "receivableDays": 48
+          },
+          {
+            "fy": "FY20",
+            "revenue": 44870000000,
+            "netMargin": 11.01,
+            "roce": 12,
+            "receivableDays": 55
+          },
+          {
+            "fy": "FY21",
+            "revenue": 49180000000,
+            "netMargin": 17.53,
+            "roce": 19,
+            "receivableDays": 50
+          },
+          {
+            "fy": "FY22",
+            "revenue": 66240000000,
+            "netMargin": 14.57,
+            "roce": 20,
+            "receivableDays": 61
+          },
+          {
+            "fy": "FY23",
+            "revenue": 76520000000,
+            "netMargin": 8.05,
+            "roce": 12,
+            "receivableDays": 44
+          },
+          {
+            "fy": "FY24",
+            "revenue": 63070000000,
+            "netMargin": 1.36,
+            "roce": 2,
+            "receivableDays": 56
+          },
+          {
+            "fy": "FY25",
+            "revenue": 68850000000,
+            "netMargin": 5.2,
+            "roce": 7,
+            "receivableDays": 54
+          },
+          {
+            "fy": "FY26",
+            "revenue": 70860000000,
+            "netMargin": 0.58,
+            "roce": 1,
+            "receivableDays": 58
+          }
+        ]
       },
       {
         "name": "Jindal Poly Films Ltd",
@@ -3593,7 +4441,93 @@
           "asOf": "Mar 2026",
           "basis": "consolidated",
           "date": "2026-10-20"
-        }
+        },
+        "series": [
+          {
+            "fy": "FY15",
+            "revenue": 75570000000,
+            "netMargin": 2.41,
+            "roce": 11,
+            "receivableDays": 34
+          },
+          {
+            "fy": "FY16",
+            "revenue": 72250000000,
+            "netMargin": 6.31,
+            "roce": 16,
+            "receivableDays": 37
+          },
+          {
+            "fy": "FY17",
+            "revenue": 70050000000,
+            "netMargin": 3.84,
+            "roce": 9,
+            "receivableDays": 35
+          },
+          {
+            "fy": "FY18",
+            "revenue": 64480000000,
+            "netMargin": 2.36,
+            "roce": 10,
+            "receivableDays": 9
+          },
+          {
+            "fy": "FY19",
+            "revenue": 36230000000,
+            "netMargin": -11.29,
+            "roce": 12,
+            "receivableDays": 15
+          },
+          {
+            "fy": "FY20",
+            "revenue": 35460000000,
+            "netMargin": 13.79,
+            "roce": 18,
+            "receivableDays": 13
+          },
+          {
+            "fy": "FY21",
+            "revenue": 40820000000,
+            "netMargin": 19.38,
+            "roce": 32,
+            "receivableDays": 9
+          },
+          {
+            "fy": "FY22",
+            "revenue": 58780000000,
+            "netMargin": 20.35,
+            "roce": 37,
+            "receivableDays": 13
+          },
+          {
+            "fy": "FY23",
+            "revenue": 46970000000,
+            "netMargin": 6.79,
+            "roce": 12,
+            "receivableDays": 19
+          },
+          {
+            "fy": "FY24",
+            "revenue": 39260000000,
+            "netMargin": 1.83,
+            "roce": 3,
+            "receivableDays": 33
+          },
+          {
+            "fy": "FY25",
+            "revenue": 53350000000,
+            "netMargin": 2.06,
+            "roce": 5,
+            "receivableDays": 28
+          },
+          {
+            "fy": "FY26",
+            "revenue": 28990000000,
+            "netMargin": -36.63,
+            "roce": -2,
+            "receivableDays": 29
+          }
+        ]
       },
       {
         "name": "Constantia Parikh Packaging Pvt Ltd",
