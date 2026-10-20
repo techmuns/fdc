@@ -16,7 +16,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { httpText, todayISO } from '../lib/http.mjs';
+import { httpText, todayISO, round } from '../lib/http.mjs';
 import { computeHealth } from './health.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -94,6 +94,32 @@ function periodKey(asOf) {
   return m ? parseInt(m[2], 10) * 100 + (MON[m[1].toLowerCase()] || 0) : 0;
 }
 
+/** Multi-year series from Screener's P&L + ratios tables → [{fy, revenue, netMargin, roce, receivableDays}].
+ *  Revenue is ₹ (Cr×1e7 to match the app's convention). TTM column is skipped. */
+function parseSeries(html) {
+  const sec = (id) => (html.match(new RegExp(`id="${id}"[\\s\\S]*?</section>`)) || [''])[0];
+  const yearsOf = (s) => { const th = (s.match(/<thead[\s\S]*?<\/thead>/) || [''])[0]; return (th.match(/<th[^>]*>[\s\S]*?<\/th>/g) || []).map(stripTags).filter((t) => /\b(19|20)\d{2}\b/.test(t) || /TTM/i.test(t)); };
+  const rowsOf = (s) => { const o = {}; for (const tr of s.match(/<tr[^>]*>[\s\S]*?<\/tr>/g) || []) { const c = (tr.match(/<td[^>]*>[\s\S]*?<\/td>/g) || []).map(stripTags); if (!c.length) continue; const lbl = c[0].replace(/[+–-]\s*$/, '').trim(); if (lbl && !(lbl in o)) o[lbl] = c.slice(1).map(toNum); } return o; };
+  const find = (rows, label) => { const k = Object.keys(rows).find((kk) => kk.toLowerCase().startsWith(label.toLowerCase())); return k ? rows[k] : null; };
+  const yearKey = (h) => { const m = String(h).match(/(20\d{2}|19\d{2})/); return m ? m[1] : String(h); };
+  const fyLabel = (h) => { const m = String(h).match(/(20\d{2}|19\d{2})/); return m ? `FY${m[1].slice(2)}` : String(h); };
+  const pl = sec('profit-loss'), rt = sec('ratios');
+  const ply = yearsOf(pl), plr = rowsOf(pl), rtr = rowsOf(rt), rty = yearsOf(rt);
+  const sales = find(plr, 'Sales') || find(plr, 'Revenue'), np = find(plr, 'Net Profit');
+  if (!sales || !np || !ply.length) return null;
+  const roce = find(rtr, 'ROCE'), dd = find(rtr, 'Debtor Days');
+  const rMap = {}, dMap = {};
+  rty.forEach((h, i) => { const y = yearKey(h); if (roce && roce[i] != null) rMap[y] = roce[i]; if (dd && dd[i] != null) dMap[y] = dd[i]; });
+  const out = [];
+  ply.forEach((h, i) => {
+    if (/TTM/i.test(h)) return;
+    const s = sales[i], p = np[i];
+    if (s == null) return;
+    out.push({ fy: fyLabel(h), revenue: round(s * 1e7), netMargin: s ? round((p / s) * 100, 2) : null, roce: rMap[yearKey(h)] ?? null, receivableDays: dMap[yearKey(h)] ?? null });
+  });
+  return out.length >= 2 ? out : null;
+}
+
 /** Try every slug/variant, parse each, and keep the FRESHEST page with a ratios table. */
 async function fetchScreener(slugs) {
   let best = null;
@@ -114,6 +140,7 @@ async function fetchScreener(slugs) {
         payableDays: latestOf(rows.payableDays, headers).value,
         cashConversionCycle: latestOf(rows.cashConversionCycle, headers).value,
         roce: tr.roce, roe: tr.roe,
+        series: parseSeries(html),
       };
       if (!best || cand.key > best.key) best = cand;
     }
@@ -142,9 +169,10 @@ async function enrichVendors(log) {
     if (!s) { log.push(`  ✗ vendor ${key} — Screener ratios not found (${slugs.join('/')})`); continue; }
     applyMetrics(rec.metrics, s);
     rec.creditDaysSource = srcStamp(s);
+    if (s.series) rec.series = s.series;
     const h = computeHealth(rec.metrics, rec.ratingGrade || null);
     if (h) rec.healthScore = h;
-    log.push(`  ✓ vendor ${key} — ${fmt(s)} → health ${h ? `${h.value}/100 (${h.grade})` : '—'}`);
+    log.push(`  ✓ vendor ${key} — ${fmt(s)}${s.series ? ` · ${s.series.length}y series` : ''} → health ${h ? `${h.value}/100 (${h.grade})` : '—'}`);
   }
   doc.generatedAt = new Date().toISOString();
   writeFileSync(VENDOR_FILE, JSON.stringify(doc, null, 2));
@@ -161,9 +189,10 @@ async function enrichAlts(log) {
       if (!s) { log.push(`  ✗ alt ${rec.name} — Screener ratios not found (${slugs.join('/')})`); continue; }
       applyMetrics(rec.metrics, s);
       rec.creditDaysSource = srcStamp(s);
+      if (s.series) rec.series = s.series;
       const h = computeHealth(rec.metrics, rec.ratingGrade || null);
       if (h) rec.healthScore = h;
-      log.push(`  ✓ alt ${mat}/${rec.name} — ${fmt(s)} → health ${h ? `${h.value}/100 (${h.grade})` : '—'}`);
+      log.push(`  ✓ alt ${mat}/${rec.name} — ${fmt(s)}${s.series ? ` · ${s.series.length}y series` : ''} → health ${h ? `${h.value}/100 (${h.grade})` : '—'}`);
     }
   }
   doc.generatedAt = new Date().toISOString();

@@ -19,6 +19,7 @@ import { vendorShort, crore, pct, monthLabel } from '../lib/format';
 const MAT_NAME: Record<string, string> = { dextrose: 'Dextrose', packaging: 'Rigid packaging', laminates: 'Laminates' };
 const priceFmt = (n: number | null | undefined, unit = 'kg') => (n == null ? '—' : `₹${n >= 100 ? Math.round(n) : n >= 10 ? n.toFixed(1) : n.toFixed(2)}/${unit === 'NOS' ? 'pc' : unit.toLowerCase()}`);
 const fmtSave = (n: number) => (n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : n >= 1e5 ? `₹${(n / 1e5).toFixed(1)} L` : `₹${Math.round(n).toLocaleString('en-IN')}`);
+const qtyFmt = (n: number, unit: string) => `${Math.abs(n) >= 1e5 ? (n / 1e5).toFixed(1) + 'L' : Math.round(n).toLocaleString('en-IN')} ${unit.toLowerCase() === 'nos' ? 'pc' : unit.toLowerCase()}`;
 
 // map our materials to the backup-database material keys
 const DB_MATS: Record<string, string[]> = { dextrose: ['dextrose'], packaging: ['pet-resin', 'pet-bottles', 'caps'], laminates: ['bopet'] };
@@ -451,7 +452,85 @@ function priceSeriesFor(ledger: LedgerRow[], mat: string, vk: string) {
 }
 const termShort = (cat: string, text: string | null) => (cat === 'advance' ? 'Advance' : cat === 'immediate' ? 'On receipt' : cat === 'net' ? (() => { const m = (text || '').match(/(\d+)\s*day/i); return m ? `${m[1]}-day credit` : 'Credit'; })() : '—');
 
+/** Per-vendor monthly VOLUME for one material (net qty), from the ledger. */
+function qtySeriesFor(ledger: LedgerRow[], mat: string, vk: string) {
+  const bm = new Map<string, number>();
+  for (const r of ledger) {
+    if (r.material !== mat || r.vendorKey !== vk) continue;
+    const mo = r.date.slice(0, 7);
+    bm.set(mo, (bm.get(mo) ?? 0) + r.qty);
+  }
+  return [...bm.entries()].sort((a, b) => (a[0] < b[0] ? -1 : 1)).map(([mo, q]) => ({ label: monthLabel(mo), value: Math.max(0, q) })).filter((p) => p.value > 0);
+}
+
+/** One small labelled trend tile (sparkline + latest value + first→last). */
+function MiniTrend({ label, series, fmt, goodWhenUp }: { label: string; series: { label: string; value: number }[]; fmt: (n: number) => string; goodWhenUp?: boolean }) {
+  if (!series.length) return null;
+  if (series.length < 2) return (
+    <div className="rounded-xl border border-black/[0.06] bg-white p-2.5">
+      <div className="text-[10px] font-medium uppercase tracking-wide text-fdc-grey">{label}</div>
+      <div className="tnum mt-0.5 text-[14px] font-bold text-fdc-ink">{fmt(series[0].value)}</div>
+      <div className="mt-0.5 text-[10px] text-fdc-grey">latest only</div>
+    </div>
+  );
+  const first = series[0].value, last = series[series.length - 1].value;
+  const dirGood = goodWhenUp == null ? null : (last - first > 0) === goodWhenUp;
+  const spark = dirGood == null ? FDC.blue : dirGood ? FDC.green : FDC.red;
+  return (
+    <div className="rounded-xl border border-black/[0.06] bg-white p-2.5">
+      <div className="text-[10px] font-medium uppercase tracking-wide text-fdc-grey">{label}</div>
+      <div className="tnum mt-0.5 text-[14px] font-bold text-fdc-ink">{fmt(last)}</div>
+      <div className="mt-1 h-8"><Sparkline points={series} color={spark} height={32} format={fmt} /></div>
+      <div className="mt-0.5 text-[10px] leading-tight text-fdc-grey">{fmt(first)} → {fmt(last)} · {series.length} pts</div>
+    </div>
+  );
+}
+
+/** Inline trend deep-dive for one supplier inside the Compare view. */
+function CompareTrendPanel({ data, v, mat, vendorKey, unit, onOpenFull }: { data: AppData; v: ValueData; mat: MaterialKey; vendorKey: string; unit: string; onOpenFull: (k: string) => void }) {
+  const vv = v.vendors[vendorKey];
+  if (!vv) return null;
+  const fin = data.financials?.vendors[vendorKey] ?? null;
+  const probe = fin?.probe ?? null;
+  const priceS = priceSeriesFor(v.ledger, mat, vendorKey);
+  const qtyS = qtySeriesFor(v.ledger, mat, vendorKey);
+  const fs = [...(probe?.series ?? fin?.series ?? [])];
+  const rev = fs.filter((y) => y.revenue != null).map((y) => ({ label: (y.fy || y.year) as string, value: y.revenue as number }));
+  const mar = fs.filter((y) => y.netMargin != null).map((y) => ({ label: (y.fy || y.year) as string, value: y.netMargin as number }));
+  const roce = fs.filter((y) => y.roce != null).map((y) => ({ label: (y.fy || y.year) as string, value: y.roce as number }));
+  const recv = fs.filter((y) => y.receivableDays != null).map((y) => ({ label: (y.fy || y.year) as string, value: Math.round(y.receivableDays as number) }));
+  const hasFin = rev.length >= 2 || mar.length >= 2;
+  return (
+    <div className="mx-4 mb-3 rounded-xl border border-fdc-green/15 bg-fdc-green/[0.04] p-3">
+      <div className="mb-2 flex items-center justify-between gap-2">
+        <h4 className="flex items-center gap-1.5 text-[13px] font-bold text-fdc-ink"><TrendingUp size={14} className="text-fdc-green" /> Trends — {vendorShort(vv.name)}</h4>
+        <button onClick={() => onOpenFull(vendorKey)} className="inline-flex items-center gap-1 rounded-lg border border-fdc-green/30 bg-fdc-green/[0.06] px-2 py-1 text-[11px] font-semibold text-fdc-green transition hover:bg-fdc-green/[0.12] focus-ring"><Maximize2 size={12} /> Open supplier</button>
+      </div>
+      <div className="grid gap-2 sm:grid-cols-3">
+        <MiniTrend label="Price you paid" series={priceS} fmt={(n) => priceFmt(n, unit)} goodWhenUp={false} />
+        <MiniTrend label="Volume you bought" series={qtyS} fmt={(n) => qtyFmt(n, unit)} />
+        {hasFin ? (
+          <>
+            <MiniTrend label="Their revenue" series={rev} fmt={(n) => crore(n)} goodWhenUp />
+            <MiniTrend label="Profit margin" series={mar} fmt={(n) => pct(n)} goodWhenUp />
+            <MiniTrend label="Return on capital" series={roce} fmt={(n) => pct(n)} goodWhenUp />
+            <MiniTrend label="They get paid in" series={recv} fmt={(n) => `${n}d`} goodWhenUp={false} />
+          </>
+        ) : (
+          <div className="grid place-items-center rounded-xl border border-dashed border-black/15 bg-white px-3 py-4 text-center text-[11px] leading-snug text-fdc-grey sm:col-span-1">
+            Financials: latest year only for this listed supplier — no free multi-year history. See “Full details”.
+          </div>
+        )}
+      </div>
+      {mar.length >= 3 && mar[mar.length - 1].value < mar[0].value - 2 && (
+        <p className="mt-2 text-[11.5px] leading-snug text-fdc-slate">Their profit margin slid from <b>{pct(mar[0].value)}</b> to <b>{pct(mar[mar.length - 1].value)}</b> over {mar.length} years — a hungrier supplier, and a number-backed reason to ask for a better price.</p>
+      )}
+    </div>
+  );
+}
+
 function VendorCompare({ data, v, mat, onSelect }: { data: AppData; v: ValueData; mat: MaterialKey; onSelect: (k: string) => void }) {
+  const [pick, setPick] = useState<string | null>(null);
   const M = v.materials[mat];
   // dextrose is one product (₹/kg, like-for-like) → real price comparison + trend.
   // packaging / laminates mix different items per vendor, so a blended ₹/unit isn't
@@ -467,7 +546,7 @@ function VendorCompare({ data, v, mat, onSelect }: { data: AppData; v: ValueData
     const ps = priceSeriesFor(v.ledger, mat, vk);
     const yoY = ps.length >= 2 && ps[0].value ? ((ps[ps.length - 1].value - ps[0].value) / ps[0].value) * 100 : null;
     const fr = vv?.freshnessByMaterial.find((f) => f.materialKey === mat) ?? null;
-    const ms = (fin?.probe?.series ?? []).filter((y) => y.netMargin != null).map((y) => ({ label: (y.fy || y.year) as string, value: y.netMargin as number }));
+    const ms = [...(fin?.probe?.series ?? fin?.series ?? [])].filter((y) => y.netMargin != null).map((y) => ({ label: (y.fy || y.year) as string, value: y.netMargin as number }));
     const a = agg.get(vk) ?? { pay: 0, save: 0 };
     return {
       vendorKey: vk, name: vv?.name ?? mv.vendor, color: vv?.color ?? mv.color,
@@ -486,13 +565,16 @@ function VendorCompare({ data, v, mat, onSelect }: { data: AppData; v: ValueData
   const cheapest = (!blended && sameUnit.length) ? sameUnit.reduce((x, y) => ((x.price as number) <= (y.price as number) ? x : y)) : null;
   const rising = blended ? [] : rows.filter((r) => r.priceYoY != null && r.priceYoY >= 5 && r.priceYoY <= 120).sort((x, y) => (y.priceYoY as number) - (x.priceYoY as number));
   const shrinking = rows.filter((r) => r.marginSeries.length >= 3 && r.marginSeries[r.marginSeries.length - 1].value < r.marginSeries[0].value - 1);
+  const picked = pick && rows.some((r) => r.vendorKey === pick) ? pick : (rows[0]?.vendorKey ?? null);
+  const pickedUnit = rows.find((r) => r.vendorKey === picked)?.unit ?? (mdl?.primaryUnit ?? '');
 
   const cols: Column<CmpRow>[] = [
     { key: 'name', header: 'Supplier', sortable: true, sortValue: (r) => vendorShort(r.name), render: (r) => (
-      <button onClick={() => onSelect(r.vendorKey)} className="flex min-w-0 items-center gap-2 text-left focus-ring">
+      <span className="flex min-w-0 items-center gap-2">
         <span className="h-2.5 w-2.5 shrink-0 rounded-sm" style={{ background: r.color }} />
-        <span className="truncate font-semibold text-fdc-slate underline-offset-2 hover:underline">{vendorShort(r.name)}</span>
-      </button>
+        <span className={`truncate text-fdc-slate ${r.vendorKey === picked ? 'font-extrabold' : 'font-semibold'}`}>{vendorShort(r.name)}</span>
+        {r.vendorKey === picked && <ChevronDown size={13} className="shrink-0 text-fdc-green" />}
+      </span>
     ) },
     { key: 'price', header: blended ? 'Avg price' : 'Price & trend', align: 'right', sortable: true, sortValue: (r) => (r.offUnit ? 1e12 : (r.price ?? 1e11)), render: (r) => {
       if (r.price == null) return <span className="text-fdc-grey">mixed units</span>;
@@ -536,7 +618,7 @@ function VendorCompare({ data, v, mat, onSelect }: { data: AppData; v: ValueData
     <Card pad={false}>
       <div className="px-4 pt-3.5">
         <h3 className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><Scale size={15} className="text-fdc-green" /> Compare your {M.displayName.toLowerCase()} suppliers</h3>
-        <p className="text-[12px] leading-snug text-fdc-grey">{rows.length} suppliers side by side — price and profit shown <b>with their trend over the year</b>, not just today. Tap a name for the full detail.</p>
+        <p className="text-[12px] leading-snug text-fdc-grey">{rows.length} suppliers side by side — price and profit shown <b>with their trend over the year</b>, not just today. <b>Tap any row</b> to open its full trend deep-dive below (open by default for the first).</p>
       </div>
       {(cheapest || rising.length > 0 || shrinking.length > 0) && (
         <div className="mx-4 mt-2 space-y-0.5 rounded-xl border border-fdc-green/15 bg-fdc-green/[0.05] px-3 py-2 text-[12px] leading-snug text-fdc-slate">
@@ -546,9 +628,10 @@ function VendorCompare({ data, v, mat, onSelect }: { data: AppData; v: ValueData
         </div>
       )}
       <div className="px-2 py-2">
-        <Table columns={cols} rows={rows} getKey={(r) => r.vendorKey} initialSort={blended ? { key: 'save', dir: 'desc' } : { key: 'price', dir: 'asc' }} maxHeight={560} dense />
+        <Table columns={cols} rows={rows} getKey={(r) => r.vendorKey} initialSort={blended ? { key: 'save', dir: 'desc' } : { key: 'price', dir: 'asc' }} onRowClick={(r) => setPick(r.vendorKey)} activeKey={picked} maxHeight={560} dense />
         {blended && <p className="px-2 pt-1 text-[10.5px] leading-snug text-fdc-grey">Prices here are a rough average across each supplier's different items — <b>not a like-for-like price</b>. Compare the same item in “All the numbers behind it” (under Current). Profit trend, terms and freshness are exact.</p>}
       </div>
+      {picked && <CompareTrendPanel data={data} v={v} mat={mat} vendorKey={picked} unit={pickedUnit} onOpenFull={onSelect} />}
     </Card>
   );
 }
@@ -561,7 +644,7 @@ function VendorCard({ vendor: x, data, onFull, onSeeAlternatives }: { vendor: Va
 
   // negotiation-room read
   const netMargin = m?.netMargin ?? null;
-  const marginSeries = (probe?.series ?? []).filter((y) => y.netMargin != null).map((y) => ({ label: y.fy || y.year, value: y.netMargin as number }));
+  const marginSeries = [...(probe?.series ?? fin?.series ?? [])].filter((y) => y.netMargin != null).map((y) => ({ label: (y.fy || y.year) as string, value: y.netMargin as number }));
   const marginFalling = marginSeries.length >= 2 && marginSeries[marginSeries.length - 1].value < marginSeries[0].value;
   const revenue = m?.revenue ?? null;
   const shareOfRev = revenue && x.spend ? (x.spend / revenue) * 100 : null;

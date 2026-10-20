@@ -383,6 +383,11 @@ export interface Lever {
   detail: string;
   evidence: { label: string; value: string }[];
 }
+// Multi-year financial series — from Probe42 (private) or Screener.in (listed, via screener.mjs).
+export interface FinSeriesYear {
+  fy: string; year?: string;
+  revenue: number | null; netMargin: number | null; roce: number | null; receivableDays: number | null;
+}
 export interface VendorFin {
   vendorKey: string; name: string; type: 'listed' | 'private'; status: 'ok' | 'pending' | 'cin-unresolved' | 'unrated';
   companyName: string | null; symbol: string | null; exchange: string | null; cin: string | null;
@@ -395,6 +400,7 @@ export interface VendorFin {
   primarySource?: 'listed' | 'probe' | 'rating-doc' | 'none';
   probe?: ProbeProfile | null;
   fallbackSource?: { sourceName: string; sourceUrl: string; date: string | null; ratingLabel?: string | null } | null;
+  series?: FinSeriesYear[]; // multi-year series for listed vendors (Screener.in)
 }
 export interface VendorFinancials {
   generatedAt: string;
@@ -417,6 +423,7 @@ export interface AltVendor {
   probe?: ProbeProfile | null;
   ratingLabel?: string | null; ratingGrade?: string | null; asOfFy?: string | null; issuerNotCooperating?: boolean;
   levers?: Lever[];
+  series?: FinSeriesYear[]; // multi-year series for listed alternates (Screener.in)
 }
 export interface Alternatives {
   generatedAt: string;
