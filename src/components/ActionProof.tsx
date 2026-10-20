@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ArrowRight, TrendingDown, Coins, Clock, AlertTriangle, Scale, LineChart as LineChartIcon, GitCompareArrows } from 'lucide-react';
-import type { AppData, ValueAction, ValueSku } from '../types';
+import type { AppData, ValueAction, ValueSku, MaterialKey } from '../types';
 import type { Nav } from '../App';
 import { Badge } from './ui/Card';
 import { HBars, type HBarDatum } from './charts/Bars';
@@ -52,9 +52,9 @@ export function ActionProof({ action, data, onClose, onNavigate }: { action: Val
           {action.risk && (
             <p className="flex items-start gap-1.5 rounded-lg bg-fdc-orange/[0.08] px-3 py-2 text-[11.5px] leading-snug text-fdc-slate"><AlertTriangle size={13} className="mt-0.5 shrink-0 text-fdc-orange" /> {action.risk}</p>
           )}
-          <button onClick={() => { onClose(); onNavigate(action.proof.tab === 'vendors' ? { tab: 'vendors', vendorKey: action.proof.vendorKey } : { tab: 'material', material: action.proof.material as never, skuDesc: action.proof.skuDesc, vendorKey: action.proof.vendorKey }); }}
+          <button onClick={() => { onClose(); onNavigate(action.proof.tab === 'vendors' ? { tab: 'vendors', vendorKey: action.proof.vendorKey } : { tab: 'vendors', material: action.proof.material as MaterialKey | undefined, skuDesc: action.proof.skuDesc, vendorKey: action.proof.vendorKey }); }}
             className="flex w-full items-center justify-center gap-1.5 rounded-xl border border-fdc-green/30 bg-fdc-green/[0.06] px-3 py-2.5 text-[12.5px] font-semibold text-fdc-green transition hover:bg-fdc-green/[0.12] focus-ring">
-            Open the full detail{action.proof.tab === 'vendors' ? ' in Vendors' : ' in Material'} <ArrowRight size={14} />
+            Open the full detail in Suppliers <ArrowRight size={14} />
           </button>
         </div>
       </div>
