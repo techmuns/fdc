@@ -6,7 +6,6 @@ import { Tabs, type TabDef } from './components/ui/Tabs';
 import MoneyOverview from './tabs/MoneyOverview';
 import VendorsTab from './tabs/VendorsTab';
 import CreditTermsTab from './tabs/CreditTermsTab';
-import { dateLabel } from './lib/format';
 import type { MaterialKey } from './types';
 
 export type Nav =
@@ -47,8 +46,6 @@ export default function App() {
           )}
         </main>
       </div>
-
-      {state.status === 'ready' && <Footer generatedAt={state.data.meta.generatedAt} sources={state.data.meta.sources.map((s) => s.file)} />}
     </div>
   );
 }
@@ -76,15 +73,3 @@ function ErrorState({ message }: { message: string }) {
   );
 }
 
-function Footer({ generatedAt, sources }: { generatedAt: string; sources: string[] }) {
-  return (
-    <footer className="mx-auto max-w-[1240px] px-4 pb-8 pt-2 sm:px-6">
-      <div className="rounded-xl border border-black/[0.06] bg-white/60 px-4 py-3 text-[11px] leading-relaxed text-fdc-grey">
-        <span className="font-semibold text-fdc-slate">100% real data.</span> Every figure is computed live from FDC’s
-        own SAP exports — no estimates or placeholders. Sources:{' '}
-        <span className="font-medium">{sources.join(', ')}</span>. Data refreshed {dateLabel(generatedAt.slice(0, 10))}.
-        Prices use goods-receipt lines only; totals net off returns; units are never mixed; market lines are input references, never FDC’s price.
-      </div>
-    </footer>
-  );
-}

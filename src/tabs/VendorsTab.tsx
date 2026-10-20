@@ -4,7 +4,7 @@ import {
   Maximize2, BadgeCheck, Lock, CalendarClock, HandCoins, Info, CircleHelp, Layers, ChevronDown,
   FlaskConical, Lightbulb, ShieldCheck, Sparkles, AlertTriangle, Scale,
 } from 'lucide-react';
-import type { AppData, ValueVendor, ValueMaterial, ValueData, VendorFin, MaterialKey, FinMetrics, AltVendor, ResearchGrade, ResearchSupplier, ResearchLead } from '../types';
+import type { AppData, ValueVendor, ValueMaterial, ValueData, VendorFin, MaterialKey, FinMetrics, AltVendor, ResearchGrade, ResearchSupplier, ResearchLead, LedgerRow } from '../types';
 import type { Nav } from '../App';
 import { Card, Badge, Pill } from '../components/ui/Card';
 import { Dropdown, Segmented, type Option } from '../components/ui/Controls';
@@ -14,7 +14,7 @@ import VendorProfile, { type ProfileSubject } from '../components/VendorProfile'
 import { MaterialDetail } from './MaterialTab';
 import { MarketSuppliers } from './BackupSuppliersTab';
 import { FDC, MATERIAL_COLOR } from '../lib/brand';
-import { vendorShort, crore, pct } from '../lib/format';
+import { vendorShort, crore, pct, monthLabel } from '../lib/format';
 
 const MAT_NAME: Record<string, string> = { dextrose: 'Dextrose', packaging: 'Rigid packaging', laminates: 'Laminates' };
 const priceFmt = (n: number | null | undefined, unit = 'kg') => (n == null ? '—' : `₹${n >= 100 ? Math.round(n) : n >= 10 ? n.toFixed(1) : n.toFixed(2)}/${unit === 'NOS' ? 'pc' : unit.toLowerCase()}`);
@@ -129,7 +129,7 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
   const v = data.value;
   const [mat, setMat] = useState<MaterialKey>(nav.material ?? 'dextrose');
   const [sel, setSel] = useState<string | null>(nav.vendorKey ?? null);
-  const [view, setView] = useState<'current' | 'alternatives'>('current');
+  const [view, setView] = useState<'current' | 'alternatives' | 'compare'>('current');
   const [profile, setProfile] = useState<ProfileSubject | null>(null);
   useEffect(() => { if (nav.material) setMat(nav.material); }, [nav.material]);
   useEffect(() => { if (nav.vendorKey) { setSel(nav.vendorKey); setView('current'); } }, [nav.vendorKey]);
@@ -198,20 +198,21 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
         <Stat label="Vs market ask" value={data.marketAsks?.materials[mat] ? (data.marketAsks.materials[mat].tone === 'headroom' ? 'Room to push' : 'Fair') : '—'} tone={data.marketAsks?.materials[mat]?.tone === 'headroom' ? 'warn' : data.marketAsks?.materials[mat] ? 'good' : undefined} />
       </div>
 
-      {/* current suppliers  ⇄  alternative suppliers */}
+      {/* current  ·  alternatives  ·  compare */}
       <div className="flex flex-wrap items-center gap-2.5">
         <Segmented
           value={view}
           onChange={setView}
           options={[
-            { value: 'current', label: `Current suppliers (${rows.length})` },
-            { value: 'alternatives', label: `Alternative suppliers${altCount ? ` (${altCount})` : ''}` },
+            { value: 'current', label: 'Current' },
+            { value: 'alternatives', label: 'Alternatives' },
+            { value: 'compare', label: 'Compare' },
           ]}
         />
-        <span className="text-[11.5px] text-fdc-grey">{view === 'current' ? 'Who you buy from today.' : 'Other suppliers you could bring in — not FDC suppliers yet.'}</span>
+        <span className="text-[11.5px] text-fdc-grey">{view === 'current' ? `Who you buy from today (${rows.length}).` : view === 'alternatives' ? `Other suppliers you could bring in${altCount ? ` (${altCount})` : ''} — not FDC suppliers yet.` : 'Your current suppliers side by side, with price & margin trends.'}</span>
       </div>
 
-      {view === 'current' ? (
+      {view === 'current' && (
         <>
           {/* the lead table */}
           <Card pad={false}>
@@ -232,9 +233,9 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
             <MaterialDetail key={mat} data={data} mat={mat} skuDesc={nav.skuDesc} onNavigate={onNavigate} showMarketSuppliers={false} />
           </Collapsible>
         </>
-      ) : (
-        <AlternativesView data={data} mat={mat} onOpenAlt={(alt) => setProfile({ kind: 'alt', alt })} />
       )}
+      {view === 'alternatives' && <AlternativesView data={data} mat={mat} onOpenAlt={(alt) => setProfile({ kind: 'alt', alt })} />}
+      {view === 'compare' && <VendorCompare data={data} v={v} mat={mat} onSelect={(k) => { setSel(k); setView('current'); }} />}
 
       {profile && (
         <VendorProfile
@@ -426,6 +427,132 @@ function AlternativesTable({ alts, onOpen }: { alts: AltVendor[]; onOpen: (a: Al
   );
 }
 
+/* ============================ vendor comparison view ============================ */
+interface CmpRow {
+  vendorKey: string; name: string; color: string;
+  price: number | null; unit: string; priceSeries: { label: string; value: number }[]; priceYoY: number | null;
+  offUnit: boolean; cheapest: boolean;
+  pay: number; save: number;
+  margin: number | null; marginSeries: { label: string; value: number }[]; marginFalling: boolean;
+  term: string; termCat: string;
+  freshDays: number | null; freshGrade: 'fresh' | 'ok' | 'old' | null;
+}
+/** Per-vendor monthly price for one material, straight from the goods-receipt ledger
+ *  (weighted ₹ ÷ qty). Returns is excluded. This is each vendor's OWN price trend. */
+function priceSeriesFor(ledger: LedgerRow[], mat: string, vk: string) {
+  const bm = new Map<string, { amt: number; qty: number }>();
+  for (const r of ledger) {
+    if (r.material !== mat || r.vendorKey !== vk || r.isReturn || r.price == null || r.qty <= 0) continue;
+    const mo = r.date.slice(0, 7);
+    const e = bm.get(mo) ?? { amt: 0, qty: 0 };
+    e.amt += r.amt; e.qty += r.qty; bm.set(mo, e);
+  }
+  return [...bm.entries()].sort((a, b) => (a[0] < b[0] ? -1 : 1)).map(([mo, e]) => ({ label: monthLabel(mo), value: e.qty ? e.amt / e.qty : 0 })).filter((p) => p.value > 0);
+}
+const termShort = (cat: string, text: string | null) => (cat === 'advance' ? 'Advance' : cat === 'immediate' ? 'On receipt' : cat === 'net' ? (() => { const m = (text || '').match(/(\d+)\s*day/i); return m ? `${m[1]}-day credit` : 'Credit'; })() : '—');
+
+function VendorCompare({ data, v, mat, onSelect }: { data: AppData; v: ValueData; mat: MaterialKey; onSelect: (k: string) => void }) {
+  const M = v.materials[mat];
+  // dextrose is one product (₹/kg, like-for-like) → real price comparison + trend.
+  // packaging / laminates mix different items per vendor, so a blended ₹/unit isn't
+  // like-for-like: show it as context only, no cheapest badge, no price trend.
+  const blended = !M.singleCommodity;
+  const mdl = data.materials.find((m) => m.key === mat) ?? null;
+  const agg = new Map<string, { pay: number; save: number }>();
+  for (const r of buildSupplierRows(M, v, mat)) agg.set(r.vendorKey, { pay: r.pay, save: r.save });
+  const primaryUnit = mdl?.primaryUnit ?? M.unit ?? null;
+
+  const rows: CmpRow[] = (mdl?.vendors ?? []).map((mv) => {
+    const vk = mv.vendorKey; const vv = v.vendors[vk]; const fin = data.financials?.vendors[vk] ?? null;
+    const ps = priceSeriesFor(v.ledger, mat, vk);
+    const yoY = ps.length >= 2 && ps[0].value ? ((ps[ps.length - 1].value - ps[0].value) / ps[0].value) * 100 : null;
+    const fr = vv?.freshnessByMaterial.find((f) => f.materialKey === mat) ?? null;
+    const ms = (fin?.probe?.series ?? []).filter((y) => y.netMargin != null).map((y) => ({ label: (y.fy || y.year) as string, value: y.netMargin as number }));
+    const a = agg.get(vk) ?? { pay: 0, save: 0 };
+    return {
+      vendorKey: vk, name: vv?.name ?? mv.vendor, color: vv?.color ?? mv.color,
+      price: mv.avgPrice, unit: mv.unit, priceSeries: ps, priceYoY: yoY,
+      offUnit: !!(primaryUnit && mv.unit !== primaryUnit), cheapest: false,
+      pay: a.pay, save: a.save,
+      margin: fin?.metrics?.netMargin ?? null, marginSeries: ms,
+      marginFalling: ms.length >= 2 && ms[ms.length - 1].value < ms[0].value,
+      term: termShort(vv?.termCategory ?? 'unknown', vv?.termText ?? null), termCat: vv?.termCategory ?? 'unknown',
+      freshDays: fr?.avgAgeDays ?? null, freshGrade: fr?.grade ?? null,
+    };
+  });
+  const sameUnit = rows.filter((r) => !r.offUnit && r.price != null);
+  if (!blended && sameUnit.length) { const min = sameUnit.reduce((x, y) => ((x.price as number) <= (y.price as number) ? x : y)); min.cheapest = true; }
+
+  const cheapest = (!blended && sameUnit.length) ? sameUnit.reduce((x, y) => ((x.price as number) <= (y.price as number) ? x : y)) : null;
+  const rising = blended ? [] : rows.filter((r) => r.priceYoY != null && r.priceYoY >= 5 && r.priceYoY <= 120).sort((x, y) => (y.priceYoY as number) - (x.priceYoY as number));
+  const shrinking = rows.filter((r) => r.marginSeries.length >= 3 && r.marginSeries[r.marginSeries.length - 1].value < r.marginSeries[0].value - 1);
+
+  const cols: Column<CmpRow>[] = [
+    { key: 'name', header: 'Supplier', sortable: true, sortValue: (r) => vendorShort(r.name), render: (r) => (
+      <button onClick={() => onSelect(r.vendorKey)} className="flex min-w-0 items-center gap-2 text-left focus-ring">
+        <span className="h-2.5 w-2.5 shrink-0 rounded-sm" style={{ background: r.color }} />
+        <span className="truncate font-semibold text-fdc-slate underline-offset-2 hover:underline">{vendorShort(r.name)}</span>
+      </button>
+    ) },
+    { key: 'price', header: blended ? 'Avg price' : 'Price & trend', align: 'right', sortable: true, sortValue: (r) => (r.offUnit ? 1e12 : (r.price ?? 1e11)), render: (r) => {
+      if (r.price == null) return <span className="text-fdc-grey">mixed units</span>;
+      if (blended) return (
+        <div className="ml-auto w-[112px] text-right">
+          <div className="tnum text-fdc-slate">{priceFmt(r.price, r.unit)}</div>
+          <div className="text-[9.5px] leading-tight text-fdc-grey">blended across items</div>
+        </div>
+      );
+      return (
+        <div className="ml-auto w-[140px]">
+          <div className="flex items-center justify-end gap-1">
+            <span className="tnum font-bold" style={{ color: r.cheapest ? FDC.green : FDC.ink }}>{priceFmt(r.price, r.unit)}</span>
+            {r.cheapest && <span className="rounded bg-fdc-green/15 px-1 py-px text-[9px] font-bold text-fdc-green">cheapest</span>}
+          </div>
+          {r.priceSeries.length >= 3 ? (
+            <div className="mt-0.5 h-6"><Sparkline points={r.priceSeries} color={r.priceYoY != null && r.priceYoY > 2 ? FDC.red : r.priceYoY != null && r.priceYoY < -2 ? FDC.green : FDC.blue} height={24} format={(n) => priceFmt(n, r.unit)} /></div>
+          ) : <div className="mt-0.5 text-[10px] text-fdc-grey">too few buys for a trend</div>}
+          {r.priceYoY != null && Math.abs(r.priceYoY) >= 2 && <div className="text-[10px] font-semibold" style={{ color: r.priceYoY > 0 ? FDC.red : FDC.green }}>{r.priceYoY > 0 ? '▲' : '▼'} {Math.abs(r.priceYoY).toFixed(0)}% over the year</div>}
+          {r.offUnit && <div className="text-[9.5px] leading-tight text-fdc-grey">different unit — not price-comparable</div>}
+        </div>
+      );
+    } },
+    { key: 'pay', header: 'You pay / yr', align: 'right', sortable: true, sortValue: (r) => r.pay, render: (r) => <span className="tnum whitespace-nowrap font-semibold text-fdc-ink">{fmtSave(r.pay)}</span> },
+    { key: 'save', header: 'Can save', align: 'right', sortable: true, sortValue: (r) => r.save, render: (r) => (r.save > 0 ? <span className="tnum whitespace-nowrap font-bold text-fdc-orange">{fmtSave(r.save)}</span> : <span className="text-fdc-grey">—</span>) },
+    { key: 'margin', header: 'Profit & trend', align: 'right', sortable: true, sortValue: (r) => r.margin ?? -999, render: (r) => {
+      if (r.margin == null) return <span className="text-fdc-grey">—</span>;
+      return (
+        <div className="ml-auto w-[108px]">
+          <div className="tnum text-right font-bold" style={{ color: r.margin < 2 ? FDC.orange : FDC.ink }}>{r.margin.toFixed(1)}%</div>
+          {r.marginSeries.length >= 2 ? <div className="mt-0.5 h-6"><Sparkline points={r.marginSeries} color={r.marginFalling ? FDC.red : FDC.blue} height={24} format={(n) => pct(n)} /></div> : <div className="mt-0.5 text-[10px] text-fdc-grey">latest year only</div>}
+          {r.marginFalling && r.marginSeries.length >= 3 && <div className="text-[10px] font-semibold text-fdc-green">shrinking → room</div>}
+        </div>
+      );
+    } },
+    { key: 'term', header: 'When you pay', render: (r) => <Pill color={r.termCat === 'advance' || r.termCat === 'immediate' ? FDC.red : r.termCat === 'net' ? FDC.green : FDC.grey}>{r.term}</Pill> },
+    { key: 'fresh', header: 'Freshness', align: 'right', sortable: true, sortValue: (r) => r.freshDays ?? 1e9, render: (r) => (r.freshDays != null ? <span className="tnum whitespace-nowrap font-semibold" style={{ color: r.freshGrade === 'old' ? FDC.red : r.freshGrade === 'ok' ? FDC.goldDark : FDC.green }}>{r.freshDays}d old</span> : <span className="text-fdc-grey">—</span>) },
+  ];
+
+  return (
+    <Card pad={false}>
+      <div className="px-4 pt-3.5">
+        <h3 className="flex items-center gap-1.5 text-[14px] font-bold text-fdc-ink"><Scale size={15} className="text-fdc-green" /> Compare your {M.displayName.toLowerCase()} suppliers</h3>
+        <p className="text-[12px] leading-snug text-fdc-grey">{rows.length} suppliers side by side — price and profit shown <b>with their trend over the year</b>, not just today. Tap a name for the full detail.</p>
+      </div>
+      {(cheapest || rising.length > 0 || shrinking.length > 0) && (
+        <div className="mx-4 mt-2 space-y-0.5 rounded-xl border border-fdc-green/15 bg-fdc-green/[0.05] px-3 py-2 text-[12px] leading-snug text-fdc-slate">
+          {cheapest && <div>• <b className="text-fdc-green">Cheapest:</b> {vendorShort(cheapest.name)} at {priceFmt(cheapest.price, cheapest.unit)}.</div>}
+          {rising.length > 0 && <div>• <b className="text-fdc-red">Getting dearer:</b> {rising.slice(0, 2).map((r) => `${vendorShort(r.name)} +${(r.priceYoY as number).toFixed(0)}%`).join(', ')} over the year — push back or lock the price.</div>}
+          {shrinking.length > 0 && <div>• <b className="text-fdc-green">Room to push:</b> {shrinking.slice(0, 2).map((r) => vendorShort(r.name)).join(', ')} — profit shrinking, so they want to keep your orders.</div>}
+        </div>
+      )}
+      <div className="px-2 py-2">
+        <Table columns={cols} rows={rows} getKey={(r) => r.vendorKey} initialSort={blended ? { key: 'save', dir: 'desc' } : { key: 'price', dir: 'asc' }} maxHeight={560} dense />
+        {blended && <p className="px-2 pt-1 text-[10.5px] leading-snug text-fdc-grey">Prices here are a rough average across each supplier's different items — <b>not a like-for-like price</b>. Compare the same item in “All the numbers behind it” (under Current). Profit trend, terms and freshness are exact.</p>}
+      </div>
+    </Card>
+  );
+}
+
 function VendorCard({ vendor: x, data, onFull, onSeeAlternatives }: { vendor: ValueVendor; data: AppData; onFull: (s: ProfileSubject) => void; onSeeAlternatives: () => void }) {
   const fin: VendorFin | null = data.financials?.vendors[x.vendorKey] ?? null;
   const probe = fin?.probe ?? null;
@@ -438,10 +565,6 @@ function VendorCard({ vendor: x, data, onFull, onSeeAlternatives }: { vendor: Va
   const marginFalling = marginSeries.length >= 2 && marginSeries[marginSeries.length - 1].value < marginSeries[0].value;
   const revenue = m?.revenue ?? null;
   const shareOfRev = revenue && x.spend ? (x.spend / revenue) * 100 : null;
-  // source for the financial figures — for on-screen traceability
-  const srcName = fin?.source?.sourceName ?? null;
-  const srcWhen = probe?.latestFy ?? fin?.source?.date ?? null;
-  const srcLabel = srcName ? `${srcName}${srcWhen ? ` · ${srcWhen}` : ''}` : null;
   // listed-proxy / pending honesty labels
   const norm = (s: string) => vendorShort(s).toLowerCase().replace(/[^a-z0-9]/g, '');
   const isProxy = fin?.type === 'listed' && fin.companyName && norm(fin.companyName) !== norm(x.name);
@@ -543,9 +666,6 @@ function VendorCard({ vendor: x, data, onFull, onSeeAlternatives }: { vendor: Va
             <p className="mt-2 rounded-lg bg-fdc-green/[0.06] px-2.5 py-1.5 text-[11.5px] leading-snug text-fdc-slate">
               Your orders are <b className="tnum">{pct(shareOfRev, shareOfRev < 1 ? 2 : 1)}</b> of everything they sell (<b className="tnum">{crore(revenue!)}</b> a year){shareOfRev >= 5 ? ' — a big customer, so your ask carries real weight.' : ' — a small customer, so lead with bigger volume or a cheaper option you could switch to.'}
             </p>
-          )}
-          {srcLabel && (netMargin != null || revenue != null) && (
-            <p className="mt-1.5 text-[10px] leading-snug text-fdc-grey">Their profit &amp; sales — {srcLabel}. Open <b>Full details</b> for every figure and where it comes from.</p>
           )}
         </Section>
 
