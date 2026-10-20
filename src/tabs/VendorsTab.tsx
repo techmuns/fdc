@@ -565,10 +565,6 @@ function VendorCard({ vendor: x, data, onFull, onSeeAlternatives }: { vendor: Va
   const marginFalling = marginSeries.length >= 2 && marginSeries[marginSeries.length - 1].value < marginSeries[0].value;
   const revenue = m?.revenue ?? null;
   const shareOfRev = revenue && x.spend ? (x.spend / revenue) * 100 : null;
-  // source for the financial figures — for on-screen traceability
-  const srcName = fin?.source?.sourceName ?? null;
-  const srcWhen = probe?.latestFy ?? fin?.source?.date ?? null;
-  const srcLabel = srcName ? `${srcName}${srcWhen ? ` · ${srcWhen}` : ''}` : null;
   // listed-proxy / pending honesty labels
   const norm = (s: string) => vendorShort(s).toLowerCase().replace(/[^a-z0-9]/g, '');
   const isProxy = fin?.type === 'listed' && fin.companyName && norm(fin.companyName) !== norm(x.name);
@@ -670,9 +666,6 @@ function VendorCard({ vendor: x, data, onFull, onSeeAlternatives }: { vendor: Va
             <p className="mt-2 rounded-lg bg-fdc-green/[0.06] px-2.5 py-1.5 text-[11.5px] leading-snug text-fdc-slate">
               Your orders are <b className="tnum">{pct(shareOfRev, shareOfRev < 1 ? 2 : 1)}</b> of everything they sell (<b className="tnum">{crore(revenue!)}</b> a year){shareOfRev >= 5 ? ' — a big customer, so your ask carries real weight.' : ' — a small customer, so lead with bigger volume or a cheaper option you could switch to.'}
             </p>
-          )}
-          {srcLabel && (netMargin != null || revenue != null) && (
-            <p className="mt-1.5 text-[10px] leading-snug text-fdc-grey">Their profit &amp; sales — {srcLabel}. Open <b>Full details</b> for every figure and where it comes from.</p>
           )}
         </Section>
 
