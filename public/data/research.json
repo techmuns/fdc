@@ -83,8 +83,9 @@
     "empire-industries-virum-glass": {
       "grade": { "tone": "diff", "label": "Amber glass — not PET/HDPE" },
       "correction": "Empire's Vitrum division makes amber GLASS bottles and ROPP packaging — a separate category from PET/HDPE plastic. Benchmark against glass suppliers only.",
-      "financials": "Listed, BSE: 509525 (FY26 segment figures not verified in this pass).",
-      "sources": ["empiremumbai.com", "BSE: 509525"]
+      "financials": "Listed (BSE: 509525) — company-wide: market cap ≈₹597 Cr · ROCE 16.8% · ROE 15.1% · P/E 154 (Screener, consolidated, Oct 2026). Empire is a diversified group, so these are not glass-only figures. (The free market feed carries no Empire quote, so it still shows as pending in the auto-financials.)",
+      "angle": "Healthy group returns (16.8% ROCE) but a very rich stock (P/E 154). Glass is a small, separate line for you — benchmark its price against other amber-glass makers, and keep the financials at group level only.",
+      "sources": ["Screener.in (BSE: 509525, consolidated)", "empiremumbai.com"]
     },
     "cincorp-international": {
       "grade": { "tone": "good", "label": "Strong cap/bottle match ✓" },

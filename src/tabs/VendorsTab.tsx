@@ -2,7 +2,7 @@ import { useMemo, useState, useEffect } from 'react';
 import {
   Factory, Hourglass, TrendingDown, TrendingUp, Clock, PackageSearch, Repeat2,
   Maximize2, BadgeCheck, Lock, CalendarClock, HandCoins, Info, CircleHelp, Layers, ChevronDown,
-  FlaskConical, Lightbulb, ShieldCheck, Sparkles, AlertTriangle,
+  FlaskConical, Lightbulb, ShieldCheck, Sparkles, AlertTriangle, Scale,
 } from 'lucide-react';
 import type { AppData, ValueVendor, ValueMaterial, ValueData, VendorFin, MaterialKey, FinMetrics, AltVendor, ResearchGrade, ResearchSupplier, ResearchLead } from '../types';
 import type { Nav } from '../App';
@@ -336,6 +336,43 @@ function ResearchLeads({ leads, asOf }: { leads: ResearchLead[]; asOf?: string }
   );
 }
 
+/* ---- peer comparison: this supplier's profit margin vs listed peers in the same material ---- */
+function PeerMargins({ material, myName, myMargin, peers }: { material: string; myName: string; myMargin: number | null; peers: { name: string; margin: number }[] }) {
+  if (peers.length < 2) return null;
+  const list: { name: string; margin: number; self: boolean }[] = peers.map((p) => ({ ...p, self: false }));
+  if (myMargin != null) list.push({ name: vendorShort(myName), margin: myMargin, self: true });
+  list.sort((a, b) => b.margin - a.margin);
+  const span = Math.max(1, ...list.map((r) => Math.abs(r.margin)));
+  const pm = peers.map((p) => p.margin).sort((a, b) => a - b);
+  const lo = pm[0], hi = pm[pm.length - 1];
+  const median = pm[Math.floor(pm.length / 2)];
+  const matName = MAT_NAME[material] ?? material;
+  let take: string;
+  if (myMargin == null) take = `Listed peers making ${matName.toLowerCase()} keep ${lo.toFixed(1)}–${hi.toFixed(1)}% profit (median ${median.toFixed(1)}%). The market makes this at a profit — useful context when you push on price.`;
+  else if (myMargin > median + 1) take = `They keep more profit than most listed peers (median ${median.toFixed(1)}%) — rivals run leaner, so there's room to ask for a better price.`;
+  else if (myMargin < median - 1) take = `They run leaner than most listed peers (median ${median.toFixed(1)}%) — little to give on price from them; a fatter-margin rival is your leverage.`;
+  else take = `About in line with listed peers (median ${median.toFixed(1)}%).`;
+  return (
+    <div className="mt-2 rounded-xl border border-fdc-blue/15 bg-fdc-blue/[0.03] p-2.5">
+      <div className="mb-1.5 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-fdc-grey"><Scale size={12} className="text-fdc-blue" /> Profit kept vs listed {matName.toLowerCase()} peers</div>
+      <div className="space-y-1">
+        {list.map((r, i) => {
+          const w = Math.max(3, (Math.abs(r.margin) / span) * 100);
+          const c = r.self ? FDC.green : r.margin < 0 ? FDC.red : FDC.blue;
+          return (
+            <div key={i} className="flex items-center gap-2 text-[11px]">
+              <span className={`w-[108px] shrink-0 truncate ${r.self ? 'font-bold text-fdc-ink' : 'text-fdc-slate'}`}>{r.name}{r.self ? ' ·you' : ''}</span>
+              <span className="relative h-2 flex-1 overflow-hidden rounded-full bg-black/[0.05]"><span className="absolute inset-y-0 left-0 rounded-full" style={{ width: `${w}%`, background: c }} /></span>
+              <span className="tnum w-12 shrink-0 text-right font-semibold" style={{ color: c }}>{r.margin.toFixed(1)}%</span>
+            </div>
+          );
+        })}
+      </div>
+      <p className="mt-1.5 text-[11px] leading-snug text-fdc-slate">{take}</p>
+    </div>
+  );
+}
+
 /* ============================ alternative suppliers view ============================ */
 function AlternativesView({ data, mat, onOpenAlt }: { data: AppData; mat: MaterialKey; onOpenAlt: (alt: AltVendor) => void }) {
   const alts = data.alternatives?.byMaterial?.[mat] ?? [];
@@ -359,7 +396,16 @@ function AlternativesTable({ alts, onOpen }: { alts: AltVendor[]; onOpen: (a: Al
       </div>
     ) },
     { key: 'type', header: 'Type', render: (a) => (a.type === 'listed' ? <Badge color={FDC.blue}><BadgeCheck size={11} /> Listed</Badge> : <Badge color="#8E44AD"><Lock size={11} /> Private</Badge>) },
-    { key: 'size', header: 'Yearly sales', align: 'right', sortable: true, sortValue: (a) => a.metrics?.revenue ?? -1, render: (a) => (a.metrics?.revenue != null ? <span className="tnum whitespace-nowrap">{crore(a.metrics.revenue)}</span> : <span className="text-fdc-grey">{a.status !== 'ok' ? 'pending' : '—'}</span>) },
+    { key: 'size', header: 'Size & financials', align: 'right', sortable: true, sortValue: (a) => a.metrics?.revenue ?? -1, render: (a) => {
+      const mm = a.metrics;
+      if (!mm || mm.revenue == null) return <span className="text-fdc-grey">{a.status !== 'ok' ? 'pending' : '—'}</span>;
+      return (
+        <div className="whitespace-nowrap text-right">
+          <div className="tnum font-semibold text-fdc-ink">{crore(mm.revenue)}</div>
+          <div className="tnum text-[10.5px] text-fdc-grey">{mm.netMargin != null ? <span style={{ color: mm.netMargin < 0 ? FDC.red : undefined }}>{mm.netMargin.toFixed(1)}% margin</span> : null}{mm.roce != null ? ` · ${Math.round(mm.roce)}% ROCE` : ''}</div>
+        </div>
+      );
+    } },
     { key: 'fit', header: 'Grade match / why it fits', render: (a) => (
       <div className="min-w-0 max-w-[460px]">
         {a.gradeLabel && <span className="mb-1 inline-block rounded bg-fdc-gold/15 px-1.5 py-0.5 text-[10px] font-semibold text-fdc-gold-dark">✓ {a.gradeLabel}</span>}
@@ -408,6 +454,12 @@ function VendorCard({ vendor: x, data, onFull, onSeeAlternatives }: { vendor: Va
   else marginRoom = { tone: 'room', text: `Healthy — they keep about ${pct(netMargin)} as profit, so there’s room to push on price, especially against a cheaper option.` };
 
   const alts = buildAlternatives(x.vendorKey, data);
+
+  // listed-peer profit margins for this material — for the peer-comparison chart
+  const peerMat = x.materialKeys[0];
+  const peers = (data.alternatives?.byMaterial?.[peerMat as 'dextrose'] ?? [])
+    .filter((a) => a.metrics?.netMargin != null)
+    .map((a) => ({ name: vendorShort(a.name), margin: a.metrics!.netMargin as number }));
 
   // extra backup candidates from the founder's researched market database (count only — full list in Alternatives view)
   const dbKeys = [...new Set(x.materialKeys.flatMap((k) => DB_MATS[k] ?? []))];
@@ -480,6 +532,9 @@ function VendorCard({ vendor: x, data, onFull, onSeeAlternatives }: { vendor: Va
             {/* credit days — the RIGHT call per vendor */}
             <CreditDays x={x} m={m} srcLabel={creditSrcLabel(fin)} />
           </div>
+
+          {/* how this supplier's profit compares to listed peers in the same material */}
+          <PeerMargins material={peerMat} myName={x.name} myMargin={netMargin} peers={peers} />
 
           {/* payables fairness — for advance / immediate vendors */}
           <PayablesFairness x={x} m={m} />
