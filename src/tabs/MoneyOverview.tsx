@@ -42,22 +42,22 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
   return (
     <div className="animate-fade-up space-y-5">
       {/* hero */}
-      <div className="relative overflow-hidden rounded-3xl bg-fdc-green px-5 py-6 text-white shadow-pop sm:px-8 sm:py-8">
-        <div className="pointer-events-none absolute -right-8 -top-10 h-40 w-40 rounded-full bg-white/10" />
-        <div className="pointer-events-none absolute -bottom-12 right-20 h-32 w-32 rounded-full bg-fdc-gold/20" />
+      <div className="relative overflow-hidden rounded-3xl bg-fdc-green px-5 py-5 text-white shadow-pop sm:px-7 sm:py-6">
+        <div className="pointer-events-none absolute -right-8 -top-10 h-32 w-32 rounded-full bg-white/10" />
+        <div className="pointer-events-none absolute -bottom-12 right-20 h-28 w-28 rounded-full bg-fdc-gold/20" />
         <div className="relative">
-          <div className="mb-1.5 flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-wide text-white/80">
-            <Sparkles size={14} /> FDC procurement — the money
+          <div className="mb-1 flex items-center gap-1.5 text-[11.5px] font-semibold uppercase tracking-wide text-white/80">
+            <Sparkles size={13} /> FDC procurement — the money
           </div>
-          <h1 className="text-[26px] font-extrabold leading-tight sm:text-[34px]">
+          <h1 className="text-[20px] font-extrabold leading-tight sm:text-[25px]">
             You can save about <span className="text-fdc-gold">{fmtSave(cost)}</span> a year.
           </h1>
-          <p className="mt-1.5 max-w-2xl text-[13px] leading-snug text-white/85 sm:text-[14px]">
-            You spend <b>{fmtSave(totalSpend)}/yr</b> on these materials — <b>{fmtSave(cost)}</b> (<b>{savePct.toFixed(1)}%</b>) is saveable on price, plus <b>{fmtSave(cash)}</b> one-time cash from fixing payment terms.
+          <p className="mt-1 max-w-2xl text-[12.5px] leading-snug text-white/85">
+            <b>{fmtSave(cost)}</b> ({savePct.toFixed(1)}%) saveable on price, plus <b>{fmtSave(cash)}</b> one-time cash from payment terms.
           </p>
 
           {/* two money figures — never added together */}
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
             <HeroStat
               eyebrow="Money you can save · every year" value={fmtSave(cost)} tone="white"
               sub={`${savePct.toFixed(1)}% of your ${fmtSave(totalSpend)} yearly spend — straight to profit.`}
@@ -254,13 +254,13 @@ function HeroStat({ eyebrow, value, sub, cta, onClick, tone }: { eyebrow: string
   return (
     <button
       onClick={onClick}
-      className={`group flex flex-col rounded-2xl border p-3.5 text-left backdrop-blur transition focus-ring ${gold ? 'border-fdc-gold/40 bg-fdc-gold/[0.14] hover:bg-fdc-gold/20' : 'border-white/25 bg-white/10 hover:bg-white/[0.18]'}`}
+      className={`group flex flex-col rounded-2xl border p-3 text-left backdrop-blur transition focus-ring ${gold ? 'border-fdc-gold/40 bg-fdc-gold/[0.14] hover:bg-fdc-gold/20' : 'border-white/25 bg-white/10 hover:bg-white/[0.18]'}`}
     >
-      <div className="text-[10.5px] font-bold uppercase tracking-wide text-white/75">{eyebrow}</div>
-      <div className={`tnum mt-0.5 text-[28px] font-extrabold leading-none ${gold ? 'text-fdc-gold' : 'text-white'}`}>{value}</div>
-      <div className="mt-1.5 text-[11.5px] leading-snug text-white/80">{sub}</div>
-      <div className="mt-2 inline-flex items-center gap-1 text-[11.5px] font-semibold text-white">
-        {cta} <ArrowRight size={13} className="transition group-hover:translate-x-0.5" />
+      <div className="text-[10px] font-bold uppercase tracking-wide text-white/75">{eyebrow}</div>
+      <div className={`tnum mt-0.5 text-[22px] font-extrabold leading-none ${gold ? 'text-fdc-gold' : 'text-white'}`}>{value}</div>
+      <div className="mt-1 text-[11px] leading-snug text-white/80">{sub}</div>
+      <div className="mt-1.5 inline-flex items-center gap-1 text-[11px] font-semibold text-white">
+        {cta} <ArrowRight size={12} className="transition group-hover:translate-x-0.5" />
       </div>
     </button>
   );

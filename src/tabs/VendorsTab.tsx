@@ -128,12 +128,28 @@ function buildSupplierRows(M: ValueMaterial, v: ValueData, mat: MaterialKey): Su
 
 export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; nav: Extract<Nav, { tab: 'vendors' }>; onNavigate: (n: Nav) => void }) {
   const v = data.value;
-  const [mat, setMat] = useState<MaterialKey>(nav.material ?? 'dextrose');
+  // which material to show when a supplier is opened without one named — e.g. a cash/terms
+  // insight or the hero "see the proof" link lands on a vendor, not a material. Pick the
+  // material that vendor spends the most in, so "open the full detail" lands where the
+  // supplier actually is (Tetrapak → Laminates), not a hard-coded default.
+  const matForVendor = (vk: string | undefined): MaterialKey | null => {
+    if (!vk || !v) return null;
+    let best: MaterialKey | null = null, bestSpend = -1;
+    for (const mk of v.vendors[vk]?.materialKeys ?? []) {
+      const MM = v.materials[mk];
+      if (!MM) continue;
+      let spend = 0;
+      for (const s of MM.skus) for (const vp of s.vendors) if (vp.vendorKey === vk) spend += vp.spend;
+      if (spend > bestSpend) { bestSpend = spend; best = mk as MaterialKey; }
+    }
+    return best;
+  };
+  const [mat, setMat] = useState<MaterialKey>(() => nav.material ?? matForVendor(nav.vendorKey) ?? 'dextrose');
   const [sel, setSel] = useState<string | null>(nav.vendorKey ?? null);
   const [view, setView] = useState<'current' | 'alternatives' | 'compare'>('current');
   const [profile, setProfile] = useState<ProfileSubject | null>(null);
   useEffect(() => { if (nav.material) setMat(nav.material); }, [nav.material]);
-  useEffect(() => { if (nav.vendorKey) { setSel(nav.vendorKey); setView('current'); } }, [nav.vendorKey]);
+  useEffect(() => { if (nav.vendorKey) { setSel(nav.vendorKey); setView('current'); const m = nav.material ?? matForVendor(nav.vendorKey); if (m) setMat(m); } }, [nav.vendorKey]);
 
   const M = v?.materials[mat] ?? null;
   const rows = useMemo(() => (v && M ? buildSupplierRows(M, v, mat) : []), [v, M, mat]);
