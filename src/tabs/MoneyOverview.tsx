@@ -1,5 +1,5 @@
-import { useState, useMemo } from 'react';
-import { ArrowRight, TrendingUp, Scale, Coins, Clock, Sparkles, AlertTriangle, Wallet, Eye, ListChecks, ChevronDown } from 'lucide-react';
+import { useState, useMemo, type ReactNode } from 'react';
+import { ArrowRight, Sparkles, Wallet, Eye, ListChecks, ChevronDown } from 'lucide-react';
 import type { AppData, ValueAction, PaymentTerms, MaterialKey } from '../types';
 import type { Nav } from '../App';
 import { Card, Pill } from '../components/ui/Card';
@@ -10,14 +10,6 @@ import { StackedBar, type StackSegment } from '../components/charts/StackedBar';
 import { FDC, MATERIAL_COLOR, TERM_COLOR } from '../lib/brand';
 
 const fmtSave = (n: number) => (n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : `₹${(n / 1e5).toFixed(1)} L`);
-
-const KIND = {
-  price: { icon: TrendingUp, color: FDC.green, label: 'Paying too much', save: 'Save' },
-  leverage: { icon: Scale, color: FDC.green, label: 'Price in your favour', save: 'Price gap in your favour' },
-  terms: { icon: Coins, color: FDC.blue, label: 'Cash to free up', save: 'Cash freed' },
-  freshness: { icon: Clock, color: FDC.orange, label: 'Old stock', save: 'Save' },
-} as const;
-const kindOf = (a: ValueAction): keyof typeof KIND => (a.isLeverage ? 'leverage' : a.isCash ? 'terms' : a.kind);
 
 export default function MoneyOverview({ data, onNavigate }: { data: AppData; onNavigate: (n: Nav) => void }) {
   const v = data.value;
@@ -50,22 +42,22 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
   return (
     <div className="animate-fade-up space-y-5">
       {/* hero */}
-      <div className="relative overflow-hidden rounded-3xl bg-fdc-green px-5 py-6 text-white shadow-pop sm:px-8 sm:py-8">
-        <div className="pointer-events-none absolute -right-8 -top-10 h-40 w-40 rounded-full bg-white/10" />
-        <div className="pointer-events-none absolute -bottom-12 right-20 h-32 w-32 rounded-full bg-fdc-gold/20" />
+      <div className="relative overflow-hidden rounded-3xl bg-fdc-green px-5 py-5 text-white shadow-pop sm:px-7 sm:py-6">
+        <div className="pointer-events-none absolute -right-8 -top-10 h-32 w-32 rounded-full bg-white/10" />
+        <div className="pointer-events-none absolute -bottom-12 right-20 h-28 w-28 rounded-full bg-fdc-gold/20" />
         <div className="relative">
-          <div className="mb-1.5 flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-wide text-white/80">
-            <Sparkles size={14} /> FDC procurement — the money
+          <div className="mb-1 flex items-center gap-1.5 text-[11.5px] font-semibold uppercase tracking-wide text-white/80">
+            <Sparkles size={13} /> FDC procurement — the money
           </div>
-          <h1 className="text-[26px] font-extrabold leading-tight sm:text-[34px]">
+          <h1 className="text-[20px] font-extrabold leading-tight sm:text-[25px]">
             You can save about <span className="text-fdc-gold">{fmtSave(cost)}</span> a year.
           </h1>
-          <p className="mt-1.5 max-w-2xl text-[13px] leading-snug text-white/85 sm:text-[14px]">
-            You spend <b>{fmtSave(totalSpend)}/yr</b> on these materials — <b>{fmtSave(cost)}</b> (<b>{savePct.toFixed(1)}%</b>) is saveable on price, plus <b>{fmtSave(cash)}</b> one-time cash from fixing payment terms.
+          <p className="mt-1 max-w-2xl text-[12.5px] leading-snug text-white/85">
+            <b>{fmtSave(cost)}</b> ({savePct.toFixed(1)}%) saveable on price, plus <b>{fmtSave(cash)}</b> one-time cash from payment terms.
           </p>
 
           {/* two money figures — never added together */}
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
             <HeroStat
               eyebrow="Money you can save · every year" value={fmtSave(cost)} tone="white"
               sub={`${savePct.toFixed(1)}% of your ${fmtSave(totalSpend)} yearly spend — straight to profit.`}
@@ -81,33 +73,28 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
         </div>
       </div>
 
-      {/* 3 action cards */}
-      <div>
-        <h2 className="mb-2.5 text-[13px] font-bold uppercase tracking-wide text-fdc-grey">Do these three things first <span className="ml-1 font-medium normal-case text-fdc-grey/80">— tap a card to see the proof</span></h2>
-        <div className="grid gap-3 lg:grid-cols-3">
-          {v.actions.map((a) => <ActionCard key={a.key} a={a} onNavigate={onNavigate} onProof={setProof} />)}
-        </div>
-      </div>
+      {/* the one thing that matters: every insight in a single table — open by default, right under the banner */}
+      <AllInsights data={data} onProof={setProof} defaultOpen />
 
-      {/* every insight in one table — the full, end-to-end list (toggle open) */}
-      <AllInsights data={data} onProof={setProof} />
+      {/* the extras — kept, but tucked into one closed section you open only to dig deeper */}
+      <DigDeeper>
+        {/* savings by material */}
+        <Card>
+          <h2 className="mb-0.5 text-[15px] font-bold text-fdc-ink">Spend &amp; savings by material</h2>
+          <p className="mb-3 text-[12.5px] text-fdc-grey">The bar = what you can save each year; the line under it = what you spend. Tap a bar for the proof.</p>
+          <HBars
+            data={bars}
+            format={(n) => fmtSave(n)}
+            barSize={30}
+            labelWidth={160}
+            axisTicks={4}
+            onClick={(d) => onNavigate({ tab: 'vendors', material: d.key as MaterialKey })}
+          />
+        </Card>
 
-      {/* savings by material */}
-      <Card>
-        <h2 className="mb-0.5 text-[15px] font-bold text-fdc-ink">Spend &amp; savings by material</h2>
-        <p className="mb-3 text-[12.5px] text-fdc-grey">The bar = what you can save each year; the line under it = what you spend. Tap a bar for the proof.</p>
-        <HBars
-          data={bars}
-          format={(n) => fmtSave(n)}
-          barSize={30}
-          labelWidth={160}
-          axisTicks={4}
-          onClick={(d) => onNavigate({ tab: 'vendors', material: d.key as MaterialKey })}
-        />
-      </Card>
-
-      {/* payment terms & the cash they tie up */}
-      {data.paymentTerms && <PaymentTermsPanel pt={data.paymentTerms} onNavigate={onNavigate} />}
+        {/* payment terms & the cash they tie up */}
+        {data.paymentTerms && <PaymentTermsPanel pt={data.paymentTerms} onNavigate={onNavigate} />}
+      </DigDeeper>
 
       {proof && <ActionProof action={proof} data={data} onClose={() => setProof(null)} onNavigate={onNavigate} />}
     </div>
@@ -150,14 +137,14 @@ function buildAllInsights(data: AppData): InsightRow[] {
   // one-time cash from fixing advance / pay-on-receipt terms
   for (const w of data.paymentTerms?.worstBySpend ?? []) {
     if (!w.cashFreed30) continue;
-    rows.push({ key: `cash-${w.vendorKey}`, supplier: w.vendor, vendorKey: w.vendorKey, area: (w.materials || []).join(', ') || '—', kind: 'cash', spend: w.totalSpend, save: w.cashFreed30, saveLabel: `${fmtSave(w.cashFreed30)} one-time`, what: `You pay them ${w.termText}. Move onto 30-day credit to free up cash.` });
+    rows.push({ key: `cash-${w.vendorKey}`, supplier: w.vendor, vendorKey: w.vendorKey, area: (w.materials || []).join(', ') || '—', kind: 'cash', spend: w.totalSpend, save: w.cashFreed30, saveLabel: `${fmtSave(w.cashFreed30)} one-time`, what: `You pay ${shortName(w.vendor)} ${w.termText} — either push them to 30-day credit, or move this volume to a cheaper supplier.` });
   }
   rows.sort((a, b) => b.save - a.save);
   return rows;
 }
 
-// turn a table row into the same ValueAction shape the 3 action cards use, so the
-// identical proof popup (price-gap bars / credit comparison / stock age) opens on click.
+// turn a table row into a ValueAction, so the same proof popup
+// (price-gap bars / credit comparison / stock age) opens on row click.
 function insightToAction(r: InsightRow): ValueAction {
   const base = { rank: 0, key: r.key, vendorKey: r.vendorKey, action: r.what, why: r.what, risk: null };
   if (r.kind === 'cash') {
@@ -182,8 +169,8 @@ const INSIGHT_KIND: Record<InsightKind, { label: string; color: string }> = {
   fresh: { label: 'Fresher stock', color: FDC.orange },
 };
 
-function AllInsights({ data, onProof }: { data: AppData; onProof: (a: ValueAction) => void }) {
-  const [open, setOpen] = useState(false);
+function AllInsights({ data, onProof, defaultOpen = false }: { data: AppData; onProof: (a: ValueAction) => void; defaultOpen?: boolean }) {
+  const [open, setOpen] = useState(defaultOpen);
   const rows = useMemo(() => buildAllInsights(data), [data]);
   if (!rows.length) return null;
   const maxSave = Math.max(1, ...rows.map((r) => r.save));
@@ -267,67 +254,33 @@ function HeroStat({ eyebrow, value, sub, cta, onClick, tone }: { eyebrow: string
   return (
     <button
       onClick={onClick}
-      className={`group flex flex-col rounded-2xl border p-3.5 text-left backdrop-blur transition focus-ring ${gold ? 'border-fdc-gold/40 bg-fdc-gold/[0.14] hover:bg-fdc-gold/20' : 'border-white/25 bg-white/10 hover:bg-white/[0.18]'}`}
+      className={`group flex flex-col rounded-2xl border p-3 text-left backdrop-blur transition focus-ring ${gold ? 'border-fdc-gold/40 bg-fdc-gold/[0.14] hover:bg-fdc-gold/20' : 'border-white/25 bg-white/10 hover:bg-white/[0.18]'}`}
     >
-      <div className="text-[10.5px] font-bold uppercase tracking-wide text-white/75">{eyebrow}</div>
-      <div className={`tnum mt-0.5 text-[28px] font-extrabold leading-none ${gold ? 'text-fdc-gold' : 'text-white'}`}>{value}</div>
-      <div className="mt-1.5 text-[11.5px] leading-snug text-white/80">{sub}</div>
-      <div className="mt-2 inline-flex items-center gap-1 text-[11.5px] font-semibold text-white">
-        {cta} <ArrowRight size={13} className="transition group-hover:translate-x-0.5" />
+      <div className="text-[10px] font-bold uppercase tracking-wide text-white/75">{eyebrow}</div>
+      <div className={`tnum mt-0.5 text-[22px] font-extrabold leading-none ${gold ? 'text-fdc-gold' : 'text-white'}`}>{value}</div>
+      <div className="mt-1 text-[11px] leading-snug text-white/80">{sub}</div>
+      <div className="mt-1.5 inline-flex items-center gap-1 text-[11px] font-semibold text-white">
+        {cta} <ArrowRight size={12} className="transition group-hover:translate-x-0.5" />
       </div>
     </button>
   );
 }
 
-function ActionCard({ a, onNavigate, onProof }: { a: ValueAction; onNavigate: (n: Nav) => void; onProof: (a: ValueAction) => void }) {
-  const K = KIND[kindOf(a)];
-  const Icon = K.icon;
+// the extras the founder doesn't want on the main view, but may want to open to dig deeper —
+// one closed-by-default section that keeps the spend/savings chart and payment-terms detail available.
+function DigDeeper({ children }: { children: ReactNode }) {
+  const [open, setOpen] = useState(false);
   return (
-    <Card className="group flex cursor-pointer flex-col transition hover:shadow-card-hover" onClick={() => onProof(a)}>
-      <div className="mb-2 flex items-center justify-between">
-        <span className="inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[10.5px] font-bold uppercase tracking-wide" style={{ background: `${K.color}14`, color: K.color }}>
-          <Icon size={12} /> {K.label}
+    <div className="space-y-5">
+      <button onClick={() => setOpen((o) => !o)} className="flex w-full items-center justify-between gap-2 rounded-2xl border border-black/[0.06] bg-white px-4 py-3.5 text-left shadow-card transition hover:bg-black/[0.02] focus-ring">
+        <span className="min-w-0">
+          <span className="flex items-center gap-1.5 text-[15px] font-bold text-fdc-ink">Dig deeper <span className="font-medium text-fdc-grey">— the extra detail</span></span>
+          <span className="mt-0.5 block text-[12px] leading-snug text-fdc-grey">Spend &amp; savings by material, and the full payment-terms breakdown — here when you want to dig in, out of the way when you don’t.</span>
         </span>
-        <span className="grid h-6 w-6 place-items-center rounded-full bg-fdc-ink/5 text-[12px] font-extrabold text-fdc-slate">{a.rank}</span>
-      </div>
-
-      <div className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-fdc-grey">Action</div>
-      <p className="text-[15px] font-bold leading-snug text-fdc-ink">{a.action}</p>
-
-      <div className="mt-2.5 mb-1 text-[10px] font-semibold uppercase tracking-wide text-fdc-grey">Why</div>
-      {a.whyBullets?.length ? (
-        <ul className="space-y-1">
-          {a.whyBullets.map((b, i) => (
-            <li key={i} className="flex gap-1.5 text-[12px] leading-snug text-fdc-slate">
-              <span className="mt-[6px] h-1 w-1 shrink-0 rounded-full" style={{ background: K.color }} />
-              <span>{b}</span>
-            </li>
-          ))}
-        </ul>
-      ) : <p className="text-[12.5px] leading-snug text-fdc-slate">{a.why}</p>}
-
-      {a.risk && (
-        <p className="mt-2 flex items-start gap-1.5 rounded-lg bg-fdc-orange/[0.08] px-2.5 py-1.5 text-[11.5px] leading-snug text-fdc-slate">
-          <AlertTriangle size={13} className="mt-0.5 shrink-0 text-fdc-orange" /> {a.risk}
-        </p>
-      )}
-
-      <div className="mt-auto flex items-end justify-between gap-2 pt-3">
-        <div>
-          <div className="text-[10px] font-semibold uppercase tracking-wide text-fdc-grey">{K.save}</div>
-          <div className="tnum text-[22px] font-extrabold leading-none" style={{ color: a.isCash ? FDC.blue : FDC.green }}>{a.savingLabel}</div>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <span className="hidden items-center gap-1 text-[11px] font-semibold text-fdc-slate opacity-0 transition group-hover:opacity-100 sm:inline-flex"><Eye size={12} /> tap for proof</span>
-          <button
-            onClick={(e) => { e.stopPropagation(); onNavigate(a.proof.tab === 'vendors' ? { tab: 'vendors', vendorKey: a.proof.vendorKey } : { tab: 'vendors', material: a.proof.material as MaterialKey | undefined, skuDesc: a.proof.skuDesc, vendorKey: a.proof.vendorKey }); }}
-            className="inline-flex items-center gap-1 rounded-lg border border-fdc-green/30 bg-fdc-green/[0.06] px-2.5 py-1.5 text-[12px] font-semibold text-fdc-green transition hover:bg-fdc-green/[0.12] focus-ring"
-          >
-            Full view <ArrowRight size={13} />
-          </button>
-        </div>
-      </div>
-    </Card>
+        <span className="flex shrink-0 items-center gap-1 text-[12px] font-semibold text-fdc-slate">{open ? 'Hide' : 'Show'} <ChevronDown size={16} className={`transition ${open ? 'rotate-180' : ''}`} /></span>
+      </button>
+      {open && children}
+    </div>
   );
 }
 
