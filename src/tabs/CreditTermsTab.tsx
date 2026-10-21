@@ -87,14 +87,6 @@ export default function CreditTermsTab({ data, nav, onNavigate }: { data: AppDat
 
   if (!pt) return <Card><p className="text-[13px] text-fdc-grey">No payment-terms data loaded. Run <code className="rounded bg-black/5 px-1 py-0.5 font-mono text-[11px]">npm run normalize</code>.</p></Card>;
 
-  // headline numbers (plain English)
-  const totalSpend = pt.totalSpend;
-  const avgDays = pt.weightedAvgTermDays;
-  const payEarly = rows.filter((r) => r.youGet < 30);
-  const freeAt30 = rows.reduce((s, r) => s + oppAt(r.spend, r.youGet, 30), 0);
-  const freeAtTarget = rows.reduce((s, r) => s + oppAt(r.spend, r.youGet, targetN), 0);
-  const giveOthersMore = rows.filter((r) => r.theyGive != null && r.theyGive - r.youGet >= 5);
-
   const matOpts: Option<string>[] = [
     { value: 'all', label: 'All materials' },
     ...data.meta.materialMeta.map((m) => ({ value: m.key, label: m.plainName || m.displayName, color: MATERIAL_COLOR[m.key] })),
@@ -200,21 +192,6 @@ export default function CreditTermsTab({ data, nav, onNavigate }: { data: AppDat
         </p>
       </div>
 
-      {/* plain summary */}
-      <Card>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          <Fact label="You buy per year" value={fmtCash(totalSpend)} sub={`across ${rows.length} suppliers`} color={FDC.ink} />
-          <Fact label="Avg credit you get" value={`${avgDays ?? '—'} days`} sub="to pay, weighted by spend" color={FDC.green} />
-          <Fact label="Suppliers you pay early" value={`${payEarly.length}`} sub={`free ~${fmtCash(freeAt30)} one-time at 30 days`} color={FDC.orange} />
-          <Fact label="Give others more than you" value={`${giveOthersMore.length}`} sub="their own customers get more days — ask for it" color={FDC.blue} />
-        </div>
-        <ul className="mt-3 space-y-1.5 border-t border-black/[0.06] pt-3 text-[12.5px] leading-snug text-fdc-slate">
-          <li className="flex gap-1.5"><span className="mt-[6px] h-1 w-1 shrink-0 rounded-full bg-fdc-orange" /><span>Most suppliers already give you 30 days. The quick cash sits with the few who make you pay early — moving just those to 30-day credit frees about <b>{fmtCash(freeAt30)}</b> of cash in one go (not a yearly saving).</span></li>
-          <li className="flex gap-1.5"><span className="mt-[6px] h-1 w-1 shrink-0 rounded-full bg-fdc-blue" /><span><b>{giveOthersMore.length} suppliers</b> let their own customers take more days than they give you — that’s a fair, number-backed reason to ask for the same.</span></li>
-          <li className="flex gap-1.5"><span className="mt-[6px] h-1 w-1 shrink-0 rounded-full bg-fdc-green" /><span>Push the whole book to <b>{targetN}-day</b> credit and you’d free about <b>{fmtCash(freeAtTarget)}</b> one-time.</span></li>
-        </ul>
-      </Card>
-
       {/* controls */}
       <div className="flex flex-wrap items-end gap-3">
         <Dropdown value={mat} options={matOpts} onChange={setMat} label="Material" width={190} />
@@ -246,16 +223,6 @@ export default function CreditTermsTab({ data, nav, onNavigate }: { data: AppDat
       </div>
 
       {openRow && <CreditDetail row={openRow} target={targetN} onClose={() => setOpen(null)} onNavigate={onNavigate} />}
-    </div>
-  );
-}
-
-function Fact({ label, value, sub, color }: { label: string; value: string; sub: string; color: string }) {
-  return (
-    <div className="rounded-xl border border-black/[0.06] bg-white px-3.5 py-2.5">
-      <div className="text-[11px] font-medium uppercase tracking-wide text-fdc-grey">{label}</div>
-      <div className="tnum mt-0.5 text-[20px] font-extrabold leading-none" style={{ color }}>{value}</div>
-      <div className="mt-1 text-[11px] leading-snug text-fdc-grey">{sub}</div>
     </div>
   );
 }
