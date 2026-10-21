@@ -307,5 +307,5 @@ function DigDeeper({ children }: { children: ReactNode }) {
 }
 
 function shortName(name: string): string {
-  return String(name).replace(/\b(PRIVATE|PVT|LIMITED|LTD|INDIA|\(INDIA\))\b\.?/gi, '').replace(/\s{2,}/g, ' ').replace(/[.,]\s*$/, '').trim();
+  return String(name).replace(/\b(PRIVATE|PVT|LIMITED|LTD|INDIA|\(INDIA\))\b\.?/gi, '').replace(/\(\s*\)/g, '').replace(/\s{2,}/g, ' ').replace(/[.,]\s*$/, '').trim();
 }
