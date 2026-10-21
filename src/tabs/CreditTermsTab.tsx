@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Wallet, Coins, Clock, Scale, X, Info, CalendarClock, ArrowRight } from 'lucide-react';
+import { Wallet, Coins, Clock, Scale, X, CalendarClock, ArrowRight } from 'lucide-react';
 import type { AppData, MaterialKey } from '../types';
 import type { Nav } from '../App';
 import { Card, Badge } from '../components/ui/Card';
@@ -187,9 +187,6 @@ export default function CreditTermsTab({ data, nav, onNavigate }: { data: AppDat
         <h2 className="flex items-center gap-1.5 text-[16px] font-bold leading-tight text-fdc-ink">
           <Wallet size={17} strokeWidth={2.3} className="text-fdc-green" /> Credit &amp; terms — who gives you time to pay, and who doesn’t
         </h2>
-        <p className="mt-1 max-w-3xl text-[12.5px] leading-snug text-fdc-grey">
-          Every supplier, side by side: the credit they give <b className="text-fdc-slate">you</b> vs the credit they give <b className="text-fdc-slate">their own customers</b>. The gap is your opening. Tap any row for the full picture.
-        </p>
       </div>
 
       {/* controls */}
@@ -213,14 +210,6 @@ export default function CreditTermsTab({ data, nav, onNavigate }: { data: AppDat
         onRowClick={(r) => setOpen(r.key)}
         activeKey={open}
       />
-
-      {/* honest limit */}
-      <div className="flex items-start gap-2 rounded-xl border border-black/[0.06] bg-white px-3.5 py-2.5 text-[11.5px] leading-snug text-fdc-grey">
-        <Info size={14} className="mt-0.5 shrink-0 text-fdc-grey" />
-        <span>
-          <b className="text-fdc-slate">What this is, and what it isn’t.</b> This compares the credit on the purchase order (what you <i>agreed</i>) with what each supplier gives its own customers (their “debtor days”, from their public filed accounts). It does <b>not</b> yet show the actual number of days you really take to pay each one — that needs the SAP vendor payment ledger (invoice date vs the date the payment cleared, the FBL1N / accounts-payable export). Get that export and we can add a “terms vs reality” column that proves exactly how many days you really pay in.
-        </span>
-      </div>
 
       {openRow && <CreditDetail row={openRow} target={targetN} onClose={() => setOpen(null)} onNavigate={onNavigate} />}
     </div>
