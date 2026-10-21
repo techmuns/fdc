@@ -155,9 +155,9 @@
       "headline": "Strong, pharma-grade bottle maker — 'old stock' is just how they run.",
       "verdict": "Keep them — but add a 'freshest-first / max-age-at-dispatch' clause for ORS shelf life.",
       "findings": [
-        "Strong credit (A+), revenue ~₹939 cr, pharma clients (Cipla, J&J).",
-        "The 'old stock' you flagged is their deliberate ~125-day inventory model, not distress.",
-        "Built a >1-billion-bottle/yr food-grade recycled-PET plant; a ₹1,500 cr IPO is talked about (no filing yet)."
+        "Strong credit (A+), revenue ~₹939 cr, pharma clients (Cipla, J&J); India's largest PET-preform maker — plenty of capacity, and still expanding (a new recycled-PET plant is going live).",
+        "The ~125-day 'old stock' you flagged is confirmed as their deliberate inventory model (CRISIL), not distress — but still ask for a max-age-at-dispatch clause for ORS shelf life.",
+        "Plants in the Gujarat / Silvassa cluster (~180–220 km from your Nashik plant)."
       ],
       "sources": [{ "label": "CRISIL, Sep 2025", "url": "https://www.crisilratings.com/" }]
     },
@@ -166,9 +166,9 @@
       "headline": "A genuine pharma-bottle maker — just pin down the exact legal entity.",
       "verdict": "Use the overpay data to negotiate; confirm the exact invoicing entity from a GST invoice.",
       "findings": [
-        "Confirmed a real manufacturer (Noida) of HDPE/LDPE/PP pharma bottles — not a middleman.",
-        "FDC's own records show 121 deliveries of bottles + caps to your Baddi plant.",
-        "The public company-registry match is murky, so verify the exact legal entity."
+        "FDC's own records show 121 deliveries of bottles + caps to your Baddi plant — so the relationship is real.",
+        "But a deep web / registry / MCA search found NO public record for 'Cincorp International' at all — you can't confirm the legal entity from outside your own ledger.",
+        "Pin the exact invoicing entity (GST) and run an audit before any volume move; no capacity or certs are verifiable."
       ],
       "sources": [{ "label": "FDC SAP purchase register", "url": "" }]
     },
@@ -188,17 +188,19 @@
       "verdict": "Confirm exactly which 'Premier' invoices FDC (get the GST number), then audit before any volume move.",
       "findings": [
         "The real supplier is a tiny Vasai proprietorship — NOT the healthy listed 'Premier Polyfilm' (that's a vinyl-flooring company).",
-        "Its catalogue is general plastics (jars, tablet tubes, even scarf hangers) — thin pharma-bottle evidence."
+        "Vasai is ~130 km from your Nashik plant and close to Mumbai / Goa shipping — the best-located of the tiny bottle makers.",
+        "But its catalogue is general plastics (jars, tablet tubes, even scarf hangers) — thin pharma-bottle evidence; verify it genuinely does pharma-grade bottles before relying on it."
       ],
       "sources": [{ "label": "GST registry + trade directories", "url": "" }]
     },
     "mars-plastics": {
       "riskLevel": "amber",
       "headline": "A small Punjab partnership — best pharma product-fit of the tiny ones.",
-      "verdict": "Fine for price leverage; audit before moving meaningful volume.",
+      "verdict": "Use its low price as leverage now; audit (GMP + certs + capacity) before shifting meaningful volume — these are light-sensitive, primary-contact bottles.",
       "findings": [
-        "Makes exactly the right products (dry-syrup, eye-drop, nasal bottles) — good fit.",
-        "But a ₹5–25 cr partnership with no audited accounts or confirmed pharma certs."
+        "Why it tempts: makes exactly the right products (dry-syrup, eye-drop, nasal bottles) at the lowest quoted price, and Samana (Punjab) is ~180 km from your Baddi plant — the closest of the small bottle makers.",
+        "Why to audit first: a small partnership with no audited accounts, no confirmed pharma certs (ISO 15378/GMP) and no verifiable capacity — a cheap price can mean thinner walls or looser QC.",
+        "Run a GMP/line audit + certificate check before moving any dry-syrup/eye-drop/nasal volume here."
       ],
       "sources": [{ "label": "GST registry + trade directories", "url": "" }]
     },
@@ -218,8 +220,9 @@
       "headline": "A real small bottle maker — just has no web footprint.",
       "verdict": "Use as leverage; audit before bigger volume.",
       "findings": [
-        "FDC's records confirm 38 deliveries of amber PET pharma bottles to Aurangabad (~₹4.95/pc).",
-        "Genuine supplier; no public registry/web presence, so no independent financials to check."
+        "FDC's records confirm 38 deliveries of amber PET pharma bottles to Aurangabad (~₹4.95/pc) — if it delivers there, it's likely local to your Waluj-Aurangabad plant (a real logistics plus for that site).",
+        "But no public registry / web presence at all — no independent financials, capacity or certs to check.",
+        "Amber PET suits light-sensitive products, but unverified UV/QC is where a cheap converter can underdeliver — audit before any bigger volume."
       ],
       "sources": [{ "label": "FDC SAP purchase register", "url": "" }]
     },
@@ -228,7 +231,8 @@
       "headline": "Healthy, A-rated bottle maker backed by a Thai group.",
       "verdict": "Push the price, ideally with a resin-cost-linked clause. Safe to keep or grow.",
       "findings": [
-        "A-rated, ~₹822 cr revenue, pharma-capable, multiple India plants.",
+        "A-rated (first-time ICRA rating, Mar 2026), ~₹822 cr revenue, pharma-capable; just added capacity, so room to grow.",
+        "Plants at Umbergaon / Silvassa ~150 km from your Nashik plant — good logistics.",
         "Watch-items: profit dipped ~31% last year, and it leans ~85–90% on a single supplier of its own."
       ],
       "sources": [{ "label": "ICRA, Mar 2026", "url": "https://www.icra.in/Rating/GetRationalReportFilePdf?id=141963" }]
@@ -254,9 +258,9 @@
       "headline": "Your amber glass-bottle maker — a steady niche unit of a cash-rich Mumbai group.",
       "verdict": "Keep — a long-established, low-continuity-risk supplier. Just confirm the glass type (Type I vs III) suits your product.",
       "findings": [
-        "Solid credit (A-/A), cash-rich and low-geared; the group's real profit engine is property rentals.",
-        "Vikhroli plant makes molded amber pharma glass; clients include GSK, Pfizer, Merck, Cipla.",
-        "Glass is a small, non-core division of the listed Empire Industries — thin public disclosure on the unit itself."
+        "Cash-rich, low-geared group (the real profit engine is property rentals); Vitrum glass turnover ~₹246 cr.",
+        "Single Vikhroli plant (Mumbai) making amber pharma glass — ~1.9 million bottles/day, ~165 km from your Nashik plant — but one furnace, so limited surge capacity for a big order.",
+        "Glass is a small, non-core division of the listed Empire Industries — thin public disclosure, no standalone credit rating surfaced."
       ],
       "sources": [{ "label": "CRISIL, Jul 2026; CARE, Sep 2024", "url": "https://www.crisil.com/" }]
     },
@@ -281,8 +285,8 @@
         "sourceUrl": "https://www.careratings.com/"
       },
       "findings": [
-        "Very capable: A+ credit, ~₹4,216 cr revenue, ~33% margins; the Type-I pharma-glass leader.",
-        "But pharma is a minority of its book — most of it is luxury cosmetics and spirits bottles.",
+        "Very capable: 1,730 TPD of glass (a new 120 TPD Kosamba furnace just added), A+ credit, ~₹4,216 cr revenue, ~33% margins — the Type-I pharma-glass leader with capacity to spare.",
+        "But pharma is only ~21% of its book — most is luxury cosmetics and spirits bottles, so domestic pharma isn't its priority.",
         "Strong ESG record (EcoVadis Platinum, CDP 'A'); zero fatalities FY25."
       ],
       "sources": [{ "label": "CARE, Dec 2025; PGP FY25 annual report", "url": "https://www.careratings.com/" }]
@@ -311,12 +315,12 @@
     },
     "triveni-polymers": {
       "riskLevel": "green",
-      "headline": "The standout 'small' vendor — actually a wholly-owned arm of Germany's Gerresheimer.",
-      "verdict": "The strongest and lowest-risk of your small vendors — a tier-1 global player. Keep, and you could safely grow it.",
+      "headline": "The standout 'small' vendor — actually Gerresheimer's India arm (a German pharma-packaging MNC).",
+      "verdict": "The strongest and best-credentialed of your small vendors — a tier-1 global player. Keep, and you could safely grow it (confirm current certs + capacity headroom first).",
       "findings": [
-        "100% owned by Gerresheimer AG (German pharma-packaging MNC); branded 'Gerresheimer Kundli'.",
-        "USFDA-DMF-certified (the first Indian firm for plastic pharma containers); ISO / USP / EP compliant.",
-        "Clean-room plants at Kundli + Kosamba; capacity nearly doubled since 2012. Great Place To Work certified."
+        "Gerresheimer-controlled — it took a 75% stake in 2012; the exact current stake isn't publicly confirmed. Branded 'Gerresheimer Kundli'.",
+        "USFDA-DMF-certified (the first Indian firm for plastic pharma containers); ISO 9001/14001/15378/45001 — the most credentialed plastic maker in your set.",
+        "Clean-room plants at Kundli (Haryana, ~230 km from your Baddi plant) + Kosamba (Gujarat). No public capacity figure, so confirm headroom before a big shift."
       ],
       "sources": [{ "label": "Gerresheimer press; MCA", "url": "https://www.gerresheimer.com/" }]
     },
