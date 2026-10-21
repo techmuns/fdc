@@ -1,6 +1,6 @@
 # FDC Supplier Due-Diligence — v2 (deep / investigative)
 
-**What this is:** an equity-research-grade check on the 20 suppliers that appear in a recommendation — capacity, money, risk, quality — in plain words, with a real source behind every fact. Serious findings were verified against primary sources (FDA, CCI, courts). Where an entity couldn't be verified we say so.
+**What this is:** an equity-research-grade check on all **27 suppliers** — the ones that appear in a recommendation *and* your current suppliers — covering capacity, money, risk and quality in plain words, with a real source behind every fact. Serious findings were verified against primary sources (FDA, CCI, courts). Where an entity couldn't be verified we say so.
 
 > **How to read the risk flags:** 🔴 = a serious, documented red flag worth a real decision · 🟡 = a notable concern to weigh · 🟢 = financially strong / low-risk. Everything here is a *lead to verify before acting*, not a final legal conclusion.
 
@@ -11,7 +11,7 @@
 **Three suppliers carry serious, verified red flags (I checked each against the primary source myself):**
 
 1. 🔴 **Kilitch Healthcare (old-stock supplier) — US FDA caught them fabricating lab data.** FDA Warning Letter, 28 Mar 2024: it is their *"routine practice to fabricate results for samples that were never taken."* On FDA Import Alert 66-40 since Oct 2023; the maker behind the 2023 CVS/Walmart/Target eye-drop recall. For a pharma buyer, fabricated QC data undermines *all* their test paperwork. *(Verified at fda.gov. Caveats: recall had no confirmed injuries and is milder than the deadly EzriCare case; this is the **unlisted** Kilitch Healthcare, not the clean **listed** Kilitch Drugs — a plain Google search shows the wrong, clean company.)*
-2. 🔴 **GEEP — your biggest laminate supplier (₹28 Cr/yr) — is a convicted cartelist.** CCI found GEEP guilty (2018) of price-fixing with Panasonic in dry-cell batteries, penalty ~₹9.6 cr; guilt upheld on appeal. "GEEP" is the old Geep batteries/torch brand — laminate is a sideline. *(Verified via CCI order coverage.)*
+2. 🔴 **GEEP — your biggest laminate supplier (₹28 Cr/yr) — is a convicted cartelist.** CCI found GEEP guilty (2018) of price-fixing with Panasonic in dry-cell batteries (penalty ~₹9.6 cr); guilt was upheld on appeal — NCLAT reduced the penalty to **₹2.41 cr (2023), the final word (no Supreme Court appeal)**. "GEEP" is the old Geep batteries/torch brand — laminate is a sideline. *(Verified via CCI order coverage.)*
 3. 🔴 **UFlex — chairman convicted in a corruption scandal.** Founder-chairman Ashok Chaturvedi was convicted by a CBI court (2010) in the Noida land-allotment scam and jailed (~4 yrs). *(Verified via Deccan Herald/Tribune. Caveat: the 2023 "₹1,500 cr tax raid" actually collapsed — the tax tribunal quashed the assessments in 2026.)*
 
 **The "ghost" alternatives — resolved using FDC's own SAP purchase registers (in the repo):**
@@ -20,6 +20,8 @@
 - **Silk Polypack** (vendor 1000032) — **a single ₹7,775 / 31 kg laminate receipt (27 Mar 2026).** A one-off, not a supplier to move volume to — it should be dropped from "alternatives."
 
 **The pattern:** the suppliers you *overpay* are mostly financially strong (Gujarat Ambuja, Sukhjit, Chemco, TPAC, Huhtamaki) → push price, don't switch. The *risk* sits in two places: (a) the three red-flag names above, and (b) the small "move-to" bottle makers (PIK, Premier, Mars, Suraj) which are real but tiny and unaudited — fine for leverage, not for volume without an on-site audit.
+
+**Your current (non-recommendation) suppliers checked out too** — most are low-risk (Empire–Vitrum glass, Bprex and Triveni bottles), with one genuine standout: **Triveni Polymers is a wholly-owned arm of Germany's Gerresheimer**. Two are watch-items — **PGP Glass** (owner Blackstone is mid-IPO/sale) and **Scorpion Containers** (looks more like a logistics firm than a packaging maker) — and **Abhinav Speciality Foods** is a tiny, opaque LLP whose exact product should be pinned down.
 
 ---
 
@@ -47,6 +49,13 @@
 | Suraj Blow Plast | Bottles | move-to | 🟡 | Real per SAP (amber PET to Aurangabad); no web footprint/audit | Lever; audit before bigger volume |
 | TPAC | Bottles | overpay | 🟢 | A-rated, Thai-group, BUT leans ~85–90% on a single supplier | Push price w/ resin-cost clause |
 | Kilitch Healthcare | Bottles/filled | old stock | 🔴 | **FDA data-fabrication + US import ban**; a pharma CMO, not a bottle maker | Treat as elevated-risk; see above |
+| Empire–Vitrum Glass | Glass | current | 🟢 | Niche amber-glass unit of a cash-rich Mumbai group; property rentals are its engine | Keep; confirm glass type |
+| PGP Glass | Glass | current | 🟢 | World-scale (ex-Piramal), BUT Blackstone is running an IPO + sale talks + a Mar-2026 refinancing | Keep; watch the ownership change |
+| Bprex Pharma Packaging | Bottles/droppers | current | 🟢 | cGMP ophthalmic-dropper maker; now in the Amcor group (same site as Berry) | Keep; confirm invoicing entity |
+| Triveni Polymers | Bottles/closures | current | 🟢 | A wholly-owned arm of **Gerresheimer** (German MNC); USFDA-DMF-certified | Keep; could safely grow |
+| Rachana Plastics | Caps/measuring cups | current | 🟡 | One-man Mumbai proprietorship; clean record but no financial transparency | Pin GST entity; check FSSAI |
+| Abhinav Speciality Foods | Food ingredient | current | 🟡 | Tiny, leveraged family LLP; the exact ingredient supplied isn't publicly clear | Get FSSAI + product spec/COA |
+| Scorpion Containers | Bottles? / logistics | current | 🟡 | Evidence points to a **freight/3PL** firm, not a packaging maker | Confirm bottles vs transport |
 
 ---
 
@@ -74,7 +83,7 @@
 # Laminates / films
 
 ## GEEP Industries 🔴 *(overpay — biggest laminate line, ₹28 Cr)*
-- **Convicted cartelist:** CCI found GEEP guilty (order 30 Aug 2018, penalty ~₹9.6 cr) of a bilateral price-fixing cartel with Panasonic in dry-cell batteries; the guilt finding was upheld on appeal (penalty reduced). Panasonic escaped penalty via whistleblower leniency.
+- **Convicted cartelist:** CCI found GEEP guilty (order 30 Aug 2018, penalty ~₹9.6 cr) of a bilateral price-fixing cartel with Panasonic in dry-cell batteries; the guilt finding was upheld on appeal — **NCLAT reduced the penalty to ₹2.41 cr (2023), which stands as the final word (no Supreme Court appeal).** Panasonic escaped penalty via whistleblower leniency.
 - **And it's not really a packaging house:** "GEEP" is the legacy **Geep batteries/torch/LED brand** (Thanawala family); GST shows battery, torch, LED **and** laminate-film lines. Unrated-then-non-cooperating credit history; margins compressed from ~8.6% to ~3%; the group's growth story is LED/EV/smart-meters, **not** laminate. FDC is a named client in CRISIL's rationale (relationship corroborated).
 - **Verdict:** push price hard; **don't grow reliance** — laminate is non-core to them, and the cartel conviction + opacity are real reputational/continuity flags for a pharma buyer. _Sources: CCI Case 02/2017 (30-Aug-2018); CRISIL 28-Feb-2023._
 
@@ -131,6 +140,42 @@
 - **The red flag of the whole set.** FDA Warning Letter (28 Mar 2024) found **fabricated QC data** ("routine practice to fabricate results for samples that were never taken"), insanitary aseptic conditions, DEG/EG sampling failures; on **Import Alert 66-40** since Oct 2023; the maker behind the 2023 US store-brand eye-drop recall. A pharma **CMO** (likely supplies FDC filled/finished goods, not empty bottles). Formerly "NBZ Pharma." FY25 profit −44%, borrowings +5,534% (post-ban shock). **Distinct from the clean listed Kilitch Drugs.**
 - **Verdict:** treat as **elevated-risk** — fabricated QC data undermines trust in all their release paperwork (directly relevant to the 211-day-old stock). Require their FDA remediation/CAPA evidence and re-qualify, or move the business. _Verified: fda.gov Warning Letter 320-24-29._
 
+## Bprex Pharma Packaging India 🟢 *(current supplier)*
+- cGMP pharma-packaging maker (ophthalmic dropper bottles — Rispharm/O-Design; inhalation/injectable platforms). Lineage **Truepack (1986) → Rexam → Berry → Amcor (2025)**; shares the Bangalore address & two-person board with Berry Global India. Parent (Amcor) is investment-grade; the India entity's standalone financials aren't public.
+- **Verdict:** well-capitalised, low-risk MNC vendor and a strong fit for your eye-drops; confirm which entity (legacy Bprex vs new Berry Global India) actually invoices you. _Sources: Berry/Amcor filings; CPHI._
+
+## Triveni Polymers 🟢 *(current supplier — the standout)*
+- A "small" vendor that is actually a **wholly-owned arm of Gerresheimer AG** (German pharma-packaging MNC), branded "Gerresheimer Kundli." **USFDA-DMF-certified** (first Indian firm for plastic pharma containers), ISO/USP/EP compliant; clean-room plants at Kundli (Haryana) + Kosamba (Gujarat); capacity nearly doubled since 2012. Great Place To Work certified.
+- **Verdict:** the strongest and lowest-risk of your small vendors — a tier-1 global player. Keep, and you could safely grow it. _Sources: Gerresheimer press; MCA._
+
+## Rachana Plastics 🟡 *(current supplier)*
+- Almost certainly a one-man Mumbai proprietorship (Jignesh Gandhi, GST 27AABPG3368G1ZV) making closures & dosing cups — flip-off seals, screw/child-resistant caps, 5/15/250 ml measuring cups (ORS-relevant). No public financials; clean record but zero financial transparency. (A Kolkata namesake Pvt Ltd exists but is probably not the supplier.)
+- **Verdict:** a low-stakes closure/cup supplier — pin the exact GST entity and check food-grade (FSSAI) compliance. _Sources: GST registry; IndiaMART._
+
+## Scorpion Containers 🟡 *(current supplier — verify what they supply)*
+- Despite the "Containers" name, the evidence — courier GST codes, 10+ multi-state registrations, the **"Scorpion Express" pan-India 3PL logistics group** (Singh family) — points to **freight/transport, not manufacturing**. Only one thin packaging listing (PET bottles/HDPE jars) exists. Tiny (paid-up <₹1 cr); no rating, no public financials, no verifiable plant.
+- **Verdict:** confirm what they actually supply you (bottles vs transport) before treating them as a packaging vendor. _Sources: MCA; GST (logistics SAC codes)._
+
 ---
 
-*Every serious finding above (Kilitch FDA, GEEP cartel, UFlex chairman) was checked against the primary source. Agent-gathered facts cite rating agencies, courts, and established press. The "ghost" resolutions use FDC's own SAP purchase registers. Items that couldn't be verified are flagged, not guessed.*
+# Glass
+
+## Empire Industries — Vitrum Glass 🟢 *(current supplier)*
+- FDC's amber glass-bottle maker is a niche division ("Vitrum") of the diversified, listed **Empire Industries** (Malhotra family, 72.6%). **CRISIL A- / CARE A**, cash-rich, low-geared (0.49x); the group's real profit engine is **real-estate rentals** (~60% margin). Vikhroli plant makes molded amber pharma glass (likely Type III; Type I not confirmed); clients GSK, Pfizer, Merck, Cipla. A ₹33 cr doubtful-debt provision hit its (separate) trading arm.
+- **Verdict:** long-established, low-continuity-risk amber-bottle maker, but a small, non-core unit of the group — confirm the glass type (Type I vs III) suits your product. _Sources: CRISIL Jul-2026; CARE Sep-2024._
+
+## PGP Glass (ex-Piramal Glass) 🟢 *(current supplier — ownership in flux)*
+- A world-scale glass-packaging leader: **CARE A+**, ~₹4,216 cr revenue, ~33% EBITDA margin, the Type-I pharma-glass leader and global #1 in nail-polish bottles. BUT it is **100% Blackstone-owned** (since 2020) and now running a **parallel IPO (~$4bn aspiration) AND trade-sale talks (Brookfield ~$1.3–1.5bn)**, with a **₹2,597 cr loan due Mar-2026** being refinanced. Pharma is only ~21% of its book (~77% luxury cosmetics/spirits). Strong ESG (EcoVadis Platinum, CDP 'A').
+- **Verdict:** very capable; the real variable is the imminent ownership change — keep, but monitor the Blackstone IPO/sale, which could shift focus off low-margin domestic pharma. _Sources: CARE Dec-2025; PGP FY25 AR._
+
+---
+
+# Food ingredient
+
+## Abhinav Speciality Foods LLP 🟡 *(current supplier)*
+- A tiny, opaque Mumbai family LLP (Rathi family, LLPIN AAD-5116), adjacent to an Ayurvedic business (Abhinav Healthcare). Micro (~₹4 cr revenue, ₹53 L PAT FY25) and **leveraged** (debt ≈ total assets); office in Andheri with no visible factory; the exact ingredient supplied to FDC is **undiscoverable publicly** (likely nutraceutical/herbal or specialty food). No FSSAI action/litigation found (namesake insolvencies exist — don't conflate).
+- **Verdict:** genuine but very small and opaque — the highest information-risk of the set. Obtain the FSSAI licence, exact product spec/COA and GST, and clarify the Abhinav Healthcare link. _Source: MCA registry._
+
+---
+
+*Every serious finding above (Kilitch FDA, GEEP cartel, UFlex chairman, GLS fire/near-insolvency) was checked against the primary source. Agent-gathered facts cite rating agencies, courts, and established press. The "ghost" resolutions use FDC's own SAP purchase registers. Items that couldn't be verified are flagged, not guessed.*
