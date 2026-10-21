@@ -21,7 +21,7 @@
 
 **The pattern:** the suppliers you *overpay* are mostly financially strong (Gujarat Ambuja, Sukhjit, Chemco, TPAC, Huhtamaki) → push price, don't switch. The *risk* sits in two places: (a) the three red-flag names above, and (b) the small "move-to" bottle makers (PIK, Premier, Mars, Suraj) which are real but tiny and unaudited — fine for leverage, not for volume without an on-site audit.
 
-**Your current (non-recommendation) suppliers checked out too** — most are low-risk (Empire–Vitrum glass, Bprex and Triveni bottles), with one genuine standout: **Triveni Polymers is a wholly-owned arm of Germany's Gerresheimer**. Two are watch-items — **PGP Glass** (owner Blackstone is mid-IPO/sale) and **Scorpion Containers** (looks more like a logistics firm than a packaging maker) — and **Abhinav Speciality Foods** is a tiny, opaque LLP whose exact product should be pinned down.
+**Your current (non-recommendation) suppliers checked out too** — most are low-risk (Empire–Vitrum glass, Bprex and Triveni bottles), with one genuine standout: **Triveni Polymers is Gerresheimer's India arm** (the German MNC took a 75% stake in 2012). Two are watch-items — **PGP Glass** (owner Blackstone is mid-IPO/sale) and **Scorpion Containers** (looks more like a logistics firm than a packaging maker) — and **Abhinav Speciality Foods** is a tiny, opaque LLP whose exact product should be pinned down.
 
 ---
 
@@ -52,7 +52,7 @@
 | Empire–Vitrum Glass | Glass | current | 🟢 | Niche amber-glass unit of a cash-rich Mumbai group; property rentals are its engine | Keep; confirm glass type |
 | PGP Glass | Glass | current | 🟢 | World-scale (ex-Piramal), BUT Blackstone is running an IPO + sale talks + a Mar-2026 refinancing | Keep; watch the ownership change |
 | Bprex Pharma Packaging | Bottles/droppers | current | 🟢 | cGMP ophthalmic-dropper maker; now in the Amcor group (same site as Berry) | Keep; confirm invoicing entity |
-| Triveni Polymers | Bottles/closures | current | 🟢 | A wholly-owned arm of **Gerresheimer** (German MNC); USFDA-DMF-certified | Keep; could safely grow |
+| Triveni Polymers | Bottles/closures | current | 🟢 | **Gerresheimer**-controlled (75% stake, 2012); USFDA-DMF-certified | Keep; could safely grow |
 | Rachana Plastics | Caps/measuring cups | current | 🟡 | One-man Mumbai proprietorship; clean record but no financial transparency | Pin GST entity; check FSSAI |
 | Abhinav Speciality Foods | Food ingredient | current | 🟡 | Tiny, leveraged family LLP; the exact ingredient supplied isn't publicly clear | Get FSSAI + product spec/COA |
 | Scorpion Containers | Bottles? / logistics | current | 🟡 | Evidence points to a **freight/3PL** firm, not a packaging maker | Confirm bottles vs transport |
@@ -145,7 +145,7 @@
 - **Verdict:** well-capitalised, low-risk MNC vendor and a strong fit for your eye-drops; confirm which entity (legacy Bprex vs new Berry Global India) actually invoices you. _Sources: Berry/Amcor filings; CPHI._
 
 ## Triveni Polymers 🟢 *(current supplier — the standout)*
-- A "small" vendor that is actually a **wholly-owned arm of Gerresheimer AG** (German pharma-packaging MNC), branded "Gerresheimer Kundli." **USFDA-DMF-certified** (first Indian firm for plastic pharma containers), ISO/USP/EP compliant; clean-room plants at Kundli (Haryana) + Kosamba (Gujarat); capacity nearly doubled since 2012. Great Place To Work certified.
+- A "small" vendor that is actually **Gerresheimer-controlled** (the German pharma-packaging MNC took a 75% stake in 2012; the current exact stake isn't publicly confirmed), branded "Gerresheimer Kundli." **USFDA-DMF-certified** (first Indian firm for plastic pharma containers), ISO 9001/14001/15378/45001 compliant; clean-room plants at Kundli (Haryana, ~230 km from FDC's Baddi plant) + Kosamba (Gujarat). No public capacity figure, so confirm headroom before a big shift. Great Place To Work certified.
 - **Verdict:** the strongest and lowest-risk of your small vendors — a tier-1 global player. Keep, and you could safely grow it. _Sources: Gerresheimer press; MCA._
 
 ## Rachana Plastics 🟡 *(current supplier)*
