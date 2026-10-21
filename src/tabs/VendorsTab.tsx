@@ -189,6 +189,7 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
     ) },
     { key: 'pay', header: 'You pay / yr', align: 'right', sortable: true, sortValue: (r) => r.pay, render: (r) => <span className="tnum whitespace-nowrap font-semibold text-fdc-ink">{fmtSave(r.pay)}</span> },
     { key: 'save', header: 'Can save', align: 'right', sortable: true, sortValue: (r) => r.save, render: (r) => (r.save > 0 ? <span className="tnum whitespace-nowrap font-bold text-fdc-orange">{fmtSave(r.save)}</span> : <span className="text-fdc-grey">—</span>), heat: (r) => (r.save > 0 ? Math.min(1, r.save / maxSave) : null), heatScale: 'hue', heatColor: FDC.orange },
+    { key: 'savePct', header: '% saved', align: 'right', sortable: true, sortValue: (r) => (r.pay ? r.save / r.pay : -1), render: (r) => (r.save > 0 && r.pay > 0 ? <span className="tnum whitespace-nowrap font-semibold text-fdc-slate">{((r.save / r.pay) * 100).toFixed(1)}%</span> : <span className="text-fdc-grey">—</span>) },
     { key: 'why', header: 'Why & what to do', render: (r) => (
       <div className="min-w-0 max-w-[460px]">
         <p className="text-[12px] leading-snug text-fdc-slate">{r.main}</p>

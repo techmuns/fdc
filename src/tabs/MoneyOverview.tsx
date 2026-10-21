@@ -197,6 +197,7 @@ function AllInsights({ data, onProof, defaultOpen = false }: { data: AppData; on
     { key: 'kind', header: 'Type', render: (r) => <Pill color={INSIGHT_KIND[r.kind].color}>{INSIGHT_KIND[r.kind].label}</Pill> },
     { key: 'spend', header: 'You spend / yr', align: 'right', sortable: true, sortValue: (r) => r.spend, render: (r) => <span className="tnum whitespace-nowrap">{fmtSave(r.spend)}</span> },
     { key: 'save', header: 'Can save', align: 'right', sortable: true, sortValue: (r) => r.save, render: (r) => <span className="tnum whitespace-nowrap font-bold" style={{ color: r.save > 0 ? INSIGHT_KIND[r.kind].color : FDC.grey }}>{r.saveLabel}</span>, heat: (r) => (r.save > 0 ? Math.min(1, r.save / maxSave) : null), heatScale: 'hue', heatColor: FDC.green },
+    { key: 'savePct', header: '% saved', align: 'right', sortable: true, sortValue: (r) => (r.kind === 'price' && r.spend ? r.save / r.spend : -1), render: (r) => (r.kind === 'price' && r.spend > 0 ? <span className="tnum whitespace-nowrap font-semibold text-fdc-slate">{((r.save / r.spend) * 100).toFixed(1)}%</span> : <span className="text-fdc-grey">—</span>) },
     { key: 'what', header: 'What to do', render: (r) => <span className="text-[12px] leading-snug text-fdc-slate">{r.what}</span> },
   ];
   return (

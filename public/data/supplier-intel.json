@@ -5,12 +5,13 @@
     "gujarat-ambuja-exports": {
       "riskLevel": "amber",
       "headline": "India's #1 maize processor — financially rock-solid, but profit swings hard.",
-      "verdict": "Push the price down — you're overpaying a debt-free market leader. No reason to switch.",
+      "verdict": "Push the price down — you're overpaying a debt-free leader that has the spare capacity and cash to concede. No need to switch; a credible threat to move a slice to Sayaji is your lever.",
       "findings": [
-        "Net-debt-free, top-tier AA– credit; ~₹950 cr cash. Low-risk to rely on.",
-        "Profit is a commodity spread — one quarter fell 45% year-on-year, then rebounded sharply.",
-        "A 2018 pollution complaint led to an NGT closure order at its Sitarganj plant (since stayed).",
-        "Governance quirks: ₹40 cr+ promoter pay vs a ~3% dividend on a big cash pile."
+        "India's largest maize processor — ~5,000 TPD, expanding to 6,000, running only ~82% full. Plenty of spare capacity to absorb more volume.",
+        "Net-debt-free, top-tier AA– credit, ~₹950 cr cash — zero supply-continuity risk.",
+        "Has a maize plant at Chalisgaon, ~100 km from your Nashik/Aurangabad plants — strong local logistics.",
+        "Profit is a commodity spread (one quarter fell 45%, then rebounded) — cyclical, not a credit worry.",
+        "Only real blemish: a 2018 pollution closure at its Sitarganj plant (since stayed)."
       ],
       "sources": [{ "label": "CARE Ratings, Dec 2025", "url": "https://www.careratings.com/upload/CompanyFiles/PR/202512121257_Gujarat_Ambuja_Exports_Limited.pdf" }]
     },
@@ -20,6 +21,7 @@
       "verdict": "Cut the price AND stop paying them early — both are safe concessions to reclaim.",
       "findings": [
         "A-rated, low debt; clients include Dabur, Nestlé, Mars, Marico.",
+        "1,600 TPD across 4 plants incl. Gurphal in Himachal (near your Baddi plant); a ₹500 cr Nashik unit is planned — it would sit beside your Nashik plant.",
         "Margin dip recently cut its grade A+ → A — earnings are cyclical, but the balance sheet is strong.",
         "Runs its bank limits ~93% full, so the early cash you give them is something they value."
       ],
@@ -28,16 +30,17 @@
     "sayaji-industries": {
       "riskLevel": "amber",
       "headline": "A suggested dextrose alternative — financially fragile, but recovering.",
-      "verdict": "Use only as a small price-lever second source. Don't move real volume here until the recovery is proven.",
+      "verdict": "Use as a price lever and a second source for a modest, capped share — not a big block. One fragile single plant with no expansion can't safely take most of your Gujarat Ambuja volume, and its pharma grade is unconfirmed.",
       "flag": {
-        "label": "Financially fragile (recovering)",
-        "detail": "Still below investment grade (CARE BB+), and its FY25 operating profit was actually negative — held together by promoter cash injections and a ₹73 cr land sale. It is now recovering: the credit outlook moved to Positive (Sep 2026) on a margin recovery. Improving, but not yet a supplier to lean on heavily.",
+        "label": "One small plant, financially fragile (recovering)",
+        "detail": "Single 950 TPD plant (Kathwada, Ahmedabad) with NO maize-crush expansion planned — so it can take some extra volume, not a large block. Still below investment grade (CARE BB+), with stretched liquidity (~88% of bank limits used, thin cash) propped up by promoter loans and a ₹73 cr land sale. It IS recovering — FY26 swung back to a thin profit and the outlook turned Positive (Sep 2026) — but it's not a supplier to lean on heavily yet.",
         "sourceUrl": "https://www.careratings.com/"
       },
       "findings": [
-        "Below investment grade (CARE BB+), slid from BBB+ over three years.",
-        "FY25 operating profit was negative; its gum-arabic JV out-earns the whole parent company.",
-        "Survival has leaned on promoter loans and asset sales, not operations."
+        "Why you could shift some: likely cheaper, sub-scale and hungry for a big account, with a genuine full dextrose range and a west-India plant.",
+        "Why not everything: a single 950 TPD plant with no expansion planned — no redundancy, limited room to scale with you.",
+        "Below investment grade (CARE BB+); survival has leaned on promoter loans and asset sales, though FY26 is a real (thin) turnaround.",
+        "Pharma grade not confirmed — listings show 'food' grade; get the IP-grade COA + FSSC/ISO certificates before any move."
       ],
       "sources": [{ "label": "CARE Ratings, Nov 2025 & Jun 2026", "url": "https://www.careratings.com/" }]
     },
@@ -47,6 +50,7 @@
       "verdict": "Push the price; don't grow reliance. The self-chosen opacity is the flag.",
       "findings": [
         "Stopped sharing its books (and paying fees) with its rating agency — downgraded to BB for it.",
+        "Single ~500 TPD plant at Dhule — the closest dextrose maker to your Nashik/Aurangabad cluster (~100 km) — but tiny and opaque.",
         "Entered the dextrose business by buying a bank-auctioned distressed plant for ₹17 cr.",
         "Tiny (~₹490 cr revenue), zero dividends despite profits; high-pollution category plant."
       ],
@@ -63,20 +67,21 @@
       },
       "findings": [
         "A battery/torch/LED company that also converts laminate — packaging is non-core.",
-        "Margins compressed from ~8.6% to ~3%; the group's growth story is LED/EV, not laminate.",
-        "History of going 'non-cooperating' with its rating agency."
+        "Doesn't publish its laminate capacity, and its rated bank lines are tiny (₹25 cr) — no evidence of the scale to take on more volume.",
+        "Margins compressed from ~8.6% to ~3%; low debt, but the growth story is LED/EV, not laminate.",
+        "Has a Baddi unit next to your Baddi plant (handy), but no pharma-grade credential is on record."
       ],
       "sources": [{ "label": "CCI order, Aug 2018 (via AZB Partners)", "url": "https://www.azbpartners.com/bank/cci-suo-motu-imposes-penalty-on-geep-industries-india-pvt-ltd-for-participating-in-a-cartel-concerning-institutional-sales-of-zinc-carbon-dry-cell-batteries/" }]
     },
     "shrinath-roto-pack": {
       "riskLevel": "amber",
       "headline": "A real, pharma-grade laminate alternative — but carrying factory debt.",
-      "verdict": "Bring in as a second source alongside GEEP to push price and build a backup — dual-source, don't hand them everything yet.",
+      "verdict": "Bring in as a second source alongside GEEP — dual-source and capped, after a certificate + line-capacity audit. Stronger credit than GEEP, but the foil-plant debt and the Hyderabad freight are the catches.",
       "findings": [
-        "Big (57,540 tonnes/yr), pharma-grade; supplies GSK, P&G, Britannia; live US exports.",
-        "But cash flow cratered ~80% and free cash is just ₹1.95 cr — tighter than its BBB+ grade suggests.",
-        "Credit is hostage to an under-utilised (40–50%), over-budget aluminium-foil plant it guarantees.",
-        "One rating agency marked it 'non-cooperating' just before it switched agencies."
+        "Why it's a credible move-to: verified 57,540 t/yr across two Hyderabad plants (grew from ~42,000), investment-grade BBB+ — stronger credit than GEEP — and real blue-chip clients (GSK, P&G, Britannia).",
+        "The catch: its foil plant is debt-funded, running only ~40–50% full, and drags the group's credit (gearing ~2x, TD/GCA 10x). No major new capex is planned.",
+        "Its foil plant sits in Aurangabad district (near your Waluj plant), but the sachet laminate is made far away in Hyderabad — a freight consideration.",
+        "Pharma grade is claimed by directories, not independently verified — audit the certificates and spare laminate capacity before any big shift."
       ],
       "sources": [{ "label": "CARE Ratings, Oct 2024", "url": "https://www.careratings.com/upload/CompanyFiles/PR/202410151004_SHRINATH_ROTO_PACK_PRIVATE_LIMITED.pdf" }]
     },
@@ -101,7 +106,7 @@
         "sourceUrl": "https://www.infomerics.com/admin/uploads/Pr_GLS_Films_4june25_98d5b91014.pdf"
       },
       "findings": [
-        "Plenty of capacity (78,800 t/yr, ~50% used) and blue-chip clients (ITC, PepsiCo, Nestlé).",
+        "Has spare capacity (~50% utilised) and blue-chip clients (ITC, PepsiCo, Nestlé) — the concern is the finances, not capacity. Exact tonnage isn't publicly disclosed.",
         "But the combined group didn't cover its interest in FY24 (interest-cover 0.86x, heavily geared).",
         "Flagship revenue fell ~23%; survives on promoter loans and cross-guarantees."
       ],
@@ -112,8 +117,9 @@
       "headline": "Very strong, pharma-grade laminate maker — the solid alternative.",
       "verdict": "Safe to move volume here and use their flat revenue to push price. Just monitor the leadership reset.",
       "findings": [
-        "Very safe credit (AA–), almost no debt, >₹400 cr cash, backed by a Finnish parent.",
-        "Pharma-grade (makes pharma tube laminates); 90-year operating history.",
+        "Very safe credit (AA–), almost no debt, >₹400 cr cash, backed by a Finnish parent — can easily absorb volume.",
+        "Pharma-grade (makes pharma tube laminates); ~10 plants incl. Himachal (near your Baddi) and Maharashtra (near your plants).",
+        "The trade-off: premium positioning means a higher price than Roto Pack — this is the quality benchmark, not the cheap option.",
         "Watch-item: the MD and CFO both resigned within ~3 months (late 2025)."
       ],
       "sources": [{ "label": "CRISIL, Aug 2026", "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/HuhtamakiIndiaLimited_August%2012_%202026_RR_400834.html" }]
