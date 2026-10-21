@@ -26,12 +26,14 @@ export const MATERIAL_COLOR: Record<MaterialKey, string> = {
   dextrose: '#00973D', // FDC green
   packaging: '#2E7CE4', // blue
   laminates: '#EFAE0E', // gold
+  cartons: '#8E44AD', // purple — aseptic cartons (Tetra Pak)
 };
 
 export const MATERIAL_ACCENT: Record<MaterialKey, { soft: string; ring: string }> = {
   dextrose: { soft: '#E6F3EC', ring: '#00973D' },
   packaging: { soft: '#E6EFFC', ring: '#2E7CE4' },
   laminates: { soft: '#FBF2D9', ring: '#EFAE0E' },
+  cartons: { soft: '#F2E8F7', ring: '#8E44AD' },
 };
 
 // Payment-term category colours (traffic-light semantics).

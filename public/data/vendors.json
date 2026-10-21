@@ -669,10 +669,10 @@
     "termText": "Immediate",
     "worstTerms": true,
     "materialsSupplied": [
-      "Laminates"
+      "Aseptic cartons"
     ],
     "materialKeys": [
-      "laminates"
+      "cartons"
     ],
     "primaryUnit": "NOS",
     "totalNetSpend": 54634604.27,
@@ -704,8 +704,8 @@
     "listing": null,
     "perMaterial": [
       {
-        "materialKey": "laminates",
-        "material": "Laminates",
+        "materialKey": "cartons",
+        "material": "Aseptic cartons",
         "unit": "NOS",
         "netSpend": 53307787.73,
         "netQty": 28212705,
@@ -714,8 +714,8 @@
         "reversalCount": 5
       },
       {
-        "materialKey": "laminates",
-        "material": "Laminates",
+        "materialKey": "cartons",
+        "material": "Aseptic cartons",
         "unit": "KG",
         "netSpend": 1326816.54,
         "netQty": 676360,

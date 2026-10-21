@@ -217,13 +217,13 @@
       "likeForLike": false,
       "plantCount": 6,
       "cheapestPlant": {
-        "plant": "1000",
-        "plantName": "FDC Limited,Jogeshwari,Corp",
+        "plant": "1047",
+        "plantName": "FDC Limited (NVP)",
         "unit": "KG",
-        "qty": 857190.42,
-        "spend": 54357707.66,
-        "avgPrice": 26.456,
-        "receiptCount": 57
+        "qty": 68485.25,
+        "spend": 20059041.3,
+        "avgPrice": 292.915,
+        "receiptCount": 26
       },
       "dearestPlant": {
         "plant": "1008",
@@ -235,21 +235,12 @@
         "receiptCount": 70
       },
       "spread": {
-        "min": 26.456,
+        "min": 292.915,
         "max": 308.97,
-        "diff": 282.514,
-        "diffPct": 1067.86
+        "diff": 16.055,
+        "diffPct": 5.48
       },
       "plants": [
-        {
-          "plant": "1000",
-          "plantName": "FDC Limited,Jogeshwari,Corp",
-          "unit": "KG",
-          "qty": 857190.42,
-          "spend": 54357707.66,
-          "avgPrice": 26.456,
-          "receiptCount": 57
-        },
         {
           "plant": "1047",
           "plantName": "FDC Limited (NVP)",
@@ -258,6 +249,15 @@
           "spend": 20059041.3,
           "avgPrice": 292.915,
           "receiptCount": 26
+        },
+        {
+          "plant": "1000",
+          "plantName": "FDC Limited,Jogeshwari,Corp",
+          "unit": "KG",
+          "qty": 180830.42,
+          "spend": 53030891.12,
+          "avgPrice": 293.167,
+          "receiptCount": 51
         },
         {
           "plant": "1044",
@@ -294,6 +294,48 @@
           "spend": 33737434.01,
           "avgPrice": 308.97,
           "receiptCount": 70
+        }
+      ]
+    },
+    "cartons": {
+      "materialKey": "cartons",
+      "displayName": "Aseptic cartons",
+      "unit": "NOS",
+      "likeForLike": false,
+      "plantCount": 1,
+      "cheapestPlant": {
+        "plant": "1000",
+        "plantName": "FDC Limited,Jogeshwari,Corp",
+        "unit": "NOS",
+        "qty": 28212705,
+        "spend": 53307787.73,
+        "avgPrice": 1.889,
+        "receiptCount": 35
+      },
+      "dearestPlant": {
+        "plant": "1000",
+        "plantName": "FDC Limited,Jogeshwari,Corp",
+        "unit": "NOS",
+        "qty": 28212705,
+        "spend": 53307787.73,
+        "avgPrice": 1.889,
+        "receiptCount": 35
+      },
+      "spread": {
+        "min": 1.889,
+        "max": 1.889,
+        "diff": 0,
+        "diffPct": 0
+      },
+      "plants": [
+        {
+          "plant": "1000",
+          "plantName": "FDC Limited,Jogeshwari,Corp",
+          "unit": "NOS",
+          "qty": 28212705,
+          "spend": 53307787.73,
+          "avgPrice": 1.889,
+          "receiptCount": 35
         }
       ]
     }

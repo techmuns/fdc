@@ -132,12 +132,25 @@ const MATERIAL_META = {
   laminates: {
     key: 'laminates',
     displayName: 'Laminates',
-    plainName: 'Sachet film (by weight) & ready-to-drink pouches (by piece)',
+    plainName: 'Sachet film for sachets & strips (by weight)',
     category: 'Packaging',
     color: '#EFAE0E',
     singleCommodity: false,
   },
+  cartons: {
+    key: 'cartons',
+    displayName: 'Aseptic cartons',
+    plainName: 'Ready-to-drink aseptic cartons (ELECTRAL / ENERZAL packs, by piece)',
+    category: 'Packaging',
+    color: '#8E44AD',
+    singleCommodity: false,
+  },
 };
+
+// Aseptic RTD cartons (Tetra Pak) are a distinct packaging type from sachet film; split them out
+// of 'laminates' into their own 'cartons' material — keyed by Tetra Pak's SAP vendor code (so its
+// by-weight lines move too) and by any per-piece (NOS) line in the laminates source file.
+const CARTON_VENDOR_CODES = new Set(['1001097']); // Tetrapak India Private Limited
 
 // Unify Dextrose description variants into one product (cleaning rule 7).
 function normalizeDesc(material, desc) {
@@ -268,17 +281,24 @@ function parseTxn(txn) {
       continue;
     }
     const posting = pd instanceof Date ? pd : new Date(pd);
+    const unit = String(r[col.unit] ?? '').trim();
+    const vendorCode = String(r[col.vendor] ?? '').trim();
+    // Split aseptic RTD cartons out of 'laminates' into their own 'cartons' material.
+    let material = txn.material;
+    if (material === 'laminates' && (unit.toUpperCase() === 'NOS' || CARTON_VENDOR_CODES.has(vendorCode))) {
+      material = 'cartons';
+    }
     records.push({
-      material: txn.material,
+      material,
       posting,
       month: toMonthKey(posting),
       matCode: String(r[col.matCode] ?? '').trim(),
-      desc: normalizeDesc(txn.material, r[col.desc]),
+      desc: normalizeDesc(material, r[col.desc]),
       rawDesc: String(r[col.desc] ?? '').trim(),
-      vendorCode: String(r[col.vendor] ?? '').trim(),
+      vendorCode,
       po: String(r[col.po] ?? '').trim(),
       qty: num(r[col.qty]),
-      unit: String(r[col.unit] ?? '').trim(),
+      unit,
       amt: num(r[col.amt]),
       mvt: String(r[col.mvt] ?? '').trim(),
       mvtText: String(r[col.mvtText] ?? '').trim(),
@@ -786,8 +806,8 @@ function main() {
   }
 
   for (const p of parsed) {
-    const M = matAgg[p.material];
     for (const rec of p.records) {
+      const M = matAgg[rec.material]; // per-record material: cartons are split out of laminates
       const cv = canonicalOf(rec.vendorCode);
       const vKey = cv.key;
       const unit = rec.unit || '—';
@@ -825,9 +845,9 @@ function main() {
       const VA = vendorAgg[vKey];
       addToAgg(VA.total, rec);
       (VA.byUnit[unit] ||= makeAgg()); addToAgg(VA.byUnit[unit], rec);
-      VA.materials.add(p.material);
-      const vmk = `${p.material}|${unit}`;
-      (VA.byMaterialUnit[vmk] ||= { agg: makeAgg(), material: p.material, unit });
+      VA.materials.add(rec.material);
+      const vmk = `${rec.material}|${unit}`;
+      (VA.byMaterialUnit[vmk] ||= { agg: makeAgg(), material: rec.material, unit });
       addToAgg(VA.byMaterialUnit[vmk].agg, rec);
       (VA.byMonth[rec.month] ||= makeAgg()); addToAgg(VA.byMonth[rec.month], rec);
     }
@@ -1215,8 +1235,10 @@ function main() {
   // meta.json
   // =========================================================================
   const sources = parsed.map((p) => {
-    const M = matAgg[p.material];
     const ds = p.records.map((r) => r.posting).sort((a, b) => a - b);
+    // Integrity is per SOURCE FILE: sum this file's own records (including rows we reclassified
+    // from laminates to cartons) so it still reproduces the file's embedded total row.
+    const fileNet = p.records.reduce((s, r) => s + (r.amt || 0), 0);
     return {
       file: p.file,
       sheet: p.sheetName,
@@ -1225,9 +1247,9 @@ function main() {
       rows: p.records.length,
       droppedTotalRows: p.droppedTotalRows,
       embeddedTotalValue: round(p.totalRowValue ?? 0),
-      netSpend: round(M.total.netSpend),
+      netSpend: round(fileNet),
       // integrity check: does our signed net reproduce the file's own total row?
-      matchesEmbeddedTotal: Math.abs((M.total.netSpend) - (p.totalRowValue ?? 0)) < 1,
+      matchesEmbeddedTotal: Math.abs(fileNet - (p.totalRowValue ?? 0)) < 1,
       dateRange: { from: fmtDate(ds[0]), to: fmtDate(ds[ds.length - 1]) },
     };
   });
