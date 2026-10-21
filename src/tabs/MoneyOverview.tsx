@@ -169,6 +169,13 @@ const INSIGHT_KIND: Record<InsightKind, { label: string; color: string }> = {
   fresh: { label: 'Fresher stock', color: FDC.orange },
 };
 
+// the plain-language supplier risk check, shown as a small dot by the supplier name
+const RISK_DOT: Record<string, { color: string; label: string }> = {
+  red: { color: FDC.red, label: 'High risk — verify' },
+  amber: { color: FDC.orange, label: 'Watch' },
+  green: { color: FDC.green, label: 'Low risk' },
+};
+
 function AllInsights({ data, onProof, defaultOpen = false }: { data: AppData; onProof: (a: ValueAction) => void; defaultOpen?: boolean }) {
   const [open, setOpen] = useState(defaultOpen);
   const rows = useMemo(() => buildAllInsights(data), [data]);
@@ -176,7 +183,16 @@ function AllInsights({ data, onProof, defaultOpen = false }: { data: AppData; on
   const maxSave = Math.max(1, ...rows.map((r) => r.save));
   const priceTotal = rows.filter((r) => r.kind === 'price').reduce((s, r) => s + r.save, 0);
   const cols: Column<InsightRow>[] = [
-    { key: 'supplier', header: 'Supplier', sortable: true, sortValue: (r) => r.supplier, render: (r) => <span className="font-semibold text-fdc-slate">{shortName(r.supplier)}</span> },
+    { key: 'supplier', header: 'Supplier', sortable: true, sortValue: (r) => r.supplier, render: (r) => {
+      const lvl = r.vendorKey ? data.supplierIntel?.suppliers[r.vendorKey]?.riskLevel : undefined;
+      const dot = lvl ? RISK_DOT[lvl] : null;
+      return (
+        <span className="flex min-w-0 items-center gap-1.5">
+          {dot && <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: dot.color }} title={`Supplier check: ${dot.label}`} />}
+          <span className="font-semibold text-fdc-slate">{shortName(r.supplier)}</span>
+        </span>
+      );
+    } },
     { key: 'area', header: 'Area', sortable: true, sortValue: (r) => r.area, render: (r) => <span className="whitespace-nowrap text-fdc-grey">{r.area}</span> },
     { key: 'kind', header: 'Type', render: (r) => <Pill color={INSIGHT_KIND[r.kind].color}>{INSIGHT_KIND[r.kind].label}</Pill> },
     { key: 'spend', header: 'You spend / yr', align: 'right', sortable: true, sortValue: (r) => r.spend, render: (r) => <span className="tnum whitespace-nowrap">{fmtSave(r.spend)}</span> },
@@ -195,6 +211,12 @@ function AllInsights({ data, onProof, defaultOpen = false }: { data: AppData; on
       {open && (
         <div className="border-t border-black/[0.06] px-2 py-2">
           <p className="flex items-center gap-1.5 px-2 pb-1.5 text-[11px] font-medium text-fdc-slate"><Eye size={12} className="text-fdc-green" /> Tap any row to see the proof — the price gap, the credit comparison, or the stock age behind it.</p>
+          <p className="flex flex-wrap items-center gap-x-3 gap-y-1 px-2 pb-1.5 text-[10.5px] text-fdc-grey">
+            <span className="font-semibold uppercase tracking-wide">Dot = our supplier check:</span>
+            <span className="inline-flex items-center gap-1"><span className="h-2 w-2 rounded-full" style={{ background: FDC.red }} /> verify</span>
+            <span className="inline-flex items-center gap-1"><span className="h-2 w-2 rounded-full" style={{ background: FDC.orange }} /> watch</span>
+            <span className="inline-flex items-center gap-1"><span className="h-2 w-2 rounded-full" style={{ background: FDC.green }} /> low risk</span>
+          </p>
           <Table columns={cols} rows={rows} getKey={(r) => r.key} initialSort={{ key: 'save', dir: 'desc' }} onRowClick={(r) => onProof(insightToAction(r))} maxHeight={520} dense />
           <p className="px-2 pb-1 pt-1.5 text-[10.5px] leading-snug text-fdc-grey">Price savings are per year; “free up cash” is a one-time amount from fixing payment terms — the two are never added together.</p>
         </div>
@@ -285,5 +307,5 @@ function DigDeeper({ children }: { children: ReactNode }) {
 }
 
 function shortName(name: string): string {
-  return String(name).replace(/\b(PRIVATE|PVT|LIMITED|LTD|INDIA|\(INDIA\))\b\.?/gi, '').replace(/\s{2,}/g, ' ').replace(/[.,]\s*$/, '').trim();
+  return String(name).replace(/\b(PRIVATE|PVT|LIMITED|LTD|INDIA|\(INDIA\))\b\.?/gi, '').replace(/\(\s*\)/g, '').replace(/\s{2,}/g, ' ').replace(/[.,]\s*$/, '').trim();
 }

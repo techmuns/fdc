@@ -10,6 +10,7 @@ import { Card, Badge, Pill } from '../components/ui/Card';
 import { Dropdown, Segmented, type Option } from '../components/ui/Controls';
 import { Table, type Column } from '../components/ui/Table';
 import { Sparkline } from '../components/charts/Sparkline';
+import { SupplierCheck } from '../components/SupplierCheck';
 import VendorProfile, { type ProfileSubject } from '../components/VendorProfile';
 import { MaterialDetail } from './MaterialTab';
 import { MarketSuppliers } from './BackupSuppliersTab';
@@ -657,6 +658,7 @@ function VendorCard({ vendor: x, data, onFull, onSeeAlternatives }: { vendor: Va
   const probe = fin?.probe ?? null;
   const m = fin?.metrics ?? null;
   const research = data.research?.suppliers[x.vendorKey] ?? null;
+  const intel = data.supplierIntel?.suppliers[x.vendorKey] ?? null;
 
   // negotiation-room read
   const netMargin = m?.netMargin ?? null;
@@ -737,6 +739,9 @@ function VendorCard({ vendor: x, data, onFull, onSeeAlternatives }: { vendor: Va
       </div>
 
       <div className="space-y-3 p-4">
+        {/* plain-language due-diligence — who they are, any red flag, the bottom line */}
+        {intel && <SupplierCheck intel={intel} />}
+
         {/* latest verified research (from the Oct 2026 supplier deep-dive) */}
         {research && <ResearchPanel r={research} asOf={data.research?.asOf} />}
 

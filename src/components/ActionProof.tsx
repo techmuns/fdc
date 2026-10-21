@@ -6,6 +6,7 @@ import type { Nav } from '../App';
 import { Badge } from './ui/Card';
 import { HBars, type HBarDatum } from './charts/Bars';
 import { Sparkline } from './charts/Sparkline';
+import { SupplierCheck } from './SupplierCheck';
 import { FDC } from '../lib/brand';
 import { termLabel } from '../lib/brand';
 import { vendorShort } from '../lib/format';
@@ -27,6 +28,20 @@ export function ActionProof({ action, data, onClose, onNavigate }: { action: Val
   const Icon = isTerms ? Coins : isFresh ? Clock : TrendingDown;
   const badgeText = isTerms ? `Cash freed ${action.savingLabel}` : isFresh ? action.savingLabel : `You can save ${action.savingLabel}`;
 
+  // plain-language supplier due-diligence to show alongside the numbers:
+  // always the supplier you tapped, plus (for a price move) the cheaper supplier you'd move volume to.
+  const nameOf = (key: string | undefined | null) => (key ? vendorShort(data.value?.vendors[key]?.name ?? '') : '');
+  const clickedIntel = action.vendorKey ? data.supplierIntel?.suppliers[action.vendorKey] ?? null : null;
+  const moveToKey = (() => {
+    if (isTerms || isFresh) return undefined;
+    const M = data.value?.materials[action.material];
+    if (!M) return undefined;
+    const sku = M.skus.find((s) => s.desc === action.proof.skuDesc) ?? M.skus.find((s) => s.vendors.some((vv) => vv.vendorKey === action.proof.vendorKey)) ?? M.skus[0];
+    const k = sku?.bestActiveVendorKey ?? sku?.bestVendorKey;
+    return k && k !== action.vendorKey ? k : undefined;
+  })();
+  const moveToIntel = moveToKey ? data.supplierIntel?.suppliers[moveToKey] ?? null : null;
+
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-fdc-ink/55 backdrop-blur-sm animate-fade-in sm:p-4 md:p-6" onClick={onClose} role="dialog" aria-modal="true" aria-label={`Proof: ${action.action}`}>
       <div className="flex max-h-[92vh] min-h-0 w-full max-w-2xl flex-col overflow-hidden bg-fdc-offwhite shadow-pop sm:rounded-2xl animate-fade-up" onClick={(e) => e.stopPropagation()}>
@@ -42,6 +57,13 @@ export function ActionProof({ action, data, onClose, onNavigate }: { action: Val
         {/* body */}
         <div className="fdc-scroll min-h-0 flex-1 space-y-3 overflow-y-auto px-3 py-4 sm:px-4">
           {isTerms ? <TermsProof action={action} data={data} /> : isFresh ? <FreshnessProof action={action} data={data} /> : <PriceProof action={action} data={data} />}
+          {/* plain-language supplier check — who these suppliers are, any red flag, the bottom line */}
+          {(clickedIntel || moveToIntel) && (
+            <div className="space-y-2.5">
+              {clickedIntel && <SupplierCheck intel={clickedIntel} who={nameOf(action.vendorKey)} />}
+              {moveToIntel && <SupplierCheck intel={moveToIntel} who={`${nameOf(moveToKey)} — where you'd move volume`} />}
+            </div>
+          )}
           {/* recap */}
           {action.whyBullets?.length ? (
             <div className="rounded-xl border border-black/[0.06] bg-white p-3.5">

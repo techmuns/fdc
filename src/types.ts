@@ -560,6 +560,23 @@ export interface ResearchData {
   leads: Record<string, ResearchLead[]>;
 }
 
+// ---- Plain-language due-diligence overlay (supplier-intel.json), keyed by vendorKey ----
+export type SupplierRisk = 'red' | 'amber' | 'green';
+export interface SupplierIntelFlag { label: string; detail: string; sourceUrl?: string }
+export interface SupplierIntel {
+  riskLevel: SupplierRisk;
+  headline: string;
+  verdict: string;
+  findings: string[];
+  flag?: SupplierIntelFlag;
+  sources?: { label: string; url: string }[];
+}
+export interface SupplierIntelData {
+  asOf: string;
+  note: string;
+  suppliers: Record<string, SupplierIntel>;
+}
+
 export interface AppData {
   meta: Meta;
   materials: Material[];
@@ -575,4 +592,5 @@ export interface AppData {
   marketAsks: MarketAsks | null;
   backupSuppliers: BackupSuppliers | null;
   research: ResearchData | null;
+  supplierIntel: SupplierIntelData | null;
 }
