@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Wallet, Coins, Clock, Scale, X, CalendarClock, ArrowRight } from 'lucide-react';
+import { Wallet, Coins, Clock, Scale, X, CalendarClock, ArrowRight, AlertTriangle } from 'lucide-react';
 import type { AppData, MaterialKey } from '../types';
 import type { Nav } from '../App';
 import { Card, Badge } from '../components/ui/Card';
@@ -122,11 +122,12 @@ export default function CreditTermsTab({ data, nav, onNavigate }: { data: AppDat
       header: 'Credit you get',
       align: 'center',
       sortable: true,
-      sortValue: (r) => r.youGet,
-      headerHint: 'How many days they give YOU to pay, from the purchase order.',
+      sortValue: (r) => (r.termCategory === 'advance' ? -1 : r.youGet), // advance is the worst — sorts to the top
+      headerHint: 'How many days they give YOU to pay. Worst first — 100% advance, then pay-on-delivery.',
       render: (r) => {
+        if (r.termCategory === 'advance') return <Badge color={FDC.red}><AlertTriangle size={11} /> 100% advance</Badge>;
         const col = r.youGet >= 30 ? FDC.green : r.youGet > 0 ? FDC.orange : FDC.red;
-        const label = r.termCategory === 'net' ? `${r.youGet} days` : r.termCategory === 'advance' ? 'Pay in advance' : 'Pay on delivery';
+        const label = r.termCategory === 'net' ? `${r.youGet} days` : 'Pay on delivery';
         return <Badge color={col}>{label}</Badge>;
       },
     },
@@ -206,7 +207,7 @@ export default function CreditTermsTab({ data, nav, onNavigate }: { data: AppDat
         columns={columns}
         rows={filtered}
         getKey={(r) => r.key}
-        initialSort={{ key: 'spend', dir: 'desc' }}
+        initialSort={{ key: 'youGet', dir: 'asc' }}
         onRowClick={(r) => setOpen(r.key)}
         activeKey={open}
       />

@@ -17,13 +17,13 @@ import { MarketSuppliers } from './BackupSuppliersTab';
 import { FDC, MATERIAL_COLOR } from '../lib/brand';
 import { vendorShort, crore, pct, monthLabel } from '../lib/format';
 
-const MAT_NAME: Record<string, string> = { dextrose: 'Dextrose', packaging: 'Rigid packaging', laminates: 'Laminates' };
+const MAT_NAME: Record<string, string> = { dextrose: 'Dextrose', packaging: 'Rigid packaging', laminates: 'Laminates', cartons: 'Aseptic cartons' };
 const priceFmt = (n: number | null | undefined, unit = 'kg') => (n == null ? '—' : `₹${n >= 100 ? Math.round(n) : n >= 10 ? n.toFixed(1) : n.toFixed(2)}/${unit === 'NOS' ? 'pc' : unit.toLowerCase()}`);
 const fmtSave = (n: number) => (n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : n >= 1e5 ? `₹${(n / 1e5).toFixed(1)} L` : `₹${Math.round(n).toLocaleString('en-IN')}`);
 const qtyFmt = (n: number, unit: string) => `${Math.abs(n) >= 1e5 ? (n / 1e5).toFixed(1) + 'L' : Math.round(n).toLocaleString('en-IN')} ${unit.toLowerCase() === 'nos' ? 'pc' : unit.toLowerCase()}`;
 
 // map our materials to the backup-database material keys
-const DB_MATS: Record<string, string[]> = { dextrose: ['dextrose'], packaging: ['pet-resin', 'pet-bottles', 'caps'], laminates: ['bopet'] };
+const DB_MATS: Record<string, string[]> = { dextrose: ['dextrose'], packaging: ['pet-resin', 'pet-bottles', 'caps'], laminates: ['bopet'], cartons: [] };
 
 /* ---- "who could replace them": our cheaper suppliers + external alternatives ---- */
 export interface AltItem {
@@ -157,7 +157,7 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
 
   if (!v || !M) return <Card><p className="text-[13px] text-fdc-grey">No value data.</p></Card>;
 
-  const matOptions: Option<MaterialKey>[] = (['dextrose', 'packaging', 'laminates'] as MaterialKey[])
+  const matOptions: Option<MaterialKey>[] = (['dextrose', 'packaging', 'laminates', 'cartons'] as MaterialKey[])
     .filter((k) => v.materials[k])
     .map((k) => ({ value: k, label: v.materials[k].displayName, color: MATERIAL_COLOR[k] }));
 
@@ -189,6 +189,7 @@ export default function VendorsTab({ data, nav, onNavigate }: { data: AppData; n
     ) },
     { key: 'pay', header: 'You pay / yr', align: 'right', sortable: true, sortValue: (r) => r.pay, render: (r) => <span className="tnum whitespace-nowrap font-semibold text-fdc-ink">{fmtSave(r.pay)}</span> },
     { key: 'save', header: 'Can save', align: 'right', sortable: true, sortValue: (r) => r.save, render: (r) => (r.save > 0 ? <span className="tnum whitespace-nowrap font-bold text-fdc-orange">{fmtSave(r.save)}</span> : <span className="text-fdc-grey">—</span>), heat: (r) => (r.save > 0 ? Math.min(1, r.save / maxSave) : null), heatScale: 'hue', heatColor: FDC.orange },
+    { key: 'savePct', header: '% saved', align: 'right', sortable: true, sortValue: (r) => (r.pay ? r.save / r.pay : -1), render: (r) => (r.save > 0 && r.pay > 0 ? <span className="tnum whitespace-nowrap font-semibold text-fdc-slate">{((r.save / r.pay) * 100).toFixed(1)}%</span> : <span className="text-fdc-grey">—</span>) },
     { key: 'why', header: 'Why & what to do', render: (r) => (
       <div className="min-w-0 max-w-[460px]">
         <p className="text-[12px] leading-snug text-fdc-slate">{r.main}</p>
@@ -318,8 +319,8 @@ function ResearchPanel({ r, asOf }: { r: ResearchSupplier; asOf?: string }) {
         {r.financials && <ResearchLine icon={TrendingUp} label="Latest financials" text={r.financials} />}
         {r.rating && <ResearchLine icon={ShieldCheck} label="Credit rating" text={r.rating} />}
         {r.priceRef && <ResearchLine icon={Info} label="Market ask" text={r.priceRef} />}
-        {r.plant && <ResearchLine icon={Factory} label="Plant" text={r.plant} />}
-        {r.angle && <ResearchLine icon={Lightbulb} label="Best angle" text={r.angle} tone="green" />}
+        {r.plant && <ResearchLine icon={Factory} label="Where they make it" text={r.plant} />}
+        {r.angle && <ResearchLine icon={Lightbulb} label="What to do" text={r.angle} tone="green" />}
         {r.sources?.length ? <p className="pt-0.5 text-[10px] leading-snug text-fdc-grey">Sources: {r.sources.join(' · ')}. Public research — verify before any RFQ; advertised prices are not confirmed quotes.</p> : null}
       </div>
     </Section>

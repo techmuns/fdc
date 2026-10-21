@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T06:02:22.413Z",
+  "generatedAt": "2026-10-21T13:36:09.670Z",
   "currency": "INR",
   "dateRange": {
     "from": "2025-04-01",
@@ -48,6 +48,12 @@
       "displayName": "Laminates",
       "color": "#EFAE0E",
       "savings": 3741286.83
+    },
+    {
+      "materialKey": "cartons",
+      "displayName": "Aseptic cartons",
+      "color": "#8E44AD",
+      "savings": 0
     }
   ],
   "actions": [
@@ -80,7 +86,7 @@
       "kind": "terms",
       "isCash": true,
       "saving": 4490515.42,
-      "material": "laminates",
+      "material": "cartons",
       "vendorKey": "tetrapak-india",
       "action": "Put Tetrapak on 30-day credit — today it's pay-on-receipt.",
       "why": "Tetrapak is your largest supplier you pay too soon: you pay on the day goods arrive — no credit at all, while your other big suppliers already give you 30 days. On ₹5.46 Cr of spend, moving them to 30-day credit frees up about ₹44.9 L of cash, one time — not a price cut. Sukhjit Corn Products is on even worse terms — 100% advance — but far smaller spend (₹1.06 Cr).",
@@ -2536,7 +2542,7 @@
     "laminates": {
       "key": "laminates",
       "displayName": "Laminates",
-      "plainName": "Sachet film (by weight) & ready-to-drink pouches (by piece)",
+      "plainName": "Sachet film for sachets & strips (by weight)",
       "color": "#EFAE0E",
       "singleCommodity": false,
       "marketRef": {
@@ -2862,66 +2868,6 @@
           ]
         },
         {
-          "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
-          "rawDesc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
-          "matCode": "2000016475",
-          "unit": "NOS",
-          "spend": 24944620.07,
-          "qty": 13124970,
-          "vendorCount": 1,
-          "bestVendorKey": "tetrapak-india",
-          "bestVendor": "Tetrapak India Private limited.",
-          "bestPrice": 1.901,
-          "bestActiveVendorKey": "tetrapak-india",
-          "bestActiveVendor": "Tetrapak India Private limited.",
-          "bestActivePrice": 1.901,
-          "savings": 0,
-          "vendors": [
-            {
-              "vendorKey": "tetrapak-india",
-              "vendor": "Tetrapak India Private limited.",
-              "color": "#00612D",
-              "price": 1.901,
-              "qty": 13124970,
-              "spend": 24944620.07,
-              "lastPurchase": "2026-03-13",
-              "active": true,
-              "gapVsBest": 0,
-              "excess": 0
-            }
-          ]
-        },
-        {
-          "desc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
-          "rawDesc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
-          "matCode": "2000014838",
-          "unit": "NOS",
-          "spend": 13008913.95,
-          "qty": 6917130,
-          "vendorCount": 1,
-          "bestVendorKey": "tetrapak-india",
-          "bestVendor": "Tetrapak India Private limited.",
-          "bestPrice": 1.881,
-          "bestActiveVendorKey": null,
-          "bestActiveVendor": null,
-          "bestActivePrice": null,
-          "savings": 0,
-          "vendors": [
-            {
-              "vendorKey": "tetrapak-india",
-              "vendor": "Tetrapak India Private limited.",
-              "color": "#00612D",
-              "price": 1.881,
-              "qty": 6917130,
-              "spend": 13008913.95,
-              "lastPurchase": "2025-11-28",
-              "active": false,
-              "gapVsBest": 0,
-              "excess": 0
-            }
-          ]
-        },
-        {
           "desc": "LM ELECTRAL UD 4.4g SP LS 01",
           "rawDesc": "LM ELECTRAL UD 4.4g SP LS 01",
           "matCode": "2000014396",
@@ -3054,36 +3000,6 @@
           ]
         },
         {
-          "desc": "LAM ELECTRAL APPLE RTD 200 mL LS 10",
-          "rawDesc": "LAM ELECTRAL APPLE RTD 200 mL LS 10",
-          "matCode": "2000014830",
-          "unit": "NOS",
-          "spend": 5649022.1,
-          "qty": 3009390,
-          "vendorCount": 1,
-          "bestVendorKey": "tetrapak-india",
-          "bestVendor": "Tetrapak India Private limited.",
-          "bestPrice": 1.877,
-          "bestActiveVendorKey": null,
-          "bestActiveVendor": null,
-          "bestActivePrice": null,
-          "savings": 0,
-          "vendors": [
-            {
-              "vendorKey": "tetrapak-india",
-              "vendor": "Tetrapak India Private limited.",
-              "color": "#00612D",
-              "price": 1.877,
-              "qty": 3009390,
-              "spend": 5649022.1,
-              "lastPurchase": "2025-11-03",
-              "active": false,
-              "gapVsBest": 0,
-              "excess": 0
-            }
-          ]
-        },
-        {
           "desc": "LM ELECTRAL UD 4.4g ADC LS 4 TRACK 02",
           "rawDesc": "LM ELECTRAL UD 4.4g ADC LS 4 TRACK 02",
           "matCode": "2000012337",
@@ -3204,36 +3120,6 @@
           ]
         },
         {
-          "desc": "LAM ELECTRAL MANGO RTD 200 mL LS 10",
-          "rawDesc": "LAM ELECTRAL MANGO RTD 200 mL LS 10",
-          "matCode": "2000014834",
-          "unit": "NOS",
-          "spend": 3760165.77,
-          "qty": 1993120,
-          "vendorCount": 1,
-          "bestVendorKey": "tetrapak-india",
-          "bestVendor": "Tetrapak India Private limited.",
-          "bestPrice": 1.887,
-          "bestActiveVendorKey": null,
-          "bestActiveVendor": null,
-          "bestActivePrice": null,
-          "savings": 0,
-          "vendors": [
-            {
-              "vendorKey": "tetrapak-india",
-              "vendor": "Tetrapak India Private limited.",
-              "color": "#00612D",
-              "price": 1.887,
-              "qty": 1993120,
-              "spend": 3760165.77,
-              "lastPurchase": "2025-11-03",
-              "active": false,
-              "gapVsBest": 0,
-              "excess": 0
-            }
-          ]
-        },
-        {
           "desc": "LM ELECTRAL LIME FLAVOUR UD 4.4 gm LS 01",
           "rawDesc": "LM ELECTRAL LIME FLAVOUR UD 4.4 gm LS 01",
           "matCode": "2000015870",
@@ -3348,36 +3234,6 @@
               "spend": 3215225.6,
               "lastPurchase": "2026-03-10",
               "active": true,
-              "gapVsBest": 0,
-              "excess": 0
-            }
-          ]
-        },
-        {
-          "desc": "LAM R5 RTD-ORANGE 200mL PMFP 03",
-          "rawDesc": "LAM R5 RTD-ORANGE 200mL PMFP 03",
-          "matCode": "2000015619",
-          "unit": "NOS",
-          "spend": 3172217.53,
-          "qty": 1681485,
-          "vendorCount": 1,
-          "bestVendorKey": "tetrapak-india",
-          "bestVendor": "Tetrapak India Private limited.",
-          "bestPrice": 1.887,
-          "bestActiveVendorKey": null,
-          "bestActiveVendor": null,
-          "bestActivePrice": null,
-          "savings": 0,
-          "vendors": [
-            {
-              "vendorKey": "tetrapak-india",
-              "vendor": "Tetrapak India Private limited.",
-              "color": "#00612D",
-              "price": 1.887,
-              "qty": 1681485,
-              "spend": 3172217.53,
-              "lastPurchase": "2025-05-08",
-              "active": false,
               "gapVsBest": 0,
               "excess": 0
             }
@@ -3654,36 +3510,6 @@
           ]
         },
         {
-          "desc": "LAM ELECTRAL APPLE RTD 200ML LS AYK",
-          "rawDesc": "LAM ELECTRAL APPLE RTD 200ML LS AYK",
-          "matCode": "2000016947",
-          "unit": "KG",
-          "spend": 2090004.3,
-          "qty": 1015710,
-          "vendorCount": 1,
-          "bestVendorKey": "tetrapak-india",
-          "bestVendor": "Tetrapak India Private limited.",
-          "bestPrice": 2.058,
-          "bestActiveVendorKey": "tetrapak-india",
-          "bestActiveVendor": "Tetrapak India Private limited.",
-          "bestActivePrice": 2.058,
-          "savings": 0,
-          "vendors": [
-            {
-              "vendorKey": "tetrapak-india",
-              "vendor": "Tetrapak India Private limited.",
-              "color": "#00612D",
-              "price": 2.058,
-              "qty": 1015710,
-              "spend": 2090004.3,
-              "lastPurchase": "2026-02-27",
-              "active": true,
-              "gapVsBest": 0,
-              "excess": 0
-            }
-          ]
-        },
-        {
           "desc": "LM ELECTRAL UD 4.4G (AMBIKA) NV LS 01",
           "rawDesc": "LM ELECTRAL UD 4.4G (AMBIKA) NV LS 01",
           "matCode": "2000016511",
@@ -3708,66 +3534,6 @@
               "spend": 1941902.4,
               "lastPurchase": "2025-07-30",
               "active": false,
-              "gapVsBest": 0,
-              "excess": 0
-            }
-          ]
-        },
-        {
-          "desc": "LAM ELECTRAL ORANGE RTD 200 mL AP LS 01",
-          "rawDesc": "LAM ELECTRAL ORANGE RTD 200 mL AP LS 01",
-          "matCode": "2000016585",
-          "unit": "NOS",
-          "spend": 1917868.23,
-          "qty": 1028070,
-          "vendorCount": 1,
-          "bestVendorKey": "tetrapak-india",
-          "bestVendor": "Tetrapak India Private limited.",
-          "bestPrice": 1.866,
-          "bestActiveVendorKey": "tetrapak-india",
-          "bestActiveVendor": "Tetrapak India Private limited.",
-          "bestActivePrice": 1.866,
-          "savings": 0,
-          "vendors": [
-            {
-              "vendorKey": "tetrapak-india",
-              "vendor": "Tetrapak India Private limited.",
-              "color": "#00612D",
-              "price": 1.866,
-              "qty": 1028070,
-              "spend": 1917868.23,
-              "lastPurchase": "2026-02-27",
-              "active": true,
-              "gapVsBest": 0,
-              "excess": 0
-            }
-          ]
-        },
-        {
-          "desc": "LAM ELECTRAL MANGO RTD 200ML LS AYK",
-          "rawDesc": "LAM ELECTRAL MANGO RTD 200ML LS AYK",
-          "matCode": "2000016951",
-          "unit": "KG",
-          "spend": 1890445.32,
-          "qty": 1013370,
-          "vendorCount": 1,
-          "bestVendorKey": "tetrapak-india",
-          "bestVendor": "Tetrapak India Private limited.",
-          "bestPrice": 1.866,
-          "bestActiveVendorKey": "tetrapak-india",
-          "bestActiveVendor": "Tetrapak India Private limited.",
-          "bestActivePrice": 1.866,
-          "savings": 0,
-          "vendors": [
-            {
-              "vendorKey": "tetrapak-india",
-              "vendor": "Tetrapak India Private limited.",
-              "color": "#00612D",
-              "price": 1.866,
-              "qty": 1013370,
-              "spend": 1890445.32,
-              "lastPurchase": "2026-02-27",
-              "active": true,
               "gapVsBest": 0,
               "excess": 0
             }
@@ -3834,36 +3600,6 @@
           ]
         },
         {
-          "desc": "T-LAM ENERZAL RTD-APPL 200mL FC PM/SD 02",
-          "rawDesc": "T-LAM ENERZAL RTD-APPL 200mL FC PM/SD 02",
-          "matCode": "2000015624",
-          "unit": "NOS",
-          "spend": 1689843.16,
-          "qty": 884910,
-          "vendorCount": 1,
-          "bestVendorKey": "tetrapak-india",
-          "bestVendor": "Tetrapak India Private limited.",
-          "bestPrice": 1.91,
-          "bestActiveVendorKey": "tetrapak-india",
-          "bestActiveVendor": "Tetrapak India Private limited.",
-          "bestActivePrice": 1.91,
-          "savings": 0,
-          "vendors": [
-            {
-              "vendorKey": "tetrapak-india",
-              "vendor": "Tetrapak India Private limited.",
-              "color": "#00612D",
-              "price": 1.91,
-              "qty": 884910,
-              "spend": 1689843.16,
-              "lastPurchase": "2026-03-13",
-              "active": true,
-              "gapVsBest": 0,
-              "excess": 0
-            }
-          ]
-        },
-        {
           "desc": "LM ORS POWDER 28.4GM ES CL 06",
           "rawDesc": "LM ORS POWDER 28.4GM ES CL 06",
           "matCode": "2000012090",
@@ -3888,36 +3624,6 @@
               "spend": 1544947.2,
               "lastPurchase": "2026-02-27",
               "active": true,
-              "gapVsBest": 0,
-              "excess": 0
-            }
-          ]
-        },
-        {
-          "desc": "LAM ELECTRAL ORANGE RTD 200 mL LP 06",
-          "rawDesc": "LAM ELECTRAL ORANGE RTD 200 mL LP 06",
-          "matCode": "2000014841",
-          "unit": "NOS",
-          "spend": 1493915.83,
-          "qty": 798520,
-          "vendorCount": 1,
-          "bestVendorKey": "tetrapak-india",
-          "bestVendor": "Tetrapak India Private limited.",
-          "bestPrice": 1.871,
-          "bestActiveVendorKey": null,
-          "bestActiveVendor": null,
-          "bestActivePrice": null,
-          "savings": 0,
-          "vendors": [
-            {
-              "vendorKey": "tetrapak-india",
-              "vendor": "Tetrapak India Private limited.",
-              "color": "#00612D",
-              "price": 1.871,
-              "qty": 798520,
-              "spend": 1493915.83,
-              "lastPurchase": "2025-11-28",
-              "active": false,
               "gapVsBest": 0,
               "excess": 0
             }
@@ -4008,36 +3714,6 @@
               "spend": 1351782.4,
               "lastPurchase": "2026-02-27",
               "active": true,
-              "gapVsBest": 0,
-              "excess": 0
-            }
-          ]
-        },
-        {
-          "desc": "LAM ELECTRAL APPLE RTD 200 mL LP 07",
-          "rawDesc": "LAM ELECTRAL APPLE RTD 200 mL LP 07",
-          "matCode": "2000014833",
-          "unit": "NOS",
-          "spend": 1246230.03,
-          "qty": 665855,
-          "vendorCount": 1,
-          "bestVendorKey": "tetrapak-india",
-          "bestVendor": "Tetrapak India Private limited.",
-          "bestPrice": 1.872,
-          "bestActiveVendorKey": null,
-          "bestActiveVendor": null,
-          "bestActivePrice": null,
-          "savings": 0,
-          "vendors": [
-            {
-              "vendorKey": "tetrapak-india",
-              "vendor": "Tetrapak India Private limited.",
-              "color": "#00612D",
-              "price": 1.872,
-              "qty": 665855,
-              "spend": 1246230.03,
-              "lastPurchase": "2025-11-28",
-              "active": false,
               "gapVsBest": 0,
               "excess": 0
             }
@@ -4187,36 +3863,6 @@
               "qty": 2546.67,
               "spend": 814934.4,
               "lastPurchase": "2025-07-16",
-              "active": false,
-              "gapVsBest": 0,
-              "excess": 0
-            }
-          ]
-        },
-        {
-          "desc": "LAM ELECTRAL MANGO RTD 200 mL LP 07",
-          "rawDesc": "LAM ELECTRAL MANGO RTD 200 mL LP 07",
-          "matCode": "2000014837",
-          "unit": "NOS",
-          "spend": 635852.66,
-          "qty": 338570,
-          "vendorCount": 1,
-          "bestVendorKey": "tetrapak-india",
-          "bestVendor": "Tetrapak India Private limited.",
-          "bestPrice": 1.878,
-          "bestActiveVendorKey": null,
-          "bestActiveVendor": null,
-          "bestActivePrice": null,
-          "savings": 0,
-          "vendors": [
-            {
-              "vendorKey": "tetrapak-india",
-              "vendor": "Tetrapak India Private limited.",
-              "color": "#00612D",
-              "price": 1.878,
-              "qty": 338570,
-              "spend": 635852.66,
-              "lastPurchase": "2025-06-11",
               "active": false,
               "gapVsBest": 0,
               "excess": 0
@@ -5123,15 +4769,6 @@
           "receipts": 22
         },
         {
-          "vendorKey": "tetrapak-india",
-          "vendor": "Tetrapak India Private limited.",
-          "color": "#00612D",
-          "avgAgeDays": null,
-          "avgShelfDays": null,
-          "grade": null,
-          "receipts": 0
-        },
-        {
           "vendorKey": "uflex",
           "vendor": "UFLEX LIMITED",
           "color": "#6E2C00",
@@ -5160,8 +4797,392 @@
         }
       ],
       "savings": 3741286.82,
-      "spend": 434862967.36,
+      "spend": 373363868.41,
       "unit": "KG"
+    },
+    "cartons": {
+      "key": "cartons",
+      "displayName": "Aseptic cartons",
+      "plainName": "Ready-to-drink aseptic cartons (ELECTRAL / ENERZAL packs, by piece)",
+      "color": "#8E44AD",
+      "singleCommodity": false,
+      "marketRef": null,
+      "skus": [
+        {
+          "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
+          "rawDesc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
+          "matCode": "2000016475",
+          "unit": "NOS",
+          "spend": 24944620.07,
+          "qty": 13124970,
+          "vendorCount": 1,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "bestPrice": 1.901,
+          "bestActiveVendorKey": "tetrapak-india",
+          "bestActiveVendor": "Tetrapak India Private limited.",
+          "bestActivePrice": 1.901,
+          "savings": 0,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "price": 1.901,
+              "qty": 13124970,
+              "spend": 24944620.07,
+              "lastPurchase": "2026-03-13",
+              "active": true,
+              "gapVsBest": 0,
+              "excess": 0
+            }
+          ]
+        },
+        {
+          "desc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
+          "rawDesc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
+          "matCode": "2000014838",
+          "unit": "NOS",
+          "spend": 13008913.95,
+          "qty": 6917130,
+          "vendorCount": 1,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "bestPrice": 1.881,
+          "bestActiveVendorKey": null,
+          "bestActiveVendor": null,
+          "bestActivePrice": null,
+          "savings": 0,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "price": 1.881,
+              "qty": 6917130,
+              "spend": 13008913.95,
+              "lastPurchase": "2025-11-28",
+              "active": false,
+              "gapVsBest": 0,
+              "excess": 0
+            }
+          ]
+        },
+        {
+          "desc": "LAM ELECTRAL APPLE RTD 200 mL LS 10",
+          "rawDesc": "LAM ELECTRAL APPLE RTD 200 mL LS 10",
+          "matCode": "2000014830",
+          "unit": "NOS",
+          "spend": 5649022.1,
+          "qty": 3009390,
+          "vendorCount": 1,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "bestPrice": 1.877,
+          "bestActiveVendorKey": null,
+          "bestActiveVendor": null,
+          "bestActivePrice": null,
+          "savings": 0,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "price": 1.877,
+              "qty": 3009390,
+              "spend": 5649022.1,
+              "lastPurchase": "2025-11-03",
+              "active": false,
+              "gapVsBest": 0,
+              "excess": 0
+            }
+          ]
+        },
+        {
+          "desc": "LAM ELECTRAL MANGO RTD 200 mL LS 10",
+          "rawDesc": "LAM ELECTRAL MANGO RTD 200 mL LS 10",
+          "matCode": "2000014834",
+          "unit": "NOS",
+          "spend": 3760165.77,
+          "qty": 1993120,
+          "vendorCount": 1,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "bestPrice": 1.887,
+          "bestActiveVendorKey": null,
+          "bestActiveVendor": null,
+          "bestActivePrice": null,
+          "savings": 0,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "price": 1.887,
+              "qty": 1993120,
+              "spend": 3760165.77,
+              "lastPurchase": "2025-11-03",
+              "active": false,
+              "gapVsBest": 0,
+              "excess": 0
+            }
+          ]
+        },
+        {
+          "desc": "LAM R5 RTD-ORANGE 200mL PMFP 03",
+          "rawDesc": "LAM R5 RTD-ORANGE 200mL PMFP 03",
+          "matCode": "2000015619",
+          "unit": "NOS",
+          "spend": 3172217.53,
+          "qty": 1681485,
+          "vendorCount": 1,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "bestPrice": 1.887,
+          "bestActiveVendorKey": null,
+          "bestActiveVendor": null,
+          "bestActivePrice": null,
+          "savings": 0,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "price": 1.887,
+              "qty": 1681485,
+              "spend": 3172217.53,
+              "lastPurchase": "2025-05-08",
+              "active": false,
+              "gapVsBest": 0,
+              "excess": 0
+            }
+          ]
+        },
+        {
+          "desc": "LAM ELECTRAL APPLE RTD 200ML LS AYK",
+          "rawDesc": "LAM ELECTRAL APPLE RTD 200ML LS AYK",
+          "matCode": "2000016947",
+          "unit": "KG",
+          "spend": 2090004.3,
+          "qty": 1015710,
+          "vendorCount": 1,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "bestPrice": 2.058,
+          "bestActiveVendorKey": "tetrapak-india",
+          "bestActiveVendor": "Tetrapak India Private limited.",
+          "bestActivePrice": 2.058,
+          "savings": 0,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "price": 2.058,
+              "qty": 1015710,
+              "spend": 2090004.3,
+              "lastPurchase": "2026-02-27",
+              "active": true,
+              "gapVsBest": 0,
+              "excess": 0
+            }
+          ]
+        },
+        {
+          "desc": "LAM ELECTRAL ORANGE RTD 200 mL AP LS 01",
+          "rawDesc": "LAM ELECTRAL ORANGE RTD 200 mL AP LS 01",
+          "matCode": "2000016585",
+          "unit": "NOS",
+          "spend": 1917868.23,
+          "qty": 1028070,
+          "vendorCount": 1,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "bestPrice": 1.866,
+          "bestActiveVendorKey": "tetrapak-india",
+          "bestActiveVendor": "Tetrapak India Private limited.",
+          "bestActivePrice": 1.866,
+          "savings": 0,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "price": 1.866,
+              "qty": 1028070,
+              "spend": 1917868.23,
+              "lastPurchase": "2026-02-27",
+              "active": true,
+              "gapVsBest": 0,
+              "excess": 0
+            }
+          ]
+        },
+        {
+          "desc": "LAM ELECTRAL MANGO RTD 200ML LS AYK",
+          "rawDesc": "LAM ELECTRAL MANGO RTD 200ML LS AYK",
+          "matCode": "2000016951",
+          "unit": "KG",
+          "spend": 1890445.32,
+          "qty": 1013370,
+          "vendorCount": 1,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "bestPrice": 1.866,
+          "bestActiveVendorKey": "tetrapak-india",
+          "bestActiveVendor": "Tetrapak India Private limited.",
+          "bestActivePrice": 1.866,
+          "savings": 0,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "price": 1.866,
+              "qty": 1013370,
+              "spend": 1890445.32,
+              "lastPurchase": "2026-02-27",
+              "active": true,
+              "gapVsBest": 0,
+              "excess": 0
+            }
+          ]
+        },
+        {
+          "desc": "T-LAM ENERZAL RTD-APPL 200mL FC PM/SD 02",
+          "rawDesc": "T-LAM ENERZAL RTD-APPL 200mL FC PM/SD 02",
+          "matCode": "2000015624",
+          "unit": "NOS",
+          "spend": 1689843.16,
+          "qty": 884910,
+          "vendorCount": 1,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "bestPrice": 1.91,
+          "bestActiveVendorKey": "tetrapak-india",
+          "bestActiveVendor": "Tetrapak India Private limited.",
+          "bestActivePrice": 1.91,
+          "savings": 0,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "price": 1.91,
+              "qty": 884910,
+              "spend": 1689843.16,
+              "lastPurchase": "2026-03-13",
+              "active": true,
+              "gapVsBest": 0,
+              "excess": 0
+            }
+          ]
+        },
+        {
+          "desc": "LAM ELECTRAL ORANGE RTD 200 mL LP 06",
+          "rawDesc": "LAM ELECTRAL ORANGE RTD 200 mL LP 06",
+          "matCode": "2000014841",
+          "unit": "NOS",
+          "spend": 1493915.83,
+          "qty": 798520,
+          "vendorCount": 1,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "bestPrice": 1.871,
+          "bestActiveVendorKey": null,
+          "bestActiveVendor": null,
+          "bestActivePrice": null,
+          "savings": 0,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "price": 1.871,
+              "qty": 798520,
+              "spend": 1493915.83,
+              "lastPurchase": "2025-11-28",
+              "active": false,
+              "gapVsBest": 0,
+              "excess": 0
+            }
+          ]
+        },
+        {
+          "desc": "LAM ELECTRAL APPLE RTD 200 mL LP 07",
+          "rawDesc": "LAM ELECTRAL APPLE RTD 200 mL LP 07",
+          "matCode": "2000014833",
+          "unit": "NOS",
+          "spend": 1246230.03,
+          "qty": 665855,
+          "vendorCount": 1,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "bestPrice": 1.872,
+          "bestActiveVendorKey": null,
+          "bestActiveVendor": null,
+          "bestActivePrice": null,
+          "savings": 0,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "price": 1.872,
+              "qty": 665855,
+              "spend": 1246230.03,
+              "lastPurchase": "2025-11-28",
+              "active": false,
+              "gapVsBest": 0,
+              "excess": 0
+            }
+          ]
+        },
+        {
+          "desc": "LAM ELECTRAL MANGO RTD 200 mL LP 07",
+          "rawDesc": "LAM ELECTRAL MANGO RTD 200 mL LP 07",
+          "matCode": "2000014837",
+          "unit": "NOS",
+          "spend": 635852.66,
+          "qty": 338570,
+          "vendorCount": 1,
+          "bestVendorKey": "tetrapak-india",
+          "bestVendor": "Tetrapak India Private limited.",
+          "bestPrice": 1.878,
+          "bestActiveVendorKey": null,
+          "bestActiveVendor": null,
+          "bestActivePrice": null,
+          "savings": 0,
+          "vendors": [
+            {
+              "vendorKey": "tetrapak-india",
+              "vendor": "Tetrapak India Private limited.",
+              "color": "#00612D",
+              "price": 1.878,
+              "qty": 338570,
+              "spend": 635852.66,
+              "lastPurchase": "2025-06-11",
+              "active": false,
+              "gapVsBest": 0,
+              "excess": 0
+            }
+          ]
+        }
+      ],
+      "freshness": [
+        {
+          "vendorKey": "tetrapak-india",
+          "vendor": "Tetrapak India Private limited.",
+          "color": "#00612D",
+          "avgAgeDays": null,
+          "avgShelfDays": null,
+          "grade": null,
+          "receipts": 0
+        }
+      ],
+      "savings": 0,
+      "spend": 61499098.95,
+      "unit": "NOS"
     }
   },
   "vendors": {
@@ -5396,11 +5417,11 @@
       "termDays": 0,
       "termCategory": "immediate",
       "materialKeys": [
-        "laminates"
+        "cartons"
       ],
       "freshnessByMaterial": [
         {
-          "materialKey": "laminates",
+          "materialKey": "cartons",
           "avgAgeDays": null,
           "avgShelfDays": null,
           "grade": null
@@ -5408,7 +5429,7 @@
       ],
       "orders": [
         {
-          "materialKey": "laminates",
+          "materialKey": "cartons",
           "poCount": 20,
           "lineCount": 41,
           "avgOrderQty": 1623555,
@@ -5417,7 +5438,7 @@
       ],
       "recency": [
         {
-          "materialKey": "laminates",
+          "materialKey": "cartons",
           "lastPurchase": "2026-03-31",
           "daysSince": 0,
           "active": true
@@ -6168,7 +6189,7 @@
   "ledger": [
     {
       "date": "2026-03-31",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000015624",
       "desc": "T-LAM ENERZAL RTD-APPL 200mL FC PM/SD 02",
       "vendorKey": "tetrapak-india",
@@ -6185,7 +6206,7 @@
     },
     {
       "date": "2026-03-31",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016475",
       "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
       "vendorKey": "tetrapak-india",
@@ -6202,7 +6223,7 @@
     },
     {
       "date": "2026-03-31",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016475",
       "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
       "vendorKey": "tetrapak-india",
@@ -8140,7 +8161,7 @@
     },
     {
       "date": "2026-03-13",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016475",
       "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
       "vendorKey": "tetrapak-india",
@@ -8157,7 +8178,7 @@
     },
     {
       "date": "2026-03-13",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016475",
       "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
       "vendorKey": "tetrapak-india",
@@ -8174,7 +8195,7 @@
     },
     {
       "date": "2026-03-13",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016475",
       "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
       "vendorKey": "tetrapak-india",
@@ -8191,7 +8212,7 @@
     },
     {
       "date": "2026-03-13",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000015624",
       "desc": "T-LAM ENERZAL RTD-APPL 200mL FC PM/SD 02",
       "vendorKey": "tetrapak-india",
@@ -8208,7 +8229,7 @@
     },
     {
       "date": "2026-03-13",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016475",
       "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
       "vendorKey": "tetrapak-india",
@@ -8225,7 +8246,7 @@
     },
     {
       "date": "2026-03-13",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016475",
       "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
       "vendorKey": "tetrapak-india",
@@ -9296,7 +9317,7 @@
     },
     {
       "date": "2026-02-27",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016585",
       "desc": "LAM ELECTRAL ORANGE RTD 200 mL AP LS 01",
       "vendorKey": "tetrapak-india",
@@ -9313,7 +9334,7 @@
     },
     {
       "date": "2026-02-27",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016947",
       "desc": "LAM ELECTRAL APPLE RTD 200ML LS AYK",
       "vendorKey": "tetrapak-india",
@@ -9330,7 +9351,7 @@
     },
     {
       "date": "2026-02-27",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016951",
       "desc": "LAM ELECTRAL MANGO RTD 200ML LS AYK",
       "vendorKey": "tetrapak-india",
@@ -9364,7 +9385,7 @@
     },
     {
       "date": "2026-02-27",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016585",
       "desc": "LAM ELECTRAL ORANGE RTD 200 mL AP LS 01",
       "vendorKey": "tetrapak-india",
@@ -9381,7 +9402,7 @@
     },
     {
       "date": "2026-02-27",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016947",
       "desc": "LAM ELECTRAL APPLE RTD 200ML LS AYK",
       "vendorKey": "tetrapak-india",
@@ -9398,7 +9419,7 @@
     },
     {
       "date": "2026-02-27",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016951",
       "desc": "LAM ELECTRAL MANGO RTD 200ML LS AYK",
       "vendorKey": "tetrapak-india",
@@ -9415,7 +9436,7 @@
     },
     {
       "date": "2026-02-27",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016585",
       "desc": "LAM ELECTRAL ORANGE RTD 200 mL AP LS 01",
       "vendorKey": "tetrapak-india",
@@ -9432,7 +9453,7 @@
     },
     {
       "date": "2026-02-27",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016947",
       "desc": "LAM ELECTRAL APPLE RTD 200ML LS AYK",
       "vendorKey": "tetrapak-india",
@@ -9449,7 +9470,7 @@
     },
     {
       "date": "2026-02-27",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016951",
       "desc": "LAM ELECTRAL MANGO RTD 200ML LS AYK",
       "vendorKey": "tetrapak-india",
@@ -9466,7 +9487,7 @@
     },
     {
       "date": "2026-02-27",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016585",
       "desc": "LAM ELECTRAL ORANGE RTD 200 mL AP LS 01",
       "vendorKey": "tetrapak-india",
@@ -9483,7 +9504,7 @@
     },
     {
       "date": "2026-02-27",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016947",
       "desc": "LAM ELECTRAL APPLE RTD 200ML LS AYK",
       "vendorKey": "tetrapak-india",
@@ -9500,7 +9521,7 @@
     },
     {
       "date": "2026-02-27",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016951",
       "desc": "LAM ELECTRAL MANGO RTD 200ML LS AYK",
       "vendorKey": "tetrapak-india",
@@ -11727,7 +11748,7 @@
     },
     {
       "date": "2026-01-22",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016475",
       "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
       "vendorKey": "tetrapak-india",
@@ -14039,7 +14060,7 @@
     },
     {
       "date": "2025-12-01",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016585",
       "desc": "LAM ELECTRAL ORANGE RTD 200 mL AP LS 01",
       "vendorKey": "tetrapak-india",
@@ -14056,7 +14077,7 @@
     },
     {
       "date": "2025-12-01",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016947",
       "desc": "LAM ELECTRAL APPLE RTD 200ML LS AYK",
       "vendorKey": "tetrapak-india",
@@ -14073,7 +14094,7 @@
     },
     {
       "date": "2025-12-01",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016951",
       "desc": "LAM ELECTRAL MANGO RTD 200ML LS AYK",
       "vendorKey": "tetrapak-india",
@@ -14430,7 +14451,7 @@
     },
     {
       "date": "2025-11-28",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014833",
       "desc": "LAM ELECTRAL APPLE RTD 200 mL LP 07",
       "vendorKey": "tetrapak-india",
@@ -14447,7 +14468,7 @@
     },
     {
       "date": "2025-11-28",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014838",
       "desc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
       "vendorKey": "tetrapak-india",
@@ -14464,7 +14485,7 @@
     },
     {
       "date": "2025-11-28",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014841",
       "desc": "LAM ELECTRAL ORANGE RTD 200 mL LP 06",
       "vendorKey": "tetrapak-india",
@@ -15416,7 +15437,7 @@
     },
     {
       "date": "2025-11-15",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016475",
       "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
       "vendorKey": "tetrapak-india",
@@ -16045,7 +16066,7 @@
     },
     {
       "date": "2025-11-03",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014830",
       "desc": "LAM ELECTRAL APPLE RTD 200 mL LS 10",
       "vendorKey": "tetrapak-india",
@@ -16062,7 +16083,7 @@
     },
     {
       "date": "2025-11-03",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014834",
       "desc": "LAM ELECTRAL MANGO RTD 200 mL LS 10",
       "vendorKey": "tetrapak-india",
@@ -16079,7 +16100,7 @@
     },
     {
       "date": "2025-11-03",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014841",
       "desc": "LAM ELECTRAL ORANGE RTD 200 mL LP 06",
       "vendorKey": "tetrapak-india",
@@ -16283,7 +16304,7 @@
     },
     {
       "date": "2025-11-01",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014838",
       "desc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
       "vendorKey": "tetrapak-india",
@@ -18085,7 +18106,7 @@
     },
     {
       "date": "2025-09-16",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016475",
       "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
       "vendorKey": "tetrapak-india",
@@ -18493,7 +18514,7 @@
     },
     {
       "date": "2025-09-09",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014838",
       "desc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
       "vendorKey": "tetrapak-india",
@@ -18510,7 +18531,7 @@
     },
     {
       "date": "2025-09-09",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014838",
       "desc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
       "vendorKey": "tetrapak-india",
@@ -22233,7 +22254,7 @@
     },
     {
       "date": "2025-08-02",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014830",
       "desc": "LAM ELECTRAL APPLE RTD 200 mL LS 10",
       "vendorKey": "tetrapak-india",
@@ -22641,7 +22662,7 @@
     },
     {
       "date": "2025-07-28",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014830",
       "desc": "LAM ELECTRAL APPLE RTD 200 mL LS 10",
       "vendorKey": "tetrapak-india",
@@ -22658,7 +22679,7 @@
     },
     {
       "date": "2025-07-28",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014834",
       "desc": "LAM ELECTRAL MANGO RTD 200 mL LS 10",
       "vendorKey": "tetrapak-india",
@@ -22675,7 +22696,7 @@
     },
     {
       "date": "2025-07-28",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014838",
       "desc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
       "vendorKey": "tetrapak-india",
@@ -27027,7 +27048,7 @@
     },
     {
       "date": "2025-06-16",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000015624",
       "desc": "T-LAM ENERZAL RTD-APPL 200mL FC PM/SD 02",
       "vendorKey": "tetrapak-india",
@@ -27588,7 +27609,7 @@
     },
     {
       "date": "2025-06-11",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014833",
       "desc": "LAM ELECTRAL APPLE RTD 200 mL LP 07",
       "vendorKey": "tetrapak-india",
@@ -27605,7 +27626,7 @@
     },
     {
       "date": "2025-06-11",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014837",
       "desc": "LAM ELECTRAL MANGO RTD 200 mL LP 07",
       "vendorKey": "tetrapak-india",
@@ -27622,7 +27643,7 @@
     },
     {
       "date": "2025-06-11",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014841",
       "desc": "LAM ELECTRAL ORANGE RTD 200 mL LP 06",
       "vendorKey": "tetrapak-india",
@@ -30563,7 +30584,7 @@
     },
     {
       "date": "2025-05-11",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014838",
       "desc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
       "vendorKey": "tetrapak-india",
@@ -30954,7 +30975,7 @@
     },
     {
       "date": "2025-05-08",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000015619",
       "desc": "LAM R5 RTD-ORANGE 200mL PMFP 03",
       "vendorKey": "tetrapak-india",
@@ -32212,7 +32233,7 @@
     },
     {
       "date": "2025-04-25",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016475",
       "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
       "vendorKey": "tetrapak-india",
@@ -32382,7 +32403,7 @@
     },
     {
       "date": "2025-04-23",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000016475",
       "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
       "vendorKey": "tetrapak-india",
@@ -33436,7 +33457,7 @@
     },
     {
       "date": "2025-04-10",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014830",
       "desc": "LAM ELECTRAL APPLE RTD 200 mL LS 10",
       "vendorKey": "tetrapak-india",
@@ -33453,7 +33474,7 @@
     },
     {
       "date": "2025-04-10",
-      "material": "laminates",
+      "material": "cartons",
       "matCode": "2000014834",
       "desc": "LAM ELECTRAL MANGO RTD 200 mL LS 10",
       "vendorKey": "tetrapak-india",

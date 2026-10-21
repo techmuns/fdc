@@ -1,6 +1,6 @@
 // Types mirror the clean JSON written by scripts/normalize.mjs into public/data/.
 
-export type MaterialKey = 'dextrose' | 'packaging' | 'laminates';
+export type MaterialKey = 'dextrose' | 'packaging' | 'laminates' | 'cartons';
 
 export interface UnitTotal {
   unit: string;

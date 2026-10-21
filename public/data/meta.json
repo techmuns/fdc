@@ -1,7 +1,7 @@
 {
   "app": "FDC Procurement Intelligence Cockpit",
   "phase": "Phase 2 — Intelligence",
-  "generatedAt": "2026-10-16T06:02:22.394Z",
+  "generatedAt": "2026-10-21T13:36:09.622Z",
   "currency": "INR",
   "dateRange": {
     "from": "2025-04-01",
@@ -62,7 +62,8 @@
     "byMaterial": {
       "dextrose": 378992790.5,
       "packaging": 167551013.82,
-      "laminates": 425714897.43
+      "laminates": 371080293.16,
+      "cartons": 54634604.27
     }
   },
   "materialMeta": [
@@ -83,9 +84,16 @@
     {
       "key": "laminates",
       "displayName": "Laminates",
-      "plainName": "Sachet film (by weight) & ready-to-drink pouches (by piece)",
+      "plainName": "Sachet film for sachets & strips (by weight)",
       "category": "Packaging",
       "color": "#EFAE0E"
+    },
+    {
+      "key": "cartons",
+      "displayName": "Aseptic cartons",
+      "plainName": "Ready-to-drink aseptic cartons (ELECTRAL / ENERZAL packs, by piece)",
+      "category": "Packaging",
+      "color": "#8E44AD"
     }
   ],
   "notes": [

@@ -2450,40 +2450,31 @@
   {
     "key": "laminates",
     "displayName": "Laminates",
-    "plainName": "Sachet film (by weight) & ready-to-drink pouches (by piece)",
+    "plainName": "Sachet film for sachets & strips (by weight)",
     "category": "Packaging",
     "color": "#EFAE0E",
     "singleCommodity": false,
     "units": [
-      "KG",
-      "NOS"
+      "KG"
     ],
     "primaryUnit": "KG",
-    "totalNetSpend": 425714897.43,
-    "totalNetQty": 1916025.89,
-    "vwap": 115.164,
-    "receiptCount": 510,
-    "reversalCount": 15,
-    "reversalRatePct": 2.94,
-    "skuCount": 80,
-    "vendorCount": 7,
+    "totalNetSpend": 371080293.16,
+    "totalNetQty": 1239665.89,
+    "vwap": 299.291,
+    "receiptCount": 469,
+    "reversalCount": 6,
+    "reversalRatePct": 1.28,
+    "skuCount": 68,
+    "vendorCount": 6,
     "plantCount": 6,
     "unitTotals": [
       {
         "unit": "KG",
-        "netSpend": 372407109.7,
-        "netQty": 1916025.89,
-        "vwap": 115.164,
-        "receiptCount": 475,
-        "reversalCount": 10
-      },
-      {
-        "unit": "NOS",
-        "netSpend": 53307787.73,
-        "netQty": 28212705,
-        "vwap": 1.889,
-        "receiptCount": 35,
-        "reversalCount": 5
+        "netSpend": 371080293.16,
+        "netQty": 1239665.89,
+        "vwap": 299.291,
+        "receiptCount": 469,
+        "reversalCount": 6
       }
     ],
     "monthly": [
@@ -2537,9 +2528,9 @@
       },
       {
         "month": "2025-12",
-        "qty": 723751.89,
-        "spend": 15486678.69,
-        "avgPrice": 21.398
+        "qty": 47391.89,
+        "spend": 14159862.15,
+        "avgPrice": 298.782
       },
       {
         "month": "2026-01",
@@ -2551,7 +2542,7 @@
         "month": "2026-02",
         "qty": 61036.5,
         "spend": 18621926.65,
-        "avgPrice": 15.049
+        "avgPrice": 305.095
       },
       {
         "month": "2026-03",
@@ -2563,27 +2554,27 @@
     "monthlySpendAll": [
       {
         "month": "2025-04",
-        "spend": 40407780.91
+        "spend": 30758234.01
       },
       {
         "month": "2025-05",
-        "spend": 43340928.56
+        "spend": 37072217.05
       },
       {
         "month": "2025-06",
-        "spend": 44032994.55
+        "spend": 41623811.16
       },
       {
         "month": "2025-07",
-        "spend": 66746174.36
+        "spend": 63581160.61
       },
       {
         "month": "2025-08",
-        "spend": 50973441.19
+        "spend": 49702625.71
       },
       {
         "month": "2025-09",
-        "spend": 29326585.51
+        "spend": 22373813.75
       },
       {
         "month": "2025-10",
@@ -2591,15 +2582,15 @@
       },
       {
         "month": "2025-11",
-        "spend": 35334714.82
+        "spend": 24074978.05
       },
       {
         "month": "2025-12",
-        "spend": 16125968.1
+        "spend": 14159862.15
       },
       {
         "month": "2026-01",
-        "spend": 15966138.8
+        "spend": 12379005.3
       },
       {
         "month": "2026-02",
@@ -2607,7 +2598,7 @@
       },
       {
         "month": "2026-03",
-        "spend": 40341280.33
+        "spend": 32235695.07
       }
     ],
     "skus": [
@@ -2645,17 +2636,6 @@
         "vendorCount": 2
       },
       {
-        "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
-        "unit": "NOS",
-        "qty": 12197180,
-        "spend": 23178112.72,
-        "recQty": 13124970,
-        "avgPrice": 1.901,
-        "minPrice": 1.865,
-        "maxPrice": 1.92,
-        "vendorCount": 1
-      },
-      {
         "desc": "LM ELECTRAL MD 21.80g LS 08",
         "unit": "KG",
         "qty": 65255.6,
@@ -2665,17 +2645,6 @@
         "minPrice": 290,
         "maxPrice": 336,
         "vendorCount": 3
-      },
-      {
-        "desc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
-        "unit": "NOS",
-        "qty": 6917130,
-        "spend": 13008913.95,
-        "recQty": 6917130,
-        "avgPrice": 1.881,
-        "minPrice": 1.866,
-        "maxPrice": 1.895,
-        "vendorCount": 1
       },
       {
         "desc": "LM ELECTRAL UD 4.4g LS 05",
@@ -2733,17 +2702,6 @@
         "vendorCount": 1
       },
       {
-        "desc": "LAM ELECTRAL APPLE RTD 200 mL LS 10",
-        "unit": "NOS",
-        "qty": 3009390,
-        "spend": 5649022.1,
-        "recQty": 3009390,
-        "avgPrice": 1.877,
-        "minPrice": 1.866,
-        "maxPrice": 1.887,
-        "vendorCount": 1
-      },
-      {
         "desc": "LM ELECTRAL UD 4.4g ADC LS 4 TRACK 02",
         "unit": "KG",
         "qty": 17554.85,
@@ -2788,17 +2746,6 @@
         "vendorCount": 1
       },
       {
-        "desc": "LAM ELECTRAL MANGO RTD 200 mL LS 10",
-        "unit": "NOS",
-        "qty": 1993120,
-        "spend": 3760165.77,
-        "recQty": 1993120,
-        "avgPrice": 1.887,
-        "minPrice": 1.866,
-        "maxPrice": 1.897,
-        "vendorCount": 1
-      },
-      {
         "desc": "LM ELECTRAL LIME FLAVOUR UD 4.4 gm LS 01",
         "unit": "KG",
         "qty": 10554.47,
@@ -2840,17 +2787,6 @@
         "avgPrice": 380,
         "minPrice": 380,
         "maxPrice": 380,
-        "vendorCount": 1
-      },
-      {
-        "desc": "LAM R5 RTD-ORANGE 200mL PMFP 03",
-        "unit": "NOS",
-        "qty": 1681485,
-        "spend": 3172217.53,
-        "recQty": 1681485,
-        "avgPrice": 1.887,
-        "minPrice": 1.887,
-        "maxPrice": 1.887,
         "vendorCount": 1
       },
       {
@@ -2997,17 +2933,6 @@
         "vendorCount": 1
       },
       {
-        "desc": "LAM ELECTRAL ORANGE RTD 200 mL LP 06",
-        "unit": "NOS",
-        "qty": 798520,
-        "spend": 1493915.83,
-        "recQty": 798520,
-        "avgPrice": 1.871,
-        "minPrice": 1.866,
-        "maxPrice": 1.878,
-        "vendorCount": 1
-      },
-      {
         "desc": "LM RESOMAL 42G ES Unicef 02",
         "unit": "KG",
         "qty": 4508.99,
@@ -3038,17 +2963,6 @@
         "avgPrice": 320,
         "minPrice": 320,
         "maxPrice": 320,
-        "vendorCount": 1
-      },
-      {
-        "desc": "LAM ELECTRAL APPLE RTD 200 mL LP 07",
-        "unit": "NOS",
-        "qty": 665855,
-        "spend": 1246230.03,
-        "recQty": 665855,
-        "avgPrice": 1.872,
-        "minPrice": 1.866,
-        "maxPrice": 1.878,
         "vendorCount": 1
       },
       {
@@ -3107,50 +3021,6 @@
         "vendorCount": 1
       },
       {
-        "desc": "LAM ELECTRAL APPLE RTD 200ML LS AYK",
-        "unit": "KG",
-        "qty": 338570,
-        "spend": 696668.1,
-        "recQty": 1015710,
-        "avgPrice": 2.058,
-        "minPrice": 2.058,
-        "maxPrice": 2.058,
-        "vendorCount": 1
-      },
-      {
-        "desc": "LAM ELECTRAL ORANGE RTD 200 mL AP LS 01",
-        "unit": "NOS",
-        "qty": 342690,
-        "spend": 639289.41,
-        "recQty": 1028070,
-        "avgPrice": 1.866,
-        "minPrice": 1.866,
-        "maxPrice": 1.866,
-        "vendorCount": 1
-      },
-      {
-        "desc": "LAM ELECTRAL MANGO RTD 200 mL LP 07",
-        "unit": "NOS",
-        "qty": 338570,
-        "spend": 635852.66,
-        "recQty": 338570,
-        "avgPrice": 1.878,
-        "minPrice": 1.878,
-        "maxPrice": 1.878,
-        "vendorCount": 1
-      },
-      {
-        "desc": "LAM ELECTRAL MANGO RTD 200ML LS AYK",
-        "unit": "KG",
-        "qty": 337790,
-        "spend": 630148.44,
-        "recQty": 1013370,
-        "avgPrice": 1.866,
-        "minPrice": 1.866,
-        "maxPrice": 1.866,
-        "vendorCount": 1
-      },
-      {
         "desc": "LM ELECTRAL 21.8GM ES BW 01",
         "unit": "KG",
         "qty": 1823.6,
@@ -3192,17 +3062,6 @@
         "avgPrice": 320,
         "minPrice": 320,
         "maxPrice": 320,
-        "vendorCount": 1
-      },
-      {
-        "desc": "T-LAM ENERZAL RTD-APPL 200mL FC PM/SD 02",
-        "unit": "NOS",
-        "qty": 268765,
-        "spend": 524067.73,
-        "recQty": 884910,
-        "avgPrice": 1.91,
-        "minPrice": 1.892,
-        "maxPrice": 1.95,
         "vendorCount": 1
       },
       {
@@ -3743,89 +3602,6 @@
         ]
       },
       {
-        "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
-        "unit": "NOS",
-        "spend": 23178112.72,
-        "avgPrice": 1.901,
-        "minPrice": 1.865,
-        "maxPrice": 1.92,
-        "vendorCount": 1,
-        "monthly": [
-          {
-            "month": "2025-04",
-            "qty": 3720715,
-            "spend": 7088676.48,
-            "avgPrice": 1.905
-          },
-          {
-            "month": "2025-05",
-            "qty": 0,
-            "spend": 0,
-            "avgPrice": null
-          },
-          {
-            "month": "2025-06",
-            "qty": 0,
-            "spend": 0,
-            "avgPrice": null
-          },
-          {
-            "month": "2025-07",
-            "qty": 0,
-            "spend": 0,
-            "avgPrice": null
-          },
-          {
-            "month": "2025-08",
-            "qty": 0,
-            "spend": 0,
-            "avgPrice": null
-          },
-          {
-            "month": "2025-09",
-            "qty": 672585,
-            "spend": 1277396.03,
-            "avgPrice": 1.899
-          },
-          {
-            "month": "2025-10",
-            "qty": 0,
-            "spend": 0,
-            "avgPrice": null
-          },
-          {
-            "month": "2025-11",
-            "qty": 1653130,
-            "spend": 3119321.45,
-            "avgPrice": 1.887
-          },
-          {
-            "month": "2025-12",
-            "qty": 0,
-            "spend": 0,
-            "avgPrice": null
-          },
-          {
-            "month": "2026-01",
-            "qty": 1903900,
-            "spend": 3587133.5,
-            "avgPrice": 1.884
-          },
-          {
-            "month": "2026-02",
-            "qty": 0,
-            "spend": 0,
-            "avgPrice": null
-          },
-          {
-            "month": "2026-03",
-            "qty": 4246850,
-            "spend": 8105585.26,
-            "avgPrice": 1.908
-          }
-        ]
-      },
-      {
         "desc": "LM ELECTRAL MD 21.80g LS 08",
         "unit": "KG",
         "spend": 19784817.16,
@@ -3905,89 +3681,6 @@
             "qty": 59158.82,
             "spend": 17986267.06,
             "avgPrice": 304.034
-          }
-        ]
-      },
-      {
-        "desc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
-        "unit": "NOS",
-        "spend": 13008913.95,
-        "avgPrice": 1.881,
-        "minPrice": 1.866,
-        "maxPrice": 1.895,
-        "vendorCount": 1,
-        "monthly": [
-          {
-            "month": "2025-04",
-            "qty": 0,
-            "spend": 0,
-            "avgPrice": null
-          },
-          {
-            "month": "2025-05",
-            "qty": 1648615,
-            "spend": 3096493.98,
-            "avgPrice": 1.878
-          },
-          {
-            "month": "2025-06",
-            "qty": 0,
-            "spend": 0,
-            "avgPrice": null
-          },
-          {
-            "month": "2025-07",
-            "qty": 357000,
-            "spend": 665984.77,
-            "avgPrice": 1.866
-          },
-          {
-            "month": "2025-08",
-            "qty": 0,
-            "spend": 0,
-            "avgPrice": null
-          },
-          {
-            "month": "2025-09",
-            "qty": 3019765,
-            "spend": 5675375.73,
-            "avgPrice": 1.879
-          },
-          {
-            "month": "2025-10",
-            "qty": 0,
-            "spend": 0,
-            "avgPrice": null
-          },
-          {
-            "month": "2025-11",
-            "qty": 1891750,
-            "spend": 3571059.47,
-            "avgPrice": 1.888
-          },
-          {
-            "month": "2025-12",
-            "qty": 0,
-            "spend": 0,
-            "avgPrice": null
-          },
-          {
-            "month": "2026-01",
-            "qty": 0,
-            "spend": 0,
-            "avgPrice": null
-          },
-          {
-            "month": "2026-02",
-            "qty": 0,
-            "spend": 0,
-            "avgPrice": null
-          },
-          {
-            "month": "2026-03",
-            "qty": 0,
-            "spend": 0,
-            "avgPrice": null
           }
         ]
       },
@@ -4407,6 +4100,833 @@
         ]
       },
       {
+        "desc": "LM ELECTRAL UD 4.4g ADC LS 4 TRACK 02",
+        "unit": "KG",
+        "spend": 5166078.12,
+        "avgPrice": 294.282,
+        "minPrice": 290,
+        "maxPrice": 296,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 3524.01,
+            "spend": 1025959.26,
+            "avgPrice": 291.134
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 10075.7,
+            "spend": 2972331.5,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-07",
+            "qty": 2934.08,
+            "spend": 865553.6,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 1021.06,
+            "spend": 302233.76,
+            "avgPrice": 296
+          }
+        ]
+      },
+      {
+        "desc": "LM ELECTRAL 4.4G ORANGE (AMBIKA)NV LS 01",
+        "unit": "KG",
+        "spend": 4970543.5,
+        "avgPrice": 295,
+        "minPrice": 295,
+        "maxPrice": 295,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 6362.07,
+            "spend": 1876810.65,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-07",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-08",
+            "qty": 7080.09,
+            "spend": 2088626.55,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-09",
+            "qty": 3407.14,
+            "spend": 1005106.3,
+            "avgPrice": 295
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      },
+      {
+        "desc": "LM ELECTRAL FORTE 30g ES MM S1 07",
+        "unit": "KG",
+        "spend": 4673014.4,
+        "avgPrice": 320,
+        "minPrice": 320,
+        "maxPrice": 320,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 4494.59,
+            "spend": 1438268.8,
+            "avgPrice": 320
+          },
+          {
+            "month": "2025-07",
+            "qty": 6057.68,
+            "spend": 1938457.6,
+            "avgPrice": 320
+          },
+          {
+            "month": "2025-08",
+            "qty": 3616.06,
+            "spend": 1157139.2,
+            "avgPrice": 320
+          },
+          {
+            "month": "2025-09",
+            "qty": 434.84,
+            "spend": 139148.8,
+            "avgPrice": 320
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      }
+    ],
+    "vendors": [
+      {
+        "vendorKey": "geep-industries-india",
+        "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
+        "color": "#00973D",
+        "unit": "KG",
+        "qty": 937985.39,
+        "spend": 283131033.16,
+        "avgPrice": 301.767,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "shrinath-roto-pack",
+        "vendor": "Shrinath Roto Pack Pvt Ltd",
+        "color": "#8E44AD",
+        "unit": "KG",
+        "qty": 223168.64,
+        "spend": 64718905.6,
+        "avgPrice": 290,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "gls-films-industries-p",
+        "vendor": "GLS FILMS INDUSTRIES P. LTD.",
+        "color": "#2471A3",
+        "unit": "KG",
+        "qty": 78240.48,
+        "spend": 23080941.6,
+        "avgPrice": 295,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "huhtamaki-india",
+        "vendor": "HUHTAMAKI INDIA LIMITED",
+        "color": "#C9A227",
+        "unit": "KG",
+        "qty": 72,
+        "spend": 76850,
+        "avgPrice": 1067.361,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "uflex",
+        "vendor": "UFLEX LIMITED",
+        "color": "#6E2C00",
+        "unit": "KG",
+        "qty": 168.28,
+        "spend": 64787.8,
+        "avgPrice": 385,
+        "multiUnit": false
+      },
+      {
+        "vendorKey": "silk-polypack",
+        "vendor": "Silk Polypack",
+        "color": "#145A32",
+        "unit": "KG",
+        "qty": 31.1,
+        "spend": 7775,
+        "avgPrice": 250,
+        "multiUnit": false
+      }
+    ],
+    "plants": [
+      {
+        "plant": "1003",
+        "plantName": "FDC Limited,SINNAR",
+        "unit": "KG",
+        "qty": 509703.87,
+        "spend": 154480077.5,
+        "avgPrice": 303.053
+      },
+      {
+        "plant": "1006",
+        "plantName": "FDC LIMITED, GOA-II",
+        "unit": "KG",
+        "qty": 300536.61,
+        "spend": 88915157.53,
+        "avgPrice": 295.862
+      },
+      {
+        "plant": "1000",
+        "plantName": "FDC Limited,Jogeshwari,Corp",
+        "unit": "KG",
+        "qty": 180830.42,
+        "spend": 53030891.12,
+        "avgPrice": 293.167
+      },
+      {
+        "plant": "1008",
+        "plantName": "FDC Limited-Waluj",
+        "unit": "KG",
+        "qty": 109193.07,
+        "spend": 33737434.01,
+        "avgPrice": 308.97
+      },
+      {
+        "plant": "1044",
+        "plantName": "FDC Limited (SPPL)",
+        "unit": "KG",
+        "qty": 70916.67,
+        "spend": 20857691.7,
+        "avgPrice": 294.115
+      },
+      {
+        "plant": "1047",
+        "plantName": "FDC Limited (NVP)",
+        "unit": "KG",
+        "qty": 68485.25,
+        "spend": 20059041.3,
+        "avgPrice": 292.915
+      }
+    ]
+  },
+  {
+    "key": "cartons",
+    "displayName": "Aseptic cartons",
+    "plainName": "Ready-to-drink aseptic cartons (ELECTRAL / ENERZAL packs, by piece)",
+    "category": "Packaging",
+    "color": "#8E44AD",
+    "singleCommodity": false,
+    "units": [
+      "NOS",
+      "KG"
+    ],
+    "primaryUnit": "NOS",
+    "totalNetSpend": 54634604.27,
+    "totalNetQty": 28212705,
+    "vwap": 1.889,
+    "receiptCount": 41,
+    "reversalCount": 9,
+    "reversalRatePct": 21.95,
+    "skuCount": 12,
+    "vendorCount": 1,
+    "plantCount": 1,
+    "unitTotals": [
+      {
+        "unit": "NOS",
+        "netSpend": 53307787.73,
+        "netQty": 28212705,
+        "vwap": 1.889,
+        "receiptCount": 35,
+        "reversalCount": 5
+      },
+      {
+        "unit": "KG",
+        "netSpend": 1326816.54,
+        "netQty": 676360,
+        "vwap": 1.962,
+        "receiptCount": 6,
+        "reversalCount": 4
+      }
+    ],
+    "monthly": [
+      {
+        "month": "2025-04",
+        "qty": 5082210,
+        "spend": 9649546.9,
+        "avgPrice": 1.899
+      },
+      {
+        "month": "2025-05",
+        "qty": 3330100,
+        "spend": 6268711.51,
+        "avgPrice": 1.882
+      },
+      {
+        "month": "2025-06",
+        "qty": 1272525,
+        "spend": 2409183.39,
+        "avgPrice": 1.893
+      },
+      {
+        "month": "2025-07",
+        "qty": 1685345,
+        "spend": 3165013.75,
+        "avgPrice": 1.878
+      },
+      {
+        "month": "2025-08",
+        "qty": 673715,
+        "spend": 1270815.48,
+        "avgPrice": 1.886
+      },
+      {
+        "month": "2025-09",
+        "qty": 3692350,
+        "spend": 6952771.76,
+        "avgPrice": 1.883
+      },
+      {
+        "month": "2025-10",
+        "qty": 0,
+        "spend": 0,
+        "avgPrice": null
+      },
+      {
+        "month": "2025-11",
+        "qty": 5983020,
+        "spend": 11259736.77,
+        "avgPrice": 1.882
+      },
+      {
+        "month": "2025-12",
+        "qty": 342690,
+        "spend": 639289.41,
+        "avgPrice": 1.866
+      },
+      {
+        "month": "2026-01",
+        "qty": 1903900,
+        "spend": 3587133.5,
+        "avgPrice": 1.884
+      },
+      {
+        "month": "2026-02",
+        "qty": 0,
+        "spend": 0,
+        "avgPrice": 1.866
+      },
+      {
+        "month": "2026-03",
+        "qty": 4246850,
+        "spend": 8105585.26,
+        "avgPrice": 1.906
+      }
+    ],
+    "monthlySpendAll": [
+      {
+        "month": "2025-04",
+        "spend": 9649546.9
+      },
+      {
+        "month": "2025-05",
+        "spend": 6268711.51
+      },
+      {
+        "month": "2025-06",
+        "spend": 2409183.39
+      },
+      {
+        "month": "2025-07",
+        "spend": 3165013.75
+      },
+      {
+        "month": "2025-08",
+        "spend": 1270815.48
+      },
+      {
+        "month": "2025-09",
+        "spend": 6952771.76
+      },
+      {
+        "month": "2025-10",
+        "spend": 0
+      },
+      {
+        "month": "2025-11",
+        "spend": 11259736.77
+      },
+      {
+        "month": "2025-12",
+        "spend": 1966105.95
+      },
+      {
+        "month": "2026-01",
+        "spend": 3587133.5
+      },
+      {
+        "month": "2026-02",
+        "spend": 0
+      },
+      {
+        "month": "2026-03",
+        "spend": 8105585.26
+      }
+    ],
+    "skus": [
+      {
+        "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
+        "unit": "NOS",
+        "qty": 12197180,
+        "spend": 23178112.72,
+        "recQty": 13124970,
+        "avgPrice": 1.901,
+        "minPrice": 1.865,
+        "maxPrice": 1.92,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
+        "unit": "NOS",
+        "qty": 6917130,
+        "spend": 13008913.95,
+        "recQty": 6917130,
+        "avgPrice": 1.881,
+        "minPrice": 1.866,
+        "maxPrice": 1.895,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL APPLE RTD 200 mL LS 10",
+        "unit": "NOS",
+        "qty": 3009390,
+        "spend": 5649022.1,
+        "recQty": 3009390,
+        "avgPrice": 1.877,
+        "minPrice": 1.866,
+        "maxPrice": 1.887,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL MANGO RTD 200 mL LS 10",
+        "unit": "NOS",
+        "qty": 1993120,
+        "spend": 3760165.77,
+        "recQty": 1993120,
+        "avgPrice": 1.887,
+        "minPrice": 1.866,
+        "maxPrice": 1.897,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM R5 RTD-ORANGE 200mL PMFP 03",
+        "unit": "NOS",
+        "qty": 1681485,
+        "spend": 3172217.53,
+        "recQty": 1681485,
+        "avgPrice": 1.887,
+        "minPrice": 1.887,
+        "maxPrice": 1.887,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL ORANGE RTD 200 mL LP 06",
+        "unit": "NOS",
+        "qty": 798520,
+        "spend": 1493915.83,
+        "recQty": 798520,
+        "avgPrice": 1.871,
+        "minPrice": 1.866,
+        "maxPrice": 1.878,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL APPLE RTD 200 mL LP 07",
+        "unit": "NOS",
+        "qty": 665855,
+        "spend": 1246230.03,
+        "recQty": 665855,
+        "avgPrice": 1.872,
+        "minPrice": 1.866,
+        "maxPrice": 1.878,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL APPLE RTD 200ML LS AYK",
+        "unit": "KG",
+        "qty": 338570,
+        "spend": 696668.1,
+        "recQty": 1015710,
+        "avgPrice": 2.058,
+        "minPrice": 2.058,
+        "maxPrice": 2.058,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL ORANGE RTD 200 mL AP LS 01",
+        "unit": "NOS",
+        "qty": 342690,
+        "spend": 639289.41,
+        "recQty": 1028070,
+        "avgPrice": 1.866,
+        "minPrice": 1.866,
+        "maxPrice": 1.866,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL MANGO RTD 200 mL LP 07",
+        "unit": "NOS",
+        "qty": 338570,
+        "spend": 635852.66,
+        "recQty": 338570,
+        "avgPrice": 1.878,
+        "minPrice": 1.878,
+        "maxPrice": 1.878,
+        "vendorCount": 1
+      },
+      {
+        "desc": "LAM ELECTRAL MANGO RTD 200ML LS AYK",
+        "unit": "KG",
+        "qty": 337790,
+        "spend": 630148.44,
+        "recQty": 1013370,
+        "avgPrice": 1.866,
+        "minPrice": 1.866,
+        "maxPrice": 1.866,
+        "vendorCount": 1
+      },
+      {
+        "desc": "T-LAM ENERZAL RTD-APPL 200mL FC PM/SD 02",
+        "unit": "NOS",
+        "qty": 268765,
+        "spend": 524067.73,
+        "recQty": 884910,
+        "avgPrice": 1.91,
+        "minPrice": 1.892,
+        "maxPrice": 1.95,
+        "vendorCount": 1
+      }
+    ],
+    "topSkuMonthly": [
+      {
+        "desc": "T-LAM ENERZAL RTD-ORG 200ML FC PM/JDI 01",
+        "unit": "NOS",
+        "spend": 23178112.72,
+        "avgPrice": 1.901,
+        "minPrice": 1.865,
+        "maxPrice": 1.92,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 3720715,
+            "spend": 7088676.48,
+            "avgPrice": 1.905
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-07",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 672585,
+            "spend": 1277396.03,
+            "avgPrice": 1.899
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 1653130,
+            "spend": 3119321.45,
+            "avgPrice": 1.887
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 1903900,
+            "spend": 3587133.5,
+            "avgPrice": 1.884
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 4246850,
+            "spend": 8105585.26,
+            "avgPrice": 1.908
+          }
+        ]
+      },
+      {
+        "desc": "LAM ELECTRAL ORANGE RTD 200 mL LS 08",
+        "unit": "NOS",
+        "spend": 13008913.95,
+        "avgPrice": 1.881,
+        "minPrice": 1.866,
+        "maxPrice": 1.895,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 1648615,
+            "spend": 3096493.98,
+            "avgPrice": 1.878
+          },
+          {
+            "month": "2025-06",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-07",
+            "qty": 357000,
+            "spend": 665984.77,
+            "avgPrice": 1.866
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 3019765,
+            "spend": 5675375.73,
+            "avgPrice": 1.879
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 1891750,
+            "spend": 3571059.47,
+            "avgPrice": 1.888
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      },
+      {
         "desc": "LAM ELECTRAL APPLE RTD 200 mL LS 10",
         "unit": "NOS",
         "spend": 5649022.1,
@@ -4488,29 +5008,756 @@
             "avgPrice": null
           }
         ]
+      },
+      {
+        "desc": "LAM ELECTRAL MANGO RTD 200 mL LS 10",
+        "unit": "NOS",
+        "spend": 3760165.77,
+        "avgPrice": 1.887,
+        "minPrice": 1.866,
+        "maxPrice": 1.897,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 691520,
+            "spend": 1311029.68,
+            "avgPrice": 1.896
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-07",
+            "qty": 660340,
+            "spend": 1252863.28,
+            "avgPrice": 1.897
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 641260,
+            "spend": 1196272.81,
+            "avgPrice": 1.866
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      },
+      {
+        "desc": "LAM R5 RTD-ORANGE 200mL PMFP 03",
+        "unit": "NOS",
+        "spend": 3172217.53,
+        "avgPrice": 1.887,
+        "minPrice": 1.887,
+        "maxPrice": 1.887,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 1681485,
+            "spend": 3172217.53,
+            "avgPrice": 1.887
+          },
+          {
+            "month": "2025-06",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-07",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      },
+      {
+        "desc": "LAM ELECTRAL ORANGE RTD 200 mL LP 06",
+        "unit": "NOS",
+        "spend": 1493915.83,
+        "avgPrice": 1.871,
+        "minPrice": 1.866,
+        "maxPrice": 1.878,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 340530,
+            "spend": 639533.65,
+            "avgPrice": 1.878
+          },
+          {
+            "month": "2025-07",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 457990,
+            "spend": 854382.18,
+            "avgPrice": 1.866
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      },
+      {
+        "desc": "LAM ELECTRAL APPLE RTD 200 mL LP 07",
+        "unit": "NOS",
+        "spend": 1246230.03,
+        "avgPrice": 1.872,
+        "minPrice": 1.866,
+        "maxPrice": 1.878,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 324660,
+            "spend": 609729.35,
+            "avgPrice": 1.878
+          },
+          {
+            "month": "2025-07",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 341195,
+            "spend": 636500.68,
+            "avgPrice": 1.866
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      },
+      {
+        "desc": "LAM ELECTRAL APPLE RTD 200ML LS AYK",
+        "unit": "KG",
+        "spend": 696668.1,
+        "avgPrice": 2.058,
+        "minPrice": 2.058,
+        "maxPrice": 2.058,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-07",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 338570,
+            "spend": 696668.1,
+            "avgPrice": 2.058
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": 2.058
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      },
+      {
+        "desc": "LAM ELECTRAL ORANGE RTD 200 mL AP LS 01",
+        "unit": "NOS",
+        "spend": 639289.41,
+        "avgPrice": 1.866,
+        "minPrice": 1.866,
+        "maxPrice": 1.866,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-07",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 342690,
+            "spend": 639289.41,
+            "avgPrice": 1.866
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": 1.866
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      },
+      {
+        "desc": "LAM ELECTRAL MANGO RTD 200 mL LP 07",
+        "unit": "NOS",
+        "spend": 635852.66,
+        "avgPrice": 1.878,
+        "minPrice": 1.878,
+        "maxPrice": 1.878,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 338570,
+            "spend": 635852.66,
+            "avgPrice": 1.878
+          },
+          {
+            "month": "2025-07",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      },
+      {
+        "desc": "LAM ELECTRAL MANGO RTD 200ML LS AYK",
+        "unit": "KG",
+        "spend": 630148.44,
+        "avgPrice": 1.866,
+        "minPrice": 1.866,
+        "maxPrice": 1.866,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-07",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 337790,
+            "spend": 630148.44,
+            "avgPrice": 1.866
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": 1.866
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          }
+        ]
+      },
+      {
+        "desc": "T-LAM ENERZAL RTD-APPL 200mL FC PM/SD 02",
+        "unit": "NOS",
+        "spend": 524067.73,
+        "avgPrice": 1.91,
+        "minPrice": 1.892,
+        "maxPrice": 1.95,
+        "vendorCount": 1,
+        "monthly": [
+          {
+            "month": "2025-04",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-05",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-06",
+            "qty": 268765,
+            "spend": 524067.73,
+            "avgPrice": 1.95
+          },
+          {
+            "month": "2025-07",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-08",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-09",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-10",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-11",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2025-12",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-01",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-02",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": null
+          },
+          {
+            "month": "2026-03",
+            "qty": 0,
+            "spend": 0,
+            "avgPrice": 1.892
+          }
+        ]
       }
     ],
     "vendors": [
-      {
-        "vendorKey": "geep-industries-india",
-        "vendor": "GEEP INDUSTRIES (INDIA) PRIVATE LIMITED",
-        "color": "#00973D",
-        "unit": "KG",
-        "qty": 937985.39,
-        "spend": 283131033.16,
-        "avgPrice": 301.767,
-        "multiUnit": false
-      },
-      {
-        "vendorKey": "shrinath-roto-pack",
-        "vendor": "Shrinath Roto Pack Pvt Ltd",
-        "color": "#8E44AD",
-        "unit": "KG",
-        "qty": 223168.64,
-        "spend": 64718905.6,
-        "avgPrice": 290,
-        "multiUnit": false
-      },
       {
         "vendorKey": "tetrapak-india",
         "vendor": "Tetrapak India Private limited.",
@@ -4520,96 +5767,16 @@
         "spend": 54634604.27,
         "avgPrice": 1.889,
         "multiUnit": true
-      },
-      {
-        "vendorKey": "gls-films-industries-p",
-        "vendor": "GLS FILMS INDUSTRIES P. LTD.",
-        "color": "#2471A3",
-        "unit": "KG",
-        "qty": 78240.48,
-        "spend": 23080941.6,
-        "avgPrice": 295,
-        "multiUnit": false
-      },
-      {
-        "vendorKey": "huhtamaki-india",
-        "vendor": "HUHTAMAKI INDIA LIMITED",
-        "color": "#C9A227",
-        "unit": "KG",
-        "qty": 72,
-        "spend": 76850,
-        "avgPrice": 1067.361,
-        "multiUnit": false
-      },
-      {
-        "vendorKey": "uflex",
-        "vendor": "UFLEX LIMITED",
-        "color": "#6E2C00",
-        "unit": "KG",
-        "qty": 168.28,
-        "spend": 64787.8,
-        "avgPrice": 385,
-        "multiUnit": false
-      },
-      {
-        "vendorKey": "silk-polypack",
-        "vendor": "Silk Polypack",
-        "color": "#145A32",
-        "unit": "KG",
-        "qty": 31.1,
-        "spend": 7775,
-        "avgPrice": 250,
-        "multiUnit": false
       }
     ],
     "plants": [
       {
-        "plant": "1003",
-        "plantName": "FDC Limited,SINNAR",
-        "unit": "KG",
-        "qty": 509703.87,
-        "spend": 154480077.5,
-        "avgPrice": 303.053
-      },
-      {
-        "plant": "1006",
-        "plantName": "FDC LIMITED, GOA-II",
-        "unit": "KG",
-        "qty": 300536.61,
-        "spend": 88915157.53,
-        "avgPrice": 295.862
-      },
-      {
         "plant": "1000",
         "plantName": "FDC Limited,Jogeshwari,Corp",
-        "unit": "KG",
-        "qty": 857190.42,
-        "spend": 54357707.66,
-        "avgPrice": 26.456
-      },
-      {
-        "plant": "1008",
-        "plantName": "FDC Limited-Waluj",
-        "unit": "KG",
-        "qty": 109193.07,
-        "spend": 33737434.01,
-        "avgPrice": 308.97
-      },
-      {
-        "plant": "1044",
-        "plantName": "FDC Limited (SPPL)",
-        "unit": "KG",
-        "qty": 70916.67,
-        "spend": 20857691.7,
-        "avgPrice": 294.115
-      },
-      {
-        "plant": "1047",
-        "plantName": "FDC Limited (NVP)",
-        "unit": "KG",
-        "qty": 68485.25,
-        "spend": 20059041.3,
-        "avgPrice": 292.915
+        "unit": "NOS",
+        "qty": 28212705,
+        "spend": 53307787.73,
+        "avgPrice": 1.889
       }
     ]
   }

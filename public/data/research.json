@@ -33,11 +33,12 @@
       "sources": ["Sukhjit directors' report FY2025-26", "NSE: SUKHJITS"]
     },
     "tetrapak-india": {
-      "grade": { "tone": "diff", "label": "Aseptic cartons — not laminate film" },
-      "correction": "Tetra Pak supplies aseptic beverage/ORS cartons (a finished packaging system, sold per piece), NOT the sachet/blister laminate film the other suppliers make. Don't compare its price against the film suppliers — that's apples to oranges.",
-      "angle": "Benchmark it only against other aseptic-carton systems — SIG (new Ahmedabad plant) and GLS Elopak (Rewari) — and only if your filling machine is compatible. Switching needs compatible machinery + revalidation, so negotiate per-carton price, rebates, support and payment terms with Tetra Pak directly.",
-      "plant": "Chakan, Pune, Maharashtra (ISCC-PLUS packaging-material facility).",
-      "sources": ["tetrapak.com", "SIG / GLS Elopak announcements"]
+      "grade": { "tone": "diff", "label": "Aseptic cartons — its own category" },
+      "correction": "Tetra Pak supplies finished aseptic cartons for your ELECTRAL (ORS) and ENERZAL packs, sold per piece — a packaging system, not the sachet film the laminate suppliers make. It now sits in its own 'Aseptic cartons' category, so its per-piece price is never compared against the film suppliers.",
+      "financials": "Privately held global giant (group turnover SEK 80bn+), so supply continuity is not a worry. India-entity rupee accounts aren't public beyond ~2023-25, so treat any India P&L as dated.",
+      "angle": "You're locked in by the filling machine, so the first win is terms, not switching: Tetra Pak finances its own customers' machines (credit + leasing) yet makes you pay on receipt — use that to push for 30-day credit, per-carton rebates and technical support. On alternatives, only a roll-fed carton can drop into your existing fillers (see the carton alternatives tab).",
+      "plant": "Chakan, near Pune (Maharashtra) — Tetra Pak's largest site outside Sweden; ~8.5 bn packs/yr, scalable to 16 bn.",
+      "sources": ["tetrapak.com", "SIG / GLS Elopak / Greatview announcements"]
     },
     "huhtamaki-india": {
       "grade": { "tone": "good", "label": "Primary pharma laminates ✓" },
@@ -122,9 +123,12 @@
     "laminates": [
       { "name": "ACG (Packaging Materials)", "grade": { "tone": "check", "label": "Blister lidding foil" }, "format": "Pharma aluminium blister lidding foil (Alumlid) for thermoform & cold-form", "where": "India group — foil plant for the SKU to confirm", "role": "Maker — private group", "note": "Strong blister-foil capability; match the approved foil gauge, lacquer, print and substrate.", "sources": ["acg-world.com"] },
       { "name": "Bilcare", "grade": { "tone": "check", "label": "Cold-form laminate" }, "format": "Vento Venus cold-form laminate (OPA/aluminium/polyolefin)", "where": "India — commercial site to confirm", "role": "Maker", "note": "Qualified only if your existing laminate spec matches — not a chemistry change. Published structure, water-vapour and heat-seal data.", "sources": ["bilcare.com"] },
-      { "name": "SIG (Ahmedabad)", "grade": { "tone": "check", "label": "Aseptic cartons — Tetra Pak alt" }, "format": "Aseptic carton packages (dairy / non-carbonated beverages)", "where": "Ahmedabad, Gujarat — plant fully operational 12 Dec 2025", "role": "Maker / system provider — private (SIG Group, Switzerland)", "note": "A West-India aseptic-carton alternative to Tetra Pak — only if your filling machine is compatible; equipment/revalidation is the blocker.", "sources": ["sig.biz"] },
-      { "name": "GLS Elopak", "grade": { "tone": "check", "label": "Aseptic cartons — ORS use" }, "format": "Pure-Pak / Alpak aseptic liquid cartons (incl. ORS & liquid nutrition)", "where": "Gurawara, Rewari, Haryana (capacity 5bn+ packs/yr)", "role": "Maker / system supplier — JV (Elopak listed, Norway)", "note": "Second aseptic-carton alternative; confirm carton & filler compatibility and product-contact validation.", "sources": ["glselopak.com"] },
       { "name": "Constantia Flexibles (India)", "grade": { "tone": "check", "label": "Blister lidding & flexibles" }, "format": "Pharma blister lidding & flexible laminates", "where": "India presence — qualifying plant to confirm", "role": "Maker / converter — global", "note": "Credible established converter; confirm country of manufacture, structure, heat-seal and site approval.", "sources": ["cflex.com"] }
+    ],
+    "cartons": [
+      { "name": "Greatview", "grade": { "tone": "check", "label": "Runs on Tetra Pak fillers" }, "format": "Roll-fed aseptic carton material (built for Tetra Brik / Tetra Prisma fillers)", "where": "No India plant — supply would be imported", "role": "Maker — Greatview Aseptic Packaging (world #3)", "note": "The closest 'no new machine' option: Greatview's roll-fed material is explicitly made to run on most Tetra Pak Brik Aseptic fillers — so it can drop into your existing lines. Catch: no India plant, so it comes as an import; confirm your exact filler config is supported.", "sources": ["greatviewpack.com", "en.wikipedia.org/wiki/Greatview"] },
+      { "name": "GLS Elopak", "grade": { "tone": "check", "label": "Roll-fed — verify filler fit" }, "format": "Roll-fed aseptic liquid cartons (ALPAK; incl. ORS & liquid nutrition)", "where": "Rewari, Haryana (Elopak–GLS JV)", "role": "Maker / system supplier — JV (Elopak, Norway + GLS Group, India)", "note": "Roll-fed, the same family as Tetra Pak's Tetra Brik, so closer to a drop-in — but whether ALPAK runs on your exact Tetra Pak filler is NOT confirmed; verify with them and your machine vendor. (Same GLS group that supplies your laminate.)", "sources": ["glselopak.com", "beveragedaily.com (Apr 2022)"] },
+      { "name": "SIG (SIG Combibloc)", "grade": { "tone": "diff", "label": "Needs new fillers (sleeve-fed)" }, "format": "Sleeve-fed aseptic cartons (combibloc)", "where": "Ahmedabad, Gujarat — first India plant opened ~Feb 2025, up to 4 bn packs/yr (+ a local extrusion line due 2027)", "role": "Maker / system provider — SIG Group (Switzerland)", "note": "A real West-India aseptic-carton maker, but SIG is sleeve-fed — it runs on its OWN filling machines, so moving here means new fillers + revalidation (capex). Use as a price benchmark / leverage, not a drop-in.", "sources": ["sig.biz", "packagingeurope.com (Feb 2025)"] }
     ]
   }
 }
