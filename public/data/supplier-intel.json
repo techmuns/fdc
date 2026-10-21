@@ -1,0 +1,246 @@
+{
+  "asOf": "October 2026",
+  "note": "Plain-language due-diligence on the suppliers that appear in a recommendation. Serious flags were verified against primary sources (FDA, CCI, courts). Each is a lead to verify before acting, not a final legal conclusion. Full sourced detail: research/supplier-due-diligence.md.",
+  "suppliers": {
+    "gujarat-ambuja-exports": {
+      "riskLevel": "amber",
+      "headline": "India's #1 maize processor — financially rock-solid, but profit swings hard.",
+      "verdict": "Push the price down — you're overpaying a debt-free market leader. No reason to switch.",
+      "findings": [
+        "Net-debt-free, top-tier AA– credit; ~₹950 cr cash. Low-risk to rely on.",
+        "Profit is a commodity spread — one quarter fell 45% year-on-year, then rebounded sharply.",
+        "A 2018 pollution complaint led to an NGT closure order at its Sitarganj plant (since stayed).",
+        "Governance quirks: ₹40 cr+ promoter pay vs a ~3% dividend on a big cash pile."
+      ],
+      "sources": [{ "label": "CARE Ratings, Dec 2025", "url": "https://www.careratings.com/upload/CompanyFiles/PR/202512121257_Gujarat_Ambuja_Exports_Limited.pdf" }]
+    },
+    "sukhjit-corn-products": {
+      "riskLevel": "green",
+      "headline": "Healthy, well-run dextrose maker with blue-chip clients.",
+      "verdict": "Cut the price AND stop paying them early — both are safe concessions to reclaim.",
+      "findings": [
+        "A-rated, low debt; clients include Dabur, Nestlé, Mars, Marico.",
+        "Margin dip recently cut its grade A+ → A — earnings are cyclical, but the balance sheet is strong.",
+        "Runs its bank limits ~93% full, so the early cash you give them is something they value."
+      ],
+      "sources": [{ "label": "CRISIL, Jun 2026", "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/GujaratAmbujaExportsLimited_August%2001_%202025_RR_373854.html" }]
+    },
+    "sayaji-industries": {
+      "riskLevel": "red",
+      "headline": "A suggested dextrose alternative — but financially distressed.",
+      "verdict": "Use only as a small price-lever second source. Don't move real volume here until the turnaround proves out.",
+      "flag": {
+        "label": "Financially distressed",
+        "detail": "Credit rating below investment grade (BB+). Its FY25 operating profit was actually negative, and it recently sold idle land for ₹73 cr to stay liquid. Being propped up by promoter cash injections.",
+        "sourceUrl": "https://www.careratings.com/"
+      },
+      "findings": [
+        "Below investment grade (CARE BB+), slid from BBB+ over three years.",
+        "FY25 operating profit was negative; its gum-arabic JV out-earns the whole parent company.",
+        "Survival has leaned on promoter loans and asset sales, not operations."
+      ],
+      "sources": [{ "label": "CARE Ratings, Nov 2025 & Jun 2026", "url": "https://www.careratings.com/" }]
+    },
+    "universal-starch-chem-allied": {
+      "riskLevel": "amber",
+      "headline": "Small, opaque dextrose maker that went dark on its rating agency.",
+      "verdict": "Push the price; don't grow reliance. The self-chosen opacity is the flag.",
+      "findings": [
+        "Stopped sharing its books (and paying fees) with its rating agency — downgraded to BB for it.",
+        "Entered the dextrose business by buying a bank-auctioned distressed plant for ₹17 cr.",
+        "Tiny (~₹490 cr revenue), zero dividends despite profits; high-pollution category plant."
+      ],
+      "sources": [{ "label": "Infomerics, May 2025", "url": "https://www.infomerics.com/admin/uploads/Pr-Universal-Strach-Chem-12may25.pdf" }]
+    },
+    "geep-industries-india": {
+      "riskLevel": "red",
+      "headline": "Your biggest laminate supplier — and a convicted cartelist.",
+      "verdict": "Push the price hard; don't grow reliance. Laminate is a sideline for them, and the conviction + opacity are real flags.",
+      "flag": {
+        "label": "Convicted of cartelisation (CCI, 2018)",
+        "detail": "India's competition regulator (CCI) found GEEP guilty in 2018 of running a price-fixing cartel with Panasonic in dry-cell batteries (penalty ~₹9.6 cr); the guilt finding was upheld on appeal. \"GEEP\" is the old Geep batteries/torch brand — laminate film is a side business.",
+        "sourceUrl": "https://www.azbpartners.com/bank/cci-suo-motu-imposes-penalty-on-geep-industries-india-pvt-ltd-for-participating-in-a-cartel-concerning-institutional-sales-of-zinc-carbon-dry-cell-batteries/"
+      },
+      "findings": [
+        "A battery/torch/LED company that also converts laminate — packaging is non-core.",
+        "Margins compressed from ~8.6% to ~3%; the group's growth story is LED/EV, not laminate.",
+        "History of going 'non-cooperating' with its rating agency."
+      ],
+      "sources": [{ "label": "CCI order, Aug 2018 (via AZB Partners)", "url": "https://www.azbpartners.com/bank/cci-suo-motu-imposes-penalty-on-geep-industries-india-pvt-ltd-for-participating-in-a-cartel-concerning-institutional-sales-of-zinc-carbon-dry-cell-batteries/" }]
+    },
+    "shrinath-roto-pack": {
+      "riskLevel": "amber",
+      "headline": "A real, pharma-grade laminate alternative — but carrying factory debt.",
+      "verdict": "Bring in as a second source alongside GEEP to push price and build a backup — dual-source, don't hand them everything yet.",
+      "findings": [
+        "Big (57,540 tonnes/yr), pharma-grade; supplies GSK, P&G, Britannia; live US exports.",
+        "But cash flow cratered ~80% and free cash is just ₹1.95 cr — tighter than its BBB+ grade suggests.",
+        "Credit is hostage to an under-utilised (40–50%), over-budget aluminium-foil plant it guarantees.",
+        "One rating agency marked it 'non-cooperating' just before it switched agencies."
+      ],
+      "sources": [{ "label": "CARE Ratings, Oct 2024", "url": "https://www.careratings.com/upload/CompanyFiles/PR/202410151004_SHRINATH_ROTO_PACK_PRIVATE_LIMITED.pdf" }]
+    },
+    "tetrapak-india": {
+      "riskLevel": "amber",
+      "headline": "Rock-solid global supplier you're paying too early.",
+      "verdict": "Stop paying early; push for 30-day terms — they finance their own customers, so they have no basis to make you pay upfront.",
+      "findings": [
+        "Financially dominant MNC; India's largest Tetra Pak plant is near Pune.",
+        "The group carries two of the largest antitrust fines in EU and Chinese history (for tying packaging to machines).",
+        "The India arm repatriates ~₹300 cr/yr to Sweden — relevant to why you shouldn't be paying early."
+      ],
+      "sources": [{ "label": "FoodNavigator (China SAIC fine, 2013)", "url": "https://www.foodnavigator.com/" }]
+    },
+    "gls-films-industries-p": {
+      "riskLevel": "red",
+      "headline": "Big laminate capacity, but financially fragile and opaque.",
+      "verdict": "Push the price hard; don't increase reliance without fresh financial comfort.",
+      "flag": {
+        "label": "Came within one court order of insolvency",
+        "detail": "A creditor got GLS admitted to bankruptcy proceedings (NCLAT, 2025, which called its defence a 'moonshine defence'); the Supreme Court reversed it in 2026. Classic 'rating shopping': two agencies went 'non-cooperating' after FY24 accounts disclosed debt-servicing delays, then a third gave a higher grade.",
+        "sourceUrl": "https://www.infomerics.com/admin/uploads/Pr_GLS_Films_4june25_98d5b91014.pdf"
+      },
+      "findings": [
+        "Plenty of capacity (78,800 t/yr, ~50% used) and blue-chip clients (ITC, PepsiCo, Nestlé).",
+        "But the combined group didn't cover its interest in FY24 (interest-cover 0.86x, heavily geared).",
+        "Flagship revenue fell ~23%; survives on promoter loans and cross-guarantees."
+      ],
+      "sources": [{ "label": "Supreme Court 2026; Infomerics Jun 2025", "url": "https://www.infomerics.com/admin/uploads/Pr_GLS_Films_4june25_98d5b91014.pdf" }]
+    },
+    "huhtamaki-india": {
+      "riskLevel": "green",
+      "headline": "Very strong, pharma-grade laminate maker — the solid alternative.",
+      "verdict": "Safe to move volume here and use their flat revenue to push price. Just monitor the leadership reset.",
+      "findings": [
+        "Very safe credit (AA–), almost no debt, >₹400 cr cash, backed by a Finnish parent.",
+        "Pharma-grade (makes pharma tube laminates); 90-year operating history.",
+        "Watch-item: the MD and CFO both resigned within ~3 months (late 2025)."
+      ],
+      "sources": [{ "label": "CRISIL, Aug 2026", "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/HuhtamakiIndiaLimited_August%2012_%202026_RR_400834.html" }]
+    },
+    "uflex": {
+      "riskLevel": "red",
+      "headline": "India's largest flexible-packaging firm — capable, but with governance & debt flags.",
+      "verdict": "Use as a price benchmark only; don't concentrate volume. The chairman's conviction and the leverage are the flags.",
+      "flag": {
+        "label": "Chairman convicted in a corruption case",
+        "detail": "Founder-chairman Ashok Chaturvedi was convicted by a CBI court (2010) in the Noida land-allotment scam and jailed. Separately, the company is heavily indebted (net-debt/EBITDA 4.25x, credit outlook cut to Negative). Note: a 2023 tax-raid headline actually collapsed at the tax tribunal in 2026.",
+        "sourceUrl": "https://www.deccanherald.com/business/chairmans-conviction-has-no-implication-2534365"
+      },
+      "findings": [
+        "Large and technically capable — a good lever to push other laminate prices down.",
+        "Heavily indebted; credit outlook recently cut to Negative; thin ~2% margins.",
+        "Trades at ~0.4x book — the market heavily discounts it."
+      ],
+      "sources": [{ "label": "CRISIL, Aug 2026; Deccan Herald (2010 conviction)", "url": "https://www.deccanherald.com/business/chairmans-conviction-has-no-implication-2534365" }]
+    },
+    "silk-polypack": {
+      "riskLevel": "amber",
+      "headline": "Not a real supplier — a single one-off purchase.",
+      "verdict": "Drop from alternatives. FDC's own records show just one ₹7,775 / 31 kg laminate receipt (Mar 2026).",
+      "findings": [
+        "One purchase ever in FDC's SAP records — ₹7,775, 31 kg of laminate (27 Mar 2026).",
+        "No company registry or web footprint, because there's effectively nothing there."
+      ],
+      "sources": [{ "label": "FDC SAP purchase register", "url": "" }]
+    },
+    "chemco-plastic-industries": {
+      "riskLevel": "green",
+      "headline": "Strong, pharma-grade bottle maker — 'old stock' is just how they run.",
+      "verdict": "Keep them — but add a 'freshest-first / max-age-at-dispatch' clause for ORS shelf life.",
+      "findings": [
+        "Strong credit (A+), revenue ~₹939 cr, pharma clients (Cipla, J&J).",
+        "The 'old stock' you flagged is their deliberate ~125-day inventory model, not distress.",
+        "Built a >1-billion-bottle/yr food-grade recycled-PET plant; a ₹1,500 cr IPO is talked about (no filing yet)."
+      ],
+      "sources": [{ "label": "CRISIL, Sep 2025", "url": "https://www.crisilratings.com/" }]
+    },
+    "cincorp-international": {
+      "riskLevel": "amber",
+      "headline": "A real caps/bottles supplier — but pin down exactly who they are.",
+      "verdict": "Use the overpay data to negotiate; get a cost breakdown and confirm the exact legal entity from a GST invoice.",
+      "findings": [
+        "FDC's own records confirm 121 deliveries of HDPE bottles + PP caps to your Baddi plant — a real supplier.",
+        "The public company registry match is murky (possible middleman markup) — worth verifying."
+      ],
+      "sources": [{ "label": "FDC SAP purchase register", "url": "" }]
+    },
+    "pik-plastics": {
+      "riskLevel": "amber",
+      "headline": "A real but tiny Surat bottle maker — unaudited.",
+      "verdict": "Fine for price leverage now; don't move volume without an on-site audit + documents.",
+      "findings": [
+        "A real one-owner firm (Surat) with a Vapi factory and a Haridwar pharma-belt branch.",
+        "No audited accounts, capacity figures or pharma certificates could be verified."
+      ],
+      "sources": [{ "label": "GST registry + trade directories", "url": "" }]
+    },
+    "premier-plastic": {
+      "riskLevel": "amber",
+      "headline": "A micro one-owner plastics shop — weakest pharma fit.",
+      "verdict": "Confirm exactly which 'Premier' invoices FDC (get the GST number), then audit before any volume move.",
+      "findings": [
+        "The real supplier is a tiny Vasai proprietorship — NOT the healthy listed 'Premier Polyfilm' (that's a vinyl-flooring company).",
+        "Its catalogue is general plastics (jars, tablet tubes, even scarf hangers) — thin pharma-bottle evidence."
+      ],
+      "sources": [{ "label": "GST registry + trade directories", "url": "" }]
+    },
+    "mars-plastics": {
+      "riskLevel": "amber",
+      "headline": "A small Punjab partnership — best pharma product-fit of the tiny ones.",
+      "verdict": "Fine for price leverage; audit before moving meaningful volume.",
+      "findings": [
+        "Makes exactly the right products (dry-syrup, eye-drop, nasal bottles) — good fit.",
+        "But a ₹5–25 cr partnership with no audited accounts or confirmed pharma certs."
+      ],
+      "sources": [{ "label": "GST registry + trade directories", "url": "" }]
+    },
+    "berry-global-india": {
+      "riskLevel": "green",
+      "headline": "Backed by a global giant (Amcor) — but confirm they make your bottle.",
+      "verdict": "Safe to move to on parent strength — first confirm the India plant makes your exact ORS bottle SKU.",
+      "findings": [
+        "Parent is now Amcor (~$13bn, investment-grade) after an Apr-2025 acquisition — rock-solid.",
+        "But the India legal entity is tiny and loss-making; its Bangalore site makes drug-delivery devices (inhalers/droppers), maybe not plain bottles.",
+        "Amcor is mid-restructuring (US plant closures so far)."
+      ],
+      "sources": [{ "label": "S&P, May 2025", "url": "https://www.spglobal.com/" }]
+    },
+    "suraj-blow-plast": {
+      "riskLevel": "amber",
+      "headline": "A real small bottle maker — just has no web footprint.",
+      "verdict": "Use as leverage; audit before bigger volume.",
+      "findings": [
+        "FDC's records confirm 38 deliveries of amber PET pharma bottles to Aurangabad (~₹4.95/pc).",
+        "Genuine supplier; no public registry/web presence, so no independent financials to check."
+      ],
+      "sources": [{ "label": "FDC SAP purchase register", "url": "" }]
+    },
+    "tpac-packaging-india": {
+      "riskLevel": "green",
+      "headline": "Healthy, A-rated bottle maker backed by a Thai group.",
+      "verdict": "Push the price, ideally with a resin-cost-linked clause. Safe to keep or grow.",
+      "findings": [
+        "A-rated, ~₹822 cr revenue, pharma-capable, multiple India plants.",
+        "Watch-items: profit dipped ~31% last year, and it leans ~85–90% on a single supplier of its own."
+      ],
+      "sources": [{ "label": "ICRA, Mar 2026", "url": "https://www.icra.in/Rating/GetRationalReportFilePdf?id=141963" }]
+    },
+    "kilitch-healthcare-india": {
+      "riskLevel": "red",
+      "headline": "Flagged for old stock — and the most serious finding of the set.",
+      "verdict": "Treat as elevated-risk. Require their FDA remediation evidence and re-qualify them, or move the business.",
+      "flag": {
+        "label": "US FDA found fabricated lab data + import ban",
+        "detail": "FDA Warning Letter (28 Mar 2024) found it is their 'routine practice to fabricate results for samples that were never taken', plus insanitary conditions. On FDA Import Alert 66-40 since Oct 2023; the maker behind the 2023 US store-brand eye-drop recall. For a pharma buyer, fabricated QC data undermines trust in all their test paperwork. (This is the unlisted Kilitch Healthcare, not the clean listed Kilitch Drugs.)",
+        "sourceUrl": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/kilitch-healthcare-india-limited-672956-03282024"
+      },
+      "findings": [
+        "A pharma contract-manufacturer — likely supplies FDC filled/finished goods, not empty bottles.",
+        "Formerly named 'NBZ Pharma'; FY25 profit fell ~44% after the US import ban.",
+        "The ~211-day-old stock is especially concerning given the data-integrity findings."
+      ],
+      "sources": [{ "label": "FDA Warning Letter 320-24-29 (verified)", "url": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/kilitch-healthcare-india-limited-672956-03282024" }]
+    }
+  }
+}
