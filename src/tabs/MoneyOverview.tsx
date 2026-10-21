@@ -53,7 +53,7 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
             You can save about <span className="text-fdc-gold">{fmtSave(cost)}</span> a year.
           </h1>
           <p className="mt-1 max-w-2xl text-[12.5px] leading-snug text-white/85">
-            <b>{fmtSave(cost)}</b> ({savePct.toFixed(1)}%) saveable on price, plus <b>{fmtSave(cash)}</b> one-time cash from payment terms.
+            You spend <b>{fmtSave(totalSpend)}/yr</b> — <b>{fmtSave(cost)}</b> ({savePct.toFixed(1)}%) saveable on price, plus <b>{fmtSave(cash)}</b> one-time cash from payment terms.
           </p>
 
           {/* two money figures — never added together */}
