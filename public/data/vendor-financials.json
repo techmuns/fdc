@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T06:14:02.067Z",
+  "generatedAt": "2026-10-22T06:30:35.498Z",
   "sources": {
     "listed": "Munshot market-data API (free)",
     "private": "Probe42 comprehensive reports (MCA filings) — primary; credit-rating-agency rationale docs — fallback / cross-check"
@@ -1167,12 +1167,12 @@
         },
         {
           "type": "risk",
-          "title": "Only supplier: 67% of Laminates comes from them",
+          "title": "Only supplier: 76% of Laminates comes from them",
           "detail": "They're your main source for Laminates (₹28.31 Cr). Find and approve a second supplier — it lowers your risk and gives you a stronger hand in talks.",
           "evidence": [
             {
               "label": "Share of material",
-              "value": "67%"
+              "value": "76%"
             },
             {
               "label": "Spend",
@@ -1210,7 +1210,7 @@
       "metrics": {
         "revenue": 60315901952,
         "ebitda": 6083474944,
-        "marketCap": 73460695040,
+        "marketCap": 73006604288,
         "totalDebt": 4409999872,
         "ebitdaMargin": 10.09,
         "netMargin": 6.9,
@@ -1219,11 +1219,11 @@
         "debtToEquity": 13.38,
         "revenueGrowth": 23.5,
         "earningsGrowth": 171.1,
-        "pe": 17.66,
-        "evEbitda": 11.79,
-        "dividendYield": 18,
-        "currentPrice": 160.16,
-        "yearlyChange": 54.14,
+        "pe": 17.1,
+        "evEbitda": 11.47,
+        "dividendYield": 19,
+        "currentPrice": 159.17,
+        "yearlyChange": 56.59,
         "employees": 2245,
         "roce": 12.5,
         "roe": 9.72,
@@ -1278,7 +1278,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-21"
+        "date": "2026-10-22"
       },
       "note": null,
       "ratingGrade": null,
@@ -1333,7 +1333,7 @@
         "sourceUrl": "https://www.screener.in/company/GAEL/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-10-21"
+        "date": "2026-10-22"
       },
       "series": [
         {
@@ -1439,7 +1439,7 @@
       "metrics": {
         "revenue": 10878784512,
         "ebitda": 532790016,
-        "marketCap": 2788636672,
+        "marketCap": 2780800000,
         "totalDebt": 2269750016,
         "ebitdaMargin": 4.9,
         "netMargin": 1.12,
@@ -1448,10 +1448,10 @@
         "debtToEquity": 236.51,
         "revenueGrowth": 5.9,
         "earningsGrowth": 0,
-        "pe": 3.78,
-        "evEbitda": 9.78,
+        "pe": 3.77,
+        "evEbitda": 9.52,
         "dividendYield": 0,
-        "currentPrice": 110.31,
+        "currentPrice": 110,
         "yearlyChange": 5.66,
         "employees": 779,
         "roce": 8.18,
@@ -1507,7 +1507,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-21"
+        "date": "2026-10-22"
       },
       "note": null,
       "ratingGrade": null,
@@ -1570,7 +1570,7 @@
         "sourceUrl": "https://www.screener.in/company/SAYAJIIND/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-10-21"
+        "date": "2026-10-22"
       },
       "series": [
         {
@@ -4164,7 +4164,7 @@
       "exchange": null,
       "cin": "U21014PN1987PTC012926",
       "materialsSupplied": [
-        "Laminates"
+        "Aseptic cartons"
       ],
       "fdcSpend": 54634604.27,
       "metrics": {
@@ -5135,6 +5135,21 @@
             {
               "label": "Total owed",
               "value": "₹551.00 Cr"
+            }
+          ]
+        },
+        {
+          "type": "risk",
+          "title": "Only supplier: 100% of Aseptic cartons comes from them",
+          "detail": "They're your main source for Aseptic cartons (₹5.46 Cr). Find and approve a second supplier — it lowers your risk and gives you a stronger hand in talks.",
+          "evidence": [
+            {
+              "label": "Share of material",
+              "value": "100%"
+            },
+            {
+              "label": "Spend",
+              "value": "₹5.46 Cr"
             }
           ]
         },
@@ -7473,7 +7488,7 @@
       "metrics": {
         "revenue": 14589500416,
         "ebitda": 938726016,
-        "marketCap": 4524443648,
+        "marketCap": 4424462848,
         "totalDebt": 3454099968,
         "ebitdaMargin": 6.43,
         "netMargin": 2.34,
@@ -7482,10 +7497,10 @@
         "debtToEquity": 60.88,
         "revenueGrowth": 7.2,
         "earningsGrowth": 143.1,
-        "pe": 13.24,
-        "evEbitda": 7.57,
-        "dividendYield": 69,
-        "currentPrice": 144.81,
+        "pe": 12.55,
+        "evEbitda": 7.42,
+        "dividendYield": 71,
+        "currentPrice": 141.61,
         "yearlyChange": -11.42,
         "employees": 1210,
         "roce": 5.88,
@@ -7541,7 +7556,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-21"
+        "date": "2026-10-22"
       },
       "note": "Group parent — listed proxy: figures are for the listed parent The Sukhjit Starch & Chemicals Ltd (NSE/BSE: SUKHJITS), used as a proxy because the supplying entity Sukhjit Corn Products does not file separately.",
       "ratingGrade": null,
@@ -7611,7 +7626,7 @@
         "sourceUrl": "https://www.screener.in/company/SUKHJITS/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-10-21"
+        "date": "2026-10-22"
       },
       "series": [
         {
@@ -9442,7 +9457,7 @@
       "metrics": {
         "revenue": 5146226176,
         "ebitda": 382657760,
-        "marketCap": 823829952,
+        "marketCap": 840000000,
         "totalDebt": 602000000,
         "ebitdaMargin": 7.44,
         "netMargin": 3.67,
@@ -9451,10 +9466,10 @@
         "debtToEquity": 72.84,
         "revenueGrowth": 21.4,
         "earningsGrowth": 0,
-        "pe": 4.36,
-        "evEbitda": 3.69,
+        "pe": 4.45,
+        "evEbitda": 3.61,
         "dividendYield": 0,
-        "currentPrice": 196.15,
+        "currentPrice": 200,
         "yearlyChange": 41.86,
         "employees": 376,
         "roce": 17.6,
@@ -9510,7 +9525,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-21"
+        "date": "2026-10-22"
       },
       "note": "Listed on BSE (UNIVSTAR) — thinly traded",
       "ratingGrade": null,
@@ -9565,7 +9580,7 @@
         "sourceUrl": "https://www.screener.in/company/524408/",
         "asOf": "Mar 2026",
         "basis": "standalone",
-        "date": "2026-10-21"
+        "date": "2026-10-22"
       },
       "series": [
         {
@@ -12700,7 +12715,7 @@
       "metrics": {
         "revenue": 26116399104,
         "ebitda": 2173799936,
-        "marketCap": 17509761024,
+        "marketCap": 17114025984,
         "totalDebt": 1445600000,
         "ebitdaMargin": 8.32,
         "netMargin": 5.22,
@@ -12709,11 +12724,11 @@
         "debtToEquity": 10.72,
         "revenueGrowth": 22.5,
         "earningsGrowth": 75.5,
-        "pe": 12.83,
-        "evEbitda": 7.09,
-        "dividendYield": 84,
-        "currentPrice": 231.85,
-        "yearlyChange": -11.5,
+        "pe": 12.05,
+        "evEbitda": 6.77,
+        "dividendYield": 88,
+        "currentPrice": 226.61,
+        "yearlyChange": -12.09,
         "employees": 2500,
         "roce": 12,
         "roe": 8.96,
@@ -12768,7 +12783,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-21"
+        "date": "2026-10-22"
       },
       "note": null,
       "ratingGrade": null,
@@ -12812,7 +12827,7 @@
         "sourceUrl": "https://www.screener.in/company/HUHTAMAKI/",
         "asOf": "Dec 2025",
         "basis": "standalone",
-        "date": "2026-10-21"
+        "date": "2026-10-22"
       },
       "series": [
         {
@@ -12918,7 +12933,7 @@
       "metrics": {
         "revenue": 164920033280,
         "ebitda": 22030196736,
-        "marketCap": 42799751168,
+        "marketCap": 41474666496,
         "totalDebt": 101523062784,
         "ebitdaMargin": 13.36,
         "netMargin": 4.14,
@@ -12927,11 +12942,11 @@
         "debtToEquity": 124.99,
         "revenueGrowth": 35.5,
         "earningsGrowth": 630,
-        "pe": 6.27,
-        "evEbitda": 6.14,
-        "dividendYield": 49,
-        "currentPrice": 592.7,
-        "yearlyChange": 11.16,
+        "pe": 6.08,
+        "evEbitda": 6.08,
+        "dividendYield": 51,
+        "currentPrice": 574.35,
+        "yearlyChange": 7.82,
         "employees": 7772,
         "roce": 7.03,
         "roe": 4.27,
@@ -12986,7 +13001,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-21"
+        "date": "2026-10-22"
       },
       "note": null,
       "ratingGrade": null,
@@ -13045,7 +13060,7 @@
         "sourceUrl": "https://www.screener.in/company/UFLEX/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-10-21"
+        "date": "2026-10-22"
       },
       "series": [
         {
