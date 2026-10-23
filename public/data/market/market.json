@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T06:29:32.516Z",
+  "generatedAt": "2026-10-23T06:11:17.361Z",
   "fx": {
     "value": 94.96,
     "date": "2026-10-16",
@@ -104,14 +104,6 @@
           "unit": "USD/tonne",
           "currency": "USD",
           "points": [
-            {
-              "date": "2023-08-01",
-              "value": 207.68
-            },
-            {
-              "date": "2023-09-01",
-              "value": 223.85
-            },
             {
               "date": "2023-10-01",
               "value": 221.9
@@ -247,11 +239,19 @@
             {
               "date": "2026-07-01",
               "value": 213.19
+            },
+            {
+              "date": "2026-08-01",
+              "value": 221.3
+            },
+            {
+              "date": "2026-09-01",
+              "value": 236.92
             }
           ],
           "latest": {
-            "value": 213.19,
-            "date": "2026-07-01"
+            "value": 236.92,
+            "date": "2026-09-01"
           },
           "sourceName": "FRED (PMAIZMTUSDM)",
           "sourceUrl": "https://fred.stlouisfed.org/series/PMAIZMTUSDM"
@@ -505,14 +505,6 @@
           "currency": "USD",
           "points": [
             {
-              "date": "2023-08-01",
-              "value": 85.17
-            },
-            {
-              "date": "2023-09-01",
-              "value": 92.67
-            },
-            {
               "date": "2023-10-01",
               "value": 88.95
             },
@@ -647,11 +639,19 @@
             {
               "date": "2026-07-01",
               "value": 83.73
+            },
+            {
+              "date": "2026-08-01",
+              "value": 88.07
+            },
+            {
+              "date": "2026-09-01",
+              "value": 102.02
             }
           ],
           "latest": {
-            "value": 83.73,
-            "date": "2026-07-01"
+            "value": 102.02,
+            "date": "2026-09-01"
           },
           "sourceName": "FRED (POILBREUSDM)",
           "sourceUrl": "https://fred.stlouisfed.org/series/POILBREUSDM"
@@ -898,14 +898,6 @@
           "currency": "USD",
           "points": [
             {
-              "date": "2023-08-01",
-              "value": 2135.58
-            },
-            {
-              "date": "2023-09-01",
-              "value": 2184.67
-            },
-            {
               "date": "2023-10-01",
               "value": 2194.39
             },
@@ -1040,11 +1032,19 @@
             {
               "date": "2026-07-01",
               "value": 3158.27
+            },
+            {
+              "date": "2026-08-01",
+              "value": 3250.12
+            },
+            {
+              "date": "2026-09-01",
+              "value": 3283.05
             }
           ],
           "latest": {
-            "value": 3158.27,
-            "date": "2026-07-01"
+            "value": 3283.05,
+            "date": "2026-09-01"
           },
           "sourceName": "FRED (PALUMUSDM)",
           "sourceUrl": "https://fred.stlouisfed.org/series/PALUMUSDM"
@@ -1058,14 +1058,6 @@
           "unit": "USD/barrel",
           "currency": "USD",
           "points": [
-            {
-              "date": "2023-08-01",
-              "value": 85.17
-            },
-            {
-              "date": "2023-09-01",
-              "value": 92.67
-            },
             {
               "date": "2023-10-01",
               "value": 88.95
@@ -1201,11 +1193,19 @@
             {
               "date": "2026-07-01",
               "value": 83.73
+            },
+            {
+              "date": "2026-08-01",
+              "value": 88.07
+            },
+            {
+              "date": "2026-09-01",
+              "value": 102.02
             }
           ],
           "latest": {
-            "value": 83.73,
-            "date": "2026-07-01"
+            "value": 102.02,
+            "date": "2026-09-01"
           },
           "sourceName": "FRED (POILBREUSDM)",
           "sourceUrl": "https://fred.stlouisfed.org/series/POILBREUSDM"
