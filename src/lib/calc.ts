@@ -180,3 +180,32 @@ export function calcReceivables(data: AppData, vendorKey: string, supplierName: 
     sources: [{ label: 'Munshot API' }],
   };
 }
+
+/** How one supplier's volume-weighted price for one item is worked out. */
+export function calcSkuPrice(data: AppData, materialKey: MaterialKey, skuDesc: string | undefined, vendorKey: string): CalcData | null {
+  const M = data.value?.materials[materialKey];
+  if (!M) return null;
+  const sku = (skuDesc ? M.skus.find((s) => s.desc === skuDesc) : undefined)
+    ?? M.skus.find((s) => s.vendors.some((v) => v.vendorKey === vendorKey))
+    ?? M.skus[0];
+  if (!sku) return null;
+  const vp = sku.vendors.find((v) => v.vendorKey === vendorKey);
+  if (!vp) return null;
+  const u = unitOf(sku.unit);
+  const rows: CalcRow[] = [
+    { label: 'Total you paid (this item, this supplier)', value: CR(vp.spend), source: 'SAP goods-receipts' },
+    { label: 'Total quantity received', value: `${NUM(vp.qty)} ${u}`, source: 'SAP (101 receipts, qty > 0)' },
+    { label: `Price = ${CR(vp.spend)} ÷ ${NUM(vp.qty)} ${u}`, value: price(vp.price, sku.unit), kind: 'result', source: 'volume-weighted' },
+  ];
+  if (vp.price > sku.bestPrice) {
+    rows.push({ label: `Cheapest you pay (${short(sku.bestActiveVendor ?? sku.bestVendor ?? '')})`, value: price(sku.bestPrice, sku.unit), source: 'SAP goods-receipts' });
+    rows.push({ label: 'You pay more than the cheapest by', value: price(vp.price - sku.bestPrice, sku.unit), source: 'their price − cheapest' });
+  }
+  return {
+    title: `Price — ${short(vp.vendor)}`,
+    subtitle: sku.desc,
+    formula: 'Volume-weighted price = total ₹ you paid ÷ total quantity you received (only “101” goods-receipts with qty > 0; returns excluded, KG and pieces never mixed).',
+    rows,
+    note: 'Bigger buys count more — it is the weighted average of everything you paid this supplier for this exact item over the year.',
+  };
+}

@@ -11,7 +11,7 @@ import { FDC } from '../lib/brand';
 import { termLabel } from '../lib/brand';
 import { vendorShort } from '../lib/format';
 import { CalcSheet, CalcBtn } from './CalcSheet';
-import { calcSupplierSave, calcCreditCash, type CalcData } from '../lib/calc';
+import { calcSupplierSave, calcCreditCash, calcSkuPrice, type CalcData } from '../lib/calc';
 
 const fmtSave = (n: number) => (n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : n >= 1e5 ? `₹${(n / 1e5).toFixed(1)} L` : `₹${Math.round(n).toLocaleString('en-IN')}`);
 const priceFmt = (n: number | null | undefined, unit: string) => (n == null ? '—' : `₹${n >= 100 ? Math.round(n) : n >= 10 ? n.toFixed(1) : n.toFixed(2)}/${unit.toLowerCase() === 'nos' ? 'pc' : unit.toLowerCase()}`);
@@ -119,7 +119,8 @@ function PriceProof({ action, data, onCalc }: { action: ValueAction; data: AppDa
   return (
     <>
       <Section icon={GitCompareArrows} title="The price gap — same item, what each supplier charges" color={FDC.green}>
-        <HBars data={bars} format={(n) => priceFmt(n, sku.unit)} barSize={26} labelWidth={140} axisTicks={4} />
+        <HBars data={bars} format={(n) => priceFmt(n, sku.unit)} barSize={26} labelWidth={140} axisTicks={4} onClick={(d) => { const c = calcSkuPrice(data, action.material as MaterialKey, sku.desc, d.key); if (c) onCalc(c); }} />
+        <p className="mt-1 text-[10.5px] text-fdc-grey">Tap any bar to see how that price is worked out.</p>
         <p className="mt-2 text-[11.5px] leading-snug text-fdc-slate"><b className="tnum">{sku.desc}</b> — gap of <b className="tnum">{priceFmt(gap, sku.unit)}</b> between the dearest and the cheapest you already pay. Matching the cheapest price you already pay is worth about <b className="tnum" style={{ color: FDC.green }}>{fmtSave(action.saving)}</b>/yr.{action.vendorKey && <CalcBtn onClick={() => onCalc(calcSupplierSave(data, action.vendorKey!, action.material as MaterialKey, vendorShort(data.value?.vendors[action.vendorKey!]?.name ?? '')))} />}</p>
       </Section>
 
