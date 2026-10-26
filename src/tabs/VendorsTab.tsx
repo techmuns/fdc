@@ -894,9 +894,9 @@ function Fact({ label, value, tone }: { label: string; value: string; tone?: 'go
 function creditSrcLabel(fin: VendorFin | null): string | null {
   if (!fin) return null;
   const cd = (fin as VendorFin & { creditDaysSource?: { sourceName: string; asOf: string | null } }).creditDaysSource;
-  if (cd) return `${cd.sourceName}${cd.asOf ? ` · ${cd.asOf}` : ''}`;
-  if (fin.probe) return `${fin.source?.sourceName ?? 'Probe42 (MCA filings)'}${fin.probe.latestFy ? ` · ${fin.probe.latestFy}` : ''}`;
-  return fin.source?.sourceName ?? null;
+  if (cd) return `Munshot API${cd.asOf ? ` · ${cd.asOf}` : ''}`;
+  if (fin.probe) return `Munshot API${fin.probe.latestFy ? ` · ${fin.probe.latestFy}` : ''}`;
+  return 'Munshot API';
 }
 
 function shortTerm(t: string): string {

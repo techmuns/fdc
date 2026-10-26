@@ -7,6 +7,8 @@ import { Table, type Column } from '../components/ui/Table';
 import { Dropdown, type Option } from '../components/ui/Controls';
 import { FDC, MATERIAL_COLOR } from '../lib/brand';
 import { vendorShort } from '../lib/format';
+import { CalcSheet, CalcBtn } from '../components/CalcSheet';
+import { calcStockAge, type CalcData } from '../lib/calc';
 
 const MAT_NAME: Record<string, string> = { dextrose: 'Dextrose', packaging: 'Rigid packaging', laminates: 'Laminates', cartons: 'Aseptic cartons' };
 const gradeColor = (g: string | null) => (g === 'old' ? FDC.red : g === 'ok' ? FDC.goldDark : g === 'fresh' ? FDC.green : FDC.grey);
@@ -15,7 +17,7 @@ const gradeLabel = (g: string | null) => (g === 'old' ? 'Old stock' : g === 'ok'
 interface SRow {
   key: string; vendorKey: string; name: string; color: string;
   materialKey: MaterialKey; ageDays: number; shelfDays: number | null; grade: string | null;
-  freshestDays: number; freshestName: string; gapDays: number;
+  freshestDays: number; freshestName: string; gapDays: number; receipts: number;
 }
 
 /** One place that lists how old every supplier's stock is when it reaches you — the data the
@@ -24,6 +26,7 @@ interface SRow {
 export default function StockAgeTab({ data, onNavigate }: { data: AppData; onNavigate: (n: Nav) => void }) {
   const v = data.value;
   const [mat, setMat] = useState<string>('all');
+  const [calc, setCalc] = useState<CalcData | null>(null);
 
   const rows: SRow[] = useMemo(() => {
     if (!v) return [];
@@ -38,7 +41,7 @@ export default function StockAgeTab({ data, onNavigate }: { data: AppData; onNav
           materialKey: mk as MaterialKey, ageDays: Math.round(f.avgAgeDays as number),
           shelfDays: f.avgShelfDays != null ? Math.round(f.avgShelfDays) : null, grade: f.grade,
           freshestDays: Math.round(freshest.avgAgeDays as number), freshestName: vendorShort(freshest.vendor),
-          gapDays: Math.round((f.avgAgeDays as number) - (freshest.avgAgeDays as number)),
+          gapDays: Math.round((f.avgAgeDays as number) - (freshest.avgAgeDays as number)), receipts: f.receipts,
         });
       }
     }
@@ -61,7 +64,12 @@ export default function StockAgeTab({ data, onNavigate }: { data: AppData; onNav
       <span className="flex min-w-0 items-center gap-2"><span className="h-2.5 w-2.5 shrink-0 rounded-sm" style={{ background: r.color }} /><span className="truncate font-semibold text-fdc-ink">{vendorShort(r.name)}</span></span>
     ) },
     { key: 'material', header: 'Material', sortable: true, sortValue: (r) => r.materialKey, render: (r) => <span className="whitespace-nowrap text-fdc-grey">{MAT_NAME[r.materialKey] ?? r.materialKey}</span> },
-    { key: 'age', header: 'Stock age (avg)', align: 'right', sortable: true, sortValue: (r) => r.ageDays, render: (r) => <span className="tnum whitespace-nowrap font-bold" style={{ color: gradeColor(r.grade) }}>{r.ageDays}d old</span> },
+    { key: 'age', header: 'Stock age (avg)', align: 'right', sortable: true, sortValue: (r) => r.ageDays, render: (r) => (
+      <span className="inline-flex items-center justify-end gap-0.5 whitespace-nowrap">
+        <span className="tnum font-bold" style={{ color: gradeColor(r.grade) }}>{r.ageDays}d old</span>
+        <CalcBtn onClick={() => setCalc(calcStockAge({ name: r.name, material: r.materialKey, avgAgeDays: r.ageDays, avgShelfDays: r.shelfDays, receipts: r.receipts, grade: r.grade, freshestName: r.freshestName, freshestDays: r.freshestDays }))} />
+      </span>
+    ) },
     { key: 'grade', header: 'How fresh', align: 'center', sortable: true, sortValue: (r) => (r.grade === 'old' ? 2 : r.grade === 'ok' ? 1 : 0), render: (r) => <Badge color={gradeColor(r.grade)}>{gradeLabel(r.grade)}</Badge> },
     { key: 'shelf', header: 'Shelf left', align: 'right', sortable: true, sortValue: (r) => r.shelfDays ?? 1e9, render: (r) => (r.shelfDays != null ? <span className="tnum whitespace-nowrap text-fdc-slate">{Math.round(r.shelfDays / 30)} mo</span> : <span className="text-fdc-grey">—</span>) },
     { key: 'what', header: 'What to do', render: (r) => (
@@ -89,6 +97,7 @@ export default function StockAgeTab({ data, onNavigate }: { data: AppData; onNav
           <Table columns={cols} rows={filtered} getKey={(r) => r.key} initialSort={{ key: 'age', dir: 'desc' }} onRowClick={(r) => onNavigate({ tab: 'vendors', vendorKey: r.vendorKey, material: r.materialKey })} maxHeight={560} dense />
         </div>
       </Card>
+      <CalcSheet calc={calc} onClose={() => setCalc(null)} />
     </div>
   );
 }

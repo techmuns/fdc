@@ -8,12 +8,15 @@ import { ActionProof } from '../components/ActionProof';
 import { HBars, type HBarDatum } from '../components/charts/Bars';
 import { StackedBar, type StackSegment } from '../components/charts/StackedBar';
 import { FDC, MATERIAL_COLOR, TERM_COLOR } from '../lib/brand';
+import { CalcSheet, CalcBtn } from '../components/CalcSheet';
+import { calcTotalSpend, calcTotalSave, calcCashFreed, calcSupplierSave, type CalcData } from '../lib/calc';
 
 const fmtSave = (n: number) => (n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : `₹${(n / 1e5).toFixed(1)} L`);
 
 export default function MoneyOverview({ data, onNavigate }: { data: AppData; onNavigate: (n: Nav) => void }) {
   const v = data.value;
   const [proof, setProof] = useState<ValueAction | null>(null);
+  const [calc, setCalc] = useState<CalcData | null>(null);
   if (!v) return <Card><p className="text-[13px] text-fdc-grey">Run <code className="rounded bg-black/5 px-1 py-0.5 font-mono text-[11px]">npm run normalize</code> to generate the value data.</p></Card>;
 
   const cost = v.headline.costSavings ?? v.headline.totalSavings;
@@ -50,7 +53,7 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
             <Sparkles size={13} /> FDC procurement — the money
           </div>
           <h1 className="text-[20px] font-extrabold leading-tight sm:text-[25px]">
-            You spend {fmtSave(totalSpend)} a year — and can save about <span className="text-fdc-gold">{fmtSave(cost)}</span> of it.
+            You spend {fmtSave(totalSpend)}<CalcBtn light onClick={() => setCalc(calcTotalSpend(data))} /> a year — and can save about <span className="text-fdc-gold">{fmtSave(cost)}</span><CalcBtn light onClick={() => setCalc(calcTotalSave(data))} /> of it.
           </h1>
           <p className="mt-1 max-w-2xl text-[12.5px] leading-snug text-white/85">
             <b>{fmtSave(cost)}</b> ({savePct.toFixed(1)}%) saveable on price, plus <b>{fmtSave(cash)}</b> one-time cash from payment terms.
@@ -58,23 +61,29 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
 
           {/* two money figures — never added together */}
           <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
-            <HeroStat
-              eyebrow="Money you can save · every year" value={fmtSave(cost)} tone="white"
-              sub={`${savePct.toFixed(1)}% of your ${fmtSave(totalSpend)} yearly spend — straight to profit.`}
-              cta="See every line of proof" onClick={() => topMat && onNavigate({ tab: 'vendors', material: topMat })}
-            />
-            <HeroStat
-              eyebrow="Cash you can free up · one-time" value={fmtSave(cash)} tone="gold"
-              sub="One-time cash freed up by moving advance / pay-on-delivery suppliers onto 30-day credit. Not a yearly saving."
-              cta={cashVendor ? `See ${shortName(cashVendor.name)} — the proof` : 'See the proof'}
-              onClick={() => cashVendor && onNavigate({ tab: 'vendors', vendorKey: cashVendor.vendorKey })}
-            />
+            <div className="relative">
+              <HeroStat
+                eyebrow="Money you can save · every year" value={fmtSave(cost)} tone="white"
+                sub={`${savePct.toFixed(1)}% of your ${fmtSave(totalSpend)} yearly spend — straight to profit.`}
+                cta="See every line of proof" onClick={() => topMat && onNavigate({ tab: 'vendors', material: topMat })}
+              />
+              <span className="absolute right-2 top-2 z-10"><CalcBtn light onClick={() => setCalc(calcTotalSave(data))} /></span>
+            </div>
+            <div className="relative">
+              <HeroStat
+                eyebrow="Cash you can free up · one-time" value={fmtSave(cash)} tone="gold"
+                sub="One-time cash freed up by moving advance / pay-on-delivery suppliers onto 30-day credit. Not a yearly saving."
+                cta={cashVendor ? `See ${shortName(cashVendor.name)} — the proof` : 'See the proof'}
+                onClick={() => cashVendor && onNavigate({ tab: 'vendors', vendorKey: cashVendor.vendorKey })}
+              />
+              <span className="absolute right-2 top-2 z-10"><CalcBtn light onClick={() => setCalc(calcCashFreed(data))} /></span>
+            </div>
           </div>
         </div>
       </div>
 
       {/* the one thing that matters: every insight in a single table — open by default, right under the banner */}
-      <AllInsights data={data} onProof={setProof} defaultOpen />
+      <AllInsights data={data} onProof={setProof} onCalc={setCalc} defaultOpen />
 
       {/* the extras — kept, but tucked into one closed section you open only to dig deeper */}
       <DigDeeper>
@@ -97,6 +106,7 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
       </DigDeeper>
 
       {proof && <ActionProof action={proof} data={data} onClose={() => setProof(null)} onNavigate={onNavigate} />}
+      <CalcSheet calc={calc} onClose={() => setCalc(null)} />
     </div>
   );
 }
@@ -176,7 +186,7 @@ const RISK_DOT: Record<string, { color: string; label: string }> = {
   green: { color: FDC.green, label: 'Low risk' },
 };
 
-function AllInsights({ data, onProof, defaultOpen = false }: { data: AppData; onProof: (a: ValueAction) => void; defaultOpen?: boolean }) {
+function AllInsights({ data, onProof, onCalc, defaultOpen = false }: { data: AppData; onProof: (a: ValueAction) => void; onCalc: (c: CalcData) => void; defaultOpen?: boolean }) {
   const [open, setOpen] = useState(defaultOpen);
   const rows = useMemo(() => buildAllInsights(data), [data]);
   if (!rows.length) return null;
@@ -196,7 +206,12 @@ function AllInsights({ data, onProof, defaultOpen = false }: { data: AppData; on
     { key: 'area', header: 'Area', sortable: true, sortValue: (r) => r.area, render: (r) => <span className="whitespace-nowrap text-fdc-grey">{r.area}</span> },
     { key: 'kind', header: 'Type', render: (r) => <Pill color={INSIGHT_KIND[r.kind].color}>{INSIGHT_KIND[r.kind].label}</Pill> },
     { key: 'spend', header: 'You spend / yr', align: 'right', sortable: true, sortValue: (r) => r.spend, render: (r) => <span className="tnum whitespace-nowrap">{fmtSave(r.spend)}</span> },
-    { key: 'save', header: 'Can save', align: 'right', sortable: true, sortValue: (r) => r.save, render: (r) => <span className="tnum whitespace-nowrap font-bold" style={{ color: r.save > 0 ? INSIGHT_KIND[r.kind].color : FDC.grey }}>{r.saveLabel}</span>, heat: (r) => (r.save > 0 ? Math.min(1, r.save / maxSave) : null), heatScale: 'hue', heatColor: FDC.green },
+    { key: 'save', header: 'Can save', align: 'right', sortable: true, sortValue: (r) => r.save, render: (r) => (
+      <span className="inline-flex items-center justify-end gap-0.5 whitespace-nowrap">
+        <span className="tnum font-bold" style={{ color: r.save > 0 ? INSIGHT_KIND[r.kind].color : FDC.grey }}>{r.saveLabel}</span>
+        {r.kind === 'price' && r.save > 0 && r.vendorKey && r.materialKey && <CalcBtn onClick={() => onCalc(calcSupplierSave(data, r.vendorKey!, r.materialKey!, r.supplier))} />}
+      </span>
+    ), heat: (r) => (r.save > 0 ? Math.min(1, r.save / maxSave) : null), heatScale: 'hue', heatColor: FDC.green },
     { key: 'savePct', header: '% saved', align: 'right', sortable: true, sortValue: (r) => (r.kind === 'price' && r.spend ? r.save / r.spend : -1), render: (r) => (r.kind === 'price' && r.spend > 0 ? <span className="tnum whitespace-nowrap font-semibold text-fdc-slate">{((r.save / r.spend) * 100).toFixed(1)}%</span> : <span className="text-fdc-grey">—</span>) },
     { key: 'what', header: 'What to do', render: (r) => <span className="text-[12px] leading-snug text-fdc-slate">{r.what}</span> },
   ];

@@ -8,6 +8,8 @@ import { Table, type Column } from '../components/ui/Table';
 import { Dropdown, Segmented, Toggle, type Option } from '../components/ui/Controls';
 import { FDC, MATERIAL_COLOR, termLabel } from '../lib/brand';
 import { vendorShort } from '../lib/format';
+import { CalcSheet, CalcBtn } from '../components/CalcSheet';
+import { calcReceivables, calcCreditCash, type CalcData } from '../lib/calc';
 
 const fmtCash = (n: number) =>
   n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : n >= 1e5 ? `₹${(n / 1e5).toFixed(1)} L` : `₹${Math.round(n).toLocaleString('en-IN')}`;
@@ -38,6 +40,7 @@ export default function CreditTermsTab({ data, nav, onNavigate }: { data: AppDat
   const [mat, setMat] = useState<string>('all');
   const [pushOnly, setPushOnly] = useState(false);
   const [open, setOpen] = useState<string | null>((nav.tab === 'credit' && nav.vendorKey) || null);
+  const [calc, setCalc] = useState<CalcData | null>(null);
 
   // vendorKey → the material keys it supplies (from the always-present vendor master)
   const matKeyOf = useMemo(() => {
@@ -137,8 +140,13 @@ export default function CreditTermsTab({ data, nav, onNavigate }: { data: AppDat
       align: 'center',
       sortable: true,
       sortValue: (r) => r.theyGive ?? -1,
-      headerHint: 'Days THEY let their own customers take to pay them (from their filed accounts). “—” = accounts not public.',
-      render: (r) => (r.theyGive == null ? <span className="text-fdc-light">—</span> : <span className="tnum font-semibold text-fdc-slate">{r.theyGive} days</span>),
+      headerHint: 'Days THEY let their own customers take to pay them (Munshot API). “—” = not available.',
+      render: (r) => (r.theyGive == null ? <span className="text-fdc-light">—</span> : (
+        <span className="inline-flex items-center justify-center gap-0.5 whitespace-nowrap">
+          <span className="tnum font-semibold text-fdc-slate">{r.theyGive} days</span>
+          <CalcBtn onClick={() => { const c = calcReceivables(data, r.key, r.name); if (c) setCalc(c); }} />
+        </span>
+      )),
     },
     {
       key: 'opening',
@@ -174,7 +182,12 @@ export default function CreditTermsTab({ data, nav, onNavigate }: { data: AppDat
       heatColor: FDC.blue,
       render: (r) => {
         const o = oppAt(r.spend, r.youGet, targetN);
-        return o > 0 ? <span className="tnum font-bold text-fdc-blue">{fmtCash(o)}</span> : <span className="text-fdc-light">—</span>;
+        return o > 0 ? (
+          <span className="inline-flex items-center justify-end gap-0.5 whitespace-nowrap">
+            <span className="tnum font-bold text-fdc-blue">{fmtCash(o)}</span>
+            <CalcBtn onClick={() => setCalc(calcCreditCash({ name: r.name, spend: r.spend, youGet: r.youGet, target: targetN, termText: r.termText }))} />
+          </span>
+        ) : <span className="text-fdc-light">—</span>;
       },
     },
   ];
@@ -213,6 +226,7 @@ export default function CreditTermsTab({ data, nav, onNavigate }: { data: AppDat
       />
 
       {openRow && <CreditDetail row={openRow} target={targetN} onClose={() => setOpen(null)} onNavigate={onNavigate} />}
+      <CalcSheet calc={calc} onClose={() => setCalc(null)} />
     </div>
   );
 }
