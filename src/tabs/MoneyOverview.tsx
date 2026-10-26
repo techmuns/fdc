@@ -9,6 +9,7 @@ import { HBars, type HBarDatum } from '../components/charts/Bars';
 import { StackedBar, type StackSegment } from '../components/charts/StackedBar';
 import { FDC, MATERIAL_COLOR, TERM_COLOR } from '../lib/brand';
 import { CalcSheet, CalcBtn } from '../components/CalcSheet';
+import { STRATEGIC_ITEMS, StrategicDetail, type StrategicItem } from '../components/StrategicInsights';
 import { calcTotalSpend, calcTotalSave, calcCashFreed, calcSupplierSave, calcCreditCash, type CalcData } from '../lib/calc';
 
 const fmtSave = (n: number) => (n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : `₹${(n / 1e5).toFixed(1)} L`);
@@ -17,6 +18,7 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
   const v = data.value;
   const [proof, setProof] = useState<ValueAction | null>(null);
   const [calc, setCalc] = useState<CalcData | null>(null);
+  const [strategic, setStrategic] = useState<StrategicItem | null>(null);
   if (!v) return <Card><p className="text-[13px] text-fdc-grey">Run <code className="rounded bg-black/5 px-1 py-0.5 font-mono text-[11px]">npm run normalize</code> to generate the value data.</p></Card>;
 
   const cost = v.headline.costSavings ?? v.headline.totalSavings;
@@ -59,8 +61,9 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
         </div>
       </div>
 
-      {/* the one thing that matters: every insight in a single table — open by default, right under the banner */}
-      <AllInsights data={data} onProof={setProof} onCalc={setCalc} defaultOpen />
+      {/* the one thing that matters: every insight in a single table — open by default, right under the banner.
+          Strategic research plays are pinned at the top as clickable rows. */}
+      <AllInsights data={data} onProof={setProof} onCalc={setCalc} onStrategic={setStrategic} defaultOpen />
 
       {/* the extras — kept, but tucked into one closed section you open only to dig deeper */}
       <DigDeeper>
@@ -83,17 +86,18 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
       </DigDeeper>
 
       {proof && <ActionProof action={proof} data={data} onClose={() => setProof(null)} onNavigate={onNavigate} />}
+      {strategic && <StrategicDetail item={strategic} onClose={() => setStrategic(null)} />}
       <CalcSheet calc={calc} onClose={() => setCalc(null)} />
     </div>
   );
 }
 
 /* ---- the full insight list: every place there's money to save or cash to free ---- */
-type InsightKind = 'price' | 'cash' | 'fresh';
+type InsightKind = 'price' | 'cash' | 'fresh' | 'strategic';
 interface InsightRow {
   key: string; supplier: string; vendorKey?: string; area: string;
   kind: InsightKind; spend: number; save: number; saveLabel: string; what: string;
-  materialKey?: MaterialKey; skuDesc?: string; items?: number;
+  materialKey?: MaterialKey; skuDesc?: string; items?: number; strategicId?: string;
 }
 function buildAllInsights(data: AppData): InsightRow[] {
   const v = data.value;
@@ -127,6 +131,10 @@ function buildAllInsights(data: AppData): InsightRow[] {
     rows.push({ key: `cash-${w.vendorKey}`, supplier: w.vendor, vendorKey: w.vendorKey, area: (w.materials || []).join(', ') || '—', kind: 'cash', spend: w.totalSpend, save: w.cashFreed30, saveLabel: `${fmtSave(w.cashFreed30)} one-time`, what: `You pay ${shortName(w.vendor)} ${w.termText} — either push them to 30-day credit, or move this volume to a cheaper supplier.` });
   }
   rows.sort((a, b) => b.save - a.save);
+  // pinned strategic plays (curated from deep research) — rendered at the top of the table
+  for (const it of STRATEGIC_ITEMS) {
+    rows.push({ key: `strat-${it.id}`, supplier: it.rowSupplier, area: it.rowArea, kind: 'strategic', spend: it.rowSpend ?? 0, save: it.rowSortSave, saveLabel: it.rowSaveLabel, what: it.rowWhat, strategicId: it.id });
+  }
   return rows;
 }
 
@@ -154,6 +162,7 @@ const INSIGHT_KIND: Record<InsightKind, { label: string; color: string }> = {
   price: { label: 'Lower price', color: FDC.green },
   cash: { label: 'Free up cash', color: FDC.blue },
   fresh: { label: 'Fresher stock', color: FDC.orange },
+  strategic: { label: 'Strategic play', color: '#8E44AD' },
 };
 
 // the plain-language supplier risk check, shown as a small dot by the supplier name
@@ -163,13 +172,16 @@ const RISK_DOT: Record<string, { color: string; label: string }> = {
   green: { color: FDC.green, label: 'Low risk' },
 };
 
-function AllInsights({ data, onProof, onCalc, defaultOpen = false }: { data: AppData; onProof: (a: ValueAction) => void; onCalc: (c: CalcData) => void; defaultOpen?: boolean }) {
+function AllInsights({ data, onProof, onCalc, onStrategic, defaultOpen = false }: { data: AppData; onProof: (a: ValueAction) => void; onCalc: (c: CalcData) => void; onStrategic: (s: StrategicItem) => void; defaultOpen?: boolean }) {
   const [open, setOpen] = useState(defaultOpen);
   const rows = useMemo(() => buildAllInsights(data), [data]);
   if (!rows.length) return null;
-  const maxSave = Math.max(1, ...rows.map((r) => r.save));
+  const maxSave = Math.max(1, ...rows.filter((r) => r.kind !== 'strategic').map((r) => r.save));
   const cols: Column<InsightRow>[] = [
     { key: 'supplier', header: 'Supplier', sortable: true, sortValue: (r) => r.supplier, render: (r) => {
+      if (r.kind === 'strategic') return (
+        <span className="flex min-w-0 items-center gap-1.5"><Sparkles size={12} className="shrink-0 text-fdc-gold-dark" /><span className="font-bold text-fdc-ink">{r.supplier}</span></span>
+      );
       const lvl = r.vendorKey ? data.supplierIntel?.suppliers[r.vendorKey]?.riskLevel : undefined;
       const dot = lvl ? RISK_DOT[lvl] : null;
       return (
@@ -181,14 +193,14 @@ function AllInsights({ data, onProof, onCalc, defaultOpen = false }: { data: App
     } },
     { key: 'area', header: 'Area', sortable: true, sortValue: (r) => r.area, render: (r) => <span className="whitespace-nowrap text-fdc-grey">{r.area}</span> },
     { key: 'kind', header: 'Type', render: (r) => <Pill color={INSIGHT_KIND[r.kind].color}>{INSIGHT_KIND[r.kind].label}</Pill> },
-    { key: 'spend', header: 'You spend / yr', align: 'right', sortable: true, sortValue: (r) => r.spend, render: (r) => <span className="tnum whitespace-nowrap">{fmtSave(r.spend)}</span> },
-    { key: 'save', header: 'Can save', align: 'right', sortable: true, sortValue: (r) => r.save, render: (r) => (
+    { key: 'spend', header: 'You spend / yr', align: 'right', sortable: true, sortValue: (r) => r.spend, render: (r) => <span className="tnum whitespace-nowrap">{r.kind === 'strategic' && !r.spend ? '—' : fmtSave(r.spend)}</span> },
+    { key: 'save', header: 'Can save', align: 'right', sortable: true, sortValue: (r) => (r.kind === 'strategic' ? 1e12 + r.save : r.save), render: (r) => (
       <span className="inline-flex items-center justify-end gap-0.5 whitespace-nowrap">
-        <span className="tnum font-bold" style={{ color: r.save > 0 ? INSIGHT_KIND[r.kind].color : FDC.grey }}>{r.saveLabel}</span>
+        <span className="tnum font-bold" style={{ color: r.kind === 'strategic' || r.save > 0 ? INSIGHT_KIND[r.kind].color : FDC.grey }}>{r.saveLabel}</span>
         {r.kind === 'price' && r.save > 0 && r.vendorKey && r.materialKey && <CalcBtn onClick={() => onCalc(calcSupplierSave(data, r.vendorKey!, r.materialKey!, r.supplier))} />}
         {r.kind === 'cash' && r.save > 0 && r.vendorKey && <CalcBtn onClick={() => onCalc(calcCreditCash({ name: r.supplier, spend: r.spend, youGet: 0, target: 30, termText: data.value?.vendors[r.vendorKey!]?.termText ?? null }))} />}
       </span>
-    ), heat: (r) => (r.save > 0 ? Math.min(1, r.save / maxSave) : null), heatScale: 'hue', heatColor: FDC.green },
+    ), heat: (r) => (r.kind !== 'strategic' && r.save > 0 ? Math.min(1, r.save / maxSave) : null), heatScale: 'hue', heatColor: FDC.green },
     { key: 'savePct', header: '% saved', align: 'right', sortable: true, sortValue: (r) => (r.kind === 'price' && r.spend ? r.save / r.spend : -1), render: (r) => (r.kind === 'price' && r.spend > 0 ? <span className="tnum whitespace-nowrap font-semibold text-fdc-slate">{((r.save / r.spend) * 100).toFixed(1)}%</span> : <span className="text-fdc-grey">—</span>) },
     { key: 'what', header: 'What to do', render: (r) => <span className="text-[12px] leading-snug text-fdc-slate">{r.what}</span> },
   ];
@@ -202,14 +214,15 @@ function AllInsights({ data, onProof, onCalc, defaultOpen = false }: { data: App
       </button>
       {open && (
         <div className="border-t border-black/[0.06] px-2 py-2">
-          <p className="flex items-center gap-1.5 px-2 pb-1.5 text-[11px] font-medium text-fdc-slate"><Eye size={12} className="text-fdc-green" /> Tap any row to see the proof — the price gap, the credit comparison, or the stock age behind it.</p>
+          <p className="flex items-center gap-1.5 px-2 pb-1.5 text-[11px] font-medium text-fdc-slate"><Eye size={12} className="text-fdc-green" /> Tap any row for the detail — the price gap, credit comparison, stock age, or the full strategic play (✨).</p>
           <p className="flex flex-wrap items-center gap-x-3 gap-y-1 px-2 pb-1.5 text-[10.5px] text-fdc-grey">
+            <span className="inline-flex items-center gap-1"><Sparkles size={11} className="text-fdc-gold-dark" /> strategic play</span>
             <span className="font-semibold uppercase tracking-wide">Dot = our supplier check:</span>
             <span className="inline-flex items-center gap-1"><span className="h-2 w-2 rounded-full" style={{ background: FDC.red }} /> verify</span>
             <span className="inline-flex items-center gap-1"><span className="h-2 w-2 rounded-full" style={{ background: FDC.orange }} /> watch</span>
             <span className="inline-flex items-center gap-1"><span className="h-2 w-2 rounded-full" style={{ background: FDC.green }} /> low risk</span>
           </p>
-          <Table columns={cols} rows={rows} getKey={(r) => r.key} initialSort={{ key: 'save', dir: 'desc' }} onRowClick={(r) => onProof(insightToAction(r))} maxHeight={520} dense />
+          <Table columns={cols} rows={rows} getKey={(r) => r.key} initialSort={{ key: 'save', dir: 'desc' }} onRowClick={(r) => { if (r.kind === 'strategic') { const it = STRATEGIC_ITEMS.find((x) => x.id === r.strategicId); if (it) onStrategic(it); } else onProof(insightToAction(r)); }} maxHeight={520} dense />
           <p className="px-2 pb-1 pt-1.5 text-[10.5px] leading-snug text-fdc-grey">Price savings are per year; “free up cash” is a one-time amount from fixing payment terms — the two are never added together.</p>
         </div>
       )}
