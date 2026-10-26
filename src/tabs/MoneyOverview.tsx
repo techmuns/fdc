@@ -1,5 +1,5 @@
 import { useState, useMemo, type ReactNode } from 'react';
-import { ArrowRight, Sparkles, Wallet, Eye, ListChecks, ChevronDown } from 'lucide-react';
+import { Sparkles, Wallet, Eye, ListChecks, ChevronDown } from 'lucide-react';
 import type { AppData, ValueAction, PaymentTerms, MaterialKey } from '../types';
 import type { Nav } from '../App';
 import { Card, Pill } from '../components/ui/Card';
@@ -9,7 +9,7 @@ import { HBars, type HBarDatum } from '../components/charts/Bars';
 import { StackedBar, type StackSegment } from '../components/charts/StackedBar';
 import { FDC, MATERIAL_COLOR, TERM_COLOR } from '../lib/brand';
 import { CalcSheet, CalcBtn } from '../components/CalcSheet';
-import { calcTotalSpend, calcTotalSave, calcCashFreed, calcSupplierSave, type CalcData } from '../lib/calc';
+import { calcTotalSpend, calcTotalSave, calcCashFreed, calcSupplierSave, calcCreditCash, type CalcData } from '../lib/calc';
 
 const fmtSave = (n: number) => (n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : `₹${(n / 1e5).toFixed(1)} L`);
 
@@ -23,8 +23,6 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
   const cash = v.headline.cashFreed ?? 0;
   const totalSpend = data.meta.totals.netSpend;
   const savePct = totalSpend ? (cost / totalSpend) * 100 : 0;
-  const topMat = [...v.savingsByMaterial].sort((a, b) => b.savings - a.savings)[0]?.materialKey;
-  const cashVendor = v.headline.cashFreedBy?.[0];
 
   const spendOf = (k: string) => (data.meta.totals.byMaterial as Record<string, number>)[k] ?? 0;
   const bars: HBarDatum[] = v.savingsByMaterial
@@ -55,30 +53,9 @@ export default function MoneyOverview({ data, onNavigate }: { data: AppData; onN
           <h1 className="text-[20px] font-extrabold leading-tight sm:text-[25px]">
             You spend {fmtSave(totalSpend)}<CalcBtn light onClick={() => setCalc(calcTotalSpend(data))} /> a year — and can save about <span className="text-fdc-gold">{fmtSave(cost)}</span><CalcBtn light onClick={() => setCalc(calcTotalSave(data))} /> of it.
           </h1>
-          <p className="mt-1 max-w-2xl text-[12.5px] leading-snug text-white/85">
-            <b>{fmtSave(cost)}</b> ({savePct.toFixed(1)}%) saveable on price, plus <b>{fmtSave(cash)}</b> one-time cash from payment terms.
+          <p className="mt-1.5 max-w-2xl text-[13px] leading-snug text-white/90">
+            That’s {savePct.toFixed(1)}% of spend — straight to profit. Plus <b className="text-fdc-gold">{fmtSave(cash)}</b><CalcBtn light onClick={() => setCalc(calcCashFreed(data))} /> one-time cash to free up by fixing payment terms (one-time, not a yearly saving).
           </p>
-
-          {/* two money figures — never added together */}
-          <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
-            <div className="relative">
-              <HeroStat
-                eyebrow="Money you can save · every year" value={fmtSave(cost)} tone="white"
-                sub={`${savePct.toFixed(1)}% of your ${fmtSave(totalSpend)} yearly spend — straight to profit.`}
-                cta="See every line of proof" onClick={() => topMat && onNavigate({ tab: 'vendors', material: topMat })}
-              />
-              <span className="absolute right-2 top-2 z-10"><CalcBtn light onClick={() => setCalc(calcTotalSave(data))} /></span>
-            </div>
-            <div className="relative">
-              <HeroStat
-                eyebrow="Cash you can free up · one-time" value={fmtSave(cash)} tone="gold"
-                sub="One-time cash freed up by moving advance / pay-on-delivery suppliers onto 30-day credit. Not a yearly saving."
-                cta={cashVendor ? `See ${shortName(cashVendor.name)} — the proof` : 'See the proof'}
-                onClick={() => cashVendor && onNavigate({ tab: 'vendors', vendorKey: cashVendor.vendorKey })}
-              />
-              <span className="absolute right-2 top-2 z-10"><CalcBtn light onClick={() => setCalc(calcCashFreed(data))} /></span>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -191,7 +168,6 @@ function AllInsights({ data, onProof, onCalc, defaultOpen = false }: { data: App
   const rows = useMemo(() => buildAllInsights(data), [data]);
   if (!rows.length) return null;
   const maxSave = Math.max(1, ...rows.map((r) => r.save));
-  const priceTotal = rows.filter((r) => r.kind === 'price').reduce((s, r) => s + r.save, 0);
   const cols: Column<InsightRow>[] = [
     { key: 'supplier', header: 'Supplier', sortable: true, sortValue: (r) => r.supplier, render: (r) => {
       const lvl = r.vendorKey ? data.supplierIntel?.suppliers[r.vendorKey]?.riskLevel : undefined;
@@ -210,6 +186,7 @@ function AllInsights({ data, onProof, onCalc, defaultOpen = false }: { data: App
       <span className="inline-flex items-center justify-end gap-0.5 whitespace-nowrap">
         <span className="tnum font-bold" style={{ color: r.save > 0 ? INSIGHT_KIND[r.kind].color : FDC.grey }}>{r.saveLabel}</span>
         {r.kind === 'price' && r.save > 0 && r.vendorKey && r.materialKey && <CalcBtn onClick={() => onCalc(calcSupplierSave(data, r.vendorKey!, r.materialKey!, r.supplier))} />}
+        {r.kind === 'cash' && r.save > 0 && r.vendorKey && <CalcBtn onClick={() => onCalc(calcCreditCash({ name: r.supplier, spend: r.spend, youGet: 0, target: 30, termText: data.value?.vendors[r.vendorKey!]?.termText ?? null }))} />}
       </span>
     ), heat: (r) => (r.save > 0 ? Math.min(1, r.save / maxSave) : null), heatScale: 'hue', heatColor: FDC.green },
     { key: 'savePct', header: '% saved', align: 'right', sortable: true, sortValue: (r) => (r.kind === 'price' && r.spend ? r.save / r.spend : -1), render: (r) => (r.kind === 'price' && r.spend > 0 ? <span className="tnum whitespace-nowrap font-semibold text-fdc-slate">{((r.save / r.spend) * 100).toFixed(1)}%</span> : <span className="text-fdc-grey">—</span>) },
@@ -220,7 +197,6 @@ function AllInsights({ data, onProof, onCalc, defaultOpen = false }: { data: App
       <button onClick={() => setOpen((o) => !o)} className="flex w-full items-center justify-between gap-2 px-4 py-3.5 text-left transition hover:bg-black/[0.02] focus-ring">
         <span className="min-w-0">
           <span className="flex items-center gap-1.5 text-[15px] font-bold text-fdc-ink"><ListChecks size={16} strokeWidth={2.3} className="text-fdc-green" /> All insights <span className="font-medium text-fdc-grey">— {rows.length} opportunities</span></span>
-          <span className="mt-0.5 block text-[12px] leading-snug text-fdc-grey">Every supplier where there’s money to save or cash to free — the full, end-to-end list. About <b className="text-fdc-slate">{fmtSave(priceTotal)}/yr</b> in price savings across them all.</span>
         </span>
         <span className="flex shrink-0 items-center gap-1 text-[12px] font-semibold text-fdc-slate">{open ? 'Hide' : 'Show all'} <ChevronDown size={16} className={`transition ${open ? 'rotate-180' : ''}`} /></span>
       </button>
@@ -284,23 +260,6 @@ function PaymentTermsPanel({ pt, onNavigate }: { pt: PaymentTerms; onNavigate: (
         </div>
       )}
     </Card>
-  );
-}
-
-function HeroStat({ eyebrow, value, sub, cta, onClick, tone }: { eyebrow: string; value: string; sub: string; cta: string; onClick: () => void; tone: 'white' | 'gold' }) {
-  const gold = tone === 'gold';
-  return (
-    <button
-      onClick={onClick}
-      className={`group flex flex-col rounded-2xl border p-3 text-left backdrop-blur transition focus-ring ${gold ? 'border-fdc-gold/40 bg-fdc-gold/[0.14] hover:bg-fdc-gold/20' : 'border-white/25 bg-white/10 hover:bg-white/[0.18]'}`}
-    >
-      <div className="text-[10px] font-bold uppercase tracking-wide text-white/75">{eyebrow}</div>
-      <div className={`tnum mt-0.5 text-[22px] font-extrabold leading-none ${gold ? 'text-fdc-gold' : 'text-white'}`}>{value}</div>
-      <div className="mt-1 text-[11px] leading-snug text-white/80">{sub}</div>
-      <div className="mt-1.5 inline-flex items-center gap-1 text-[11px] font-semibold text-white">
-        {cta} <ArrowRight size={12} className="transition group-hover:translate-x-0.5" />
-      </div>
-    </button>
   );
 }
 

@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ArrowRight, TrendingDown, Coins, Clock, AlertTriangle, Scale, LineChart as LineChartIcon, GitCompareArrows } from 'lucide-react';
 import type { AppData, ValueAction, ValueSku, MaterialKey } from '../types';
@@ -10,6 +10,8 @@ import { SupplierCheck } from './SupplierCheck';
 import { FDC } from '../lib/brand';
 import { termLabel } from '../lib/brand';
 import { vendorShort } from '../lib/format';
+import { CalcSheet, CalcBtn } from './CalcSheet';
+import { calcSupplierSave, calcCreditCash, type CalcData } from '../lib/calc';
 
 const fmtSave = (n: number) => (n >= 1e7 ? `₹${(n / 1e7).toFixed(2)} Cr` : n >= 1e5 ? `₹${(n / 1e5).toFixed(1)} L` : `₹${Math.round(n).toLocaleString('en-IN')}`);
 const priceFmt = (n: number | null | undefined, unit: string) => (n == null ? '—' : `₹${n >= 100 ? Math.round(n) : n >= 10 ? n.toFixed(1) : n.toFixed(2)}/${unit.toLowerCase() === 'nos' ? 'pc' : unit.toLowerCase()}`);
@@ -21,6 +23,7 @@ export function ActionProof({ action, data, onClose, onNavigate }: { action: Val
     const prev = document.body.style.overflow; document.body.style.overflow = 'hidden';
     return () => { window.removeEventListener('keydown', onKey); document.body.style.overflow = prev; };
   }, [onClose]);
+  const [calc, setCalc] = useState<CalcData | null>(null);
 
   const isTerms = action.isCash || action.kind === 'terms';
   const isFresh = !isTerms && action.kind === 'freshness';
@@ -43,6 +46,7 @@ export function ActionProof({ action, data, onClose, onNavigate }: { action: Val
   const moveToIntel = moveToKey ? data.supplierIntel?.suppliers[moveToKey] ?? null : null;
 
   return createPortal(
+    <>
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-fdc-ink/55 backdrop-blur-sm animate-fade-in sm:p-4 md:p-6" onClick={onClose} role="dialog" aria-modal="true" aria-label={`Proof: ${action.action}`}>
       <div className="flex max-h-[92vh] min-h-0 w-full max-w-2xl flex-col overflow-hidden bg-fdc-offwhite shadow-pop sm:rounded-2xl animate-fade-up" onClick={(e) => e.stopPropagation()}>
         {/* header */}
@@ -56,7 +60,7 @@ export function ActionProof({ action, data, onClose, onNavigate }: { action: Val
         </div>
         {/* body */}
         <div className="fdc-scroll min-h-0 flex-1 space-y-3 overflow-y-auto px-3 py-4 sm:px-4">
-          {isTerms ? <TermsProof action={action} data={data} /> : isFresh ? <FreshnessProof action={action} data={data} /> : <PriceProof action={action} data={data} />}
+          {isTerms ? <TermsProof action={action} data={data} onCalc={setCalc} /> : isFresh ? <FreshnessProof action={action} data={data} /> : <PriceProof action={action} data={data} onCalc={setCalc} />}
           {/* plain-language supplier check — who these suppliers are, any red flag, the bottom line */}
           {(clickedIntel || moveToIntel) && (
             <div className="space-y-2.5">
@@ -82,13 +86,15 @@ export function ActionProof({ action, data, onClose, onNavigate }: { action: Val
           </button>
         </div>
       </div>
-    </div>,
+    </div>
+    <CalcSheet calc={calc} onClose={() => setCalc(null)} />
+    </>,
     document.body
   );
 }
 
 /* ---------- PRICE / leverage proof: the price gap + the cheaper supplier's margin ---------- */
-function PriceProof({ action, data }: { action: ValueAction; data: AppData }) {
+function PriceProof({ action, data, onCalc }: { action: ValueAction; data: AppData; onCalc: (c: CalcData) => void }) {
   const M = data.value?.materials[action.material];
   const sku: ValueSku | undefined = useMemo(() => M?.skus.find((s) => s.desc === action.proof.skuDesc) ?? M?.skus.find((s) => s.vendors.some((v) => v.vendorKey === action.proof.vendorKey)) ?? M?.skus[0], [M, action]);
   if (!sku) return <Empty text="No comparable price lines for this item." />;
@@ -114,7 +120,7 @@ function PriceProof({ action, data }: { action: ValueAction; data: AppData }) {
     <>
       <Section icon={GitCompareArrows} title="The price gap — same item, what each supplier charges" color={FDC.green}>
         <HBars data={bars} format={(n) => priceFmt(n, sku.unit)} barSize={26} labelWidth={140} axisTicks={4} />
-        <p className="mt-2 text-[11.5px] leading-snug text-fdc-slate"><b className="tnum">{sku.desc}</b> — gap of <b className="tnum">{priceFmt(gap, sku.unit)}</b> between the dearest and the cheapest you already pay. Matching the cheapest price you already pay is worth about <b className="tnum" style={{ color: FDC.green }}>{fmtSave(action.saving)}</b>/yr.</p>
+        <p className="mt-2 text-[11.5px] leading-snug text-fdc-slate"><b className="tnum">{sku.desc}</b> — gap of <b className="tnum">{priceFmt(gap, sku.unit)}</b> between the dearest and the cheapest you already pay. Matching the cheapest price you already pay is worth about <b className="tnum" style={{ color: FDC.green }}>{fmtSave(action.saving)}</b>/yr.{action.vendorKey && <CalcBtn onClick={() => onCalc(calcSupplierSave(data, action.vendorKey!, action.material as MaterialKey, vendorShort(data.value?.vendors[action.vendorKey!]?.name ?? '')))} />}</p>
       </Section>
 
       {action.isLeverage && cMargin != null ? (
@@ -174,7 +180,7 @@ function FreshnessProof({ action, data }: { action: ValueAction; data: AppData }
 }
 
 /* ---------- TERMS proof: credit you get vs other suppliers + what they give others ---------- */
-function TermsProof({ action, data }: { action: ValueAction; data: AppData }) {
+function TermsProof({ action, data, onCalc }: { action: ValueAction; data: AppData; onCalc: (c: CalcData) => void }) {
   const vendors = data.value?.vendors ?? {};
   const tv = vendors[action.vendorKey ?? ''];
   const fin = data.financials?.vendors[action.vendorKey ?? ''];
@@ -208,6 +214,7 @@ function TermsProof({ action, data }: { action: ValueAction; data: AppData }) {
       <Section icon={Coins} title="What this frees up" color={FDC.green}>
         <div className="flex items-baseline gap-2">
           <span className="tnum text-[26px] font-extrabold leading-none text-fdc-blue">{action.savingLabel}</span>
+          {tv && <CalcBtn onClick={() => onCalc(calcCreditCash({ name: tv.name, spend: tv.spend, youGet: creditDays(tv), target: 30, termText: tv.termText }))} />}
           <span className="text-[12px] text-fdc-grey">one-time cash</span>
         </div>
         <p className="mt-1.5 text-[11.5px] leading-snug text-fdc-slate">Moving {tv ? vendorShort(tv.name) : 'them'} from pay-now to 30-day credit frees about <b>{action.savingLabel}</b> of cash you're currently handing over early (on {tv ? fmtSave(tv.spend) : '—'} of spend). One-time — not a price cut.</p>
