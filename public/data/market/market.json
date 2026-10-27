@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-26T06:33:58.435Z",
+  "generatedAt": "2026-10-27T06:32:05.156Z",
   "fx": {
-    "value": 94.96,
-    "date": "2026-10-16",
+    "value": 94.94,
+    "date": "2026-10-23",
     "annual": {
       "2010": 45.651,
       "2011": 46.578,
@@ -20,7 +20,7 @@
       "2023": 82.571,
       "2024": 83.657,
       "2025": 87.147,
-      "2026": 94.074
+      "2026": 94.092
     },
     "sourceName": "FRED — U.S./India FX (DEXINUS)",
     "sourceUrl": "https://fred.stlouisfed.org/series/DEXINUS"
