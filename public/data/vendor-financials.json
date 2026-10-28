@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-27T06:33:02.767Z",
+  "generatedAt": "2026-10-28T07:08:05.163Z",
   "sources": {
     "listed": "Munshot market-data API (free)",
     "private": "Probe42 comprehensive reports (MCA filings) — primary; credit-rating-agency rationale docs — fallback / cross-check"
   },
   "manifest": {
-    "listedResolved": 6,
+    "listedResolved": 4,
     "privateProbe": 11,
     "privateRated": 11,
     "privateUnrated": 9,
@@ -1197,90 +1197,20 @@
       "vendorKey": "gujarat-ambuja-exports",
       "name": "GUJARAT AMBUJA EXPORTS LIMITED",
       "type": "listed",
-      "status": "ok",
-      "primarySource": "listed",
-      "companyName": "Gujarat Ambuja Exports Limited",
-      "symbol": "GAEL.NS",
-      "exchange": "NSI",
+      "status": "pending",
+      "primarySource": "none",
+      "companyName": null,
+      "symbol": null,
+      "exchange": null,
       "cin": null,
       "materialsSupplied": [
         "Dextrose"
       ],
       "fdcSpend": 212123478,
-      "metrics": {
-        "revenue": 60315901952,
-        "ebitda": 6083474944,
-        "marketCap": 65869692928,
-        "totalDebt": 4409999872,
-        "ebitdaMargin": 10.09,
-        "netMargin": 6.9,
-        "grossMargin": 27.73,
-        "operatingMargin": 12.46,
-        "debtToEquity": 13.38,
-        "revenueGrowth": 23.5,
-        "earningsGrowth": 171.1,
-        "pe": 12.91,
-        "evEbitda": 10.91,
-        "dividendYield": 19,
-        "currentPrice": 143.61,
-        "yearlyChange": 45.37,
-        "employees": 2245,
-        "roce": 12.5,
-        "roe": 9.72,
-        "receivableDays": 28,
-        "inventoryDays": 70,
-        "payableDays": 13,
-        "cashConversionCycle": 84
-      },
-      "healthScore": {
-        "value": 64,
-        "grade": "B",
-        "components": [
-          {
-            "label": "Net margin",
-            "raw": 6.9,
-            "score": 46,
-            "weight": 0.3
-          },
-          {
-            "label": "EBITDA margin",
-            "raw": 10.09,
-            "score": 50,
-            "weight": 0.15
-          },
-          {
-            "label": "Revenue growth",
-            "raw": 23.5,
-            "score": 96,
-            "weight": 0.2
-          },
-          {
-            "label": "Low leverage",
-            "raw": 13.38,
-            "score": 93,
-            "weight": 0.2
-          },
-          {
-            "label": "Return on capital",
-            "raw": 12.5,
-            "score": 50,
-            "weight": 0.15
-          },
-          {
-            "label": "Return on equity",
-            "raw": 9.72,
-            "score": 49,
-            "weight": 0.15
-          }
-        ],
-        "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
-      },
-      "source": {
-        "sourceName": "Munshot market-data API",
-        "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-27"
-      },
-      "note": null,
+      "metrics": null,
+      "healthScore": null,
+      "source": null,
+      "note": "ticker unresolved",
       "ratingGrade": null,
       "ratingLabel": null,
       "ratingOutlook": null,
@@ -1290,17 +1220,6 @@
       "fallbackSource": null,
       "probe": null,
       "levers": [
-        {
-          "type": "opportunity",
-          "title": "Growing fast (23.5%/yr) — swap volume for a better price",
-          "detail": "Their sales are growing fast, so they want new orders. Offer to commit more volume in return for a lower price.",
-          "evidence": [
-            {
-              "label": "Sales growth",
-              "value": "23.5%"
-            }
-          ]
-        },
         {
           "type": "risk",
           "title": "Only supplier: 56% of Dextrose comes from them",
@@ -1327,189 +1246,26 @@
             }
           ]
         }
-      ],
-      "creditDaysSource": {
-        "sourceName": "Screener.in (from audited annual filings)",
-        "sourceUrl": "https://www.screener.in/company/GAEL/consolidated/",
-        "asOf": "Mar 2026",
-        "basis": "consolidated",
-        "date": "2026-10-27"
-      },
-      "series": [
-        {
-          "fy": "FY12",
-          "revenue": 21220000000,
-          "netMargin": 2.36,
-          "roce": 10,
-          "receivableDays": 30
-        },
-        {
-          "fy": "FY13",
-          "revenue": 30160000000,
-          "netMargin": 3.75,
-          "roce": 19,
-          "receivableDays": 13
-        },
-        {
-          "fy": "FY14",
-          "revenue": 30920000000,
-          "netMargin": 3.59,
-          "roce": 15,
-          "receivableDays": 18
-        },
-        {
-          "fy": "FY15",
-          "revenue": 25310000000,
-          "netMargin": 3.32,
-          "roce": 9,
-          "receivableDays": 16
-        },
-        {
-          "fy": "FY16",
-          "revenue": 27360000000,
-          "netMargin": 3.8,
-          "roce": 11,
-          "receivableDays": 23
-        },
-        {
-          "fy": "FY20",
-          "revenue": 38170000000,
-          "netMargin": 3.82,
-          "roce": null,
-          "receivableDays": 15
-        },
-        {
-          "fy": "FY21",
-          "revenue": 47050000000,
-          "netMargin": 7.18,
-          "roce": 28,
-          "receivableDays": 17
-        },
-        {
-          "fy": "FY22",
-          "revenue": 46700000000,
-          "netMargin": 10.17,
-          "roce": 30,
-          "receivableDays": 18
-        },
-        {
-          "fy": "FY23",
-          "revenue": 49090000000,
-          "netMargin": 6.72,
-          "roce": 18,
-          "receivableDays": 21
-        },
-        {
-          "fy": "FY24",
-          "revenue": 49270000000,
-          "netMargin": 7.02,
-          "roce": 16,
-          "receivableDays": 24
-        },
-        {
-          "fy": "FY25",
-          "revenue": 46130000000,
-          "netMargin": 5.4,
-          "roce": 11,
-          "receivableDays": 28
-        },
-        {
-          "fy": "FY26",
-          "revenue": 57290000000,
-          "netMargin": 5.31,
-          "roce": 12,
-          "receivableDays": 28
-        }
       ]
     },
     "sayaji-industries": {
       "vendorKey": "sayaji-industries",
       "name": "Sayaji Industries Limited",
       "type": "listed",
-      "status": "ok",
-      "primarySource": "listed",
-      "companyName": "Sayaji Industries Limited",
-      "symbol": "SAYAJIIND.NS",
-      "exchange": "NSI",
+      "status": "pending",
+      "primarySource": "none",
+      "companyName": null,
+      "symbol": null,
+      "exchange": null,
       "cin": null,
       "materialsSupplied": [
         "Dextrose"
       ],
       "fdcSpend": 150284312.5,
-      "metrics": {
-        "revenue": 11021143040,
-        "ebitda": 720441024,
-        "marketCap": 2461007872,
-        "totalDebt": 2388529920,
-        "ebitdaMargin": 6.54,
-        "netMargin": 2.26,
-        "grossMargin": 29.97,
-        "operatingMargin": 3.38,
-        "debtToEquity": 224.87,
-        "revenueGrowth": 5.7,
-        "earningsGrowth": 0,
-        "pe": 9.79,
-        "evEbitda": 6.92,
-        "dividendYield": 0,
-        "currentPrice": 97.35,
-        "yearlyChange": -8.11,
-        "employees": 779,
-        "roce": 8.18,
-        "roe": 1.49,
-        "receivableDays": 22,
-        "inventoryDays": 49,
-        "payableDays": 84,
-        "cashConversionCycle": -14
-      },
-      "healthScore": {
-        "value": 21,
-        "grade": "D",
-        "components": [
-          {
-            "label": "Net margin",
-            "raw": 2.26,
-            "score": 15,
-            "weight": 0.3
-          },
-          {
-            "label": "EBITDA margin",
-            "raw": 6.54,
-            "score": 33,
-            "weight": 0.15
-          },
-          {
-            "label": "Revenue growth",
-            "raw": 5.7,
-            "score": 45,
-            "weight": 0.2
-          },
-          {
-            "label": "Low leverage",
-            "raw": 224.87,
-            "score": 0,
-            "weight": 0.2
-          },
-          {
-            "label": "Return on capital",
-            "raw": 8.18,
-            "score": 33,
-            "weight": 0.15
-          },
-          {
-            "label": "Return on equity",
-            "raw": 1.49,
-            "score": 7,
-            "weight": 0.15
-          }
-        ],
-        "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
-      },
-      "source": {
-        "sourceName": "Munshot market-data API",
-        "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-27"
-      },
-      "note": null,
+      "metrics": null,
+      "healthScore": null,
+      "source": null,
+      "note": "ticker unresolved",
       "ratingGrade": null,
       "ratingLabel": null,
       "ratingOutlook": null,
@@ -1518,139 +1274,7 @@
       "issuerNotCooperating": false,
       "fallbackSource": null,
       "probe": null,
-      "levers": [
-        {
-          "type": "opportunity",
-          "title": "You're a big customer — 1.36% of everything they sell",
-          "detail": "Your ₹15.03 Cr/yr is a real chunk of their ₹1102.11 Cr in sales. That buying power is your lever — ask for a better price or terms to keep it.",
-          "evidence": [
-            {
-              "label": "You spend",
-              "value": "₹15.03 Cr"
-            },
-            {
-              "label": "Their sales",
-              "value": "₹1102.11 Cr"
-            },
-            {
-              "label": "Your share",
-              "value": "1.36%"
-            }
-          ]
-        },
-        {
-          "type": "watch",
-          "title": "They keep only 2.3% as profit — push terms, not price",
-          "detail": "There's very little profit to spare, so a big price cut could hurt them (and your supply). Win on payment terms, volume or delivery instead.",
-          "evidence": [
-            {
-              "label": "Profit kept",
-              "value": "2.3%"
-            }
-          ]
-        },
-        {
-          "type": "risk",
-          "title": "They owe a lot (2.25× their own cash) — watch supply, offer to pay fast",
-          "detail": "They carry a lot of debt — a small risk to steady supply, but it also means they value cash. Offer to pay faster for a discount.",
-          "evidence": [
-            {
-              "label": "Owed vs own cash",
-              "value": "2.25x"
-            },
-            {
-              "label": "Total owed",
-              "value": "₹238.85 Cr"
-            }
-          ]
-        }
-      ],
-      "creditDaysSource": {
-        "sourceName": "Screener.in (from audited annual filings)",
-        "sourceUrl": "https://www.screener.in/company/SAYAJIIND/consolidated/",
-        "asOf": "Mar 2026",
-        "basis": "consolidated",
-        "date": "2026-10-27"
-      },
-      "series": [
-        {
-          "fy": "FY16",
-          "revenue": 5030000000,
-          "netMargin": 0.8,
-          "roce": null,
-          "receivableDays": 26
-        },
-        {
-          "fy": "FY17",
-          "revenue": 5310000000,
-          "netMargin": 0.94,
-          "roce": 11,
-          "receivableDays": 25
-        },
-        {
-          "fy": "FY18",
-          "revenue": 5860000000,
-          "netMargin": 1.19,
-          "roce": 13,
-          "receivableDays": 24
-        },
-        {
-          "fy": "FY19",
-          "revenue": 6440000000,
-          "netMargin": 3.88,
-          "roce": 12,
-          "receivableDays": 26
-        },
-        {
-          "fy": "FY20",
-          "revenue": 6390000000,
-          "netMargin": -0.31,
-          "roce": 4,
-          "receivableDays": 31
-        },
-        {
-          "fy": "FY21",
-          "revenue": 5590000000,
-          "netMargin": 3.04,
-          "roce": 19,
-          "receivableDays": 33
-        },
-        {
-          "fy": "FY22",
-          "revenue": 7930000000,
-          "netMargin": 2.4,
-          "roce": 18,
-          "receivableDays": 28
-        },
-        {
-          "fy": "FY23",
-          "revenue": 10400000000,
-          "netMargin": 0.67,
-          "roce": 5,
-          "receivableDays": 20
-        },
-        {
-          "fy": "FY24",
-          "revenue": 9750000000,
-          "netMargin": -1.23,
-          "roce": -1,
-          "receivableDays": 25
-        },
-        {
-          "fy": "FY25",
-          "revenue": 10040000000,
-          "netMargin": -1.1,
-          "roce": -8,
-          "receivableDays": 24
-        },
-        {
-          "fy": "FY26",
-          "revenue": 10720000000,
-          "netMargin": 0.19,
-          "roce": 8,
-          "receivableDays": 22
-        }
-      ]
+      "levers": []
     },
     "shrinath-roto-pack": {
       "vendorKey": "shrinath-roto-pack",
@@ -7486,22 +7110,22 @@
       ],
       "fdcSpend": 10620000,
       "metrics": {
-        "revenue": 14589500416,
-        "ebitda": 938726016,
-        "marketCap": 4592555520,
-        "totalDebt": 3454099968,
-        "ebitdaMargin": 6.43,
-        "netMargin": 2.34,
-        "grossMargin": 27.55,
-        "operatingMargin": 5.45,
-        "debtToEquity": 60.88,
-        "revenueGrowth": 7.2,
-        "earningsGrowth": 143.1,
-        "pe": 10.13,
-        "evEbitda": 7.62,
+        "revenue": 15558245376,
+        "ebitda": 1136498944,
+        "marketCap": 4452270080,
+        "totalDebt": 3248300032,
+        "ebitdaMargin": 7.31,
+        "netMargin": 2.9,
+        "grossMargin": 27.82,
+        "operatingMargin": 6.38,
+        "debtToEquity": 54.7,
+        "revenueGrowth": 29.7,
+        "earningsGrowth": 276.2,
+        "pe": 9.86,
+        "evEbitda": 5.61,
         "dividendYield": 68,
-        "currentPrice": 146.99,
-        "yearlyChange": -11.56,
+        "currentPrice": 142.5,
+        "yearlyChange": -10.53,
         "employees": 1210,
         "roce": 5.88,
         "roe": 1.47,
@@ -7511,31 +7135,31 @@
         "cashConversionCycle": 105
       },
       "healthScore": {
-        "value": 33,
+        "value": 44,
         "grade": "D",
         "components": [
           {
             "label": "Net margin",
-            "raw": 2.34,
-            "score": 16,
+            "raw": 2.9,
+            "score": 19,
             "weight": 0.3
           },
           {
             "label": "EBITDA margin",
-            "raw": 6.43,
-            "score": 32,
+            "raw": 7.31,
+            "score": 37,
             "weight": 0.15
           },
           {
             "label": "Revenue growth",
-            "raw": 7.2,
-            "score": 49,
+            "raw": 29.7,
+            "score": 100,
             "weight": 0.2
           },
           {
             "label": "Low leverage",
-            "raw": 60.88,
-            "score": 70,
+            "raw": 54.7,
+            "score": 73,
             "weight": 0.2
           },
           {
@@ -7556,7 +7180,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-27"
+        "date": "2026-10-28"
       },
       "note": "Group parent — listed proxy: figures are for the listed parent The Sukhjit Starch & Chemicals Ltd (NSE/BSE: SUKHJITS), used as a proxy because the supplying entity Sukhjit Corn Products does not file separately.",
       "ratingGrade": null,
@@ -7571,7 +7195,7 @@
         {
           "type": "watch",
           "title": "You're a small customer — 0.07% of everything they sell",
-          "detail": "At ₹1.06 Cr you're tiny next to their ₹1458.95 Cr in sales. On your own you have little pull — bundle more volume, commit for several years, or play them off against another supplier.",
+          "detail": "At ₹1.06 Cr you're tiny next to their ₹1555.82 Cr in sales. On your own you have little pull — bundle more volume, commit for several years, or play them off against another supplier.",
           "evidence": [
             {
               "label": "You spend",
@@ -7585,12 +7209,23 @@
         },
         {
           "type": "watch",
-          "title": "They keep only 2.3% as profit — push terms, not price",
+          "title": "They keep only 2.9% as profit — push terms, not price",
           "detail": "There's very little profit to spare, so a big price cut could hurt them (and your supply). Win on payment terms, volume or delivery instead.",
           "evidence": [
             {
               "label": "Profit kept",
-              "value": "2.3%"
+              "value": "2.9%"
+            }
+          ]
+        },
+        {
+          "type": "opportunity",
+          "title": "Growing fast (29.7%/yr) — swap volume for a better price",
+          "detail": "Their sales are growing fast, so they want new orders. Offer to commit more volume in return for a lower price.",
+          "evidence": [
+            {
+              "label": "Sales growth",
+              "value": "29.7%"
             }
           ]
         },
@@ -7626,7 +7261,7 @@
         "sourceUrl": "https://www.screener.in/company/SUKHJITS/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-10-27"
+        "date": "2026-10-28"
       },
       "series": [
         {
@@ -9457,7 +9092,7 @@
       "metrics": {
         "revenue": 5146226176,
         "ebitda": 382657760,
-        "marketCap": 831600000,
+        "marketCap": 819420032,
         "totalDebt": 602000000,
         "ebitdaMargin": 7.44,
         "netMargin": 3.67,
@@ -9466,11 +9101,11 @@
         "debtToEquity": 72.84,
         "revenueGrowth": 21.4,
         "earningsGrowth": 0,
-        "pe": 4.4,
-        "evEbitda": 3.58,
+        "pe": 4.34,
+        "evEbitda": 3.66,
         "dividendYield": 0,
-        "currentPrice": 198,
-        "yearlyChange": 34.64,
+        "currentPrice": 195.1,
+        "yearlyChange": 31.88,
         "employees": 376,
         "roce": 17.6,
         "roe": 17.3,
@@ -9525,7 +9160,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-27"
+        "date": "2026-10-28"
       },
       "note": "Listed on BSE (UNIVSTAR) — thinly traded",
       "ratingGrade": null,
@@ -9580,7 +9215,7 @@
         "sourceUrl": "https://www.screener.in/company/524408/",
         "asOf": "Mar 2026",
         "basis": "standalone",
-        "date": "2026-10-27"
+        "date": "2026-10-28"
       },
       "series": [
         {
@@ -12715,7 +12350,7 @@
       "metrics": {
         "revenue": 26116399104,
         "ebitda": 2173799936,
-        "marketCap": 16098255872,
+        "marketCap": 14992615424,
         "totalDebt": 1445600000,
         "ebitdaMargin": 8.32,
         "netMargin": 5.22,
@@ -12724,11 +12359,11 @@
         "debtToEquity": 10.72,
         "revenueGrowth": 22.5,
         "earningsGrowth": 75.5,
-        "pe": 12.06,
-        "evEbitda": 6.36,
+        "pe": 10.99,
+        "evEbitda": 5.49,
         "dividendYield": 93,
-        "currentPrice": 213.16,
-        "yearlyChange": -18.65,
+        "currentPrice": 198.52,
+        "yearlyChange": -15.9,
         "employees": 2500,
         "roce": 12,
         "roe": 8.96,
@@ -12783,7 +12418,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-27"
+        "date": "2026-10-28"
       },
       "note": null,
       "ratingGrade": null,
@@ -12827,7 +12462,7 @@
         "sourceUrl": "https://www.screener.in/company/HUHTAMAKI/",
         "asOf": "Dec 2025",
         "basis": "standalone",
-        "date": "2026-10-27"
+        "date": "2026-10-28"
       },
       "series": [
         {
@@ -12933,7 +12568,7 @@
       "metrics": {
         "revenue": 164920033280,
         "ebitda": 22030196736,
-        "marketCap": 42106515456,
+        "marketCap": 41633533952,
         "totalDebt": 101523062784,
         "ebitdaMargin": 13.36,
         "netMargin": 4.14,
@@ -12942,11 +12577,11 @@
         "debtToEquity": 124.99,
         "revenueGrowth": 35.5,
         "earningsGrowth": 630,
-        "pe": 6.17,
-        "evEbitda": 6.01,
-        "dividendYield": 53,
-        "currentPrice": 583.1,
-        "yearlyChange": 1.59,
+        "pe": 6.1,
+        "evEbitda": 6.04,
+        "dividendYield": 52,
+        "currentPrice": 576.55,
+        "yearlyChange": 5.39,
         "employees": 7772,
         "roce": 7.03,
         "roe": 4.27,
@@ -13001,7 +12636,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-10-27"
+        "date": "2026-10-28"
       },
       "note": null,
       "ratingGrade": null,
@@ -13060,7 +12695,7 @@
         "sourceUrl": "https://www.screener.in/company/UFLEX/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-10-27"
+        "date": "2026-10-28"
       },
       "series": [
         {
