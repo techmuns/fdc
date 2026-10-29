@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28",
+  "generatedAt": "2026-10-29",
   "feed": "inputs",
   "status": "ok",
   "series": [
@@ -649,7 +649,7 @@
     }
   ],
   "meta": {
-    "generatedAt": "2026-10-28",
+    "generatedAt": "2026-10-29",
     "resolved": [
       "input-maize=PMAIZMTUSDM",
       "input-crude=POILBREUSDM",
