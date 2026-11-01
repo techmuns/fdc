@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-31T07:12:46.378Z",
+  "generatedAt": "2026-11-01T07:47:01.665Z",
   "fx": {
-    "value": 94.94,
-    "date": "2026-10-23"
+    "value": null,
+    "date": null
   },
   "manifest": [
     {
@@ -14,8 +14,8 @@
     },
     {
       "feed": "inputs",
-      "status": "ok",
-      "seriesCount": 4,
+      "status": "error",
+      "seriesCount": 0,
       "reason": null,
       "gated": false
     },

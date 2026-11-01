@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31",
+  "generatedAt": "2026-11-01",
   "feed": "comtrade",
   "status": "ok",
   "series": [
@@ -16,49 +16,49 @@
       "points": [
         {
           "date": "2019-12-31",
-          "value": 33.8,
+          "value": 0,
           "usdPerKg": 0.48,
-          "usdInr": 70.378,
+          "usdInr": null,
           "fxYear": "2019"
         },
         {
           "date": "2020-12-31",
-          "value": 33.1,
+          "value": 0,
           "usdPerKg": 0.446,
-          "usdInr": 74.143,
+          "usdInr": null,
           "fxYear": "2020"
         },
         {
           "date": "2021-12-31",
-          "value": 33.86,
+          "value": 0,
           "usdPerKg": 0.458,
-          "usdInr": 73.935,
+          "usdInr": null,
           "fxYear": "2021"
         },
         {
           "date": "2022-12-31",
-          "value": 43.89,
+          "value": 0,
           "usdPerKg": 0.559,
-          "usdInr": 78.579,
+          "usdInr": null,
           "fxYear": "2022"
         },
         {
           "date": "2023-12-31",
-          "value": 42.69,
+          "value": 0,
           "usdPerKg": 0.517,
-          "usdInr": 82.571,
+          "usdInr": null,
           "fxYear": "2023"
         },
         {
           "date": "2024-12-31",
-          "value": 42.95,
+          "value": 0,
           "usdPerKg": 0.513,
-          "usdInr": 83.657,
+          "usdInr": null,
           "fxYear": "2024"
         }
       ],
       "latest": {
-        "value": 42.95,
+        "value": 0,
         "date": "2024-12-31",
         "usdPerKg": 0.513
       },
@@ -79,42 +79,42 @@
       "points": [
         {
           "date": "2019-12-31",
-          "value": 77.54,
+          "value": 0,
           "usdPerKg": 1.102,
-          "usdInr": 70.378,
+          "usdInr": null,
           "fxYear": "2019"
         },
         {
           "date": "2020-12-31",
-          "value": 69.78,
+          "value": 0,
           "usdPerKg": 0.941,
-          "usdInr": 74.143,
+          "usdInr": null,
           "fxYear": "2020"
         },
         {
           "date": "2021-12-31",
-          "value": 90.6,
+          "value": 0,
           "usdPerKg": 1.225,
-          "usdInr": 73.935,
+          "usdInr": null,
           "fxYear": "2021"
         },
         {
           "date": "2022-12-31",
-          "value": 101.12,
+          "value": 0,
           "usdPerKg": 1.287,
-          "usdInr": 78.579,
+          "usdInr": null,
           "fxYear": "2022"
         },
         {
           "date": "2023-12-31",
-          "value": 87.61,
+          "value": 0,
           "usdPerKg": 1.061,
-          "usdInr": 82.571,
+          "usdInr": null,
           "fxYear": "2023"
         }
       ],
       "latest": {
-        "value": 87.61,
+        "value": 0,
         "date": "2023-12-31",
         "usdPerKg": 1.061
       },
@@ -135,35 +135,35 @@
       "points": [
         {
           "date": "2019-12-31",
-          "value": 82.41,
+          "value": 0,
           "usdPerKg": 1.171,
-          "usdInr": 70.378,
+          "usdInr": null,
           "fxYear": "2019"
         },
         {
           "date": "2022-12-31",
-          "value": 102.41,
+          "value": 0,
           "usdPerKg": 1.303,
-          "usdInr": 78.579,
+          "usdInr": null,
           "fxYear": "2022"
         },
         {
           "date": "2023-12-31",
-          "value": 85.58,
+          "value": 0,
           "usdPerKg": 1.036,
-          "usdInr": 82.571,
+          "usdInr": null,
           "fxYear": "2023"
         },
         {
           "date": "2024-12-31",
-          "value": 87.63,
+          "value": 0,
           "usdPerKg": 1.047,
-          "usdInr": 83.657,
+          "usdInr": null,
           "fxYear": "2024"
         }
       ],
       "latest": {
-        "value": 87.63,
+        "value": 0,
         "date": "2024-12-31",
         "usdPerKg": 1.047
       },
@@ -184,49 +184,49 @@
       "points": [
         {
           "date": "2019-12-31",
-          "value": 62.68,
+          "value": 0,
           "usdPerKg": 0.891,
-          "usdInr": 70.378,
+          "usdInr": null,
           "fxYear": "2019"
         },
         {
           "date": "2020-12-31",
-          "value": 58.14,
+          "value": 0,
           "usdPerKg": 0.784,
-          "usdInr": 74.143,
+          "usdInr": null,
           "fxYear": "2020"
         },
         {
           "date": "2021-12-31",
-          "value": 61.81,
+          "value": 0,
           "usdPerKg": 0.836,
-          "usdInr": 73.935,
+          "usdInr": null,
           "fxYear": "2021"
         },
         {
           "date": "2022-12-31",
-          "value": 78.57,
+          "value": 0,
           "usdPerKg": 1,
-          "usdInr": 78.579,
+          "usdInr": null,
           "fxYear": "2022"
         },
         {
           "date": "2023-12-31",
-          "value": 73.92,
+          "value": 0,
           "usdPerKg": 0.895,
-          "usdInr": 82.571,
+          "usdInr": null,
           "fxYear": "2023"
         },
         {
           "date": "2024-12-31",
-          "value": 71.06,
+          "value": 0,
           "usdPerKg": 0.849,
-          "usdInr": 83.657,
+          "usdInr": null,
           "fxYear": "2024"
         }
       ],
       "latest": {
-        "value": 71.06,
+        "value": 0,
         "date": "2024-12-31",
         "usdPerKg": 0.849
       },
@@ -247,49 +247,49 @@
       "points": [
         {
           "date": "2019-12-31",
-          "value": 632.54,
+          "value": 0,
           "usdPerKg": 8.988,
-          "usdInr": 70.378,
+          "usdInr": null,
           "fxYear": "2019"
         },
         {
           "date": "2020-12-31",
-          "value": 680.88,
+          "value": 0,
           "usdPerKg": 9.183,
-          "usdInr": 74.143,
+          "usdInr": null,
           "fxYear": "2020"
         },
         {
           "date": "2021-12-31",
-          "value": 268.48,
+          "value": 0,
           "usdPerKg": 3.631,
-          "usdInr": 73.935,
+          "usdInr": null,
           "fxYear": "2021"
         },
         {
           "date": "2022-12-31",
-          "value": 783.12,
+          "value": 0,
           "usdPerKg": 9.966,
-          "usdInr": 78.579,
+          "usdInr": null,
           "fxYear": "2022"
         },
         {
           "date": "2023-12-31",
-          "value": 897.25,
+          "value": 0,
           "usdPerKg": 10.866,
-          "usdInr": 82.571,
+          "usdInr": null,
           "fxYear": "2023"
         },
         {
           "date": "2024-12-31",
-          "value": 941.3,
+          "value": 0,
           "usdPerKg": 11.252,
-          "usdInr": 83.657,
+          "usdInr": null,
           "fxYear": "2024"
         }
       ],
       "latest": {
-        "value": 941.3,
+        "value": 0,
         "date": "2024-12-31",
         "usdPerKg": 11.252
       },
@@ -310,42 +310,42 @@
       "points": [
         {
           "date": "2019-12-31",
-          "value": 158.17,
+          "value": 0,
           "usdPerKg": 2.247,
-          "usdInr": 70.378,
+          "usdInr": null,
           "fxYear": "2019"
         },
         {
           "date": "2020-12-31",
-          "value": 144.69,
+          "value": 0,
           "usdPerKg": 1.952,
-          "usdInr": 74.143,
+          "usdInr": null,
           "fxYear": "2020"
         },
         {
           "date": "2021-12-31",
-          "value": 177.02,
+          "value": 0,
           "usdPerKg": 2.394,
-          "usdInr": 73.935,
+          "usdInr": null,
           "fxYear": "2021"
         },
         {
           "date": "2022-12-31",
-          "value": 198.78,
+          "value": 0,
           "usdPerKg": 2.53,
-          "usdInr": 78.579,
+          "usdInr": null,
           "fxYear": "2022"
         },
         {
           "date": "2024-12-31",
-          "value": 171.6,
+          "value": 0,
           "usdPerKg": 2.051,
-          "usdInr": 83.657,
+          "usdInr": null,
           "fxYear": "2024"
         }
       ],
       "latest": {
-        "value": 171.6,
+        "value": 0,
         "date": "2024-12-31",
         "usdPerKg": 2.051
       },
@@ -366,35 +366,35 @@
       "points": [
         {
           "date": "2019-12-31",
-          "value": 195.74,
+          "value": 0,
           "usdPerKg": 2.781,
-          "usdInr": 70.378,
+          "usdInr": null,
           "fxYear": "2019"
         },
         {
           "date": "2020-12-31",
-          "value": 128.7,
+          "value": 0,
           "usdPerKg": 1.736,
-          "usdInr": 74.143,
+          "usdInr": null,
           "fxYear": "2020"
         },
         {
           "date": "2021-12-31",
-          "value": 106.74,
+          "value": 0,
           "usdPerKg": 1.444,
-          "usdInr": 73.935,
+          "usdInr": null,
           "fxYear": "2021"
         },
         {
           "date": "2022-12-31",
-          "value": 138.21,
+          "value": 0,
           "usdPerKg": 1.759,
-          "usdInr": 78.579,
+          "usdInr": null,
           "fxYear": "2022"
         }
       ],
       "latest": {
-        "value": 138.21,
+        "value": 0,
         "date": "2022-12-31",
         "usdPerKg": 1.759
       },
@@ -415,49 +415,49 @@
       "points": [
         {
           "date": "2019-12-31",
-          "value": 207.21,
+          "value": 0,
           "usdPerKg": 2.944,
-          "usdInr": 70.378,
+          "usdInr": null,
           "fxYear": "2019"
         },
         {
           "date": "2020-12-31",
-          "value": 204.17,
+          "value": 0,
           "usdPerKg": 2.754,
-          "usdInr": 74.143,
+          "usdInr": null,
           "fxYear": "2020"
         },
         {
           "date": "2021-12-31",
-          "value": 264.95,
+          "value": 0,
           "usdPerKg": 3.583,
-          "usdInr": 73.935,
+          "usdInr": null,
           "fxYear": "2021"
         },
         {
           "date": "2022-12-31",
-          "value": 356,
+          "value": 0,
           "usdPerKg": 4.53,
-          "usdInr": 78.579,
+          "usdInr": null,
           "fxYear": "2022"
         },
         {
           "date": "2023-12-31",
-          "value": 295.23,
+          "value": 0,
           "usdPerKg": 3.576,
-          "usdInr": 82.571,
+          "usdInr": null,
           "fxYear": "2023"
         },
         {
           "date": "2024-12-31",
-          "value": 284.77,
+          "value": 0,
           "usdPerKg": 3.404,
-          "usdInr": 83.657,
+          "usdInr": null,
           "fxYear": "2024"
         }
       ],
       "latest": {
-        "value": 284.77,
+        "value": 0,
         "date": "2024-12-31",
         "usdPerKg": 3.404
       },
@@ -478,42 +478,42 @@
       "points": [
         {
           "date": "2019-12-31",
-          "value": 304.54,
+          "value": 0,
           "usdPerKg": 4.327,
-          "usdInr": 70.378,
+          "usdInr": null,
           "fxYear": "2019"
         },
         {
           "date": "2020-12-31",
-          "value": 324.37,
+          "value": 0,
           "usdPerKg": 4.375,
-          "usdInr": 74.143,
+          "usdInr": null,
           "fxYear": "2020"
         },
         {
           "date": "2021-12-31",
-          "value": 350.53,
+          "value": 0,
           "usdPerKg": 4.741,
-          "usdInr": 73.935,
+          "usdInr": null,
           "fxYear": "2021"
         },
         {
           "date": "2022-12-31",
-          "value": 457.29,
+          "value": 0,
           "usdPerKg": 5.82,
-          "usdInr": 78.579,
+          "usdInr": null,
           "fxYear": "2022"
         },
         {
           "date": "2024-12-31",
-          "value": 439.19,
+          "value": 0,
           "usdPerKg": 5.25,
-          "usdInr": 83.657,
+          "usdInr": null,
           "fxYear": "2024"
         }
       ],
       "latest": {
-        "value": 439.19,
+        "value": 0,
         "date": "2024-12-31",
         "usdPerKg": 5.25
       },
