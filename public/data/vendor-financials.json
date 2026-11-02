@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T09:50:03.543Z",
+  "generatedAt": "2026-11-02T07:54:42.484Z",
   "sources": {
     "listed": "Munshot market-data API (free)",
     "private": "Probe42 comprehensive reports (MCA filings) — primary; credit-rating-agency rationale docs — fallback / cross-check"
@@ -1210,7 +1210,7 @@
       "metrics": {
         "revenue": 59956301824,
         "ebitda": 7029199872,
-        "marketCap": 63883649024,
+        "marketCap": 65837584384,
         "totalDebt": 4725799936,
         "ebitdaMargin": 11.72,
         "netMargin": 8.5,
@@ -1219,17 +1219,21 @@
         "debtToEquity": 13.16,
         "revenueGrowth": -2.4,
         "earningsGrowth": 245.8,
-        "pe": 12.53,
+        "pe": 12.91,
         "evEbitda": 8.63,
         "dividendYield": 22,
-        "currentPrice": 139.28,
+        "currentPrice": 143.54,
         "yearlyChange": 29.47,
         "employees": 2245,
-        "roce": null,
-        "roe": null
+        "roce": 12.5,
+        "roe": 9.72,
+        "receivableDays": 28,
+        "inventoryDays": 70,
+        "payableDays": 13,
+        "cashConversionCycle": 84
       },
       "healthScore": {
-        "value": 58,
+        "value": 55,
         "grade": "C",
         "components": [
           {
@@ -1255,6 +1259,18 @@
             "raw": 13.16,
             "score": 93,
             "weight": 0.2
+          },
+          {
+            "label": "Return on capital",
+            "raw": 12.5,
+            "score": 50,
+            "weight": 0.15
+          },
+          {
+            "label": "Return on equity",
+            "raw": 9.72,
+            "score": 49,
+            "weight": 0.15
           }
         ],
         "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -1262,7 +1278,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-11-01"
+        "date": "2026-11-02"
       },
       "note": null,
       "ratingGrade": null,
@@ -1315,6 +1331,99 @@
             }
           ]
         }
+      ],
+      "creditDaysSource": {
+        "sourceName": "Screener.in (from audited annual filings)",
+        "sourceUrl": "https://www.screener.in/company/GAEL/consolidated/",
+        "asOf": "Mar 2026",
+        "basis": "consolidated",
+        "date": "2026-11-02"
+      },
+      "series": [
+        {
+          "fy": "FY12",
+          "revenue": 21220000000,
+          "netMargin": 2.36,
+          "roce": 10,
+          "receivableDays": 30
+        },
+        {
+          "fy": "FY13",
+          "revenue": 30160000000,
+          "netMargin": 3.75,
+          "roce": 19,
+          "receivableDays": 13
+        },
+        {
+          "fy": "FY14",
+          "revenue": 30920000000,
+          "netMargin": 3.59,
+          "roce": 15,
+          "receivableDays": 18
+        },
+        {
+          "fy": "FY15",
+          "revenue": 25310000000,
+          "netMargin": 3.32,
+          "roce": 9,
+          "receivableDays": 16
+        },
+        {
+          "fy": "FY16",
+          "revenue": 27360000000,
+          "netMargin": 3.8,
+          "roce": 11,
+          "receivableDays": 23
+        },
+        {
+          "fy": "FY20",
+          "revenue": 38170000000,
+          "netMargin": 3.82,
+          "roce": null,
+          "receivableDays": 15
+        },
+        {
+          "fy": "FY21",
+          "revenue": 47050000000,
+          "netMargin": 7.18,
+          "roce": 28,
+          "receivableDays": 17
+        },
+        {
+          "fy": "FY22",
+          "revenue": 46700000000,
+          "netMargin": 10.17,
+          "roce": 30,
+          "receivableDays": 18
+        },
+        {
+          "fy": "FY23",
+          "revenue": 49090000000,
+          "netMargin": 6.72,
+          "roce": 18,
+          "receivableDays": 21
+        },
+        {
+          "fy": "FY24",
+          "revenue": 49270000000,
+          "netMargin": 7.02,
+          "roce": 16,
+          "receivableDays": 24
+        },
+        {
+          "fy": "FY25",
+          "revenue": 46130000000,
+          "netMargin": 5.4,
+          "roce": 11,
+          "receivableDays": 28
+        },
+        {
+          "fy": "FY26",
+          "revenue": 57290000000,
+          "netMargin": 5.31,
+          "roce": 12,
+          "receivableDays": 28
+        }
       ]
     },
     "sayaji-industries": {
@@ -1334,7 +1443,7 @@
       "metrics": {
         "revenue": 11021143040,
         "ebitda": 720441024,
-        "marketCap": 2755520000,
+        "marketCap": 2688527872,
         "totalDebt": 2388529920,
         "ebitdaMargin": 6.54,
         "netMargin": 2.26,
@@ -1343,17 +1452,21 @@
         "debtToEquity": 224.87,
         "revenueGrowth": 5.7,
         "earningsGrowth": 0,
-        "pe": 11.09,
+        "pe": 10.82,
         "evEbitda": 7.17,
         "dividendYield": 0,
-        "currentPrice": 109,
+        "currentPrice": 106.35,
         "yearlyChange": -0.64,
         "employees": 779,
-        "roce": null,
-        "roe": null
+        "roce": 8.18,
+        "roe": 1.49,
+        "receivableDays": 22,
+        "inventoryDays": 49,
+        "payableDays": 84,
+        "cashConversionCycle": -14
       },
       "healthScore": {
-        "value": 22,
+        "value": 21,
         "grade": "D",
         "components": [
           {
@@ -1379,6 +1492,18 @@
             "raw": 224.87,
             "score": 0,
             "weight": 0.2
+          },
+          {
+            "label": "Return on capital",
+            "raw": 8.18,
+            "score": 33,
+            "weight": 0.15
+          },
+          {
+            "label": "Return on equity",
+            "raw": 1.49,
+            "score": 7,
+            "weight": 0.15
           }
         ],
         "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -1386,7 +1511,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-11-01"
+        "date": "2026-11-02"
       },
       "note": null,
       "ratingGrade": null,
@@ -1442,6 +1567,92 @@
               "value": "₹238.85 Cr"
             }
           ]
+        }
+      ],
+      "creditDaysSource": {
+        "sourceName": "Screener.in (from audited annual filings)",
+        "sourceUrl": "https://www.screener.in/company/SAYAJIIND/consolidated/",
+        "asOf": "Mar 2026",
+        "basis": "consolidated",
+        "date": "2026-11-02"
+      },
+      "series": [
+        {
+          "fy": "FY16",
+          "revenue": 5030000000,
+          "netMargin": 0.8,
+          "roce": null,
+          "receivableDays": 26
+        },
+        {
+          "fy": "FY17",
+          "revenue": 5310000000,
+          "netMargin": 0.94,
+          "roce": 11,
+          "receivableDays": 25
+        },
+        {
+          "fy": "FY18",
+          "revenue": 5860000000,
+          "netMargin": 1.19,
+          "roce": 13,
+          "receivableDays": 24
+        },
+        {
+          "fy": "FY19",
+          "revenue": 6440000000,
+          "netMargin": 3.88,
+          "roce": 12,
+          "receivableDays": 26
+        },
+        {
+          "fy": "FY20",
+          "revenue": 6390000000,
+          "netMargin": -0.31,
+          "roce": 4,
+          "receivableDays": 31
+        },
+        {
+          "fy": "FY21",
+          "revenue": 5590000000,
+          "netMargin": 3.04,
+          "roce": 19,
+          "receivableDays": 33
+        },
+        {
+          "fy": "FY22",
+          "revenue": 7930000000,
+          "netMargin": 2.4,
+          "roce": 18,
+          "receivableDays": 28
+        },
+        {
+          "fy": "FY23",
+          "revenue": 10400000000,
+          "netMargin": 0.67,
+          "roce": 5,
+          "receivableDays": 20
+        },
+        {
+          "fy": "FY24",
+          "revenue": 9750000000,
+          "netMargin": -1.23,
+          "roce": -1,
+          "receivableDays": 25
+        },
+        {
+          "fy": "FY25",
+          "revenue": 10040000000,
+          "netMargin": -1.1,
+          "roce": -8,
+          "receivableDays": 24
+        },
+        {
+          "fy": "FY26",
+          "revenue": 10720000000,
+          "netMargin": 0.19,
+          "roce": 8,
+          "receivableDays": 22
         }
       ]
     },
@@ -7281,7 +7492,7 @@
       "metrics": {
         "revenue": 15558245376,
         "ebitda": 1136498944,
-        "marketCap": 4341666304,
+        "marketCap": 4610052096,
         "totalDebt": 3248300032,
         "ebitdaMargin": 7.31,
         "netMargin": 2.9,
@@ -7290,18 +7501,22 @@
         "debtToEquity": 54.7,
         "revenueGrowth": 29.7,
         "earningsGrowth": 276.2,
-        "pe": 9.62,
+        "pe": 10.21,
         "evEbitda": 5.47,
         "dividendYield": 72,
-        "currentPrice": 138.96,
+        "currentPrice": 147.55,
         "yearlyChange": -14.11,
         "employees": 1210,
-        "roce": null,
-        "roe": null
+        "roce": 5.88,
+        "roe": 1.47,
+        "receivableDays": 24,
+        "inventoryDays": 108,
+        "payableDays": 27,
+        "cashConversionCycle": 105
       },
       "healthScore": {
-        "value": 54,
-        "grade": "C",
+        "value": 44,
+        "grade": "D",
         "components": [
           {
             "label": "Net margin",
@@ -7326,6 +7541,18 @@
             "raw": 54.7,
             "score": 73,
             "weight": 0.2
+          },
+          {
+            "label": "Return on capital",
+            "raw": 5.88,
+            "score": 24,
+            "weight": 0.15
+          },
+          {
+            "label": "Return on equity",
+            "raw": 1.47,
+            "score": 7,
+            "weight": 0.15
           }
         ],
         "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -7333,7 +7560,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-11-01"
+        "date": "2026-11-02"
       },
       "note": "Group parent — listed proxy: figures are for the listed parent The Sukhjit Starch & Chemicals Ltd (NSE/BSE: SUKHJITS), used as a proxy because the supplying entity Sukhjit Corn Products does not file separately.",
       "ratingGrade": null,
@@ -7407,6 +7634,99 @@
               "value": "₹12.95 L"
             }
           ]
+        }
+      ],
+      "creditDaysSource": {
+        "sourceName": "Screener.in (from audited annual filings)",
+        "sourceUrl": "https://www.screener.in/company/SUKHJITS/consolidated/",
+        "asOf": "Mar 2026",
+        "basis": "consolidated",
+        "date": "2026-11-02"
+      },
+      "series": [
+        {
+          "fy": "FY15",
+          "revenue": 5320000000,
+          "netMargin": 4.32,
+          "roce": 15,
+          "receivableDays": 39
+        },
+        {
+          "fy": "FY16",
+          "revenue": 5650000000,
+          "netMargin": 3.89,
+          "roce": 14,
+          "receivableDays": 38
+        },
+        {
+          "fy": "FY17",
+          "revenue": 6520000000,
+          "netMargin": 2.76,
+          "roce": 12,
+          "receivableDays": 34
+        },
+        {
+          "fy": "FY18",
+          "revenue": 7010000000,
+          "netMargin": 3.28,
+          "roce": 13,
+          "receivableDays": 37
+        },
+        {
+          "fy": "FY19",
+          "revenue": 7420000000,
+          "netMargin": 5.66,
+          "roce": 19,
+          "receivableDays": 30
+        },
+        {
+          "fy": "FY20",
+          "revenue": 7990000000,
+          "netMargin": 4.13,
+          "roce": 8,
+          "receivableDays": 25
+        },
+        {
+          "fy": "FY21",
+          "revenue": 6990000000,
+          "netMargin": 3,
+          "roce": 7,
+          "receivableDays": 33
+        },
+        {
+          "fy": "FY22",
+          "revenue": 11590000000,
+          "netMargin": 6.3,
+          "roce": 19,
+          "receivableDays": 21
+        },
+        {
+          "fy": "FY23",
+          "revenue": 14470000000,
+          "netMargin": 4.35,
+          "roce": 15,
+          "receivableDays": 20
+        },
+        {
+          "fy": "FY24",
+          "revenue": 13750000000,
+          "netMargin": 3.64,
+          "roce": 12,
+          "receivableDays": 21
+        },
+        {
+          "fy": "FY25",
+          "revenue": 14980000000,
+          "netMargin": 2.67,
+          "roce": 9,
+          "receivableDays": 28
+        },
+        {
+          "fy": "FY26",
+          "revenue": 14320000000,
+          "netMargin": 1.89,
+          "roce": 6,
+          "receivableDays": 24
         }
       ]
     },
@@ -9152,7 +9472,7 @@
       "metrics": {
         "revenue": 5146226176,
         "ebitda": 382657760,
-        "marketCap": 852390016,
+        "marketCap": 819209984,
         "totalDebt": 602000000,
         "ebitdaMargin": 7.44,
         "netMargin": 3.67,
@@ -9161,17 +9481,21 @@
         "debtToEquity": 72.84,
         "revenueGrowth": 21.4,
         "earningsGrowth": 0,
-        "pe": 4.51,
+        "pe": 4.34,
         "evEbitda": 3.68,
         "dividendYield": 0,
-        "currentPrice": 202.95,
+        "currentPrice": 195.05,
         "yearlyChange": 36.76,
         "employees": 376,
-        "roce": null,
-        "roe": null
+        "roce": 17.6,
+        "roe": 17.3,
+        "receivableDays": 43,
+        "inventoryDays": 30,
+        "payableDays": 43,
+        "cashConversionCycle": 30
       },
       "healthScore": {
-        "value": 51,
+        "value": 58,
         "grade": "C",
         "components": [
           {
@@ -9197,6 +9521,18 @@
             "raw": 72.84,
             "score": 64,
             "weight": 0.2
+          },
+          {
+            "label": "Return on capital",
+            "raw": 17.6,
+            "score": 70,
+            "weight": 0.15
+          },
+          {
+            "label": "Return on equity",
+            "raw": 17.3,
+            "score": 87,
+            "weight": 0.15
           }
         ],
         "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -9204,7 +9540,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-11-01"
+        "date": "2026-11-02"
       },
       "note": "Listed on BSE (UNIVSTAR) — thinly traded",
       "ratingGrade": null,
@@ -9252,6 +9588,99 @@
               "value": "₹14.26 L"
             }
           ]
+        }
+      ],
+      "creditDaysSource": {
+        "sourceName": "Screener.in (from audited annual filings)",
+        "sourceUrl": "https://www.screener.in/company/524408/",
+        "asOf": "Mar 2026",
+        "basis": "standalone",
+        "date": "2026-11-02"
+      },
+      "series": [
+        {
+          "fy": "FY15",
+          "revenue": 1950000000,
+          "netMargin": -0.51,
+          "roce": 7,
+          "receivableDays": 34
+        },
+        {
+          "fy": "FY16",
+          "revenue": 1650000000,
+          "netMargin": -1.21,
+          "roce": 1,
+          "receivableDays": 44
+        },
+        {
+          "fy": "FY17",
+          "revenue": 2140000000,
+          "netMargin": -1.87,
+          "roce": -5,
+          "receivableDays": 36
+        },
+        {
+          "fy": "FY18",
+          "revenue": 1980000000,
+          "netMargin": 0,
+          "roce": 9,
+          "receivableDays": 47
+        },
+        {
+          "fy": "FY19",
+          "revenue": 2790000000,
+          "netMargin": 0.36,
+          "roce": 12,
+          "receivableDays": 34
+        },
+        {
+          "fy": "FY20",
+          "revenue": 2640000000,
+          "netMargin": 0.38,
+          "roce": 8,
+          "receivableDays": 42
+        },
+        {
+          "fy": "FY21",
+          "revenue": 2960000000,
+          "netMargin": 2.03,
+          "roce": 15,
+          "receivableDays": 43
+        },
+        {
+          "fy": "FY22",
+          "revenue": 4560000000,
+          "netMargin": 2.41,
+          "roce": 23,
+          "receivableDays": 37
+        },
+        {
+          "fy": "FY23",
+          "revenue": 5160000000,
+          "netMargin": 1.16,
+          "roce": 13,
+          "receivableDays": 32
+        },
+        {
+          "fy": "FY24",
+          "revenue": 5270000000,
+          "netMargin": 1.33,
+          "roce": 13,
+          "receivableDays": 37
+        },
+        {
+          "fy": "FY25",
+          "revenue": 4910000000,
+          "netMargin": 0.61,
+          "roce": 9,
+          "receivableDays": 35
+        },
+        {
+          "fy": "FY26",
+          "revenue": 4890000000,
+          "netMargin": 2.66,
+          "roce": 18,
+          "receivableDays": 43
         }
       ]
     },
@@ -12299,29 +12728,33 @@
       ],
       "fdcSpend": 76850,
       "metrics": {
-        "revenue": 27580000256,
-        "ebitda": 2146950016,
-        "marketCap": 15638328320,
-        "totalDebt": 0,
-        "ebitdaMargin": 7.78,
+        "revenue": 27557500928,
+        "ebitda": 2124450048,
+        "marketCap": 16716024832,
+        "totalDebt": 1445600000,
+        "ebitdaMargin": 7.71,
         "netMargin": 4.69,
-        "grossMargin": 32.08,
-        "operatingMargin": 6.73,
+        "grossMargin": 32.02,
+        "operatingMargin": 6,
         "debtToEquity": 10.72,
-        "revenueGrowth": 24,
+        "revenueGrowth": 23.1,
         "earningsGrowth": -19.1,
-        "pe": 12.08,
-        "evEbitda": 0,
+        "pe": 12.91,
+        "evEbitda": 6.17,
         "dividendYield": 97,
-        "currentPrice": 207.07,
+        "currentPrice": 221.34,
         "yearlyChange": -16.02,
-        "employees": 2325,
-        "roce": null,
-        "roe": null
+        "employees": 2400,
+        "roce": 12,
+        "roe": 8.96,
+        "receivableDays": 82,
+        "inventoryDays": 46,
+        "payableDays": 102,
+        "cashConversionCycle": 26
       },
       "healthScore": {
-        "value": 63,
-        "grade": "B",
+        "value": 58,
+        "grade": "C",
         "components": [
           {
             "label": "Net margin",
@@ -12331,14 +12764,14 @@
           },
           {
             "label": "EBITDA margin",
-            "raw": 7.78,
+            "raw": 7.71,
             "score": 39,
             "weight": 0.15
           },
           {
             "label": "Revenue growth",
-            "raw": 24,
-            "score": 97,
+            "raw": 23.1,
+            "score": 95,
             "weight": 0.2
           },
           {
@@ -12346,6 +12779,18 @@
             "raw": 10.72,
             "score": 95,
             "weight": 0.2
+          },
+          {
+            "label": "Return on capital",
+            "raw": 12,
+            "score": 48,
+            "weight": 0.15
+          },
+          {
+            "label": "Return on equity",
+            "raw": 8.96,
+            "score": 45,
+            "weight": 0.15
           }
         ],
         "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -12353,7 +12798,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-11-01"
+        "date": "2026-11-02"
       },
       "note": null,
       "ratingGrade": null,
@@ -12368,7 +12813,7 @@
         {
           "type": "watch",
           "title": "You're a small customer — 0.00% of everything they sell",
-          "detail": "At ₹76850 you're tiny next to their ₹2758.00 Cr in sales. On your own you have little pull — bundle more volume, commit for several years, or play them off against another supplier.",
+          "detail": "At ₹76850 you're tiny next to their ₹2755.75 Cr in sales. On your own you have little pull — bundle more volume, commit for several years, or play them off against another supplier.",
           "evidence": [
             {
               "label": "You spend",
@@ -12382,14 +12827,107 @@
         },
         {
           "type": "opportunity",
-          "title": "Growing fast (24.0%/yr) — swap volume for a better price",
+          "title": "Growing fast (23.1%/yr) — swap volume for a better price",
           "detail": "Their sales are growing fast, so they want new orders. Offer to commit more volume in return for a lower price.",
           "evidence": [
             {
               "label": "Sales growth",
-              "value": "24.0%"
+              "value": "23.1%"
             }
           ]
+        }
+      ],
+      "creditDaysSource": {
+        "sourceName": "Screener.in (from audited annual filings)",
+        "sourceUrl": "https://www.screener.in/company/HUHTAMAKI/",
+        "asOf": "Dec 2025",
+        "basis": "standalone",
+        "date": "2026-11-02"
+      },
+      "series": [
+        {
+          "fy": "FY14",
+          "revenue": 11350000000,
+          "netMargin": 5.73,
+          "roce": 15,
+          "receivableDays": 70
+        },
+        {
+          "fy": "FY15",
+          "revenue": 11510000000,
+          "netMargin": 4.26,
+          "roce": 12,
+          "receivableDays": 69
+        },
+        {
+          "fy": "FY16",
+          "revenue": 21810000000,
+          "netMargin": 3.76,
+          "roce": 18,
+          "receivableDays": 77
+        },
+        {
+          "fy": "FY17",
+          "revenue": 21310000000,
+          "netMargin": 3,
+          "roce": 16,
+          "receivableDays": 90
+        },
+        {
+          "fy": "FY18",
+          "revenue": 23690000000,
+          "netMargin": 1.48,
+          "roce": 15,
+          "receivableDays": 88
+        },
+        {
+          "fy": "FY19",
+          "revenue": 25990000000,
+          "netMargin": 6.54,
+          "roce": 22,
+          "receivableDays": 87
+        },
+        {
+          "fy": "FY20",
+          "revenue": 24630000000,
+          "netMargin": 3.9,
+          "roce": 14,
+          "receivableDays": 79
+        },
+        {
+          "fy": "FY21",
+          "revenue": 26250000000,
+          "netMargin": -0.88,
+          "roce": 2,
+          "receivableDays": 88
+        },
+        {
+          "fy": "FY22",
+          "revenue": 29830000000,
+          "netMargin": 1.68,
+          "roce": 7,
+          "receivableDays": 81
+        },
+        {
+          "fy": "FY23",
+          "revenue": 25490000000,
+          "netMargin": 16.08,
+          "roce": 12,
+          "receivableDays": 79
+        },
+        {
+          "fy": "FY24",
+          "revenue": 25210000000,
+          "netMargin": 3.49,
+          "roce": 7,
+          "receivableDays": 83
+        },
+        {
+          "fy": "FY25",
+          "revenue": 24690000000,
+          "netMargin": 4.78,
+          "roce": 12,
+          "receivableDays": 82
         }
       ]
     },
@@ -12410,7 +12948,7 @@
       "metrics": {
         "revenue": 164920033280,
         "ebitda": 22030196736,
-        "marketCap": 40980021248,
+        "marketCap": 40868093952,
         "totalDebt": 101523062784,
         "ebitdaMargin": 13.36,
         "netMargin": 4.14,
@@ -12419,17 +12957,21 @@
         "debtToEquity": 124.99,
         "revenueGrowth": 35.5,
         "earningsGrowth": 630,
-        "pe": 6,
+        "pe": 5.99,
         "evEbitda": 6,
         "dividendYield": 53,
-        "currentPrice": 567.5,
+        "currentPrice": 565.95,
         "yearlyChange": 5.06,
         "employees": 7772,
-        "roce": null,
-        "roe": null
+        "roce": 7.03,
+        "roe": 4.27,
+        "receivableDays": 92,
+        "inventoryDays": 97,
+        "payableDays": 99,
+        "cashConversionCycle": 89
       },
       "healthScore": {
-        "value": 54,
+        "value": 46,
         "grade": "C",
         "components": [
           {
@@ -12455,6 +12997,18 @@
             "raw": 124.99,
             "score": 38,
             "weight": 0.2
+          },
+          {
+            "label": "Return on capital",
+            "raw": 7.03,
+            "score": 28,
+            "weight": 0.15
+          },
+          {
+            "label": "Return on equity",
+            "raw": 4.27,
+            "score": 21,
+            "weight": 0.15
           }
         ],
         "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -12462,7 +13016,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-11-01"
+        "date": "2026-11-02"
       },
       "note": null,
       "ratingGrade": null,
@@ -12514,6 +13068,99 @@
               "value": "₹10152.31 Cr"
             }
           ]
+        }
+      ],
+      "creditDaysSource": {
+        "sourceName": "Screener.in (from audited annual filings)",
+        "sourceUrl": "https://www.screener.in/company/UFLEX/consolidated/",
+        "asOf": "Mar 2026",
+        "basis": "consolidated",
+        "date": "2026-11-02"
+      },
+      "series": [
+        {
+          "fy": "FY15",
+          "revenue": 61300000000,
+          "netMargin": 4.18,
+          "roce": 9,
+          "receivableDays": 90
+        },
+        {
+          "fy": "FY16",
+          "revenue": 63660000000,
+          "netMargin": 4.98,
+          "roce": 10,
+          "receivableDays": 85
+        },
+        {
+          "fy": "FY17",
+          "revenue": 65050000000,
+          "netMargin": 5.4,
+          "roce": 10,
+          "receivableDays": 93
+        },
+        {
+          "fy": "FY18",
+          "revenue": 68020000000,
+          "netMargin": 4.59,
+          "roce": 9,
+          "receivableDays": 104
+        },
+        {
+          "fy": "FY19",
+          "revenue": 79570000000,
+          "netMargin": 3.96,
+          "roce": 10,
+          "receivableDays": 94
+        },
+        {
+          "fy": "FY20",
+          "revenue": 74050000000,
+          "netMargin": 5.01,
+          "roce": 10,
+          "receivableDays": 96
+        },
+        {
+          "fy": "FY21",
+          "revenue": 88890000000,
+          "netMargin": 9.49,
+          "roce": 15,
+          "receivableDays": 99
+        },
+        {
+          "fy": "FY22",
+          "revenue": 131270000000,
+          "netMargin": 8.37,
+          "roce": 17,
+          "receivableDays": 98
+        },
+        {
+          "fy": "FY23",
+          "revenue": 146630000000,
+          "netMargin": 3.28,
+          "roce": 10,
+          "receivableDays": 80
+        },
+        {
+          "fy": "FY24",
+          "revenue": 133640000000,
+          "netMargin": -5.17,
+          "roce": 6,
+          "receivableDays": 94
+        },
+        {
+          "fy": "FY25",
+          "revenue": 150360000000,
+          "netMargin": 0.94,
+          "roce": 8,
+          "receivableDays": 91
+        },
+        {
+          "fy": "FY26",
+          "revenue": 154010000000,
+          "netMargin": 2.06,
+          "roce": 7,
+          "receivableDays": 92
         }
       ]
     },
