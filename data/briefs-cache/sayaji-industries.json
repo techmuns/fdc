@@ -1,75 +1,75 @@
 {
-  "inputHash": "d69a7ce182af03cd",
+  "inputHash": "6cf77b2855313d4f",
   "brief": {
-    "headline": "You're 1.36% of their sales — use that to squeeze faster payment for a small price cut, and line up Gulshan or Tirupati as a second source.",
+    "headline": "Lock in your ₹66.48/KG price but pull payment back to 15 days — your size (1.36% of their sales) and their debt (2.25x) give you the room.",
     "priceAsk": {
-      "summary": "Ask for ₹63–64/KG, a 4–5% cut from today's ₹66.48/KG.",
-      "target": "₹63–64/KG",
-      "basis": "The open market for Anhydrous Dextrose IP sits at ₹60–81/kg, typically ₹66–73/kg — our ₹66.48/KG is fair but sits at the upper end of typical. A move to ₹63–64 puts us safely mid-market and still gives them margin (they keep 2.3% profit). Frame it as 'we want mid-market, not top-of-band'."
+      "summary": "Hold the current ₹66.48/KG — it's already market-fair.",
+      "target": "₹66.48/KG",
+      "basis": "The market asking price for Anhydrous Dextrose IP is ₹60–81/kg, typically ₹66–73/kg — our price sits right in that band (verdict: MARKET-FAIR, slightly favourable). No saving to chase here; focus the ask on payment terms instead."
     },
     "paymentTermAsk": {
-      "summary": "Offer to pay on delivery (0 days) in exchange for the price cut — cash now is worth real money to a company that owes 2.25x what it owns.",
-      "cashImpact": "Shifting from 30 days to 0 days frees up ₹1.24 Cr of our cash that's sitting with them — we give that back only if they give us the price."
+      "summary": "Move from 30 days to 15 days after receipt — offer it as a win for them (faster cash) in exchange for locking volume or a small rebate.",
+      "cashImpact": "Cutting 15 days frees up ₹61.76 L of our cash to use elsewhere."
     },
-    "financialLeverage": "They owe ₹238.85 Cr — 2.25 times their own cash — so they need money coming in fast. They keep only 2.3% of every ₹100 they sell, so there's not much profit cushion, but your ₹15.03 Cr is 1.36% of their ₹1102.11 Cr in sales — losing you would sting. Their health score is D (21/100), meaning tight finances but not collapse. Push confidently on terms and a modest price cut, but don't squeeze so hard you destabilise supply — you need steady dextrose. Offer faster payment as the carrot, and quietly qualify a second source as the stick.",
+    "financialLeverage": "They make ₹1102.11 Cr in sales but keep only 2.3% as profit — roughly ₹2 for every ₹100 they sell — so there's no fat to squeeze on price. But they owe 2.25x their own cash (₹238.85 Cr in debt), which means they value getting paid quickly. Your ₹15.03 Cr spend is 1.36% of everything they sell — a meaningful customer — so you can push on terms without risking supply. Lead with faster payment (worth cash to them) tied to a volume commitment or a small rebate, not a price cut that could hurt a thin-margin supplier.",
     "evidence": [
       {
-        "point": "We're 1.36% of everything they sell — real leverage.",
-        "figure": "₹15.03 Cr out of ₹1102.11 Cr"
+        "point": "Our price is already in the fair market band",
+        "figure": "₹66.48/KG vs market ask ₹60–81/kg (typical ₹66–73/kg), verdict MARKET-FAIR"
       },
       {
-        "point": "They owe more than twice what they own — cash is tight for them.",
+        "point": "We're a big customer to them",
+        "figure": "₹15.03 Cr is 1.36% of their ₹1102.11 Cr revenue"
+      },
+      {
+        "point": "They keep very little profit",
+        "figure": "2.3% net profit"
+      },
+      {
+        "point": "They carry heavy debt",
         "figure": "2.25x debt-to-equity, ₹238.85 Cr owed"
       },
       {
-        "point": "They keep only a sliver of profit — squeeze gently.",
-        "figure": "2.3% net margin"
+        "point": "Faster payment frees up our cash",
+        "figure": "₹61.76 L freed if we move to 15 days"
       },
       {
-        "point": "Our price sits at the top of the typical market band.",
-        "figure": "₹66.48/KG vs typical market ₹66–73/kg"
-      },
-      {
-        "point": "Paying them 30 days late costs us ₹1.24 Cr tied up — we can trade that for price.",
-        "figure": "₹1.24 Cr working capital freed if we move to 0 days"
-      },
-      {
-        "point": "Their financial health is weak.",
+        "point": "Their financial health is weak",
         "figure": "D (21/100) health score"
       }
     ],
     "alternates": [
       {
         "name": "Gulshan Polyols Ltd",
-        "why": "Listed starch and polyol maker, ₹2359.06 Cr revenue, health score B (62/100) — a much stronger, drop-in alternate to Sayaji for dextrose; qualify them to create real competition."
-      },
-      {
-        "name": "Tirupati Starch & Chemicals Ltd",
-        "why": "Listed Indore maize wet-miller, makes Dextrose ANHYDROUS (exact form), ₹365.39 Cr revenue — confirm IP monograph CoA, then a credible second source."
+        "why": "Listed starch & polyol maker, ₹2359.06 Cr revenue, health B (62/100) — a strong drop-in alternate with better financial strength; qualify and benchmark price."
       },
       {
         "name": "Sanstar Ltd",
-        "why": "Recently-listed maize-derivatives specialist, ₹821.13 Cr revenue, health C (53/100) — growing dextrose capacity, worth an RFQ."
+        "why": "Recently-listed maize-derivatives specialist, ₹821.13 Cr revenue, health C (53/100) — growing capacity in dextrose; a credible second source to test."
+      },
+      {
+        "name": "Tirupati Starch & Chemicals Ltd",
+        "why": "Listed Indore wet-miller, ₹365.39 Cr revenue, makes Dextrose ANHYDROUS (IV-fluid grade) — exact form match; confirm IP monograph CoA before switching."
       }
     ],
     "risks": [
-      "They're in weak financial shape (D score, 2.25x debt) — if we push too hard on price and they can't deliver, our production stops. Keep the ask modest and have a backup ready.",
-      "We already pay ₹66.48/KG, the best price we pay anyone — so we have no internal benchmark lower than this. Justify the cut purely on the market band (₹60–81, typical ₹66–73) and on the value of faster payment to them.",
-      "Their profit margin is only 2.3% — a 4–5% price cut eats into that. If they refuse, be ready to split the difference or take a smaller cut (₹65/KG) in exchange for 15-day payment instead of 0.",
-      "The open-market export figure is ₹0.00/kg — that data point is broken, so don't rely on it. Lean on the market-ask band (₹60–81/kg) and the alternates instead."
+      "Their thin profit (2.3%) and heavy debt (2.25x) mean a hard price squeeze could destabilize supply — keep the ask on payment terms, not price.",
+      "Health score D (21/100) flags weak financials — line up Gulshan Polyols or Sanstar now as backup so you're not caught if they stumble.",
+      "We already pay the best price in our book (₹66.48/KG) and it's market-fair — pushing lower has no data support and risks the relationship.",
+      "Faster payment (15 days) is worth cash to them, but tie it to a volume lock or small rebate so we don't give it away for nothing."
     ],
-    "suggestedOpeningLine": "You're a key dextrose partner for us — ₹15 crore a year — and we'd like to keep it that way, but we need you at mid-market price and we're ready to pay you faster to get there."
+    "suggestedOpeningLine": "You're an important supplier — 1.36% of your revenue comes from us — so let's talk about how we can both win: we move to 15-day payment to help your cash flow, and you lock our volume with a small rebate or priority delivery."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-11-01",
+  "generatedAt": "2026-11-02",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
     "inputTokens": 3465,
-    "outputTokens": 1358,
+    "outputTokens": 1187,
     "serverToolUsage": {},
-    "totalTokens": 4823
+    "totalTokens": 4652
   }
 }
