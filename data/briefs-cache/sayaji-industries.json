@@ -1,75 +1,71 @@
 {
-  "inputHash": "6cf77b2855313d4f",
+  "inputHash": "7459d58d39683f3b",
   "brief": {
-    "headline": "Lock in your ₹66.48/KG price but pull payment back to 15 days — your size (1.36% of their sales) and their debt (2.25x) give you the room.",
+    "headline": "Push for 5–10% price cut to export-parity and qualify a second source — Sayaji's finances are not public, so lean on our data and backups",
     "priceAsk": {
-      "summary": "Hold the current ₹66.48/KG — it's already market-fair.",
-      "target": "₹66.48/KG",
-      "basis": "The market asking price for Anhydrous Dextrose IP is ₹60–81/kg, typically ₹66–73/kg — our price sits right in that band (verdict: MARKET-FAIR, slightly favourable). No saving to chase here; focus the ask on payment terms instead."
+      "summary": "Ask for ₹60–63/KG (roughly 5–10% below current ₹66.48/KG)",
+      "target": "₹60–63/KG, benchmarking toward the India export unit value of 42.95 ₹/kg and the lower end of the market asking band ₹60–81/kg",
+      "basis": "Our current ₹66.48/KG sits in the market-fair zone (₹66–73/kg typical), but export parity is 42.95 ₹/kg and the market asking band starts at ₹60/kg — there's room to move down, especially as we're their customer for ₹15.03 Cr annually and we're lining up credible alternates"
     },
     "paymentTermAsk": {
-      "summary": "Move from 30 days to 15 days after receipt — offer it as a win for them (faster cash) in exchange for locking volume or a small rebate.",
-      "cashImpact": "Cutting 15 days frees up ₹61.76 L of our cash to use elsewhere."
+      "summary": "Keep 30 Days After Receipt — no change needed",
+      "cashImpact": "none"
     },
-    "financialLeverage": "They make ₹1102.11 Cr in sales but keep only 2.3% as profit — roughly ₹2 for every ₹100 they sell — so there's no fat to squeeze on price. But they owe 2.25x their own cash (₹238.85 Cr in debt), which means they value getting paid quickly. Your ₹15.03 Cr spend is 1.36% of everything they sell — a meaningful customer — so you can push on terms without risking supply. Lead with faster payment (worth cash to them) tied to a volume commitment or a small rebate, not a price cut that could hurt a thin-margin supplier.",
+    "financialLeverage": "Sayaji publishes no financials, so we can't see their profit margins or how tight their cash is. What we do know: we spend ₹15.03 Cr a year with them — a meaningful order book. We already pay a market-fair price (₹66.48/KG falls in the ₹66–73/kg typical band), and we have three listed alternate producers (Tirupati, Gulshan, Sanstar) plus premium global suppliers ready to quote. That gives us real walk-away power. Because their financial health is unknown, frame the ask around ensuring supply security and price competitiveness — not a squeeze, but a fair benchmark to export parity and the lower market band.",
     "evidence": [
       {
-        "point": "Our price is already in the fair market band",
-        "figure": "₹66.48/KG vs market ask ₹60–81/kg (typical ₹66–73/kg), verdict MARKET-FAIR"
+        "point": "We are their customer for ₹15.03 Cr a year — a significant revenue line",
+        "figure": "₹15.03 Cr"
       },
       {
-        "point": "We're a big customer to them",
-        "figure": "₹15.03 Cr is 1.36% of their ₹1102.11 Cr revenue"
+        "point": "Our current price of ₹66.48/KG is market-fair but sits above India's export unit value",
+        "figure": "₹66.48/KG vs 42.95 ₹/kg export"
       },
       {
-        "point": "They keep very little profit",
-        "figure": "2.3% net profit"
+        "point": "The open-market asking band for Anhydrous Dextrose IP is ₹60–81/kg, with typical deals at ₹66–73/kg — the low end is ₹60/kg",
+        "figure": "₹60–81/kg band, ₹66–73/kg typical"
       },
       {
-        "point": "They carry heavy debt",
-        "figure": "2.25x debt-to-equity, ₹238.85 Cr owed"
+        "point": "We already get their best price — ₹66.48/KG is the best we pay across any Dextrose supplier",
+        "figure": "0.0% gap vs best"
       },
       {
-        "point": "Faster payment frees up our cash",
-        "figure": "₹61.76 L freed if we move to 15 days"
-      },
-      {
-        "point": "Their financial health is weak",
-        "figure": "D (21/100) health score"
+        "point": "Three listed Indian producers (Tirupati Starch, Gulshan Polyols, Sanstar) are direct alternates, plus Roquette India (₹2898.05 Cr revenue) and global majors",
+        "figure": "₹2898.05 Cr (Roquette India)"
       }
     ],
     "alternates": [
       {
-        "name": "Gulshan Polyols Ltd",
-        "why": "Listed starch & polyol maker, ₹2359.06 Cr revenue, health B (62/100) — a strong drop-in alternate with better financial strength; qualify and benchmark price."
+        "name": "Tirupati Starch & Chemicals Ltd (a lead to qualify)",
+        "why": "Listed Indore maize wet-miller making Dextrose ANHYDROUS (IV-fluid grade) — exact form match; verify IP monograph CoA before switching"
       },
       {
-        "name": "Sanstar Ltd",
-        "why": "Recently-listed maize-derivatives specialist, ₹821.13 Cr revenue, health C (53/100) — growing capacity in dextrose; a credible second source to test."
+        "name": "Gulshan Polyols Ltd (a lead to qualify)",
+        "why": "Listed starch & polyol maker, established dextrose/sorbitol supplier — a drop-in alternate"
       },
       {
-        "name": "Tirupati Starch & Chemicals Ltd",
-        "why": "Listed Indore wet-miller, ₹365.39 Cr revenue, makes Dextrose ANHYDROUS (IV-fluid grade) — exact form match; confirm IP monograph CoA before switching."
+        "name": "Roquette India Pvt Ltd (a lead to qualify)",
+        "why": "Indian arm of global starch major (₹2898.05 Cr revenue); pharma-grade dextrose, very reliable, premium supplier"
       }
     ],
     "risks": [
-      "Their thin profit (2.3%) and heavy debt (2.25x) mean a hard price squeeze could destabilize supply — keep the ask on payment terms, not price.",
-      "Health score D (21/100) flags weak financials — line up Gulshan Polyols or Sanstar now as backup so you're not caught if they stumble.",
-      "We already pay the best price in our book (₹66.48/KG) and it's market-fair — pushing lower has no data support and risks the relationship.",
-      "Faster payment (15 days) is worth cash to them, but tie it to a volume lock or small rebate so we don't give it away for nothing."
+      "Sayaji's finances are not public — we can't gauge their fragility or how hard we can push without tipping them into trouble",
+      "Our ₹15.03 Cr spend is large, but if we walk and they lose it suddenly, they may not have the buffer to absorb the hit — balance firmness with not destabilising a key source",
+      "All three listed alternates are leads to qualify — none are audited, priced or approved yet; start the RFQ process now so the threat is real by the next round",
+      "We already pay the best price in our own book (0.0% gap), so Sayaji may resist further cuts — anchor the ask to export parity (42.95 ₹/kg) and the ₹60/kg market floor, not to another of our suppliers"
     ],
-    "suggestedOpeningLine": "You're an important supplier — 1.36% of your revenue comes from us — so let's talk about how we can both win: we move to 15-day payment to help your cash flow, and you lock our volume with a small rebate or priority delivery."
+    "suggestedOpeningLine": "We value the partnership and the ₹15.03 Cr of business we do together — today we'd like to talk about aligning your price to export parity and the lower market band, and about qualifying a second source to de-risk our supply."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-11-02",
+  "generatedAt": "2026-11-05",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
-    "inputTokens": 3465,
-    "outputTokens": 1187,
+    "inputTokens": 3015,
+    "outputTokens": 1282,
     "serverToolUsage": {},
-    "totalTokens": 4652
+    "totalTokens": 4297
   }
 }
