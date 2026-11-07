@@ -1,75 +1,75 @@
 {
-  "inputHash": "73170a69a3b0083b",
+  "inputHash": "a1150bfcbe4f3a02",
   "brief": {
-    "headline": "Move from 100% advance to 30-day credit and match the ₹66.48/KG we already pay Sayaji",
+    "headline": "Stop paying in advance — move to 30-day credit and free up ₹8.73 L of our cash",
     "priceAsk": {
-      "summary": "Ask them to match ₹66.48/KG — the price we already pay Sayaji Industries for the same Dextrose",
-      "target": "₹66.48/KG (saves us ₹12.95 L a year)",
-      "basis": "We're paying ₹70.80/KG to Sukhjit but only ₹66.48/KG to Sayaji for identical material — a 6.5% gap. The open market asks ₹60–81/kg (typically ₹66–73), so ₹66.48 sits right in the fair band. Hold them to the lowest price we already pay."
+      "summary": "Ask them to match the ₹66.48/KG we already pay Sayaji Industries",
+      "target": "₹66.48/KG for Dextrose (a saving of ₹12.95 L per year)",
+      "basis": "We currently pay them ₹70.80/KG but already buy the same material at ₹66.48/KG from Sayaji Industries — a 6.5% gap. The open-market asking price for this item sits in a ₹60–81/kg band (typically ₹66–73/kg), so our target is fair and we know it's achievable because we're already paying it elsewhere."
     },
     "paymentTermAsk": {
-      "summary": "Switch from 100% advance to normal 30-day credit after delivery",
-      "cashImpact": "Frees up ₹8.73 L of our cash that's locked in advance payments right now"
+      "summary": "Move from 100% advance payment to standard 30-day credit terms",
+      "cashImpact": "₹8.73 L of our cash freed up"
     },
-    "financialLeverage": "Sukhjit is big — ₹1555.82 Cr in sales — and growing fast at 29.7% a year, so they want new orders. But they keep only 2.9% of every ₹100 they sell as profit, meaning margins are razor-thin and a steep price cut could squeeze them hard. We're tiny to them: our ₹1.06 Cr is just 0.07% of their revenue, so alone we have almost no pull. Their overall health score is D (44/100), signalling moderate stress. The play: bundle the price ask with a volume commitment (tie more SKUs or longer contract), push hardest on the advance-payment term (it costs them nothing and unlocks real cash for us), and keep Sayaji and the other alternates visible so they know this isn't their business by default.",
+    "financialLeverage": "They are big — ₹1555.82 Cr in sales — and growing fast (29.7% per year), so they want new orders. But they keep only 2.9% of every ₹100 they sell as profit, so there's little room for a big price cut without hurting them. We are tiny to them: our ₹1.06 Cr spend is just 0.07% of their revenue, so on our own we have almost no pull. Their overall health score is D (44/100), meaning they're weak but not in immediate trouble. The play here is to push hard on payment terms (where we have the strongest case) and use the threat of moving volume to Sayaji or another alternate to get them to match our best price — but don't squeeze so hard on price that we destabilise a supplier with thin profit.",
     "evidence": [
       {
-        "point": "We pay Sukhjit 6.5% more than the best price we already have",
-        "figure": "₹70.80/KG vs ₹66.48/KG; gap 6.5%; costs us an extra ₹12.95 L a year"
+        "point": "We pay them ₹70.80/KG but already get the same Dextrose at ₹66.48/KG from Sayaji Industries",
+        "figure": "₹70.80/KG vs ₹66.48/KG, gap 6.5%"
       },
       {
-        "point": "Sukhjit's profit margin is paper-thin",
-        "figure": "2.9%"
+        "point": "We are paying ₹12.95 L per year more than our cheapest supplier for the same material",
+        "figure": "₹12.95 L"
       },
       {
-        "point": "We are a very small customer to them",
-        "figure": "₹1.06 Cr spend = 0.07% of their ₹1555.82 Cr revenue"
-      },
-      {
-        "point": "They are growing sales fast and will want to keep volume",
-        "figure": "29.7%/yr"
-      },
-      {
-        "point": "Paying 100% in advance locks up our cash; moving to 30 days frees up real money",
+        "point": "We pay them 100% in advance; moving to 30-day credit frees up cash for us",
         "figure": "₹8.73 L"
       },
       {
-        "point": "Open-market asking price sits in the same range as our target",
-        "figure": "₹60–81/kg (typically ₹66–73); verdict MARKET-FAIR"
+        "point": "They are growing fast and want new orders",
+        "figure": "29.7%"
+      },
+      {
+        "point": "We are a tiny customer to them",
+        "figure": "₹1.06 Cr spend, 0.07% of their ₹1555.82 Cr revenue"
+      },
+      {
+        "point": "They keep very little profit — only 2.9% of every ₹100 they sell",
+        "figure": "2.9%"
       }
     ],
     "alternates": [
       {
         "name": "Sayaji Industries Limited (current supplier)",
-        "why": "Already delivers Dextrose to us at ₹66.48/KG — our benchmark and proof the price is real"
+        "why": "Already supplies us Dextrose at ₹66.48/KG — our benchmark price and proof the target is real"
       },
       {
         "name": "Gulshan Polyols Ltd",
-        "why": "Listed starch & polyol maker, ₹2359.06 Cr revenue, health B (62/100) — a drop-in alternate to Sayaji and Sukhjit"
+        "why": "Listed starch & polyol maker, ₹2359.06 Cr revenue, health B (62/100) — a drop-in alternate to Sayaji; strong enough to take more volume if we need to move it"
       },
       {
         "name": "Sanstar Ltd",
-        "why": "Recently-listed maize-derivatives specialist, ₹821.13 Cr revenue, growing capacity — another credible second source"
+        "why": "Recently-listed maize-derivatives specialist, ₹821.13 Cr revenue, health C (57/100) — growing capacity in dextrose, a credible second source to qualify"
       }
     ],
     "risks": [
-      "At 0.07% of their sales we have almost no individual leverage — they can easily walk away unless we bundle more volume or a longer commit.",
-      "Their 2.9% profit margin leaves little room: push the price too hard without a volume sweetener and they may cut quality or service to protect margin.",
-      "Health score D (44/100) signals moderate financial stress — if we squeeze and they stumble, our supply is at risk; keep a qualified alternate warm.",
-      "We're paying 100% advance today, so they're used to zero credit risk from us — they will resist any payment term that shifts risk back to them; lead with how fast we pay and our credit strength."
+      "We are only 0.07% of their revenue, so they can easily walk away — bundle more volume or commit longer to get their attention",
+      "Their profit is only 2.9%, so pushing too hard on price could break them or force them to cut quality — focus the squeeze on payment terms and use alternates as leverage for price",
+      "We currently pay 100% in advance, so they are used to zero risk from us — they may resist credit terms; be ready to phase it in (e.g. start with 50% advance, then move to 30-day)",
+      "They are growing fast (29.7% per year) and may prioritise bigger, faster-growing customers over a small, price-sensitive one like us — lead with volume commitment to stay interesting to them"
     ],
-    "suggestedOpeningLine": "We'd like to keep growing with you, but right now we're paying you ₹70.80 when Sayaji delivers the same Dextrose at ₹66.48 — and we're paying 100% up front, which locks up nearly ₹9 lakh of our cash."
+    "suggestedOpeningLine": "We'd like to keep buying from you, but right now we're paying you ₹70.80 per kilo and 100% in advance — while we get the same Dextrose at ₹66.48 from Sayaji on better terms, so let's talk about closing that gap and moving you to standard 30-day credit."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-11-06",
+  "generatedAt": "2026-11-07",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
     "inputTokens": 3760,
-    "outputTokens": 1236,
+    "outputTokens": 1277,
     "serverToolUsage": {},
-    "totalTokens": 4996
+    "totalTokens": 5037
   }
 }
