@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T07:28:46.466Z",
+  "generatedAt": "2026-11-08T07:42:08.756Z",
   "byMaterial": {
     "dextrose": [
       {
@@ -31,7 +31,7 @@
           "evEbitda": 8.52,
           "dividendYield": 0,
           "currentPrice": 118.85,
-          "yearlyChange": -35.18,
+          "yearlyChange": -33.84,
           "employees": 332,
           "roce": 10.2,
           "roe": 10.1,
@@ -86,7 +86,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "note": null,
         "key": null,
@@ -102,7 +102,7 @@
           "sourceUrl": "https://www.screener.in/company/524582/consolidated/",
           "asOf": "Mar 2026",
           "basis": "consolidated",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "series": [
           {
@@ -164,7 +164,7 @@
           "evEbitda": 4.57,
           "dividendYield": 94,
           "currentPrice": 159.36,
-          "yearlyChange": 3.41,
+          "yearlyChange": 1.22,
           "employees": 577,
           "roce": 18.6,
           "roe": 16.6,
@@ -219,7 +219,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "note": null,
         "key": null,
@@ -235,7 +235,7 @@
           "sourceUrl": "https://www.screener.in/company/GULPOLY/",
           "asOf": "Mar 2026",
           "basis": "standalone",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "series": [
           {
@@ -349,11 +349,11 @@
           "debtToEquity": 2.87,
           "revenueGrowth": 22.1,
           "earningsGrowth": 0,
-          "pe": 38.23,
+          "pe": 39.18,
           "evEbitda": 31.45,
           "dividendYield": 0,
           "currentPrice": 94.04,
-          "yearlyChange": 2.61,
+          "yearlyChange": 2.69,
           "employees": 203,
           "roce": null,
           "roe": 4.96,
@@ -402,7 +402,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "note": null,
         "key": null,
@@ -418,7 +418,7 @@
           "sourceUrl": "https://www.screener.in/company/SANSTAR/consolidated/",
           "asOf": "Mar 2026",
           "basis": "consolidated",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "series": [
           {
@@ -1630,11 +1630,11 @@
           "debtToEquity": 28.19,
           "revenueGrowth": 30.7,
           "earningsGrowth": 36.1,
-          "pe": 27.54,
+          "pe": 27.7,
           "evEbitda": 12.67,
           "dividendYield": 88,
           "currentPrice": 340.15,
-          "yearlyChange": -1.84,
+          "yearlyChange": -0.71,
           "employees": 972,
           "roce": 13.3,
           "roe": 10.8,
@@ -1689,7 +1689,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "note": null,
         "key": null,
@@ -1705,7 +1705,7 @@
           "sourceUrl": "https://www.screener.in/company/MOLDTKPAC/",
           "asOf": "Mar 2026",
           "basis": "standalone",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "series": [
           {
@@ -1819,11 +1819,11 @@
           "debtToEquity": 48.25,
           "revenueGrowth": 36.8,
           "earningsGrowth": 50,
-          "pe": 40.15,
+          "pe": 40.23,
           "evEbitda": 10.66,
           "dividendYield": 24,
           "currentPrice": 411.15,
-          "yearlyChange": 111.87,
+          "yearlyChange": 115.79,
           "employees": 633,
           "roce": 9.57,
           "roe": 5.71,
@@ -1878,7 +1878,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "note": null,
         "key": null,
@@ -1894,7 +1894,7 @@
           "sourceUrl": "https://www.screener.in/company/HITECHCORP/consolidated/",
           "asOf": "Mar 2026",
           "basis": "consolidated",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "series": [
           {
@@ -2005,7 +2005,7 @@
           "evEbitda": -0.41,
           "dividendYield": 0,
           "currentPrice": 15.69,
-          "yearlyChange": -41.74,
+          "yearlyChange": -40.79,
           "employees": 66,
           "roce": -17.2,
           "roe": -17,
@@ -2060,7 +2060,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "note": null,
         "key": null,
@@ -2076,7 +2076,7 @@
           "sourceUrl": "https://www.screener.in/company/PEARLPOLY/",
           "asOf": "Mar 2026",
           "basis": "standalone",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "series": [
           {
@@ -3393,11 +3393,11 @@
           "debtToEquity": 10.72,
           "revenueGrowth": 23.1,
           "earningsGrowth": -19.1,
-          "pe": 11.96,
+          "pe": 12.38,
           "evEbitda": 6.36,
           "dividendYield": 94,
           "currentPrice": 212.22,
-          "yearlyChange": -6.97,
+          "yearlyChange": -11.92,
           "employees": 2400,
           "roce": 12,
           "roe": 8.96,
@@ -3452,7 +3452,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "note": null,
         "key": null,
@@ -3468,7 +3468,7 @@
           "sourceUrl": "https://www.screener.in/company/HUHTAMAKI/",
           "asOf": "Dec 2025",
           "basis": "standalone",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "series": [
           {
@@ -3582,11 +3582,11 @@
           "debtToEquity": 124.99,
           "revenueGrowth": 35.5,
           "earningsGrowth": 630,
-          "pe": 5.96,
+          "pe": 6.09,
           "evEbitda": 6.03,
           "dividendYield": 52,
           "currentPrice": 575.3,
-          "yearlyChange": 11.09,
+          "yearlyChange": 9.05,
           "employees": 7772,
           "roce": 7.03,
           "roe": 4.27,
@@ -3641,7 +3641,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "note": null,
         "key": null,
@@ -3657,7 +3657,7 @@
           "sourceUrl": "https://www.screener.in/company/UFLEX/consolidated/",
           "asOf": "Mar 2026",
           "basis": "consolidated",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "series": [
           {
@@ -3775,7 +3775,7 @@
           "evEbitda": 8.18,
           "dividendYield": 27,
           "currentPrice": 92.41,
-          "yearlyChange": -13.44,
+          "yearlyChange": -11.68,
           "employees": 446,
           "roce": 2.75,
           "roe": -3.56,
@@ -3830,7 +3830,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "note": null,
         "key": null,
@@ -3846,7 +3846,7 @@
           "sourceUrl": "https://www.screener.in/company/ESTER/consolidated/",
           "asOf": "Mar 2026",
           "basis": "consolidated",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "series": [
           {
@@ -3960,11 +3960,11 @@
           "debtToEquity": 91.11,
           "revenueGrowth": 54.7,
           "earningsGrowth": 110.4,
-          "pe": 12.37,
+          "pe": 12.68,
           "evEbitda": 7.31,
           "dividendYield": 50,
           "currentPrice": 806.05,
-          "yearlyChange": -5.63,
+          "yearlyChange": -7.96,
           "employees": 1568,
           "roce": 11.2,
           "roe": 10.4,
@@ -4019,7 +4019,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "note": null,
         "key": null,
@@ -4035,7 +4035,7 @@
           "sourceUrl": "https://www.screener.in/company/COSMOFIRST/consolidated/",
           "asOf": "Mar 2026",
           "basis": "consolidated",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "series": [
           {
@@ -4149,11 +4149,11 @@
           "debtToEquity": 13.29,
           "revenueGrowth": 29.6,
           "earningsGrowth": 0,
-          "pe": 17.15,
+          "pe": 17.67,
           "evEbitda": 10.05,
           "dividendYield": 23,
           "currentPrice": 874.25,
-          "yearlyChange": -2.5,
+          "yearlyChange": -6.57,
           "employees": 1022,
           "roce": 0.89,
           "roe": 1.39,
@@ -4208,7 +4208,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "note": null,
         "key": null,
@@ -4224,7 +4224,7 @@
           "sourceUrl": "https://www.screener.in/company/POLYPLEX/consolidated/",
           "asOf": "Mar 2026",
           "basis": "consolidated",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "series": [
           {
@@ -4342,7 +4342,7 @@
           "evEbitda": -9.27,
           "dividendYield": 0,
           "currentPrice": 697.5,
-          "yearlyChange": 25.33,
+          "yearlyChange": 26.88,
           "employees": 346,
           "roce": -1.99,
           "roe": -0.97,
@@ -4397,7 +4397,7 @@
         "source": {
           "sourceName": "Munshot market-data API",
           "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "note": null,
         "key": null,
@@ -4413,7 +4413,7 @@
           "sourceUrl": "https://www.screener.in/company/JINDALPOLY/consolidated/",
           "asOf": "Mar 2026",
           "basis": "consolidated",
-          "date": "2026-11-07"
+          "date": "2026-11-08"
         },
         "series": [
           {
