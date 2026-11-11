@@ -1,75 +1,71 @@
 {
-  "inputHash": "9a1c8ad7a42d08fb",
+  "inputHash": "3c438aca6d02524e",
   "brief": {
-    "headline": "Close the ₹1.26 Cr gap to Sayaji's price and secure ₹1.74 Cr cash by paying on delivery instead of 30 days later.",
+    "headline": "Close the ₹1.26 Cr gap to our cheapest dextrose price and line up a second source — we're their ₹21.21 Cr customer with three qualified makers ready",
     "priceAsk": {
-      "summary": "Match the ₹66.48/KG we pay Sayaji Industries for identical Dextrose.",
-      "target": "₹66.48/KG (saves ₹1.26 Cr per year)",
-      "basis": "We already buy the same material from Sayaji at ₹66.48/KG — our price with Gujarat Ambuja is ₹68.45/KG, a 3.0% gap. The open market shows Dextrose typically trades ₹66–73/kg, so ₹66.48/KG sits right in that fair band."
+      "summary": "Match the ₹66.48/KG we already pay Sayaji Industries",
+      "target": "₹66.48/KG (our best price today)",
+      "basis": "We pay them ₹68.45/KG — that's 3.0% more than the ₹66.48/KG we pay Sayaji for the same Dextrose Anhydrous IP. The market asking price band is ₹60–81/kg with typical deals at ₹66–73/kg, so our target sits right in the normal range. Closing this gap saves us ₹1.26 Cr a year."
     },
     "paymentTermAsk": {
-      "summary": "Move to payment on delivery (cash-on-receipt) from the current 30 days after receipt.",
-      "cashImpact": "Frees up ₹1.74 Cr of cash for us that's currently tied up waiting 30 days."
+      "summary": "Offer to pay 15 days sooner in return for a price cut",
+      "cashImpact": "Paying 15 days earlier frees up ₹87.17 L of our cash, so any discount we get for that still leaves us ahead"
     },
-    "financialLeverage": "Gujarat Ambuja is a large, healthy supplier (₹5995.63 Cr revenue) and keeps 8.5% of every rupee they sell — comfortable room to move on price. But we're tiny to them: our ₹21.21 Cr is just 0.35% of their sales, so we have limited pull from size alone. The real leverage is dual-sourcing: they supply 56% of our Dextrose, making us dependent, but Sayaji already proves we can get the exact item cheaper, and Gulshan Polyols (₹2359.06 Cr, health score B 62/100) and Sanstar (₹821.13 Cr, health C 57/100) are ready alternates — we can credibly walk if they won't match the market.",
+    "financialLeverage": "Gujarat Ambuja publishes no financials, so we can't see their profit or debt. What we do know: we spend ₹21.21 Cr with them — 56% of all our Dextrose — making us a major customer. They have real competition: Sayaji already beats their price, and we've found three more listed dextrose makers (Tirupati Starch, Gulshan Polyols, Sanstar) plus global players like Roquette and Ingredion as leads to qualify. Because we can't gauge their financial room, we push firmly on price to match our best, dangle faster payment as a sweetener, and make clear we're bringing on a second source whether or not they move.",
     "evidence": [
       {
-        "point": "We pay Gujarat Ambuja 3.0% more than Sayaji for the same Dextrose",
-        "figure": "Gap: 3.0%, costing us ₹1.26 Cr per year"
+        "point": "We pay them 3.0% more than our cheapest dextrose supplier",
+        "figure": "₹68.45/KG vs ₹66.48/KG (Sayaji Industries Limited), gap 3.0%"
       },
       {
-        "point": "Their profit margin is a comfortable 8.5%, so a price cut won't hurt them",
-        "figure": "Net margin: 8.5%"
+        "point": "Closing that gap saves us this much every year",
+        "figure": "₹1.26 Cr"
       },
       {
-        "point": "We're a very small customer to them — only 0.35% of their business",
-        "figure": "Our spend as share of their revenue: 0.35%"
+        "point": "They supply over half our Dextrose — we're a big customer",
+        "figure": "56% of material, ₹21.21 Cr annual spend"
       },
       {
-        "point": "The open market shows our current price is fair but on the higher side of typical",
-        "figure": "Market typical band: ₹66–73/kg; verdict: MARKET-FAIR (slightly favourable)"
+        "point": "Market asking prices show our target is fair and achievable",
+        "figure": "₹60–81/kg band, typical ₹66–73/kg, verdict MARKET-FAIR"
       },
       {
-        "point": "Switching to cash-on-delivery frees up ₹1.74 Cr of our cash",
-        "figure": "Cash freed: ₹1.74 Cr"
-      },
-      {
-        "point": "They dominate our Dextrose supply at 56%, creating single-source risk",
-        "figure": "Spend with them: ₹21.21 Cr (56% of material)"
+        "point": "Paying them 15 days faster ties up this much of our cash",
+        "figure": "₹87.17 L"
       }
     ],
     "alternates": [
       {
-        "name": "Gulshan Polyols Ltd",
-        "why": "Listed starch maker (₹2359.06 Cr revenue, health B 62/100) — an established dextrose supplier and a drop-in alternate; stronger financially than Gujarat Ambuja's C rating."
-      },
-      {
-        "name": "Sanstar Ltd",
-        "why": "Recently-listed maize-derivatives specialist (₹821.13 Cr, health C 57/100) focused on starch and dextrose — growing capacity, credible second source."
-      },
-      {
         "name": "Tirupati Starch & Chemicals Ltd",
-        "why": "Listed Indore wet-miller (₹365.39 Cr) making Dextrose ANHYDROUS in IV-fluid grade — exact product match; confirm IP monograph certificate before switching (health D 27/100, so audit carefully)."
+        "why": "Listed Indore wet-miller making Dextrose Anhydrous IV-fluid grade — exact form match; a lead to qualify (verify IP monograph CoA before switching)"
+      },
+      {
+        "name": "Gulshan Polyols Ltd",
+        "why": "Listed starch and polyol maker, established dextrose supplier — a drop-in alternate to Gujarat Ambuja; a lead to qualify"
+      },
+      {
+        "name": "Roquette India Pvt Ltd",
+        "why": "Indian arm of global starch major, pharma-grade dextrose with premium quality systems, revenue ₹2898.05 Cr — a lead to qualify"
       }
     ],
     "risks": [
-      "Gujarat Ambuja supplies 56% of our Dextrose (₹21.21 Cr) — pushing too hard without a qualified second source in place puts continuity at risk.",
-      "We're only 0.35% of their revenue, so they can easily walk away if we squeeze; line up Gulshan or Sanstar with an RFQ before the meeting.",
-      "Tirupati's health score is weak (D 27/100) — if we trial them, keep Gujarat Ambuja live until Tirupati proves stable supply.",
-      "The market ask verdict is 'MARKET-FAIR (slightly favourable)' — our ₹68.45/KG isn't wildly out of line, so frame the ask around matching Sayaji (₹66.48/KG), not a general 'you're overcharging' claim."
+      "They're our only big source (56% of Dextrose) — if they walk or stumble, our supply is exposed until we qualify and ramp a second supplier",
+      "No public financials means we can't see cash stress or stability — watch for sudden delivery or quality problems that might signal trouble",
+      "Pressing too hard without a qualified backup in place could push them to cut us loose; make sure at least one alternate (Tirupati or Gulshan) is audited and pricing before the final push",
+      "If they agree to faster payment for a discount, lock the new price in writing so they don't claw it back later"
     ],
-    "suggestedOpeningLine": "We'd like to align your Dextrose price to the ₹66.48/KG we already pay Sayaji for identical material, and move to payment on delivery to free up working cash — let's find a path that works for both sides."
+    "suggestedOpeningLine": "We value the partnership, and we'd like to talk about aligning your Dextrose price with the ₹66.48/KG we pay our other supplier — and in return we can look at paying you faster."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-11-07",
+  "generatedAt": "2026-11-11",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
-    "inputTokens": 3553,
-    "outputTokens": 1342,
+    "inputTokens": 3366,
+    "outputTokens": 1158,
     "serverToolUsage": {},
-    "totalTokens": 4895
+    "totalTokens": 4524
   }
 }

@@ -1,71 +1,71 @@
 {
-  "inputHash": "2312a87ee233d385",
+  "inputHash": "0a065da7d3cf58cc",
   "brief": {
-    "headline": "Push for 8–12% price cut and 30-day payment — they keep 8.5% profit versus 4.8% peer average, so there's room",
+    "headline": "Push for a 5–8% price cut and 30-day payment — they keep 8.5% profit vs 4.8% typical, so there's room",
     "priceAsk": {
-      "summary": "Ask for 8–12% off current prices on rigid plastic packaging",
-      "target": "Target ₹0.65–0.80/pc for the 28 mm cap (currently market-fair at ₹0.85–0.95/pc)",
-      "basis": "Market research shows modest headroom to ₹0.65–0.80 at higher volume. They keep 8.5% profit versus 4.8% for similar firms — that 3.7-point gap is room in their price. Their operating profit sits at 14.5%, so a cut won't hurt them."
+      "summary": "Ask for a 5–8% price reduction on rigid plastic packaging",
+      "target": "Aim for ₹0.65–0.80/pc on caps (market says this is possible at higher volume)",
+      "basis": "They keep 8.5% of sales as profit, well above the 4.8% that similar firms keep. The market ask for a 28 mm induction-wad PP cap is ₹0.55–1.20/pc, typically ₹0.85–0.95/pc, and the market verdict is 'MARKET-FAIR; modest headroom to ₹0.65–0.80 at higher volume / looser spec'. Their margin cushion and the market band both support our target."
     },
     "paymentTermAsk": {
       "summary": "Move from 45 days to 30 days after receipt",
-      "cashImpact": "Frees up ₹2.15 L of cash for us"
+      "cashImpact": "₹2.15 L cash freed up for us"
     },
-    "financialLeverage": "Triveni is safe: they carry zero debt (0.00x), keep 8.5% of every ₹100 as profit (nearly double the 4.8% peer number), and cover interest 75.84 times over. But their cash is stuck for 124 days (versus 114 for peers) and they burned ₹6.59 Cr in free cash last year — so cash is tight for them despite the healthy books. We're tiny at 0.15% of their ₹179.69 Cr revenue, which limits our pull on our own. The play: bundle volume, shorten payment to help their cash, and name Manjushree or Mold-Tek as a credible second source to create pressure.",
+    "financialLeverage": "They're financially safe — score 6.18 on the distress scale (safe zone), zero debt, and they keep 8.5% profit. But their cash is stuck for 124 days, longer than similar firms at 114 days, and they show negative free cash flow of ₹-6.59 Cr, so cash is a bit tight for them. We're tiny to them at ₹26.17 L — just 0.15% of their ₹179.69 Cr revenue — so on our own we have little pull. That means we need to bundle volume, commit longer, or play them against one of the strong alternates to get traction.",
     "evidence": [
       {
-        "point": "They keep 8.5% profit, well above the 4.8% peer median — room to cut price",
-        "figure": "8.5% net margin vs 4.8% peer median"
+        "point": "They keep 8.5% of sales as profit, much better than the 4.8% similar firms keep",
+        "figure": "8.5% vs 4.8%"
       },
       {
-        "point": "Their operating profit is a comfortable 14.5%",
-        "figure": "14.5% EBITDA margin"
+        "point": "Their cash is stuck for 124 days, longer than the 114 days typical for similar firms",
+        "figure": "124d vs 114d"
       },
       {
-        "point": "Cash is stuck for 124 days, longer than the 114-day peer median — they need faster payment",
-        "figure": "124d cash conversion cycle vs 114d peer median"
+        "point": "They show negative free cash flow",
+        "figure": "₹-6.59 Cr"
       },
       {
-        "point": "They burned cash last year",
-        "figure": "₹-6.59 Cr free cash flow"
+        "point": "We are a very small customer — just 0.15% of everything they sell",
+        "figure": "0.15%"
       },
       {
-        "point": "We're a tiny customer at just 0.15% of their sales",
-        "figure": "0.15% share of ₹179.69 Cr revenue"
+        "point": "Market ask for 28 mm induction-wad PP cap is ₹0.55–1.20/pc, typically ₹0.85–0.95/pc, with modest headroom to ₹0.65–0.80 at higher volume",
+        "figure": "₹0.55–1.20/pc, typical ₹0.85–0.95/pc, headroom to ₹0.65–0.80"
       },
       {
-        "point": "Market asking price for 28 mm PP cap is ₹0.55–1.20/pc, typical ₹0.85–0.95/pc, with headroom to ₹0.65–0.80 at scale",
-        "figure": "₹0.55–1.20/pc ask band, ₹0.85–0.95/pc typical, ₹0.65–0.80/pc headroom verdict"
+        "point": "Moving to 30-day payment terms would free up cash for us",
+        "figure": "₹2.15 L"
       }
     ],
     "alternates": [
       {
         "name": "Manjushree Technopack Ltd",
-        "why": "India's largest rigid-plastic packaging converter at ₹2569.83 Cr revenue, does pharma bottles and caps, health score B (65/100) — the top second-source candidate"
+        "why": "India's largest rigid-plastic packaging converter (₹2569.83 Cr revenue, health B 65/100) — pharma bottles, caps, preforms; top second-source candidate"
       },
       {
         "name": "Mold-Tek Packaging Ltd",
-        "why": "Listed rigid-plastic leader at ₹1010.97 Cr, pharma pails and containers, health score B (73/100) — a robust alternate for bottles and closures"
+        "why": "Listed rigid-plastic leader for pails, containers, pharma — strong, profitable, a robust alternate for bottles and closures"
       }
     ],
     "risks": [
-      "We're only 0.15% of their business (₹26.17 L spend versus ₹179.69 Cr revenue) — alone we have little leverage; bundle more SKUs or threaten to move volume to Manjushree",
-      "They show EPF payment delays as a risk flag — watch for any supply hiccups and keep an alternate warm",
-      "Their cash burned ₹6.59 Cr last year despite healthy profit — if you push payment too short without a price trade, they may balk",
-      "Market asking price for the 28 mm cap is already market-fair at ₹0.85–0.95/pc — the headroom to ₹0.65–0.80 exists only at higher volume or looser spec, so link the ask to a firm commitment"
+      "We're only 0.15% of their business, so they can easily walk away — bundle more volume or commit for a longer term to get leverage",
+      "They have an EPF payment delay flag, so watch for any operational hiccups that could hit our supply",
+      "Their negative free cash flow of ₹-6.59 Cr means cash is tight despite zero debt — don't push so hard that you spook them into prioritizing bigger customers",
+      "We have no internal best-price or SKU-level gap data for rigid plastic packaging, so lean on the market ask and the alternates to anchor the price discussion"
     ],
-    "suggestedOpeningLine": "We'd like to lock in a three-year deal at ₹0.70–0.75 per cap and move to 30-day payment — that gives you cash faster and us a fair price in line with the market at volume."
+    "suggestedOpeningLine": "We want to lock in a multi-year commitment with you, but we need your price to land in the ₹0.65–0.80 band the market shows for higher-volume cap orders, and we'd like 30-day terms to match how you pay your own suppliers."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-11-06",
+  "generatedAt": "2026-11-11",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
-    "inputTokens": 3446,
-    "outputTokens": 1227,
+    "inputTokens": 3403,
+    "outputTokens": 1168,
     "serverToolUsage": {},
-    "totalTokens": 4673
+    "totalTokens": 4571
   }
 }
