@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T08:38:07.201Z",
+  "generatedAt": "2026-11-11T07:59:04.532Z",
   "byMaterial": {
     "dextrose": [
       {
@@ -9,131 +9,27 @@
         "ticker": "TIRUSTA",
         "screener": "524582",
         "cin": null,
-        "status": "ok",
+        "status": "pending",
         "fitNote": "Listed Indore maize wet-miller; makes Dextrose ANHYDROUS (IV-fluid grade) — exact form match; confirm IP monograph CoA before switching",
         "secondSourceFor": "dextrose",
         "gradeLabel": "exact anhydrous grade — pending IP-monograph confirmation",
-        "companyName": "Tirupati Starch and Chemicals Limited",
-        "symbol": "TIRUSTA.BO",
-        "metrics": {
-          "revenue": 3653911040,
-          "ebitda": 263994256,
-          "marketCap": 1104678272,
-          "totalDebt": 1101022976,
-          "ebitdaMargin": 7.22,
-          "netMargin": 1.54,
-          "grossMargin": 29.9,
-          "operatingMargin": 3.78,
-          "debtToEquity": 163.96,
-          "revenueGrowth": -0.7,
-          "earningsGrowth": -52.7,
-          "pe": 18.79,
-          "evEbitda": 8.39,
-          "dividendYield": 0,
-          "currentPrice": 115.2,
-          "yearlyChange": -33.84,
-          "employees": 332,
-          "roce": 10.2,
-          "roe": 10.1,
-          "receivableDays": 30,
-          "inventoryDays": 50,
-          "payableDays": 28,
-          "cashConversionCycle": 53
-        },
-        "healthScore": {
-          "value": 27,
-          "grade": "D",
-          "components": [
-            {
-              "label": "Net margin",
-              "raw": 1.54,
-              "score": 10,
-              "weight": 0.3
-            },
-            {
-              "label": "EBITDA margin",
-              "raw": 7.22,
-              "score": 36,
-              "weight": 0.15
-            },
-            {
-              "label": "Revenue growth",
-              "raw": -0.7,
-              "score": 27,
-              "weight": 0.2
-            },
-            {
-              "label": "Low leverage",
-              "raw": 163.96,
-              "score": 18,
-              "weight": 0.2
-            },
-            {
-              "label": "Return on capital",
-              "raw": 10.2,
-              "score": 41,
-              "weight": 0.15
-            },
-            {
-              "label": "Return on equity",
-              "raw": 10.1,
-              "score": 51,
-              "weight": 0.15
-            }
-          ],
-          "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
-        },
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
         "source": {
-          "sourceName": "Munshot market-data API",
-          "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-10"
+          "sourceName": "Munshot",
+          "sourceUrl": "https://fastapi.muns.io"
         },
-        "note": null,
+        "note": "Listed — ticker not resolved on this run; re-run to benchmark.",
         "key": null,
-        "primarySource": "listed",
+        "primarySource": "none",
         "probe": null,
         "ratingGrade": null,
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": [],
-        "creditDaysSource": {
-          "sourceName": "Screener.in (from audited annual filings)",
-          "sourceUrl": "https://www.screener.in/company/524582/consolidated/",
-          "asOf": "Mar 2026",
-          "basis": "consolidated",
-          "date": "2026-11-10"
-        },
-        "series": [
-          {
-            "fy": "FY23",
-            "revenue": 3640000000,
-            "netMargin": 1.92,
-            "roce": null,
-            "receivableDays": 33
-          },
-          {
-            "fy": "FY24",
-            "revenue": 3060000000,
-            "netMargin": 0.65,
-            "roce": 8,
-            "receivableDays": 41
-          },
-          {
-            "fy": "FY25",
-            "revenue": 3860000000,
-            "netMargin": 2.07,
-            "roce": 10,
-            "receivableDays": 37
-          },
-          {
-            "fy": "FY26",
-            "revenue": 3630000000,
-            "netMargin": 1.65,
-            "roce": 10,
-            "receivableDays": 30
-          }
-        ]
+        "levers": []
       },
       {
         "name": "Gulshan Polyols Ltd",
@@ -142,187 +38,27 @@
         "ticker": "GULPOLY",
         "screener": null,
         "cin": null,
-        "status": "ok",
+        "status": "pending",
         "fitNote": "Listed starch & polyol maker; established dextrose/sorbitol supplier — a drop-in alternate to Gujarat Ambuja/Sayaji.",
         "secondSourceFor": "dextrose",
         "gradeLabel": null,
-        "companyName": "Gulshan Polyols Limited",
-        "symbol": "GULPOLY.NS",
-        "metrics": {
-          "revenue": 23590617088,
-          "ebitda": 2800028672,
-          "marketCap": 10224820224,
-          "totalDebt": 3125575936,
-          "ebitdaMargin": 11.87,
-          "netMargin": 6.25,
-          "grossMargin": 36.05,
-          "operatingMargin": 11.63,
-          "debtToEquity": 43.5,
-          "revenueGrowth": 7.9,
-          "earningsGrowth": 306.6,
-          "pe": 7.05,
-          "evEbitda": 4.68,
-          "dividendYield": 91,
-          "currentPrice": 164.43,
-          "yearlyChange": 2.79,
-          "employees": 577,
-          "roce": 18.6,
-          "roe": 16.6,
-          "receivableDays": 32,
-          "inventoryDays": 53,
-          "payableDays": 38,
-          "cashConversionCycle": 48
-        },
-        "healthScore": {
-          "value": 62,
-          "grade": "B",
-          "components": [
-            {
-              "label": "Net margin",
-              "raw": 6.25,
-              "score": 42,
-              "weight": 0.3
-            },
-            {
-              "label": "EBITDA margin",
-              "raw": 11.87,
-              "score": 59,
-              "weight": 0.15
-            },
-            {
-              "label": "Revenue growth",
-              "raw": 7.9,
-              "score": 51,
-              "weight": 0.2
-            },
-            {
-              "label": "Low leverage",
-              "raw": 43.5,
-              "score": 78,
-              "weight": 0.2
-            },
-            {
-              "label": "Return on capital",
-              "raw": 18.6,
-              "score": 74,
-              "weight": 0.15
-            },
-            {
-              "label": "Return on equity",
-              "raw": 16.6,
-              "score": 83,
-              "weight": 0.15
-            }
-          ],
-          "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
-        },
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
         "source": {
-          "sourceName": "Munshot market-data API",
-          "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-10"
+          "sourceName": "Munshot",
+          "sourceUrl": "https://fastapi.muns.io"
         },
-        "note": null,
+        "note": "Listed — ticker not resolved on this run; re-run to benchmark.",
         "key": null,
-        "primarySource": "listed",
+        "primarySource": "none",
         "probe": null,
         "ratingGrade": null,
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": [],
-        "creditDaysSource": {
-          "sourceName": "Screener.in (from audited annual filings)",
-          "sourceUrl": "https://www.screener.in/company/GULPOLY/",
-          "asOf": "Mar 2026",
-          "basis": "standalone",
-          "date": "2026-11-10"
-        },
-        "series": [
-          {
-            "fy": "FY15",
-            "revenue": 3950000000,
-            "netMargin": 6.33,
-            "roce": 12,
-            "receivableDays": 59
-          },
-          {
-            "fy": "FY16",
-            "revenue": 4330000000,
-            "netMargin": 6.93,
-            "roce": 12,
-            "receivableDays": 62
-          },
-          {
-            "fy": "FY17",
-            "revenue": 4920000000,
-            "netMargin": 5.49,
-            "roce": 9,
-            "receivableDays": 66
-          },
-          {
-            "fy": "FY18",
-            "revenue": 6160000000,
-            "netMargin": 2.92,
-            "roce": 8,
-            "receivableDays": 69
-          },
-          {
-            "fy": "FY19",
-            "revenue": 6740000000,
-            "netMargin": 3.12,
-            "roce": 9,
-            "receivableDays": 54
-          },
-          {
-            "fy": "FY20",
-            "revenue": 6210000000,
-            "netMargin": 3.38,
-            "roce": 9,
-            "receivableDays": 48
-          },
-          {
-            "fy": "FY21",
-            "revenue": 7660000000,
-            "netMargin": 8.09,
-            "roce": 25,
-            "receivableDays": 47
-          },
-          {
-            "fy": "FY22",
-            "revenue": 11010000000,
-            "netMargin": 7.72,
-            "roce": 23,
-            "receivableDays": 40
-          },
-          {
-            "fy": "FY23",
-            "revenue": 11800000000,
-            "netMargin": 3.81,
-            "roce": 9,
-            "receivableDays": 44
-          },
-          {
-            "fy": "FY24",
-            "revenue": 13780000000,
-            "netMargin": 1.31,
-            "roce": 3,
-            "receivableDays": 44
-          },
-          {
-            "fy": "FY25",
-            "revenue": 20200000000,
-            "netMargin": 1.24,
-            "roce": 6,
-            "receivableDays": 33
-          },
-          {
-            "fy": "FY26",
-            "revenue": 23120000000,
-            "netMargin": 4.63,
-            "roce": 19,
-            "receivableDays": 32
-          }
-        ]
+        "levers": []
       },
       {
         "name": "Sanstar Ltd",
@@ -331,125 +67,27 @@
         "ticker": "SANSTAR",
         "screener": null,
         "cin": null,
-        "status": "ok",
+        "status": "pending",
         "fitNote": "Recently-listed maize-derivatives specialist (starch, dextrose) — growing capacity.",
         "secondSourceFor": "dextrose",
         "gradeLabel": null,
-        "companyName": "Sanstar Limited",
-        "symbol": "SANSTAR.NS",
-        "metrics": {
-          "revenue": 8211299840,
-          "ebitda": 506057504,
-          "marketCap": 18665013248,
-          "totalDebt": 199000000,
-          "ebitdaMargin": 6.16,
-          "netMargin": 5.36,
-          "grossMargin": 32.14,
-          "operatingMargin": 4.91,
-          "debtToEquity": 2.87,
-          "revenueGrowth": 22.1,
-          "earningsGrowth": 0,
-          "pe": 38.35,
-          "evEbitda": 31.45,
-          "dividendYield": 0,
-          "currentPrice": 93.2,
-          "yearlyChange": 2.86,
-          "employees": 203,
-          "roce": null,
-          "roe": 4.96,
-          "receivableDays": 44,
-          "inventoryDays": 28,
-          "payableDays": 19,
-          "cashConversionCycle": 53
-        },
-        "healthScore": {
-          "value": 57,
-          "grade": "C",
-          "components": [
-            {
-              "label": "Net margin",
-              "raw": 5.36,
-              "score": 36,
-              "weight": 0.3
-            },
-            {
-              "label": "EBITDA margin",
-              "raw": 6.16,
-              "score": 31,
-              "weight": 0.15
-            },
-            {
-              "label": "Revenue growth",
-              "raw": 22.1,
-              "score": 92,
-              "weight": 0.2
-            },
-            {
-              "label": "Low leverage",
-              "raw": 2.87,
-              "score": 99,
-              "weight": 0.2
-            },
-            {
-              "label": "Return on equity",
-              "raw": 4.96,
-              "score": 25,
-              "weight": 0.15
-            }
-          ],
-          "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
-        },
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
         "source": {
-          "sourceName": "Munshot market-data API",
-          "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-10"
+          "sourceName": "Munshot",
+          "sourceUrl": "https://fastapi.muns.io"
         },
-        "note": null,
+        "note": "Listed — ticker not resolved on this run; re-run to benchmark.",
         "key": null,
-        "primarySource": "listed",
+        "primarySource": "none",
         "probe": null,
         "ratingGrade": null,
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": [],
-        "creditDaysSource": {
-          "sourceName": "Screener.in (from audited annual filings)",
-          "sourceUrl": "https://www.screener.in/company/SANSTAR/consolidated/",
-          "asOf": "Mar 2026",
-          "basis": "consolidated",
-          "date": "2026-11-10"
-        },
-        "series": [
-          {
-            "fy": "FY22",
-            "revenue": 5040000000,
-            "netMargin": 3.17,
-            "roce": null,
-            "receivableDays": 29
-          },
-          {
-            "fy": "FY23",
-            "revenue": 12050000000,
-            "netMargin": 3.49,
-            "roce": 28,
-            "receivableDays": 28
-          },
-          {
-            "fy": "FY24",
-            "revenue": 10670000000,
-            "netMargin": 6.28,
-            "roce": 29,
-            "receivableDays": 40
-          },
-          {
-            "fy": "FY26",
-            "revenue": 7850000000,
-            "netMargin": 4.33,
-            "roce": null,
-            "receivableDays": 44
-          }
-        ]
+        "levers": []
       },
       {
         "name": "Roquette India Pvt Ltd",
@@ -1612,187 +1250,27 @@
         "ticker": "MOLDTKPAC",
         "screener": null,
         "cin": null,
-        "status": "ok",
+        "status": "pending",
         "fitNote": "Listed rigid-plastic leader (pails, containers, pharma); strong, profitable — a robust alternate for bottles/closures.",
         "secondSourceFor": "packaging",
         "gradeLabel": null,
-        "companyName": "Mold-Tek Packaging Limited",
-        "symbol": "MOLDTKPAC.NS",
-        "metrics": {
-          "revenue": 10109697024,
-          "ebitda": 1940199040,
-          "marketCap": 22904690688,
-          "totalDebt": 2083801984,
-          "ebitdaMargin": 19.19,
-          "netMargin": 8.07,
-          "grossMargin": 42,
-          "operatingMargin": 12.02,
-          "debtToEquity": 28.19,
-          "revenueGrowth": 30.7,
-          "earningsGrowth": 36.1,
-          "pe": 28.16,
-          "evEbitda": 12.82,
-          "dividendYield": 87,
-          "currentPrice": 344.65,
-          "yearlyChange": 0.24,
-          "employees": 972,
-          "roce": 13.3,
-          "roe": 10.8,
-          "receivableDays": 72,
-          "inventoryDays": 148,
-          "payableDays": 77,
-          "cashConversionCycle": 144
-        },
-        "healthScore": {
-          "value": 73,
-          "grade": "B",
-          "components": [
-            {
-              "label": "Net margin",
-              "raw": 8.07,
-              "score": 54,
-              "weight": 0.3
-            },
-            {
-              "label": "EBITDA margin",
-              "raw": 19.19,
-              "score": 96,
-              "weight": 0.15
-            },
-            {
-              "label": "Revenue growth",
-              "raw": 30.7,
-              "score": 100,
-              "weight": 0.2
-            },
-            {
-              "label": "Low leverage",
-              "raw": 28.19,
-              "score": 86,
-              "weight": 0.2
-            },
-            {
-              "label": "Return on capital",
-              "raw": 13.3,
-              "score": 53,
-              "weight": 0.15
-            },
-            {
-              "label": "Return on equity",
-              "raw": 10.8,
-              "score": 54,
-              "weight": 0.15
-            }
-          ],
-          "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
-        },
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
         "source": {
-          "sourceName": "Munshot market-data API",
-          "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-10"
+          "sourceName": "Munshot",
+          "sourceUrl": "https://fastapi.muns.io"
         },
-        "note": null,
+        "note": "Listed — ticker not resolved on this run; re-run to benchmark.",
         "key": null,
-        "primarySource": "listed",
+        "primarySource": "none",
         "probe": null,
         "ratingGrade": null,
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": [],
-        "creditDaysSource": {
-          "sourceName": "Screener.in (from audited annual filings)",
-          "sourceUrl": "https://www.screener.in/company/MOLDTKPAC/",
-          "asOf": "Mar 2026",
-          "basis": "standalone",
-          "date": "2026-11-10"
-        },
-        "series": [
-          {
-            "fy": "FY15",
-            "revenue": 2760000000,
-            "netMargin": 6.16,
-            "roce": 25,
-            "receivableDays": 59
-          },
-          {
-            "fy": "FY16",
-            "revenue": 2670000000,
-            "netMargin": 8.99,
-            "roce": 26,
-            "receivableDays": 75
-          },
-          {
-            "fy": "FY17",
-            "revenue": 3010000000,
-            "netMargin": 8.97,
-            "roce": 24,
-            "receivableDays": 74
-          },
-          {
-            "fy": "FY18",
-            "revenue": 3390000000,
-            "netMargin": 9.44,
-            "roce": 23,
-            "receivableDays": 89
-          },
-          {
-            "fy": "FY19",
-            "revenue": 3940000000,
-            "netMargin": 6.09,
-            "roce": 21,
-            "receivableDays": 62
-          },
-          {
-            "fy": "FY20",
-            "revenue": 4370000000,
-            "netMargin": 8.7,
-            "roce": 21,
-            "receivableDays": 48
-          },
-          {
-            "fy": "FY21",
-            "revenue": 4790000000,
-            "netMargin": 10.02,
-            "roce": 22,
-            "receivableDays": 69
-          },
-          {
-            "fy": "FY22",
-            "revenue": 6310000000,
-            "netMargin": 10.14,
-            "roce": 22,
-            "receivableDays": 83
-          },
-          {
-            "fy": "FY23",
-            "revenue": 7300000000,
-            "netMargin": 10.96,
-            "roce": 19,
-            "receivableDays": 62
-          },
-          {
-            "fy": "FY24",
-            "revenue": 6990000000,
-            "netMargin": 9.59,
-            "roce": 14,
-            "receivableDays": 71
-          },
-          {
-            "fy": "FY25",
-            "revenue": 7810000000,
-            "netMargin": 7.81,
-            "roce": 12,
-            "receivableDays": 63
-          },
-          {
-            "fy": "FY26",
-            "revenue": 8870000000,
-            "netMargin": 8.23,
-            "roce": 13,
-            "receivableDays": 72
-          }
-        ]
+        "levers": []
       },
       {
         "name": "Hitech Corporation Ltd",
@@ -1801,180 +1279,27 @@
         "ticker": "HITECHCORP",
         "screener": null,
         "cin": null,
-        "status": "ok",
+        "status": "pending",
         "fitNote": "Listed moulded & blow-moulded packaging; broad capability across bottles/caps.",
         "secondSourceFor": null,
         "gradeLabel": null,
-        "companyName": "Hitech Corporation Limited",
-        "symbol": "HITECHCORP.NS",
-        "metrics": {
-          "revenue": 7011659776,
-          "ebitda": 783537024,
-          "marketCap": 7097858048,
-          "totalDebt": 1373485952,
-          "ebitdaMargin": 11.18,
-          "netMargin": 2.5,
-          "grossMargin": 38.9,
-          "operatingMargin": 5.75,
-          "debtToEquity": 48.25,
-          "revenueGrowth": 36.8,
-          "earningsGrowth": 50,
-          "pe": 40.71,
-          "evEbitda": 10.71,
-          "dividendYield": 24,
-          "currentPrice": 413.25,
-          "yearlyChange": 115.5,
-          "employees": 633,
-          "roce": 9.57,
-          "roe": 5.71,
-          "receivableDays": 41,
-          "inventoryDays": 68,
-          "payableDays": 33,
-          "cashConversionCycle": 77
-        },
-        "healthScore": {
-          "value": 51,
-          "grade": "C",
-          "components": [
-            {
-              "label": "Net margin",
-              "raw": 2.5,
-              "score": 17,
-              "weight": 0.3
-            },
-            {
-              "label": "EBITDA margin",
-              "raw": 11.18,
-              "score": 56,
-              "weight": 0.15
-            },
-            {
-              "label": "Revenue growth",
-              "raw": 36.8,
-              "score": 100,
-              "weight": 0.2
-            },
-            {
-              "label": "Low leverage",
-              "raw": 48.25,
-              "score": 76,
-              "weight": 0.2
-            },
-            {
-              "label": "Return on capital",
-              "raw": 9.57,
-              "score": 38,
-              "weight": 0.15
-            },
-            {
-              "label": "Return on equity",
-              "raw": 5.71,
-              "score": 29,
-              "weight": 0.15
-            }
-          ],
-          "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
-        },
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
         "source": {
-          "sourceName": "Munshot market-data API",
-          "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-10"
+          "sourceName": "Munshot",
+          "sourceUrl": "https://fastapi.muns.io"
         },
-        "note": null,
+        "note": "Listed — ticker not resolved on this run; re-run to benchmark.",
         "key": null,
-        "primarySource": "listed",
+        "primarySource": "none",
         "probe": null,
         "ratingGrade": null,
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": [],
-        "creditDaysSource": {
-          "sourceName": "Screener.in (from audited annual filings)",
-          "sourceUrl": "https://www.screener.in/company/HITECHCORP/consolidated/",
-          "asOf": "Mar 2026",
-          "basis": "consolidated",
-          "date": "2026-11-10"
-        },
-        "series": [
-          {
-            "fy": "FY06",
-            "revenue": 830000000,
-            "netMargin": 6.02,
-            "roce": null,
-            "receivableDays": 62
-          },
-          {
-            "fy": "FY07",
-            "revenue": 1550000000,
-            "netMargin": 5.16,
-            "roce": 23,
-            "receivableDays": 60
-          },
-          {
-            "fy": "FY08",
-            "revenue": 1790000000,
-            "netMargin": 6.15,
-            "roce": 22,
-            "receivableDays": 66
-          },
-          {
-            "fy": "FY09",
-            "revenue": 2160000000,
-            "netMargin": 5.09,
-            "roce": 23,
-            "receivableDays": 55
-          },
-          {
-            "fy": "FY10",
-            "revenue": 2620000000,
-            "netMargin": 6.11,
-            "roce": 23,
-            "receivableDays": 64
-          },
-          {
-            "fy": "FY11",
-            "revenue": 3450000000,
-            "netMargin": 4.64,
-            "roce": 19,
-            "receivableDays": 61
-          },
-          {
-            "fy": "FY12",
-            "revenue": 3860000000,
-            "netMargin": 2.59,
-            "roce": 14,
-            "receivableDays": 59
-          },
-          {
-            "fy": "FY13",
-            "revenue": 4390000000,
-            "netMargin": 2.28,
-            "roce": 13,
-            "receivableDays": 51
-          },
-          {
-            "fy": "FY14",
-            "revenue": 4600000000,
-            "netMargin": 1.74,
-            "roce": 14,
-            "receivableDays": 58
-          },
-          {
-            "fy": "FY25",
-            "revenue": 5610000000,
-            "netMargin": 1.6,
-            "roce": null,
-            "receivableDays": 35
-          },
-          {
-            "fy": "FY26",
-            "revenue": 6400000000,
-            "netMargin": 2.34,
-            "roce": 10,
-            "receivableDays": 41
-          }
-        ]
+        "levers": []
       },
       {
         "name": "Pearl Polymers Ltd",
@@ -1983,187 +1308,27 @@
         "ticker": "PEARLPOLY",
         "screener": null,
         "cin": null,
-        "status": "ok",
+        "status": "pending",
         "fitNote": "Listed PET bottle/jar specialist (Pearlpet) — direct fit for PET bottles.",
         "secondSourceFor": null,
         "gradeLabel": null,
-        "companyName": "Pearl Polymers Limited",
-        "symbol": "PEARLPOLY.NS",
-        "metrics": {
-          "revenue": 198256000,
-          "ebitda": -72575504,
-          "marketCap": 259257952,
-          "totalDebt": 0,
-          "ebitdaMargin": -36.61,
-          "netMargin": -26.8,
-          "grossMargin": 40.53,
-          "operatingMargin": -29.54,
-          "debtToEquity": 0,
-          "revenueGrowth": 2.5,
-          "earningsGrowth": -18.6,
-          "pe": 0,
-          "evEbitda": -0.34,
-          "dividendYield": 0,
-          "currentPrice": 15.4,
-          "yearlyChange": -40.94,
-          "employees": 66,
-          "roce": -17.2,
-          "roe": -17,
-          "receivableDays": 35.57,
-          "inventoryDays": 41.64,
-          "payableDays": 138.18,
-          "cashConversionCycle": -60.96
-        },
-        "healthScore": {
-          "value": 24,
-          "grade": "D",
-          "components": [
-            {
-              "label": "Net margin",
-              "raw": -26.8,
-              "score": 0,
-              "weight": 0.3
-            },
-            {
-              "label": "EBITDA margin",
-              "raw": -36.61,
-              "score": 0,
-              "weight": 0.15
-            },
-            {
-              "label": "Revenue growth",
-              "raw": 2.5,
-              "score": 36,
-              "weight": 0.2
-            },
-            {
-              "label": "Low leverage",
-              "raw": 0,
-              "score": 100,
-              "weight": 0.2
-            },
-            {
-              "label": "Return on capital",
-              "raw": -17.2,
-              "score": 0,
-              "weight": 0.15
-            },
-            {
-              "label": "Return on equity",
-              "raw": -17,
-              "score": 0,
-              "weight": 0.15
-            }
-          ],
-          "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
-        },
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
         "source": {
-          "sourceName": "Munshot market-data API",
-          "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-10"
+          "sourceName": "Munshot",
+          "sourceUrl": "https://fastapi.muns.io"
         },
-        "note": null,
+        "note": "Listed — ticker not resolved on this run; re-run to benchmark.",
         "key": null,
-        "primarySource": "listed",
+        "primarySource": "none",
         "probe": null,
         "ratingGrade": null,
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": [],
-        "creditDaysSource": {
-          "sourceName": "Screener.in (from audited annual filings)",
-          "sourceUrl": "https://www.screener.in/company/PEARLPOLY/",
-          "asOf": "Mar 2026",
-          "basis": "standalone",
-          "date": "2026-11-10"
-        },
-        "series": [
-          {
-            "fy": "FY15",
-            "revenue": 1982000000,
-            "netMargin": -1.27,
-            "roce": 5.04,
-            "receivableDays": 75.14
-          },
-          {
-            "fy": "FY16",
-            "revenue": 1765300000,
-            "netMargin": 0.26,
-            "roce": 6.24,
-            "receivableDays": 76.3
-          },
-          {
-            "fy": "FY17",
-            "revenue": 1739600000,
-            "netMargin": -0.37,
-            "roce": 5.55,
-            "receivableDays": 90.47
-          },
-          {
-            "fy": "FY18",
-            "revenue": 1809800000,
-            "netMargin": -1.45,
-            "roce": 0.11,
-            "receivableDays": 96.42
-          },
-          {
-            "fy": "FY19",
-            "revenue": 1786800000,
-            "netMargin": -2.72,
-            "roce": -2.66,
-            "receivableDays": 88.88
-          },
-          {
-            "fy": "FY20",
-            "revenue": 1394400000,
-            "netMargin": -8,
-            "roce": -14.3,
-            "receivableDays": 79.63
-          },
-          {
-            "fy": "FY21",
-            "revenue": 1115800000,
-            "netMargin": -9.48,
-            "roce": -14.6,
-            "receivableDays": 86.88
-          },
-          {
-            "fy": "FY22",
-            "revenue": 139600000,
-            "netMargin": 156.45,
-            "roce": 54.74,
-            "receivableDays": 58.57
-          },
-          {
-            "fy": "FY23",
-            "revenue": 171200000,
-            "netMargin": -47.72,
-            "roce": -17.43,
-            "receivableDays": 43.71
-          },
-          {
-            "fy": "FY24",
-            "revenue": 164000000,
-            "netMargin": 3.96,
-            "roce": -2.6,
-            "receivableDays": 38.95
-          },
-          {
-            "fy": "FY25",
-            "revenue": 219700000,
-            "netMargin": -23.3,
-            "roce": -15.93,
-            "receivableDays": 28.58
-          },
-          {
-            "fy": "FY26",
-            "revenue": 197000000,
-            "netMargin": -24.21,
-            "roce": -17.25,
-            "receivableDays": 35.57
-          }
-        ]
+        "levers": []
       },
       {
         "name": "Manjushree Technopack Ltd",
@@ -3375,187 +2540,27 @@
         "ticker": "HUHTAMAKI",
         "screener": null,
         "cin": null,
-        "status": "ok",
+        "status": "pending",
         "fitNote": "Listed flexible-packaging converter (already a tiny FDC supplier) — a proven, scalable second source for laminate sachets.",
         "secondSourceFor": "laminates",
         "gradeLabel": null,
-        "companyName": "Huhtamaki India Limited",
-        "symbol": "HUHTAMAKI.NS",
-        "metrics": {
-          "revenue": 27557500928,
-          "ebitda": 2124450048,
-          "marketCap": 16661649408,
-          "totalDebt": 1445600000,
-          "ebitdaMargin": 7.71,
-          "netMargin": 4.69,
-          "grossMargin": 32.02,
-          "operatingMargin": 6,
-          "debtToEquity": 10.72,
-          "revenueGrowth": 23.1,
-          "earningsGrowth": -19.1,
-          "pe": 12.95,
-          "evEbitda": 6.65,
-          "dividendYield": 91,
-          "currentPrice": 220.62,
-          "yearlyChange": -8.96,
-          "employees": 2400,
-          "roce": 12,
-          "roe": 8.96,
-          "receivableDays": 82,
-          "inventoryDays": 46,
-          "payableDays": 102,
-          "cashConversionCycle": 26
-        },
-        "healthScore": {
-          "value": 58,
-          "grade": "C",
-          "components": [
-            {
-              "label": "Net margin",
-              "raw": 4.69,
-              "score": 31,
-              "weight": 0.3
-            },
-            {
-              "label": "EBITDA margin",
-              "raw": 7.71,
-              "score": 39,
-              "weight": 0.15
-            },
-            {
-              "label": "Revenue growth",
-              "raw": 23.1,
-              "score": 95,
-              "weight": 0.2
-            },
-            {
-              "label": "Low leverage",
-              "raw": 10.72,
-              "score": 95,
-              "weight": 0.2
-            },
-            {
-              "label": "Return on capital",
-              "raw": 12,
-              "score": 48,
-              "weight": 0.15
-            },
-            {
-              "label": "Return on equity",
-              "raw": 8.96,
-              "score": 45,
-              "weight": 0.15
-            }
-          ],
-          "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
-        },
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
         "source": {
-          "sourceName": "Munshot market-data API",
-          "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-10"
+          "sourceName": "Munshot",
+          "sourceUrl": "https://fastapi.muns.io"
         },
-        "note": null,
+        "note": "Listed — ticker not resolved on this run; re-run to benchmark.",
         "key": null,
-        "primarySource": "listed",
+        "primarySource": "none",
         "probe": null,
         "ratingGrade": null,
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": [],
-        "creditDaysSource": {
-          "sourceName": "Screener.in (from audited annual filings)",
-          "sourceUrl": "https://www.screener.in/company/HUHTAMAKI/",
-          "asOf": "Dec 2025",
-          "basis": "standalone",
-          "date": "2026-11-10"
-        },
-        "series": [
-          {
-            "fy": "FY14",
-            "revenue": 11350000000,
-            "netMargin": 5.73,
-            "roce": 15,
-            "receivableDays": 70
-          },
-          {
-            "fy": "FY15",
-            "revenue": 11510000000,
-            "netMargin": 4.26,
-            "roce": 12,
-            "receivableDays": 69
-          },
-          {
-            "fy": "FY16",
-            "revenue": 21810000000,
-            "netMargin": 3.76,
-            "roce": 18,
-            "receivableDays": 77
-          },
-          {
-            "fy": "FY17",
-            "revenue": 21310000000,
-            "netMargin": 3,
-            "roce": 16,
-            "receivableDays": 90
-          },
-          {
-            "fy": "FY18",
-            "revenue": 23690000000,
-            "netMargin": 1.48,
-            "roce": 15,
-            "receivableDays": 88
-          },
-          {
-            "fy": "FY19",
-            "revenue": 25990000000,
-            "netMargin": 6.54,
-            "roce": 22,
-            "receivableDays": 87
-          },
-          {
-            "fy": "FY20",
-            "revenue": 24630000000,
-            "netMargin": 3.9,
-            "roce": 14,
-            "receivableDays": 79
-          },
-          {
-            "fy": "FY21",
-            "revenue": 26250000000,
-            "netMargin": -0.88,
-            "roce": 2,
-            "receivableDays": 88
-          },
-          {
-            "fy": "FY22",
-            "revenue": 29830000000,
-            "netMargin": 1.68,
-            "roce": 7,
-            "receivableDays": 81
-          },
-          {
-            "fy": "FY23",
-            "revenue": 25490000000,
-            "netMargin": 16.08,
-            "roce": 12,
-            "receivableDays": 79
-          },
-          {
-            "fy": "FY24",
-            "revenue": 25210000000,
-            "netMargin": 3.49,
-            "roce": 7,
-            "receivableDays": 83
-          },
-          {
-            "fy": "FY25",
-            "revenue": 24690000000,
-            "netMargin": 4.78,
-            "roce": 12,
-            "receivableDays": 82
-          }
-        ]
+        "levers": []
       },
       {
         "name": "UFLEX Ltd",
@@ -3564,187 +2569,27 @@
         "ticker": "UFLEX",
         "screener": null,
         "cin": null,
-        "status": "ok",
+        "status": "pending",
         "fitNote": "Listed flexibles giant — both film substrate AND conversion; can second-source GEEP at scale.",
         "secondSourceFor": "laminates",
         "gradeLabel": null,
-        "companyName": "Uflex Limited",
-        "symbol": "UFLEX.NS",
-        "metrics": {
-          "revenue": 164920033280,
-          "ebitda": 22030196736,
-          "marketCap": 43796267008,
-          "totalDebt": 101523062784,
-          "ebitdaMargin": 13.36,
-          "netMargin": 4.14,
-          "grossMargin": 41.01,
-          "operatingMargin": 12.99,
-          "debtToEquity": 124.99,
-          "revenueGrowth": 35.5,
-          "earningsGrowth": 630,
-          "pe": 6.42,
-          "evEbitda": 6.13,
-          "dividendYield": 49,
-          "currentPrice": 606.5,
-          "yearlyChange": 12.17,
-          "employees": 7772,
-          "roce": 7.03,
-          "roe": 4.27,
-          "receivableDays": 92,
-          "inventoryDays": 97,
-          "payableDays": 99,
-          "cashConversionCycle": 89
-        },
-        "healthScore": {
-          "value": 46,
-          "grade": "C",
-          "components": [
-            {
-              "label": "Net margin",
-              "raw": 4.14,
-              "score": 28,
-              "weight": 0.3
-            },
-            {
-              "label": "EBITDA margin",
-              "raw": 13.36,
-              "score": 67,
-              "weight": 0.15
-            },
-            {
-              "label": "Revenue growth",
-              "raw": 35.5,
-              "score": 100,
-              "weight": 0.2
-            },
-            {
-              "label": "Low leverage",
-              "raw": 124.99,
-              "score": 38,
-              "weight": 0.2
-            },
-            {
-              "label": "Return on capital",
-              "raw": 7.03,
-              "score": 28,
-              "weight": 0.15
-            },
-            {
-              "label": "Return on equity",
-              "raw": 4.27,
-              "score": 21,
-              "weight": 0.15
-            }
-          ],
-          "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
-        },
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
         "source": {
-          "sourceName": "Munshot market-data API",
-          "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-10"
+          "sourceName": "Munshot",
+          "sourceUrl": "https://fastapi.muns.io"
         },
-        "note": null,
+        "note": "Listed — ticker not resolved on this run; re-run to benchmark.",
         "key": null,
-        "primarySource": "listed",
+        "primarySource": "none",
         "probe": null,
         "ratingGrade": null,
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": [],
-        "creditDaysSource": {
-          "sourceName": "Screener.in (from audited annual filings)",
-          "sourceUrl": "https://www.screener.in/company/UFLEX/consolidated/",
-          "asOf": "Mar 2026",
-          "basis": "consolidated",
-          "date": "2026-11-10"
-        },
-        "series": [
-          {
-            "fy": "FY15",
-            "revenue": 61300000000,
-            "netMargin": 4.18,
-            "roce": 9,
-            "receivableDays": 90
-          },
-          {
-            "fy": "FY16",
-            "revenue": 63660000000,
-            "netMargin": 4.98,
-            "roce": 10,
-            "receivableDays": 85
-          },
-          {
-            "fy": "FY17",
-            "revenue": 65050000000,
-            "netMargin": 5.4,
-            "roce": 10,
-            "receivableDays": 93
-          },
-          {
-            "fy": "FY18",
-            "revenue": 68020000000,
-            "netMargin": 4.59,
-            "roce": 9,
-            "receivableDays": 104
-          },
-          {
-            "fy": "FY19",
-            "revenue": 79570000000,
-            "netMargin": 3.96,
-            "roce": 10,
-            "receivableDays": 94
-          },
-          {
-            "fy": "FY20",
-            "revenue": 74050000000,
-            "netMargin": 5.01,
-            "roce": 10,
-            "receivableDays": 96
-          },
-          {
-            "fy": "FY21",
-            "revenue": 88890000000,
-            "netMargin": 9.49,
-            "roce": 15,
-            "receivableDays": 99
-          },
-          {
-            "fy": "FY22",
-            "revenue": 131270000000,
-            "netMargin": 8.37,
-            "roce": 17,
-            "receivableDays": 98
-          },
-          {
-            "fy": "FY23",
-            "revenue": 146630000000,
-            "netMargin": 3.28,
-            "roce": 10,
-            "receivableDays": 80
-          },
-          {
-            "fy": "FY24",
-            "revenue": 133640000000,
-            "netMargin": -5.17,
-            "roce": 6,
-            "receivableDays": 94
-          },
-          {
-            "fy": "FY25",
-            "revenue": 150360000000,
-            "netMargin": 0.94,
-            "roce": 8,
-            "receivableDays": 91
-          },
-          {
-            "fy": "FY26",
-            "revenue": 154010000000,
-            "netMargin": 2.06,
-            "roce": 7,
-            "receivableDays": 92
-          }
-        ]
+        "levers": []
       },
       {
         "name": "Ester Industries Ltd",
@@ -3753,187 +2598,27 @@
         "ticker": "ESTER",
         "screener": null,
         "cin": null,
-        "status": "ok",
+        "status": "pending",
         "fitNote": "Listed BOPET film maker — substrate supply, not finished laminate; use for film cost benchmarking.",
         "secondSourceFor": null,
         "gradeLabel": null,
-        "companyName": "Ester Industries Limited",
-        "symbol": "ESTER.NS",
-        "metrics": {
-          "revenue": 15620544512,
-          "ebitda": 1817981952,
-          "marketCap": 9623303168,
-          "totalDebt": 7487681024,
-          "ebitdaMargin": 11.64,
-          "netMargin": 1.4,
-          "grossMargin": 35.37,
-          "operatingMargin": 6.18,
-          "debtToEquity": 84.36,
-          "revenueGrowth": 26.8,
-          "earningsGrowth": 0,
-          "pe": 0,
-          "evEbitda": 8.17,
-          "dividendYield": 27,
-          "currentPrice": 92.27,
-          "yearlyChange": -10.7,
-          "employees": 446,
-          "roce": 2.75,
-          "roe": -3.56,
-          "receivableDays": 49,
-          "inventoryDays": 86,
-          "payableDays": 27,
-          "cashConversionCycle": 108
-        },
-        "healthScore": {
-          "value": 39,
-          "grade": "D",
-          "components": [
-            {
-              "label": "Net margin",
-              "raw": 1.4,
-              "score": 9,
-              "weight": 0.3
-            },
-            {
-              "label": "EBITDA margin",
-              "raw": 11.64,
-              "score": 58,
-              "weight": 0.15
-            },
-            {
-              "label": "Revenue growth",
-              "raw": 26.8,
-              "score": 100,
-              "weight": 0.2
-            },
-            {
-              "label": "Low leverage",
-              "raw": 84.36,
-              "score": 58,
-              "weight": 0.2
-            },
-            {
-              "label": "Return on capital",
-              "raw": 2.75,
-              "score": 11,
-              "weight": 0.15
-            },
-            {
-              "label": "Return on equity",
-              "raw": -3.56,
-              "score": 0,
-              "weight": 0.15
-            }
-          ],
-          "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
-        },
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
         "source": {
-          "sourceName": "Munshot market-data API",
-          "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-10"
+          "sourceName": "Munshot",
+          "sourceUrl": "https://fastapi.muns.io"
         },
-        "note": null,
+        "note": "Listed — ticker not resolved on this run; re-run to benchmark.",
         "key": null,
-        "primarySource": "listed",
+        "primarySource": "none",
         "probe": null,
         "ratingGrade": null,
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": [],
-        "creditDaysSource": {
-          "sourceName": "Screener.in (from audited annual filings)",
-          "sourceUrl": "https://www.screener.in/company/ESTER/consolidated/",
-          "asOf": "Mar 2026",
-          "basis": "consolidated",
-          "date": "2026-11-10"
-        },
-        "series": [
-          {
-            "fy": "FY11",
-            "revenue": 6710000000,
-            "netMargin": 19.23,
-            "roce": 56,
-            "receivableDays": 66
-          },
-          {
-            "fy": "FY12",
-            "revenue": 6980000000,
-            "netMargin": -2.01,
-            "roce": 3,
-            "receivableDays": 44
-          },
-          {
-            "fy": "FY13",
-            "revenue": 8840000000,
-            "netMargin": -0.57,
-            "roce": 3,
-            "receivableDays": 45
-          },
-          {
-            "fy": "FY14",
-            "revenue": 9280000000,
-            "netMargin": 0.86,
-            "roce": 8,
-            "receivableDays": 49
-          },
-          {
-            "fy": "FY15",
-            "revenue": 8950000000,
-            "netMargin": 0.45,
-            "roce": 7,
-            "receivableDays": 48
-          },
-          {
-            "fy": "FY16",
-            "revenue": 7680000000,
-            "netMargin": 0.65,
-            "roce": 7,
-            "receivableDays": 53
-          },
-          {
-            "fy": "FY21",
-            "revenue": 9920000000,
-            "netMargin": 13.81,
-            "roce": null,
-            "receivableDays": 56
-          },
-          {
-            "fy": "FY22",
-            "revenue": 11100000000,
-            "netMargin": 12.34,
-            "roce": 14,
-            "receivableDays": 64
-          },
-          {
-            "fy": "FY23",
-            "revenue": 11140000000,
-            "netMargin": 12.3,
-            "roce": 4,
-            "receivableDays": 50
-          },
-          {
-            "fy": "FY24",
-            "revenue": 10630000000,
-            "netMargin": -11.38,
-            "roce": -5,
-            "receivableDays": 51
-          },
-          {
-            "fy": "FY25",
-            "revenue": 12820000000,
-            "netMargin": 1.09,
-            "roce": 6,
-            "receivableDays": 48
-          },
-          {
-            "fy": "FY26",
-            "revenue": 13750000000,
-            "netMargin": -1.96,
-            "roce": 3,
-            "receivableDays": 49
-          }
-        ]
+        "levers": []
       },
       {
         "name": "Cosmo First Ltd",
@@ -3942,187 +2627,27 @@
         "ticker": "COSMOFIRST",
         "screener": null,
         "cin": null,
-        "status": "ok",
+        "status": "pending",
         "fitNote": "Listed BOPP/specialty film maker — substrate, not conversion.",
         "secondSourceFor": null,
         "gradeLabel": null,
-        "companyName": "Cosmo First Limited",
-        "symbol": "COSMOFIRST.NS",
-        "metrics": {
-          "revenue": 44806000640,
-          "ebitda": 4499599872,
-          "marketCap": 21431052288,
-          "totalDebt": 16102800384,
-          "ebitdaMargin": 10.04,
-          "netMargin": 4.88,
-          "grossMargin": 33.02,
-          "operatingMargin": 7.54,
-          "debtToEquity": 91.11,
-          "revenueGrowth": 51,
-          "earningsGrowth": 110.4,
-          "pe": 13.02,
-          "evEbitda": 7.34,
-          "dividendYield": 48,
-          "currentPrice": 825.6,
-          "yearlyChange": -5.94,
-          "employees": 1568,
-          "roce": 11.2,
-          "roe": 10.4,
-          "receivableDays": 40,
-          "inventoryDays": 110,
-          "payableDays": 140,
-          "cashConversionCycle": 10
-        },
-        "healthScore": {
-          "value": 55,
-          "grade": "C",
-          "components": [
-            {
-              "label": "Net margin",
-              "raw": 4.88,
-              "score": 33,
-              "weight": 0.3
-            },
-            {
-              "label": "EBITDA margin",
-              "raw": 10.04,
-              "score": 50,
-              "weight": 0.15
-            },
-            {
-              "label": "Revenue growth",
-              "raw": 51,
-              "score": 100,
-              "weight": 0.2
-            },
-            {
-              "label": "Low leverage",
-              "raw": 91.11,
-              "score": 54,
-              "weight": 0.2
-            },
-            {
-              "label": "Return on capital",
-              "raw": 11.2,
-              "score": 45,
-              "weight": 0.15
-            },
-            {
-              "label": "Return on equity",
-              "raw": 10.4,
-              "score": 52,
-              "weight": 0.15
-            }
-          ],
-          "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
-        },
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
         "source": {
-          "sourceName": "Munshot market-data API",
-          "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-10"
+          "sourceName": "Munshot",
+          "sourceUrl": "https://fastapi.muns.io"
         },
-        "note": null,
+        "note": "Listed — ticker not resolved on this run; re-run to benchmark.",
         "key": null,
-        "primarySource": "listed",
+        "primarySource": "none",
         "probe": null,
         "ratingGrade": null,
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": [],
-        "creditDaysSource": {
-          "sourceName": "Screener.in (from audited annual filings)",
-          "sourceUrl": "https://www.screener.in/company/COSMOFIRST/consolidated/",
-          "asOf": "Mar 2026",
-          "basis": "consolidated",
-          "date": "2026-11-10"
-        },
-        "series": [
-          {
-            "fy": "FY15",
-            "revenue": 16470000000,
-            "netMargin": 1.7,
-            "roce": 9,
-            "receivableDays": 27
-          },
-          {
-            "fy": "FY16",
-            "revenue": 16210000000,
-            "netMargin": 5.92,
-            "roce": 18,
-            "receivableDays": 26
-          },
-          {
-            "fy": "FY17",
-            "revenue": 15870000000,
-            "netMargin": 5.42,
-            "roce": 12,
-            "receivableDays": 37
-          },
-          {
-            "fy": "FY18",
-            "revenue": 18470000000,
-            "netMargin": 3.47,
-            "roce": 9,
-            "receivableDays": 38
-          },
-          {
-            "fy": "FY19",
-            "revenue": 21570000000,
-            "netMargin": 2.83,
-            "roce": 8,
-            "receivableDays": 35
-          },
-          {
-            "fy": "FY20",
-            "revenue": 22040000000,
-            "netMargin": 5.13,
-            "roce": 14,
-            "receivableDays": 32
-          },
-          {
-            "fy": "FY21",
-            "revenue": 22850000000,
-            "netMargin": 10.37,
-            "roce": 23,
-            "receivableDays": 30
-          },
-          {
-            "fy": "FY22",
-            "revenue": 30380000000,
-            "netMargin": 13.07,
-            "roce": 31,
-            "receivableDays": 26
-          },
-          {
-            "fy": "FY23",
-            "revenue": 30650000000,
-            "netMargin": 7.96,
-            "roce": 17,
-            "receivableDays": 24
-          },
-          {
-            "fy": "FY24",
-            "revenue": 25870000000,
-            "netMargin": 2.4,
-            "roce": 7,
-            "receivableDays": 37
-          },
-          {
-            "fy": "FY25",
-            "revenue": 28950000000,
-            "netMargin": 4.59,
-            "roce": 10,
-            "receivableDays": 39
-          },
-          {
-            "fy": "FY26",
-            "revenue": 36390000000,
-            "netMargin": 4.29,
-            "roce": 11,
-            "receivableDays": 40
-          }
-        ]
+        "levers": []
       },
       {
         "name": "Polyplex Corporation Ltd",
@@ -4131,187 +2656,27 @@
         "ticker": "POLYPLEX",
         "screener": null,
         "cin": null,
-        "status": "ok",
+        "status": "pending",
         "fitNote": "Listed PET film major — substrate benchmark.",
         "secondSourceFor": null,
         "gradeLabel": null,
-        "companyName": "Polyplex Corporation Limited",
-        "symbol": "POLYPLEX.NS",
-        "metrics": {
-          "revenue": 76008103936,
-          "ebitda": 5391079424,
-          "marketCap": 28793165824,
-          "totalDebt": 9353100288,
-          "ebitdaMargin": 7.09,
-          "netMargin": 2.04,
-          "grossMargin": 31.74,
-          "operatingMargin": 10.73,
-          "debtToEquity": 13.29,
-          "revenueGrowth": 29.6,
-          "earningsGrowth": 0,
-          "pe": 17.78,
-          "evEbitda": 10.3,
-          "dividendYield": 22,
-          "currentPrice": 917.2,
-          "yearlyChange": 2.21,
-          "employees": 1022,
-          "roce": 0.89,
-          "roe": 1.39,
-          "receivableDays": 58,
-          "inventoryDays": 150,
-          "payableDays": 55,
-          "cashConversionCycle": 153
-        },
-        "healthScore": {
-          "value": 43,
-          "grade": "D",
-          "components": [
-            {
-              "label": "Net margin",
-              "raw": 2.04,
-              "score": 14,
-              "weight": 0.3
-            },
-            {
-              "label": "EBITDA margin",
-              "raw": 7.09,
-              "score": 35,
-              "weight": 0.15
-            },
-            {
-              "label": "Revenue growth",
-              "raw": 29.6,
-              "score": 100,
-              "weight": 0.2
-            },
-            {
-              "label": "Low leverage",
-              "raw": 13.29,
-              "score": 93,
-              "weight": 0.2
-            },
-            {
-              "label": "Return on capital",
-              "raw": 0.89,
-              "score": 4,
-              "weight": 0.15
-            },
-            {
-              "label": "Return on equity",
-              "raw": 1.39,
-              "score": 7,
-              "weight": 0.15
-            }
-          ],
-          "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
-        },
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
         "source": {
-          "sourceName": "Munshot market-data API",
-          "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-10"
+          "sourceName": "Munshot",
+          "sourceUrl": "https://fastapi.muns.io"
         },
-        "note": null,
+        "note": "Listed — ticker not resolved on this run; re-run to benchmark.",
         "key": null,
-        "primarySource": "listed",
+        "primarySource": "none",
         "probe": null,
         "ratingGrade": null,
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": [],
-        "creditDaysSource": {
-          "sourceName": "Screener.in (from audited annual filings)",
-          "sourceUrl": "https://www.screener.in/company/POLYPLEX/consolidated/",
-          "asOf": "Mar 2026",
-          "basis": "consolidated",
-          "date": "2026-11-10"
-        },
-        "series": [
-          {
-            "fy": "FY15",
-            "revenue": 32040000000,
-            "netMargin": 2.43,
-            "roce": 4,
-            "receivableDays": 46
-          },
-          {
-            "fy": "FY16",
-            "revenue": 32020000000,
-            "netMargin": 0.5,
-            "roce": 4,
-            "receivableDays": 49
-          },
-          {
-            "fy": "FY17",
-            "revenue": 32010000000,
-            "netMargin": 11.28,
-            "roce": 9,
-            "receivableDays": 53
-          },
-          {
-            "fy": "FY18",
-            "revenue": 35720000000,
-            "netMargin": 7.95,
-            "roce": 8,
-            "receivableDays": 56
-          },
-          {
-            "fy": "FY19",
-            "revenue": 45700000000,
-            "netMargin": 12.78,
-            "roce": 15,
-            "receivableDays": 48
-          },
-          {
-            "fy": "FY20",
-            "revenue": 44870000000,
-            "netMargin": 11.01,
-            "roce": 12,
-            "receivableDays": 55
-          },
-          {
-            "fy": "FY21",
-            "revenue": 49180000000,
-            "netMargin": 17.53,
-            "roce": 19,
-            "receivableDays": 50
-          },
-          {
-            "fy": "FY22",
-            "revenue": 66240000000,
-            "netMargin": 14.57,
-            "roce": 20,
-            "receivableDays": 61
-          },
-          {
-            "fy": "FY23",
-            "revenue": 76520000000,
-            "netMargin": 8.05,
-            "roce": 12,
-            "receivableDays": 44
-          },
-          {
-            "fy": "FY24",
-            "revenue": 63070000000,
-            "netMargin": 1.36,
-            "roce": 2,
-            "receivableDays": 56
-          },
-          {
-            "fy": "FY25",
-            "revenue": 68850000000,
-            "netMargin": 5.2,
-            "roce": 7,
-            "receivableDays": 54
-          },
-          {
-            "fy": "FY26",
-            "revenue": 70860000000,
-            "netMargin": 0.58,
-            "roce": 1,
-            "receivableDays": 58
-          }
-        ]
+        "levers": []
       },
       {
         "name": "Jindal Poly Films Ltd",
@@ -4320,187 +2685,27 @@
         "ticker": "JINDALPOLY",
         "screener": null,
         "cin": null,
-        "status": "ok",
+        "status": "pending",
         "fitNote": "Listed BOPET/BOPP film major — substrate benchmark.",
         "secondSourceFor": null,
         "gradeLabel": null,
-        "companyName": "Jindal Poly Films Limited",
-        "symbol": "JINDALPOLY.NS",
-        "metrics": {
-          "revenue": 29018603520,
-          "ebitda": -4695441920,
-          "marketCap": 30046236672,
-          "totalDebt": 40037449728,
-          "ebitdaMargin": -16.18,
-          "netMargin": -36.53,
-          "grossMargin": 21.21,
-          "operatingMargin": -36.51,
-          "debtToEquity": 131.57,
-          "revenueGrowth": -52.5,
-          "earningsGrowth": 0,
-          "pe": 0,
-          "evEbitda": -9.16,
-          "dividendYield": 0,
-          "currentPrice": 686.2,
-          "yearlyChange": 26.34,
-          "employees": 346,
-          "roce": -1.99,
-          "roe": -0.97,
-          "receivableDays": 29,
-          "inventoryDays": 116,
-          "payableDays": 64,
-          "cashConversionCycle": 81
-        },
-        "healthScore": {
-          "value": 6,
-          "grade": "D",
-          "components": [
-            {
-              "label": "Net margin",
-              "raw": -36.53,
-              "score": 0,
-              "weight": 0.3
-            },
-            {
-              "label": "EBITDA margin",
-              "raw": -16.18,
-              "score": 0,
-              "weight": 0.15
-            },
-            {
-              "label": "Revenue growth",
-              "raw": -52.5,
-              "score": 0,
-              "weight": 0.2
-            },
-            {
-              "label": "Low leverage",
-              "raw": 131.57,
-              "score": 34,
-              "weight": 0.2
-            },
-            {
-              "label": "Return on capital",
-              "raw": -1.99,
-              "score": 0,
-              "weight": 0.15
-            },
-            {
-              "label": "Return on equity",
-              "raw": -0.97,
-              "score": 0,
-              "weight": 0.15
-            }
-          ],
-          "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
-        },
+        "companyName": null,
+        "symbol": null,
+        "metrics": null,
+        "healthScore": null,
         "source": {
-          "sourceName": "Munshot market-data API",
-          "sourceUrl": "https://fastapi.muns.io",
-          "date": "2026-11-10"
+          "sourceName": "Munshot",
+          "sourceUrl": "https://fastapi.muns.io"
         },
-        "note": null,
+        "note": "Listed — ticker not resolved on this run; re-run to benchmark.",
         "key": null,
-        "primarySource": "listed",
+        "primarySource": "none",
         "probe": null,
         "ratingGrade": null,
         "ratingLabel": null,
         "asOfFy": null,
         "issuerNotCooperating": false,
-        "levers": [],
-        "creditDaysSource": {
-          "sourceName": "Screener.in (from audited annual filings)",
-          "sourceUrl": "https://www.screener.in/company/JINDALPOLY/consolidated/",
-          "asOf": "Mar 2026",
-          "basis": "consolidated",
-          "date": "2026-11-10"
-        },
-        "series": [
-          {
-            "fy": "FY15",
-            "revenue": 75570000000,
-            "netMargin": 2.41,
-            "roce": 11,
-            "receivableDays": 34
-          },
-          {
-            "fy": "FY16",
-            "revenue": 72250000000,
-            "netMargin": 6.31,
-            "roce": 16,
-            "receivableDays": 37
-          },
-          {
-            "fy": "FY17",
-            "revenue": 70050000000,
-            "netMargin": 3.84,
-            "roce": 9,
-            "receivableDays": 35
-          },
-          {
-            "fy": "FY18",
-            "revenue": 64480000000,
-            "netMargin": 2.36,
-            "roce": 10,
-            "receivableDays": 9
-          },
-          {
-            "fy": "FY19",
-            "revenue": 36230000000,
-            "netMargin": -11.29,
-            "roce": 12,
-            "receivableDays": 15
-          },
-          {
-            "fy": "FY20",
-            "revenue": 35460000000,
-            "netMargin": 13.79,
-            "roce": 18,
-            "receivableDays": 13
-          },
-          {
-            "fy": "FY21",
-            "revenue": 40820000000,
-            "netMargin": 19.38,
-            "roce": 32,
-            "receivableDays": 9
-          },
-          {
-            "fy": "FY22",
-            "revenue": 58780000000,
-            "netMargin": 20.35,
-            "roce": 37,
-            "receivableDays": 13
-          },
-          {
-            "fy": "FY23",
-            "revenue": 46970000000,
-            "netMargin": 6.79,
-            "roce": 12,
-            "receivableDays": 19
-          },
-          {
-            "fy": "FY24",
-            "revenue": 39260000000,
-            "netMargin": 1.83,
-            "roce": 3,
-            "receivableDays": 33
-          },
-          {
-            "fy": "FY25",
-            "revenue": 53350000000,
-            "netMargin": 2.06,
-            "roce": 5,
-            "receivableDays": 28
-          },
-          {
-            "fy": "FY26",
-            "revenue": 28990000000,
-            "netMargin": -36.63,
-            "roce": -2,
-            "receivableDays": 29
-          }
-        ]
+        "levers": []
       },
       {
         "name": "Constantia Parikh Packaging Pvt Ltd",
