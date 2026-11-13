@@ -1,71 +1,71 @@
 {
-  "inputHash": "aac009014d226142",
+  "inputHash": "e0732f293ccb550f",
   "brief": {
-    "headline": "Push for ₹0.65–0.80/pc on caps (market says modest room below today's band) and qualify Manjushree or Mold-Tek as second source",
+    "headline": "Lock in ₹0.65–0.80/pc on caps at higher volume and qualify Manjushree as second source",
     "priceAsk": {
-      "summary": "Ask for a price in the ₹0.65–0.80/pc range on 28 mm caps",
-      "target": "₹0.65–0.80/pc at higher volume",
-      "basis": "Market asking prices for 28 mm induction-wad PP caps run ₹0.55–1.20/pc, typically ₹0.85–0.95/pc; the market verdict says 'MARKET-FAIR; modest headroom to ₹0.65–0.80 at higher volume / looser spec' — so there is room to move down if we commit bigger volumes or flex the specification"
+      "summary": "Ask for ₹0.65–0.80/pc on 28 mm caps at higher volumes or looser specs",
+      "target": "₹0.65–0.80/pc",
+      "basis": "The open market for 28 mm induction-wad PP caps runs ₹0.55–1.20/pc, typically ₹0.85–0.95/pc. The market view is 'modest headroom to ₹0.65–0.80 at higher volume / looser spec', so that lower band is our target — achievable if we commit volume or relax tolerance"
     },
     "paymentTermAsk": {
-      "summary": "Hold at 30 days after receipt; no reason to shorten",
+      "summary": "Keep 30 Days After Receipt; no reason to tighten",
       "cashImpact": "none"
     },
-    "financialLeverage": "Empire publishes no financials, so we can't gauge their profit or cash position. Our ₹67.47 L annual spend is real money, but without their revenue figure we don't know if we're 1% or 10% of their business. That means we lean on market benchmarks and on having credible second sources lined up. The plan is to show we've done our homework on alternate suppliers and on what the market will bear, then push for the lower end of the market range.",
+    "financialLeverage": "Empire Industries publishes no financials, so we don't know their revenue, profit or how tight cash is for them. Our ₹67.47 L annual spend is meaningful but not decisive leverage on its own. We're building our asks on the open-market price bands and on having credible second sources lined up. Without their financial picture, the plan is to benchmark hard to the market and show we can move volume elsewhere if needed.",
     "evidence": [
       {
-        "point": "We spend ₹67.47 L a year with them on rigid plastic packaging",
+        "point": "Our annual spend with them",
         "figure": "₹67.47 L"
       },
       {
-        "point": "Market asking prices for 28 mm induction-wad PP caps are ₹0.55–1.20/pc, typically ₹0.85–0.95/pc",
-        "figure": "₹0.55–1.20/pc … ₹0.85–0.95/pc"
+        "point": "Market asking price for 28 mm induction-wad PP cap",
+        "figure": "₹0.55–1.20/pc, typically ₹0.85–0.95/pc"
       },
       {
-        "point": "Market verdict says there is modest headroom to ₹0.65–0.80/pc at higher volume or looser spec",
-        "figure": "₹0.65–0.80"
+        "point": "Market verdict: modest headroom to lower band at higher volume or looser spec",
+        "figure": "₹0.65–0.80/pc"
       },
       {
-        "point": "HDPE resin import unit value is 87.61 ₹/kg",
+        "point": "HDPE resin import reference (raw material benchmark)",
         "figure": "87.61 ₹/kg"
       },
       {
-        "point": "We pay 30 days after receipt today",
-        "figure": "30 Days After Receipt"
+        "point": "We already pay them 30 Days After Receipt; no need to squeeze payment",
+        "figure": "30 Days"
       }
     ],
     "alternates": [
       {
         "name": "Manjushree Technopack Ltd",
-        "why": "India's largest rigid-plastic packaging converter — pharma bottles, caps, preforms; revenue ₹2569.83 Cr, health score B (65/100) — top second-source candidate"
+        "why": "India's largest rigid-plastic packaging converter — pharma bottles, caps, preforms (₹2569.83 Cr revenue, health score B 65/100). Top second-source candidate; worth an RFQ now"
       },
       {
         "name": "Mold-Tek Packaging Ltd",
-        "why": "Listed rigid-plastic leader (pails, containers, pharma); strong, profitable — a robust alternate for bottles and closures"
+        "why": "Listed rigid-plastic leader for pails, containers, pharma (₹1010.97 Cr revenue, health B 73/100). Strong, profitable — a robust backup for bottles and closures"
       },
       {
-        "name": "Hitech Corporation Ltd",
-        "why": "Listed maker of moulded and blow-moulded packaging; broad capability across bottles and caps"
+        "name": "Reliance Industries Limited",
+        "why": "A lead to qualify (verify before RFQ) — manufacturer with pan-India reach; medium confidence"
       }
     ],
     "risks": [
-      "Empire's financials aren't public, so we can't tell if a tough price push might hurt their ability to supply us reliably",
-      "We have no alternate supplier qualified or priced today — if we lose Empire we scramble; start qualifying Manjushree or Mold-Tek now",
-      "The market 'modest headroom' language means the price cut won't be huge; don't expect more than 10–15% down without a big volume jump or spec change",
-      "Six market backup leads (Reliance, Srichakra, IVL Dhunseri, Dalmia, Ganesha, Chemco) are unqualified — verify each before sending an RFQ"
+      "Empire Industries' financials aren't public, so we're flying blind on their stability — line up Manjushree and get pricing before we push hard",
+      "The market 'modest headroom' to ₹0.65–0.80 assumes we commit higher volume or accept looser specs — make sure operations can live with that trade before we ask",
+      "Our ₹67.47 L spend may not be big enough to dictate terms alone — the alternates are our real leverage; show Empire we're serious about qualifying a second source",
+      "Market backups like Reliance and Srichakra Polyplast are leads only (medium confidence) — don't threaten to switch to them until we've verified they can supply caps at pharma grade"
     ],
-    "suggestedOpeningLine": "We've mapped the market for 28 mm caps — asking prices run ₹0.55–1.20 and there's room at ₹0.65–0.80 for volume commitment — and we're qualifying Manjushree and Mold-Tek as second sources, so let's talk about where your price can land."
+    "suggestedOpeningLine": "We're seeing 28 mm caps quoted at ₹0.65–0.80 in the market at higher volumes, and we're qualifying Manjushree as a second source — let's talk about how we get to that price band with you."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-11-11",
+  "generatedAt": "2026-11-13",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
-    "inputTokens": 2847,
-    "outputTokens": 1110,
+    "inputTokens": 2890,
+    "outputTokens": 1036,
     "serverToolUsage": {},
-    "totalTokens": 3957
+    "totalTokens": 3926
   }
 }
