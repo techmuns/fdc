@@ -1,75 +1,75 @@
 {
-  "inputHash": "4327b6acc3bb0230",
+  "inputHash": "acde9405b3907f3d",
   "brief": {
-    "headline": "Push for ₹1.87/bottle on PET amber 100 mL (16.6% cut) or walk to Suraj Blow Plast — and flip 30-day terms to 15-day faster payment against a 5% cut (they borrow at 10.27%)",
+    "headline": "Push for a 16.6% price cut on the PET bottle SKU to match our best price — we already pay ₹1.87/NOS elsewhere, and their finances are tight enough to make the deal worth it.",
     "priceAsk": {
       "summary": "Cut the PET BOT AMBER 100ML/25MM NECK 12.5G from ₹2.18/NOS to ₹1.87/NOS",
-      "target": "₹1.87/NOS — saves us ₹28644 a year",
-      "basis": "We already pay ₹1.87/NOS to Suraj Blow Plast for the same bottle. TPAC's ₹2.18 is 16.6% higher. Match Suraj or we move the volume."
+      "target": "₹1.87/NOS — the best price we pay today, saving us ₹28644 a year",
+      "basis": "We already pay ₹1.87/NOS to Suraj Blow Plast PVt. Ltd. for the same bottle. TPAC charges ₹2.18/NOS — a 16.6% gap. The market ask for a similar cap sits at ₹0.55–1.20/pc (typical ₹0.85–0.95/pc), with modest room to ₹0.65–0.80 at volume — so our ₹1.87/NOS target is grounded in what we pay and what the market supports."
     },
     "paymentTermAsk": {
-      "summary": "Offer to pay 15 days faster (cut from 30 days after receipt to 15 days) in exchange for a 5% price cut across all items",
-      "cashImpact": "Paying 15 days faster ties up ₹46539 of our cash, but a 5% cut is worth roughly ₹56600 a year — net win for us of about ₹10000, and it's worth 10.27% to them because that's what they pay to borrow money"
+      "summary": "Move payment from 30 days to 45 days — offer to pay at 15 days instead in exchange for a ~10% price cut",
+      "cashImpact": "Keeping 30 days frees up ₹93078 of cash for us. If we pay 15 days faster than today, we give up ₹46539 — worth it only if they cut price by roughly their borrowing rate of 10.27%."
     },
-    "financialLeverage": "TPAC is healthy — [ICRA] A / Stable rating, ₹637.48 Cr revenue, they keep about ₹4 of every ₹100 they sell (3.8% margin), debt is low (0.19x), and they threw off ₹35.20 Cr free cash last year. But they collect from customers in 67 days and pay suppliers in only 17 days, so their cash is stuck for 79 days — same as similar firms (79d peer) but still tight day-to-day. We're tiny to them (₹11.32 L is 0.02% of their sales), so we have almost no pull on our own. The play is to dangle faster payment (worth 10.27% to them) for a price cut, and to line up Suraj and the big converters so TPAC knows one 'no' and the volume walks.",
+    "financialLeverage": "TPAC brings in ₹637.48 Cr a year and keeps about ₹4 of every ₹100 they sell (3.8%). They borrow money at about 10.27%, and their cash is stuck for 79 days — the same as similar firms (79d peer median) but tighter than most because they pay suppliers in only 17 days versus a peer median of 33d. Their credit rating is [ICRA] A / Stable, so they're not about to collapse, but the Altman Z-score of 2.77 puts them in the grey zone — not distress, but not safe either — plus they've had GST filing delays and EPF payment delays. We're only 0.02% of their sales (₹11.32 L), so on our own we're too small to move them; bundle more SKUs, commit volume for a year, or play them against Manjushree or Pearl Polymers to get their attention.",
     "evidence": [
       {
-        "point": "We pay Suraj Blow Plast ₹1.87/NOS for the same PET amber 100 mL bottle; TPAC charges ₹2.18",
-        "figure": "₹2.18/NOS vs ₹1.87/NOS, gap 16.6%, excess ₹28644"
+        "point": "We pay ₹2.18/NOS; our best price elsewhere is ₹1.87/NOS — a 16.6% gap",
+        "figure": "Gap: 16.6%; bestPrice: ₹1.87/NOS (Suraj Blow Plast PVt. Ltd.); ourPrice: ₹2.18/NOS"
       },
       {
-        "point": "TPAC borrows money at about 10.27%, so paying them 15 days early is worth that rate to them — roughly 5% annualised on the invoice",
-        "figure": "10.27%"
+        "point": "Closing that gap saves us ₹28644 a year",
+        "figure": "estAnnualExcess: ₹28644"
       },
       {
-        "point": "Their cash is stuck for 79 days (they wait 67 days to collect, pay suppliers in 17 days) — peer median is also 79 days, so cash is no looser or tighter than rivals",
-        "figure": "79d vs 79d peer median"
+        "point": "They borrow at 10.27% — paying us 15 days early is worth that rate to them",
+        "figure": "effectiveRatePct: 10.27%"
       },
       {
-        "point": "We're 0.02% of their ₹637.48 Cr revenue — on our own we're invisible",
-        "figure": "₹11.32 L / 0.02%"
+        "point": "We're a tiny customer — only 0.02% of their ₹637.48 Cr revenue",
+        "figure": "ourSpendAsShareOfTheirRevenue: 0.02%; revenue: ₹637.48 Cr"
       },
       {
-        "point": "They have GST filing delays and EPF payment delays on record — not a red flag for solvency (rating is still A / Stable) but shows admin strain",
-        "figure": "GST filing delays, EPF payment delays"
+        "point": "Their Altman Z-score of 2.77 sits in the grey zone, and they've had GST and EPF delays",
+        "figure": "altmanZ: 2.77; zone: grey; riskFlags: GST filing delays, EPF payment delays"
       },
       {
-        "point": "Market ask for a 28 mm PP cap is ₹0.55–1.20/pc (typical ₹0.85–0.95); verdict is MARKET-FAIR with modest room to ₹0.65–0.80 at higher volume",
-        "figure": "₹0.55–1.20/pc, typical ₹0.85–0.95/pc"
+        "point": "They pay suppliers in 17 days versus a peer median of 33d — cash is tighter for them than competitors",
+        "figure": "payableDays: 17d; peerMedians.payableDays: 33d"
       }
     ],
     "alternates": [
       {
         "name": "Manjushree Technopack Ltd",
-        "why": "India's largest rigid-plastic converter (₹2569.83 Cr, health B 65/100) — pharma bottles, caps, preforms. Top second-source candidate, already qualified for our packaging."
+        "why": "India's largest rigid-plastic packaging converter at ₹2569.83 Cr revenue, health score B (65/100) — pharma bottles, caps, preforms; the top second-source candidate and big enough to absorb our volume."
+      },
+      {
+        "name": "Pearl Polymers Ltd",
+        "why": "Listed PET bottle/jar specialist (Pearlpet) — a direct fit for our PET BOT AMBER 100ML bottle SKU."
       },
       {
         "name": "Mold-Tek Packaging Ltd",
-        "why": "Listed rigid-plastic leader (₹1010.97 Cr, health B 73/100) — pails, containers, pharma; strong and profitable, robust alternate for bottles and closures."
-      },
-      {
-        "name": "Suraj Blow Plast PVt. Ltd.",
-        "why": "Already supplies us the same PET amber 100 mL bottle at ₹1.87/NOS — proven quality and price benchmark."
+        "why": "Listed rigid-plastic leader in pails, containers, pharma packaging — strong, profitable, a robust alternate for bottles and closures."
       }
     ],
     "risks": [
-      "We're 0.02% of their business — they can say no and not feel it. Bundle more SKUs or commit 2–3 years to get attention.",
-      "GST and EPF delays show admin stress; watch that invoices and compliance docs stay clean if we grow the volume.",
-      "Their Altman Z-score is 2.77 (grey zone) — not distressed, but not bulletproof either. Line up Manjushree or Mold-Tek before you squeeze too hard.",
-      "Market backup leads (Reliance, IVL Dhunseri, Ganesha Ecosphere, etc.) are not yet qualified — verify and price them before calling them alternates in the room."
+      "At ₹11.32 L (0.02% of their sales) we're too small to matter alone — bundle more SKUs or commit a longer term to get leverage.",
+      "Their Altman Z of 2.77 is grey-zone and they've missed GST/EPF deadlines — push hard but watch that we don't tip a fragile supplier; qualify a second source now in case they stumble.",
+      "They pay suppliers in 17 days (peer median 33d) so their own cash is tight — a faster-payment offer will appeal, but don't give it away without a matching price cut of ~10%.",
+      "The market ask for a 28 mm cap is ₹0.55–1.20/pc (typical ₹0.85–0.95) with modest headroom to ₹0.65–0.80 at volume — our ₹1.87/NOS bottle target is grounded, but if they push back hard, cross-check the spec and MOQ before committing."
     ],
-    "suggestedOpeningLine": "We pay Suraj ₹1.87 for this bottle and you're at ₹2.18 — I need you at ₹1.87 or I move the ₹11 lakh to Suraj and Manjushree, but I'll pay you 15 days faster if you can also cut 5% across the board."
+    "suggestedOpeningLine": "We're paying you ₹2.18 a bottle when we pay Suraj ₹1.87 for the same thing — let's close that 16.6% gap and talk about how faster payment or a longer commit can sweeten the deal for both of us."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-11-13",
+  "generatedAt": "2026-11-14",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
-    "inputTokens": 3505,
-    "outputTokens": 1551,
+    "inputTokens": 3462,
+    "outputTokens": 1603,
     "serverToolUsage": {},
-    "totalTokens": 5056
+    "totalTokens": 5065
   }
 }

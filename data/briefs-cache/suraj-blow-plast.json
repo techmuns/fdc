@@ -1,71 +1,67 @@
 {
-  "inputHash": "7720db550cddea83",
+  "inputHash": "dcdbf606d509d24d",
   "brief": {
-    "headline": "Push for a price cut to the ₹0.65–0.80/pc band on caps — market shows headroom — and accelerate payment to 15 days to free up ₹2.39 L cash for us.",
+    "headline": "Push price toward ₹0.65–0.80/pc for the 28 mm cap (market says ₹0.55–1.20, typical ₹0.85–0.95) and line up Manjushree Technopack as a second source",
     "priceAsk": {
-      "summary": "Ask for pricing in the ₹0.65–0.80/pc range on induction-wad caps at higher volume.",
-      "target": "₹0.65–0.80/pc",
-      "basis": "The open market shows typical asks of ₹0.85–0.95/pc are MARKET-FAIR, with modest headroom to ₹0.65–0.80 at higher volume or looser spec. We buy ₹58.17 L a year — enough volume to hit that lower band."
+      "summary": "Ask for pricing closer to ₹0.65–0.80/pc on the 28 mm induction-wad PP cap",
+      "target": "₹0.65–0.80/pc (the lower end of the market typical band ₹0.85–0.95/pc, achievable at higher volume or looser spec per market research)",
+      "basis": "Market research shows the 28 mm cap asks range ₹0.55–1.20/pc, with typical at ₹0.85–0.95/pc and headroom to ₹0.65–0.80 at scale — we spend ₹58.17 L annually, giving us volume to justify the lower band"
     },
     "paymentTermAsk": {
-      "summary": "Move from 30 days after receipt to 15 days after receipt.",
-      "cashImpact": "Speeds up payment by 15 days, freeing ₹2.39 L cash for us."
+      "summary": "Hold at 30 Days After Receipt — no extension",
+      "cashImpact": "none"
     },
-    "financialLeverage": "Suraj Blow Plast publishes no financials, so we can't see their revenue, profit or cash position. Our ₹58.17 L annual spend is material enough to matter, but without their numbers we can't gauge how hard to press. The play is to line up a strong second source and use that optionality to justify the price and payment asks — treat them as a capable but unaudited supplier we need a backup for.",
+    "financialLeverage": "Suraj Blow Plast publishes no financials, so we cannot see their revenue, profit, or how tight their cash is. That means our negotiating power rests on three things: our ₹58.17 L annual spend, the clear market benchmark showing room to move (₹0.65–0.80/pc is fair at volume), and the five credible alternates we can qualify. Without visibility into their books, we keep the conversation on price and supply security, not on their finances.",
     "evidence": [
       {
-        "point": "We spend ₹58.17 L a year with them — a volume big enough to command better pricing.",
+        "point": "Market research shows the 28 mm induction-wad PP cap typically asks ₹0.85–0.95/pc, with modest headroom to ₹0.65–0.80 at higher volume or looser spec",
+        "figure": "askBand: ₹0.55–1.20/pc; typical: ₹0.85–0.95/pc; verdict: MARKET-FAIR; modest headroom to ₹0.65–0.80"
+      },
+      {
+        "point": "We spend ₹58.17 L a year with them — meaningful volume to justify the lower price band",
         "figure": "₹58.17 L"
       },
       {
-        "point": "Market asking prices for 28 mm induction-wad PP caps run ₹0.55–1.20/pc, typically ₹0.85–0.95/pc.",
-        "figure": "₹0.55–1.20/pc"
+        "point": "HDPE resin import price is 87.61 ₹/kg, giving us a raw-material floor to anchor the conversation",
+        "figure": "87.61 ₹/kg"
       },
       {
-        "point": "The market verdict is MARKET-FAIR with modest headroom to ₹0.65–0.80/pc at higher volume or looser spec.",
-        "figure": "₹0.65–0.80/pc"
-      },
-      {
-        "point": "Pulling payment in by 15 days frees up ₹2.39 L working cash for us.",
-        "figure": "₹2.39 L"
-      },
-      {
-        "point": "We currently pay 30 days after receipt — not our worst terms, but tightening helps our cash.",
-        "figure": "30 Days After Receipt"
+        "point": "Manjushree Technopack — India's largest rigid-plastic packaging converter, revenue ₹2569.83 Cr, health score B (65/100) — is a strong second-source candidate for pharma bottles and caps",
+        "figure": "₹2569.83 Cr; B (65/100)"
       }
     ],
     "alternates": [
       {
         "name": "Manjushree Technopack Ltd",
-        "why": "India's largest rigid-plastic packaging converter (₹2569.83 Cr revenue, health score 65/100) — pharma bottles, caps, preforms; top second-source candidate."
+        "why": "India's largest rigid-plastic packaging converter (₹2569.83 Cr revenue, health B 65/100) specializing in pharma bottles, caps and preforms — the top second-source candidate"
       },
       {
         "name": "Mold-Tek Packaging Ltd",
-        "why": "Listed rigid-plastic leader (₹1010.97 Cr revenue, health score 73/100) doing pails, containers and pharma packaging — robust alternate for bottles and closures."
+        "why": "Listed rigid-plastic leader in pails, containers and pharma packaging — strong and profitable, robust alternate for bottles and closures"
       },
       {
-        "name": "Reliance Industries Limited",
-        "why": "A manufacturer lead to qualify (verify before RFQ) — pan-India resin maker; medium confidence as a potential upstream source."
+        "name": "Reliance Industries Limited (lead to qualify)",
+        "why": "Pan-India manufacturer lead; verify capability and MOQs before RFQ"
       }
     ],
     "risks": [
-      "No public financials means we're flying blind on their cash health and staying power — if they hit trouble, we have no early warning.",
-      "Pressing too hard on price and payment together could spook a smaller private supplier who may already be cash-tight (we just don't know).",
-      "The market headroom to ₹0.65–0.80/pc assumes higher volume or looser spec — confirm our actual order size and tolerance before locking that target.",
-      "The alternates (Manjushree, Mold-Tek) are much larger and may have higher MOQs or longer lead times — qualifying them will take time, so start now."
+      "No public financials — we cannot gauge their cash position or stability, so watch for any supply hiccups and keep the second source moving in parallel",
+      "If they resist the ₹0.65–0.80 target, be ready to walk to Manjushree or another alternate — but qualify that alternate first so the threat is real",
+      "Market backup leads (Reliance, IVL Dhunseri, Srichakra, Dalmia, Ganesha, Chemco) are unqualified; do not cite them as approved sources until we verify MOQs, lead times and pharma capability",
+      "We hold 30-day terms today; extending payment buys us nothing (no borrowing-cost trade to offer), so protect that term and focus the negotiation solely on price and supply continuity"
     ],
-    "suggestedOpeningLine": "We're spending ₹58.17 L a year with you on caps, and the market shows room to move pricing down to ₹0.65–0.80 at our volume — let's talk about hitting that band and tightening payment to 15 days so we both move faster."
+    "suggestedOpeningLine": "We'd like to talk about moving our 28 mm cap pricing closer to the ₹0.65–0.80 range the market shows at volume, and about how we can lock in long-term supply together — we're also qualifying a second source in parallel to de-risk our packaging line."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-11-13",
+  "generatedAt": "2026-11-14",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
-    "inputTokens": 2901,
-    "outputTokens": 1119,
+    "inputTokens": 2858,
+    "outputTokens": 1219,
     "serverToolUsage": {},
-    "totalTokens": 4020
+    "totalTokens": 4077
   }
 }
