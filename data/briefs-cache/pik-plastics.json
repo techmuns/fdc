@@ -1,67 +1,63 @@
 {
-  "inputHash": "4df1dac12a9dc639",
+  "inputHash": "001cf6fca6504be9",
   "brief": {
-    "headline": "Push PIK PLASTICS to match our best prices — TPAC and Suraj Blow Plast are already ₹8.48 L/yr cheaper on the same bottles.",
+    "headline": "Close the ₹8.48 L/yr gap to our best price and qualify a second source — their finances aren't public, so lean on our data and strong alternates.",
     "priceAsk": {
-      "summary": "Ask PIK to match the prices TPAC and Suraj Blow Plast give us on identical items.",
-      "target": "₹8.48 L/yr saving by closing the gap to our best prices",
-      "basis": "On the main bottle (PET BOT AMBER 250ML/28MM WITH SHR SL 01), PIK charges ₹8.49/NOS while TPAC delivers at ₹7.62/NOS — an 11.5% gap that costs us ₹7.19 L/yr on that one item alone. On the second bottle (PET BOT AMBER BRUT 250ML/28MM NECK 26G), PIK is at ₹5.38/NOS versus Suraj's ₹5.24/NOS (2.6% gap, ₹1.29 L/yr excess). We already pay these lower prices to other suppliers for the same items, so PIK should meet them."
+      "summary": "Match the best price we already pay for the same items",
+      "target": "₹7.62/NOS for PET BOT AMBER 250ML (currently ₹8.49/NOS) and ₹5.24/NOS for PET BOT AMBER BRUT 250ML (currently ₹5.38/NOS) — close the ₹8.48 L/yr gap",
+      "basis": "We pay TPAC Packaging ₹7.62/NOS and Suraj Blow Plast ₹5.24/NOS for the same bottles. PIK's 11.5% premium on the first SKU alone costs us ₹7.19 L/yr extra. Market research shows 28 mm caps at ₹0.85–0.95/pc are MARKET-FAIR with headroom to ₹0.65–0.80/pc at volume — so matching our internal best is reasonable."
     },
     "paymentTermAsk": {
-      "summary": "Keep the current 30 days — no change needed.",
+      "summary": "Keep 30 Days After Receipt — no reason to change",
       "cashImpact": "none"
     },
-    "financialLeverage": "PIK PLASTICS publishes no financial reports, so we cannot see their revenue, profit or how tight their cash is. Our ₹1.92 Cr annual spend is real money, but without their numbers we don't know if we're 2% or 20% of their business. The plan leans on the fact that we have working relationships with TPAC and Suraj at lower prices, and four strong alternate suppliers (Mold-Tek, Manjushree, Hitech, Pearl) ready to quote if PIK won't move. That competitive pressure is our leverage, not their balance sheet.",
+    "financialLeverage": "PIK Plastics publishes no financials, so we can't see their revenue, profit, or how tight their cash is. Our ₹1.92 Cr spend is real money, but without knowing their size we can't gauge how important we are to them. The smart play is to use our own data — we already buy these bottles cheaper elsewhere — and to quietly line up Manjushree Technopack (₹2569.83 Cr, health B) or Mold-Tek Packaging (₹1010.97 Cr, health B) as a second source. That backup gives us room to press for the best price we pay without worrying about losing supply.",
     "evidence": [
       {
-        "point": "PIK charges us ₹8.49 per bottle on the main SKU (PET BOT AMBER 250ML/28MM WITH SHR SL 01)",
-        "figure": "₹8.49/NOS"
-      },
-      {
-        "point": "TPAC Packaging India delivers the same bottle at ₹7.62 — an 11.5% lower price",
-        "figure": "₹7.62/NOS; gap 11.5%"
-      },
-      {
-        "point": "That single SKU gap costs us ₹7.19 lakh every year",
-        "figure": "₹7.19 L"
-      },
-      {
-        "point": "Across all rigid plastic packaging from PIK, we pay ₹8.48 lakh more per year than our best prices",
+        "point": "We pay ₹8.48 L/yr more to PIK than the cheapest price we already get for the same items",
         "figure": "₹8.48 L"
       },
       {
-        "point": "Our total annual spend with PIK PLASTICS",
-        "figure": "₹1.92 Cr"
+        "point": "PIK charges ₹8.49/NOS for PET BOT AMBER 250ML; TPAC Packaging sells it to us at ₹7.62/NOS — an 11.5% gap",
+        "figure": "₹8.49/NOS vs ₹7.62/NOS, gap 11.5%"
       },
       {
-        "point": "Market check on a similar cap (28 mm PP induction-wad) shows asking prices of ₹0.55–1.20 per piece, typically ₹0.85–0.95, rated MARKET-FAIR with modest room to ₹0.65–0.80 at higher volume",
-        "figure": "₹0.55–1.20/pc; typical ₹0.85–0.95/pc"
+        "point": "That one SKU alone costs us ₹7.19 L/yr extra",
+        "figure": "₹7.19 L"
+      },
+      {
+        "point": "Market research finds 28 mm caps at ₹0.85–0.95/pc typical, with headroom to ₹0.65–0.80/pc at higher volume — verdict MARKET-FAIR",
+        "figure": "₹0.85–0.95/pc typical; ₹0.65–0.80/pc at volume"
+      },
+      {
+        "point": "PIK's second SKU (PET BOT AMBER BRUT 250ML) is ₹5.38/NOS; Suraj Blow Plast does ₹5.24/NOS — a 2.6% gap worth ₹1.29 L/yr",
+        "figure": "₹5.38/NOS vs ₹5.24/NOS, gap 2.6%, excess ₹1.29 L"
       }
     ],
     "alternates": [
       {
         "name": "Manjushree Technopack Ltd",
-        "why": "India's largest rigid-plastic packaging converter (₹2569.83 Cr revenue, health score 65/100) — makes pharma bottles, caps and preforms; top second-source candidate already in our system."
+        "why": "India's largest rigid-plastic packaging converter (₹2569.83 Cr revenue, health B) — makes pharma bottles, caps, preforms; top second-source candidate and already flagged for packaging."
       },
       {
         "name": "Mold-Tek Packaging Ltd",
-        "why": "Listed rigid-plastic leader (₹1010.97 Cr revenue, health score 73/100) serving pharma with pails, containers, bottles and closures — strong, profitable and a robust alternate."
+        "why": "Listed rigid-plastic leader (₹1010.97 Cr revenue, health B) — pails, containers, pharma packaging; strong and profitable alternate for bottles and closures."
       },
       {
-        "name": "IVL Dhunseri Petrochem Industries Private Limited (marketBackups)",
-        "why": "PET manufacturer in East India — a lead to qualify (verify capability and price before sending an RFQ) as a potential upstream source for PET bottles."
+        "name": "Manjushree Technopack Ltd (backup lead: IVL Dhunseri Petrochem Industries)",
+        "why": "A lead to qualify (verify before RFQ) — manufacturer in India-East; medium confidence as a maker of rigid packaging materials."
       }
     ],
     "risks": [
-      "PIK's financials are not public, so we're flying blind on their stability — if they're fragile, a hard push on price could break the relationship before we have a second source fully qualified.",
-      "We spend ₹1.92 Cr/yr with them but don't know their total revenue, so we can't gauge how much losing us would hurt — err on the side of showing the alternate quotes rather than just demanding the cut.",
-      "TPAC and Suraj are already delivering cheaper on these exact bottles, but if PIK's service, quality or lead-times are materially better, the team should quantify that before walking away over ₹8.48 L.",
-      "The market-backup leads (Reliance, IVL Dhunseri, Srichakra, etc.) are research finds, not vetted suppliers — do not present them as approved alternates until procurement qualifies them."
+      "PIK's financials aren't public, so we can't see early-warning signs of trouble — monitor delivery performance closely and accelerate the second-source qualification.",
+      "If we push hard on price without a qualified backup in place, PIK could walk and leave us scrambling — line up Manjushree or Mold-Tek first.",
+      "The ₹8.48 L saving assumes PIK will match our best internal price across all items — they may resist on some SKUs, so prioritize the big one (PET BOT AMBER 250ML at ₹7.19 L/yr excess).",
+      "Market backups like IVL Dhunseri and Chemco are leads, not qualified sources — don't treat them as ready alternates until we've verified capability and pricing."
     ],
-    "suggestedOpeningLine": "We value the partnership, but right now we're paying you ₹8.49 per bottle when TPAC delivers the same item at ₹7.62 — help us understand why, and let's talk about closing that gap."
+    "suggestedOpeningLine": "We'd like to align your pricing with the best rates we already pay — starting with the PET bottles, where we're spending ₹8.48 lakhs a year more than we need to."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-11-16",
+  "generatedAt": "2026-11-17",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,

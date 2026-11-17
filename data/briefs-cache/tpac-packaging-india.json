@@ -1,71 +1,75 @@
 {
-  "inputHash": "4327b6acc3bb0230",
+  "inputHash": "a53b438d3519b526",
   "brief": {
-    "headline": "Push for ₹28,644 saving on the PET bottle (16.6% gap vs our best price) — you're tiny (0.02% of their sales) but they're in the grey zone and cash-tight, so bundle volume or commit longer to get traction.",
+    "headline": "Push 16.6% price cut on PET bottles to match Suraj Blow Plast and offer faster payment for another point or two off",
     "priceAsk": {
-      "summary": "Cut the PET BOT AMBER 100ML price from ₹2.18/NOS to ₹1.87/NOS — the price we already pay Suraj Blow Plast",
-      "target": "₹1.87/NOS (saves ₹28,644 annually)",
-      "basis": "We're paying 16.6% more than our best price. Their market-ask verdict says typical PP caps run ₹0.85–0.95/pc with headroom to ₹0.65–0.80 at volume, so there's room. Close the gap to match Suraj."
+      "summary": "Drop the PET bottle price from ₹2.18/NOS to ₹1.87/NOS — a 16.6% cut",
+      "target": "₹1.87/NOS (match Suraj Blow Plast)",
+      "basis": "We already pay Suraj Blow Plast ₹1.87/NOS for the same PET BOT AMBER 100ML/25MM NECK 12.5G bottle. TPAC is 16.6% higher. Closing that gap saves us ₹28644 a year. The market also shows modest room down to ₹0.65–0.80 at higher volume for caps, so their current pricing has headroom."
     },
     "paymentTermAsk": {
-      "summary": "Move from 30 days after receipt to 15 days after receipt in exchange for the price cut — paying 15 days faster is worth roughly their borrowing rate (10.27%)",
-      "cashImpact": "Costs us ₹46,539 in cash (half our yearly spend with them tied up 15 days earlier), but buys leverage since they borrow at 10.27% — early payment is valuable to them"
+      "summary": "Move from 30 days after receipt to paying on delivery, in exchange for 1–2% off the price",
+      "cashImpact": "Paying 15 days faster frees up ₹46539 for us; 30 days faster (on delivery) frees up ₹93078"
     },
-    "financialLeverage": "They're rated [ICRA] A / Stable and made ₹637.48 Cr last year, so they won't fold. But their Altman Z is 2.77 (grey zone — not safe, not distress) and cash sits for 79 days vs peer 79d, so tight but not desperate. You're 0.02% of their sales (₹11.32 L) — microscopic — so alone you have almost no pull. They keep about ₹4 of every ₹100 they sell (3.8% margin), so a big price cut hurts them. Play it smart: offer faster payment (worth 10.27% to them) to justify the price move, and name Manjushree or Mold-Tek as a credible second source to show you can walk if they won't budge.",
+    "financialLeverage": "TPAC is healthy — rated [ICRA] A / Stable, they keep ₹3.80 of every ₹100 they sell (net margin 3.8%), and they borrow money at about 10.27%. Their cash is stuck for 79 days (same as similar firms at 79 days), so cash isn't super-tight but early payment is still worth roughly 10% a year to them. We're tiny — just 0.02% of their ₹637.48 Cr revenue — so on our own we have almost no pull. The play is to bundle this SKU with other rigid-plastic buys, commit longer term, or quietly line up Manjushree or Mold-Tek and let TPAC know we're qualifying a second source.",
     "evidence": [
       {
-        "point": "We pay ₹2.18/NOS for the 100ml PET bottle; our best price elsewhere is ₹1.87/NOS — a 16.6% gap",
-        "figure": "gap: 16.6%, bestPrice: ₹1.87/NOS (Suraj Blow Plast)"
+        "point": "We pay Suraj Blow Plast ₹1.87/NOS for the identical PET bottle; TPAC charges ₹2.18/NOS",
+        "figure": "₹2.18/NOS vs ₹1.87/NOS, gap 16.6%"
       },
       {
-        "point": "Closing that gap saves us ₹28,644 a year",
+        "point": "Closing that 16.6% gap saves us ₹28644 a year",
         "figure": "₹28644"
       },
       {
-        "point": "They made ₹637.48 Cr revenue; we spend ₹11.32 L — just 0.02% of their business",
-        "figure": "ourSpendAsShareOfTheirRevenue: 0.02%"
+        "point": "TPAC borrows at about 10.27%, so paying 30 days early is worth roughly that rate to them",
+        "figure": "10.27%"
       },
       {
-        "point": "They borrow at about 10.27%, so paying 15 days early is worth that rate to them",
-        "figure": "effectiveRatePct: 10.27%"
+        "point": "We're only 0.02% of their ₹637.48 Cr sales — we need to bundle volume or show an alternate to get their attention",
+        "figure": "0.02% of ₹637.48 Cr"
       },
       {
-        "point": "Their Altman Z score is 2.77 (grey zone) — not in trouble but not comfortably safe either",
-        "figure": "altmanZ: 2.77, zone: grey"
+        "point": "They have GST filing delays and EPF payment delays on record",
+        "figure": "GST filing delays, EPF payment delays"
       },
       {
-        "point": "Credit rating is [ICRA] A / Stable, but they have GST filing delays and EPF payment delays on record",
-        "figure": "creditRating: [ICRA] A / Stable; riskFlags: GST filing delays, EPF payment delays"
+        "point": "Market reference for 28 mm PP caps shows typical ₹0.85–0.95/pc, modest room down to ₹0.65–0.80 at scale",
+        "figure": "₹0.55–1.20/pc band, ₹0.85–0.95/pc typical"
       }
     ],
     "alternates": [
       {
         "name": "Manjushree Technopack Ltd",
-        "why": "India's largest rigid-plastic converter (₹2569.83 Cr, health B 65/100) — pharma bottles, caps, preforms — a strong, proven second source for our packaging"
+        "why": "India's largest rigid-plastic converter (₹2569.83 Cr revenue), does pharma bottles and caps — the top second-source candidate; health score B (65/100)"
       },
       {
         "name": "Mold-Tek Packaging Ltd",
-        "why": "Listed rigid-plastic leader (₹1010.97 Cr, health B 73/100) doing pails, containers, pharma — credible backup for bottles and closures"
+        "why": "Listed rigid-plastic leader (₹1010.97 Cr), strong and profitable (health B 73/100), makes pails, containers and pharma packaging — a robust backup for bottles and closures"
+      },
+      {
+        "name": "Pearl Polymers Ltd",
+        "why": "Listed PET bottle and jar specialist (Pearlpet brand, ₹19.83 Cr) — direct fit for our PET bottles, though smaller and weaker (health D 32/100)"
       }
     ],
     "risks": [
-      "You're 0.02% of their sales — too small to command attention on your own; bundle more SKUs, commit a longer term, or explicitly shop Manjushree to get leverage",
-      "Grey-zone Altman Z (2.77) plus GST and EPF delays mean some stress under the surface — push on price but don't squeeze so hard you force them into real trouble and lose supply",
-      "If they won't move on the PET bottle price, the ₹28,644 saving evaporates and paying 15 days early just costs us ₹46,539 cash for nothing — tie payment and price together in one offer",
-      "Market-ask verdict says typical caps have 'modest headroom at higher volume' — so volume commitment may be the key to unlock the price cut; come ready to commit quantity"
+      "We're only 0.02% of their business, so they may ignore us unless we bundle more SKUs or commit longer term",
+      "GST filing delays and EPF payment delays are on their record — watch for any supply hiccups or compliance issues that could disrupt our line",
+      "Their Altman Z-score is 2.77 (grey zone) — not in distress but not bulletproof either; don't squeeze so hard you tip a fragile supplier, especially since we're so small to them",
+      "If we move too much volume to an alternate too fast, TPAC may not care — make sure the second source is qualified and can actually deliver before you play that card"
     ],
-    "suggestedOpeningLine": "We'd like to close the 16.6% gap on the PET bottle to match our ₹1.87 price at Suraj — and we're willing to pay you 15 days faster to help your cash flow in return."
+    "suggestedOpeningLine": "We're paying Suraj Blow Plast ₹1.87 for the same bottle you're charging us ₹2.18 for — let's close that 16.6% gap and talk about how paying you faster can earn us another point or two off."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-11-16",
+  "generatedAt": "2026-11-17",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
     "inputTokens": 3505,
-    "outputTokens": 1373,
+    "outputTokens": 1366,
     "serverToolUsage": {},
-    "totalTokens": 4878
+    "totalTokens": 4871
   }
 }
