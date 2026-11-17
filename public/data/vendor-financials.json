@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T08:25:09.609Z",
+  "generatedAt": "2026-11-17T09:26:27.276Z",
   "sources": {
     "listed": "Munshot market-data API (free)",
     "private": "Probe42 comprehensive reports (MCA filings) — primary; credit-rating-agency rationale docs — fallback / cross-check"
@@ -1210,7 +1210,7 @@
       "metrics": {
         "revenue": 59956301824,
         "ebitda": 7029199872,
-        "marketCap": 67507142656,
+        "marketCap": 66470551552,
         "totalDebt": 4725799936,
         "ebitdaMargin": 11.72,
         "netMargin": 8.5,
@@ -1219,10 +1219,10 @@
         "debtToEquity": 13.16,
         "revenueGrowth": -2.4,
         "earningsGrowth": 245.8,
-        "pe": 13.24,
-        "evEbitda": 9.1,
+        "pe": 13.07,
+        "evEbitda": 9.13,
         "dividendYield": 20,
-        "currentPrice": 147.18,
+        "currentPrice": 144.92,
         "yearlyChange": 41.81,
         "employees": 2245,
         "roce": 12.5,
@@ -1278,7 +1278,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-11-16"
+        "date": "2026-11-17"
       },
       "note": null,
       "ratingGrade": null,
@@ -1337,7 +1337,7 @@
         "sourceUrl": "https://www.screener.in/company/GAEL/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-11-16"
+        "date": "2026-11-17"
       },
       "series": [
         {
@@ -1443,7 +1443,7 @@
       "metrics": {
         "revenue": 11021143040,
         "ebitda": 720441024,
-        "marketCap": 2616480000,
+        "marketCap": 2692067072,
         "totalDebt": 2388529920,
         "ebitdaMargin": 6.54,
         "netMargin": 2.26,
@@ -1452,10 +1452,10 @@
         "debtToEquity": 224.87,
         "revenueGrowth": 5.7,
         "earningsGrowth": 0,
-        "pe": 10.53,
-        "evEbitda": 7.13,
+        "pe": 10.38,
+        "evEbitda": 6.97,
         "dividendYield": 0,
-        "currentPrice": 103.5,
+        "currentPrice": 106.49,
         "yearlyChange": -1.56,
         "employees": 779,
         "roce": 8.18,
@@ -1511,7 +1511,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-11-16"
+        "date": "2026-11-17"
       },
       "note": null,
       "ratingGrade": null,
@@ -1574,9 +1574,16 @@
         "sourceUrl": "https://www.screener.in/company/SAYAJIIND/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-11-16"
+        "date": "2026-11-17"
       },
       "series": [
+        {
+          "fy": "FY15",
+          "revenue": 4680000000,
+          "netMargin": 1.92,
+          "roce": 18,
+          "receivableDays": 29
+        },
         {
           "fy": "FY16",
           "revenue": 5030000000,
@@ -7492,7 +7499,7 @@
       "metrics": {
         "revenue": 15558245376,
         "ebitda": 1136498944,
-        "marketCap": 4895622656,
+        "marketCap": 4905308160,
         "totalDebt": 3248300032,
         "ebitdaMargin": 7.31,
         "netMargin": 2.9,
@@ -7501,10 +7508,10 @@
         "debtToEquity": 54.7,
         "revenueGrowth": 29.7,
         "earningsGrowth": 276.2,
-        "pe": 10.84,
+        "pe": 10.87,
         "evEbitda": 5.91,
         "dividendYield": 64,
-        "currentPrice": 156.69,
+        "currentPrice": 157,
         "yearlyChange": 1.08,
         "employees": 1210,
         "roce": 5.88,
@@ -7560,7 +7567,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-11-16"
+        "date": "2026-11-17"
       },
       "note": "Group parent — listed proxy: figures are for the listed parent The Sukhjit Starch & Chemicals Ltd (NSE/BSE: SUKHJITS), used as a proxy because the supplying entity Sukhjit Corn Products does not file separately.",
       "ratingGrade": null,
@@ -7641,7 +7648,7 @@
         "sourceUrl": "https://www.screener.in/company/SUKHJITS/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-11-16"
+        "date": "2026-11-17"
       },
       "series": [
         {
@@ -9472,7 +9479,7 @@
       "metrics": {
         "revenue": 5561405952,
         "ebitda": 379552992,
-        "marketCap": 840209984,
+        "marketCap": 840840000,
         "totalDebt": 354048000,
         "ebitdaMargin": 6.83,
         "netMargin": 3.5,
@@ -9481,22 +9488,22 @@
         "debtToEquity": 40.59,
         "revenueGrowth": 42.6,
         "earningsGrowth": 72.5,
-        "pe": 4.45,
-        "evEbitda": 2.86,
+        "pe": 4.5,
+        "evEbitda": 2.88,
         "dividendYield": 0,
-        "currentPrice": 200.05,
+        "currentPrice": 200.2,
         "yearlyChange": 42.62,
         "employees": 376,
-        "roce": 17.6,
-        "roe": 17.3,
+        "roce": null,
+        "roe": null,
         "receivableDays": 43,
         "inventoryDays": 30,
         "payableDays": 43,
         "cashConversionCycle": 30
       },
       "healthScore": {
-        "value": 62,
-        "grade": "B",
+        "value": 56,
+        "grade": "C",
         "components": [
           {
             "label": "Net margin",
@@ -9521,18 +9528,6 @@
             "raw": 40.59,
             "score": 80,
             "weight": 0.2
-          },
-          {
-            "label": "Return on capital",
-            "raw": 17.6,
-            "score": 70,
-            "weight": 0.15
-          },
-          {
-            "label": "Return on equity",
-            "raw": 17.3,
-            "score": 87,
-            "weight": 0.15
           }
         ],
         "note": "Computed by FDC from the real metrics + credit rating shown — an analytical score, not a reported figure."
@@ -9540,7 +9535,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-11-16"
+        "date": "2026-11-17"
       },
       "note": "Listed on BSE (UNIVSTAR) — thinly traded",
       "ratingGrade": null,
@@ -9592,10 +9587,10 @@
       ],
       "creditDaysSource": {
         "sourceName": "Screener.in (from audited annual filings)",
-        "sourceUrl": "https://www.screener.in/company/524408/",
-        "asOf": "Mar 2026",
-        "basis": "standalone",
-        "date": "2026-11-16"
+        "sourceUrl": "https://www.screener.in/company/524408/consolidated/",
+        "asOf": "Mar 2026 (S)",
+        "basis": "consolidated",
+        "date": "2026-11-17"
       },
       "series": [
         {
@@ -12730,7 +12725,7 @@
       "metrics": {
         "revenue": 27557500928,
         "ebitda": 2124450048,
-        "marketCap": 16783995904,
+        "marketCap": 16826287104,
         "totalDebt": 1445600000,
         "ebitdaMargin": 7.71,
         "netMargin": 4.69,
@@ -12739,10 +12734,10 @@
         "debtToEquity": 10.72,
         "revenueGrowth": 23.1,
         "earningsGrowth": -19.1,
-        "pe": 12.97,
-        "evEbitda": 6.87,
-        "dividendYield": 88,
-        "currentPrice": 222.24,
+        "pe": 12.79,
+        "evEbitda": 6.74,
+        "dividendYield": 90,
+        "currentPrice": 222.8,
         "yearlyChange": -2.92,
         "employees": 2400,
         "roce": 12,
@@ -12798,7 +12793,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-11-16"
+        "date": "2026-11-17"
       },
       "note": null,
       "ratingGrade": null,
@@ -12842,7 +12837,7 @@
         "sourceUrl": "https://www.screener.in/company/HUHTAMAKI/",
         "asOf": "Dec 2025",
         "basis": "standalone",
-        "date": "2026-11-16"
+        "date": "2026-11-17"
       },
       "series": [
         {
@@ -12948,7 +12943,7 @@
       "metrics": {
         "revenue": 164920033280,
         "ebitda": 22030196736,
-        "marketCap": 46096199680,
+        "marketCap": 45969829888,
         "totalDebt": 101523062784,
         "ebitdaMargin": 13.36,
         "netMargin": 4.14,
@@ -12957,10 +12952,10 @@
         "debtToEquity": 124.99,
         "revenueGrowth": 35.5,
         "earningsGrowth": 630,
-        "pe": 6.75,
+        "pe": 6.87,
         "evEbitda": 6.17,
         "dividendYield": 48,
-        "currentPrice": 638.35,
+        "currentPrice": 636.6,
         "yearlyChange": 19.21,
         "employees": 7772,
         "roce": 7.03,
@@ -13016,7 +13011,7 @@
       "source": {
         "sourceName": "Munshot market-data API",
         "sourceUrl": "https://fastapi.muns.io",
-        "date": "2026-11-16"
+        "date": "2026-11-17"
       },
       "note": null,
       "ratingGrade": null,
@@ -13075,7 +13070,7 @@
         "sourceUrl": "https://www.screener.in/company/UFLEX/consolidated/",
         "asOf": "Mar 2026",
         "basis": "consolidated",
-        "date": "2026-11-16"
+        "date": "2026-11-17"
       },
       "series": [
         {
