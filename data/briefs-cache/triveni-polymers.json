@@ -1,71 +1,75 @@
 {
-  "inputHash": "275aa1e49ba86131",
+  "inputHash": "0a065da7d3cf58cc",
   "brief": {
-    "headline": "Push for a 5–8% price cut — they keep 8.5% profit vs 4.8% for similar firms, so there's room",
+    "headline": "Push for 8–12% price cut: they keep 8.5% profit vs 4.8% peers — room to share",
     "priceAsk": {
-      "summary": "Ask for a 5–8% price reduction on rigid plastic packaging",
-      "target": "Target caps at ₹0.65–0.80/pc at higher volume",
-      "basis": "Market research shows typical PP caps run ₹0.85–0.95/pc with headroom to ₹0.65–0.80 at higher volume or looser spec. They keep 8.5% profit vs 4.8% for similar Pharma Packaging firms — that gap is room in their price."
+      "summary": "Ask for 8–12% price reduction on rigid plastic packaging",
+      "target": "Target ₹0.65–0.80/pc for caps (market typical is ₹0.85–0.95/pc); scale across all items",
+      "basis": "They keep 8.5% profit vs 4.8% for similar firms — nearly double. Market ask shows modest headroom to ₹0.65–0.80 at higher volume. Their profit cushion supports a cut."
     },
     "paymentTermAsk": {
       "summary": "Move from 45 days to 30 days after receipt",
       "cashImpact": "Frees up ₹2.15 L cash for us"
     },
-    "financialLeverage": "They're healthy — they keep 8.5% of every ₹100 they sell, almost double what similar firms keep (4.8%). They owe no debt (0.00x) and their cash covers interest 75.84 times over. But their cash is stuck for 124 days (they wait 102 days to get paid, longer than the 93 peer median), so cash moves slowly. We're tiny to them — our ₹26.17 L is just 0.15% of their ₹179.69 Cr revenue — so on our own we have little pull; we'll need to lean on the competitive alternates and commit volume or length to get their attention.",
+    "financialLeverage": "Triveni is healthy (6.18 safety score, safe zone) with zero debt and keeps 8.5% profit — well above the 4.8% peers keep. Their cash is stuck for 124 days, longer than peers at 114 days, so cash is a bit tight for them. We're tiny at 0.15% of their ₹179.69 Cr revenue, so alone we have little weight — but bundling volume, a multi-year deal, or credibly showing alternates will give us leverage. Their comfort room on profit and our ability to walk means we can push hard on price and terms.",
     "evidence": [
       {
-        "point": "They keep 8.5% profit vs 4.8% for similar firms — room in their price",
+        "point": "They keep 8.5% profit, nearly double the 4.8% similar firms keep",
         "figure": "8.5% vs 4.8%"
       },
       {
-        "point": "Market asking price for 28 mm PP caps is ₹0.55–1.20/pc, typically ₹0.85–0.95, with headroom to ₹0.65–0.80 at higher volume",
-        "figure": "₹0.55–1.20/pc typical ₹0.85–0.95/pc modest headroom to ₹0.65–0.80"
+        "point": "Market ask for 28 mm PP cap is ₹0.85–0.95/pc typical, with room to ₹0.65–0.80 at volume",
+        "figure": "₹0.55–1.20/pc ask band, ₹0.85–0.95/pc typical, headroom to ₹0.65–0.80"
       },
       {
-        "point": "We're a tiny customer — just 0.15% of their ₹179.69 Cr sales",
-        "figure": "0.15%"
+        "point": "We're only 0.15% of their ₹179.69 Cr sales — tiny customer",
+        "figure": "₹26.17 L spend, 0.15%"
       },
       {
-        "point": "Moving to 30-day payment frees up ₹2.15 L cash for us",
+        "point": "Their cash is tied up for 124 days vs 114 days for peers — tighter on cash",
+        "figure": "124d vs 114d"
+      },
+      {
+        "point": "Moving to 30-day terms frees ₹2.15 L for us",
         "figure": "₹2.15 L"
       },
       {
-        "point": "They wait 102 days to collect vs 93 peer median — their cash moves slowly",
-        "figure": "102d vs 93d"
-      },
-      {
-        "point": "Zero debt and interest covered 75.84 times — financially strong",
-        "figure": "0.00x debt, 75.84x interest coverage"
+        "point": "They are in the safe zone financially with 6.18 score and zero debt",
+        "figure": "6.18 safe zone, 0.00x debt"
       }
     ],
     "alternates": [
       {
         "name": "Manjushree Technopack Ltd",
-        "why": "India's largest rigid-plastic packaging converter at ₹2569.83 Cr revenue; makes pharma bottles, caps, preforms — the top second-source candidate"
+        "why": "India's largest rigid-plastic packaging converter at ₹2569.83 Cr revenue; pharma bottles, caps, preforms — top second-source, health score B (65/100)"
       },
       {
         "name": "Mold-Tek Packaging Ltd",
-        "why": "Listed, ₹1010.97 Cr revenue, health score B (73/100) — proven rigid-plastic leader for pails, containers, pharma packaging"
+        "why": "Listed rigid-plastic leader for pails, containers, pharma — strong, profitable alternate for bottles and closures"
+      },
+      {
+        "name": "Pearl Polymers Ltd",
+        "why": "Listed PET bottle/jar specialist (Pearlpet) — direct fit for PET bottles"
       }
     ],
     "risks": [
-      "We're only 0.15% of their revenue — too small to matter unless we bundle more volume or commit long-term",
-      "They have EPF payment delays flagged — watch for any supply hiccups or compliance issues that could disrupt delivery",
-      "Their cash is stuck for 124 days vs 114 peer median — they may resist shorter payment terms even though it helps us",
-      "Market backups (Reliance Industries, Srichakra Polyplast, IVL Dhunseri, Dalmia Polypro, Ganesha Ecosphere, Chemco Plastic) are leads to qualify — verify capability and get quotes before treating them as real alternates"
+      "We're a tiny 0.15% customer (₹26.17 L of ₹179.69 Cr) — on our own we have little pull; bundle more volume or play off alternates to gain weight",
+      "One risk flag: EPF payment delays — watch for supply hiccups, but they're financially safe overall (6.18 score, safe zone)",
+      "Probe42 score is 4/10 and they return only 6.6% on capital vs 12.6% peers — lower efficiency, but safe and profitable enough to negotiate hard",
+      "Moving payment to 30 days tightens their already-stretched 124-day cash cycle — get the cut first, then offer faster pay as a trade"
     ],
-    "suggestedOpeningLine": "We'd like to talk about tightening our price and payment terms — you're keeping 8.5% profit vs 4.8% for similar firms, and we see market pricing with room at higher volume, so let's find a number that works for both of us."
+    "suggestedOpeningLine": "We've reviewed the market and your margins — you keep 8.5% profit vs 4.8% for similar firms, so there's room to share that with us through an 8–12% price cut and tighter terms."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-11-17",
+  "generatedAt": "2026-11-19",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
-    "inputTokens": 3446,
-    "outputTokens": 1153,
+    "inputTokens": 3403,
+    "outputTokens": 1165,
     "serverToolUsage": {},
-    "totalTokens": 4599
+    "totalTokens": 4568
   }
 }
