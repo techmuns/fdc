@@ -1,67 +1,71 @@
 {
-  "inputHash": "28c1fbc1e352d53e",
+  "inputHash": "46fbb2f7aa2c1b13",
   "brief": {
-    "headline": "Push PIK PLASTICS down ₹8.48 L/yr to match the lowest prices we already pay to other suppliers for the same packaging",
+    "headline": "Push PIK PLASTICS to match the ₹7.62/NOS price TPAC already gives us on the same amber bottle — that saves ₹8.48 L a year.",
     "priceAsk": {
-      "summary": "Drop their prices to match our best suppliers on each item — starting with the big bottle where they charge 11.5% more",
-      "target": "₹8.48 L annual saving by matching best prices we pay; on the PET BOT AMBER 250ML bring ₹8.49/NOS down to ₹7.62/NOS (the TPAC price)",
-      "basis": "We already buy identical rigid plastic packaging from TPAC Packaging India and Suraj Blow Plast at these lower prices — PIK PLASTICS should match them or explain why they can't"
+      "summary": "Ask them to match the ₹7.62/NOS price TPAC Packaging India Pvt Ltd. gives us for the PET BOT AMBER 250ML/28MM WITH SHR SL 01 — our top SKU with them.",
+      "target": "₹7.62/NOS (down from their ₹8.49/NOS) — closes an 11.5% gap and saves ₹8.48 L a year across all items.",
+      "basis": "We already pay ₹7.62/NOS to TPAC for the identical bottle. PIK's ₹8.49/NOS is 11.5% higher for the same thing. Market research shows similar PP caps trade at ₹0.85–0.95/pc (typical band), with headroom to ₹0.65–0.80 at volume — so our ask is in line with what the market will bear."
     },
     "paymentTermAsk": {
-      "summary": "Hold at 30 Days After Receipt — no extension",
+      "summary": "Keep the current 30 Days After Receipt — no reason to ease terms when we're asking them to cut price.",
       "cashImpact": "none"
     },
-    "financialLeverage": "PIK PLASTICS publishes no financials, so we don't know their size, profit or how tight their cash is. Our ₹1.92 Cr annual spend with them is meaningful but we have no view on what share of their business that is. Without their numbers we lean harder on the fact that we have five credible second sources already lined up and a clear price gap to close. Because their finances are dark, the plan is to be firm on price — match our best or risk losing volume — and to move faster on qualifying a backup.",
+    "financialLeverage": "PIK PLASTICS publishes no financials, so we can't see their revenue, profit or how tight their cash is. That means we build our case purely on the prices in front of us: they charge ₹8.49/NOS while TPAC charges ₹7.62/NOS for the same bottle. Our ₹1.92 Cr annual spend with them is real money, but without knowing their size we can't say how big a customer we are. The good news: we have four strong alternates already qualified (Manjushree, Mold-Tek, Hitech, Pearl) and six more leads to check out — so we're not stuck if they won't move. Push firmly on price, and make it clear we're lining up a second source because we don't know enough about their business to rely on them alone.",
     "evidence": [
       {
-        "point": "We overpay them ₹8.48 L every year versus the cheapest suppliers we use for the same items",
+        "point": "We pay PIK ₹8.49/NOS for PET BOT AMBER 250ML/28MM WITH SHR SL 01, but TPAC gives us ₹7.62/NOS for the identical bottle — an 11.5% gap.",
+        "figure": "₹8.49/NOS vs ₹7.62/NOS; 11.5%"
+      },
+      {
+        "point": "Closing that gap across all items saves us ₹8.48 L a year.",
         "figure": "₹8.48 L"
       },
       {
-        "point": "On the biggest SKU — PET BOT AMBER 250ML/28MM — PIK charges us ₹8.49/NOS while TPAC delivers it at ₹7.62/NOS, an 11.5% gap costing us ₹7.19 L/yr",
-        "figure": "₹8.49/NOS vs ₹7.62/NOS; gap 11.5%; ₹7.19 L"
-      },
-      {
-        "point": "Market research shows a typical 28 mm PP cap runs ₹0.85–0.95/pc, with room to ₹0.65–0.80 at higher volume — so their pricing has headroom",
-        "figure": "₹0.55–1.20/pc band, ₹0.85–0.95/pc typical, ₹0.65–0.80/pc at volume"
-      },
-      {
-        "point": "Our annual spend with PIK PLASTICS is ₹1.92 Cr — a sizeable account they should want to keep",
+        "point": "Our total annual spend with PIK is ₹1.92 Cr — enough to demand the best price we already pay elsewhere.",
         "figure": "₹1.92 Cr"
+      },
+      {
+        "point": "Market research shows 28 mm PP caps typically ask ₹0.85–0.95/pc, with headroom to ₹0.65–0.80 at higher volume — our target is within that range.",
+        "figure": "₹0.85–0.95/pc typical; ₹0.65–0.80/pc at volume"
+      },
+      {
+        "point": "PIK publishes no financials, so we can't gauge their health or how much they need our business.",
+        "figure": "financialsPublic: false"
       }
     ],
     "alternates": [
       {
-        "name": "Manjushree Technopack Ltd (private, ₹2569.83 Cr revenue, health score 65/100)",
-        "why": "India's largest rigid-plastic packaging converter, specialises in pharma bottles, caps and preforms — the top second-source candidate"
+        "name": "Manjushree Technopack Ltd",
+        "why": "India's largest rigid-plastic packaging converter (₹2569.83 Cr revenue) — makes pharma bottles, caps and preforms; health score B (65/100); already a second source for packaging and the top candidate to split this business."
       },
       {
-        "name": "Mold-Tek Packaging Ltd (listed)",
-        "why": "Listed rigid-plastic leader making pails, containers and pharma packaging — strong and profitable, a robust alternate for bottles and closures"
+        "name": "Mold-Tek Packaging Ltd",
+        "why": "Listed rigid-plastic leader (₹1010.97 Cr revenue) making pails, containers and pharma packaging; health score B (73/100) — strong and profitable, a robust alternate for bottles and closures."
       },
       {
-        "name": "Pearl Polymers Ltd (listed, PET bottle/jar specialist)",
-        "why": "Listed PET bottle and jar maker under the Pearlpet brand — direct fit for our PET bottle needs"
+        "name": "IVL Dhunseri Petrochem Industries Private Limited (market lead)",
+        "why": "A lead to qualify (verify before RFQ) — manufacturer in India-East; medium confidence. Could be a direct PET source if PIK won't budge."
       }
     ],
     "risks": [
-      "PIK PLASTICS shares no financial information, so we can't see early warning signs of trouble or judge how hard to push — watch for any supply hiccups and accelerate backup qualification",
-      "If they refuse to match TPAC's ₹7.62/NOS on the big bottle, be ready to shift that ₹7.19 L/yr line to TPAC or one of the three listed alternates",
-      "The market research shows typical caps at ₹0.85–0.95/pc with volume discounts possible down to ₹0.65–0.80 — if PIK resists the price cut, check whether we're ordering in small batches that keep unit costs high",
-      "The marketBackups list includes Reliance, IVL Dhunseri and others — these are leads to qualify (verify capability and get quotes before treating them as real options), not approved sources yet"
+      "PIK publishes no financials — we don't know if they're healthy or fragile. Push hard on price, but watch for signs they can't sustain the business; have Manjushree ready to step in.",
+      "We spend ₹1.92 Cr with them but don't know their total revenue — if we're a tiny customer, our leverage is limited. Lead with the TPAC benchmark (a fact they can't argue) rather than threatening to walk.",
+      "The ₹8.48 L saving assumes they match TPAC across all SKUs. If they only move on the big bottle (₹7.19 L of the ₹8.48 L), we still win most of it — but get a commitment on the rest too.",
+      "Six market-backup leads (Reliance, Srichakra, IVL Dhunseri, Dalmia, Ganesha, Chemco) are unqualified — don't mention them in the room until we've checked them out; use the four qualified alternates instead."
     ],
-    "suggestedOpeningLine": "We're paying you ₹8.48 lakh more each year than our other suppliers charge for the same bottles and caps — let's close that gap today, starting with the 250 ml amber bottle where TPAC is 11.5% cheaper."
+    "suggestedOpeningLine": "We're here because you're charging us ₹8.49 a bottle for an item TPAC supplies at ₹7.62 — we'd like to understand that gap and get you to the same price."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-11-19",
+  "generatedAt": "2026-11-20",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
-    "inputTokens": 3210,
-    "outputTokens": 1220,
+    "inputTokens": 3253,
+    "outputTokens": 1472,
     "serverToolUsage": {},
-    "totalTokens": 4430
+    "totalTokens": 4725
   }
 }

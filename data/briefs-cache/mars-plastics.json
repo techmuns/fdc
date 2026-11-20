@@ -1,75 +1,71 @@
 {
-  "inputHash": "c51df152855cc38f",
+  "inputHash": "d3b29f315b67f718",
   "brief": {
-    "headline": "Close the ₹82,500 gap on measuring cups and push payment to 30 days to free up ₹10.19 L cash",
+    "headline": "Close the ₹82,500 annual gap on measuring cups and push payment to 30 days to free ₹10.19 L cash for us",
     "priceAsk": {
-      "summary": "Cut measuring-cup price from ₹0.38/NOS to ₹0.35/NOS — matching Premier Plastic",
-      "target": "₹0.35/NOS (saves ₹82,500 per year)",
-      "basis": "Premier Plastic delivers the same 30mm measuring cup at ₹0.35/NOS — an 8.6% gap below Mars; market asking prices for similar 28mm PP caps run ₹0.55–1.20/pc, so our ₹0.35 target sits well below the open market and is proven by a supplier we already use"
+      "summary": "Match Premier Plastic's ₹0.35/NOS price on the measuring cup SKU",
+      "target": "₹0.35/NOS (saves ₹82,500 annually)",
+      "basis": "We pay Mars ₹0.38/NOS but Premier Plastic supplies the same item at ₹0.35/NOS — an 8.6% gap. The market ask for similar 28 mm PP caps runs ₹0.55–1.20/pc, typically ₹0.85–0.95/pc, so ₹0.35 is well below market and Mars can match it."
     },
     "paymentTermAsk": {
-      "summary": "Move from 45 days after receipt to 30 days — or add another 15 days early (to 30 total) for a further cut",
-      "cashImpact": "₹10.19 L freed up for us at 30 days; each extra 15 days early frees another ₹5.10 L"
+      "summary": "Move from 45 days to 30 days after receipt",
+      "cashImpact": "₹10.19 L cash freed up for us"
     },
-    "financialLeverage": "Mars Plastics publishes no financials, so we can't see their profit, debt or how tight their cash is. We spend ₹1.24 Cr a year with them — not huge, but steady rigid-packaging volume. Without their numbers, we lean on what we do know: Premier Plastic proves ₹0.35/NOS is doable, and we have five strong alternates queued (Manjushree, Mold-Tek, Hitech, Pearl, Pravesha) if Mars won't move. That gives us room to push firmly on price and payment, but keep tone collaborative — we want a second source lined up either way.",
+    "financialLeverage": "Mars Plastics publishes no financials, so we can't see their revenue, profit or how tight their cash is. Our ₹1.24 Cr annual spend might be meaningful to a private converter, but without their numbers we don't know. That means we lean on our own data — the ₹82,500 gap to Premier Plastic — and on having strong alternates lined up. We keep the tone firm but fair: we need a second source anyway, and Mars earns the business by matching the best price we already pay elsewhere.",
     "evidence": [
       {
-        "point": "Premier Plastic already supplies the same measuring cup 8.6% cheaper",
-        "figure": "₹0.35/NOS vs our ₹0.38/NOS"
+        "point": "We overpay Mars ₹82,500 a year on one SKU alone",
+        "figure": "₹82500"
       },
       {
-        "point": "Closing that gap saves us this much every year",
-        "figure": "₹82,500"
+        "point": "Premier Plastic's price on the same measuring cup is ₹0.35/NOS; Mars charges ₹0.38/NOS",
+        "figure": "₹0.35/NOS vs ₹0.38/NOS, gap 8.6%"
       },
       {
-        "point": "Shifting payment to 30 days frees up working cash for us",
+        "point": "Pulling payment in by 15 days frees over ₹10 lakh of our cash",
         "figure": "₹10.19 L"
       },
       {
-        "point": "Each additional 15 days we pay early is worth this much more cash",
-        "figure": "₹5.10 L"
-      },
-      {
-        "point": "Open-market asking price for similar 28mm PP caps runs much higher than what we pay",
+        "point": "Market asking price for a similar 28 mm PP cap runs ₹0.55–1.20/pc, so ₹0.35 is well within reach",
         "figure": "₹0.55–1.20/pc typical ₹0.85–0.95/pc"
       },
       {
-        "point": "Our annual spend with Mars Plastics",
-        "figure": "₹1.24 Cr"
+        "point": "Mars is private and shares no financial data",
+        "figure": "financialsPublic: false"
       }
     ],
     "alternates": [
       {
         "name": "Manjushree Technopack Ltd",
-        "why": "India's largest rigid-plastic packaging converter, does pharma bottles and caps, revenue ₹2569.83 Cr, health score B (65/100) — our top second-source candidate"
+        "why": "India's largest rigid-plastic packaging converter at ₹2569.83 Cr revenue, makes pharma bottles and caps, health score B (65/100) — the strongest second-source candidate"
       },
       {
         "name": "Mold-Tek Packaging Ltd",
-        "why": "Listed rigid-plastic leader for pharma containers and closures — strong and profitable alternate"
+        "why": "Listed, ₹1010.97 Cr revenue, strong health B (73/100), pharma-proven rigid-plastic specialist"
       },
       {
-        "name": "Hitech Corporation Ltd",
-        "why": "Listed company with broad moulded and blow-moulded packaging capability across bottles and caps"
+        "name": "Reliance Industries Limited (lead to qualify)",
+        "why": "A maker lead from public research (verify capability and pricing before RFQ)"
       }
     ],
     "risks": [
-      "Mars publishes no financials, so we fly blind on their cash position — if they're stretched we won't see it coming; line up Manjushree now so we have supply cover",
-      "Premier Plastic at ₹0.35/NOS proves the price is real, but if Mars walks we need that second source qualified fast — start parallel sampling with Manjushree this quarter",
-      "Pushing both price and faster payment together may feel like a squeeze to a smaller private supplier — watch their reaction and be ready to stage the asks (price first, then terms) if they push back hard",
-      "We have six market backup leads (Reliance, Srichakra, IVL Dhunseri, Dalmia, Ganesha, Chemco) but none are qualified yet — treat them as research leads to verify, not live alternates you can switch to today"
+      "Mars shares no financials — we can't judge whether a hard push on price and payment might strain them, so watch their reaction and be ready to stage the asks",
+      "We spend only ₹1.24 Cr annually with them; if they're a large converter we may have less pull than we think",
+      "Moving all volume to Premier Plastic or another alternate without qualifying Mars's capacity might leave us short if demand spikes",
+      "The market-ask data is for 28 mm caps, not an exact SKU match — confirm our measuring cup spec truly aligns before citing it in the room"
     ],
-    "suggestedOpeningLine": "We'd like to close the ₹82,500 gap between your measuring-cup price and Premier Plastic's ₹0.35, and talk about moving payment to 30 days so we can both free up cash — where can we land?"
+    "suggestedOpeningLine": "We'd like to keep Mars as a partner, but right now we're paying you ₹0.38 when Premier Plastic delivers the same item at ₹0.35 — let's close that gap and talk about tighter payment terms so this works for both of us."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-11-19",
+  "generatedAt": "2026-11-20",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
-    "inputTokens": 2969,
-    "outputTokens": 1197,
+    "inputTokens": 3012,
+    "outputTokens": 1100,
     "serverToolUsage": {},
-    "totalTokens": 4166
+    "totalTokens": 4112
   }
 }

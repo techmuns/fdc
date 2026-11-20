@@ -1,75 +1,75 @@
 {
-  "inputHash": "df1948e9298995eb",
+  "inputHash": "78c2a69e547d1788",
   "brief": {
-    "headline": "Move to 30-day terms to free up ₹8.73 L of our cash, and match the ₹66.48/KG we already pay Sayaji",
+    "headline": "Move from 100% advance payment to normal 30-day credit and match the ₹66.48/KG we already pay Sayaji",
     "priceAsk": {
-      "summary": "Ask them to match ₹66.48/KG for Dextrose Anhydrous IP",
-      "target": "₹66.48/KG (a 6.5% reduction from our current ₹70.80/KG)",
-      "basis": "We already pay Sayaji Industries ₹66.48/KG for the same material. The market asking price for Anhydrous Dextrose IP runs ₹60–81/kg (typical ₹66–73/kg), so our target sits in the normal range. Closing this gap saves us ₹12.95 L per year."
+      "summary": "Ask them to match ₹66.48/KG — the price Sayaji Industries already gives us for the same Dextrose",
+      "target": "₹66.48/KG (saves us ₹12.95 L per year)",
+      "basis": "We're paying them ₹70.80/KG, which is 6.5% more than Sayaji's ₹66.48/KG. The open market shows Dextrose Anhydrous IP typically trades at ₹66–73/kg, so our target sits right in that band. No reason to pay above what we already get elsewhere."
     },
     "paymentTermAsk": {
-      "summary": "Stop paying 100% in advance; move to standard 30-day credit after delivery",
-      "cashImpact": "Frees up ₹8.73 L of our cash that is currently locked up front"
+      "summary": "Switch from paying 100% in advance to standard 30-day credit after delivery",
+      "cashImpact": "Frees up ₹8.73 L of our cash that's currently locked in advance payments"
     },
-    "financialLeverage": "Sukhjit Corn Products does not publish financials, so we cannot see their profit, debt or cash position. That means we build our case purely on what we know: we spend ₹1.06 Cr a year with them and we pay the worst possible terms—100% up front. We have a proven alternate (Sayaji) at a better price and six more dextrose makers standing by, so we hold real supply options. Lead with fairness (match the price we already pay elsewhere, move to normal terms), and if they push back hard, pivot to qualifying one of the backup sources.",
+    "financialLeverage": "They're a ₹1555.82 Cr company keeping 2.9% of every sale as profit, so margins are tight — but they're growing sales fast at 29.7% per year, which means they want new orders. We're tiny to them: our ₹1.06 Cr is just 0.07% of their revenue, so on our own we have almost no pull. Their overall health scores only D (44/100), meaning moderate risk. The play is to dangle a multi-year commitment or more volume in exchange for the price match and payment switch, and to quietly line up Gulshan or Sanstar as a second source so they know we can walk.",
     "evidence": [
       {
-        "point": "We pay 100% in advance right now",
-        "figure": "Advance 100%(with tax)Against Proforma Invoice"
+        "point": "We pay them 6.5% more than the best price we already get",
+        "figure": "₹70.80/KG vs ₹66.48/KG, gap 6.5%, costing us ₹12.95 L/year extra"
       },
       {
-        "point": "Moving to 30-day terms frees up cash for us",
-        "figure": "₹8.73 L"
+        "point": "We pay 100% in advance right now — the worst terms in our book",
+        "figure": "Advance 100%(with tax)Against Proforma Invoice; moving to 30 days frees ₹8.73 L"
       },
       {
-        "point": "We pay them more than our cheapest dextrose supplier",
-        "figure": "₹70.80/KG vs ₹66.48/KG (Sayaji Industries Limited), a 6.5% gap"
+        "point": "They keep only a thin sliver of profit",
+        "figure": "2.9% net margin"
       },
       {
-        "point": "Closing the price gap saves us annually",
-        "figure": "₹12.95 L"
+        "point": "Their sales are growing fast",
+        "figure": "29.7%/yr growth"
       },
       {
-        "point": "Market asking price for Anhydrous Dextrose IP",
-        "figure": "₹60–81/kg, typical ₹66–73/kg — verdict: MARKET-FAIR (slightly favourable)"
+        "point": "We're a tiny customer to them",
+        "figure": "₹1.06 Cr spend = 0.07% of their ₹1555.82 Cr revenue"
       },
       {
-        "point": "Our annual spend with them",
-        "figure": "₹1.06 Cr"
+        "point": "Market price for this exact item is in line with our target",
+        "figure": "Anhydrous Dextrose IP typical band ₹66–73/kg"
       }
     ],
     "alternates": [
       {
-        "name": "Sayaji Industries Limited (already our supplier)",
-        "why": "We buy the same Dextrose Anhydrous IP from them today at ₹66.48/KG — proven quality and supply"
+        "name": "Gulshan Polyols Ltd",
+        "why": "₹2437.35 Cr listed maker, health B (68/100) — established dextrose supplier and a drop-in alternate; strongest backup to qualify"
+      },
+      {
+        "name": "Sanstar Ltd",
+        "why": "₹842.97 Cr recently-listed maize specialist, health C (52/100) — growing capacity in dextrose; second choice to RFQ"
       },
       {
         "name": "Tirupati Starch & Chemicals Ltd",
-        "why": "Listed Indore maize wet-miller; makes Dextrose ANHYDROUS (IV-fluid grade) — exact form match; a lead to qualify (verify IP monograph CoA before switching)"
-      },
-      {
-        "name": "Gulshan Polyols Ltd",
-        "why": "Listed starch & polyol maker; established dextrose/sorbitol supplier — a drop-in alternate to Gujarat Ambuja/Sayaji; a lead to qualify (verify before RFQ)"
+        "why": "₹365.39 Cr Indore wet-miller making Dextrose ANHYDROUS IV-fluid grade (exact form match); health D (27/100) so verify stability, but a credible local alternate"
       }
     ],
     "risks": [
-      "No public financials means we cannot judge whether they are fragile or flush with cash — approach the conversation carefully and watch for any sign they might exit the relationship rather than budge.",
-      "We pay them 100% up front, which gives us zero payment leverage during a dispute or quality issue — fixing terms is as much about control as cash.",
-      "If they refuse both asks, we must be ready to fast-track an RFQ to Tirupati, Gulshan or Sanstar — have the technical specs and CoA requirements lined up now.",
-      "The market asking price band is wide (₹60–81/kg), so they may claim their price is 'in range' — counter by pointing to the ₹66.48/KG we already pay and the ₹66–73/kg typical band."
+      "We're only 0.07% of their business, so they may ignore us unless we bundle more volume or a longer contract to make it worth their while.",
+      "Their 2.9% profit margin is paper-thin — push the payment switch hard (it costs them nothing), but go gently on price so we don't destabilise supply; frame the price ask as matching what they see in the market, not a hard cut.",
+      "Their D (44/100) health score flags moderate risk — don't put all our eggs here; get Gulshan or Sanstar qualified and priced in parallel so we have a live second source before the next renewal.",
+      "We're paying 100% advance today, which is extreme — they'll resist losing that cash cushion, so offer to phase in (say 50% advance, 50% at 15 days first) or sweeten it with a volume commitment."
     ],
-    "suggestedOpeningLine": "We'd like to bring you in line with the terms and price we have with our other dextrose suppliers—30-day credit and ₹66.48 per kilo—so we can keep the business with you and grow the volume."
+    "suggestedOpeningLine": "We'd like to move you onto normal 30-day terms and bring your Dextrose price to ₹66.48 — the rate Sayaji already gives us and right in line with the market — and in return we're ready to talk about a longer commitment or more volume."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-11-19",
+  "generatedAt": "2026-11-20",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
-    "inputTokens": 3357,
-    "outputTokens": 1186,
+    "inputTokens": 3760,
+    "outputTokens": 1266,
     "serverToolUsage": {},
-    "totalTokens": 4543
+    "totalTokens": 5026
   }
 }
