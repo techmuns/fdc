@@ -1,71 +1,71 @@
 {
-  "inputHash": "85c9856711bc8725",
+  "inputHash": "9f722ad7c2daeb6d",
   "brief": {
-    "headline": "Cut the price by ₹14.26 L/year to match Sayaji's ₹66.48/KG — you're paying 13.6% over our best rate for the same Dextrose.",
+    "headline": "Push for a 13.6% price cut to match Sayaji Industries — we're overpaying ₹14.26 L per year for the same Dextrose",
     "priceAsk": {
-      "summary": "Ask them to match Sayaji Industries' ₹66.48/KG for Dextrose Anhydrous IP, down from our current ₹75.51/KG",
-      "target": "₹66.48/KG (saves ₹14.26 L/year)",
-      "basis": "We already pay ₹66.48/KG to Sayaji for the same material — you're 13.6% higher. The open market typical band is ₹66–73/kg, so Sayaji's price sits right in the fair range. Your current rate is at the top end and we need you at the lower end to stay competitive."
+      "summary": "Ask them to match ₹66.48/KG — the price Sayaji Industries gives us for the same Dextrose Anhydrous IP",
+      "target": "₹66.48/KG (a 13.6% reduction from our current ₹75.51/KG)",
+      "basis": "Sayaji Industries already supplies us identical Dextrose at ₹66.48/KG. The open-market asking price sits in a ₹60–81/kg band with typical deals at ₹66–73/kg, so our target sits right in the market's sweet spot. We're leaving ₹14.26 L on the table each year by not holding Universal to the same price."
     },
     "paymentTermAsk": {
-      "summary": "Keep 30 Days After Receipt — no change needed here",
+      "summary": "Keep 30 Days After Receipt — no change needed",
       "cashImpact": "none"
     },
-    "financialLeverage": "They're big — ₹556.14 Cr in sales — and we're tiny at ₹59.65 L (0.11% of their business), so on our own we have almost no pull. But they're growing fast (42.6% a year) and want new orders, which gives us an opening. They keep about ₹3.50 of every ₹100 they sell (3.5% net margin), so they're not starved for cash but also can't afford to walk away from a commitment if we bundle more volume. The play: offer to lock in a year's worth of orders or add another material in return for hitting Sayaji's price.",
+    "financialLeverage": "Universal Starch Chem Allied publishes no financials, so we can't see their profit or cash position. That means we lean on what we do know: we already buy this exact material cheaper elsewhere, and the open market shows our target price is fair. Our ₹59.65 L annual spend gives us enough volume to insist on parity with Sayaji. Because we can't gauge their financial strength, the plan is to line up a second source in parallel — so if they won't move on price, we have a clear path to shift volume without risk.",
     "evidence": [
       {
-        "point": "We pay ₹75.51/KG; Sayaji charges ₹66.48/KG for the same Dextrose",
-        "figure": "Gap: 13.6%, costing us ₹14.26 L/year extra"
+        "point": "We pay Universal ₹75.51/KG for Dextrose but Sayaji charges us only ₹66.48/KG for the same material",
+        "figure": "₹75.51/KG vs ₹66.48/KG (13.6% gap)"
       },
       {
-        "point": "Market asking price for Anhydrous Dextrose IP is ₹60–81/kg, typically ₹66–73/kg — our target sits in the typical band",
-        "figure": "Market typical: ₹66–73/kg; verdict: MARKET-FAIR (slightly favourable)"
+        "point": "This price gap costs us an extra ₹14.26 L every year",
+        "figure": "₹14.26 L"
       },
       {
-        "point": "They're growing sales by 42.6% per year — they want volume",
-        "figure": "Sales growth: 42.6%"
+        "point": "Open-market asking prices for Anhydrous Dextrose IP run ₹60–81/kg, with typical deals at ₹66–73/kg — our target sits inside that range",
+        "figure": "₹60–81/kg band, ₹66–73/kg typical"
       },
       {
-        "point": "We're only 0.11% of their ₹556.14 Cr revenue, so we need to bundle or play off an alternate to get leverage",
-        "figure": "Our spend: ₹59.65 L; their revenue: ₹556.14 Cr; our share: 0.11%"
+        "point": "India's export unit value for Dextrose is ₹42.95/kg, well below what we pay",
+        "figure": "42.95 ₹/kg"
       },
       {
-        "point": "Their health score is C (56/100) and debt-to-equity is 0.41x — stable but not rock-solid, so a credible second source adds pressure",
-        "figure": "Health: C (56/100); debt-to-equity: 0.41x"
+        "point": "We spend ₹59.65 L per year with Universal — enough volume to expect competitive pricing",
+        "figure": "₹59.65 L"
       }
     ],
     "alternates": [
       {
-        "name": "Gulshan Polyols Ltd",
-        "why": "Listed starch & polyol maker, ₹2437.35 Cr revenue, health B (68/100) — established dextrose supplier and a drop-in alternate to Sayaji; strong backup if Universal won't move."
-      },
-      {
-        "name": "Sanstar Ltd",
-        "why": "Recently-listed maize-derivatives specialist, ₹842.97 Cr revenue, health C (52/100) — growing capacity in dextrose; worth an RFQ to sharpen the price."
-      },
-      {
         "name": "Tirupati Starch & Chemicals Ltd",
-        "why": "Listed Indore wet-miller, ₹365.39 Cr revenue, makes Dextrose ANHYDROUS (IV-fluid grade) — exact form match; health is weaker (D 27/100) so qualify their CoA before switching."
+        "why": "A lead to qualify (verify before RFQ): listed Indore maize wet-miller making Dextrose Anhydrous in IV-fluid grade — exact form match; confirm IP monograph CoA before switching"
+      },
+      {
+        "name": "Gulshan Polyols Ltd",
+        "why": "A lead to qualify (verify before RFQ): listed starch and polyol maker, established dextrose supplier — described as a drop-in alternate to Sayaji"
+      },
+      {
+        "name": "Roquette India Pvt Ltd",
+        "why": "A lead to qualify (verify before RFQ): Indian arm of global starch major, makes pharma-grade dextrose — premium and very reliable (₹2898.05 Cr revenue)"
       }
     ],
     "risks": [
-      "We're 0.11% of their business — too small to matter alone, so they may say no unless we bundle more SKUs or commit a longer term.",
-      "Their health score is C (56/100), middling — pushing too hard without a qualified second source could leave us scrambling if they walk.",
-      "Sayaji is our best price today at ₹66.48/KG — if Universal won't match and we haven't locked Sayaji on contract, we risk losing that rate too.",
-      "The three alternates (Gulshan, Sanstar, Tirupati) are not yet qualified or priced — line up an RFQ with at least one before the meeting so the threat is real."
+      "Universal's finances aren't public, so we can't tell if a hard push might destabilise them — keep the tone firm but not aggressive",
+      "If they refuse to move, be ready to shift volume to Sayaji or one of the alternates — run a qualification in parallel so we're not caught without supply",
+      "Dextrose Anhydrous IP must meet the Indian Pharmacopoeia monograph — any new source needs a CoA review and stability trial before full switch",
+      "Current terms are 30 Days After Receipt (not the worst we have), so don't trade away payment flexibility unless they give a big price cut in return"
     ],
-    "suggestedOpeningLine": "We want to grow our Dextrose order with you this year, but right now we're paying ₹75.51 and Sayaji gives us ₹66.48 for the same spec — can you match that price if we commit the volume?"
+    "suggestedOpeningLine": "We've been comparing notes across our Dextrose suppliers, and we're paying you ₹75.51 per kilo when Sayaji gives us the same material at ₹66.48 — help us understand why there's a 13.6% gap and how we close it."
   },
   "generatedBy": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "generatedAt": "2026-11-20",
+  "generatedAt": "2026-11-21",
   "usage": {
     "cacheReadInputTokenCount": 0,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokenCount": 0,
     "cacheWriteInputTokens": 0,
-    "inputTokens": 3543,
-    "outputTokens": 1301,
+    "inputTokens": 3244,
+    "outputTokens": 1188,
     "serverToolUsage": {},
-    "totalTokens": 4844
+    "totalTokens": 4432
   }
 }
