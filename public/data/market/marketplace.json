@@ -1,10 +1,16 @@
 {
-  "generatedAt": "2026-11-20",
+  "generatedAt": "2026-11-21",
   "feed": "marketplace",
   "status": "skipped",
   "series": [],
   "reason": "Firecrawl returned no parseable asks",
   "meta": {
-    "notes": []
+    "notes": [
+      "Dextrose IP: HTTP failed after 4 tries: Firecrawl htt",
+      "Dextrose IP: HTTP failed after 4 tries: Firecrawl htt",
+      "Aluminium blister foil: HTTP failed after 4 tries: Firecrawl htt",
+      "BOPET/BOPP laminate film: HTTP failed after 4 tries: Firecrawl htt",
+      "Pharma HDPE/PET bottle: HTTP failed after 4 tries: Firecrawl htt"
+    ]
   }
 }
